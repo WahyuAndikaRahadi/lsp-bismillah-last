@@ -20,7 +20,27 @@
                 </div>
             </div>
 
-            <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
+                <a
+                    href="{{ route('documents.berita-acara-asesmen', $schedule) }}"
+                    target="_blank"
+                    class="px-3 py-2 bg-white hover:bg-zinc-50 text-zinc-700 text-xs font-semibold rounded-xl border border-zinc-300 shadow-xs transition"
+                >
+                    Cetak BA Uji
+                </a>
+                <a
+                    href="{{ route('documents.daftar-hadir-asesmen', $schedule) }}"
+                    target="_blank"
+                    class="px-3 py-2 bg-white hover:bg-zinc-50 text-zinc-700 text-xs font-semibold rounded-xl border border-zinc-300 shadow-xs transition"
+                >
+                    Cetak Presensi
+                </a>
+                <a
+                    href="{{ route('admin.pleno.show', $schedule) }}"
+                    class="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl shadow-xs transition"
+                >
+                    Sidang Pleno
+                </a>
                 <a
                     href="{{ route('admin.schedules.edit', $schedule) }}"
                     class="px-3.5 py-2 bg-white hover:bg-zinc-50 text-zinc-700 text-xs font-semibold rounded-xl border border-zinc-300 shadow-xs transition"
@@ -246,9 +266,13 @@
                                         {{ $sa->peran }}
                                     </span>
                                 </div>
-                                <div class="text-[11px] text-zinc-500 mt-0.5">
-                                    No. MET: <span class="font-mono">{{ $sa->asesor->asesorProfile?->no_met ?? '-' }}</span> &bull; 
-                                    Surat Tugas: <span class="font-mono text-zinc-700">{{ $sa->no_surat_tugas }}</span>
+                                <div class="text-[11px] text-zinc-500 mt-0.5 flex items-center gap-1.5">
+                                    <span>No. MET: <span class="font-mono">{{ $sa->asesor->asesorProfile?->no_met ?? '-' }}</span></span>
+                                    <span>&bull;</span>
+                                    <span>Surat Tugas: <span class="font-mono text-zinc-700">{{ $sa->no_surat_tugas }}</span></span>
+                                    <a href="{{ route('documents.surat-tugas', [$schedule, $sa]) }}" target="_blank" class="text-blue-600 hover:underline font-semibold ml-1">
+                                        [Cetak PDF]
+                                    </a>
                                 </div>
                             </div>
                             <form action="{{ route('admin.schedules.asesors.remove', [$schedule, $sa]) }}" method="POST" onsubmit="return confirm('Hapus penugasan asesor ini?');">

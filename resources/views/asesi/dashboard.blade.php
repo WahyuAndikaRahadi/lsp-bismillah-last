@@ -24,6 +24,27 @@
 
         <!-- Latest Application Card (If Any) -->
         @if ($latestApplication)
+            @if ($latestApplication->status_kelulusan === 'kompeten')
+                <div class="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-6 text-white shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/20 text-white mb-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            SELAMAT! ANDA DINYATAKAN KOMPETEN
+                        </div>
+                        <h3 class="text-lg font-bold">Sertifikat Kompetensi BNSP Resmi Telah Terbit</h3>
+                        <p class="text-xs text-emerald-100 mt-0.5">Nomor Sertifikat: <span class="font-mono font-bold">{{ $latestApplication->no_sertifikat }}</span></p>
+                    </div>
+                    <a
+                        href="{{ route('documents.sertifikat', $latestApplication) }}"
+                        target="_blank"
+                        class="px-5 py-2.5 bg-white text-emerald-900 hover:bg-emerald-50 font-bold text-xs rounded-xl shadow-sm transition flex items-center gap-2 shrink-0"
+                    >
+                        <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <span>Unduh Sertifikat BNSP</span>
+                    </a>
+                </div>
+            @endif
+
             <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 sm:p-7 space-y-4">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-zinc-100 pb-4">
                     <div class="flex flex-wrap items-center gap-2">

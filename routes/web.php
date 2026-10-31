@@ -96,6 +96,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/verifications/{application}/status', [\App\Http\Controllers\Admin\VerificationController::class, 'updateStatus'])->name('verifications.update-status');
         Route::post('/verifications/{application}/plot', [\App\Http\Controllers\Admin\VerificationController::class, 'plotSchedule'])->name('verifications.plot-schedule');
         Route::post('/verifications/documents/{document}', [\App\Http\Controllers\Admin\VerificationController::class, 'verifyDocument'])->name('verifications.verify-document');
+
+        // Penetapan Rapat Pleno & Kelulusan (Fase 7)
+        Route::get('/pleno', [\App\Http\Controllers\Admin\PlenoController::class, 'index'])->name('pleno.index');
+        Route::get('/pleno/{schedule}', [\App\Http\Controllers\Admin\PlenoController::class, 'show'])->name('pleno.show');
+        Route::post('/pleno/{schedule}', [\App\Http\Controllers\Admin\PlenoController::class, 'store'])->name('pleno.store');
     });
 
     // 2. Asesor Kompetensi Area (Fase 5 & 6)
@@ -130,6 +135,26 @@ Route::middleware('auth')->group(function () {
         Route::post('/applications/{application}/ak-02/sign', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'signAk02'])->name('applications.ak02.sign');
         Route::get('/applications/{application}/ak-03', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'showAk03'])->name('applications.ak03');
         Route::post('/applications/{application}/ak-03', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'storeAk03'])->name('applications.ak03.store');
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Dokumen Cetak Resmi BNSP & Generator PDF (Fase 7)
+    |--------------------------------------------------------------------------
+    */
+    Route::prefix('documents')->name('documents.')->group(function () {
+        Route::get('/surat-tugas/{schedule}/{scheduleAsesor}', [\App\Http\Controllers\PdfDocumentController::class, 'suratTugas'])->name('surat-tugas');
+        Route::get('/berita-acara-asesmen/{schedule}', [\App\Http\Controllers\PdfDocumentController::class, 'beritaAcaraAsesmen'])->name('berita-acara-asesmen');
+        Route::get('/daftar-hadir-asesmen/{schedule}', [\App\Http\Controllers\PdfDocumentController::class, 'daftarHadirAsesmen'])->name('daftar-hadir-asesmen');
+        Route::get('/berita-acara-pleno/{schedule}', [\App\Http\Controllers\PdfDocumentController::class, 'beritaAcaraPleno'])->name('berita-acara-pleno');
+        Route::get('/daftar-hadir-pleno/{schedule}', [\App\Http\Controllers\PdfDocumentController::class, 'daftarHadirPleno'])->name('daftar-hadir-pleno');
+        Route::get('/fr-apl-01/{application}', [\App\Http\Controllers\PdfDocumentController::class, 'frApl01'])->name('fr-apl-01');
+        Route::get('/fr-apl-02/{application}', [\App\Http\Controllers\PdfDocumentController::class, 'frApl02'])->name('fr-apl-02');
+        Route::get('/fr-ak-01/{application}', [\App\Http\Controllers\PdfDocumentController::class, 'frAk01'])->name('fr-ak-01');
+        Route::get('/fr-ak-02/{application}', [\App\Http\Controllers\PdfDocumentController::class, 'frAk02'])->name('fr-ak-02');
+        Route::get('/fr-ak-03/{application}', [\App\Http\Controllers\PdfDocumentController::class, 'frAk03'])->name('fr-ak-03');
+        Route::get('/fr-ak-05/{schedule}', [\App\Http\Controllers\PdfDocumentController::class, 'frAk05'])->name('fr-ak-05');
+        Route::get('/sertifikat/{application}', [\App\Http\Controllers\PdfDocumentController::class, 'sertifikat'])->name('sertifikat');
     });
 });
 

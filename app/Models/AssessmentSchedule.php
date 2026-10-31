@@ -78,6 +78,11 @@ class AssessmentSchedule extends Model
         return $this->hasOne(Ak05Report::class, 'schedule_id');
     }
 
+    public function plenoMeeting(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(PlenoMeeting::class, 'schedule_id');
+    }
+
     public function getEnrolledCountAttribute(): int
     {
         return $this->applications()->where('status', '!=', 'ditolak')->count();

@@ -46,6 +46,11 @@ class Ak02Assessment extends Model
         return $this->hasMany(Ak02UnitAssessment::class, 'ak02_assessment_id');
     }
 
+    public function unitAssessments(): HasMany
+    {
+        return $this->hasMany(Ak02UnitAssessment::class, 'ak02_assessment_id');
+    }
+
     public function isKompeten(): bool
     {
         return $this->rekomendasi_akhir === 'K';

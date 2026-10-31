@@ -24,6 +24,10 @@ class AssessmentApplication extends Model
         'status',
         'catatan_revisi',
         'rekomendasi_admin',
+        'status_kelulusan',
+        'no_sertifikat',
+        'tgl_terbit_sertifikat',
+        'masa_berlaku_sertifikat',
         'catatan_admin',
         'admin_id',
         'admin_verified_at',
@@ -59,6 +63,11 @@ class AssessmentApplication extends Model
     }
 
     public function admin(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'admin_id');
+    }
+
+    public function verifier(): BelongsTo
     {
         return $this->belongsTo(User::class, 'admin_id');
     }
