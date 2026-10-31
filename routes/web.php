@@ -187,44 +187,77 @@ Route::middleware('auth')->group(function () {
         });
     });
 
-    // 2. Asesor Kompetensi Area (Lengkap & Terperinci Parity Web Demo)
-    Route::middleware('role:asesor')->prefix('asesor')->name('asesor.')->group(function () {
-        Route::get('/dashboard', \App\Http\Controllers\Asesor\DashboardController::class)->name('dashboard');
-        
-        // Jadwal Uji Kompetensi
+    // 2. Asesor Kompetensi Area
+    Route::middleware('role:asesor,ASESOR')->prefix('asesor')->name('asesor.')->group(function () {
+        Route::get('/dashboard', function () {
+            return redirect()->route('asesor.jadwal.index');
+        })->name('dashboard');
+
+        Route::get('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'edit'])->name('profile.edit');
+        Route::post('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'update'])->name('profile.update');
+
+        Route::get('/jadwal', [\App\Http\Controllers\Asesor\JadwalController::class, 'index'])->name('jadwal.index');
+        Route::get('/jadwal/{schedule}/asesi', [\App\Http\Controllers\Asesor\JadwalController::class, 'asesiList'])->name('jadwal.asesi');
+
+        // Review APL (both aliases supported)
+        Route::get('/assessment/{assessment}/review-apl', [\App\Http\Controllers\Asesor\AplReviewController::class, 'show'])->name('apl.review');
+        Route::post('/assessment/{assessment}/review-apl', [\App\Http\Controllers\Asesor\AplReviewController::class, 'decide'])->name('apl.decide');
+        Route::get('/review-apl/{assessment}', [\App\Http\Controllers\Asesor\AplReviewController::class, 'show'])->name('review-apl');
+        Route::post('/review-apl/{assessment}', [\App\Http\Controllers\Asesor\AplReviewController::class, 'decide'])->name('review-apl.update');
+
+        // AK01
+        Route::get('/schedule/{schedule}/ak01', [\App\Http\Controllers\Asesor\InstrumentController::class, 'ak01Schedule'])->name('schedule.ak01');
+        Route::post('/assessment/{assessment}/ak01/sign', [\App\Http\Controllers\Asesor\InstrumentController::class, 'ak01Sign'])->name('ak01.sign');
+
+        // AK07 Penyesuaian Wajar (Single & Batch)
+        Route::get('/schedule/{schedule}/ak07', [\App\Http\Controllers\Asesor\Ak07Controller::class, 'index'])->name('schedule.ak07');
+        Route::post('/schedule/{schedule}/ak07', [\App\Http\Controllers\Asesor\Ak07Controller::class, 'store'])->name('schedule.ak07.store');
+        Route::get('/schedule/{schedule}/ak07/create', [\App\Http\Controllers\Asesor\Ak07Controller::class, 'index'])->name('ak07.create');
+        Route::post('/schedule/{schedule}/ak07/create', [\App\Http\Controllers\Asesor\Ak07Controller::class, 'store'])->name('ak07.store');
+
+        // Ruang Uji Jadwal (Schedule-level: Displays Selected Instruments)
+        Route::get('/schedule/{schedule}/ruang-uji', [\App\Http\Controllers\Asesor\InstrumentController::class, 'scheduleRuangUji'])->name('schedule.ruang-uji');
+
+        // Instrument Asesi List (Displays Asesis for a Selected Instrument)
+        Route::get('/schedule/{schedule}/instrument/{code}', [\App\Http\Controllers\Asesor\InstrumentController::class, 'scheduleInstrument'])->name('schedule.instrument');
+
+        // Ruang Uji Asesor per Assessment
+        Route::get('/assessment/{assessment}/ruang-uji', [\App\Http\Controllers\Asesor\InstrumentController::class, 'hub'])->name('assessment.ruang-uji');
+
+        // Generic Instrument routes for AK01, IA01, IA01B, IA02, IA03, IA05
+        Route::get('/assessment/{assessment}/instrument/{code}', [\App\Http\Controllers\Asesor\InstrumentController::class, 'instrumentShow'])
+            ->whereIn('code', ['ak01', 'ia01', 'ia01b', 'ia02', 'ia03', 'ia05', 'AK01', 'IA01', 'IA01B', 'IA02', 'IA03', 'IA05'])
+            ->name('assessment.instrument');
+        Route::post('/assessment/{assessment}/instrument/{code}', [\App\Http\Controllers\Asesor\InstrumentController::class, 'instrumentStore'])
+            ->whereIn('code', ['ak01', 'ia01', 'ia01b', 'ia02', 'ia03', 'ia05', 'AK01', 'IA01', 'IA01B', 'IA02', 'IA03', 'IA05'])
+            ->name('assessment.instrument.store');
+
+        // AK02 Rekaman Asesmen
+        Route::get('/assessment/{assessment}/ak02', [\App\Http\Controllers\Asesor\FinalizationController::class, 'showAk02'])->name('assessment.ak02');
+        Route::post('/assessment/{assessment}/ak02', [\App\Http\Controllers\Asesor\FinalizationController::class, 'updateAk02'])->name('assessment.ak02.update');
+
+        // AK05 & AK06 Reports
+        Route::get('/schedule/{schedule}/reports', [\App\Http\Controllers\Asesor\FinalizationController::class, 'showReports'])->name('schedule.reports');
+        Route::post('/schedule/{schedule}/reports', [\App\Http\Controllers\Asesor\FinalizationController::class, 'submitReports'])->name('schedule.reports.submit');
+
+        // Finalize
+        Route::post('/schedule/{schedule}/finalize', [\App\Http\Controllers\Asesor\FinalizationController::class, 'finalize'])->name('schedule.finalize');
+        Route::post('/assessment/{assessment}/complete', [\App\Http\Controllers\Asesor\FinalizationController::class, 'completeAssessment'])->name('assessment.complete');
+        Route::post('/assessment/{assessment}/mark-absent', [\App\Http\Controllers\Asesor\FinalizationController::class, 'markAbsent'])->name('assessment.mark-absent');
+
+        // Extended parity submodules
         Route::get('/schedules', [\App\Http\Controllers\Asesor\ScheduleController::class, 'index'])->name('schedules.index');
         Route::get('/schedules/{schedule}', [\App\Http\Controllers\Asesor\ScheduleController::class, 'show'])->name('schedules.show');
-
-        // Verifikasi TUK
         Route::get('/tuks', [\App\Http\Controllers\Asesor\TukVerificationController::class, 'index'])->name('tuks.index');
         Route::post('/tuks', [\App\Http\Controllers\Asesor\TukVerificationController::class, 'store'])->name('tuks.store');
-
-        // Peninjauan Instrumen
         Route::get('/instruments', [\App\Http\Controllers\Asesor\InstrumentReviewController::class, 'index'])->name('instruments.index');
         Route::post('/instruments', [\App\Http\Controllers\Asesor\InstrumentReviewController::class, 'store'])->name('instruments.store');
-
-        // MKVA (Meninjau & Mengembangkan Perangkat Asesmen)
         Route::get('/mkva', [\App\Http\Controllers\Asesor\MkvaController::class, 'index'])->name('mkva.index');
         Route::post('/mkva', [\App\Http\Controllers\Asesor\MkvaController::class, 'store'])->name('mkva.store');
-
-        // Pesan Masuk / Notifikasi Asesor
         Route::get('/messages', [\App\Http\Controllers\Asesor\NotificationController::class, 'index'])->name('messages.index');
-
-        // Profil Asesor
-        Route::get('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'show'])->name('profile.show');
-        Route::put('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'update'])->name('profile.update');
-
-        // Peninjauan APL-02 Mandiri
         Route::get('/apl-02', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'index'])->name('apl02.index');
         Route::get('/apl-02/{apl02}/review', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'review'])->name('apl02.review');
         Route::put('/apl-02/{apl02}', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'update'])->name('apl02.update');
-
-        // Pelaksanaan Asesmen (AK-01, AK-02, AK-05)
-        Route::post('/applications/{application}/ak-01/sign', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'signAk01'])->name('ak01.sign');
-        Route::get('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'showAk02'])->name('ak02.form');
-        Route::post('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk02'])->name('ak02.store');
-        Route::get('/schedules/{schedule}/ak-05', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'showAk05'])->name('ak05.report');
-        Route::post('/schedules/{schedule}/ak-05', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk05'])->name('ak05.store');
     });
 
     // Secure Document & Evidence Access
