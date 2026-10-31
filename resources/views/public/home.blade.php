@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <!-- Skema Sertifikasi Preview -->
+    <!-- Skema Sertifikasi Section -->
     <section id="skema" class="py-16 bg-white border-b border-zinc-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -60,70 +60,117 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50/50 hover:border-blue-300 hover:shadow-md transition">
-                    <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200/60">Okupasi Nasional</span>
-                    <h3 class="text-base font-bold text-zinc-900 mt-3">Junior Web Developer</h3>
-                    <p class="text-xs text-zinc-600 mt-1.5 leading-relaxed">Sertifikasi kompetensi pemrograman web mencakup basis data relasional, pengkodean logika server-side, dan implementasi antarmuka klien.</p>
-                    <div class="mt-4 pt-4 border-t border-zinc-200/60 flex items-center justify-between text-xs text-zinc-500">
-                        <span>Standar SKKNI</span>
-                        <span class="font-semibold text-blue-600">6 Unit Kompetensi</span>
+                @forelse ($schemes as $scheme)
+                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50/50 hover:border-blue-300 hover:shadow-md transition flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200/60">
+                                    {{ $scheme->jenis_skema }}
+                                </span>
+                                <span class="font-mono text-xs font-bold text-zinc-900">{{ $scheme->formatted_biaya }}</span>
+                            </div>
+                            <h3 class="text-base font-bold text-zinc-900">{{ $scheme->nama_skema }}</h3>
+                            <p class="text-xs text-zinc-600 mt-1.5 leading-relaxed line-clamp-3">{{ $scheme->ringkasan }}</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-zinc-200/60 flex items-center justify-between text-xs text-zinc-500">
+                            <span class="font-mono text-[11px]">{{ $scheme->kode_skema }}</span>
+                            <span class="font-semibold text-blue-600">{{ $scheme->units_count }} Unit Kompetensi</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50/50 hover:border-blue-300 hover:shadow-md transition">
-                    <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">Klaster Industri</span>
-                    <h3 class="text-base font-bold text-zinc-900 mt-3">Network Administrator</h3>
-                    <p class="text-xs text-zinc-600 mt-1.5 leading-relaxed">Sertifikasi keahlian perancangan topologi jaringan komputer, konfigurasi routing, switching, dan pengamanan perimeter sistem.</p>
-                    <div class="mt-4 pt-4 border-t border-zinc-200/60 flex items-center justify-between text-xs text-zinc-500">
-                        <span>Standar SKKNI</span>
-                        <span class="font-semibold text-blue-600">8 Unit Kompetensi</span>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50/50 hover:border-blue-300 hover:shadow-md transition">
-                    <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-purple-50 text-purple-700 border border-purple-200/60">Okupasi Profesional</span>
-                    <h3 class="text-base font-bold text-zinc-900 mt-3">Database Administrator</h3>
-                    <p class="text-xs text-zinc-600 mt-1.5 leading-relaxed">Pengelolaan performa basis data, backup & restore terintegrasi, integritas relasi tabel, dan proteksi kerahasiaan data perusahaan.</p>
-                    <div class="mt-4 pt-4 border-t border-zinc-200/60 flex items-center justify-between text-xs text-zinc-500">
-                        <span>Standar SKKNI</span>
-                        <span class="font-semibold text-blue-600">7 Unit Kompetensi</span>
-                    </div>
-                </div>
+                @empty
+                    <p class="text-center text-zinc-400 text-xs py-8 col-span-3">Belum ada skema sertifikasi yang dipublikasikan.</p>
+                @endforelse
             </div>
         </div>
     </section>
 
-    <!-- Alur Sertifikasi Publik -->
-    <section class="py-16 bg-zinc-50 border-b border-zinc-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Tahapan Uji</span>
-            <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mt-1">Bagaimana Cara Mengikuti Sertifikasi?</h2>
-            <p class="text-xs text-zinc-500 mt-1 max-w-xl mx-auto">Prosedur pendaftaran dan asesmen terstandarisasi yang transparan, objektif, dan dapat dipertanggungjawabkan.</p>
-
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
-                <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-xs">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm mb-4">1</div>
-                    <h3 class="text-sm font-bold text-zinc-900">Registrasi Akun</h3>
-                    <p class="text-xs text-zinc-500 mt-1.5 leading-relaxed">Daftar mandiri melalui website dengan mengisikan data NIK dan email aktif.</p>
+    <!-- Jadwal Asesmen Publik (Fase 3) -->
+    <section id="jadwal" class="py-16 bg-zinc-50 border-b border-zinc-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                <div>
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Jadwal Terbuka</span>
+                    <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mt-1">Jadwal Uji Kompetensi Mendatang</h2>
+                    <p class="text-xs text-zinc-500 mt-1">Daftar pelaksanaan asesmen sertifikasi yang sedang membuka pendaftaran peserta.</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-xs">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm mb-4">2</div>
-                    <h3 class="text-sm font-bold text-zinc-900">Pengajuan APL-01</h3>
-                    <p class="text-xs text-zinc-500 mt-1.5 leading-relaxed">Pilih skema sertifikasi yang diinginkan dan unggah berkas bukti persyaratan dasar.</p>
+                <div>
+                    <a href="{{ route('register') }}" class="text-xs font-bold text-blue-600 hover:text-blue-700">Daftar Sekarang &rarr;</a>
                 </div>
+            </div>
 
-                <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-xs">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm mb-4">3</div>
-                    <h3 class="text-sm font-bold text-zinc-900">Uji Kompetensi</h3>
-                    <p class="text-xs text-zinc-500 mt-1.5 leading-relaxed">Menjalani asesmen mandiri (APL-02) dan pelaksanaan uji di Tempat Uji Kompetensi (TUK).</p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                @forelse ($upcomingSchedules as $sch)
+                    <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold {{ $sch->status->badgeClasses() }}">
+                                    {{ $sch->status->label() }}
+                                </span>
+                                <span class="text-xs font-mono font-semibold text-blue-600">Kuota: {{ $sch->kuota_peserta }}</span>
+                            </div>
 
-                <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-xs">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm mb-4">4</div>
-                    <h3 class="text-sm font-bold text-zinc-900">Sertifikat BNSP</h3>
-                    <p class="text-xs text-zinc-500 mt-1.5 leading-relaxed">Peserta yang direkomendasikan Kompeten (K) dan disahkan pleno menerima sertifikat resmi.</p>
-                </div>
+                            <h3 class="text-sm font-bold text-zinc-900">{{ $sch->nama_jadwal }}</h3>
+                            <p class="text-xs text-zinc-500 mt-1 font-medium">{{ $sch->scheme->nama_skema }}</p>
+
+                            <div class="mt-4 space-y-1.5 text-xs text-zinc-600">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-zinc-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <span class="font-bold text-zinc-800">{{ $sch->formatted_tanggal }}</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-zinc-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    </svg>
+                                    <span class="truncate">{{ $sch->tuk->nama_tuk }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center justify-between">
+                            <span class="text-[11px] text-zinc-400 font-mono">{{ $sch->kode_jadwal }}</span>
+                            @if ($sch->status->isRegistrationOpen())
+                                <a href="{{ route('register') }}" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow-xs transition">
+                                    Daftar Uji
+                                </a>
+                            @else
+                                <span class="text-xs text-zinc-400">Segera Dibuka</span>
+                            @endif
+                        </div>
+                    </div>
+                @empty
+                    <p class="text-center text-zinc-400 text-xs py-8 col-span-3">Belum ada jadwal uji kompetensi terbuka saat ini.</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- TUK Section -->
+    <section id="tuk" class="py-16 bg-white border-b border-zinc-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center max-w-xl mx-auto">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Lokasi Uji Resmi</span>
+                <h2 class="text-2xl font-bold text-zinc-900 tracking-tight mt-1">Tempat Uji Kompetensi (TUK) Terverifikasi</h2>
+                <p class="text-xs text-zinc-500 mt-1">Fasilitas laboratorium dan sarana praktek berstandar teknis BNSP.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                @forelse ($tuks as $tk)
+                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50/40">
+                        <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-semibold {{ $tk->jenis_badge_classes }} mb-2">
+                            TUK {{ $tk->jenis_tuk }}
+                        </span>
+                        <h3 class="text-sm font-bold text-zinc-900">{{ $tk->nama_tuk }}</h3>
+                        <p class="text-xs text-zinc-500 mt-1 leading-relaxed">{{ $tk->alamat ?? 'Lokasi resmi terdaftar' }}</p>
+                        <div class="mt-4 pt-3 border-t border-zinc-200/60 text-[11px] text-zinc-400 flex items-center justify-between">
+                            <span>PIC: {{ $tk->penanggung_jawab ?? '-' }}</span>
+                            <span class="font-mono">{{ $tk->kode_tuk }}</span>
+                        </div>
+                    </div>
+                @empty
+                    <p class="text-center text-zinc-400 text-xs py-8 col-span-3">Belum ada data TUK.</p>
+                @endforelse
             </div>
         </div>
     </section>

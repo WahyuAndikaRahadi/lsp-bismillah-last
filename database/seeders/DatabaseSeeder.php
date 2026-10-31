@@ -58,5 +58,8 @@ class DatabaseSeeder extends Seeder
 
         // 4. Seed Master Data (Profil LSP, SKKNI, Skema, Unit, KUK, TUK, Asesor)
         $this->call(MasterDataSeeder::class);
+
+        // 5. Seed Event & Jadwal Asesmen (Fase 3)
+        $this->call(EventScheduleSeeder::class);
     }
 }

@@ -81,6 +81,11 @@ Route::middleware('auth')->group(function () {
         Route::patch('/tuks/{tuk}/toggle-status', [\App\Http\Controllers\Admin\TukController::class, 'toggleStatus'])->name('tuks.toggle-status');
 
         Route::resource('/asesors', \App\Http\Controllers\Admin\AsesorManagementController::class)->except(['create', 'show', 'edit']);
+
+        // Event & Manajemen Jadwal (Fase 3)
+        Route::resource('/events', \App\Http\Controllers\Admin\EventController::class);
+        Route::resource('/schedules', \App\Http\Controllers\Admin\AssessmentScheduleController::class);
+        Route::patch('/schedules/{schedule}/status', [\App\Http\Controllers\Admin\AssessmentScheduleController::class, 'updateStatus'])->name('schedules.update-status');
     });
 
     // 2. Asesor Kompetensi Area
