@@ -15,7 +15,20 @@ use Illuminate\Support\Facades\Route;
 | Public Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', [PublicController::class, 'index'])->name('home');
+Route::get('/', function () {
+    if (! auth()->check()) {
+        return redirect()->route('login');
+    }
+
+    $user = auth()->user();
+    if ($user->isAdmin() || $user->isRole('ADMIN_LSP') || $user->isRole('SUPER_ADMIN')) {
+        return redirect()->route('admin.dashboard');
+    }
+    if ($user->isAsesor() || $user->isRole('ASESOR')) {
+        return redirect()->route('asesor.dashboard');
+    }
+    return redirect()->route('asesi.dashboard');
+})->name('home');
 
 // Layanan Pengaduan & Aspirasi Publik (Fase 8)
 Route::get('/pengaduan', [\App\Http\Controllers\ComplaintController::class, 'create'])->name('pengaduan.create');

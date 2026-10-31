@@ -133,6 +133,17 @@ class User extends Authenticatable
         return in_array($currentRole, ['admin', 'SUPER_ADMIN', 'ADMIN_LSP'], true);
     }
 
+    public function dashboardRoute(): string
+    {
+        if ($this->isAdmin() || $this->isRole('ADMIN_LSP') || $this->isRole('SUPER_ADMIN')) {
+            return 'admin.dashboard';
+        }
+        if ($this->isAsesor() || $this->isRole('ASESOR')) {
+            return 'asesor.dashboard';
+        }
+        return 'asesi.dashboard';
+    }
+
     public function isAsesor(): bool
     {
         $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;

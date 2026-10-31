@@ -17,7 +17,7 @@ class LoginController extends Controller
     public function create(): View|RedirectResponse
     {
         if (Auth::check()) {
-            return redirect()->route(Auth::user()->role->dashboardRoute());
+            return redirect()->route(Auth::user()->dashboardRoute());
         }
 
         return view('auth.login');
@@ -34,8 +34,8 @@ class LoginController extends Controller
 
         $user = Auth::user();
 
-        return redirect()->intended(route($user->role->dashboardRoute()))
-            ->with('success', 'Selamat datang kembali, ' . $user->name . '!');
+        return redirect()->intended(route($user->dashboardRoute()))
+            ->with('success', 'Selamat datang kembali, ' . ($user->full_name ?: $user->name) . '!');
     }
 
     /**
