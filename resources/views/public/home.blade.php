@@ -186,4 +186,50 @@
             </div>
         </div>
     </section>
+
+    <!-- Layanan Pengaduan & Surveilans Section -->
+    <section id="pengaduan" class="py-16 bg-zinc-50 border-b border-zinc-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card Pengaduan -->
+                <div class="p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 mb-3">
+                            Transparansi & Aduan Publik
+                        </span>
+                        <h3 class="text-xl font-bold text-zinc-900">Layanan Pengaduan & Aspirasi</h3>
+                        <p class="text-xs text-zinc-500 mt-2 leading-relaxed">
+                            Punya keluhan, laporan ketidaksesuaian prosedur asesmen, atau masukan perbaikan layanan? Sampaikan aduan resmi melalui sistem tiket terpadu kami.
+                        </p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap items-center gap-3">
+                        <a href="{{ route('pengaduan.create') }}" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs shadow-xs transition">
+                            Buat Pengaduan Baru
+                        </a>
+                        <a href="{{ route('pengaduan.tracking') }}" class="px-4 py-2.5 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-semibold rounded-xl text-xs transition">
+                            Lacak Status Tiket &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Surveilans -->
+                <div class="p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 mb-3">
+                            Pemeliharaan Lisensi BNSP
+                        </span>
+                        <h3 class="text-xl font-bold text-zinc-900">Surveilans Pemegang Sertifikat</h3>
+                        <p class="text-xs text-zinc-500 mt-2 leading-relaxed">
+                            Bagi alumni pemegang sertifikat kompetensi LSP yang masih berlaku, laporkan pemeliharaan kompetensi, tempat kerja terkini, dan proyek profesi secara berkala.
+                        </p>
+                    </div>
+                    <div class="mt-6">
+                        <a href="{{ route('surveillance.create') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs shadow-xs transition inline-block">
+                            Isi Formulir Surveilans Berkala
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-guest-layout>

@@ -17,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [PublicController::class, 'index'])->name('home');
 
+// Layanan Pengaduan & Aspirasi Publik (Fase 8)
+Route::get('/pengaduan', [\App\Http\Controllers\ComplaintController::class, 'create'])->name('pengaduan.create');
+Route::post('/pengaduan', [\App\Http\Controllers\ComplaintController::class, 'store'])->name('pengaduan.store');
+Route::get('/pengaduan/tracking', [\App\Http\Controllers\ComplaintController::class, 'tracking'])->name('pengaduan.tracking');
+
+// Layanan Surveilans Pemegang Sertifikat (Fase 8)
+Route::get('/surveillance', [\App\Http\Controllers\SurveillanceController::class, 'create'])->name('surveillance.create');
+Route::post('/surveillance', [\App\Http\Controllers\SurveillanceController::class, 'store'])->name('surveillance.store');
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Routes (Guest Only)
@@ -101,6 +110,18 @@ Route::middleware('auth')->group(function () {
         Route::get('/pleno', [\App\Http\Controllers\Admin\PlenoController::class, 'index'])->name('pleno.index');
         Route::get('/pleno/{schedule}', [\App\Http\Controllers\Admin\PlenoController::class, 'show'])->name('pleno.show');
         Route::post('/pleno/{schedule}', [\App\Http\Controllers\Admin\PlenoController::class, 'store'])->name('pleno.store');
+
+        // Ekspor Format BNSP, Pengaduan, & Surveilans (Fase 8)
+        Route::get('/exports/bnsp', [\App\Http\Controllers\Admin\BnspExportController::class, 'index'])->name('exports.bnsp.index');
+        Route::get('/exports/bnsp/download', [\App\Http\Controllers\Admin\BnspExportController::class, 'export'])->name('exports.bnsp.download');
+        Route::get('/exports/bnsp/schedule/{schedule}', [\App\Http\Controllers\Admin\BnspExportController::class, 'exportSchedule'])->name('exports.bnsp.schedule');
+
+        Route::get('/complaints', [\App\Http\Controllers\Admin\ComplaintController::class, 'index'])->name('complaints.index');
+        Route::get('/complaints/{complaint}', [\App\Http\Controllers\Admin\ComplaintController::class, 'show'])->name('complaints.show');
+        Route::patch('/complaints/{complaint}', [\App\Http\Controllers\Admin\ComplaintController::class, 'updateStatus'])->name('complaints.update-status');
+
+        Route::get('/surveillance', [\App\Http\Controllers\Admin\SurveillanceController::class, 'index'])->name('surveillance.index');
+        Route::patch('/surveillance/{surveillance}/verify', [\App\Http\Controllers\Admin\SurveillanceController::class, 'verify'])->name('surveillance.verify');
     });
 
     // 2. Asesor Kompetensi Area (Fase 5 & 6)

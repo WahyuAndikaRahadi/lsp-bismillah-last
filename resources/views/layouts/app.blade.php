@@ -157,6 +157,37 @@
                         </svg>
                         <span>Sidang Pleno & Kelulusan</span>
                     </a>
+
+                    <div class="pt-4 px-3 pb-2 text-[10px] font-semibold tracking-wider text-zinc-400 uppercase">Pelaporan & Layanan (Fase 8)</div>
+                    
+                    <a href="{{ route('admin.exports.bnsp.index') }}" class="flex items-center gap-3 px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('admin.exports.*') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span>Ekspor Sisfo BNSP</span>
+                    </a>
+
+                    <a href="{{ route('admin.complaints.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('admin.complaints.*') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
+                            <span>Layanan Pengaduan</span>
+                        </div>
+                        @php $pendingComplaint = \App\Models\Complaint::where('status', 'diproses')->count(); @endphp
+                        @if ($pendingComplaint > 0)
+                            <span class="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-blue-500 text-white">
+                                {{ $pendingComplaint }}
+                            </span>
+                        @endif
+                    </a>
+
+                    <a href="{{ route('admin.surveillance.index') }}" class="flex items-center gap-3 px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('admin.surveillance.*') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                        </svg>
+                        <span>Surveilans Pemegang</span>
+                    </a>
                 @endif
 
                 {{-- ASESOR NAVIGATION --}}
