@@ -124,14 +124,39 @@ Route::middleware('auth')->group(function () {
         Route::patch('/surveillance/{surveillance}/verify', [\App\Http\Controllers\Admin\SurveillanceController::class, 'verify'])->name('surveillance.verify');
     });
 
-    // 2. Asesor Kompetensi Area (Fase 5 & 6)
+    // 2. Asesor Kompetensi Area (Lengkap & Terperinci Parity Web Demo)
     Route::middleware('role:asesor')->prefix('asesor')->name('asesor.')->group(function () {
-        Route::get('/dashboard', [AsesorDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', \App\Http\Controllers\Asesor\DashboardController::class)->name('dashboard');
+        
+        // Jadwal Uji Kompetensi
+        Route::get('/schedules', [\App\Http\Controllers\Asesor\ScheduleController::class, 'index'])->name('schedules.index');
+        Route::get('/schedules/{schedule}', [\App\Http\Controllers\Asesor\ScheduleController::class, 'show'])->name('schedules.show');
+
+        // Verifikasi TUK
+        Route::get('/tuks', [\App\Http\Controllers\Asesor\TukVerificationController::class, 'index'])->name('tuks.index');
+        Route::post('/tuks', [\App\Http\Controllers\Asesor\TukVerificationController::class, 'store'])->name('tuks.store');
+
+        // Peninjauan Instrumen
+        Route::get('/instruments', [\App\Http\Controllers\Asesor\InstrumentReviewController::class, 'index'])->name('instruments.index');
+        Route::post('/instruments', [\App\Http\Controllers\Asesor\InstrumentReviewController::class, 'store'])->name('instruments.store');
+
+        // MKVA (Meninjau & Mengembangkan Perangkat Asesmen)
+        Route::get('/mkva', [\App\Http\Controllers\Asesor\MkvaController::class, 'index'])->name('mkva.index');
+        Route::post('/mkva', [\App\Http\Controllers\Asesor\MkvaController::class, 'store'])->name('mkva.store');
+
+        // Pesan Masuk / Notifikasi Asesor
+        Route::get('/messages', [\App\Http\Controllers\Asesor\NotificationController::class, 'index'])->name('messages.index');
+
+        // Profil Asesor
+        Route::get('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'show'])->name('profile.show');
+        Route::put('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'update'])->name('profile.update');
+
+        // Peninjauan APL-02 Mandiri
         Route::get('/apl-02', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'index'])->name('apl02.index');
         Route::get('/apl-02/{apl02}/review', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'review'])->name('apl02.review');
         Route::put('/apl-02/{apl02}', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'update'])->name('apl02.update');
 
-        // Pelaksanaan Asesmen (Fase 6: AK-01, AK-02, AK-05)
+        // Pelaksanaan Asesmen (AK-01, AK-02, AK-05)
         Route::post('/applications/{application}/ak-01/sign', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'signAk01'])->name('ak01.sign');
         Route::get('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'showAk02'])->name('ak02.form');
         Route::post('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk02'])->name('ak02.store');

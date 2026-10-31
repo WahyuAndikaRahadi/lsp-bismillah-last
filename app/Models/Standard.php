@@ -31,4 +31,14 @@ class Standard extends Model
     {
         return $this->hasMany(CertificationScheme::class, 'standard_id');
     }
+
+    public function getCodeAttribute(): string
+    {
+        return $this->kode_standar ?? '';
+    }
+
+    public function getTitleAttribute(): string
+    {
+        return $this->judul_standar ?? '';
+    }
 }

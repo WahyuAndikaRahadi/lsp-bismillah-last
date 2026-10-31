@@ -28,6 +28,21 @@ class Tuk extends Model
         ];
     }
 
+    public function getNameAttribute(): string
+    {
+        return $this->nama_tuk ?? '';
+    }
+
+    public function getCodeAttribute(): string
+    {
+        return $this->kode_tuk ?? '';
+    }
+
+    public function getTypeAttribute(): string
+    {
+        return $this->jenis_tuk ?? '';
+    }
+
     public function getJenisBadgeClassesAttribute(): string
     {
         return match ($this->jenis_tuk) {

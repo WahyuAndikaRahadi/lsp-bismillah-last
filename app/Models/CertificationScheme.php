@@ -58,6 +58,16 @@ class CertificationScheme extends Model
             ->withTimestamps();
     }
 
+    public function getNameAttribute(): string
+    {
+        return $this->nama_skema ?? '';
+    }
+
+    public function getCodeAttribute(): string
+    {
+        return $this->kode_skema ?? '';
+    }
+
     public function getFormattedBiayaAttribute(): string
     {
         return 'Rp ' . number_format($this->biaya, 0, ',', '.');

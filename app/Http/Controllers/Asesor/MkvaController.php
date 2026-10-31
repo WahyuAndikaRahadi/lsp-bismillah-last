@@ -1,0 +1,65 @@
+<?php
+
+namespace App\Http\Controllers\Asesor;
+
+use App\Http\Controllers\Controller;
+use App\Models\AssessmentSchedule;
+use App\Models\CertificationScheme;
+use App\Models\MkvaAssignment;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MkvaController extends Controller
+{
+    public function index(Request $request): View
+    {
+        $asesor = $request->user()->asesorProfile;
+
+        $assignments = MkvaAssignment::with(['scheme', 'schedule', 'asesor.user'])
+            ->when($asesor, function ($q) use ($asesor) {
+                $q->where('asesor_id', $asesor->id);
+            })
+            ->latest('assignment_date')
+            ->paginate(15);
+
+        $schemes = CertificationScheme::where('is_active', true)->orderBy('name')->get();
+        $schedules = AssessmentSchedule::latest('assessment_date')->take(20)->get();
+
+        return view('asesor.mkva.index', [
+            'assignments' => $assignments,
+            'schemes' => $schemes,
+            'schedules' => $schedules,
+            'asesor' => $asesor,
+        ]);
+    }
+
+    public function store(Request $request): RedirectResponse
+    {
+        $asesor = $request->user()->asesorProfile;
+        if (! $asesor) {
+            abort(403, 'Akses khusus asesor terdaftar.');
+        }
+
+        $validated = $request->validate([
+            'scheme_id' => ['required', 'exists:certification_schemes,id'],
+            'schedule_id' => ['nullable', 'exists:assessment_schedules,id'],
+            'assignment_date' => ['required', 'date'],
+            'findings' => ['required', 'string'],
+            'improvement_plan' => ['nullable', 'string'],
+        ]);
+
+        MkvaAssignment::create([
+            'scheme_id' => $validated['scheme_id'],
+            'asesor_id' => $asesor->id,
+            'schedule_id' => $validated['schedule_id'] ?? null,
+            'assignment_date' => $validated['assignment_date'],
+            'findings' => $validated['findings'],
+            'improvement_plan' => $validated['improvement_plan'] ?? null,
+            'status' => 'selesai',
+        ]);
+
+        return redirect()->route('asesor.mkva.index')
+            ->with('success', 'Laporan MKVA (Meninjau dan Mengembangkan Perangkat Asesmen) berhasil disimpan.');
+    }
+}

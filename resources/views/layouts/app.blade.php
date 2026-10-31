@@ -190,23 +190,77 @@
                     </a>
                 @endif
 
-                {{-- ASESOR NAVIGATION --}}
+                {{-- ASESOR NAVIGATION (Full Parity Sistem Demo) --}}
                 @if (auth()->user()->isAsesor())
                     <div class="px-3 pb-2 text-[10px] font-semibold tracking-wider text-zinc-400 uppercase">Portal Asesor</div>
 
-                    <a href="{{ route('asesor.dashboard') }}" class="flex items-center gap-3 px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.dashboard') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
-                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="{{ route('asesor.dashboard') }}" class="flex items-center gap-3 px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.dashboard') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
+                        <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
-                        <span>Dashboard Asesor</span>
+                        <span>Home</span>
                     </a>
 
-                    <a href="{{ route('asesor.apl02.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.apl02.*') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
+                    <a href="{{ route('asesor.schedules.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.schedules.*') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
                         <div class="flex items-center gap-3">
-                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span>Jadwal Uji Kompetensi</span>
+                        </div>
+                    </a>
+
+                    <a href="{{ route('asesor.apl02.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.apl02.*') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Peninjauan APL-02</span>
+                        </div>
+                    </a>
+
+                    <a href="{{ route('asesor.tuks.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.tuks.*') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            <span>Verifikasi Fasilitas TUK</span>
+                        </div>
+                    </a>
+
+                    <a href="{{ route('asesor.instruments.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.instruments.*') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            <span>Meninjau Instrumen</span>
+                        </div>
+                    </a>
+
+                    <a href="{{ route('asesor.mkva.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.mkva.*') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                            </svg>
+                            <span>Jadwal MKVA</span>
+                        </div>
+                    </a>
+
+                    <a href="{{ route('asesor.messages.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.messages.*') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
+                            <span>Pemberitahuan & SMS</span>
+                        </div>
+                    </a>
+
+                    <a href="{{ route('asesor.profile.show') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesor.profile.*') ? 'bg-zinc-800 text-white font-semibold' : 'hover:bg-zinc-800/60 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                            <span>Profil Asesor</span>
                         </div>
                     </a>
                 @endif

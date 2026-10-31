@@ -83,6 +83,26 @@ class AssessmentSchedule extends Model
         return $this->hasOne(PlenoMeeting::class, 'schedule_id');
     }
 
+    public function getScheduleCodeAttribute(): string
+    {
+        return $this->kode_jadwal;
+    }
+
+    public function getAssessmentDateAttribute()
+    {
+        return $this->tgl_asesmen;
+    }
+
+    public function getPraAssessmentDateAttribute()
+    {
+        return $this->tgl_pra_asesmen;
+    }
+
+    public function getQuotaAttribute(): int
+    {
+        return (int) $this->kuota_peserta;
+    }
+
     public function getEnrolledCountAttribute(): int
     {
         return $this->applications()->where('status', '!=', 'ditolak')->count();

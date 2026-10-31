@@ -39,4 +39,19 @@ class AsesorProfile extends Model
         return $this->belongsToMany(CertificationScheme::class, 'asesor_scheme', 'asesor_profile_id', 'scheme_id')
             ->withTimestamps();
     }
+
+    public function getNikAttribute(): ?string
+    {
+        return $this->user?->nik;
+    }
+
+    public function getPhoneAttribute(): ?string
+    {
+        return $this->user?->phone;
+    }
+
+    public function getLicenseValidUntilAttribute()
+    {
+        return $this->masa_berlaku;
+    }
 }
