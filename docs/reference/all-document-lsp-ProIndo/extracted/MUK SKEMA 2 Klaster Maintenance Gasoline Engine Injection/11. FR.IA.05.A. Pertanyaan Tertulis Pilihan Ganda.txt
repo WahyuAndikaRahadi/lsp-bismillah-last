@@ -1,0 +1,257 @@
+Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.05A. DPT - PERTANYAAN TERTULIS PILIHAN GANDA
+
+Skema Sertifikasi          Judul  : Maintenance Gasoline Engine Injection System
+(KKNI/Okupasi/Klaster)     Nomor  : 02/LSP PrO Indo/I/2026
+                                  : Sewaktu/Tempat Kerja/Mandiri*
+TUK                               :
+Nama Asesor                       :
+Nama Asesi                        :
+Tanggal                           :
+Waktu
+
+  *Coret yang tidak perlu
+
+Jawab semua pertanyaan berikut :
+
+1. Sebutkan peralatan yang termasuk dalam Keselamatan dan Kesehatan Kerja ?
+      a. APAR
+      b. Safety Shoes
+      c. Pakaian kerja
+      d. Jawaban a, b, dan c benar
+
+ 2. Untuk memastikan apakah APAR masih dapat berfungsi dengan normal,maka hal yang perlu diperiksa
+    adalah :
+      a. Masa berlaku penggunaan
+      b. Kesesuaian Ukuran tabung
+      c. Tanggal pembelian
+      d. Tanggal pemasangan
+
+ 3. Prosedur pengoperasian APAR adalah sebagai berikut :
+      a. Arahkan selang ke obyek ­ buka pin pengunci ­ tekan handle
+      b. Buka pin pengunci ­ arahkan selang obyek - tekan handle
+      c. Tekan handle ­ arahkan selang ke obyek ­ buka pin pengunci
+      d. Arahkan selang ke obyek ­ Tekan handle ­ buka pin pengunci
+
+ 4. Apa yang anda lakukan ketika pekerjaan yang anda lakukan selesai :
+
+     a. Membiarkan caddy tools di stall anda.
+     b. Istirahat sambil menunggu foreman memberikan perintah selanjutnya
+     c. Membersihkan peralatan dan area kerja setelah perbaikan
+     d. Jawaban a,b, dan c, benar
+
+ 5. Saat ini di bengkel / workshop perbaikan kendaraan sudah menggunakan Caddy portable. Apa
+      keuntungannya.
+     a. Mudah dipindahkan saat pekerjaan berjalan
+     b. Penataan di dalam caddy lebih rapi
+     c. Lebih banyak menampung peralatan kerja
+     d. Jawaban a,b, dan c benar
+
+ 6. Penanganan pemindahan peralatan gas analyzer yang benar adalah :
+
+      a. Dipindahkan dengan cara didorong
+      b. Dipindahkan dengan cara diangkat
+      c. Dipindahkan dengan cara dilepas terlebih dahulu dari bagianya
+      d. Jawaban a dan c benar
+
+ 7. Fuse blade mempunyai identifikasi warna sebagai berikut :
+                               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+    a. Merah 10 A, Biru 15 A, Kuning 20 A
+    b. Biru 10 A, Merah 15A, Hijau 20 A
+    c. Hijau 10 A, Kuning 15 A. Biru 20 A
+    d. Kuning 10 A, Hijau 15 A, Biru 20 A
+
+8. Untuk mengukur voltage yang mengalir pada sebuah rangkaian kelistrikan, maka Volt meter dipasang
+     secara................pada rangkaian yang akan diukur.
+     a. Pararel
+     b. Seri
+     c. Seri dan Pararel
+     d. Semua benar
+
+9. Mistar geser / vernier caliper bisa dipergunakan untuk mengukur :
+    a. Diameter luar poros
+    b. Diameter dalam silinder
+    c. Panjang suatu benda kerja
+    d. Semua jawaban tersebut betul
+
+10. Untuk mengukur berat jenis accu dipergunakan :
+
+    a. Dial gauge
+    b. Micrometer
+    c. Hydrometer
+    d. Silinder gauge.
+
+11. Gambar di bawah ini merupakan prosedur suatu pengukuran kelistrikan. Pengukuran apakah yang dapat
+    dilakukan sepeti gambar tersebut ?
+     a. Tegangan
+     b. Arus
+     c. Hambatan / Tahanan
+     d. Daya
+
+12. Pada saat menggunakan AVO Meter Analog, saat akan melakukan pengukuran Resistance, maka langkah
+     yang harus dilakukan sebelum memakai adalah :
+    a. Memilih skala ukur Ohm yang sesuai
+    b. Memilih skala ukur Amp yang sesuai
+    c. Melakukan kalibrasi
+    d. Jawaban yang benar a dan c
+
+13. Jika tekanan kompresi rendah, apakah penyebabnya ?
+
+     a. Spark plug aus
+     b. Piston ring dan cylinder aus
+     c. Carbon terkumpul di ruang pembakaran
+     d. Coolant kurang
+
+14. Bila terjadi gangguan sensor (rusak) , agar tidak terjadi problema maka pada ECU dilengkapi dengan :
+
+     a. Memori
+     b. Fail ­ Safe
+     c. Check engine
+     d. Main Relay
+
+15. Bila Check Engine menyala saat mesin hidup menunjukkan bahwa :
+                               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+     a. Terjadi gangguan pada salah satu sensor
+     b. Terjadi gangguan pada sistem bahan bakar
+     c. Terjadi gangguan pada main relay
+     d. Terjadi gangguan pada sumber arus ke ECU
+
+16. Pembakaran didalam silinder akan menjadi sempurna, kecuali :
+
+     a. Dilengkapii Turbocharge
+     b. Timing pengapiannya tepat.
+     c. Perbandingan bahan bakar dengan udara sesuai
+     d. Saringan udara kondisi bersih
+
+17. Ketika fuel pipe menjadi panas, fuel didalamnya menguap dan menghasilkan gelembung udara yang
+    menghambat aliran fuel. Gejala ini disebut apa ?
+     a. Cavitation
+     b. Percolation
+     c. Fade
+     d. Vapour lock
+
+18. Hal yang harus dihindarkan pada saat melakukan pengecekan system pendingin adalah :
+
+     a. Membuka tutup radiator pada kondisi engine panas
+     b. Membuka tutup radiator pada kondisi engine dingin
+     c. Membuka tutup radiator pada kondisi engine hidup
+     d. Semua jawaban salah
+
+19. Untuk memeriksa kebocoran cairan pada sistem pendinginan dipergunakan alat :
+
+     a. Gas Analyzer
+     b. Timing Light
+     c. Radiator Pressure Tester
+     d. Cylinder gauge
+
+20. Makin tinggi oktan bahan bakar mobil artinya :
+
+     a. Bahan bakar tersebut makin tidak mudah terbakar
+     b. Bahan bakar tersebut makin mudah terbakar.
+     c. Bahan bakar tersebut dominan terjadi detonasi pada mesin
+     d. Bahan bakar tersebut jelek untuk pembakaran
+
+21. Pembakaran didalam silinder akan dikatakan baik apabila :
+
+     a. Kadar CO dan CO2 dalam gas buang tinggi
+     b. Kadar CO2 tinggi dan kadar CO rendah.
+     c. Kadar CO dan CO2 dalam gas buang rendah
+     d. Kadar CO dan O2 dalam gas buang tinggi.
+
+22. Sumber arus listrik utama pada kendaraan adalah :
+
+     a. Battery
+     b. Alternator
+     c. Starter motor
+     d. Rotor
+
+23. Berat jenis air battery yang baik adalah :
+
+     a. 1.2
+     b. 1.26
+     c. 2.16
+     d. 1.20
+
+24. Gambar dibawah ini merupakan rangkaian sederhana dari komponen resistor, transistor dan condensor/
+     capacitor. Apa yang terjadi jika Switch dari posisi ON dipindah ke posisi OFF ?
+Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+a. Lampu tetap hidup terus menerus         Switch
+b. Lampu hidup sesaat kemudian mati
+c. Lampu langsung mati               R=1K          C :100
+d. Nyala lampu menjadi redup
+                                                         uF
+
+                                     12 V
+
+                                           Lampu X
+
+25. Untuk menentukan lokasi komponen pada kelistrikan bodi pertama yang harus anda lakukan adalah :
+
+     a. Membuka wiring harness
+     b. Melihat instruksi Service Bulletin
+     c. Melihat service check list
+     d. Melihat pada history card
+
+26. Bila terjadi gangguan sensor (rusak) , agar tidak terjadi problema maka pada ECU dilengkapi dengan :
+
+    a. Memori
+    b. Fail ­ Safe
+    c. Check engine
+    d. Main Relay
+
+27. Perbedaan yang mendasar antara motor bensin yang menggunakan karburator dengan sistem Injeksi
+    pada sistem suplai bahan bakarnya terletak pada cara :
+    a. Mencampur udara dan bahan bakarnya
+    b. Pengaturan bahan bakarnya
+    c. Penempatan komponennya
+    d. Kerja dan fungsinya
+
+28. Kapan arus listrik pada kumparan sekunder koil pengapian terjadi ?
+     a. Arus pada kumparan sekunder terjadi terus menerus
+     b. Pada saat pemutus mulai terbuka
+     c. Pada saat kumparan primer terisi arus listrik
+     d. Pada saat kunci kontak mulai tertutup
+
+29. Fungsi utama ECU pada sistem Engine manajemen :
+
+    a. Mengatur jumlah injeksi dan mengontrol sensor
+    b. Mengontrol bahan bakar dan sensor
+    c. Mengatur speed engine dan mengontrol sensor
+    d. Mengatur jumlah bahan bakar dan waktu penyemprotan
+
+30. Pada mesin bensin dengan sistem Engine manajemen , yang mengatur putaran stasioner (idle) ádalah:
+    a. Manifold absolut pressure sensor
+    b. Idle actuator control
+    c. Intake air temperatura sensor
+    d. Speed sensor
+               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+PENYUSUN DAN VALIDATOR
+
+STATUS     NO           NAMA   NOMOR MET        TANDA TANGAN
+                                                 DAN TANGGAL
+
+           1 RIDWAN            000.008265 2025
+           2 RANDI ARDIANSYAH
+PENYUSUN                                        12 Januari 2026
+
+                               000.002498 2013
+
+                                                12 Januari 2026
+
+           1 SAPTONO           000.003672 2016
+
+                                                12 Januari 2026
+
+VALIDATOR  2 KARYANTO          000.008260 2025
+
+                                                12 Januari 2026
+
+           3 GUNADI            000.000459 2007
+
+                                                12 Januari 2026
+

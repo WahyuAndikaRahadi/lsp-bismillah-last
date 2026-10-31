@@ -1,0 +1,243 @@
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.03. PMO - PERTANYAAN MENDUKUNG OBSERVASI
+
+  Skema Sertifikasi       Judul  : Skema sertifikasi Klaster Servis Sepeda Motor Injeksi
+  (KKNI/Okupasi/Klaster)  Nomor  : 07/LSP PrO Indo/I/2026
+                                 : Sewaktu/Tempat Kerja/Mandiri*
+  TUK                            :
+  Nama Asesor                    :
+  Nama Asesi                     :
+  Tanggal
+*Coret yang tidak perlu
+
+PANDUAN BAGI ASESOR
+
+· Formulir ini di isi oleh asesor kompetensi dapat sebelum, pada saat atau setelah melakukan
+    asesmen dengan metode observasi demonstrasi.
+
+· Pertanyaan dibuat dengan tujuan untuk menggali, dapat berisi pertanyaan yang berkaitan
+    dengan dimensi kompetensi, batasan variabel dan aspek kritis yang relevan dengan skenario
+    tugas dan praktik demonstrasi.
+
+· Jika pertanyaan disampaikan sebelum asesi melakukan praktik demonstrasi, maka
+    pertanyaan dibuat berkaitan dengan aspek K3L, SOP, penggunaan peralatan dan
+    perlengkapan.
+
+· Jika setelah asesi melakukan praktik demonstrasi terdapat item pertanyaan pendukung
+    observasi telah terpenuhi, maka pertanyaan tersebut tidak perlu ditanyakan lagi dan cukup
+    memberi catatan bahwa sudah terpenuhi pada saat tugas praktek demonstrasi pada kolom
+    tanggapan
+
+· Jika pada saat observasi ada hal yang perlu dikonfirmasi sedangkan di instrumen daftar
+    pertanyaan pendukung observasi tidak ada, maka asesor dapat memberikan pertanyaan
+    dengan syarat pertanyaan harus berkaitan dengan tugas praktek demonstrasi. Jika
+    dilakukan, asesor harus mencatat dalam instrumen pertanyaan pendukung observasi.
+
+· Tanggapan asesi ditulis pada kolom tanggapan.
+
+             No.          Kode Unit             Judul Unit
+
+             1. G.45TSM01.021.2 Melakukan perawatan free play throttle gas
+
+             2. G.45TSM01.022.2 Melakukan perawatan filter udara
+
+ Kelompok    3. G.45TSM01.020.2 Melakukan perawatan renggang klep
+Pekerjaan 1
+             4.           G.45TSM01.024.2  Melakukan pemeriksaan dan penggantian oli mesin, oli
+   Engine                                  transmisi, dan filter oli
+
+             5. G.45TSM01.025.2 Melakukan pemeriksaan sistem pelumasan mesin
+
+             6. G.45TSM01.028.2 Melakukan perawatan sistem pendinginan
+
+             7. G.45TSM01.023.2 Melakukan perawatan sistem clutch/kopling
+
+                                           1
+                         Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                                                               Pencapaian
+
+                          Pertanyaan                                           Ya    Tdk
+
+1.  Saat anda akan melakukan penyetelan mur penyetel free play kabel gas
+
+    langkah apa saja yang harus anda perhatikan ?
+
+Tanggapan:                                                                           
+
+2.  Jika kinerja sistem filter udara tidak baik, apa yang anda lakukan ?
+
+Tanggapan:                                                                           
+
+3   Apa yang anda lakukan jika akan menyetel klep ternyata mur penyetel
+
+    klepnya slek/macet ?
+
+Tanggapan:
+
+4   Bagaimana anda memastikan tidak ada kebocoran oli pada saat penggantian
+
+    oli mesin, oli transmis dan filter oli ?
+
+Tanggapan:
+
+5   Apabila mekanisme kerja sistem pelumasan tidak bekerja sesuai standar apa
+
+    yang anda lakukan ?
+
+Tanggapan:
+
+6.  Mengapa dalam melakukan prosedur pemeriksaan kondisi dan kelengkapan
+
+    komponen bagian sistem pendingin harus dilakukan sesuai standar,
+
+    cermat dan teliti ?
+
+Tanggapan:
+
+7.  Jika sistem clutch/kopling tidak berfungsi normal langkah apa saja yang
+
+    anda lakukan ?
+
+Tanggapan:                                                                           
+
+                                              2
+                         Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                    No.      Kode Unit       Judul Unit
+
+      Kelompok      1. G.45TSM01.054.2 Menentukan jenis kerusakan sistem injeksi
+     Pekerjaan 2    2. G.45TSM01.055.2 Mengoperasikan diagnostic tools
+    Fuel injection  3. G.45TSM01.019.2 Melakukan perawatan sistem injeksi
+
+       service
+
+                                                                                  Pencapaian
+
+                             Pertanyaan                                 Ya           Tdk
+
+1.  Bagaimana prosedur penggunaan presure gauge saat membersikan
+
+    injector
+
+Tanggapan:                                                                           
+
+2.  Jelaskan bagaimana penggunaan diagnostic tools yang benar sesuai
+
+    prosedur ?
+
+Tanggapan:                                                                           
+
+3.  Mengapa perawatan sistem Injeksi harus dilakukan dengan cermat dan
+
+    teliti sesuai standar ?
+
+Tanggapan:                                                                           
+
+                    No.  Kode Unit           Judul Unit
+
+     Kelompok       1. G.45TSM01.039.2 Melakukan perawatan baterai
+    Pekerjaan 3
+                    2.   G.45TSM01.040.2  Melakukan perawatan instrumen kelistrikan (sistem sinyal
+     Electrical                           dan penerangan)
+
+                    3. G.45OTO01.077.2 Memperbaiki Sistem Pengapian
+
+                                          3
+                      Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                                                              Pencapaian
+
+                      Pertanyaan                                              Ya  Tdk
+
+1.  Bagaimana cara memastikan tegangan baterai sesuai standar ?
+
+Tanggapan:                                                                        
+
+2.  Bagaimana prosedur pemeriksaan fungsi instrumen kelistrikan (sistem
+
+    sinyal dan penerangan) pada pengerjaan perawatan sepeda motor?
+
+Tanggapan:                                                                        
+
+3.  Mengapa Diagnostic tools / scan tools diperlukan untuk mengukur
+
+    ketepatan h a s i l perbaikan sistem pengapian ?
+
+Tanggapan:                                                                        
+
+                 No.  Kode Unit                                  Judul Unit
+
+      Kelompok   1. G.45TSM01.029.2 Melakukan penggantian rantai roda
+    Pekerjaan 4  2. G.45TSM01.030.2 Melakukan pemeriksaan keolengan roda
+                 3. G.45TSM01.031.2 Melakukan perawatan sistem pengereman
+       Chassis   4. G.45TSM01.032.2 Melakukan perawatan sistem kemudi
+                 5. G.45TSM01.034.2 Melakukan bongkar pasang cover body
+                 6. G.45TSM01.033.2 Melakukan Perawatan Sistem Suspensi
+
+                                                                              Pencapaian
+
+                      Pertanyaan                                              Ya  Tdk
+
+1.  Jika anda menyetel rantai roda terlalu tegang apa efeknya ?
+
+Tanggapan:                                                                        
+
+2.  Jika kondisi keolengan roda tidak sesuai standar , langkah apa yang anda
+
+    lakukan ?
+
+                                  4
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Tanggapan:                                                                            
+
+3.  Bagaimana prosedur pembongkaran dan pemasangan bagian komponen
+
+    sistem pengereman ?
+
+Tanggapan:
+
+4.  Dalam melakukan prsedur identifikasi kenormalan dan ketidaknormalan
+
+    fungsi sistem kemudi ,apa saja yang anda lakukan ?
+
+Tanggapan:
+
+5.  Bagaimana prosedur memasang komponen-komponen cover body sesuai
+
+    SOP ?
+
+Tanggapan:
+
+6.  Jelaskan memeriksa fungsi suspensi sesuai prosedur !
+
+Tanggapan:                                                                            
+
+Umpan balik untuk asesi:
+
+                          5
+                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Asesi :
+
+Nama      :
+
+Tanda tangan/ :
+Tanggal
+
+Asesor :
+
+Nama      :
+
+No. Reg   :
+
+Tanda tangan/ :
+Tanggal
+
+Diadaptasi dari template yang disediakan di Departemen Pendidikan dan Pelatihan, Australia.Merancang
+instrumen asesmen untuk hasil yang berkualitas di VET, 2008 di VET, 2008
+
+                 6
+

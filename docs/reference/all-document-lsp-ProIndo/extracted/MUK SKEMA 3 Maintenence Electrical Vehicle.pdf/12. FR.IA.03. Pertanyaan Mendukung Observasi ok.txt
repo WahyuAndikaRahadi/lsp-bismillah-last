@@ -1,0 +1,294 @@
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.03. PMO - PERTANYAAN MENDUKUNG OBSERVASI
+
+  Skema Sertifikasi       Judul  : Periodical Maintenance Electrified Vehicles (Perawatan Berkala
+  (KKNI/Okupasi/Klaster)  Nomor      Mobil Listrik)
+
+  TUK                            : 03/LSP PrO Indo/I/2026
+  Nama Asesor                    : Sewaktu/Tempat Kerja/Mandiri*
+  Nama Asesi                     :
+  Tanggal
+*Coret yang tidak perlu          :
+
+                                 :
+
+PANDUAN BAGI ASESOR
+
+ Formulir ini di isi oleh asesor kompetensi dapat sebelum, pada saat atau setelah melakukan
+    asesmen dengan metode observasi demonstrasi.
+
+ Pertanyaan dibuat dengan tujuan untuk menggali, dapat berisi pertanyaan yang berkaitan
+    dengan dimensi kompetensi, batasan variabel dan aspek kritis yang relevan dengan skenario
+    tugas dan praktik demonstrasi.
+
+ Jika pertanyaan disampaikan sebelum asesi melakukan praktik demonstrasi, maka
+    pertanyaan dibuat berkaitan dengan aspek K3L, SOP, penggunaan peralatan dan
+    perlengkapan.
+
+ Jika setelah asesi melakukan praktik demonstrasi terdapat item pertanyaan pendukung
+    observasi telah terpenuhi, maka pertanyaan tersebut tidak perlu ditanyakan lagi dan cukup
+    memberi catatan bahwa sudah terpenuhi pada saat tugas praktek demonstrasi pada kolom
+    tanggapan
+
+ Jika pada saat observasi ada hal yang perlu dikonfirmasi sedangkan di instrumen daftar
+    pertanyaan pendukung observasi tidak ada, maka asesor dapat memberikan pertanyaan
+    dengan syarat pertanyaan harus berkaitan dengan tugas praktek demonstrasi. Jika dilakukan,
+    asesor harus mencatat dalam instrumen pertanyaan pendukung observasi.
+
+ Tanggapan asesi ditulis pada kolom tanggapan.
+
+             No.          Kode Unit             Judul Unit
+
+             1. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja
+
+ Kelompok    2. G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen
+Pekerjaan 1
+             3. G.45OTO01.007.2 Membaca Gambar Teknik
+  General
+   service
+
+             4. G.45OTO01.008.2 Menggunakan Alat Ukur
+
+             5.           G.45OTO01.002.2  MenggunakanPeralatan dan Perlengkapan Tempat
+                                           Kerja
+
+                                           1
+                      Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                                                                Pencapaian
+
+                      Pertanyaan                                                Ya  Tdk
+
+1.  Seorang teknisi akan melakukan pengukuran tegangan pada baterai kendaraan
+
+    listrik yang memiliki sistem 400V. Manakah kombinasi alat pelindung diri
+
+    (APD) dan alat ukur yang paling tepat untuk menjamin keamanan teknisi
+
+    tersebut?
+
+Tanggapan:                                                                          
+
+2.  Saat melakukan pemeriksaan pada baterai traksi (HV battery), Anda
+
+    menemukan adanya kenaikan suhu yang tidak merata antar sel. Langkah
+
+    analisis apa yang paling tepat untuk menentukan penyebab masalah ini?
+
+Tanggapan:                                                                          
+
+3.  Apa yang anda lakukan Jika Tegangan baterai dibawah angka standar ?
+
+Tanggapan:                                                                          
+
+                 No.  Kode Unit           Judul Unit
+
+    Kelompok                           Melaksanakan Prosedur Keselamatan dan Kesehatan
+                                       Kerja (K3) dan Ringkas, Rapi, Resik, Rawat, dan Rajin
+    Pekerjaan 2  1.   C.29SEV01.003.1  (5R) untuk Penanganan Servis Electrified Vehicles
+                      C.29SEV01.004.1
+    Persiapan         C.29SEV01.005.1  Memutuskan Pengaman Utama High Voltage Circuit
+
+    Servis                             Membaca Electrical Wiring Diagram (EWD) dan Repair
+                                       Manual untuk Electrified Vehicles
+                 2.
+
+                 3.
+
+                                                                                Pencapaian
+
+                      Pertanyaan                                                Ya  Tdk
+
+1.  Sebelum memulai pekerjaan pada sistem tegangan tinggi (High Voltage),
+
+    teknisi harus melepas Service Plug/Manual Disconnect. Mengapa prosedur ini
+
+    wajib diikuti dengan pengukuran tegangan menggunakan multimeter?
+
+Tanggapan:                                                                          
+
+2.  Sebuah mobil listrik mengalami penurunan efisiensi pengereman regeneratif.
+
+    Hasil analisis menunjukkan suhu motor listrik seringkali terlalu tinggi.
+
+                                       2
+                       Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+    Komponen mana yang paling mungkin memerlukan pemeliharaan intensif?
+
+Tanggapan:                                                                           
+
+3.  Ceritakan Bagai mana anda menghubungkan alat scanner dengan On Board
+
+    Diagnosis (OBD) sesuai prosedur ?
+
+Tanggapan:                                                                           
+
+                  No.  Kode Unit                 Judul Unit
+
+    Kelompok
+
+    Pekerjaan 3                                  Melakukan Final Inspection pada Electrified Vehicles
+                                                 (EV)
+    After Servis  1.   C.29SEV02.001.1
+
+                                                                                 Pencapaian
+
+                       Pertanyaan                                                Ya  Tdk
+
+1.  Saat memeriksa port pengisian daya (Charging Port), Anda menemukan
+
+    adanya residu karbon (jelaga) tipis pada pin terminal DC. Apa kesimpulan
+
+    analisis yang paling logis dari temuan ini?
+
+Tanggapan:                                                                           
+
+2.  Dalam pemeriksaan sistem pendingin baterai, ditemukan volume coolant
+
+    berkurang secara drastis. Apa prosedur yang harus dilakukan teknisi sebelum
+
+    menambah cairan?
+
+Tanggapan:                                                                           
+
+3.                                                                                   
+Tanggapan:
+
+                                        3
+                      Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                 No.  Kode Unit           Judul Unit
+
+     Kelompok    1.   C.29SEV03.001.1  Melakukan Perawatan Cooling System pada Electrified
+    Pekerjaan 4                        Vehicles (EV)
+    Perawatan
+                                       Melakukan Perawatan Brake System pada Electrified
+                 2.   C.29SEV03.002.1  Vehicles (EV)
+
+                                                                                  Pencapaian
+
+                      Pertanyaan                                                  Ya  Tdk
+
+1.  Seorang teknisi akan melakukan pengisian cairan pendingin setelah mengganti
+
+    pompa air elektrik pada mobil listrik. Alat khusus apa yang paling tepat
+
+    digunakan untuk memastikan tidak ada udara yang terjebak di dalam sistem?
+
+Tanggapan:                                                                            
+
+2.  Dua mobil listrik identik menempuh rute yang sama. Mobil A menggunakan
+
+    ban dengan low rolling resistance sesuai standar pabrikan, sedangkan Mobil B
+
+    menggunakan ban sport umum dengan tapak lebih lebar. Hasilnya, Mobil B
+
+    memiliki jarak tempuh 15% lebih rendah, mengapa perubahan pada komponen
+
+    mekanis (ban) memberikan dampak signifikan pada konsumsi energi listrik
+
+    dibandingkan pada mobil bensin?
+
+Tanggapan:                                                                            
+
+3.                                                                                    
+Tanggapan:
+
+                 No.  Kode Unit           Judul Unit
+
+     Kelompok    1. G.45OTO01.044.2 Melaksanakan Wheel Balance (Balans Roda)
+    Pekerjaan 5  2. G.45OTO01.039.2 Melaksanakan Perawatan Sistem Kemudi
+                 3. G.45OTO01.042.2 Memeriksa Sistem Suspensi
+       Chasis
+
+                                       4
+                      Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                                                                     Pencapaian
+
+                         Pertanyaan                                                  Ya  Tdk
+
+1.  Sebuah mobil listrik berperforma tinggi sering mengalami getaran pada
+
+    kemudi hanya beberapa minggu setelah dilakukan wheel balance. Hasil
+
+    inspeksi ulang menunjukkan bahwa posisi bobot penyeimbang (balance
+
+    weight) tipe tempel (adhesive) telah bergeser dari posisi semula di dalam velg,
+
+    mengapa fenomena ini lebih rentan terjadi pada mobil listrik dibandingkan
+
+    mobil konvensional!
+
+Tanggapan:                                                                               
+
+2.  Setelah melakukan penggantian tie-rod end, Anda harus memastikan posisi
+
+    roda depan tetap sejajar. Prosedur perawatan apa yang wajib dilakukan
+
+    selanjutnya?
+
+Tanggapan:                                                                               
+
+3.  Apa yang anda lakukan jika Sistem Suspensi bekerja tidak normal ?
+
+Tanggapan:                                                                               
+
+                 No.     Kode Unit      Judul Unit
+
+    Kelompok
+
+    Pekerjaan 6   1.  G.45OTO01.065.2 Memelihara Baterai
+     Electrical       G.45OTO01.084.2 Memelihara Sistem Air Conditioner
+
+                  2.
+
+                                                                                     Pencapaian
+
+                         Pertanyaan                                                  Ya  Tdk
+
+1.  Bagaimana cara yang benar dalam menerapkan pengisian daya untuk menjaga
+
+    kesehatan jangka panjang baterai Lithium-ion pada mobil listrik?
+
+Tanggapan:
+
+                                                                                         
+
+                                     5
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+2.        Seorang pemilik mobil listrik jarang menggunakan kendaraannya dan
+
+          berencana menyimpannya selama 2 bulan. Saran pemeliharaan apa yang harus
+
+          diterapkan?
+
+Tanggapan:
+
+                                                                                      
+
+Tanggapan:                                                                            
+
+Umpan balik untuk asesi:
+
+Asesi :
+
+Nama        :
+
+Tanda tangan/ :
+Tanggal
+
+Asesor :
+
+Nama        :
+
+No. Reg     :
+
+Tanda tangan / :
+Tanggal
+
+                          6
+

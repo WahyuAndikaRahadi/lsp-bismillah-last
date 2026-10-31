@@ -1,0 +1,176 @@
+                             Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.01B ­ Report Sheet                                                                  Lembar : Peserta
+
+    Skema Sertifikasi  Judul : Maintenance Gasoline Engine Injection System
+
+(KKNI/Okupasi/Klaster) Nomor : 02/LSP PrO Indo/XI/2025
+
+TUK                       :              Sewaktu                 Tempat Kerja                 Mandiri
+
+Nama Asesor               :
+Nama Asesi                :
+Tanggal                   :
+Durasi Waktu
+                              60 Menit
+
+       Kode dan Judul                          Item dan Hasil Pemeriksaan                           Hasil
+
+No     Unit Kompetensi (item apa saja yang perlu dilakukan pemeriksaan dan lihat manual perbaikan)  Baik    Tidak
+                                                                                                            Baik
+
+1. G.45OTO01.001.2 Persiapan :
+
+       Melaksanakan       APD Sesuai Prosedur
+
+       Keselamatan dan Area Kerja
+
+       Kesehatan          Pelindung kendaraan
+
+       Kerja
+
+2. G.45OTO01.002.2 Persiapan :
+
+       Menggunakan        Pengecekan Tools & Equipment
+
+       Peralatan dan      Kalibrasi peralatan
+
+       Perlengkapan       Pengecekan kebersihan
+
+       Tempat Kerja
+
+3. G.45OTO01.007.2 Lihat Buku Manual (Workshop Manual) yang tersedia:
+
+       Membaca Gambar Spesifikasi Tahanan Injektor............................... ohm
+
+       Teknik             Baca wiring harness yang berhubungan dengan fuel pump/pompa
+
+                          bahan bakar a........................ b...................
+
+                          Tentukan letak Rellay Fuel Pump/pompa bahan bakar................
+
+4. G.45OTO01.008.2 Penempatan Tools & Equipment dengan benar
+
+       Menggunakan Alat Gunakan alat ukur sesuai prosedur pekerjaan
+
+       Ukur
+
+5. G.45OTO01.065.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)
+
+       Memelihara Baterai Kondisi terminal
+
+                          Kondisi bodi
+
+                          Tegangan ------------- Volt
+
+                          Kesehatan baterai..................%
+
+                          Berat jenis ------------- (bila baterai basah)
+
+                          Ketinggian air baterai (bila baterai basah)
+
+6. G.45OTO01.073.2 Melaksanakan pengujian pada sistem pengaman kelistrikan
+
+       Memperbaiki        · Periksa Fuse EFI
+
+       Kerusakan Pada · Periksa lampu indikator ( dash board )
+       Sistem Pengaman
+
+7. G.45OTO01.009.2 Menggunakan scan tool
+
+       Melaksanakan       Memasang konektor scan tool
+
+       Diagnosis          Membaca problem (trouble code ) ..............................
+
+                          Membaca current data :
+
+                          · Water temperature sensor ...................
+
+                          · Intake temperature sensor .................
+
+                          · Ingition Timing/Advance .................
+
+pg. 1
+                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                  · Putaran mesin/idle speed............
+
+                  Lakukan Actuation Test
+
+                  · Cooling Fan
+
+                  · Cylinder Fuel Cut
+
+8. G.45OTO01.010.2 Sistem Pelumasan
+
+       Melakukan
+
+       Perawatan Berkala Oil Level. : ...............
+
+       Engine     Kualitas Oli. :.................
+
+                  Kebocoran Oli : .................
+
+                  Sistem Pengapian                     Kondisi.............
+                  a. Celah Busi Silinder               Kondisi............
+                                                       Kondisi............
+                      · No.1............mm             Kondisi ............
+                      · No.2 ..............mm
+                      · No.3 ..............mm
+                      · No.4 ..............mm
+
+                  b. Ignition Coil
+                      · Tahanan primer Coil (.................)
+                      · Tahanan Scunder Coil (............K)
+                      · Kondisi Fisik Coil ..................
+
+                  Sistem Bahan Bakar
+                  Saringan udara
+                  Periksa Saluran Bahan Bakar
+
+                  Sistem Pendingin
+                  Kondisi Air Pendingin/water coolant
+                  Tegangan fan belt
+                  Tekanan/ kebocoran radiator, hose & water pump
+                  Tekanan tutup radiator
+                  Kondisi Reservoir (level air pendingin)
+
+                  Sistem Pengisian
+                  Periksa lampu indikator baterai
+                  Pengisian Baterai
+                  Voltage drop
+
+                  Exhaust Emission Test
+
+                  Idling Speed
+
+                  CO reading             ____________%
+
+                  CO2 reading            ____________ %
+
+                  Lambda reading     ___________
+
+                  HC reading         ___________ppm
+
+9. G.45OTO01.078.2 Mencari gangguan dengan menggunakan jumper
+     Memperbaiki Sistem Tentukan terminal yang akan di jumper .......dan ......
+     Manajemen Engine Menentukan problem yang terjadi ............................
+                                Memperbaiki problem yang terjadi
+                                - ...................................................
+                                - ...................................................
+                                - ...................................................
+                                Menghapus memori problem .....................
+
+pg. 2
+                                            Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+Catatan Hasil Pemeriksaan :
+
+Nama Asesi :                                Ttd & Tanggal :
+                                            Ttd & Tanggal :
+..........................................
+Nama Asesor :
+
+..........................................
+
+pg. 3
+

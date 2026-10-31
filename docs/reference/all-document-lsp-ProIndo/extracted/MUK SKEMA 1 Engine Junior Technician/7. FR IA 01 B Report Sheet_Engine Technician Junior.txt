@@ -1,0 +1,243 @@
+                                                              LEMBAGA SERTIFIKASI PROFESI
+
+                                                              Praktisi Otomotif Indonesia
+
+FR.IA.02A ­ Report Sheet                                                     Lembar : Peserta
+
+Skema Sertifikasi/  Judul  : ENGINE JUNIOR TECHNICIAN
+Okupasi Nasional    Nomor
+                           : 01/LSP PrO Indo/XI/2025
+TUK                                                            Tempat Kerja   Mandiri
+                                Sewaktu
+
+                           :
+
+Nama Asesor                :
+Nama Asesi                 :
+Tanggal                    :
+Durasi Waktu
+                               60 Menit
+
+No   Kode dan Judul                              Item dan Hasil Pemeriksaan                                   Hasil
+     Unit Kompetensi                                                                                    Bagus Jelek
+                           (item apa saja yang perlu dilakukan pemeriksaan dan lihat manual perbaikan)
+1. G.45OTO01.001.2
+     Melaksanakan          Persiapan :
+     Keselamatan dan       APD Sesuai Prosedur
+     Kesehatan             Area Kerja
+     Kerja                 Pelindung kendaraan
+
+2. G.45OTO01.002.2         Persiapan :
+     Menggunakan           Pengecekan Tools & Equipment
+     Peralatan dan         Kalibrasi peralatan
+     Perlengkapan          Pengecekan kebersihan
+     Tempat Kerja
+                           Melaksanakan Komunikasi di Tempat Kerja
+3. G.45OTO01.003.2         Melaporkan Data Hasil Pekerjaan Keseluruhan Kepada Atasan
+     Melaksanakan
+     Komunikasi di         Lihat Buku Manual (Workshop Manual) yang tersedia:
+     Tempat Kerja          Spesifikasi Tahanan Injektor............................... ohm
+                           Baca wiring harness yang berhubungan dengan fuel pump/pompa
+4. G.45OTO01.007.2         bahan bakar a........................ b...................
+     Membaca Gambar        Tentukan letak Rellay Fuel Pump/pompa bahan bakar................
+     Teknik                Penempatan Tools & Equipment dengan benar
+                           Gunakan alat ukur sesuai prosedur pekerjaan
+5. G.45OTO01.008.2
+     Menggunakan Alat      Sistem Pengapian
+     Ukur                  a. Celah Busi Silinder
+
+6. G.45OTO01.010.2             · No.1............mm Kondisi.............
+     Melakukan                 · No.2 ..............mm Kondisi............
+     Perawatan Berkala         · No.3 ..............mm Kondisi............
+     Engine                    · No.4 ..............mm Kondisi ............
+                           b. Ignition Coil
+                               · Tahanan primer Coil (.................)
+                               · Tahanan Scunder Coil (............K)
+                               · Kondisi Fisik Coil ..................
+                           Sistem Pengisian
+                           Periksa lampu indikator baterai
+                           Pengisian Baterai
+
+Ruko Blessing Center,
+Jl. Siput Raya No 38 Kayuringin Jaya Kota Bekasi, Jawa Barat
+No. HP 0812 8557 7080
+                                                                              LEMBAGA SERTIFIKASI PROFESI
+
+                                                                              Praktisi Otomotif Indonesia
+
+               Voltage dro
+
+               Menggunakan scan tool
+
+               Memasang konektor scan tool
+
+               Membaca problem (trouble code ) ..............................
+
+               Membaca current data :
+
+               · Water temperature sensor ...................
+
+               · Intake temperature sensor .................
+
+               · Ingition Timing/Advance .................
+
+               · Putaran mesin/idle speed............
+
+               Lakukan Actuation Test
+
+               · Cooling Fan
+
+               · Cylinder Fuel Cut
+
+7. G.45OTO01.020.2 Sistem Pelumasan
+
+Memelihara Sistem Oil Level. : ...............
+
+Pelumasan Engine Kualitas Oli. :.................
+
+               Kebocoran Oli : .................
+
+8. G.45OTO01.022.2 Sistem Pendingin
+
+Memelihara Sistem Tegangan fan belt
+
+Pendinginan Engine Tekanan/ kebocoran radiator, hose & water pump
+
+               Tekanan tutup radiator
+
+9. G.45OTO01.024.2 Penggantian Cairan Pendingin
+
+Mengganti Cairan Kondisi Air Pendingin/water coolant
+
+pada Sistem    Lakukan penggurasan Air Pendingin/water coolant sesuai dengan
+
+Pendinginan Engine prosedur
+
+               Lakukan Lakukan pengisian Air Pendingin/water coolant sesuai
+
+               dengan prosedur
+
+               Periksa Kondisi Reservoir (level air pendingin)
+
+10 G.45OTO01.026.2 Sistem Bahan Bakar
+
+Memelihara Sistem Saringan udara
+
+Bahan Bakar Bensin Periksa Pompa Bahan Bakar
+
+               Periksa Saluran Bahan Bakar
+
+11. G.45OTO01.032.2 Exhaust Emission Test
+
+Memelihara Sistem Idling Speed
+
+Kontrol Emisi  CO reading                                     ____________%
+
+               CO2 reading                                    ____________ %
+
+               Lambda reading                                 ___________
+
+               HC reading                                     ___________ppm
+
+12. G.45OTO01.004.2 Pemeliharaan Komponen Kendaraan:
+
+Melaksanakan   Periksa Semua Lampu
+
+Pemeliharaan   Nyalakan Mesin dan Periksa Semua Instrumen/Indikator
+
+Komponen       Periksa Kondisi Tempat Duduk dan Sabuk Pengaman
+
+               Periksa Kondisi Body Interior dan Exterior Kendaraan (Lumasin Engsel
+
+               Pintu)
+
+               Periksa Wiper dan Washer (Stel Jika diperlukan)
+
+13. G.45OTO01.006.2 Melaksanakan Pematrian
+
+Melaksanakan   Lakukan Pematrian kabel atau komponen pada sistem kelistrikan
+
+Teknik Pematrian kendaraan.
+
+14. G.45OTO01.005.2 Memperbaiki Sistem Hidrolik
+
+Memperbaiki Sistem Lakukan Pengecekan pada Katup Pengontrol Oli Mesin/Oil Control
+
+Hidrolik       Valve (OCV) Engine sesuai dengan prosedur
+
+               Lakukan Pemeriksaan pompa oli mesin
+
+15. G.45OTO01.065.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)
+
+Memelihara Baterai Kondisi terminal
+
+               Kondisi bodi
+
+Ruko Blessing Center,
+Jl. Siput Raya No 38 Kayuringin Jaya Kota Bekasi, Jawa Barat
+No. HP 0812 8557 7080
+                                                                                                    LEMBAGA SERTIFIKASI PROFESI
+
+                                                                                                    Praktisi Otomotif Indonesia
+
+                                            Tegangan ------------- Volt
+
+                                            Kesehatan baterai..................%
+
+                                            Berat jenis ------------- (bila baterai basah)
+
+                                            Ketinggian air baterai (bila baterai basah)
+
+16. G.45OTO01.066.2 Mengganti Baterai Kendaraan Ringan
+
+Mengganti Baterai Menggunakan workshop manual
+
+Kendaraan Ringan Melepas Baterai dari Unit Kendaraan
+
+                                            Memasang Baterai Pada Kendaraan
+
+17. G.45OTO01.067.2 Melepas Komponen Kelistrikan
+
+Melepas Komponen Lakukan pelepasan komponen Katup Pengontrol Oli Mesin/Oil Control
+
+Kelistrikan                                 Valve (OCV) Engine sesuai dengan prosedur
+
+18. G.45OTO01.084.2 Memelihara Sistem Air Conditioner
+
+Memelihara Sistem                           · Membersihkan saringan udara AC
+
+Air Conditioner                             · Melakukan pengukuran suhu awal AC di kabin kendaraan
+
+                                            ..........
+
+                                            · Melakukan pengetesan kebocoran AC
+
+                                            · Melakukan pengukuran tekanan rendah dan tekanan tinggi
+
+                                            AC pada kondisi mesin / AC mati
+
+                                            a. Tekanan rendah /pipa biru..................................Psi
+
+                                            b. Tekanan tinggi / pipa merah...............................Psi
+
+                                            · Melakukan pengukuran tekanan rendah dan tekanan tinggi
+
+                                            AC pada kondisi mesin / AC hidup
+
+                                            c. Tekanan rendah /pipa biru..................................Psi
+
+                                            d. Tekanan tinggi / pipa merah................................Psi
+
+Catatan Hasil Pemeriksaan :
+
+Nama Asesi :                                            Ttd & Tanggal :
+
+..........................................              ..........................................
+Nama Asesor :                                           Ttd & Tanggal :
+
+..........................................              ..........................................
+
+Ruko Blessing Center,
+Jl. Siput Raya No 38 Kayuringin Jaya Kota Bekasi, Jawa Barat
+No. HP 0812 8557 7080
+

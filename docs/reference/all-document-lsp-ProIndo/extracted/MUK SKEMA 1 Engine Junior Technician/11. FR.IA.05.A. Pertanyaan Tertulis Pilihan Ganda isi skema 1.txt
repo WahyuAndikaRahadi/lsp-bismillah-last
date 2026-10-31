@@ -1,0 +1,436 @@
+FR.IA.05A. DPT - PERTANYAAN TERTULIS PILIHAN GANDA
+
+Skema Sertifikasi           Judul  : Engine Junior Technician
+(KKNI/Okupasi/Klaster)      Nomor  : 01/LSP PrO Indo/I/2026
+                                   : Sewaktu/Tempat Kerja/Mandiri*
+TUK                                :
+Nama Asesor                        :
+Nama Asesi                         :
+Tanggal                            :
+Waktu
+
+   *Coret yang tidak perlu
+
+Jawab semua pertanyaan berikut :
+
+1. Sebutkan peralatan yang termasuk dalam Keselamatan dan Kesehatan Kerja ?
+      a. APAR
+      b. Safety Shoes
+      c. Pakaian kerja
+      d. Jawaban a, b, dan c benar
+
+ 2. Untuk memastikan apakah APAR masih dapat berfungsi dengan normal,maka hal yang perlu diperiksa
+    adalah :
+      a. Masa berlaku penggunaan
+      b. Kesesuaian Ukuran tabung
+      c. Tanggal pembelian
+      d. Tanggal pemasangan
+
+ 3. Prosedur pengoperasian APAR adalah sebagai berikut :
+      a. Arahkan selang ke obyek ­ buka pin pengunci ­ tekan handle
+      b. Buka pin pengunci ­ arahkan selang obyek - tekan handle
+      c. Tekan handle ­ arahkan selang ke obyek ­ buka pin pengunci
+      d. Arahkan selang ke obyek ­ Tekan handle ­ buka pin pengunci
+
+ 4. Apa yang anda lakukan ketika pekerjaan yang anda lakukan selesai :
+
+     a. Membiarkan caddy tools di stall anda.
+     b. Istirahat sambil menunggu foreman memberikan perintah selanjutnya
+     c. Membersihkan peralatan dan area kerja setelah perbaikan
+     d. Jawaban a,b, dan c, benar
+
+ 5. Saat ini di bengkel / workshop perbaikan kendaraan sudah menggunakan Caddy portable. Apa
+      keuntungannya.
+     a. Mudah dipindahkan saat pekerjaan berjalan
+     b. Penataan di dalam caddy lebih rapi
+     c. Lebih banyak menampung peralatan kerja
+     d. Jawaban a,b, dan c benar
+
+ 6. Penanganan pemindahan peralatan gas analyzer yang benar adalah :
+
+      a. Dipindahkan dengan cara didorong
+      b. Dipindahkan dengan cara diangkat
+      c. Dipindahkan dengan cara dilepas terlebih dahulu dari bagianya
+      d. Jawaban a dan c benar
+ 7. Tujuan utama komunikasi di tempat kerja adalah...
+
+      a. Menciptakan pengertian yang sama dan menghindari kesalahpahaman.
+      b. Mengontrol perilaku rekan kerja.
+      c. Menunjukkan kekuasaan dan wewenang.
+      d. Menyebarkan informasi rahasia dengan cepat.
+8. Salah satu hambatan paling umum dalam komunikasi efektif di tempat kerja adalah...
+
+     a. Penggunaan bahasa yang sama oleh semua karyawan.
+     b. Mendengarkan secara aktif (active listening).
+     c. Asumsi atau persepsi yang berbeda-beda.
+     d. Ketersediaan saluran komunikasi yang beragam.
+9. Di bawah ini, mana yang bukan termasuk tujuan komunikasi di tempat kerja...
+
+     a. Merangsang pemikiran pihak penerima.
+     b. Melakukan suatu tindakan yang selaras.
+     c. Menggerakkan orang lain untuk menjadi komunikator saja.
+     d. Meningkatkan citra baik pada diri seseorang.
+10. Fuse blade mempunyai identifikasi warna sebagai berikut ...
+
+     a. Merah 10 A, Biru 15 A, Kuning 20 A
+     b. Biru 10 A, Merah 15A, Hijau 20 A
+     c. Hijau 10 A, Kuning 15 A. Biru 20 A
+     d. Kuning 10 A, Hijau 15 A, Biru 20 A
+11. Untuk mengukur voltage yang mengalir pada sebuah rangkaian kelistrikan, maka Volt meter dipasang
+     secara ...............pada rangkaian yang akan diukur.
+     a. Pararel
+     b. Seri
+     c. Seri dan Pararel
+     d. Semua benar
+12. Mistar geser / vernier caliper bisa dipergunakan untuk mengukur ...
+
+     a. Diameter luar poros
+     b. Diameter dalam silinder
+     c. Panjang suatu benda kerja
+     d. Semua jawaban tersebut betul
+13. Untuk mengukur berat jenis accu dipergunakan ...
+
+     a. Dial gauge
+     b. Micrometer
+     c. Hydrometer
+     d. Silinder gauge.
+14. Gambar di bawah ini merupakan prosedur suatu pengukuran kelistrikan. Pengukuran apakah yang dapat
+     dilakukan sepeti gambar tersebut ?
+
+a. Tegangan
+
+b. Arus
+
+c. Hambatan / Tahanan
+
+d. Daya                ?
+
+15. Pada saat menggunakan AVO Meter Analog, saat akan melakukan pengukuran Resistance, maka langkah
+     yang harus dilakukan sebelum memakai adalah :
+     a. Memilih skala ukur Ohm yang sesuai
+     b. Memilih skala ukur Amp yang sesuai
+     c. Melakukan kalibrasi
+     d. Jawaban yang benar a dan c
+
+16. Apa tujuan utama dari melakukan perawatan atau pemeliharaan komponen kendaraan secara rutin...
+
+a. Agar tampilan mobil menjadi lebih mengkilap.
+b. Untuk mempercepat laju kendaraan di jalan raya.
+c. Memastikan semua komponen berfungsi optimal, memperpanjang usia pakai, dan menjamin
+
+    keselamatan.
+d. Agar biaya bahan bakar menjadi lebih murah.
+17. Komponen manakah yang secara rutin harus diperiksa tekanan dan kondisinya untuk menjamin
+     keselamatan berkendara ...
+     a. Oli mesin.
+     b. Ban.
+     c. Lampu kabin.
+     d. Wiper kaca depan.
+
+18. Pemeriksaan komponen kelistrikan pada aki (accu) meliputi pengecekan...
+
+     a. Volume air aki (pada aki basah) dan kondisi terminal dari korosi.
+     b. Tekanan angin pada aki.
+     c. Ketebalan kampas rem.
+     d. Ketinggian oli transmisi.
+19. Apa tujuan utama dari proses pematrian (soldering) dalam perakitan elektronik...
+
+     a. Menyambungkan dua komponen secara permanen dengan ikatan mekanis saja.
+     b. Menyatukan dua atau lebih logam menggunakan bahan pengisi (timah) yang dilelehkan tanpa
+
+         melelehkan bahan dasar.
+     c. Mengelas dua logam besar menggunakan suhu yang sangat tinggi.
+     d. Membersihkan permukaan logam dari karat dan kotoran.
+20. Bahan pengisi yang umum digunakan dalam pematrian elektronik disebut timah solder. Timah solder
+     biasanya merupakan paduan dari...
+     a. Emas dan Perak.
+     b. Besi dan Tembaga.
+     c. Timah (Sn) dan Timbal (Pb) atau bahan bebas timbal (Lead-Free).
+     d. Aluminium dan Seng.
+21. Apa fungsi dari flux (pasta solder/cairan pembersih) dalam proses pematrian...
+
+     a. Sebagai pendingin agar komponen tidak terlalu panas.
+     b. Mempercepat proses pengeringan timah setelah dipatri.
+     c. Membersihkan permukaan logam yang akan disambung dari lapisan oksida dan kotoran.
+     d. Sebagai isolator listrik antara dua sambungan.
+22. Apa yang dimaksud dengan viskositas (viscosity) pada oli hidrolik...
+
+     a. Warna oli saat masih baru.
+     b. Kemampuan oli untuk menahan panas tinggi.
+     c. Ketahanan oli terhadap pembentukan busa.
+     d. Ukuran kekentalan atau hambatan aliran fluida.
+23. Prinsip dasar yang digunakan dalam sistem hidrolik untuk mentransmisikan gaya adalah Hukum...
+
+     a. Newton.
+     b. Archimedes.
+     c. Ohm.
+     d. Pascal.
+24. Komponen utama dalam sistem hidrolik yang berfungsi mengubah energi mekanik (putaran
+     mesin/motor) menjadi energi hidrolik (aliran fluida bertekanan) adalah...
+    a. Aktuator (silinder hidrolik).
+    b. Reservoir (tangki oli).
+    c. Pompa hidrolik.
+    d. Katup pengontrol arah (directional control valve).
+25. Apa tujuan utama dari servis atau perawatan berkala (scheduled maintenance) pada engine kendaraan...
+
+    a. Agar suara mesin menjadi lebih kencang.
+    b. Memastikan efisiensi bahan bakar optimal, memperpanjang umur mesin, dan mendeteksi dini potensi
+
+         kerusakan.
+    c. Menghilangkan garansi pabrikan.
+    d. Agar warna oli mesin selalu jernih.
+26. Komponen manakah yang paling vital untuk diganti secara rutin dalam interval jarak tempuh tertentu
+     (biasanya setiap 5.000 atau 10.000 km) sebagai bagian dari perawatan berkala...
+     a. Lampu bohlam depan.
+     b. Oli mesin dan filter oli.
+     c. Ban cadangan.
+     d. Wiper kaca.
+
+27. Apa yang dimaksud dengan idle speed (putaran langsam) pada engine, yang sering disetel saat perawatan
+     berkala...
+     a. Putaran mesin minimum saat mesin hidup tanpa beban (pedal gas tidak diinjak).
+     b. Kecepatan maksimum kendaraan di jalan tol.
+     c. Putaran mesin saat tuas transmisi berada di posisi gigi tertinggi.
+     d. Jumlah putaran roda per menit.
+
+28. Fungsi utama sistem pelumasan pada engine adalah untuk...
+
+     a. Mendinginkan udara masuk ke ruang bakar.
+     b. Melumasi bagian-bagian yang bergerak, mengurangi gesekan, dan mendinginkan komponen mesin.
+     c. Meningkatkan tekanan bahan bakar pada injektor.
+     d. D. Membersihkan knalpot dari emisi gas buang.
+
+29. Apa yang akan terjadi jika volume oli mesin terlalu rendah dari batas minimum pada dipstick...
+
+     a. Terjadi gesekan berlebih yang menyebabkan panas (overheating) dan potensi kerusakan serius pada
+         mesin.
+
+     b. Tekanan oli akan meningkat drastis.
+     c. Warna oli akan tetap jernih lebih lama.
+     d. Mesin akan bekerja lebih efisien dan irit bahan bakar.
+30. Apa fungsi dari oil filter (filter oli) dalam sistem pelumasan...
+
+     a. Mengatur suhu oli mesin.
+     b. Menahan oli di dalam karter saat mesin mati.
+     c. Menyaring kotoran, serpihan logam, dan lumpur oli dari sirkulasi oli mesin.
+     d. Meningkatkan tekanan oli ke komponen mesin.
+31. Oli mesin yang sudah terkontaminasi oleh air atau cairan pendingin biasanya akan terlihat seperti...
+
+     a. Sangat encer dan berwarna merah muda.
+     b. Berwarna hitam pekat dan berbau bensin.
+     c. Tetap jernih dan tidak berbau.
+     d. Berwarna keruh seperti susu atau kopi susu (milky appearance).
+32. Alat yang digunakan untuk memeriksa ketinggian (level) oli mesin adalah...
+
+     a. Pressure gauge (pengukur tekanan).
+     b. Kunci momen (torque wrench).
+     c. Dipstick oli (tongkat pengukur).
+     d. Multimeter.
+33. Apa fungsi utama sistem pendinginan pada mesin kendaraan...
+
+     a. Mempercepat proses pembakaran bahan bakar.
+     b. B. Menjaga suhu mesin tetap dalam rentang operasional yang optimal.
+     c. C. Mencegah oli mesin menjadi terlalu kental.
+     d. D. Mengurangi tingkat kebisingan mesin saat beroperasi.
+34. Komponen manakah yang berfungsi untuk membuang panas mesin ke udara melalui sirip-siripnya...
+
+     a. Thermostat
+     b. Water Pump (Pompa air)
+     c. Radiator
+     d. Selang radiator
+35. Cairan khusus yang digunakan dalam sistem pendinginan untuk mencegah karat dan meningkatkan titik
+     didih air adalah...
+     a. Air suling murni
+     b. Minyak rem
+     c. Coolant (Cairan pendingin)
+     d. Oli mesin
+
+36. Apa alat pelindung diri (APD) yang PALING penting digunakan saat melakukan penggantian cairan
+     pendingin untuk melindungi kulit dan mata...
+     a. Helm proyek dan sepatu safety.
+     b. Sarung tangan karet/nitril dan kacamata pengaman (safety goggles).
+     c. Masker debu dan rompi reflektif.
+     d. Penutup telinga (earmuffs).
+
+37. Di mana lokasi katup pembuangan (drain plug) yang umum digunakan untuk menguras cairan pendingin
+     dari sistem...
+     a. Di dalam reservoir tank (tangki cadangan).
+     b. Di bagian atas tutup radiator.
+     c. Di bagian bawah blok mesin saja.
+     d. Di bagian bawah radiator (tangki bawah) dan terkadang di blok mesin.
+
+38. Apa yang dimaksud dengan proses flushing (pembilasan) dalam konteks penggantian cairan pendingin...
+
+     a. Proses membilas seluruh sirkuit pendinginan dengan air bersih atau cairan pembersih khusus untuk
+         menghilangkan kotoran dan karat sebelum diisi coolant baru.
+
+     b. Proses mengeringkan seluruh sistem pendingin menggunakan kompresor udara.
+     c. Proses mengecat ulang radiator agar terlihat baru.
+     d. Proses mengisi penuh sistem dengan oli mesin baru.
+39. Mengapa sangat disarankan untuk menggunakan coolant (cairan pendingin khusus) yang
+     direkomendasikan pabrikan, daripada hanya menggunakan air keran biasa...
+     a. Coolant memiliki warna yang lebih menarik secara visual.
+     b. Coolant mengandung zat aditif anti-korosi/anti-karat dan menaikkan titik didih air.
+     c. Air keran terlalu berat untuk dipompa oleh water pump.
+     d. Air keran membuat kabin mobil menjadi lebih panas.
+40. Apa fungsi utama dari filter bahan bakar (fuel filter) dalam sistem suplai bensin...
+
+     a. Mendinginkan bensin sebelum masuk ke mesin.
+     b. Menyaring kotoran, karat, dan partikel asing dari bensin sebelum mencapai injektor atau karburator.
+     c. Meningkatkan tekanan bahan bakar.
+     d. Mengurangi tingkat oktan bensin.
+41. Pada sistem injeksi elektronik (EFI), komponen manakah yang bertanggung jawab menyemprotkan bahan
+     bakar ke dalam intake manifold atau ruang bakar...
+     a. Karburator
+     b. Fuel pump (pompa bahan bakar)
+     c. Injektor (injector)
+     d. Regulator tekanan bahan bakar
+42. Komponen yang berfungsi untuk menghisap bensin dari tangki dan mengirimkannya ke sistem injeksi atau
+     karburator dengan tekanan yang cukup adalah...
+     a. Fuel filter
+     b. Fuel injector
+     c. Fuel pump
+     d. Busi
+43. Apa fungsi utama dari sistem kontrol emisi pada kendaraan bermotor...
+
+     a. Meningkatkan kecepatan maksimal kendaraan
+     b. Mengurangi atau menghilangkan gas beracun hasil pembakaran
+     c. Memperkeras suara knalpot
+     d. Menambah konsumsi bahan bakar
+44. Komponen yang berfungsi mengubah gas beracun (CO, HC, NOx) menjadi gas yang lebih aman (CO2, H2O,
+     N2) melalui reaksi kimia adalah...
+     a. Catalytic Converter
+     b. Muffler
+     c. Exhaust Manifold
+     d. Resonator
+
+45. Gas yang timbul akibat pembakaran bahan bakar yang tidak sempurna dan tidak berwarna serta tidak
+     berbau adalah...
+     a. Karbon Dioksida (CO2)
+     b. Karbon Monoksida (CO)
+     c. Nitrogen Oksida (NOx)
+     d. Hidrokarbon (HC)
+
+46. Alat yang digunakan untuk menganalisis komposisi dan kadar gas buang dari knalpot kendaraan disebut...
+
+     a. Tachometer
+     b. Scan Tool
+     c. Exhaust Gas Analyzer
+     d. Multimeter
+47. Apa fungsi utama elektrolit pada baterai jenis basah...
+
+     a. Sebagai isolator listrik
+     b. Sebagai media untuk menyimpan energi panas
+     c. Sebagai media penghantar ion antara plat positif dan negatif
+     d. Untuk mencegah penguapan air aki
+48. Alat yang digunakan untuk mengukur berat jenis (spesific gravity) cairan elektrolit baterai adalah...
+
+     a. Thermometer
+     b. Voltmeter
+     c. Amperemeter
+     d. Hydrometer
+49. Saat menyimpan baterai yang tidak digunakan dalam jangka waktu lama, tindakan terbaik yang harus
+     dilakukan adalah...
+     a. Menyimpannya dalam kondisi kosong (daya habis total)
+     b. Menyimpannya di tempat yang sangat panas
+     c. Menyimpannya dalam kondisi terisi penuh dan melakukan pengisian ulang berkala (maintenance
+
+         charge)
+     d. Membungkusnya dengan plastik kedap udara sepenuhnya
+50. Saat melepaskan kabel baterai lama, terminal manakah yang harus dilepas terlebih dahulu...
+
+     a. Terminal Positif (+)
+     b. Terminal Negatif (-) (Ground)
+     c. Keduanya secara bersamaan
+     d. Terminal yang lebih dekat dengan wiper
+51. Ketika memasang baterai baru, manakah urutan penyambungan kabel yang benar...
+
+     a. Pasang kabel negatif (-) dulu, lalu kabel positif (+).
+     b. Pasang kabel positif (+) dulu, lalu kabel negatif (-).
+     c. Pasang kedua kabel secara bersamaan.
+     d. Urutan pemasangan tidak memengaruhi keamanan.
+
+52. Alat yang umum digunakan untuk mengukur tegangan baterai mobil adalah...
+
+     a. Multimeter (Voltmeter)
+     b. Kunci momen
+     c. Hydrometer
+     d. Obeng ketok
+53. Jika terminal baterai mobil berkarat atau kotor, apa yang harus dilakukan sebelum memasang baterai
+     baru...
+     a. Langsung pasang kabel ke terminal yang kotor.
+     b. Membersihkan terminal dengan lap kering saja.
+     c. Membersihkan terminal menggunakan sikat kawat dan cairan pembersih khusus.
+     d. Mengecat terminal untuk mencegah korosi lebih lanjut.
+
+54. Pada mesin mobil yang sedang hidup dan berfungsi normal, berapakah rentang tegangan standar yang
+     harus ditunjukkan oleh sistem pengisian (alternator) saat diukur pada terminal baterai...
+     a. 10.5V ­ 11.5V
+     b. 12.4V ­ 12.8V
+     c. 13.5V ­ 14.5V
+     d. 15.0V ­ 16.0V
+
+55. Sebelum memulai pekerjaan melepas komponen kelistrikan utama (seperti alternator, radio, atau ECU),
+     tindakan keselamatan fundamental apa yang harus dilakukan pertama kali...
+     a. Memastikan semua pintu mobil tertutup rapat.
+     b. Melepas terminal negatif (-) baterai mobil.
+     c. Menyalakan lampu hazard untuk peringatan.
+     d. Menyemprotkan cairan pembersih ke komponen yang akan dilepas.
+
+56. Saat melepas konektor listrik yang memiliki klip pengunci plastik, metode yang benar adalah...
+
+     a. Menarik kabelnya sekuat tenaga hingga terlepas.
+     b. Menggunakan tang untuk mencabut paksa konektornya.
+     c. Menekan atau menggeser klip pengunci sambil menarik konektor secara perlahan.
+     d. Memotong kabel di dekat konektor lalu menyambungnya lagi nanti.
+57. Apa risiko utama jika komponen kelistrikan dilepas saat mesin mobil masih hidup atau kunci kontak masih
+     pada posisi "ON"...
+     a. Tidak ada risiko, karena sistem mobil sangat aman.
+     b. Airbag bisa mengembang secara tiba-tiba.
+     c. Terjadi lonjakan arus listrik (electrical surge) yang dapat merusak modul kontrol elektronik (ECU) atau
+
+         komponen sensitif lainnya.
+     d. Radio mobil akan otomatis menyetel ulang stasiun radio.
+58. Tindakan perawatan paling sederhana dan rutin yang dapat dilakukan pemilik mobil untuk menjaga
+     kebersihan dan kinerja AC adalah...
+     a. Mencuci kondensor AC dengan air bertekanan tinggi setiap bulan.
+     b. Mengganti kompresor setiap tahun.
+     c. Memeriksa dan membersihkan filter kabin (filter AC) secara berkala.
+     d. Menambahkan oli kompresor setiap kali mengisi bahan bakar.
+59. Apa fungsi utama dari freon (refrigeran) dalam sistem AC mobil...
+
+     a. Melumasi kompresor AC.
+     b. Menghasilkan udara dingin dengan cara menyerap panas dari dalam kabin dan membuangnya keluar.
+     c. Mencegah pertumbuhan jamur di saluran udara.
+     d. Membunuh bakteri di dalam evaporator.
+60. Ketika AC mobil terasa kurang dingin, salah satu penyebab paling umum yang memerlukan pemeriksaan
+     oleh teknisi adalah...
+     a. Ban mobil kempes.
+     b. Jumlah freon yang berkurang atau adanya kebocoran sistem.
+     c. Lampu depan mobil mati.
+     d. Oli mesin terlalu kental.
+PENYUSUN DAN VALIDATOR
+
+STATUS    NO                    NAMA  NOMOR MET        TANDA TANGAN
+                                                        DAN TANGGAL
+
+          1 RIDWAN                    000.008265 2025
+          2 RANDI ARDIANSYAH
+PENYUSUN                                               12 Januari 2026
+
+                                      000.002498 2013
+
+                                                       12 Januari 2026
+
+                     1 SAPTONO        000.003672 2016
+VALIDATOR 2 KARYANTO
+                                                       12 Januari 2026
+                     3 GUNADI
+                                      000.008260 2025
+
+                                                       12 Januari 2026
+
+                                      000.000459 2007
+
+                                                       12 Januari 2026
+

@@ -1,0 +1,185 @@
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.03. PMO - PERTANYAAN MENDUKUNG OBSERVASI
+
+  Skema Sertifikasi       Judul      : Engine Junior Technician
+  (KKNI/Okupasi/Klaster)  Nomor      : 01/LSP PrO Indo/I/2026
+                                     : Sewaktu/Tempat Kerja/Mandiri*
+  TUK                                :
+  Nama Asesor                        :
+  Nama Asesi                         :
+  Tanggal
+*Coret yang tidak perlu
+
+PANDUAN BAGI ASESOR
+
+· Formulir ini di isi oleh asesor kompetensi dapat sebelum, pada saat atau setelah melakukanasesmen
+    dengan metode observasi demonstrasi.
+
+· Pertanyaan dibuat dengan tujuan untuk menggali, dapat berisi pertanyaan yang berkaitan dengan
+    dimensi kompetensi, batasan variabel dan aspek kritis yang relevan dengan skenariotugas dan praktik
+    demonstrasi.
+
+· Jika pertanyaan disampaikan sebelum asesi melakukan praktik demonstrasi, makapertanyaan dibuat
+    berkaitan dengan aspek K3L, SOP, penggunaan peralatan dan perlengkapan.
+
+· Jika setelah asesi melakukan praktik demonstrasi terdapat item pertanyaan pendukungobservasi telah
+    terpenuhi, maka pertanyaan tersebut tidak perlu ditanyakan lagi dan cukup memberi catatan bahwa
+    sudah terpenuhi pada saat tugas praktek demonstrasi pada kolom tanggapan
+
+· Jika pada saat observasi ada hal yang perlu dikonfirmasi sedangkan di instrumen daftar pertanyaan
+    pendukung observasi tidak ada, maka asesor dapat memberikan pertanyaan dengan syarat
+    pertanyaan harus berkaitan dengan tugas praktek demonstrasi. Jika dilakukan, asesor harus mencatat
+    dalam instrumen pertanyaan pendukung observasi.
+
+· Tanggapan asesi ditulis pada kolom tanggapan.
+
+             No.                                Judul Unit
+                          Kode Unit
+
+ Kelompok    1. G.45OTO01.001.2 Melaksanakan Keselamatan dan Kesehatan Kerja
+Pekerjaan 1  2. G.45OTO01.002.2 Menggunakan Peralatan dan Perlengkapan Tempat Kerja
+             3. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja
+  General    4. G.45OTO01.007.2 Membaca Gambar Teknik
+  Service    5. G.45OTO01.008.2 Menggunakan Alat Ukur
+             6. G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen
+             7. G.45OTO01.006.2 Melaksanakan Teknik Pematrian
+             8. G.45OTO01.005.2 Memperbaiki Sistem Hidrolik
+
+                                     1
+                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                                                              Pencapaian
+
+                  Pertanyaan                                                  Ya  Tdk
+
+1.  Jelaskan bagaimana anda melaksanakan Prosedur kesehatan dan
+
+    keselamatan kerja di tempat kerja!
+
+Tanggapan:                                                                               
+
+2.  Kenapa menggunakan Peralatan dan perlengkapan harus sesuai manual
+
+    perbaikan ?
+
+Tanggapan:                                                                               
+
+3.  Saat melakukan pemeliharaan rutin, ditemukan bahwa recovery
+
+    tank radiator kosong, namun tidak ada tanda-tanda kebocoran eksternal
+
+    pada selang maupun radiator. Saat mesin dihidupkan tanpa tutup radiator,
+
+    muncul gelembung udara secara terus-menerus. Apa kesimpulan analisis
+
+    Anda terhadap komponen mesin tersebut?
+
+Tanggapan:                                                                               
+
+             No.  Kode Unit                                      Judul Unit
+
+ Kelompok         1. 1 G.45OTO01.010.2  Melakukan Perawatan Berkala Engine
+Pekerjaan 2       2. G.45OTO01.020.2    Memelihara Sistem Pelumasan Engine
+                  3. G.45OTO01.022.2    Memelihara Sistem Pendinginan Engine
+   Engine         4. G.45OTO01.024.2    Mengganti Cairan pada Sistem Pendinginan Engine
+                  5. G.45OTO01.026.2    Memelihara Sistem Bahan Bakar Bensin
+                  6. G.45OTO01.032.2    Memelihara Sistem Kontrol Emisi
+
+                                                                              Pencapaian
+
+                  Pertanyaan                                                  Ya  Tdk
+
+1.  Jelaskan mengapa Engine harus dirawat secara Berkala:
+
+Tanggapan:                                                                               
+
+2.  Bagaimana langkah yang harus anda lakukan, jika suara mesin tidak normal
+
+    dan mesin mudah mati pada kendaraan ringan (putaran idle) :
+
+                                        2
+                         Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+    Tanggapan:                                                                                   
+
+    3.      Bagaimana anda mendokumentasikan dan melaporkan hasil pemeriksaan
+
+        engine sesuai prosedur :
+
+    Tanggapan:                                                                                   
+
+                    No.         Kode Unit                     Judul Unit
+
+     Kelompok       1.   G.45OTO01.065.2 Memelihara Baterai
+    Pekerjaan 3          G.45OTO01.066.2 Mengganti Baterai Kendaraan Ringan
+                         G.45OTO01.067.2 Melepas Komponen Kelistrikan
+        Electrical  2.   G.45OTO01.084.2 Memelihara Sistem Air Conditioner
+
+                    3.
+
+                    4.
+
+                                                                                     Pencapaian
+
+                    Pertanyaan                                                       Ya          Tdk
+
+1.      Pada pemeriksaan sistem pengisian, multimeter menunjukkan tegangan 14.2V
+
+        saat beban kosong. Namun, ketika lampu utama dan AC dinyalakan, tegangan
+
+        turun drastis ke 11.8V. Apa analisis kerusakan komponen yang paling tepat?
+
+Tanggapan:                                                                                       
+
+2.      Pada siang hari yang sangat terik, AC mobil terasa dingin di awal, namun
+
+        setelah 15 menit, hembusan udara perlahan mengecil dan akhirnya tidak
+
+        dingin sama sekali meskipun suara blower tetap kencang. Setelah AC
+
+        dimatikan selama 10 menit dan dinyalakan kembali, AC kembali dingin untuk
+        sementara. Apa penyebab analitis dari anomali ini?
+
+Tanggapan:                                                                                       
+
+3.      Seorang teknisi sedang melepas baterai pada mobil modern yang dilengkapi
+
+        dengan sistem Airbag dan Audio Anti-Theft. Karena terburu-buru, teknisi
+
+        langsung melepas terminal Positif (+) terlebih dahulu menggunakan kunci pas
+
+        logam. Saat memutar kunci, ujung kunci tidak sengaja
+
+        menyentuh bracket penahan baterai yang terhubung ke bodi. Apa
+
+        konsekuensi teknis dan analisis bahaya yang paling tepat dari kejadian ini?
+
+                                           3
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Tanggapan:                                                                            
+
+Umpan balik untuk asesi:
+
+Asesi :
+
+Nama        :
+
+Tanda tangan/ :
+Tanggal
+
+Asesor :
+
+Nama        :
+
+No. Reg     :
+
+ Tanda tangan/ :
+ Tanggal
+
+Diadaptasi dari template yang disediakan di Departemen Pendidikan dan Pelatihan, Australia.Merancang
+instrumen asesmen untuk hasil yang berkualitas di VET, 2008 di VET, 2008
+
+                          4
+

@@ -1,0 +1,1005 @@
+{
+  "scheme": {
+    "code": "SKM-04-2026",
+    "name": "Memperbaiki Panel Bodi Kendaraan",
+    "scheme_type": "KLASTER",
+    "version": "1.0",
+    "muk_code": "04/LSP PrO Indo/I/2026",
+    "description": "Skema Sertifikasi Memperbaiki Panel Bodi Kendaraan - LSP Praktisi Otomotif Indonesia",
+    "passing_grade_theory": 75.0,
+    "is_active": true
+  },
+  "units": [
+    {
+      "code": "G.45OTO01.001.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 1,
+      "elements": [
+        {
+          "title": "Menyiapkan prosedur Keselamatan dan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Potensi bahaya pada area kerja",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "APD disiapkan di tempat kerja.",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakanan prosedur keselama",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "APD digunakan sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Prosedur kesehatan dan keselamatan kerja",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Pencegahan bahaya Keselamatan dan",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.002.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 2,
+      "elements": [
+        {
+          "title": "Memilih peralatan dan perlengkapan tempat",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Peralatan dan perlengkapan tempat kerja",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perlengkapan disiapkan di",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Menggunakan peralatan dan perlengkapan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Peralatan dan perlengkapan dikalibrasi sesuai",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Peralatan dan perlengkapan digunakan sesuai",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.003.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 3,
+      "elements": [
+        {
+          "title": "Mempersiapkan informasi dan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Data dan informasi yang akan disampai",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Data informas dan bukti disiapkan sesuai",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Data informasi dan bukti diperiksa ulang",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Menyampaikan informasi dan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Data Informasi dan bukti dikomunikasikan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Data informasi dan bukti komunikasi",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Data informasi dan bukti komunikasi",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.004.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 4,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan komponen",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Form pemeriksa disiapkan.",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Jenis kendaraan diidentifikasi.",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Manual perbaikan dipersiapkan di",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Tools dan SST dipersiapkan di",
+              "sequence": 4
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan komponen",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Komponen diperiksa dengan alat",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Hasil pemeriksaan dicatat di Form",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pemeriksaan disimpan.",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.007.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 5,
+      "elements": [
+        {
+          "title": "Menyiapkan gambar teknik",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Gambar Teknik diidentifikasi sesuai kebutuhan.",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Gambar teknik disiapkan.",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Membaca gambar teknik",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Simbol dan kode gambar teknik diidentifikasi.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Gambar teknik dijelaskan sesuai fungsi dan",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.008.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 6,
+      "elements": [
+        {
+          "title": "Menyiapkan alat ukur dan komponen",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Jenis alat ukur dan komponen diidentifikasi.",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Alat ukur yang sesuai disiapkan di tempat kerja.",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Alat ukur dikalibrasi sebelum digunakan.",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Menggunakan alat ukur",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Alat ukur digunakan sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Alat ukur digunakan sesuai fungsi dan jenis",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pengukuran didokumentasikan.",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OBR02.008.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 7,
+      "elements": [
+        {
+          "title": "Menyiapkan analisis kerusakan bodi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Prosedur menetapkan jenis dan tingkat",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Perubahan bentuk bodi kendaraan",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Jenis dan tingkat kerusakan serta prosedur",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Efek benturan kerusakan diidentifikasi.",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Prosedur menetapkan jenis dan tingkat",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Perubahan bentuk bodi kendaraan",
+              "sequence": 6
+            }
+          ]
+        },
+        {
+          "title": "Menetapkan perbaikan kerusakan bodi",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Perubahan bentuk bodi kendaraan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Perubahan bentuk bodi kendaraan dan",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Estimasi durasi dan biaya perbaikan",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OBR02.010.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 8,
+      "elements": [
+        {
+          "title": "Menyiapkan penjelasan prosedur",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Jenis,tipe, dan spesifikasi kendaraan di",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Panel,komponen, dan aksesoris bodi kenda",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Alat dan bahan perawatan bodi kendaraan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Jenis-jenis dan prosedur perawatan bodi",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Spesifikasi teknis bahan bodi kendaraan",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Memastikan performa bodi kendaraan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Perubahan bentuk bodi kendaraan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Perubahan bentuk bodi kendaraan dan",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OBR02.014.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 9,
+      "elements": [
+        {
+          "title": "Menyiapkan pelepasan dan pemasangan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama, jenis, spesifikasi, fungsi, dan lokasi",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Prosedur melepas dan memasang komponen",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Sistem rangkaian electrical",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Pengoperasian multi tester diidentifikasi",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": ".Pengoperasian multi scan diidentifikasi",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Peralatan dan perlengkapan disiapkan di meja",
+              "sequence": 6
+            }
+          ]
+        },
+        {
+          "title": "Menangani pelepasan dan pemasangan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Sumber arus listrik baterai dilepas sesuai",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Komponen rangkaian electrical bodi dilepas",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Jenis dan spesifikasi komponen electrical bodi",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Komponen electrical bodi dicek kondisinya",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Hasil pengecekan kondisi komponen electrical",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Hasil pengecekan kondisi komponen electrical",
+              "sequence": 6
+            },
+            {
+              "code_number": "2.7",
+              "statement": "Komponen rangkaian electrical bodi",
+              "sequence": 7
+            },
+            {
+              "code_number": "2.8",
+              "statement": "Hasil pemasangan komponen electrical bodi",
+              "sequence": 8
+            },
+            {
+              "code_number": "2.9",
+              "statement": "Hasil pemasangankomponen electrical bodi",
+              "sequence": 9
+            },
+            {
+              "code_number": "2.10",
+              "statement": "Kegiatan pada unit ini merujuk pada prosedur",
+              "sequence": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OBR02.022.2",
+      "title": "Memperbaiki Panel Bodi Kendaraan dengan Palu Dan Dolly",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 10,
+      "elements": [
+        {
+          "title": "Menyiapkan perbaikan panel bodi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Jenis, area dan tingkat kerusakan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Prosedur penggunaan palu dan dolly",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Peralatan dan perlengkapan yang",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Panel bodi kendaraan yang tidak",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Kegiatan pada unit ini dilaksanakan",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Mengembalikan bentuk panel bodi",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Aksesoris, anti karat dan peredam suara",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Perbaikan panel bodi kendaraan dengan",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Pengerutan dilakukan pada panel yang",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Kebersihan, kerataan, celah, dan bentuk",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Anti karat diaplikasikan pada panel bodi",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Hasil perbaikan panel bodi kendaraan",
+              "sequence": 6
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "question_text": "Sebutkan Jenis-jenis APD pada tempat kerja anda? kecuali :",
+      "option_a": "Sepatu kerja",
+      "option_b": "Sarung tangan",
+      "option_c": "Alat angkat kendaraan",
+      "option_d": "Pakaian safety",
+      "correct_answer": "C"
+    },
+    {
+      "number": 2,
+      "question_text": "Berikut ini adalah jenis bahaya ditempat kerja, kecuali :",
+      "option_a": "Bahaya pada pelumas yang tercecer dilantai",
+      "option_b": "Bahaya terhadap bahan yang mudah terbakar",
+      "option_c": "Bahaya pada asap beracun kendaraan",
+      "option_d": "Bahaya pada kendaraan di area stall",
+      "correct_answer": "D"
+    },
+    {
+      "number": 3,
+      "question_text": "Untuk memastikan apakah APAR masih dapat berfungsi dengan normal,maka hal yang perlu diperiksa\n     adalah :",
+      "option_a": "Masa berlaku penggunaan",
+      "option_b": "Kesesuaian Ukuran tabung",
+      "option_c": "Tanggal pembelian",
+      "option_d": "Tanggal pemasangan",
+      "correct_answer": "A"
+    },
+    {
+      "number": 4,
+      "question_text": "Apa yang anda lakukan ketika pekerjaan yang anda lakukan selesai :",
+      "option_a": "Membiarkan caddy tools di stall anda.",
+      "option_b": "Istirahat sambil menunggu foreman memberikan perintah selanjutnya",
+      "option_c": "Membersihkan peralatan dan area kerja setelah perbaikan",
+      "option_d": "Jawaban a,b, dan c, benar",
+      "correct_answer": "C"
+    },
+    {
+      "number": 5,
+      "question_text": "Apabila anda butuh sst di tempat kerja, siapa yang anda hubungi :",
+      "option_a": "Mekanik senior",
+      "option_b": "Foreman",
+      "option_c": "Tools Keeper",
+      "option_d": "Service Advisor",
+      "correct_answer": "C"
+    },
+    {
+      "number": 6,
+      "question_text": "Sebagai dasar analisa problem kendaraan untuk mengetahui riwayat perbaikan sebelum anda melakukan\n     pekerjaan perbaikan yaitu :",
+      "option_a": "History card",
+      "option_b": "Workshop Manual",
+      "option_c": "Technical Bulletin",
+      "option_d": "Work Order / Repair Order\n\n                                                    1\n\f                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "A"
+    },
+    {
+      "number": 7,
+      "question_text": "Koordinasi kerja sorang teknisi di bengkel jika problem maka pertama yang harus dihubungi adalah :",
+      "option_a": "Service Advisor",
+      "option_b": "Foreman",
+      "option_c": "Final Inspection",
+      "option_d": "Kepala Bengkel",
+      "correct_answer": "B"
+    },
+    {
+      "number": 8,
+      "question_text": "Dasar kerja seorang teknisi mengerjakan pekerjaan di bengkel adalah :",
+      "option_a": "Workshop Manual",
+      "option_b": "Service Check List",
+      "option_c": "Work Order",
+      "option_d": "Service Bulletin",
+      "correct_answer": "C"
+    },
+    {
+      "number": 9,
+      "question_text": "Sebutkan perlengkapan keamanan service kendaraan yang dibutuhkan",
+      "option_a": "Vender Cover, Steering Cover",
+      "option_b": "Seat Cover, Floor Met",
+      "option_c": "Jawaban a dan b benar",
+      "option_d": "Jawaban a saja yang benar",
+      "correct_answer": "C"
+    },
+    {
+      "number": 10,
+      "question_text": "Untuk menentukan penyetelan celah panel dan prosedurnya anda berpedoman pada :",
+      "option_a": "Workshop manual",
+      "option_b": "Informasi dari teknisi senior",
+      "option_c": "Informasi dari teman kerja",
+      "option_d": "Report sheet",
+      "correct_answer": "A"
+    },
+    {
+      "number": 11,
+      "question_text": "Fuse blade mempunyai identifikasi warna sebagai berikut :",
+      "option_a": "Merah 10 A, Biru 15 A, Kuning 20 A",
+      "option_b": "Biru 10 A, Merah 15A, Hijau 20 A",
+      "option_c": "Hijau 10 A, Kuning 15 A. Biru 20 A",
+      "option_d": "Kuning 10 A, Hijau 15 A, Biru 20 A",
+      "correct_answer": "A"
+    },
+    {
+      "number": 12,
+      "question_text": "Untuk menentukan lokasi komponen pada kelistrikan bodi pertama yang harus anda lakukan adalah :",
+      "option_a": "Membuka wiring harness",
+      "option_b": "Melihat instruksi Service Bulletin",
+      "option_c": "Melihat service check list",
+      "option_d": "Melihat pada history card",
+      "correct_answer": "A"
+    },
+    {
+      "number": 13,
+      "question_text": "Untuk mengukur voltage yang mengalir pada sebuah rangkaian kelistrikan, maka Volt meter dipasang\n    serara ..............pada rangkaian yang akan diukur.",
+      "option_a": "Pararel",
+      "option_b": "Seri",
+      "option_c": "Seri dan Pararel",
+      "option_d": "Semua benar",
+      "correct_answer": "A"
+    },
+    {
+      "number": 14,
+      "question_text": "Untuk mengukur berat jenis accu dipergunakan :",
+      "option_a": "Dial gauge",
+      "option_b": "Micrometer",
+      "option_c": "Hydrometer",
+      "option_d": "Silinder gauge.\n\n                                                                 2\n\f                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "C"
+    },
+    {
+      "number": 15,
+      "question_text": "Pada saat menggunakan AVO Meter Analog, saat akan melakukan pengukuran Resistance, maka langkah\n   yang harus dilakukan sebelum memakai adalah :",
+      "option_a": "Memilih skala ukur Ohm yang sesuai",
+      "option_b": "Memilih skala ukur Amp yang sesuai",
+      "option_c": "Melakukan kalibrasi",
+      "option_d": "Jawaban yang benar a dan c",
+      "correct_answer": "D"
+    },
+    {
+      "number": 16,
+      "question_text": "Disebut konstruksi apakah gambar di bawah ini ?",
+      "option_a": "Konstruksi Rahmen",
+      "option_b": "Konstruksi Rangka",
+      "option_c": "Konstruksi Thruss",
+      "option_d": "Konstruksi Kotak",
+      "correct_answer": "C"
+    },
+    {
+      "number": 17,
+      "question_text": "Dari gambar dibawah ini titik B adalah merupakan penyerapan benturan jenis :",
+      "option_a": "Lubang Penderip",
+      "option_b": "Area Bergelombang",
+      "option_c": "Area Modifikasi Ketebalan",
+      "option_d": "Area Modifikasi Sudut",
+      "correct_answer": "C"
+    },
+    {
+      "number": 18,
+      "question_text": "Pada gambar dibawah ini kerusakan yang bertanda panah,disebut kerusakan...",
+      "option_a": "Kerusakan induksi",
+      "option_b": "Kerusakan langsung",
+      "option_c": "Kerusakan akibat pengerutan",
+      "option_d": "Kerusakan sekunder",
+      "correct_answer": "B"
+    },
+    {
+      "number": 19,
+      "question_text": "Berikut adalah metode menaksir kerusakan,kecuali....",
+      "option_a": "Menyelidiki tentang keadaan saat terjadinya kecelakaan",
+      "option_b": "Menaksir secara visual",
+      "option_c": "Melakukan pengukuran dimensi body",
+      "option_d": "Membandingkan dengan kendaraan lain",
+      "correct_answer": "D"
+    },
+    {
+      "number": 20,
+      "question_text": "Gambar dibawah ini menunjukan kerusakan yang mempengaruhi celah pemasangan, gambar manakah\n    yang menunjukan \"damaged until centre body pillar\" ( kerusakan sampai Center Bodi Pillar ).",
+      "option_a": ".  .c",
+      "option_b": ".d\n\n           3\n\f    Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_c": "",
+      "option_d": "Opsi D",
+      "correct_answer": "D"
+    },
+    {
+      "number": 21,
+      "question_text": "Bagian konstruksi luar kendaraan terdiri komponen di bawah ini kecuali :",
+      "option_a": "Bumper",
+      "option_b": "Fender",
+      "option_c": "Instrumen panel",
+      "option_d": "Pintu",
+      "correct_answer": "C"
+    },
+    {
+      "number": 22,
+      "question_text": "Bagian bodi kendaraan yang berfungsi untuk menutupi komponen mesin kendaraan adalah :",
+      "option_a": "Engine hood",
+      "option_b": "Deck lid",
+      "option_c": "Engine support",
+      "option_d": "Instumen panel",
+      "correct_answer": "A"
+    },
+    {
+      "number": 23,
+      "question_text": "Komponen bodi luar yang berfungsi untuk melindungi konstruksi suspensi dan melindungi dari kotoran\n         dan lumpur adalah :",
+      "option_a": "Engine hood",
+      "option_b": "Deck lid",
+      "option_c": "Fender / wing",
+      "option_d": "Instumen panel",
+      "correct_answer": "C"
+    },
+    {
+      "number": 24,
+      "question_text": "Sumber arus listrik utama pada kendaraan adalah :",
+      "option_a": "Battery",
+      "option_b": "Alternator",
+      "option_c": "Starter motor",
+      "option_d": "Rotor",
+      "correct_answer": "A"
+    },
+    {
+      "number": 25,
+      "question_text": "Sebelum melakukan pemeriksaan pada sistem engine manajemen, sebaiknya melakukan pemeriksaan\n         tegangan batere dan idealnya tegangan batery adalah :",
+      "option_a": "9  13 Volt",
+      "option_b": "10  12 Volt",
+      "option_c": "11  14 Volt",
+      "option_d": "10  13 Volt",
+      "correct_answer": "C"
+    },
+    {
+      "number": 26,
+      "question_text": "Gambar dibawah ini adalah cara menggunakan palu pada perbaikan panel yang benar, kecuali :",
+      "option_a": "c.",
+      "option_b": "d.",
+      "option_c": "Opsi C",
+      "option_d": "Opsi D",
+      "correct_answer": "C"
+    },
+    {
+      "number": 27,
+      "question_text": "Disebut teknik apakah yang ditunjukan pada gambar dibawah ini :\n                                                                 4\n\f                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_a": "Teknik Off Dolly",
+      "option_b": "Teknik On Dolly",
+      "option_c": "Teknik Palu dan Dolly",
+      "option_d": "Teknik Pengetokan",
+      "correct_answer": "B"
+    },
+    {
+      "number": 28,
+      "question_text": "Metode perbaikan panel dengan Palu dan Dolly sangat cocok di gunakan pada perbaikan panel",
+      "option_a": "Fender depan",
+      "option_b": "Rocker panel / Trisplang",
+      "option_c": "Center pillar",
+      "option_d": "Quarter panel",
+      "correct_answer": "A"
+    },
+    {
+      "number": 29,
+      "question_text": "Berikut adalah Safety item untuk pekerjaan perbaikan panel dengan metode palu dan dolly adalah :",
+      "option_a": "Pakaian kerja, sepatu safety, Topi, Kaca mata pelindung, sarung tangan katun, ear plug, masker\n           debu.",
+      "option_b": "Pakaian kerja, sepatu safety, topi , kaca mata anti uv, sarung tangan kuli,ear plug, masker debu.",
+      "option_c": "Pakaian kerja, sepatu safety, topi, kaca mata pelindung, masker respirator, sarung tangan tahan\n           solven",
+      "option_d": "Pakaian kerja, sepatu safety, kaca mata pelindung, sarung tangan katun, masker debu, fire apron",
+      "correct_answer": "A"
+    },
+    {
+      "number": 30,
+      "question_text": "Berapakah ukuran diameter spiral yang dianjurkan pada metode shringking",
+      "option_a": "20 mm",
+      "option_b": "15 mm",
+      "option_c": "25 mm",
+      "option_d": "30 mm\n\nPENYUSUN DAN VALIDATOR\n\nSTATUS     NO           NAMA             NOMOR MET     TANDA TANGAN DAN\n                                      000.008260 2025         TANGGAL\nPENYUSUN   1 KARYANTO                 000.002498 2013\n           2 RANDI ARDIANSYAH         000.003672 2016     08 Januari 2026\n                                      000.008265 2025     08 Januari 2026\n           1 SAPTONO                  000.000459 2007\n                               5                          08 Januari 2026\nVALIDATOR  2 RIDWAN                                       08 Januari 2026\n\n           3 GUNADI\n\fLembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo\n                                                                    08 Januari 2026\n\n                           6",
+      "correct_answer": "A"
+    }
+  ],
+  "tpd": {
+    "scenario": "No. Kode Unit Judul Unit 1. G.45OTO01.001.2 Melaksanakan Keselamatan dan Kesehatan Kerja Menggunakan Peralatan dan Perlengkapan Kelompok 2. G.45OTO01.002.2 Tempat Kerja G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja Pekerjaan 1 G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen G.45OTO01.007.2 Membaca Gambar Teknik General 3. G.45OTO01.008.2 Service Menggunakan Alat Ukur 4. 5 6.",
+    "time_limit": "30 Menit",
+    "tasks": [
+      {
+        "id": "1",
+        "instruction": "Baca dan pelajari setiap instruksi kerja di bawah ini dengan cermat sebelum melaksanakan"
+      },
+      {
+        "id": "2",
+        "instruction": "Klarifikasi kepada asesor kompetensi apabila ada hal-hal yang belum jelas"
+      },
+      {
+        "id": "3",
+        "instruction": "Laksanakan pekerjaan sesuai dengan urutan proses yang sudah ditetapkan"
+      },
+      {
+        "id": "4",
+        "instruction": "Seluruh proses kerja mengacu kepada SOP/WI yang dipersyaratkan (Jika Ada)"
+      },
+      {
+        "id": "6",
+        "instruction": "S. Anda seorang asesi mengajukan permohonan uji kompetensi Memperbaiki Panel Bodi Kendaraan"
+      },
+      {
+        "id": "1",
+        "instruction": "Ijazah SMK otomotif; atau"
+      },
+      {
+        "id": "2",
+        "instruction": "Surat Keterangan Peserta didik SMK Jurusan Otomotif yang telah menyelesaikan mata"
+      },
+      {
+        "id": "3",
+        "instruction": "Ijazah SMA sederajat dan fotocopy sertifikat pelatihan berbasis kompetensi Memperbaiki"
+      },
+      {
+        "id": "4",
+        "instruction": "Surat keterangan pengalaman kerja sesuai bidang Memperbaiki Panel Bodi Kendaraan"
+      },
+      {
+        "id": "1",
+        "instruction": "Sarung tangan katun"
+      },
+      {
+        "id": "2",
+        "instruction": "Kaca mata pengaman"
+      },
+      {
+        "id": "6",
+        "instruction": "Safety shoes"
+      }
+    ]
+  },
+  "pmo": [
+    {
+      "number": "1",
+      "question": "Jelaskan bagaimana anda melaksanakan Prosedur kesehatan dan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Kenapa menggunakan Peralatan dan perlengkapan harus sesuai manual",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Kenapa melaksanakan komunikasi di tempat kerja harus sesuai prosedur?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "4",
+      "question": "Kenapa melaksanakan pemeliharaan komponen harus sesuai prosedur?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "5",
+      "question": "Kenapa membaca gambar teknik harus sesuai prosedur?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "6",
+      "question": "Kenapa membaca menggunakan alat ukur harus sesuai prosedur?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Kenapa melakukan analisis kerusakan bodi kendaraan harus sesuai prosedur?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Kenapa mengkomunikasikan prosedur perawatan bodi kendaraan harus",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Kenapa melepas dan memasang rangkaian elektrikal pada bodi kendaraan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Kenapa memperbaiki panel bodi kendaraan dengan palu dan dolly harus",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    }
+  ],
+  "report_sheet": [
+    {
+      "item": "1. G.45OTO01.001.2 Melaksanakan Keselamatan dan Kesehatan Kerja :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "2. G.45OTO01.002.2 Menggunakan Peralatan dan Perlengkapan Tempat Kerja :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "4. G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "5. G.45OTO01.007.2 Membaca Gambar Teknik :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "6. G.45OTO01.008.2 Menggunakan Alat Ukur :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "7. G.45OBR02.008.2 Melakukan Analisis Kerusakan Bodi Kendaraan :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "8. G.45OBR02.010.2 Mengkomunikasikan Prosedur Perawatan Bodi Kendaraan :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "9. G.45OBR02.014.2 Melepas dan Memasang Rangkaian Elektrikal Pada Bodi",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "10. G.45OBR02.022.2 Memperbaiki Panel Bodi Kendaraan dengan Palu Dan Dolly :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    }
+  ]
+}

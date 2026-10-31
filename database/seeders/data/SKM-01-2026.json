@@ -1,0 +1,1912 @@
+{
+  "scheme": {
+    "code": "SKM-01-2026",
+    "name": "Engine Junior Technician",
+    "scheme_type": "OKUPASI",
+    "version": "1.0",
+    "muk_code": "01/LSP PrO Indo/I/2026",
+    "description": "Skema Sertifikasi Engine Junior Technician - LSP Praktisi Otomotif Indonesia",
+    "passing_grade_theory": 75.0,
+    "is_active": true
+  },
+  "units": [
+    {
+      "code": "G.45OTO01.001.2",
+      "title": "Melaksanakan Keselamatan dan Kesehatan Kerja",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 1,
+      "elements": [
+        {
+          "title": "Menyiapkan prosedur Keselamatan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Potensi bahaya pada area kerja",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "APD disiapkan di tempat kerja.",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakanan prosedur",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "APD digunakan sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Prosedur kesehatan dan keselamatan",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Pencegahan bahaya Keselamatan dan",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.002.2",
+      "title": "Menggunakan Peralatan dan Perlengkapan Tempat Kerja",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 2,
+      "elements": [
+        {
+          "title": "Memilih peralatan dan perlengkapan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Peralatan dan perlengkapan tempat",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perlengkapan",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Menggunakan peralatan dan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Peralatan dan perlengkapan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Peralatan dan perlengkapan",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.003.2",
+      "title": "Melaksanakan Komunikasi di Tempat Kerja",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 3,
+      "elements": [
+        {
+          "title": "Mempersiapkan informasi dan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Data dan informasi yang akan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Data informasi dan bukti disiapkan",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Data informasi dan bukti diperiksa",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Menyampaikan informasi dan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Data Informasi dan bukti",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Data informasi dan bukti komunikasi",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Data informasi dan bukti komunikasi",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.004.2",
+      "title": "Melaksanakan Pemeliharaan Komponen",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 4,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan komponen",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Form pemeriksa disiapkan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Jenis kendaraan diidentifikasi.",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Manual perbaikan dipersiapkan di",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Tools dan SST dipersiapkan di",
+              "sequence": 4
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Komponen diperiksa dengan alat",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Hasil pemeriksaan dicatat di form",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pemeriksaan disimpan.",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.005.2",
+      "title": "Memperbaiki Sistem Hidrolik",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 5,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan Sistem",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Jenis sistem hidrolik diidentifikasi.",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Minyak hidrolik disiapakan sesuai",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Tools, SST dan hidrolik tester",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan Sistem",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Sistem hidrolik diperiksa secara",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Sistem hidrolik dibersihkan sesuai",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Kerja system hidrolik diperiksa sesuai",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Sistem hidrolik diperbaiki tanpa",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Hasil pemeriksaan sistem hidrolik",
+              "sequence": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.006.2",
+      "title": "Melaksanakan Teknik Pematrian",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 6,
+      "elements": [
+        {
+          "title": "Mempersiapkan pematrian                                  Bukti yang relevan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Komponen dan bahan material",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Komponen dan bahan disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Tools dan peralatan disiapkan di",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pematrian",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Komponen dan bahan dibersihkan.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Komponen dipatri sesuai prosedur",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pematrian di periksa secara",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Fungsi komponen hasil pematrian",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Hasil pematrian didokumentasikan.",
+              "sequence": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.007.2",
+      "title": "Membaca Gambar Teknik",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 7,
+      "elements": [
+        {
+          "title": "Menyiapkan gambar teknik",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Gambar Teknik diidentifikasi sesuai",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Gambar teknik disiapkan.",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Membaca gambar teknik",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Simbol dan kode gambar teknik",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Gambar teknik dijelaskan sesuai",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.008.2",
+      "title": "Menggunakan Alat Ukur",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 8,
+      "elements": [
+        {
+          "title": "Menyiapkan alat ukur dan komponen",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Jenis alat ukur dan komponen",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Alat ukur yang sesuai disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Alat ukur dikalibrasi sebelum",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Menggunakan alat ukur",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Alat ukur digunakan sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Alat ukur digunakan sesuai fungsi",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pengukuran didokumentasikan.",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.010.2",
+      "title": "Melakukan Perawatan Berkala Engine",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 9,
+      "elements": [
+        {
+          "title": "Menyiapkan Perawatan engine",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama, jenis, spesifikasi, fungsi,",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Prosedur pengoperasian alat ukur",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Peralatan, perlengkapan dan bahan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Manual perbaikan engine disiapkan",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Data perawatan berkala engine",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Kendaraan yang akan dilakukan",
+              "sequence": 6
+            }
+          ]
+        },
+        {
+          "title": "Melakukan Pemeriksaan engine",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Engine dibersihkan dari kotoran",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Sistem pelumasan engine diperiksa",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Sistem pendinginan engine dan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Sistem pemasukan udara dan sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Sistem pengapian engine diperiksa",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Sistem bahan bakar diperiksa sesuai",
+              "sequence": 6
+            },
+            {
+              "code_number": "2.7",
+              "statement": "Emisi gas buang engine diperiksa",
+              "sequence": 7
+            },
+            {
+              "code_number": "2.8",
+              "statement": "Hasil pemeriksaan engine",
+              "sequence": 8
+            },
+            {
+              "code_number": "2.9",
+              "statement": "Hasil pemeriksaan engine diuji",
+              "sequence": 9
+            },
+            {
+              "code_number": "2.10",
+              "statement": "Hasil pemeriksaan engine",
+              "sequence": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.020.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 10,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan sistem",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama komponen, jenis, spesifikasi,",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan bahan disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Manual pemeliharaan sistem",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Riwayat pemeliharaan pada sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Kebutuhan pemeliharaan Sistem",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Prosedur pemeliharaan sistem",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Kendaraan yang akan dilakukan",
+              "sequence": 7
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeriksaan sistem",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kondisi sistem pelumasan engine",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Oli dan komponen pada sistem",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pemeriksaan sistem pelumasan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Hasil pemeriksaan ditindaklanjuti",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Dokumen pemeliharaan sistem",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Hasil pemeliharaan Sistem",
+              "sequence": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.022.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 11,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan sistem",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama komponen, jenis, spesifikasi,",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan bahan disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Manual pemeliharaan sistem",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Riwayat pemeliharaan pada sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Kebutuhan pemeliharaan Sistem",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Prosedur pemeliharaan sistem",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Kendaraan yang akan dilakukan",
+              "sequence": 7
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeriksaan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kebocoran sistem pendinginan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Cairan sistem pendinginan engine",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Pemeliharaan sistem pendinginan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Hasil pemeliharaan Sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Hasil pengujian ditindaklanjuti sesuai",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Dokumen pemeliharaan sistem",
+              "sequence": 6
+            },
+            {
+              "code_number": "2.7",
+              "statement": "Hasil                        pemeliharaan Sistem",
+              "sequence": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.026.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 12,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan sistem",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama komponen, jenis, spesifikasi,",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan bahan disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Manual pemeliharaan sistem bahan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Riwayat pemeliharaan pada sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Kebutuhan pemeliharaan sistem",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Prosedur pemeliharaan sistem bahan",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Kendaraan yang akan dilakukan",
+              "sequence": 7
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeriksaan sistem",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kondisi sistem bahan bakar bensin",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Pemeliharaan sistem bahan bakar",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pemeliharaan sistem bahan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Hasil pemeriksaan sistem bahan",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Dokumen pemeliharaan sistem",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Hasil pemeliharaan Sistem",
+              "sequence": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.032.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 13,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan sistem",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama komponen, jenis, spesifikasi,",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan bahan disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Manual pemeliharaan sistem kontrol",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Riwayat pemeliharaan pada sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Kebutuhan pemeliharaan sistem",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Prosedur pemeliharaan sistem",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Kendaraan yang akan dilakukan",
+              "sequence": 7
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan sistem",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kondisi sistem kontrol emisi diperiksa",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Pemeliharaan sistem kontrol emisi",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pemeliharaan sistem kontrol",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Hasil pemeriksaan ditindaklanjuti",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Dokumen pemeliharaan emisi gas",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Hasil pemeliharaan sistem control",
+              "sequence": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.065.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 14,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan baterai",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Manual perbaikan pemeliharaan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perangkat kerja",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Baterai yang digunakan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Level cairan elektrolit diperiksa",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Perlengkapan pelindung",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan sistem",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kondisi rumah atau casing",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Tegangan baterai diperiksa",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Berat jenis air baterai diperiksa",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Baterai dan terminal dibersihkan",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Dokumen pemeriksaan baterai",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan sistem",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Baterai di uji dengan",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Hasil pekerjaan menguji baterai",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.066.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 15,
+      "elements": [
+        {
+          "title": "Menyiapkan pekerjaan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Manual perbaikan pekerjaan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perangkat kerja",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Baterai yang akan digunakan untuk",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Perlengkapan pelindung kendaraan",
+              "sequence": 4
+            }
+          ]
+        },
+        {
+          "title": "Mengganti baterai",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Baterai diganti sesuai dengan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Baterai dipasang berdasarkan",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Menguji ulang baterai",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Baterai di uji dengan menggunakan",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Hasil pekerjaan menguji baterai",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.067.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 16,
+      "elements": [
+        {
+          "title": "Menyiapkan pekerjaan melepas",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Wiring diagram yang relevan dengan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Informasi teknis tentang skema",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Perlengkapan pelindung kendaraan",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Melakukan pekerjaan melepas",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Komponen sistem kelistrikan yang",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Komponen sistem kelistrikan dilepas",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Komponen sistem kelistrikan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Komponen kelistrikan ditandai sesuai",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Dokumen pemeriksaan komponen",
+              "sequence": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.024.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 17,
+      "elements": [
+        {
+          "title": "Menyiapkan penggantian cairan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama komponen, jenis, spesifikasi,",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan bahan disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Manual perbaikan Sistem",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Riwayat pemeliharaan pada sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Kebutuhan penggantian cairan pada",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Prosedur penggantian cairan pada",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Kendaraan yang akan diganti cairan",
+              "sequence": 7
+            }
+          ]
+        },
+        {
+          "title": "Memeriksa kebocoran dan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kebocoran sistem pendinginan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Cairan pendingin engine dikuras",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Cairan pendingin engine diisi sesuai",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Hasil penggantian cairan pada",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Hasil pengujian ditindaklanjuti sesuai",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Dokumen penggantian cairan pada",
+              "sequence": 6
+            },
+            {
+              "code_number": "2.7",
+              "statement": "Hasil penggantian cairan pada",
+              "sequence": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.084.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 18,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan sistem air",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Pekerjaan menyiapkan pemeliharaan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Alat dan perlengkapan pengaman",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Metode pemeliharaan ditentukan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Material dan komponen sistem air",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Perlengkapan pelindung kendaraan",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Memelihara komponen air",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Sistem air conditioner diuji dengan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Hasil pengujian air conditioner dicatat",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Jumlah refrigerant disesuaikan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Hasil pekerjaan memelihara",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Pengujian final dilakukan untuk",
+              "sequence": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "question_text": "Sebutkan peralatan yang termasuk dalam Keselamatan dan Kesehatan Kerja ?",
+      "option_a": "APAR",
+      "option_b": "Safety Shoes",
+      "option_c": "Pakaian kerja",
+      "option_d": "Jawaban a, b, dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 2,
+      "question_text": "Untuk memastikan apakah APAR masih dapat berfungsi dengan normal,maka hal yang perlu diperiksa\n    adalah :",
+      "option_a": "Masa berlaku penggunaan",
+      "option_b": "Kesesuaian Ukuran tabung",
+      "option_c": "Tanggal pembelian",
+      "option_d": "Tanggal pemasangan",
+      "correct_answer": "A"
+    },
+    {
+      "number": 3,
+      "question_text": "Prosedur pengoperasian APAR adalah sebagai berikut :",
+      "option_a": "Arahkan selang ke obyek  buka pin pengunci  tekan handle",
+      "option_b": "Buka pin pengunci  arahkan selang obyek - tekan handle",
+      "option_c": "Tekan handle  arahkan selang ke obyek  buka pin pengunci",
+      "option_d": "Arahkan selang ke obyek  Tekan handle  buka pin pengunci",
+      "correct_answer": "B"
+    },
+    {
+      "number": 4,
+      "question_text": "Apa yang anda lakukan ketika pekerjaan yang anda lakukan selesai :",
+      "option_a": "Membiarkan caddy tools di stall anda.",
+      "option_b": "Istirahat sambil menunggu foreman memberikan perintah selanjutnya",
+      "option_c": "Membersihkan peralatan dan area kerja setelah perbaikan",
+      "option_d": "Jawaban a,b, dan c, benar",
+      "correct_answer": "C"
+    },
+    {
+      "number": 5,
+      "question_text": "Saat ini di bengkel / workshop perbaikan kendaraan sudah menggunakan Caddy portable. Apa\n      keuntungannya.",
+      "option_a": "Mudah dipindahkan saat pekerjaan berjalan",
+      "option_b": "Penataan di dalam caddy lebih rapi",
+      "option_c": "Lebih banyak menampung peralatan kerja",
+      "option_d": "Jawaban a,b, dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 6,
+      "question_text": "Penanganan pemindahan peralatan gas analyzer yang benar adalah :",
+      "option_a": "Dipindahkan dengan cara didorong",
+      "option_b": "Dipindahkan dengan cara diangkat",
+      "option_c": "Dipindahkan dengan cara dilepas terlebih dahulu dari bagianya",
+      "option_d": "Jawaban a dan c benar",
+      "correct_answer": "B"
+    },
+    {
+      "number": 7,
+      "question_text": "Tujuan utama komunikasi di tempat kerja adalah...",
+      "option_a": "Menciptakan pengertian yang sama dan menghindari kesalahpahaman.",
+      "option_b": "Mengontrol perilaku rekan kerja.",
+      "option_c": "Menunjukkan kekuasaan dan wewenang.",
+      "option_d": "Menyebarkan informasi rahasia dengan cepat.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 8,
+      "question_text": "Salah satu hambatan paling umum dalam komunikasi efektif di tempat kerja adalah...",
+      "option_a": "Penggunaan bahasa yang sama oleh semua karyawan.",
+      "option_b": "Mendengarkan secara aktif (active listening).",
+      "option_c": "Asumsi atau persepsi yang berbeda-beda.",
+      "option_d": "Ketersediaan saluran komunikasi yang beragam.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 9,
+      "question_text": "Di bawah ini, mana yang bukan termasuk tujuan komunikasi di tempat kerja...",
+      "option_a": "Merangsang pemikiran pihak penerima.",
+      "option_b": "Melakukan suatu tindakan yang selaras.",
+      "option_c": "Menggerakkan orang lain untuk menjadi komunikator saja.",
+      "option_d": "Meningkatkan citra baik pada diri seseorang.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 10,
+      "question_text": "Fuse blade mempunyai identifikasi warna sebagai berikut ...",
+      "option_a": "Merah 10 A, Biru 15 A, Kuning 20 A",
+      "option_b": "Biru 10 A, Merah 15A, Hijau 20 A",
+      "option_c": "Hijau 10 A, Kuning 15 A. Biru 20 A",
+      "option_d": "Kuning 10 A, Hijau 15 A, Biru 20 A",
+      "correct_answer": "A"
+    },
+    {
+      "number": 11,
+      "question_text": "Untuk mengukur voltage yang mengalir pada sebuah rangkaian kelistrikan, maka Volt meter dipasang\n     secara ...............pada rangkaian yang akan diukur.",
+      "option_a": "Pararel",
+      "option_b": "Seri",
+      "option_c": "Seri dan Pararel",
+      "option_d": "Semua benar",
+      "correct_answer": "A"
+    },
+    {
+      "number": 12,
+      "question_text": "Mistar geser / vernier caliper bisa dipergunakan untuk mengukur ...",
+      "option_a": "Diameter luar poros",
+      "option_b": "Diameter dalam silinder",
+      "option_c": "Panjang suatu benda kerja",
+      "option_d": "Semua jawaban tersebut betul",
+      "correct_answer": "D"
+    },
+    {
+      "number": 13,
+      "question_text": "Untuk mengukur berat jenis accu dipergunakan ...",
+      "option_a": "Dial gauge",
+      "option_b": "Micrometer",
+      "option_c": "Hydrometer",
+      "option_d": "Silinder gauge.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 14,
+      "question_text": "Gambar di bawah ini merupakan prosedur suatu pengukuran kelistrikan. Pengukuran apakah yang dapat\n     dilakukan sepeti gambar tersebut ?",
+      "option_a": "Tegangan",
+      "option_b": "Arus",
+      "option_c": "Hambatan / Tahanan",
+      "option_d": "Daya                ?",
+      "correct_answer": "B"
+    },
+    {
+      "number": 15,
+      "question_text": "Pada saat menggunakan AVO Meter Analog, saat akan melakukan pengukuran Resistance, maka langkah\n     yang harus dilakukan sebelum memakai adalah :",
+      "option_a": "Memilih skala ukur Ohm yang sesuai",
+      "option_b": "Memilih skala ukur Amp yang sesuai",
+      "option_c": "Melakukan kalibrasi",
+      "option_d": "Jawaban yang benar a dan c",
+      "correct_answer": "D"
+    },
+    {
+      "number": 16,
+      "question_text": "Apa tujuan utama dari melakukan perawatan atau pemeliharaan komponen kendaraan secara rutin...",
+      "option_a": "Agar tampilan mobil menjadi lebih mengkilap.",
+      "option_b": "Untuk mempercepat laju kendaraan di jalan raya.",
+      "option_c": "Memastikan semua komponen berfungsi optimal, memperpanjang usia pakai, dan menjamin\n\n    keselamatan.",
+      "option_d": "Agar biaya bahan bakar menjadi lebih murah.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 17,
+      "question_text": "Komponen manakah yang secara rutin harus diperiksa tekanan dan kondisinya untuk menjamin\n     keselamatan berkendara ...",
+      "option_a": "Oli mesin.",
+      "option_b": "Ban.",
+      "option_c": "Lampu kabin.",
+      "option_d": "Wiper kaca depan.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 18,
+      "question_text": "Pemeriksaan komponen kelistrikan pada aki (accu) meliputi pengecekan...",
+      "option_a": "Volume air aki (pada aki basah) dan kondisi terminal dari korosi.",
+      "option_b": "Tekanan angin pada aki.",
+      "option_c": "Ketebalan kampas rem.",
+      "option_d": "Ketinggian oli transmisi.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 19,
+      "question_text": "Apa tujuan utama dari proses pematrian (soldering) dalam perakitan elektronik...",
+      "option_a": "Menyambungkan dua komponen secara permanen dengan ikatan mekanis saja.",
+      "option_b": "Menyatukan dua atau lebih logam menggunakan bahan pengisi (timah) yang dilelehkan tanpa\n\n         melelehkan bahan dasar.",
+      "option_c": "Mengelas dua logam besar menggunakan suhu yang sangat tinggi.",
+      "option_d": "Membersihkan permukaan logam dari karat dan kotoran.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 20,
+      "question_text": "Bahan pengisi yang umum digunakan dalam pematrian elektronik disebut timah solder. Timah solder\n     biasanya merupakan paduan dari...",
+      "option_a": "Emas dan Perak.",
+      "option_b": "Besi dan Tembaga.",
+      "option_c": "Timah (Sn) dan Timbal (Pb) atau bahan bebas timbal (Lead-Free).",
+      "option_d": "Aluminium dan Seng.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 21,
+      "question_text": "Apa fungsi dari flux (pasta solder/cairan pembersih) dalam proses pematrian...",
+      "option_a": "Sebagai pendingin agar komponen tidak terlalu panas.",
+      "option_b": "Mempercepat proses pengeringan timah setelah dipatri.",
+      "option_c": "Membersihkan permukaan logam yang akan disambung dari lapisan oksida dan kotoran.",
+      "option_d": "Sebagai isolator listrik antara dua sambungan.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 22,
+      "question_text": "Apa yang dimaksud dengan viskositas (viscosity) pada oli hidrolik...",
+      "option_a": "Warna oli saat masih baru.",
+      "option_b": "Kemampuan oli untuk menahan panas tinggi.",
+      "option_c": "Ketahanan oli terhadap pembentukan busa.",
+      "option_d": "Ukuran kekentalan atau hambatan aliran fluida.",
+      "correct_answer": "D"
+    },
+    {
+      "number": 23,
+      "question_text": "Prinsip dasar yang digunakan dalam sistem hidrolik untuk mentransmisikan gaya adalah Hukum...",
+      "option_a": "Newton.",
+      "option_b": "Archimedes.",
+      "option_c": "Ohm.",
+      "option_d": "Pascal.",
+      "correct_answer": "D"
+    },
+    {
+      "number": 24,
+      "question_text": "Komponen utama dalam sistem hidrolik yang berfungsi mengubah energi mekanik (putaran\n     mesin/motor) menjadi energi hidrolik (aliran fluida bertekanan) adalah...",
+      "option_a": "Aktuator (silinder hidrolik).",
+      "option_b": "Reservoir (tangki oli).",
+      "option_c": "Pompa hidrolik.",
+      "option_d": "Katup pengontrol arah (directional control valve).",
+      "correct_answer": "C"
+    },
+    {
+      "number": 25,
+      "question_text": "Apa tujuan utama dari servis atau perawatan berkala (scheduled maintenance) pada engine kendaraan...",
+      "option_a": "Agar suara mesin menjadi lebih kencang.",
+      "option_b": "Memastikan efisiensi bahan bakar optimal, memperpanjang umur mesin, dan mendeteksi dini potensi\n\n         kerusakan.",
+      "option_c": "Menghilangkan garansi pabrikan.",
+      "option_d": "Agar warna oli mesin selalu jernih.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 26,
+      "question_text": "Komponen manakah yang paling vital untuk diganti secara rutin dalam interval jarak tempuh tertentu\n     (biasanya setiap 5.000 atau 10.000 km) sebagai bagian dari perawatan berkala...",
+      "option_a": "Lampu bohlam depan.",
+      "option_b": "Oli mesin dan filter oli.",
+      "option_c": "Ban cadangan.",
+      "option_d": "Wiper kaca.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 27,
+      "question_text": "Apa yang dimaksud dengan idle speed (putaran langsam) pada engine, yang sering disetel saat perawatan\n     berkala...",
+      "option_a": "Putaran mesin minimum saat mesin hidup tanpa beban (pedal gas tidak diinjak).",
+      "option_b": "Kecepatan maksimum kendaraan di jalan tol.",
+      "option_c": "Putaran mesin saat tuas transmisi berada di posisi gigi tertinggi.",
+      "option_d": "Jumlah putaran roda per menit.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 28,
+      "question_text": "Fungsi utama sistem pelumasan pada engine adalah untuk...",
+      "option_a": "Mendinginkan udara masuk ke ruang bakar.",
+      "option_b": "Melumasi bagian-bagian yang bergerak, mengurangi gesekan, dan mendinginkan komponen mesin.",
+      "option_c": "Meningkatkan tekanan bahan bakar pada injektor.",
+      "option_d": "D. Membersihkan knalpot dari emisi gas buang.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 29,
+      "question_text": "Apa yang akan terjadi jika volume oli mesin terlalu rendah dari batas minimum pada dipstick...",
+      "option_a": "Terjadi gesekan berlebih yang menyebabkan panas (overheating) dan potensi kerusakan serius pada\n         mesin.",
+      "option_b": "Tekanan oli akan meningkat drastis.",
+      "option_c": "Warna oli akan tetap jernih lebih lama.",
+      "option_d": "Mesin akan bekerja lebih efisien dan irit bahan bakar.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 30,
+      "question_text": "Apa fungsi dari oil filter (filter oli) dalam sistem pelumasan...",
+      "option_a": "Mengatur suhu oli mesin.",
+      "option_b": "Menahan oli di dalam karter saat mesin mati.",
+      "option_c": "Menyaring kotoran, serpihan logam, dan lumpur oli dari sirkulasi oli mesin.",
+      "option_d": "Meningkatkan tekanan oli ke komponen mesin.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 31,
+      "question_text": "Oli mesin yang sudah terkontaminasi oleh air atau cairan pendingin biasanya akan terlihat seperti...",
+      "option_a": "Sangat encer dan berwarna merah muda.",
+      "option_b": "Berwarna hitam pekat dan berbau bensin.",
+      "option_c": "Tetap jernih dan tidak berbau.",
+      "option_d": "Berwarna keruh seperti susu atau kopi susu (milky appearance).",
+      "correct_answer": "D"
+    },
+    {
+      "number": 32,
+      "question_text": "Alat yang digunakan untuk memeriksa ketinggian (level) oli mesin adalah...",
+      "option_a": "Pressure gauge (pengukur tekanan).",
+      "option_b": "Kunci momen (torque wrench).",
+      "option_c": "Dipstick oli (tongkat pengukur).",
+      "option_d": "Multimeter.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 33,
+      "question_text": "Apa fungsi utama sistem pendinginan pada mesin kendaraan...",
+      "option_a": "Mempercepat proses pembakaran bahan bakar.",
+      "option_b": "B. Menjaga suhu mesin tetap dalam rentang operasional yang optimal.",
+      "option_c": "C. Mencegah oli mesin menjadi terlalu kental.",
+      "option_d": "D. Mengurangi tingkat kebisingan mesin saat beroperasi.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 34,
+      "question_text": "Komponen manakah yang berfungsi untuk membuang panas mesin ke udara melalui sirip-siripnya...",
+      "option_a": "Thermostat",
+      "option_b": "Water Pump (Pompa air)",
+      "option_c": "Radiator",
+      "option_d": "Selang radiator",
+      "correct_answer": "C"
+    },
+    {
+      "number": 35,
+      "question_text": "Cairan khusus yang digunakan dalam sistem pendinginan untuk mencegah karat dan meningkatkan titik\n     didih air adalah...",
+      "option_a": "Air suling murni",
+      "option_b": "Minyak rem",
+      "option_c": "Coolant (Cairan pendingin)",
+      "option_d": "Oli mesin",
+      "correct_answer": "C"
+    },
+    {
+      "number": 36,
+      "question_text": "Apa alat pelindung diri (APD) yang PALING penting digunakan saat melakukan penggantian cairan\n     pendingin untuk melindungi kulit dan mata...",
+      "option_a": "Helm proyek dan sepatu safety.",
+      "option_b": "Sarung tangan karet/nitril dan kacamata pengaman (safety goggles).",
+      "option_c": "Masker debu dan rompi reflektif.",
+      "option_d": "Penutup telinga (earmuffs).",
+      "correct_answer": "B"
+    },
+    {
+      "number": 37,
+      "question_text": "Di mana lokasi katup pembuangan (drain plug) yang umum digunakan untuk menguras cairan pendingin\n     dari sistem...",
+      "option_a": "Di dalam reservoir tank (tangki cadangan).",
+      "option_b": "Di bagian atas tutup radiator.",
+      "option_c": "Di bagian bawah blok mesin saja.",
+      "option_d": "Di bagian bawah radiator (tangki bawah) dan terkadang di blok mesin.",
+      "correct_answer": "D"
+    },
+    {
+      "number": 38,
+      "question_text": "Apa yang dimaksud dengan proses flushing (pembilasan) dalam konteks penggantian cairan pendingin...",
+      "option_a": "Proses membilas seluruh sirkuit pendinginan dengan air bersih atau cairan pembersih khusus untuk\n         menghilangkan kotoran dan karat sebelum diisi coolant baru.",
+      "option_b": "Proses mengeringkan seluruh sistem pendingin menggunakan kompresor udara.",
+      "option_c": "Proses mengecat ulang radiator agar terlihat baru.",
+      "option_d": "Proses mengisi penuh sistem dengan oli mesin baru.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 39,
+      "question_text": "Mengapa sangat disarankan untuk menggunakan coolant (cairan pendingin khusus) yang\n     direkomendasikan pabrikan, daripada hanya menggunakan air keran biasa...",
+      "option_a": "Coolant memiliki warna yang lebih menarik secara visual.",
+      "option_b": "Coolant mengandung zat aditif anti-korosi/anti-karat dan menaikkan titik didih air.",
+      "option_c": "Air keran terlalu berat untuk dipompa oleh water pump.",
+      "option_d": "Air keran membuat kabin mobil menjadi lebih panas.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 40,
+      "question_text": "Apa fungsi utama dari filter bahan bakar (fuel filter) dalam sistem suplai bensin...",
+      "option_a": "Mendinginkan bensin sebelum masuk ke mesin.",
+      "option_b": "Menyaring kotoran, karat, dan partikel asing dari bensin sebelum mencapai injektor atau karburator.",
+      "option_c": "Meningkatkan tekanan bahan bakar.",
+      "option_d": "Mengurangi tingkat oktan bensin.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 41,
+      "question_text": "Pada sistem injeksi elektronik (EFI), komponen manakah yang bertanggung jawab menyemprotkan bahan\n     bakar ke dalam intake manifold atau ruang bakar...",
+      "option_a": "Karburator",
+      "option_b": "Fuel pump (pompa bahan bakar)",
+      "option_c": "Injektor (injector)",
+      "option_d": "Regulator tekanan bahan bakar",
+      "correct_answer": "C"
+    },
+    {
+      "number": 42,
+      "question_text": "Komponen yang berfungsi untuk menghisap bensin dari tangki dan mengirimkannya ke sistem injeksi atau\n     karburator dengan tekanan yang cukup adalah...",
+      "option_a": "Fuel filter",
+      "option_b": "Fuel injector",
+      "option_c": "Fuel pump",
+      "option_d": "Busi",
+      "correct_answer": "C"
+    },
+    {
+      "number": 43,
+      "question_text": "Apa fungsi utama dari sistem kontrol emisi pada kendaraan bermotor...",
+      "option_a": "Meningkatkan kecepatan maksimal kendaraan",
+      "option_b": "Mengurangi atau menghilangkan gas beracun hasil pembakaran",
+      "option_c": "Memperkeras suara knalpot",
+      "option_d": "Menambah konsumsi bahan bakar",
+      "correct_answer": "B"
+    },
+    {
+      "number": 44,
+      "question_text": "Komponen yang berfungsi mengubah gas beracun (CO, HC, NOx) menjadi gas yang lebih aman (CO2, H2O,\n     N2) melalui reaksi kimia adalah...",
+      "option_a": "Catalytic Converter",
+      "option_b": "Muffler",
+      "option_c": "Exhaust Manifold",
+      "option_d": "Resonator",
+      "correct_answer": "A"
+    },
+    {
+      "number": 45,
+      "question_text": "Gas yang timbul akibat pembakaran bahan bakar yang tidak sempurna dan tidak berwarna serta tidak\n     berbau adalah...",
+      "option_a": "Karbon Dioksida (CO2)",
+      "option_b": "Karbon Monoksida (CO)",
+      "option_c": "Nitrogen Oksida (NOx)",
+      "option_d": "Hidrokarbon (HC)",
+      "correct_answer": "B"
+    },
+    {
+      "number": 46,
+      "question_text": "Alat yang digunakan untuk menganalisis komposisi dan kadar gas buang dari knalpot kendaraan disebut...",
+      "option_a": "Tachometer",
+      "option_b": "Scan Tool",
+      "option_c": "Exhaust Gas Analyzer",
+      "option_d": "Multimeter",
+      "correct_answer": "C"
+    },
+    {
+      "number": 47,
+      "question_text": "Apa fungsi utama elektrolit pada baterai jenis basah...",
+      "option_a": "Sebagai isolator listrik",
+      "option_b": "Sebagai media untuk menyimpan energi panas",
+      "option_c": "Sebagai media penghantar ion antara plat positif dan negatif",
+      "option_d": "Untuk mencegah penguapan air aki",
+      "correct_answer": "C"
+    },
+    {
+      "number": 48,
+      "question_text": "Alat yang digunakan untuk mengukur berat jenis (spesific gravity) cairan elektrolit baterai adalah...",
+      "option_a": "Thermometer",
+      "option_b": "Voltmeter",
+      "option_c": "Amperemeter",
+      "option_d": "Hydrometer",
+      "correct_answer": "D"
+    },
+    {
+      "number": 49,
+      "question_text": "Saat menyimpan baterai yang tidak digunakan dalam jangka waktu lama, tindakan terbaik yang harus\n     dilakukan adalah...",
+      "option_a": "Menyimpannya dalam kondisi kosong (daya habis total)",
+      "option_b": "Menyimpannya di tempat yang sangat panas",
+      "option_c": "Menyimpannya dalam kondisi terisi penuh dan melakukan pengisian ulang berkala (maintenance\n\n         charge)",
+      "option_d": "Membungkusnya dengan plastik kedap udara sepenuhnya",
+      "correct_answer": "C"
+    },
+    {
+      "number": 50,
+      "question_text": "Saat melepaskan kabel baterai lama, terminal manakah yang harus dilepas terlebih dahulu...",
+      "option_a": "Terminal Positif (+)",
+      "option_b": "Terminal Negatif (-) (Ground)",
+      "option_c": "Keduanya secara bersamaan",
+      "option_d": "Terminal yang lebih dekat dengan wiper",
+      "correct_answer": "B"
+    },
+    {
+      "number": 51,
+      "question_text": "Ketika memasang baterai baru, manakah urutan penyambungan kabel yang benar...",
+      "option_a": "Pasang kabel negatif (-) dulu, lalu kabel positif (+).",
+      "option_b": "Pasang kabel positif (+) dulu, lalu kabel negatif (-).",
+      "option_c": "Pasang kedua kabel secara bersamaan.",
+      "option_d": "Urutan pemasangan tidak memengaruhi keamanan.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 52,
+      "question_text": "Alat yang umum digunakan untuk mengukur tegangan baterai mobil adalah...",
+      "option_a": "Multimeter (Voltmeter)",
+      "option_b": "Kunci momen",
+      "option_c": "Hydrometer",
+      "option_d": "Obeng ketok",
+      "correct_answer": "A"
+    },
+    {
+      "number": 53,
+      "question_text": "Jika terminal baterai mobil berkarat atau kotor, apa yang harus dilakukan sebelum memasang baterai\n     baru...",
+      "option_a": "Langsung pasang kabel ke terminal yang kotor.",
+      "option_b": "Membersihkan terminal dengan lap kering saja.",
+      "option_c": "Membersihkan terminal menggunakan sikat kawat dan cairan pembersih khusus.",
+      "option_d": "Mengecat terminal untuk mencegah korosi lebih lanjut.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 54,
+      "question_text": "Pada mesin mobil yang sedang hidup dan berfungsi normal, berapakah rentang tegangan standar yang\n     harus ditunjukkan oleh sistem pengisian (alternator) saat diukur pada terminal baterai...",
+      "option_a": "10.5V  11.5V",
+      "option_b": "12.4V  12.8V",
+      "option_c": "13.5V  14.5V",
+      "option_d": "15.0V  16.0V",
+      "correct_answer": "C"
+    },
+    {
+      "number": 55,
+      "question_text": "Sebelum memulai pekerjaan melepas komponen kelistrikan utama (seperti alternator, radio, atau ECU),\n     tindakan keselamatan fundamental apa yang harus dilakukan pertama kali...",
+      "option_a": "Memastikan semua pintu mobil tertutup rapat.",
+      "option_b": "Melepas terminal negatif (-) baterai mobil.",
+      "option_c": "Menyalakan lampu hazard untuk peringatan.",
+      "option_d": "Menyemprotkan cairan pembersih ke komponen yang akan dilepas.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 56,
+      "question_text": "Saat melepas konektor listrik yang memiliki klip pengunci plastik, metode yang benar adalah...",
+      "option_a": "Menarik kabelnya sekuat tenaga hingga terlepas.",
+      "option_b": "Menggunakan tang untuk mencabut paksa konektornya.",
+      "option_c": "Menekan atau menggeser klip pengunci sambil menarik konektor secara perlahan.",
+      "option_d": "Memotong kabel di dekat konektor lalu menyambungnya lagi nanti.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 57,
+      "question_text": "Apa risiko utama jika komponen kelistrikan dilepas saat mesin mobil masih hidup atau kunci kontak masih\n     pada posisi \"ON\"...",
+      "option_a": "Tidak ada risiko, karena sistem mobil sangat aman.",
+      "option_b": "Airbag bisa mengembang secara tiba-tiba.",
+      "option_c": "Terjadi lonjakan arus listrik (electrical surge) yang dapat merusak modul kontrol elektronik (ECU) atau\n\n         komponen sensitif lainnya.",
+      "option_d": "Radio mobil akan otomatis menyetel ulang stasiun radio.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 58,
+      "question_text": "Tindakan perawatan paling sederhana dan rutin yang dapat dilakukan pemilik mobil untuk menjaga\n     kebersihan dan kinerja AC adalah...",
+      "option_a": "Mencuci kondensor AC dengan air bertekanan tinggi setiap bulan.",
+      "option_b": "Mengganti kompresor setiap tahun.",
+      "option_c": "Memeriksa dan membersihkan filter kabin (filter AC) secara berkala.",
+      "option_d": "Menambahkan oli kompresor setiap kali mengisi bahan bakar.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 59,
+      "question_text": "Apa fungsi utama dari freon (refrigeran) dalam sistem AC mobil...",
+      "option_a": "Melumasi kompresor AC.",
+      "option_b": "Menghasilkan udara dingin dengan cara menyerap panas dari dalam kabin dan membuangnya keluar.",
+      "option_c": "Mencegah pertumbuhan jamur di saluran udara.",
+      "option_d": "Membunuh bakteri di dalam evaporator.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 60,
+      "question_text": "Ketika AC mobil terasa kurang dingin, salah satu penyebab paling umum yang memerlukan pemeriksaan\n     oleh teknisi adalah...",
+      "option_a": "Ban mobil kempes.",
+      "option_b": "Jumlah freon yang berkurang atau adanya kebocoran sistem.",
+      "option_c": "Lampu depan mobil mati.",
+      "option_d": "Oli mesin terlalu kental.\n\fPENYUSUN DAN VALIDATOR\n\nSTATUS    NO                    NAMA  NOMOR MET        TANDA TANGAN\n                                                        DAN TANGGAL\n\n          1 RIDWAN                    000.008265 2025\n          2 RANDI ARDIANSYAH\nPENYUSUN                                               12 Januari 2026\n\n                                      000.002498 2013\n\n                                                       12 Januari 2026\n\n                     1 SAPTONO        000.003672 2016\nVALIDATOR 2 KARYANTO\n                                                       12 Januari 2026\n                     3 GUNADI\n                                      000.008260 2025\n\n                                                       12 Januari 2026\n\n                                      000.000459 2007\n\n                                                       12 Januari 2026",
+      "correct_answer": "B"
+    }
+  ],
+  "tpd": {
+    "scenario": "No. Kode Unit Judul Unit Kelompok 1. G.45OTO01.001.2 Melaksanakan Keselamatan dan Kesehatan Kerja Pekerjaan 1 2. G.45OTO01.002.2 Menggunakan Peralatan dan Perlengkapan Tempat Kerja 3. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja General 4. G.45OTO01.007.2 Membaca Gambar Teknik Service 5. G.45OTO01.008.2 Menggunakan Alat Ukur 6. G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen 7. G.45OTO01.006.2 Melaksanakan Teknik Pematrian 8. G.45OTO01.005.2 Memperbaiki Sistem Hidrolik Skenario Tugas Praktik Demonstrasi:",
+    "time_limit": "30 Menit",
+    "tasks": [
+      {
+        "id": "1",
+        "instruction": "Baca dan pelajari setiap instruksi kerja di bawah ini dengan cermat sebelum melaksanakan"
+      },
+      {
+        "id": "2",
+        "instruction": "Klarifikasi kepada asesor kompetensi apabila ada hal-hal yang belum jelas"
+      },
+      {
+        "id": "3",
+        "instruction": "Laksanakan pekerjaan sesuai dengan urutan proses yang sudah ditetapkan"
+      },
+      {
+        "id": "4",
+        "instruction": "Seluruh proses kerja mengacu kepada SOP/WI yang dipersyaratkan (Jika Ada)"
+      }
+    ]
+  },
+  "pmo": [
+    {
+      "number": "1",
+      "question": "Jelaskan bagaimana anda melaksanakan Prosedur kesehatan dan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Kenapa menggunakan Peralatan dan perlengkapan harus sesuai manual",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Saat melakukan pemeliharaan rutin, ditemukan bahwa recovery",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Jelaskan mengapa Engine harus dirawat secara Berkala:",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Bagaimana langkah yang harus anda lakukan, jika suara mesin tidak normal",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Bagaimana anda mendokumentasikan dan melaporkan hasil pemeriksaan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Pada pemeriksaan sistem pengisian, multimeter menunjukkan tegangan 14.2V",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Pada siang hari yang sangat terik, AC mobil terasa dingin di awal, namun",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Seorang teknisi sedang melepas baterai pada mobil modern yang dilengkapi",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    }
+  ],
+  "report_sheet": [
+    {
+      "item": "1. G.45OTO01.001.2",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "2. G.45OTO01.002.2         Persiapan :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "3. G.45OTO01.003.2         Melaporkan Data Hasil Pekerjaan Keseluruhan Kepada Atasan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "4. G.45OTO01.007.2         bahan bakar a........................ b...................",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "5. G.45OTO01.008.2",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "6. G.45OTO01.010.2              No.1............mm Kondisi.............",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "7. G.45OTO01.020.2 Sistem Pelumasan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "8. G.45OTO01.022.2 Sistem Pendingin",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "9. G.45OTO01.024.2 Penggantian Cairan Pendingin",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "11. G.45OTO01.032.2 Exhaust Emission Test",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "12. G.45OTO01.004.2 Pemeliharaan Komponen Kendaraan:",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "13. G.45OTO01.006.2 Melaksanakan Pematrian",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "14. G.45OTO01.005.2 Memperbaiki Sistem Hidrolik",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "15. G.45OTO01.065.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "16. G.45OTO01.066.2 Mengganti Baterai Kendaraan Ringan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "17. G.45OTO01.067.2 Melepas Komponen Kelistrikan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "18. G.45OTO01.084.2 Memelihara Sistem Air Conditioner",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    }
+  ]
+}

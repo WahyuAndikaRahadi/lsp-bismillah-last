@@ -1,0 +1,562 @@
+                            Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.05A. DPT - PERTANYAAN TERTULIS PILIHAN GANDA
+
+Skema Sertifikasi           Judul  : Mekanik Junior
+(KKNI/Okupasi/Klaster)      Nomor  : 05/LSP PrO Indo/I/2026
+                                   : Sewaktu/Tempat Kerja/Mandiri*
+TUK                                :
+Nama Asesor                        :
+Nama Asesi                         :
+Tanggal                            :
+Waktu
+
+   *Coret yang tidak perlu
+
+Jawab semua pertanyaan berikut:
+     1. Fungsi utama karburator pada mesin bensin adalah...
+
+          a) Mencampur bahan bakar dengan oli mesin.
+          b) Menyalurkan listrik ke busi.
+          c) Mencampur bahan bakar dan udara dengan perbandingan yang tepat sesuai kebutuhan mesin.
+          d) Mendinginkan suhu mesin saat bekerja.
+
+     2. Apa yang terjadi jika setelan campuran udara dan bahan bakar (air-fuel mixture) pada karburator
+          terlalu kaya (terlalu banyak bensin)...
+
+          a) Mesin mudah panas dan busi berwarna putih bersih.
+          b) Mesin sulit hidup, knalpot mengeluarkan asap hitam pekat, dan konsumsi BBM boros.
+          c) Mesin mati mendadak saat digas penuh.
+          d) Putaran mesin (RPM) menjadi sangat tinggi secara terus-menerus.
+     3. Komponen karburator yang berfungsi untuk menutup saluran udara masuk saat mesin dalam kondisi
+          dingin agar mudah dihidupkan adalah...
+
+          a) Pilot jet
+          b) Main jet
+          c) Choke (cuk)
+          d) Pelampung (float)
+     4. Saat melakukan perawatan karburator, komponen mana yang paling sering tersumbat oleh kotoran
+          atau endapan bensin lama...
+
+          a) Pelampung
+          b) Jarum pelampung
+          c) Pilot jet dan Main jet (spuyer)
+          d) Katup gas (throttle valve)
+
+5. Perawatan rutin yang paling mendasar untuk mencegah masalah pada karburator adalah...
+
+    a) Mengganti oli mesin setiap bulan.
+    b) Memastikan filter udara selalu bersih dan tidak tersumbat.
+    c) Menyetel rantai roda secara berkala.
+    d) Memeriksa tekanan ban setiap hari.
+
+6. Pada mesin 4 langkah, apabila katup masuk terbuka dan katup buang tertutup, sementara piston
+    bergerak dari TMA ke TMB, maka proses langkah kerja ini disebut ...
+    a) Langkah pembuangan
+    b) Langkah usaha
+    c) Langkah hisap
+    d) Langkah expansi
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+7. Berikut adalah prosedur yang dilakukan sebelum melakukan penyetelan celah katup pada mesin
+    sepeda motor ...
+    a) Melepas penutup lubang poros engkol, dan penutup lubang pemeriksaan waktu pengapian
+    b) Melepas penutup lubang penyetelan katup
+    c) Memutar rotor generator berlawanan arah jarum jam pastikan katup masuk bergerak turun dan
+        kemudian naik kembali, tepatkan tanda "T" pada rotor generator dengan tanda penyesuainya.
+    d) Pilihan jawaban a, b, c benar
+
+8. Standar pemeriksaan dan penyetelan celah katup dapat menggunakan ...
+
+    a) Fuller Gauge
+    b) Adjuster Valve
+    c) Compression gauge
+    d) Vernier Caliper
+9. Bunyi mesin pada cylinder head berisik, kemungkinan penyebab kerusakan adalah ...
+
+    a) Ada kerusakan pada intake manifold
+    b) Celah Katup terlalu longgar
+    c) Mesin Overheating
+    d) Tekanan kompresi rendah
+10. Pemeriksaan yang harus di perhatikan untuk memastikan putaran stationer tidak berubah adalah ...
+    a) Memutar keseluruhan stang kemudi ke arah kanan dan kiri
+    b) Memeriksa jarak main bebas handel gas
+    c) Memeriksa sambungan kabel gas
+    d) Pilihan jawaban a, b dan c benar
+11. Pemeriksaan free play throttle gas pada throttle body, yang perlu diperhatikan pada gambar berikut
+    adalah ...
+    a) Putaran mesin Idle
+    b) Kebersihan pegas throttle
+    c) Memastikan baut stopscrew tidak berubah
+    d) Kebersihan Throttle body
+
+12. Berikut ini adalah pengerjaan yang tidak termasuk bagian dari perawatan kabel dan handel gas
+    adalah....
+    a) Pemeriksaan kondisi kelancaran handel gas
+    b) Melepas karet penutup debu dari penyetel
+    c) Jarak main bebas handle gas disetel pada bagian sisi stang kemudi kabel gas
+    d) Jarak main bebas handel gas tidak dapat disetel pada bagian ujung bawah kabel gas
+
+13. Pada jadwal perawatan berkala yang ditunjukan Buku Pedoman Reparasi tanda "G" untuk item
+    perawatan saringan udara memiliki arti ...
+    a) Periksa
+    b) Lumasi
+    c) Ganti
+    d) Bersihkan
+
+14. Yang bukan termasuk bagian dari struktur saringan udara adalah ...
+
+    a) Kotak Saringan Udara (cleaner case)
+    b) Katup Pernafasan (check valve)
+    c) Saringan Udara (air filter)
+    d) Lubang Pembuangan air (water draining outlet)
+15. Saringan jenis Viscous prosedur perawatan yang dianjurkan adalah ...
+
+    a) Tidak boleh disemprot, tetapi tetap di buka dan dibersihkan dengan cara di lap
+    b) Membersihkan filter udara dengan udara bertekanan
+    c) Menambahkan pelumas pada filter udara
+    d) Dibersihkan dengan cairan pembersih
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+16. Akibat dari penyetelan kopling tidak benar adalah ...
+
+     a) Pegas kopling keras
+     b) Kopling selip sewaktu berakselerasi
+     c) Transmisi loncat dengan sendirinya
+     d) Daya mesin berkurang
+17. Berikut adalah cara penyetelan kopling sepeda motor tipe cub (bebek ) adalah....
+
+    a) Letakkan sepeda motor pada standar tengah
+    b) Longgarkan mur pengunci penyetel kopling satu putaran penuh
+    c) Putar adjuster berlawanan arah jarum jam sampai terasa ada tahanan, kemudian putar adjuster
+
+        searah jarum jam 3/4 putaran dan kencangkan lock nut.
+    d) Jawaban a,b dan c benar
+18. Prosedur pemeriksaan tinggi permukaan oli pada mesin sepeda motor adalah sebagai berikut ...
+
+    a) Melepas tutup pengisi oli / batang pengukur dan periksa tinggi permukaan oli
+    b) Menghidupkan mesin dan biarkan berputar stasioner selama 2-3 menit dan kemudian matikan
+
+        mesin
+    c) Menempatkan sepeda motor pada standar tengannya
+    d) Membuka tutup gear sprocket
+19. Penggantian oli pelumas berdasarkan....
+
+    a) Lamanya kendaraan beroperasi
+    b) Kilometer jarak tempuh kendaran
+    c) Petunjuk teknisi
+    d) Temperatur kerja mesin
+20. Untuk menyaring partikel lembut pada system pelumasan diperlukan ...
+
+    a) Oil treatment
+    b) Crancase Hole
+    c) Oil strainer
+    d) By Pas Valve
+21. Berikut adalah pemeliharaan dan perawatan filter oli yang benar ...
+
+    a) Elemen Filter Oli tidak dapat di digunakan kembali dan harus dilakukan penggantian
+    b) Tipe Oil filter Assembly harus diganti baru berikut filter case
+    c) Oil filter elemen yang kotor harus diganti dengan yang baru berdasarkan jarak tempuh
+    d) Pilihan Jawaban a,b dan c benar
+22. Tanda Huruf "G" yang ditunjukan pada table pemeliharaan perawatan Buku Pedoman Reparasi
+    memiliki arti ...
+    a) Periksa
+    b) Penggantian
+    c) Perbaikan
+    d) Peringatan
+23. Yang harus diperhatikan dalam melakukan pemeriksaan, penggantian oli pelumas adalah ...
+
+    a) SAE/API Service
+    b) Jarak Tempuh kendaran
+    c) Kapasitas Oli
+    d) a,b dan c benar semua
+24. Apa fungsi utama dari sistem CVT pada kendaraan...
+
+    a) Mengubah energi listrik menjadi energi gerak.
+    b) Menghubungkan mesin dengan roda tanpa menggunakan gigi percepatan yang tetap,
+
+          memungkinkan rasio gigi yang bervariasi secara terus menerus.
+    c) Mendinginkan mesin saat beroperasi pada kecepatan tinggi.
+    d) Menggandakan torsi mesin hingga 10 kali lipat.
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+25. Komponen utama pada CVT sepeda motor yang bergerak membuka dan menutup untuk mengubah
+    diameter puli dan rasio putaran adalah...
+     a) Kampas ganda (clutch shoe)
+     b) V-belt (sabuk V)
+     c) Roller (weight roller)
+     d) Per CVT
+
+26. Apa gejala yang paling umum terjadi jika V-belt pada sistem CVT sudah aus atau retak...
+
+    a) Mesin menjadi sangat irit bahan bakar.
+    b) Suara knalpot menjadi lebih keras.
+    c) Timbul suara berdecit saat akselerasi awal dan performa tenaga menurun.
+    d) Lampu depan menjadi redup.
+27. Jika roller (weight roller) pada CVT sudah aus atau peyang (pipih), apa dampaknya terhadap performa
+    kendaraan...
+    a) Putaran atas (top speed) meningkat drastis.
+    b) Akselerasi awal terasa berat atau lemot, dan kecepatan tertinggi sulit dicapai.
+    c) Rem belakang menjadi blong.
+    d) Suspensi menjadi keras.
+28. Pemeliharaan sistem pendingin udara yang benar adalah sebagai berikut...
+
+     a) Memberi lapisan cat pada rusuk pendingin secara merata
+     b) Membersihkan bersamaan dengan menghidupkan mesin
+     c) Membersihkan dengan menyikat bagian mesin dari debu dan kotoran
+     d) Membersihkan rusuk pendingin pada bagian cylinder block dan cylinder head dari debu dan
+
+          kotoran menggunakan udara bertekanan
+29. Alat tepat yang dipergunakan untuk menguji kebocoran sistem pendinginan air pada sepeda motor,
+
+    disebut ...
+    a) Hydrometer
+    b) Radiator tester
+    c) Odometer
+    d) Tacho meter
+30. Hal yang harus dihindarkan pada saat melakukan pengecekan system pendingin adalah ...
+
+    a) Membuka tutup radiator pada kondisi engine panas
+    b) Membuka tutup radiator pada kondisi engine dingin
+    c) Membuka tutup radiator pada kondisi engine hidup
+    d) Semua jawaban salah
+31. Fuel Suction Filter (filter pompa bensin) yang ditunjukan pada gambar memerlukan penggantian setiap
+    ...
+    a) 15.000 km
+    b) 20.000 km
+    c) 30.000 km
+    d) 48.000 km
+32. Fuel Pressure pump pada electric fuel pump dibutuhkan tekanan konstan, prosedur pengukuran tekanan
+    pompa menggunakan alat ...
+    a) Injector Tester
+    b) Fuel Pump Tester
+    c) Fuel Cup Tester
+    d) Digital Fuel Pump
+33. Pemeriksaan saluran bahan bakar sistem injeksi adalah...
+
+    a) Pemeriksaan bracket fuel feed hose
+    b) Pemeriksaan tekanan fuell pump
+    c) Pemeriksaan kondisi socket sambungan pada selang bahan bakar
+    d) Jawaban a,b dan c benar
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+34. Prosedur yang benar di tunjukan pada gambar pengerjaan berikut adalah ...
+
+    a) Pembersihkan fuel pressure pump
+    b) Overhaul motor pompa
+    c) Membersihkan air filter
+    d) Melakukan penggantian/pelepasan komponen
+
+          filter pompa bensin
+
+35. Apa fungsi utama dari komponen injektor (injector) pada sistem bahan bakar sepeda motor injeksi...
+
+    a) Mencampur udara dan bahan bakar secara manual.
+    b) Menghasilkan percikan api untuk membakar campuran udara dan bahan bakar.
+    c) Menyemprotkan (mengabutkan) bahan bakar ke ruang bakar atau intake manifold secara
+
+          elektronik sesuai kebutuhan mesin.
+    d) Membuang gas sisa pembakaran melalui knalpot.
+36. Apa gejala yang paling sering muncul jika injektor pada sepeda motor kotor atau tersumbat...
+
+    a) Suspensi terasa keras.
+    b) Mesin sulit langsam (stasioner tidak stabil), akselerasi tersendat (brebet), dan performa
+
+          menurun.
+    c) Lampu utama menjadi redup.
+    d) Tekanan angin ban berkurang.
+37. Metode pembersihan injektor yang paling umum dan dianjurkan dalam perawatan berkala di bengkel
+    resmi adalah...
+    a) Memukul-mukul injektor dengan palu kecil.
+    b) Membersihkan injektor menggunakan sikat kawat.
+    c) Menggunakan alat injector cleaner machine (tabung infus) yang dialiri cairan pembersih khusus.
+    d) Merendam injektor dalam bensin selama seminggu.
+38. Saat menggunakan metode "infus" (injector cleaner machine), cairan pembersih dimasukkan ke dalam
+    sistem bahan bakar melalui...
+    a) Lubang pengisian oli mesin.
+    b) Tangki bahan bakar utama.
+    c) Selang bahan bakar yang langsung menuju ke injektor, melewatkan tangki dan pompa bensin.
+    d) Knalpot.
+39. Filter bahan bakar (fuel filter) pada sepeda motor sistem injeksi berfungsi untuk....
+
+    a) Mendinginkan bensin sebelum masuk injektor.
+    b) Menyaring kotoran dan partikel halus dari bensin sebelum mencapai injektor dan pompa bensin.
+    c) Mencampur bensin dengan udara.
+    d) Mengukur volume bensin di tangki.
+40. MIL pada panel indikator sepeda motor memiliki arti ...
+
+    a) Indikator Tekanan Injeksi
+    b) Malfungtion Indicator Lamp
+    c) Mode Indicator Loss
+    d) Injection Control
+
+41. Kerusakan pada Cranksahft Position Sensor (CKP), kondisi mesin sepeda motor injeksi dapat
+    berakibat...
+    a) Mesin tidak dapat hidup
+    b) Temperatur mesin tinggi
+    c) Mesin hidup tersendat
+    d) Mesin tidak dapat stationer
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+42. Standar putaran stationer pada sepeda motor tipe matic injeksi adalah...
+
+    a) 1000 rpm
+    b) 1300 rpm
+    c) 1400 rpm ±100
+    d) 1600 rpm ±100
+43. Fungsi utama ECM/ECU pada system engine managemen adalah ...
+
+    a) Mengatur jumlah injeksi dan mengontrol sensor
+    b) Mengontrol bahan bakar dan sensor
+    c) Menambah tegangan ke injector
+    d) Mengatur speed engine dan secara terus menerus ke injector
+44. Penanggulangan kerusakan pada ECM/ECU sepeda motor injeksi adalah ...
+
+    a) Perbaikan
+    b) Penggantian
+    c) Pembersihan
+    d) Reset ECM/ECU
+45. Apa fungsi utama dari baterai pada motor ...
+
+    a) Menghidupkan mesin
+    b) Mengatur suhu mesin
+    c) Mengatur tekanan oli
+    d) Mengatur sistem pendingin
+46. Bagaimana cara mengukur tegangan baterai motor ...
+
+     a) Dengan menggunakan multimeter
+     b) Dengan menggunakan kunci pas
+     c) Dengan menggunakan obeng
+     d) Dengan menggunakan tang
+47. Bagaimana cara memasang baterai motor yang benar ...
+
+     a) Menghubungkan kabel positif terlebih dahulu
+     b) Menghubungkan kabel negatif terlebih dahulu
+     c) Menghubungkan kedua kabel secara bersamaan
+     d) Tidak perlu memperhatikan urutan kabel
+48. Apa fungsi utama busi pada mesin bensin...
+
+      a) Mendinginkan mesin saat overheat.
+      b) Mencampur bahan bakar dan udara di karburator.
+      c) Menghasilkan percikan api listrik untuk membakar campuran bahan bakar dan udara di ruang
+
+          bakar.
+      d) Mengatur masuknya bahan bakar ke dalam mesin.
+49. Kondisi ideal elektroda busi dari mesin yang sehat dan pembakaran sempurna biasanya berwarna
+
+    a) Hitam pekat dan basah oleh oli.
+    b) Putih bersih mengkilap seperti baru.
+    c) Coklat keabu-abuan atau merah bata kering.
+    d) Penuh dengan kerak karbon basah.
+
+50. Jika elektroda busi berwarna hitam pekat, basah, dan berminyak, hal ini mengindikasikan adanya
+    masalah...
+    a) Setelan bahan bakar terlalu miskin (kurang bensin).
+    b) Kebocoran oli mesin masuk ke ruang bakar.
+    c) Pengapian terlalu maju (timing advance).
+    d) Filter udara sangat bersih.
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+51. Alat ukur apa yang digunakan untuk memeriksa celah (gap) antara elektroda pusat dan elektroda
+    massa pada busi...
+    a) Jangka sorong (dial caliper).
+    b) Multimeter (AVO meter).
+    c) Feeler gauge (alat ukur celah) atau wire gauge.
+    d) Kunci momen.
+
+52. Apa dampak jika celah busi terlalu lebar dari spesifikasi pabrikan...
+
+    a) Percikan api menjadi lebih kuat dan stabil di putaran tinggi.
+    b) Mesin lebih irit bahan bakar.
+    c) Percikan api sulit melompat, menyebabkan mesin sulit hidup atau misfire (pembakaran tidak
+
+          sempurna) pada putaran tinggi.
+    d) Busi menjadi lebih awet.
+53. Apa fungsi utama dari sistem sinyal pada kendaraan ...
+
+    a) Mengatur suhu mesin
+    b) Mengatur tekanan oli
+    c) Memberikan tanda kepada pengemudi lain
+    d) Mengatur kinerja mesin
+54. Apa yang harus dilakukan jika lampu sein tidak berfungsi ...
+
+    a) Mengganti bola lampu sein
+    b) Mengganti saklar sein
+    c) Memeriksa koneksi kabel sein
+    d) Semua jawaban benar
+55. Apa yang dapat terjadi jika sistem penerangan tidak berfungsi dengan baik ...
+
+    a) Mengurangi visibilitas saat berkendara di malam hari
+    b) Meningkatkan kinerja mesin
+    c) Mengurangi konsumsi bahan bakar
+    d) Tidak ada efek sama sekali
+56. Jarak main bebas rantai roda umumnya berkisar antara ...
+
+    a) 30 ­ 40 mm
+    b) 20 ­ 30 mm
+    c) 15 - 20 mm
+    d) 10 ­ 20 mm
+
+57.Tegangan rantai saat bekerja kurang baik langkah yang tepat untuk mengatasi masalah adalah ...
+
+    a) Bersihkan rantai dari debu dan kotoran
+    b) Keringkan rantai setelah di lumasi
+    c) Perbaiki/Penyetelan atau ganti
+    d) Gigi pada gear sprocket rantai perhalus
+
+58. Perhatikan posisi clip sambungan rantai pada gambar dibawah ini, alasan yang paling tepat mengapa
+    posisi clip rantai harus menyesuaikan arah putaran adalah ...
+
+    a) Agar mudah saat memasang kembali
+    b) Agar mudah saat melepaskannya
+    c) Hanya sekedar variasi
+    d) Agar tidak lepas dan tersangkut pada komponen yang lain saat rantai berputar
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+59. Ukuran tekanan ban belakang untuk berboncengan adalah ...
+
+    a) 25 psi
+    b) 28 psi
+    c) 20 psi
+    d) 33 psi
+
+60. Roda depan terasa bergoyang kemungkinan penyebab adalah ...
+
+    a) Pengikat as roda depan longgar
+    b) Pelek Bengkok
+    c) Bearing-bearing roda depan aus atau rusak
+    d) Pilihan jawaban a,b dan c benar
+
+61. Batas servis ukuran keolengan pelek roda pada pengukuran aksial dan radial adalah ...
+
+     a) Aksial 1,0 mm, Radial 1,0 mm
+     b) Aksial 2,0 mm, Radial 2,0 mm
+     c) Aksial 3,0 mm, Radial 3,0 mm
+     d) Aksial 4,0 mm, Radial 4,0 mm
+
+62. Jarak main bebas penyetelan pedal rem belakang adalah ...
+
+    a) 10 ­ 20 mm
+    b) 20 ­ 30 mm
+    c) 15 ­ 25 mm
+    d) 35 ­ 45 mm
+
+63. Jarak main bebas penyetelan tuas rem depan adalah ...
+
+    a) 10 ­ 20 mm
+    b) 20 ­ 30 mm
+    c) 15 ­ 25 mm
+    d) 35 ­ 45 mm
+
+64. Pada sistem rem hidrolik, apabila pengereman kurang efektif, hal ini disebabkan oleh ...
+
+    a) Kapasitas minyak rem kurang
+    b) Ada unsur udara pada sistem hydrolik
+    c) Jenis minyak rem tidak sama
+    d) Volume minyak rem berlebihan
+
+65. Apabila pengendalian setang/kemudi terasa berat untuk digerakkan, kemungkinan penyebabnya
+    adalah ....
+    a) Tekanan udara ban terlalu tinggi
+    b) Mur ulir atas poros kemudi terlalu kencang
+    c) Seal suspensi bocor
+    d) Rangka bengkok
+
+66. Apabila menarik ke satu sisiatau tidak dapat lurus, kemungkinan penyebab kerusakan adalah ...
+
+    a) Bearing roda depan aus/rusak
+    b) Tekanan udara ban terlalu keras
+    c) Seal debu rusak
+    d) Pegas fork lemah
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+67. Apa fungsi utama dari sistem suspensi pada kendaraan ...
+
+    a) Meredam getaran dan guncangan untuk meningkatkan kenyamanan berkendara.
+    b) Meningkatkan kecepatan maksimum kendaraan.
+    c) Mengurangi konsumsi bahan bakar.
+    d) Menghasilkan tenaga mesin yang lebih besar.
+
+68. Salah satu ciri-ciri kerusakan pada shock absorber adalah ...
+
+    a) Mobil terasa lebih stabil saat menikung.
+    b) Tidak ada bunyi saat melewati jalan bergelombang.
+    c) Adanya kebocoran oli pada tabung shock absorber.
+    d) Keausan ban merata pada semua sisi.
+
+69. Apa yang dapat terjadi jika tekanan angin ban tidak sesuai dengan spesifikasi, terutama dalam kaitannya
+    dengan perawatan suspensi ...
+    a) Kenyamanan berkendara meningkat.
+    b) Umur shock absorber menjadi lebih panjang.
+    c) Dapat menyebabkan keausan ban yang tidak merata dan mempengaruhi kinerja suspensi.
+    d) Tidak berdampak sama sekali pada sistem suspensi.
+
+70. Jika suspensi depan sepeda motor terasa terlalu keras atau kaku saat melewati jalan berlubang, apa
+    kemungkinan penyebabnya
+    a) Jumlah oli shock absorber kurang.
+    b) Tekanan angin pada ban terlalu rendah.
+    c) Pegas suspensi sudah terlalu lemah (lunak).
+    d) Penggunaan oli shock absorber yang terlalu kental atau jumlahnya berlebihan.
+
+71. Perawatan rutin apa yang paling krusial untuk menjaga kinerja Chassis (rangka) sepeda motor tetap
+    optimal dan aman
+    a) Mencuci motor setiap hari.
+    b) Memeriksa kekencangan baut-baut utama sasis dan memastikan tidak ada keretakan atau karat
+        parah.
+    c) Mengganti busi secara rutin.Men
+    d) yetel rantai roda belakang.
+
+72. Apa yang harus dilakukan jika cover body tidak pas dengan sempurna setelah dipasang ...
+
+    a) Memaksakan cover body agar pas
+    b) Mengecek kembali kesesuaian dan melakukan penyesuaian
+    c) Meninggalkan cover body tidak terpasang
+    d) Menggunakan lem untuk menempelkannya
+
+73. Apa yang harus diperiksa setelah melakukan pemasangan cover body...
+
+    a) Kinerja mesin
+    b) Sistem pendingin
+    c) Kencangnya baut dan kesesuaian cover body
+    d) Sistem rem
+74. Apa tujuan utama melakukan pemeriksaan chassis secara berkala...
+
+    a) Untuk membersihkan kotoran yang menempel pada chassis.
+    b) Untuk memastikan tampilan luar kendaraan tetap estetis.
+    c) Untuk mendeteksi dini kerusakan, keausan, atau komponen yang longgar yang dapat
+
+        membahayakan keselamatan berkendara.
+    d) Untuk menambah kecepatan maksimum kendaraan.
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+75. Apabila ditemukan retakan pada rangka (frame) chassis, tindakan perbaikan yang paling tepat adalah...
+
+   a) Mengabaikannya jika retakan kecil.
+   b) Menambal dengan dempul atau perekat biasa.
+   c) Melakukan pengelasan oleh tenaga ahli yang bersertifikat.
+   d) Membiarkan saja karena tidak mempengaruhi kinerja mesin.
+
+PENYUSUN DAN VALIDATOR
+
+STATUS     NO           NAMA   NOMOR MET        TANDA TANGAN
+                                                 DAN TANGGAL
+
+           1 GUNADI            000.000459 2007
+           2 SAPTONO
+PENYUSUN                                        27 Januari 2026
+
+                               000.003672 2016
+
+                                                27 Januari 2026
+
+           1 RANDI ARDIANSYAH  000.002498 2013
+
+                                                27 Januari 2026
+
+VALIDATOR  2 KARYANTO          000.008260 2025
+
+                                                27 Januari 2026
+
+           3 RIDWAN            000.008265 2025
+                                                        27 Januari 2026
+

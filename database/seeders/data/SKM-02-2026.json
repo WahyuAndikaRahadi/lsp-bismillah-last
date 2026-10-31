@@ -1,0 +1,966 @@
+{
+  "scheme": {
+    "code": "SKM-02-2026",
+    "name": "Maintenance Gasoline Engine Injection System",
+    "scheme_type": "KLASTER",
+    "version": "1.0",
+    "muk_code": "02/LSP PrO Indo/I/2026",
+    "description": "Skema Sertifikasi Maintenance Gasoline Engine Injection System - LSP Praktisi Otomotif Indonesia",
+    "passing_grade_theory": 75.0,
+    "is_active": true
+  },
+  "units": [
+    {
+      "code": "G.45OTO01.001.2",
+      "title": "Melaksanakan Keselamatan dan Kesehatan Kerja",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 1,
+      "elements": [
+        {
+          "title": "Menyiapkan prosedur Keselamatan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Potensi bahaya pada area kerja",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "APD disiapkan di tempat kerja.",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakanan prosedur",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "APD digunakan sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Prosedur kesehatan dan keselamatan",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Pencegahan bahaya Keselamatan dan",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.002.2",
+      "title": "Menggunakan Peralatan dan Perlengkapan Tempat Kerja",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 2,
+      "elements": [
+        {
+          "title": "Memilih peralatan dan perlengkapan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Peralatan dan perlengkapan tempat",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perlengkapan",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Menggunakan peralatan dan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Peralatan dan perlengkapan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Peralatan dan perlengkapan",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.007.2",
+      "title": "Membaca Gambar Teknik",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 3,
+      "elements": [
+        {
+          "title": "Menyiapkan gambar teknik                               Bukti yang relevan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Gambar Teknik diidentifikasi sesuai",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Gambar teknik disiapkan.",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Membaca gambar teknik",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Simbol dan kode gambar teknik",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Gambar teknik dijelaskan sesuai",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.008.2",
+      "title": "Menggunakan Alat Ukur",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 4,
+      "elements": [
+        {
+          "title": "Menyiapkan alat ukur dan komponen",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Jenis alat ukur dan komponen",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Alat ukur yang sesuai disiapkan di",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Alat ukur dikalibrasi sebelum",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Menggunakan alat ukur",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Alat ukur digunakan sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Alat ukur digunakan sesuai fungsi",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil pengukuran didokumentasikan.",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.009.2",
+      "title": "Melaksanakan Diagnosis",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 5,
+      "elements": [
+        {
+          "title": "Mempersiapkan diagnosis",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Komponen, alat, SST dan Diagnosis",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Komponen, alat, SST dan Diagnosis",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Melakukan diagnosis",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Komponen, alat, SST dan Diagnosis",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Komponen, alat, SST dan Diagnosis",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Hasil diagnosis didokumentasikan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Hasil diagnosis dievaluasi dan",
+              "sequence": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.010.2",
+      "title": "Melakukan Perawatan Berkala Engine",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 6,
+      "elements": [
+        {
+          "title": "Menyiapkan Perawatan engine",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Nama, jenis, spesifikasi, fungsi,",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Prosedur pengoperasian alat ukur",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Peralatan, perlengkapan dan bahan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Manual perbaikan engine disiapkan",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Data perawatan berkala engine",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Kendaraan yang akan dilakukan",
+              "sequence": 6
+            }
+          ]
+        },
+        {
+          "title": "Melakukan Pemeriksaan engine",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Engine dibersihkan dari kotoran",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Sistem pelumasan engine diperiksa",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Sistem pendinginan engine dan",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Sistem pemasukan udara dan sistem",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Sistem pengapian engine diperiksa",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Sistem bahan bakar diperiksa sesuai",
+              "sequence": 6
+            },
+            {
+              "code_number": "2.7",
+              "statement": "Emisi gas buang engine diperiksa",
+              "sequence": 7
+            },
+            {
+              "code_number": "2.8",
+              "statement": "Hasil pemeriksaan engine",
+              "sequence": 8
+            },
+            {
+              "code_number": "2.9",
+              "statement": "Hasil pemeriksaan engine diuji",
+              "sequence": 9
+            },
+            {
+              "code_number": "2.10",
+              "statement": "Hasil pemeriksaan engine",
+              "sequence": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.065.2",
+      "title": "Memelihara Baterai",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 7,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan baterai",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Manual perbaikan pemeliharaan",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perangkat kerja",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Baterai yang digunakan disiapkan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Level cairan elektrolit diperiksa dan",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Perlengkapan pelindung kendaraan",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan baterai",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kondisi rumah atau casing baterai,",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Tegangan baterai diperiksa dengan",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Berat jenis air baterai diperiksa",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Baterai dan terminal dibersihkan",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Dokumen pemeriksaan baterai diisi",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Menguji baterai pada kendaraan",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Baterai di uji dengan menggunakan",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Hasil pekerjaan menguji baterai",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.073.2",
+      "title": "Memperbaiki Kerusakan Pada Sistem Pengaman Kelistrikan",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 8,
+      "elements": [
+        {
+          "title": "Menyiapkan pekerjaan memperbaiki",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Manual perbaikan sistem pengaman",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perangkat kerja",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Sistem pengaman yang akan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Perlengkapan pelindung kendaraan",
+              "sequence": 4
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pengujian pada sistem",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Sistem pengaman kelistrikan diuji",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Hasil pengujian sistem pengaman",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Dokumen pengujian sistem",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan perbaikan pada sistem",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Sistem pengaman kelistrikan",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Hasil perbaikan sistem pengaman",
+              "sequence": 2
+            },
+            {
+              "code_number": "3.3",
+              "statement": "Dokumen perbaikan sistem",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.078.2",
+      "title": "Memperbaiki Sistem Manajemen Engine",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 9,
+      "elements": [
+        {
+          "title": "Menyiapkan perbaikan sistem",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Manual perbaikan memperbaiki",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan bahan serta perangkat",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Perlengkapan pelindung kendaraan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Sistem manajemen engine diperiksa",
+              "sequence": 4
+            }
+          ]
+        },
+        {
+          "title": "Mendiagnosa sistem manajemen",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Sistem manajemen engine dasar dan",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Sistem Manajemen engine diperiksa",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Dokumen pekerjaan Mendiagnosa",
+              "sequence": 3
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan perbaikan sistem",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Sistem manajemen engine diperbaiki",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Peralatan, teknik dan bahan yang",
+              "sequence": 2
+            },
+            {
+              "code_number": "3.3",
+              "statement": "Hasil perbaikan diuji dengan",
+              "sequence": 3
+            },
+            {
+              "code_number": "3.4",
+              "statement": "Dokumen perbaikan sistem",
+              "sequence": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "question_text": "Sebutkan peralatan yang termasuk dalam Keselamatan dan Kesehatan Kerja ?",
+      "option_a": "APAR",
+      "option_b": "Safety Shoes",
+      "option_c": "Pakaian kerja",
+      "option_d": "Jawaban a, b, dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 2,
+      "question_text": "Untuk memastikan apakah APAR masih dapat berfungsi dengan normal,maka hal yang perlu diperiksa\n    adalah :",
+      "option_a": "Masa berlaku penggunaan",
+      "option_b": "Kesesuaian Ukuran tabung",
+      "option_c": "Tanggal pembelian",
+      "option_d": "Tanggal pemasangan",
+      "correct_answer": "A"
+    },
+    {
+      "number": 3,
+      "question_text": "Prosedur pengoperasian APAR adalah sebagai berikut :",
+      "option_a": "Arahkan selang ke obyek  buka pin pengunci  tekan handle",
+      "option_b": "Buka pin pengunci  arahkan selang obyek - tekan handle",
+      "option_c": "Tekan handle  arahkan selang ke obyek  buka pin pengunci",
+      "option_d": "Arahkan selang ke obyek  Tekan handle  buka pin pengunci",
+      "correct_answer": "C"
+    },
+    {
+      "number": 4,
+      "question_text": "Apa yang anda lakukan ketika pekerjaan yang anda lakukan selesai :",
+      "option_a": "Membiarkan caddy tools di stall anda.",
+      "option_b": "Istirahat sambil menunggu foreman memberikan perintah selanjutnya",
+      "option_c": "Membersihkan peralatan dan area kerja setelah perbaikan",
+      "option_d": "Jawaban a,b, dan c, benar",
+      "correct_answer": "C"
+    },
+    {
+      "number": 5,
+      "question_text": "Saat ini di bengkel / workshop perbaikan kendaraan sudah menggunakan Caddy portable. Apa\n      keuntungannya.",
+      "option_a": "Mudah dipindahkan saat pekerjaan berjalan",
+      "option_b": "Penataan di dalam caddy lebih rapi",
+      "option_c": "Lebih banyak menampung peralatan kerja",
+      "option_d": "Jawaban a,b, dan c benar",
+      "correct_answer": "B"
+    },
+    {
+      "number": 6,
+      "question_text": "Penanganan pemindahan peralatan gas analyzer yang benar adalah :",
+      "option_a": "Dipindahkan dengan cara didorong",
+      "option_b": "Dipindahkan dengan cara diangkat",
+      "option_c": "Dipindahkan dengan cara dilepas terlebih dahulu dari bagianya",
+      "option_d": "Jawaban a dan c benar",
+      "correct_answer": "B"
+    },
+    {
+      "number": 7,
+      "question_text": "Fuse blade mempunyai identifikasi warna sebagai berikut :\n\f                               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_a": "Merah 10 A, Biru 15 A, Kuning 20 A",
+      "option_b": "Biru 10 A, Merah 15A, Hijau 20 A",
+      "option_c": "Hijau 10 A, Kuning 15 A. Biru 20 A",
+      "option_d": "Kuning 10 A, Hijau 15 A, Biru 20 A",
+      "correct_answer": "A"
+    },
+    {
+      "number": 8,
+      "question_text": "Untuk mengukur voltage yang mengalir pada sebuah rangkaian kelistrikan, maka Volt meter dipasang\n     secara................pada rangkaian yang akan diukur.",
+      "option_a": "Pararel",
+      "option_b": "Seri",
+      "option_c": "Seri dan Pararel",
+      "option_d": "Semua benar",
+      "correct_answer": "A"
+    },
+    {
+      "number": 9,
+      "question_text": "Mistar geser / vernier caliper bisa dipergunakan untuk mengukur :",
+      "option_a": "Diameter luar poros",
+      "option_b": "Diameter dalam silinder",
+      "option_c": "Panjang suatu benda kerja",
+      "option_d": "Semua jawaban tersebut betul",
+      "correct_answer": "D"
+    },
+    {
+      "number": 10,
+      "question_text": "Untuk mengukur berat jenis accu dipergunakan :",
+      "option_a": "Dial gauge",
+      "option_b": "Micrometer",
+      "option_c": "Hydrometer",
+      "option_d": "Silinder gauge.",
+      "correct_answer": "C"
+    },
+    {
+      "number": 11,
+      "question_text": "Gambar di bawah ini merupakan prosedur suatu pengukuran kelistrikan. Pengukuran apakah yang dapat\n    dilakukan sepeti gambar tersebut ?",
+      "option_a": "Tegangan",
+      "option_b": "Arus",
+      "option_c": "Hambatan / Tahanan",
+      "option_d": "Daya",
+      "correct_answer": "B"
+    },
+    {
+      "number": 12,
+      "question_text": "Pada saat menggunakan AVO Meter Analog, saat akan melakukan pengukuran Resistance, maka langkah\n     yang harus dilakukan sebelum memakai adalah :",
+      "option_a": "Memilih skala ukur Ohm yang sesuai",
+      "option_b": "Memilih skala ukur Amp yang sesuai",
+      "option_c": "Melakukan kalibrasi",
+      "option_d": "Jawaban yang benar a dan c",
+      "correct_answer": "D"
+    },
+    {
+      "number": 13,
+      "question_text": "Jika tekanan kompresi rendah, apakah penyebabnya ?",
+      "option_a": "Spark plug aus",
+      "option_b": "Piston ring dan cylinder aus",
+      "option_c": "Carbon terkumpul di ruang pembakaran",
+      "option_d": "Coolant kurang",
+      "correct_answer": "C"
+    },
+    {
+      "number": 14,
+      "question_text": "Bila terjadi gangguan sensor (rusak) , agar tidak terjadi problema maka pada ECU dilengkapi dengan :",
+      "option_a": "Memori",
+      "option_b": "Fail  Safe",
+      "option_c": "Check engine",
+      "option_d": "Main Relay",
+      "correct_answer": "B"
+    },
+    {
+      "number": 15,
+      "question_text": "Bila Check Engine menyala saat mesin hidup menunjukkan bahwa :\n\f                               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_a": "Terjadi gangguan pada salah satu sensor",
+      "option_b": "Terjadi gangguan pada sistem bahan bakar",
+      "option_c": "Terjadi gangguan pada main relay",
+      "option_d": "Terjadi gangguan pada sumber arus ke ECU",
+      "correct_answer": "A"
+    },
+    {
+      "number": 16,
+      "question_text": "Pembakaran didalam silinder akan menjadi sempurna, kecuali :",
+      "option_a": "Dilengkapii Turbocharge",
+      "option_b": "Timing pengapiannya tepat.",
+      "option_c": "Perbandingan bahan bakar dengan udara sesuai",
+      "option_d": "Saringan udara kondisi bersih",
+      "correct_answer": "A"
+    },
+    {
+      "number": 17,
+      "question_text": "Ketika fuel pipe menjadi panas, fuel didalamnya menguap dan menghasilkan gelembung udara yang\n    menghambat aliran fuel. Gejala ini disebut apa ?",
+      "option_a": "Cavitation",
+      "option_b": "Percolation",
+      "option_c": "Fade",
+      "option_d": "Vapour lock",
+      "correct_answer": "D"
+    },
+    {
+      "number": 18,
+      "question_text": "Hal yang harus dihindarkan pada saat melakukan pengecekan system pendingin adalah :",
+      "option_a": "Membuka tutup radiator pada kondisi engine panas",
+      "option_b": "Membuka tutup radiator pada kondisi engine dingin",
+      "option_c": "Membuka tutup radiator pada kondisi engine hidup",
+      "option_d": "Semua jawaban salah",
+      "correct_answer": "A"
+    },
+    {
+      "number": 19,
+      "question_text": "Untuk memeriksa kebocoran cairan pada sistem pendinginan dipergunakan alat :",
+      "option_a": "Gas Analyzer",
+      "option_b": "Timing Light",
+      "option_c": "Radiator Pressure Tester",
+      "option_d": "Cylinder gauge",
+      "correct_answer": "C"
+    },
+    {
+      "number": 20,
+      "question_text": "Makin tinggi oktan bahan bakar mobil artinya :",
+      "option_a": "Bahan bakar tersebut makin tidak mudah terbakar",
+      "option_b": "Bahan bakar tersebut makin mudah terbakar.",
+      "option_c": "Bahan bakar tersebut dominan terjadi detonasi pada mesin",
+      "option_d": "Bahan bakar tersebut jelek untuk pembakaran",
+      "correct_answer": "A"
+    },
+    {
+      "number": 21,
+      "question_text": "Pembakaran didalam silinder akan dikatakan baik apabila :",
+      "option_a": "Kadar CO dan CO2 dalam gas buang tinggi",
+      "option_b": "Kadar CO2 tinggi dan kadar CO rendah.",
+      "option_c": "Kadar CO dan CO2 dalam gas buang rendah",
+      "option_d": "Kadar CO dan O2 dalam gas buang tinggi.",
+      "correct_answer": "B"
+    },
+    {
+      "number": 22,
+      "question_text": "Sumber arus listrik utama pada kendaraan adalah :",
+      "option_a": "Battery",
+      "option_b": "Alternator",
+      "option_c": "Starter motor",
+      "option_d": "Rotor",
+      "correct_answer": "A"
+    },
+    {
+      "number": 23,
+      "question_text": "Berat jenis air battery yang baik adalah :",
+      "option_a": "1.2",
+      "option_b": "1.26",
+      "option_c": "2.16",
+      "option_d": "1.20",
+      "correct_answer": "B"
+    },
+    {
+      "number": 24,
+      "question_text": "Gambar dibawah ini merupakan rangkaian sederhana dari komponen resistor, transistor dan condensor/\n     capacitor. Apa yang terjadi jika Switch dari posisi ON dipindah ke posisi OFF ?\n\fLembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_a": "Lampu tetap hidup terus menerus         Switch",
+      "option_b": "Lampu hidup sesaat kemudian mati",
+      "option_c": "Lampu langsung mati               R=1K          C :100",
+      "option_d": "Nyala lampu menjadi redup\n                                                         uF\n\n                                     12 V\n\n                                           Lampu X",
+      "correct_answer": "B"
+    },
+    {
+      "number": 25,
+      "question_text": "Untuk menentukan lokasi komponen pada kelistrikan bodi pertama yang harus anda lakukan adalah :",
+      "option_a": "Membuka wiring harness",
+      "option_b": "Melihat instruksi Service Bulletin",
+      "option_c": "Melihat service check list",
+      "option_d": "Melihat pada history card",
+      "correct_answer": "A"
+    },
+    {
+      "number": 26,
+      "question_text": "Bila terjadi gangguan sensor (rusak) , agar tidak terjadi problema maka pada ECU dilengkapi dengan :",
+      "option_a": "Memori",
+      "option_b": "Fail  Safe",
+      "option_c": "Check engine",
+      "option_d": "Main Relay",
+      "correct_answer": "B"
+    },
+    {
+      "number": 27,
+      "question_text": "Perbedaan yang mendasar antara motor bensin yang menggunakan karburator dengan sistem Injeksi\n    pada sistem suplai bahan bakarnya terletak pada cara :",
+      "option_a": "Mencampur udara dan bahan bakarnya",
+      "option_b": "Pengaturan bahan bakarnya",
+      "option_c": "Penempatan komponennya",
+      "option_d": "Kerja dan fungsinya",
+      "correct_answer": "A"
+    },
+    {
+      "number": 28,
+      "question_text": "Kapan arus listrik pada kumparan sekunder koil pengapian terjadi ?",
+      "option_a": "Arus pada kumparan sekunder terjadi terus menerus",
+      "option_b": "Pada saat pemutus mulai terbuka",
+      "option_c": "Pada saat kumparan primer terisi arus listrik",
+      "option_d": "Pada saat kunci kontak mulai tertutup",
+      "correct_answer": "B"
+    },
+    {
+      "number": 29,
+      "question_text": "Fungsi utama ECU pada sistem Engine manajemen :",
+      "option_a": "Mengatur jumlah injeksi dan mengontrol sensor",
+      "option_b": "Mengontrol bahan bakar dan sensor",
+      "option_c": "Mengatur speed engine dan mengontrol sensor",
+      "option_d": "Mengatur jumlah bahan bakar dan waktu penyemprotan",
+      "correct_answer": "D"
+    },
+    {
+      "number": 30,
+      "question_text": "Pada mesin bensin dengan sistem Engine manajemen , yang mengatur putaran stasioner (idle) dalah:",
+      "option_a": "Manifold absolut pressure sensor",
+      "option_b": "Idle actuator control",
+      "option_c": "Intake air temperatura sensor",
+      "option_d": "Speed sensor\n\f               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo\n\nPENYUSUN DAN VALIDATOR\n\nSTATUS     NO           NAMA   NOMOR MET        TANDA TANGAN\n                                                 DAN TANGGAL\n\n           1 RIDWAN            000.008265 2025\n           2 RANDI ARDIANSYAH\nPENYUSUN                                        12 Januari 2026\n\n                               000.002498 2013\n\n                                                12 Januari 2026\n\n           1 SAPTONO           000.003672 2016\n\n                                                12 Januari 2026\n\nVALIDATOR  2 KARYANTO          000.008260 2025\n\n                                                12 Januari 2026\n\n           3 GUNADI            000.000459 2007\n\n                                                12 Januari 2026",
+      "correct_answer": "B"
+    }
+  ],
+  "tpd": {
+    "scenario": "No. Judul Unit Kode Unit 1. G.45OTO01.001. Melaksanakan Keselamatan dan Kesehatan Kerja 2 Kelompok 2. G.45OTO01.002. Menggunakan Peralatan dan Perlengkapan Tempat Kerja Pekerjaan 1 2 General 3. G.45OTO01.007. Membaca Gambar Teknik Service 2 4. G.45OTO01.008. Menggunakan Alat Ukur 2 5. G.45OTO01.009. Melaksanakan Diagnosis 2 Skenario Tugas I Praktik Demonstrasi:",
+    "time_limit": "30 Menit",
+    "tasks": [
+      {
+        "id": "1",
+        "instruction": "Baca dan pelajari setiap instruksi kerja di bawah ini dengan cermat sebelum"
+      },
+      {
+        "id": "2",
+        "instruction": "Klarifikasi kepada asesor kompetensi apabila ada hal-hal yang belum jelas"
+      },
+      {
+        "id": "3",
+        "instruction": "Laksanakan pekerjaan sesuai dengan urutan proses yang sudah ditetapkan"
+      },
+      {
+        "id": "4",
+        "instruction": "Seluruh proses kerja mengacu kepada SOP/WI yang dipersyaratkan (Jika Ada)"
+      }
+    ]
+  },
+  "pmo": [
+    {
+      "number": "1",
+      "question": "Jelaskan bagaimana anda melaksanakan Prosedur kesehatan dan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Kenapa menggunakan Peralatan dan perlengkapan harus sesuai manual",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Kenapa APAR harus selalu ada di tempat kerja",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Jelaskan mengapa Engine harus dirawat secara Berkala:",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Bagaimana langkah yang harus anda lakukan, jika suara mesin tidak normal",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Bagaimana anda mendokumentasikan dan melaporkan hasil pemeriksaan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Memperbaiki Sistem Manajemen Engine",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Bagaimana langkah yang harus anda lakukan, jika tegangan Baterai sudah",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Apa yang terjadi jika Perbaikan atau penggantian komponen sistem",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Mengapa diagnostic tool digunakan saat memperbaiki Sistem Manajemen",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    }
+  ],
+  "report_sheet": [
+    {
+      "item": "1. G.45OTO01.001.2 Persiapan :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "2. G.45OTO01.002.2 Persiapan :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "3. G.45OTO01.007.2 Lihat Buku Manual (Workshop Manual) yang tersedia:",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "4. G.45OTO01.008.2 Penempatan Tools & Equipment dengan benar",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "5. G.45OTO01.065.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "6. G.45OTO01.073.2 Melaksanakan pengujian pada sistem pengaman kelistrikan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "7. G.45OTO01.009.2 Menggunakan scan tool",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "8. G.45OTO01.010.2 Sistem Pelumasan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "9. G.45OTO01.078.2 Mencari gangguan dengan menggunakan jumper",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    }
+  ]
+}

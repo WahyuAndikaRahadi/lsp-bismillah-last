@@ -1,0 +1,1339 @@
+{
+  "scheme": {
+    "code": "SKM-07-2026",
+    "name": "Klaster Servis Sepeda Motor Injeksi",
+    "scheme_type": "KLASTER",
+    "version": "1.0",
+    "muk_code": "07/LSP PrO Indo/I/2026",
+    "description": "Skema Sertifikasi Klaster Servis Sepeda Motor Injeksi - LSP Praktisi Otomotif Indonesia",
+    "passing_grade_theory": 75.0,
+    "is_active": true
+  },
+  "units": [
+    {
+      "code": "G.45TSM01.034.2",
+      "title": "Melakukan bongkar pasang cover body",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 1,
+      "elements": [
+        {
+          "title": "Menyiapkan bongkar- pasang cover body.",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Fungsi, jenis, dan spesifikasi material dari",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Fungsi dan kondisi dari komponen pada",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Bentuk dan ukuran dari bagian cover body",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Prosedur bongkar pasang cover body",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Perintah kerja diidentifikasi.",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Perlalatan yang sesuai diidentifikasi dan",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Supporting tools dipastikan ketersediaannya.",
+              "sequence": 7
+            },
+            {
+              "code_number": "1.8",
+              "statement": "Pit area dan tempat peletakan cover body",
+              "sequence": 8
+            },
+            {
+              "code_number": "1.9",
+              "statement": "Prosedur K3 diterapkan pada pelaksanaan",
+              "sequence": 9
+            }
+          ]
+        },
+        {
+          "title": "Melakukan pelepasan komponen cover body.",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Cover body dilepas sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Ukuran, tipe baut, ring, bushing dan",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Pengait cover body diperiksa sesuai prosedur.",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Komponen penerangan dilepas sesuai",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Komponen spidometer dilepas sesuai",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Memastikan cover body terpasang sesuai",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Komponen penerangan dipasang sesuai",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Komponen spidometer dipasang sesuai",
+              "sequence": 2
+            },
+            {
+              "code_number": "3.3",
+              "statement": "Komponen-komponen cover body dipasang",
+              "sequence": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.054.2",
+      "title": "Menentukan jenis kerusakan sistem injeksi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 2,
+      "elements": [
+        {
+          "title": "Melaksanakan Menentukan jenis kerusakan sistem injeksi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Menentukan jenis kerusakan sistem injeksi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.055.2",
+      "title": "Mengoperasikan diagnostic tools",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 3,
+      "elements": [
+        {
+          "title": "Melaksanakan Mengoperasikan diagnostic tools",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Mengoperasikan diagnostic tools didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.019.2",
+      "title": "Melakukan perawatan sistem injeksi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 4,
+      "elements": [
+        {
+          "title": "Melaksanakan Melakukan perawatan sistem injeksi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Melakukan perawatan sistem injeksi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.021.2",
+      "title": "Melakukan perawatan free play throttle gas",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 5,
+      "elements": [
+        {
+          "title": "Melaksanakan Melakukan perawatan free play throttle gas",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Melakukan perawatan free play throttle gas didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.022.2",
+      "title": "Melakukan perawatan filter udara",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 6,
+      "elements": [
+        {
+          "title": "Melaksanakan Melakukan perawatan filter udara",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Melakukan perawatan filter udara didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.039.2",
+      "title": "Melakukan perawatan baterai",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 7,
+      "elements": [
+        {
+          "title": "Melaksanakan Melakukan perawatan baterai",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Melakukan perawatan baterai didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.040.2",
+      "title": "Melakukan perawatan instrumen kelistrikan (sistem sinyal dan",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 8,
+      "elements": [
+        {
+          "title": "Melaksanakan Melakukan perawatan instrumen kelistrikan (sistem sinyal dan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Melakukan perawatan instrumen kelistrikan (sistem sinyal dan didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.077.2",
+      "title": "Memperbaiki Sistem Pengapian",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 9,
+      "elements": [
+        {
+          "title": "Melaksanakan Memperbaiki Sistem Pengapian",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Memperbaiki Sistem Pengapian didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.020.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 10,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.024.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 11,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.025.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 12,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.028.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 13,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.023.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 14,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.029.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 15,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.030.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 16,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.031.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 17,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.032.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 18,
+      "elements": [
+        {
+          "title": "Melaksanakan Unit Kompetensi",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45TSM01.033.2",
+      "title": "Unit Kompetensi",
+      "standard_reference": "SKKNI No. 147 Tahun 2019",
+      "sequence": 19,
+      "elements": [
+        {
+          "title": "Menyiapkan perawatan sistem suspensi.",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Fungsi, jenis, spesifikasi, dan cara kerja dari",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Fungsi, jenis, spesifikasi, dan cara kerja",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Kondisi normal dan tidak normal dari",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Kondisi dari bagian suspensi diidentifikasi",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Prosedur bongkar pasang roda diidentifikasi.",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Prosedur bongkar pasang sistem suspensi",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Perintah kerja diidentifikasi.",
+              "sequence": 7
+            },
+            {
+              "code_number": "1.8",
+              "statement": "General tools, alat ukur, service special",
+              "sequence": 8
+            },
+            {
+              "code_number": "1.9",
+              "statement": "Prosedur K3 diterapkan pada pelaksanaan",
+              "sequence": 9
+            }
+          ]
+        },
+        {
+          "title": "Melakukan pemeriksaan komponen dari",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Fungsi suspensi diperiksa sesuai prosedur.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Kondisi dan kelengkapan suspensi diperiksa",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Kondisi oil seal/seal shock diperiksa sesuai",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Kondisi oli shock diperiksa sesuai prosedur.",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Kondisi inner tube diperiksa sesuai prosedur.",
+              "sequence": 5
+            },
+            {
+              "code_number": "2.6",
+              "statement": "Kondisi spring diperiksa sesuai prosedur.",
+              "sequence": 6
+            },
+            {
+              "code_number": "2.7",
+              "statement": "Kondisi bushing diperiksa sesuai prosedur.",
+              "sequence": 7
+            }
+          ]
+        },
+        {
+          "title": "Memastikan kinerja suspensi sesuai standar.",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Bagian bagian sistem suspensi dibongkar",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Oil seal/seal shock, oli shock, bushing",
+              "sequence": 2
+            },
+            {
+              "code_number": "3.3",
+              "statement": "Komponen-komponen suspensi dibersihkan",
+              "sequence": 3
+            },
+            {
+              "code_number": "3.4",
+              "statement": "Baut dan mur pada sistem suspensi",
+              "sequence": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "question_text": "Pemeriksaan yang harus di perhatikan untuk memastikan putaran stationer tidak berubah adalah ...",
+      "option_a": "Memutar keseluruhan stang kemudi ke arah kanan dan kiri",
+      "option_b": "Memeriksa jarak main bebas handel gas",
+      "option_c": "Memeriksa sambungan kabel gas",
+      "option_d": "Pilihan jawaban a, b dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 2,
+      "question_text": "Pemeriksaan free play throttle gas pada throttle body, yang perlu diperhatikan pada gambar berikut\n    adalah ...",
+      "option_a": "Putaran mesin Idle",
+      "option_b": "Kebersihan pegas throttle",
+      "option_c": "Memastikan baut stopscrew tidak berubah",
+      "option_d": "Kebersihan Throttle body",
+      "correct_answer": "C"
+    },
+    {
+      "number": 3,
+      "question_text": "Berikut ini adalah pengerjaan yang tidak termasuk bagian dari perawatan kabel dan handel gas\n    adalah...",
+      "option_a": "Pemeriksaan kondisi kelancaran handel gas",
+      "option_b": "Melepas karet penutup debu dari penyetel",
+      "option_c": "Jarak main bebas handle gas disetel pada bagian sisi stang kemudi kabel gas",
+      "option_d": "Jarak main bebas handel gas tidak dapat disetel pada bagian ujung bawah kabel gas",
+      "correct_answer": "D"
+    },
+    {
+      "number": 4,
+      "question_text": "Pada jadwal perawatan berkala yang ditunjukan Buku Pedoman Reparasi tanda \"G\" untuk item\n    perawatan saringan udara memiliki arti ...",
+      "option_a": "Periksa",
+      "option_b": "Lumasi",
+      "option_c": "Ganti",
+      "option_d": "Bersihkan",
+      "correct_answer": "C"
+    },
+    {
+      "number": 5,
+      "question_text": "Yang bukan termasuk bagian dari struktur saringan udara adalah ...",
+      "option_a": "Kotak Saringan Udara (cleaner case)",
+      "option_b": "Katup Pernafasan (check valve)",
+      "option_c": "Saringan Udara (air filter)",
+      "option_d": "Lubang Pembuangan air (water draining outlet)",
+      "correct_answer": "B"
+    },
+    {
+      "number": 6,
+      "question_text": "Saringan jenis Viscous prosedur perawatan yang dianjurkan adalah ...",
+      "option_a": "Tidak boleh disemprot, tetapi tetap di buka dan dibersihkan dengan cara di lap",
+      "option_b": "Membersihkan filter udara dengan udara bertekanan",
+      "option_c": "Menambahkan pelumas pada filter udara",
+      "option_d": "Dibersihkan dengan cairan pembersih\n\n                                                    1\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "A"
+    },
+    {
+      "number": 7,
+      "question_text": "Pada mesin 4 langkah, apabila katup masuk terbuka dan katup buang tertutup, sementara piston\n    bergerak dari TMA ke TMB, maka proses langkah kerja ini disebut ...",
+      "option_a": "Langkah pembuangan",
+      "option_b": "Langkah usaha",
+      "option_c": "Langkah hisap",
+      "option_d": "Langkah expansi",
+      "correct_answer": "C"
+    },
+    {
+      "number": 8,
+      "question_text": "Berikut adalah prosedur yang dilakukan sebelum melakukan penyetelan celah katup pada mesin\n    sepeda motor ...",
+      "option_a": "Melepas penutup lubang poros engkol, dan penutup lubang pemeriksaan waktu pengapian",
+      "option_b": "Melepas penutup lubang penyetelan katup",
+      "option_c": "Memutar rotor generator berlawanan arah jarum jam pastikan katup masuk bergerak turun dan\n        kemudian naik kembali, tepatkan tanda \"T\" pada rotor generator dengan tanda penyesuainya.",
+      "option_d": "Pilihan jawaban a, b, c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 9,
+      "question_text": "Standar pemeriksaan dan penyetelan celah katup dapat menggunakan ...",
+      "option_a": "Fuller Gauge",
+      "option_b": "Adjuster Valve",
+      "option_c": "Compression gauge",
+      "option_d": "Vernier Caliper",
+      "correct_answer": "A"
+    },
+    {
+      "number": 10,
+      "question_text": "Bunyi mesin pada cylinder head berisik, kemungkinan penyebab kerusakan adalah ...",
+      "option_a": "Ada kerusakan pada intake manifold",
+      "option_b": "Celah Katup terlalu longgar",
+      "option_c": "Mesin Overheating",
+      "option_d": "Tekanan kompresi rendah",
+      "correct_answer": "B"
+    },
+    {
+      "number": 11,
+      "question_text": "Prosedur pemeriksaan tinggi permukaan oli pada mesin sepeda motor adalah sebagai berikut ...",
+      "option_a": "Melepas tutup pengisi oli / batang pengukur dan periksa tinggi permukaan oli",
+      "option_b": "Menghidupkan mesin dan biarkan berputar stasioner selama 2-3 menit dan kemudian matikan\n\n        mesin",
+      "option_c": "Menempatkan sepeda motor pada standar tengannya",
+      "option_d": "Membuka tutup gear sprocket",
+      "correct_answer": "A"
+    },
+    {
+      "number": 12,
+      "question_text": "Penggantian oli pelumas berdasarkan....",
+      "option_a": "Lamanya kendaraan beroperasi",
+      "option_b": "Kilometer jarak tempuh kendaran",
+      "option_c": "Petunjuk teknisi",
+      "option_d": "Temperatur kerja mesin",
+      "correct_answer": "B"
+    },
+    {
+      "number": 13,
+      "question_text": "Untuk menyaring partikel lembut pada system pelumasan diperlukan ...",
+      "option_a": "Oil treatment",
+      "option_b": "Crancase Hole",
+      "option_c": "Oil strainer",
+      "option_d": "By Pas Valve",
+      "correct_answer": "C"
+    },
+    {
+      "number": 14,
+      "question_text": "Berikut adalah pemeliharaan dan perawatan filter oli yang benar ...",
+      "option_a": "Elemen Filter Oli tidak dapat di digunakan kembali dan harus dilakukan penggantian",
+      "option_b": "Tipe Oil filter Assembly harus diganti baru berikut filter case",
+      "option_c": "Oil filter elemen yang kotor harus diganti dengan yang baru berdasarkan jarak tempuh",
+      "option_d": "Pilihan Jawaban a,b dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 15,
+      "question_text": "Tanda Huruf \"G\" yang ditunjukan pada table pemeliharaan perawatan Buku Pedoman Reparasi\n    memiliki arti ...",
+      "option_a": "Ganti",
+      "option_b": "Periksa",
+      "option_c": "Bersihkan",
+      "option_d": "Setel",
+      "correct_answer": "B"
+    },
+    {
+      "number": 16,
+      "question_text": "Yang harus diperhatikan dalam melakukan pemeriksaan, penggantian oli pelumas adalah ...",
+      "option_a": "SAE/API Service",
+      "option_b": "Jarak Tempuh kendaran",
+      "option_c": "Kapasitas Oli",
+      "option_d": "a,b dan c benar semua\n\n                                                              2\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "D"
+    },
+    {
+      "number": 17,
+      "question_text": "Pemeliharaan sistem pendingin udara yang benar adalah sebagai berikut...",
+      "option_a": "Memberi lapisan cat pada rusuk pendingin secara merata",
+      "option_b": "Membersihkan bersamaan dengan menghidupkan mesin",
+      "option_c": "Membersihkan dengan menyikat bagian mesin dari debu dan kotoran",
+      "option_d": "Membersihkan rusuk pendingin pada bagian cylinder block dan cylinder head dari debu dan kotoran\n        menggunakan udara bertekanan",
+      "correct_answer": "D"
+    },
+    {
+      "number": 18,
+      "question_text": "Alat tepat yang dipergunakan untuk menguji kebocoran sistem pendinginan air pada sepeda motor,\n    disebut...",
+      "option_a": "Hydrometer",
+      "option_b": "Radiator tester",
+      "option_c": "Odometer",
+      "option_d": "Tacho meter",
+      "correct_answer": "B"
+    },
+    {
+      "number": 19,
+      "question_text": "Hal yang harus dihindarkan pada saat melakukan pengecekan system pendingin adalah ...",
+      "option_a": "Membuka tutup radiator pada kondisi engine panas",
+      "option_b": "Membuka tutup radiator pada kondisi engine dingin",
+      "option_c": "Membuka tutup radiator pada kondisi engine hidup",
+      "option_d": "Semua jawaban salah",
+      "correct_answer": "A"
+    },
+    {
+      "number": 20,
+      "question_text": "Akibat dari penyetelan kopling tidak benar adalah ...",
+      "option_a": "Pegas kopling keras",
+      "option_b": "Kopling selip sewaktu berakselerasi",
+      "option_c": "Transmisi loncat dengan sendirinya",
+      "option_d": "Daya mesin berkurang",
+      "correct_answer": "B"
+    },
+    {
+      "number": 21,
+      "question_text": "Berikut adalah cara penyetelan kopling sepeda motor tipe cub (bebek ) adalah....",
+      "option_a": "Letakkan sepeda motor pada standar tengah",
+      "option_b": "Longgarkan mur pengunci penyetel kopling satu putaran penuh",
+      "option_c": "Putar adjuster berlawanan arah jarum jam sampai terasa ada tahanan, kemudian putar adjuster\n\n        searah jarum jam 3/4 putaran dan kencangkan lock nut.",
+      "option_d": "Jawaban a,b dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 22,
+      "question_text": "Yang bukan termasuk sensor group pada sepeda motor injeksi adalah ...",
+      "option_a": "Throttle Position Sensor",
+      "option_b": "Intake Air Temperatur",
+      "option_c": "Chrankshaf Position",
+      "option_d": "Electronic Control Modul (ECM)",
+      "correct_answer": "D"
+    },
+    {
+      "number": 23,
+      "question_text": "Komponen pada sistem injeksi yang berfungsi menjaga Idling rpm tetap stabil dengan mengontrol\n    jumlah udara yang disuplay ke throttle body adalah fungsi dari sensor ....",
+      "option_a": "Injector",
+      "option_b": "Idle Speed Sensor",
+      "option_c": "Intake air temperature sensor",
+      "option_d": "Engine Oil temperatur sensor",
+      "correct_answer": "B"
+    },
+    {
+      "number": 24,
+      "question_text": "Kondisi yang ditunjukan pada gambar berikut ketika kunci kontak posisi ON dan lampu indicator\n    menyala kemudian mati, menandakan sistem injeksi ...",
+      "option_a": "Dalam keadaan Normal",
+      "option_b": "Dalam kondisi Tidak Normal",
+      "option_c": "Menyimpan Memori pada ECM",
+      "option_d": "Fuel Pump dalam kondisi Normal\n\n                                                              3\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "A"
+    },
+    {
+      "number": 25,
+      "question_text": "Kondisi yang ditunjukan pada gambar berikut ketika kunci kontak posisi ON dan lampu indicator\n    menunjukan durasi penyalaan, hal tersebut menandakan ....",
+      "option_a": "Menyimpan Memori pada ECM",
+      "option_b": "Sistem Injeksi dalam keadaan Normal",
+      "option_c": "Sistem Injeksi dalam keadaan tidak normal",
+      "option_d": "Fuel Pump dalam kondisi Normal",
+      "correct_answer": "C"
+    },
+    {
+      "number": 26,
+      "question_text": "Sewaktu kunci kontak di ON Lampu MIL berkedip sesuai gambar berikut, jumlah pembacan kode\n    kedipan ...",
+      "option_a": "MIL 12",
+      "option_b": "MIL 13",
+      "option_c": "MIL 22",
+      "option_d": "MIL 33",
+      "correct_answer": "A"
+    },
+    {
+      "number": 27,
+      "question_text": "MIL pada panel indikator sepeda motor memiliki arti ...",
+      "option_a": "Indikator Tekanan Injeksi",
+      "option_b": "Malfungtion Indicator Lamp",
+      "option_c": "Mode Indicator Loss",
+      "option_d": "Injection Control",
+      "correct_answer": "B"
+    },
+    {
+      "number": 28,
+      "question_text": "Kerusakan pada Cranksahft Position Sensor (CKP), kondisi mesin sepeda motor injeksi dapat\n    berakibat...",
+      "option_a": "Mesin tidak dapat hidup",
+      "option_b": "Temperatur mesin tinggi",
+      "option_c": "Mesin hidup tersendat",
+      "option_d": "Mesin tidak dapat stationer",
+      "correct_answer": "A"
+    },
+    {
+      "number": 29,
+      "question_text": "Standar putaran stationer pada sepeda motor tipe matic injeksi adalah...",
+      "option_a": "1000 rpm",
+      "option_b": "1300 rpm",
+      "option_c": "1400 rpm 100",
+      "option_d": "1600 rpm 100",
+      "correct_answer": "D"
+    },
+    {
+      "number": 30,
+      "question_text": "Fungsi utama ECM/ECU pada system engine managemen adalah ...",
+      "option_a": "Mengatur jumlah injeksi dan mengontrol sensor",
+      "option_b": "Mengontrol bahan bakar dan sensor",
+      "option_c": "Menambah tegangan ke injector",
+      "option_d": "Mengatur speed engine dan secara terus menerus ke injector",
+      "correct_answer": "A"
+    },
+    {
+      "number": 31,
+      "question_text": "Penanggulangan kerusakan pada ECM/ECU sepeda motor injeksi adalah ...",
+      "option_a": "Perbaikan",
+      "option_b": "Penggantian",
+      "option_c": "Pembersihan",
+      "option_d": "Reset ECM/ECU",
+      "correct_answer": "B"
+    },
+    {
+      "number": 32,
+      "question_text": "Sebelum melakukan penghapusan Diagnostic Trouble Code (DTC) pada scaner, hal yang harus dilakukan\n    teknisi adalah ...",
+      "option_a": "Mengganti ECM",
+      "option_b": "Mereset ECM/ECU secara manual",
+      "option_c": "Melakukan perbaikan kerusakan terlebih dahulu",
+      "option_d": "Memanaskan engine mencapai temperatur kerja\n\n                                                              4\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "C"
+    },
+    {
+      "number": 33,
+      "question_text": "Fuel Suction Filter (filter pompa bensin) yang ditunjukan pada gambar memerlukan penggantian\n    setiap...",
+      "option_a": "15.000 km",
+      "option_b": "20.000 km",
+      "option_c": "30.000 km",
+      "option_d": "48.000 km",
+      "correct_answer": "D"
+    },
+    {
+      "number": 34,
+      "question_text": "Fuel Pressure pump pada electric fuel pump dibutuhkan tekanan konstan, prosedur pengukuran\n    tekanan pompa menggunakan alat ...",
+      "option_a": "Injector Tester",
+      "option_b": "Fuel Pump Tester",
+      "option_c": "Fuel Cup Tester",
+      "option_d": "Digital Fuel Pump",
+      "correct_answer": "B"
+    },
+    {
+      "number": 35,
+      "question_text": "Pemeriksaan saluran bahan bakar sistem injeksi adalah...",
+      "option_a": "Pemeriksaan bracket fuel feed hose",
+      "option_b": "Pemeriksaan tekanan fuell pump",
+      "option_c": "Pemeriksaan kondisi socket sambungan pada selang bahan bakar",
+      "option_d": "Jawaban a,b dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 36,
+      "question_text": "Prosedur yang benar di tunjukan pada gambar pengerjaan berikut adalah ...",
+      "option_a": "Pembersihkan fuel pressure pump",
+      "option_b": "Overhaul motor pompa",
+      "option_c": "Membersihkan air filter",
+      "option_d": "Melakukan penggantian/pelepasan komponen\n\n        filter pompa bensin",
+      "correct_answer": "D"
+    },
+    {
+      "number": 37,
+      "question_text": "Apa fungsi utama dari baterai pada motor ...",
+      "option_a": "Menghidupkan mesin",
+      "option_b": "Mengatur suhu mesin",
+      "option_c": "Mengatur tekanan oli",
+      "option_d": "Mengatur sistem pendingin",
+      "correct_answer": "A"
+    },
+    {
+      "number": 38,
+      "question_text": "Bagaimana cara mengukur tegangan baterai motor ...",
+      "option_a": "Dengan menggunakan multimeter",
+      "option_b": "Dengan menggunakan kunci pas",
+      "option_c": "Dengan menggunakan obeng",
+      "option_d": "Dengan menggunakan tang",
+      "correct_answer": "A"
+    },
+    {
+      "number": 39,
+      "question_text": "Bagaimana cara memasang baterai motor yang benar ...",
+      "option_a": "Menghubungkan kabel positif terlebih dahulu",
+      "option_b": "Menghubungkan kabel negatif terlebih dahulu",
+      "option_c": "Menghubungkan kedua kabel secara bersamaan",
+      "option_d": "Tidak perlu memperhatikan urutan kabel",
+      "correct_answer": "A"
+    },
+    {
+      "number": 40,
+      "question_text": "Apa fungsi utama dari sistem sinyal pada kendaraan ...",
+      "option_a": "Mengatur suhu mesin",
+      "option_b": "Mengatur tekanan oli",
+      "option_c": "Memberikan tanda kepada pengemudi lain",
+      "option_d": "Mengatur kinerja mesin",
+      "correct_answer": "C"
+    },
+    {
+      "number": 41,
+      "question_text": "Apa yang harus dilakukan jika lampu sein tidak berfungsi ...",
+      "option_a": "Mengganti bola lampu sein",
+      "option_b": "Mengganti saklar sein",
+      "option_c": "Memeriksa koneksi kabel sein",
+      "option_d": "Semua jawaban benar\n\n                                                              5\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "D"
+    },
+    {
+      "number": 42,
+      "question_text": "Apa yang dapat terjadi jika sistem penerangan tidak berfungsi dengan baik ...",
+      "option_a": "Mengurangi visibilitas saat berkendara di malam hari",
+      "option_b": "Meningkatkan kinerja mesin",
+      "option_c": "Mengurangi konsumsi bahan bakar",
+      "option_d": "Tidak ada efek sama sekali",
+      "correct_answer": "A"
+    },
+    {
+      "number": 43,
+      "question_text": "Penanganan yang tepat bilamana Ignition Coil rusak adalah ...",
+      "option_a": "Penggantian",
+      "option_b": "Perbaiki",
+      "option_c": "Penyetelan",
+      "option_d": "Pemeriksaan",
+      "correct_answer": "A"
+    },
+    {
+      "number": 44,
+      "question_text": "Tegangan awal dari coil primary adalah ...",
+      "option_a": "Tegangan ECM pada saat kunci kontak di putar ke ON",
+      "option_b": "Tegangan baterai pada saat kunci kontak di putar ke ON",
+      "option_c": "Tegangan AC Volt pada saat kunci kontak di putar ke ON",
+      "option_d": "Tegangan input Pick Up Coil",
+      "correct_answer": "B"
+    },
+    {
+      "number": 45,
+      "question_text": "Fungsi kumparan primer pada coil adalah ...",
+      "option_a": "Membuat magnit permanen pada coil",
+      "option_b": "Membuat loncatan bunga api",
+      "option_c": "Menginduksi kumparan secunder coil",
+      "option_d": "Self cleaning",
+      "correct_answer": "C"
+    },
+    {
+      "number": 46,
+      "question_text": "Komponen sistem pengapian sepeda motor menggunakan sistem karburator adalah...",
+      "option_a": "Baterai, Busi, Coil, Pick Up coil, rotor, CDI Unit",
+      "option_b": "Baterai, regulator, Coil, Busi, ECM Unit",
+      "option_c": "Baterai, Fuse, Kunci Kontak, CKP Sensor, Leg Stand Switch, Coil, Spark plug",
+      "option_d": "Baterai, Fuse, Kunci Kontak, Magnet-Spul, Pick Up coil, Unit CDI, Ignition Coil, Busi",
+      "correct_answer": "D"
+    },
+    {
+      "number": 47,
+      "question_text": "Jarak main bebas rantai roda umumnya berkisar antara ...",
+      "option_a": "30  40 mm",
+      "option_b": "20  30 mm",
+      "option_c": "15 - 20 mm",
+      "option_d": "10  20 mm",
+      "correct_answer": "B"
+    },
+    {
+      "number": 48,
+      "question_text": "Tegangan rantai saat bekerja kurang baik langkah yang tepat untuk mengatasi masalah adalah ...",
+      "option_a": "Bersihkan rantai dari debu dan kotoran",
+      "option_b": "Keringkan rantai setelah di lumasi",
+      "option_c": "Perbaiki/Penyetelan atau ganti",
+      "option_d": "Gigi pada gear sprocket rantai perhalus",
+      "correct_answer": "C"
+    },
+    {
+      "number": 49,
+      "question_text": "Perhatikan posisi clip sambungan rantai pada gambar dibawah ini, alasan yang paling tepat mengapa\n    posisi clip rantai harus menyesuaikan arah putaran adalah ...",
+      "option_a": "Agar mudah saat memasang kembali",
+      "option_b": "Agar mudah saat melepaskannya",
+      "option_c": "Hanya sekedar variasi",
+      "option_d": "Agar tidak lepas dan tersangkut pada komponen yang lain saat rantai berputar\n\n                                                              6\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "D"
+    },
+    {
+      "number": 50,
+      "question_text": "Ukuran tekanan ban belakang untuk berboncengan adalah ...",
+      "option_a": "25 psi",
+      "option_b": "28 psi",
+      "option_c": "20 psi",
+      "option_d": "33 psi",
+      "correct_answer": "A"
+    },
+    {
+      "number": 51,
+      "question_text": "Roda depan terasa bergoyang kemungkinan penyebab adalah ...",
+      "option_a": "Pengikat as roda depan longgar",
+      "option_b": "Pelek Bengkok",
+      "option_c": "Bearing-bearing roda depan aus atau rusak",
+      "option_d": "Pilihan jawaban a,b dan c benar",
+      "correct_answer": "D"
+    },
+    {
+      "number": 52,
+      "question_text": "Batas servis ukuran keolengan pelek roda pada pengukuran aksial dan radial adalah ...",
+      "option_a": "Aksial 1,0 mm, Radial 1,0 mm",
+      "option_b": "Aksial 2,0 mm, Radial 2,0 mm",
+      "option_c": "Aksial 3,0 mm, Radial 3,0 mm",
+      "option_d": "Aksial 4,0 mm, Radial 4,0 mm",
+      "correct_answer": "A"
+    },
+    {
+      "number": 53,
+      "question_text": "Jarak main bebas penyetelan pedal rem belakang adalah ...",
+      "option_a": "10  20 mm",
+      "option_b": "20  30 mm",
+      "option_c": "15  25 mm",
+      "option_d": "35  45 mm",
+      "correct_answer": "B"
+    },
+    {
+      "number": 54,
+      "question_text": "Jarak main bebas penyetelan tuas rem depan adalah ...",
+      "option_a": "10  20 mm",
+      "option_b": "20  30 mm",
+      "option_c": "15  25 mm",
+      "option_d": "35  45 mm",
+      "correct_answer": "A"
+    },
+    {
+      "number": 55,
+      "question_text": "Pada sistem rem hidrolik, apabila pengereman kurang efektif, hal ini disebabkan oleh ...",
+      "option_a": "Kapasitas minyak rem kurang",
+      "option_b": "Ada unsur udara pada sistem hydrolik",
+      "option_c": "Jenis minyak rem tidak sama",
+      "option_d": "Volume minyak rem berlebihan",
+      "correct_answer": "B"
+    },
+    {
+      "number": 56,
+      "question_text": "Apabila pengendalian setang/kemudi terasa berat untuk digerakkan, kemungkinan penyebabnya\n    adalah ....",
+      "option_a": "Tekanan udara ban terlalu tinggi",
+      "option_b": "Mur ulir atas poros kemudi terlalu kencang",
+      "option_c": "Seal suspensi bocor",
+      "option_d": "Rangka bengkok",
+      "correct_answer": "B"
+    },
+    {
+      "number": 57,
+      "question_text": "Apabila menarik ke satu sisiatau tidak dapat lurus, kemungkinan penyebab kerusakan adalah ...",
+      "option_a": "Bearing roda depan aus/rusak",
+      "option_b": "Tekanan udara ban terlalu keras",
+      "option_c": "Seal debu rusak",
+      "option_d": "Pegas fork lemah",
+      "correct_answer": "A"
+    },
+    {
+      "number": 58,
+      "question_text": "Apa yang harus dilakukan jika cover body tidak pas dengan sempurna setelah dipasang ...",
+      "option_a": "Memaksakan cover body agar pas",
+      "option_b": "Mengecek kembali kesesuaian dan melakukan penyesuaian",
+      "option_c": "Meninggalkan cover body tidak terpasang",
+      "option_d": "Menggunakan lem untuk menempelkannya\n\n                                                              7\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "correct_answer": "B"
+    },
+    {
+      "number": 59,
+      "question_text": "Apa yang harus diperiksa setelah melakukan pemasangan cover body...",
+      "option_a": "Kinerja mesin",
+      "option_b": "Sistem pendingin",
+      "option_c": "Kencangnya baut dan kesesuaian cover body",
+      "option_d": "Sistem rem",
+      "correct_answer": "C"
+    },
+    {
+      "number": 60,
+      "question_text": "Apa yang harus dilakukan sebelum melepas baut penahan cover body ...",
+      "option_a": "Membersihkan area sekitar",
+      "option_b": "Mengamati posisi dan jumlah baut",
+      "option_c": "Menggunakan kunci yang sesuai",
+      "option_d": "Melepaskan semua baut secara bersamaan",
+      "correct_answer": "B"
+    },
+    {
+      "number": 61,
+      "question_text": "Apa fungsi utama dari sistem suspensi pada kendaraan ...",
+      "option_a": "Meredam getaran dan guncangan untuk meningkatkan kenyamanan berkendara.",
+      "option_b": "Meningkatkan kecepatan maksimum kendaraan.",
+      "option_c": "Mengurangi konsumsi bahan bakar.",
+      "option_d": "Menghasilkan tenaga mesin yang lebih besar.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 62,
+      "question_text": "Salah satu ciri-ciri kerusakan pada shock absorber adalah ...",
+      "option_a": "Mobil terasa lebih stabil saat menikung.",
+      "option_b": "Tidak ada bunyi saat melewati jalan bergelombang.",
+      "option_c": "Adanya kebocoran oli pada tabung shock absorber.",
+      "option_d": "Keausan ban merata pada semua sisi.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 63,
+      "question_text": "Apa yang dapat terjadi jika tekanan angin ban tidak sesuai dengan spesifikasi, terutama dalam kaitannya\n    dengan perawatan suspensi ...",
+      "option_a": "Kenyamanan berkendara meningkat.",
+      "option_b": "Umur shock absorber menjadi lebih panjang.",
+      "option_c": "Dapat menyebabkan keausan ban yang tidak merata dan mempengaruhi kinerja suspensi.",
+      "option_d": "Tidak berdampak sama sekali pada sistem suspensi.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 64,
+      "question_text": "Jika suspensi depan sepeda motor terasa terlalu keras atau kaku saat melewati jalan berlubang, apa\n    kemungkinan penyebabnya",
+      "option_a": "Jumlah oli shock absorber kurang.",
+      "option_b": "Tekanan angin pada ban terlalu rendah.",
+      "option_c": "Pegas suspensi sudah terlalu lemah (lunak).",
+      "option_d": "Penggunaan oli shock absorber yang terlalu kental atau jumlahnya berlebihan.",
+      "correct_answer": "A"
+    },
+    {
+      "number": 65,
+      "question_text": "Perawatan rutin apa yang paling krusial untuk menjaga kinerja Chassis (rangka) sepeda motor tetap\n    optimal dan aman",
+      "option_a": "Mencuci motor setiap hari.",
+      "option_b": "Memeriksa kekencangan baut-baut utama sasis dan memastikan tidak ada keretakan atau karat\n\n        parah.",
+      "option_c": "Mengganti busi secara rutin.",
+      "option_d": "Menyetel rantai roda belakang.\n\n                                                              8\n\f               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo\n\nPENYUSUN DAN VALIDATOR\n\nSTATUS     NO           NAMA      NOMOR MET        TANDA TANGAN\n                                                    DAN TANGGAL\n\n           1 GUNADI               000.000459 2007\n           2 SAPTONO\nPENYUSUN                                           12 Januari 2026\n\n                                  000.003672 2016\n\n                                                   12 Januari 2026\n\n           1 RANDI ARDIANSYAH     000.002498 2013\n\n                                                   12 Januari 2026\n\nVALIDATOR  2 KARYANTO             000.008260 2025\n\n                                                   12 Januari 2026\n\n           3 RIDWAN               000.008265 2025\n\n                                                   12 Januari 2026\n\n                               9",
+      "correct_answer": "A"
+    }
+  ],
+  "tpd": {
+    "scenario": "S. Anda seorang asesi mengajukan permohonan uji kompetensi Servis Sepeda Motor Injeksi dengan persyaratan memiliki : - Ijazah SMK otomotif; atau - Surat Keterangan Peserta didik SMK Jurusan Otomotif yang telah menyelesaikan mata pelajaran bidang Maintenance Gasoline Engine Injction System sesuai unit kompetensi skema dengan dibuktikan nilai raport semester 1-4 dan fotocopy Surat Keterangan/Sertifikat mengikuti prakerin; atau - Ijazah SMA sederajat dan fotocopy sertifikat pelatihan berbasis kompetensi Maintenance Gasoline Engine Injction System dari lembaga pelatihan kerja yang Terakreditasi/Kredibel; atau - Surat keterangan pengalaman kerja sesuai bidang Maintenance Gasoline Engine Injction System minimal 1 tahun. T. Anda diminta mendemonstrasikan atau Mempraktekan Kelompok Pekerjaan Engine 1 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+    "time_limit": "30 Menit",
+    "tasks": [
+      {
+        "id": "1",
+        "instruction": "Baca dan pelajari setiap instruksi kerja di bawah ini dengan cermat sebelum"
+      },
+      {
+        "id": "2",
+        "instruction": "Klarifikasi kepada asesor kompetensi apabila ada hal-hal yang belum jelas"
+      },
+      {
+        "id": "3",
+        "instruction": "Laksanakan pekerjaan sesuai dengan urutan proses yang sudah ditetapkan"
+      },
+      {
+        "id": "4",
+        "instruction": "Seluruh proses kerja mengacu kepada SOP/WI yang dipersyaratkan (Jika Ada)"
+      }
+    ]
+  },
+  "pmo": [
+    {
+      "number": "1",
+      "question": "Saat anda akan melakukan penyetelan mur penyetel free play kabel gas",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Jika kinerja sistem filter udara tidak baik, apa yang anda lakukan ?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "6",
+      "question": "Mengapa dalam melakukan prosedur pemeriksaan kondisi dan kelengkapan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "7",
+      "question": "Jika sistem clutch/kopling tidak berfungsi normal langkah apa saja yang",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Bagaimana prosedur penggunaan presure gauge saat membersikan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Jelaskan bagaimana penggunaan diagnostic tools yang benar sesuai",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Mengapa perawatan sistem Injeksi harus dilakukan dengan cermat dan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Bagaimana cara memastikan tegangan baterai sesuai standar ?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Bagaimana prosedur pemeriksaan fungsi instrumen kelistrikan (sistem",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Mengapa Diagnostic tools / scan tools diperlukan untuk mengukur",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Jika anda menyetel rantai roda terlalu tegang apa efeknya ?",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Jika kondisi keolengan roda tidak sesuai standar , langkah apa yang anda",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "3",
+      "question": "Bagaimana prosedur pembongkaran dan pemasangan bagian komponen",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "4",
+      "question": "Dalam melakukan prsedur identifikasi kenormalan dan ketidaknormalan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "5",
+      "question": "Bagaimana prosedur memasang komponen-komponen cover body sesuai",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "6",
+      "question": "Jelaskan memeriksa fungsi suspensi sesuai prosedur !",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    }
+  ],
+  "report_sheet": [
+    {
+      "item": "2. G.45TSM01.022.2 Lakukan Perawatan Filter Udara (Gunakan Buku Pedoman                           ............... ...............",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "3. G.45TSM01.020.2 Lakukan Perawatan Renggang Klep (Gunakan Buku",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "4. G.45TSM01.024.2 Lakukan pemeriksaan dan penggantian oli mesin, oli transmisi,",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "5. G.45TSM01.025.2 Lakukan Pemeriksaan Sistem Pelumasan (Gunakan Buku",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "6. Melakukan     komponennya (Gunakan Buku Pedoman Reparasi)",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "7. G.45TSM01.023.2 Lakukan Perawatan Unit Kopling Manual / Otomatik berikut",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "8. G.45TSM01.054.2 Lakukan Pemeriksaan Komponen Sistem Injeksi",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "9.  Mengoperasik         Engine Oil / Coolent Temperatur Sensor : .....................",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "10. G.45TSM01.019.2 Lakukan Perawatan Sistem Bahan Bakar Injeksi (Gunakan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "11. G.45TSM01.039.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "12. G.45TSM01.040.2 Lakukan Perawatan Instrumen Sistem Kelistrikan ((Gunakan",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "13. G.45OTO01.077.2 Sistem Pengapian (Gunakan Buku Pedoman Reparasi)",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "14. G.45TSM01.029.2 Lakukan Penggantian Rantai Roda (Gunakan Buku Pedoman",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "15. G.45TSM01.031.2 Lakukan Perawatan Sistem Pengereman (Gunakan Buku         ................ ................",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "16. G.45TSM01.032.2 Lakukan Pemeriksaan Sistem Kemudi (Gunakan Buku",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "17. G.45TSM01.030.2 Lakukan Pemeriksaan Keolengan Roda(Gunakan Buku",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "18. G.45TSM01.034.2 Pelepasan Cover Body:",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "19. G.45TSM01.033.2 Lakukan Perawatan Sistem Suspensi (Gunakan Buku Pedoman",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    }
+  ]
+}

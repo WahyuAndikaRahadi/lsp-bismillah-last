@@ -1,0 +1,177 @@
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.MAPA.02. PETA INSTRUMEN ASESSMEN HASIL PENDEKATAN ASESMEN DAN PERENCANAAN
+                  ASESMEN*
+
+Skema Sertifikasi       Judul  : Engine Junior Technician
+(KKNI/Okupasi/Klaster)  Nomor  : 01/LSP PrO Indo/I/2026
+
+             No.        Kode Unit                                   Judul Unit
+
+ Kelompok    1. G.45OTO01.001.2 Melaksanakan Keselamatan dan Kesehatan Kerja
+Pekerjaan 1  2. G.45OTO01.002.2 Menggunakan Peralatan dan Perlengkapan Tempat Kerja
+             3. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja
+  General    4. G.45OTO01.007.2 Membaca Gambar Teknik
+  Service    5. G.45OTO01.008.2 Menggunakan Alat Ukur
+             6. G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen
+             7. G.45OTO01.006.2 Melaksanakan Teknik Pematrian
+             8. G.45OTO01.005.2 Memperbaiki Sistem Hidrolik
+
+No.                     INSTRUMEN ASESMEN                              Potensi Asesi **
+
+                                                                    1  2        3   4    5
+
+1. FR.IA.01. CL - Ceklis Observasi Aktivitas Di Tempat Kerja          
+       atauTempat Kerja Simulasi
+                                                                      
+2. FR.IA.02. TPD - Tugas Praktik Demonstrasi                          
+                                                                      
+3. FR.IA.03. PMO - Pertanyaan Untuk Mendukung Observasi
+                                                                      
+       4. a FR.IA.04A. DIT - Daftar Instruksi Terstruktur
+       (Penjelasan Singkat Proyek Terkait Pekerjaan/ Kegiatan         
+4. Terstruktur Lainnya )                                             
+                                                                     
+       4.b FR.IA.04B. DIT ­ Penilaian Proyek Singkat atau Kegiatan   
+       Terstruktur Lainnya                                           
+5. FR.IA.05. DPT - Daftar Pertanyaan Tertulis Pilihan Ganda
+
+6. FR.IA.06. DPT ­ Daftar Pertanyaan Tertulis Pilihan Esai
+
+7. FR.IA.07. DPL ­ Daftar Pertanyaan Lisan
+
+8. FR.IA.08. CVP - Ceklis Verifikasi Portofolio
+
+9. FR.IA.09. PW - Pertanyaan Wawancara
+
+                                           1
+                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+10. FR.IA.10. VPK - Verifikasi Pihak Ketiga                    
+11. FR.IA.11. CRP - Ceklis Reviu Produk                        
+
+             No.  Kode Unit                                    Judul Unit
+
+ Kelompok         1. 1 G.45OTO01.010.2 Melakukan Perawatan Berkala Engine
+Pekerjaan 2       2. G.45OTO01.020.2 Memelihara Sistem Pelumasan Engine
+                  3. G.45OTO01.022.2 Memelihara Sistem Pendinginan Engine
+   Engine         4. G.45OTO01.024.2 Mengganti Cairan pada Sistem Pendinginan Engine
+                  5. G.45OTO01.026.2 Memelihara Sistem Bahan Bakar Bensin
+                  6. G.45OTO01.032.2 Memelihara Sistem Kontrol Emisi
+
+No.               INSTRUMEN ASESMEN                              Potensi Asesi **
+
+                                                              1  2               3  4  5
+
+1. FR.IA.01. CL - Ceklis Observasi Aktivitas Di Tempat Kerja                        
+       atauTempat Kerja Simulasi                                                    
+                                                                                    
+2. FR.IA.02. TPD - Tugas Praktik Demonstrasi
+                                                                                    
+3. FR.IA.03. PMO - Pertanyaan Untuk Mendukung Observasi
+
+       4. a FR.IA.0A. DIT - Daftar Instruksi Terstruktur
+       ( Penjelasan Singkat Proyek Terkait Pekerjaan
+4. / Kegiatan Terstruktur Lainnya )
+
+       4.b FR.IA.04B. DIT - Daftar Instruksi Terstruktur                            
+                                                               
+       ( Penjelasan Kegiatan Terstruktur Lainnya )                                  
+5. FR.IA.05. DPT - Daftar Pertanyaan Tertulis Pilihan Ganda                         
+                                                                                    
+6. FR.IA.06. DPT ­ Daftar Pertanyaan Tertulis Pilihan Esai                          
+                                                                                    
+7. FR.IA.07. DPL ­ Daftar Pertanyaan Lisan                                          
+                                                                                    
+8. FR.IA.08. CVP - Ceklis Verifikasi Portofolio                
+
+9. FR.IA.09. PW - Pertanyaan Wawancara                         
+
+10. FR.IA.10. VPK - Verifikasi Pihak Ketiga                    
+
+11. FR.IA.11. CRP - Ceklis Reviu Produk                        
+
+*) diisi berdasarkan hasil penentuan pendekatan asesmen dan perencanaan asesmen
+
+                                                 2
+                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+             No.  Kode Unit                                   Judul Unit
+
+ Kelompok    1.   G.45OTO01.065.2 Memelihara Baterai
+Pekerjaan 3       G.45OTO01.066.2 Mengganti Baterai Kendaraan Ringan
+
+Electrical   2.
+
+             3.   G.45OTO01.067.2 Melepas Komponen Kelistrikan
+
+             4.   G.45OTO01.084.2 Memelihara Sistem Air Conditioner
+
+No.               INSTRUMEN ASESMEN                                       Potensi Asesi **
+
+                                                              1           2  3  4           5
+
+1. FR.IA.01. CL - Ceklis Observasi Aktivitas Di Tempat Kerja                    
+       atauTempat Kerja Simulasi                                                
+                                                                                
+2. FR.IA.02. TPD - Tugas Praktik Demonstrasi
+3. FR.IA.03. PMO - Pertanyaan Untuk Mendukung Observasi                         
+
+       4. a FR.IA.0A. DIT - Daftar Instruksi Terstruktur                        
+       ( Penjelasan Singkat Proyek Terkait Pekerjaan
+4. / Kegiatan Terstruktur Lainnya )                                             
+                                                                                
+       4.b FR.IA.04B. DIT - Daftar Instruksi Terstruktur                        
+       ( Penjelasan Kegiatan Terstruktur Lainnya )                              
+5. FR.IA.05. DPT - Daftar Pertanyaan Tertulis Pilihan Ganda                     
+6. FR.IA.06. DPT ­ Daftar Pertanyaan Tertulis Pilihan Esai                      
+7. FR.IA.07. DPL ­ Daftar Pertanyaan Lisan                                      
+8. FR.IA.08. CVP - Ceklis Verifikasi Portofolio
+9. FR.IA.09. PW - Pertanyaan Wawancara
+10. FR.IA.10. VPK - Verifikasi Pihak Ketiga
+11. FR.IA.11. CRP - Ceklis Reviu Produk
+
+                                     3
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Penyusun dan Validator
+
+Nama Penyusun                     RIDWAN
+                        No. Reg. 000.008265 2025
+
+                                                            05 Januari 2026
+
+                            RANDI ARDIANSYAH       05 Januari 2026
+                        No. Reg . 000.002498 2013
+
+                                  SAPTONO
+                        No. Reg. 000.003672 2016
+
+                                                           05 Januari 2026
+
+Nama Validator                   KARYANTO
+                        No. Reg. 000.008260 2025
+
+                                                                             05 Januari 2026
+
+                                    GUNADI
+                        No. Reg . 000.000459 2007
+
+                                                            05 Januari 2026
+
+**) Keterangan
+
+1. Hasil pelatihan dan / atau pendidikan, dimana Kurikulum dan fasilitas praktek mampu telusur
+    terhadap standar kompetensi.
+
+2. Hasil pelatihan dan / atau pendidikan, dimana kurikulum belum berbasis kompetensi.
+3. Pekerja berpengalaman, dimana berasal dari industri/tempat kerja yang dalam
+
+    operasionalnya mampu telusur dengan standar kompetensi.
+4. Pekerja berpengalaman, dimana berasal dari industri/tempat kerja yang dalam
+
+    operasionalnya belum berbasis kompetensi.
+5. Pelatihan / belajar mandiri atau otodidak
+
+                        4
+

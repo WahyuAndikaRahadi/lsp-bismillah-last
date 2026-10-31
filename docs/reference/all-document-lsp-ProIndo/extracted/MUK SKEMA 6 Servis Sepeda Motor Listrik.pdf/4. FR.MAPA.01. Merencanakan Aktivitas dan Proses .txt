@@ -1,0 +1,514 @@
+                   Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                              LSP-PrO Indo
+
+FR.MAPA.01- MERENCANAKAN AKTIVITAS DAN PROSES ASESMEN
+
+Skema Sertifikasi  Judul       : Servis Sepeda Motor Listrik
+
+(KKNI/Okupasi/Klaster) Nomor : 06/LSP PrO Indo/I/2026
+
+1. Menentukan Pendekatan Asesmen
+
+1.1. Asesi          Hasil pelatihan dan / atau pendidikan, dimana Kurikulum dan fasilitas
+
+                   praktek mampu telusur terhadap standar kompetensi
+
+Tujuan              Hasil pelatihan dan / atau pendidikan, dimana kurikulum belum berbasis
+Asesmen
+                        kompetensi.
+
+                    Pekerja berpengalaman, dimana berasal dari industri/tempat kerja yang
+
+                        dalam operasionalnya mampu telusur dengan standar kompetensi
+
+                    Pekerja berpengalaman, dimana berasal dari industri/tempat kerja yang
+
+                        dalam operasionalnya belum berbasis kompetensi.
+
+                    Pelatihan / belajar mandiri atau otodidak.
+
+                    Sertifikasi
+
+                    Pengakuan Kompetensi Terkini (PKT)
+
+                    Rekognisi Pembelajaran Lampau
+
+                    Lainnya
+
+Konteks            Lingkungan              Tempat kerja nyata  Tempat kerja nsimulasi
+Asesmen:
+
+                   Peluang untuk          Tersedia             Terbatas
+                   mengumpulkan
+                   bukti dalam
+                   sejumlah situasi
+
+                    Hubungan antara      Bukti untuk mendukung asesmen :   
+
+                   standar
+
+                    kompetensi dan:      Aktivitas kerja di tempat kerja Asesi:   
+
+                                      Kegiatan Pembelajaran:   
+
+                   Siapa yang         Lembaga Sertifikasi LSP Praktisi Otomotif Indonesia
+                   melakukan          Organisasi Pelatihan
+                   asesmen/           Asesor Perusahaan
+                   RPL
+
+Konfirmasi          Manajer sertifikasi
+dengan orang
+yang relevan        Master Asesor / Master Trainer / Lead Asesor Kompetensi
+
+                                         1
+                              Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                         LSP-PrO Indo
+
+                     Manajer Pelatihan Lembaga Training terakreditasi / Lembaga Training
+
+                         terdaftar
+
+                     Manajer atau supervisor ditempat kerja
+
+     Standar Industri  Standar Kompetensi: SKKNI Nomor 8 Tahun 2024, SKKNI Nomor 242 Tahun
+
+.2 atau Tempat         2022, SKKNI Nomor 147 Tahun 2019
+
+Kerja
+
+                     Kriteria asesmen dari kurikulum pelatihan
+
+                     Spesifikasi kinerja suatu perusahaan atau industri: Repair Manual, report sheet
+
+                     Spesifikasi Produk:
+                     Pedoman khusus:
+
+2. Mempersiapkan Rencana Asesmen
+
+ Kelompok      No.     Kode Unit                                Judul Unit
+Pekerjaan 1
+ Persiapan     1.   C.29SEV01.005.1      Membaca Electrical Wiring Diagram (EWD) dan Repair Manual
+                                         untuk Electrified Vehicles
+   servis
+
+                  Bukti-Bukti          Jenis                    Metode dan Perangkat
+               (Kinerja, Produk,       Bukti                             Asesmen
+               Portofolio, dan /
+                                      L TL T        CL (Ceklis Observasi), DIT (Daftar Instruksi
+                      atau                      Terstruktur), DPL (Daftar Pertanyaan Lisan), DPT
+                Pengetahuan)                   (Daftar Pertanyaan Tertulis), VPK (Verifikasi Pihak
+                 diidentifikasi               Ketiga), CVP (Ceklis Verifikasi Portofolio), CRP (Ceklis
+                 berdasarkan
+                Kriteria Unjuk                     Reviu Produk), PW (PertanyaanWawancara)
+
+    Unit           Kerja dan                  Obsevasi langsung
+Kompetensi       Pendekatan
+                   Asesmen.                       (kerja nyata/aktivitas waktu nyata
+                                                      di tempat kerja dikingkungan
+
+                                                         tempat kerja yang disimulasikan)
+
+                                                                 Kegiatan Terstruktur
+                                                                    (latihan simulasi dan bermain peran,
+                                                                        proyek,presentasi, lembar kegiatan)
+
+                                                                        Tanya Jawab
+
+                                                                               (pertanyaan tertulis, wawancara,
+                                                                                   asesmen diri, tanyajawab lisan,
+                                                                                      angket, ujian lisan atau tertulis)
+
+                                                                                                Verifikasi Portfolio
+
+                                                                                                            (sampel pekerjaaan yang disusunoleh Asesi,
+                                                                                                                produk dengan dokumentasi pendukung,
+                                                                                                                    bukti sejarah, jurnal atau buku catatan,
+                                                                                                                        informasi tentang pengalaman hidup)
+
+                                                                                                                   Reviu Produk
+                                                                                                                       Produk hasil proyek, ciontoh hasil
+
+                                                                                                                           kerja/produk
+                                                                                                                                 Verifikasi Pihak Ketiga
+
+                                                                                                                                                 (testimoni dan laporan dari atasan, bukti
+                                                                                                                                                     pelatihan, otentikasi pencapaian sebelumnya,
+                                                                                                                                                         wawancara denganatasan, atau rekan kerja)
+
+1. Membaca     Hasil observasi
+
+Electrical Wiring langsung dan tanya
+               jawab tentang
+Diagram (EWD)
+dan Repair     Membaca Electrical     L  T CL                   DPT
+               Wiring Diagram
+Manual untuk (EWD) dan Repair
+Electrified
+               Manual untuk
+
+Vehicles       Electrified Vehicles
+
+                                              2
+                       Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                  LSP-PrO Indo
+
+Kelompok          No.                 Kode Unit     Judul Unit
+
+Pekerjaan 2
+
+Memastikan
+
+proses            1    C.27BAT00.005.1 Melaksanakan Pengujian Spesifikasi Teknis Pak Baterai
+
+pengujian,
+
+komisioning, dan
+
+pemasangan Pak
+
+Baterai sesuai    2    C.27BAT00.006.1 Melaksanakan Komisioning Pak Baterai pada Sistem
+
+dengan Standar
+
+    Unit             Bukti-Bukti       Jenis                       Metode dan Perangkat
+Kompetensi        (Kinerja, Produk,    Bukti                                Asesmen
+                  Portofolio, dan /
+                                      L TL T           CL (Ceklis Observasi), DIT (Daftar Instruksi
+                         atau                      Terstruktur), DPL (Daftar Pertanyaan Lisan), DPT
+                   Pengetahuan)                   (Daftar Pertanyaan Tertulis), VPK (Verifikasi Pihak
+                    diidentifikasi               Ketiga), CVP (Ceklis Verifikasi Portofolio), CRP (Ceklis
+                    berdasarkan
+                   Kriteria Unjuk                     Reviu Produk), PW (PertanyaanWawancara)
+
+                      Kerja dan                  Obsevasi langsung
+                    Pendekatan
+                      Asesmen.                       (kerja nyata/aktivitas waktu nyata
+                                                         di tempat kerja dikingkungan
+
+                                                            tempat kerja yang disimulasikan)
+
+                                                                   Kegiatan Terstruktur
+                                                                       (latihan simulasi dan bermain peran,
+                                                                           proyek,presentasi, lembar kegiatan)
+
+                                                                           Tanya Jawab
+
+                                                                                  (pertanyaan tertulis, wawancara,
+                                                                                      asesmen diri, tanyajawab lisan,
+                                                                                         angket, ujian lisan atau tertulis)
+
+                                                                                                   Verifikasi Portfolio
+
+                                                                                                               (sampel pekerjaaan yang disusunoleh Asesi,
+                                                                                                                   produk dengan dokumentasi pendukung,
+                                                                                                                       bukti sejarah, jurnal atau buku catatan,
+                                                                                                                           informasi tentang pengalaman hidup)
+
+                                                                                                                      Reviu Produk
+                                                                                                                          Produk hasil proyek, ciontoh hasil
+
+                                                                                                                              kerja/produk
+                                                                                                                                    Verifikasi Pihak Ketiga
+
+                                                                                                                                                    (testimoni dan laporan dari atasan, bukti
+                                                                                                                                                        pelatihan, otentikasi pencapaian sebelumnya,
+                                                                                                                                                            wawancara denganatasan, atau rekan kerja)
+
+1. Melaksanakan Hasil observasi
+
+Pengujian langsung dan tanya
+
+Spesifikasi       jawab tentang
+
+Teknis Pak        Melaksanakan L      T CL          DPT
+
+Baterai           Pengujian
+
+                  Spesifikasi Teknis
+
+                  Pak Baterai
+
+2. Melaksanakan Hasil observasi
+
+Komisioning langsung dan tanya
+
+Pak Baterai       jawab tentang L     T CL          DPT
+pada Sistem       Melaksanakan
+
+                  Komisioning Pak
+
+                Baterai pada Sistem
+
+                                                 3
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                     LSP-PrO Indo
+
+ Kelompok            No.            Kode Unit         Judul Unit
+Pekerjaan 3
+
+Memastikan
+
+proses monitoring,
+
+dan                                                   Melaksanakan Monitoring Kondisi
+                                                      Mekanik,Elektrik, dan Indikator Pak Baterai agar
+penyimpanan, Pak 1.              C.27BAT00.007.1      Berfungsi Optimal
+
+Baterai sesuai
+
+dengan standar
+
+                   Bukti-Bukti       Jenis                          Metode dan Perangkat
+                (Kinerja, Produk,    Bukti                                   Asesmen
+                Portofolio, dan /
+                                    L TL T              CL (Ceklis Observasi), DIT (Daftar Instruksi
+                       atau                         Terstruktur), DPL (Daftar Pertanyaan Lisan), DPT
+                 Pengetahuan)                      (Daftar Pertanyaan Tertulis), VPK (Verifikasi Pihak
+                  diidentifikasi                  Ketiga), CVP (Ceklis Verifikasi Portofolio), CRP (Ceklis
+                  berdasarkan
+                 Kriteria Unjuk                        Reviu Produk), PW (PertanyaanWawancara)
+
+    Unit            Kerja dan                  Obsevasi langsung
+Kompetensi        Pendekatan
+                    Asesmen.                       (kerja nyata/aktivitas waktu nyata
+                                                       di tempat kerja dikingkungan
+
+                                                          tempat kerja yang disimulasikan)
+
+                                                                 Kegiatan Terstruktur
+                                                                     (latihan simulasi dan bermain peran,
+                                                                         proyek,presentasi, lembar kegiatan)
+
+                                                                         Tanya Jawab
+
+                                                                                (pertanyaan tertulis, wawancara,
+                                                                                    asesmen diri, tanyajawab lisan,
+                                                                                       angket, ujian lisan atau tertulis)
+
+                                                                                                 Verifikasi Portfolio
+
+                                                                                                             (sampel pekerjaaan yang disusunoleh Asesi,
+                                                                                                                 produk dengan dokumentasi pendukung,
+                                                                                                                     bukti sejarah, jurnal atau buku catatan,
+                                                                                                                         informasi tentang pengalaman hidup)
+
+                                                                                                                    Reviu Produk
+                                                                                                                        Produk hasil proyek, ciontoh hasil
+
+                                                                                                                            kerja/produk
+                                                                                                                                  Verifikasi Pihak Ketiga
+
+                                                                                                                                                  (testimoni dan laporan dari atasan, bukti
+                                                                                                                                                      pelatihan, otentikasi pencapaian sebelumnya,
+                                                                                                                                                          wawancara denganatasan, atau rekan kerja)
+
+1. Melaksanakan Hasil observasi
+
+Monitoring langsung dan tanya
+
+Kondisi         jawab tentang
+
+Mekanik,        Melaksanakan
+
+Elektrik, dan   Monitoring Kondisi  L      T      CL  DPT
+Indikator Pak   Mekanik,Elektrik,
+
+Baterai agar dan Indikator Pak
+
+Berfungsi Baterai agar
+
+Optimal         Berfungsi Optimal
+
+ Kelompok       No.       Kode Unit                                     Judul Unit
+Pekerjaan 4
+                    1. G45TSM01.040.2          Melakukan perawatan instrumen kelistrikan (sistem sinyal
+ Electrical                                                             dan penerangan)
+
+                   Bukti-Bukti      Jenis                          Metode dan Perangkat
+                (Kinerja, Produk,   Bukti                                   Asesmen
+                Portofolio, dan /
+                                               CL (Ceklis Observasi), DIT (Daftar Instruksi Terstruktur),
+                                               DPL (Daftar Pertanyaan Lisan), DPT (Daftar Pertanyaan
+
+                                                  Tertulis), VPK (Verifikasi Pihak Ketiga), CVP (Ceklis
+                                                 Verifikasi Portofolio), CRP (Ceklis Reviu Produk), PW
+
+                                                                  (Pertanyaan Wawancara)
+
+                                                  4
+       perawatan                      1. Melakukan Hasil observasi             Unit                                                                                                                                                                                                                 Chasis  Pekerjaan 5                               Kelompok                                                                                                                                                  penerangan) kelistrikan (sistem  dan        (sistem sinyal perawatan  kelistrikan Melakukan  instrumen jawab tentang  perawatan langsung dan tanya  1. Melakukan Hasil observasi             Unit
+   free play                                                                Kompetensi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Kompetensi
+
+   jawab tentang  langsung dan tanya                                                                     Bukti-Bukti                                                                        5.                                                  4.                                                  3.                                                2.                                                    1. G.45TSM01.021.2 Melakukan perawatan free play throttle gas  No.         penerangan)  sinyal dan                                   instrumen                                                                                                                                                                 atau
+                                                                                                     (Kinerja, Produk,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Pengetahuan)
+                                                                                                 Portofolio, dan /                                                                          G45TSM01.034.2 Melakukan bongkar pasang cover body  G45TSM01.033.2 Melakukan perawatan sistem suspensi  G45TSM01.032.2 Melakukan perawatan sistem kemudi  G45TSM01.031.2 Melakukan perawatan sistem pengereman                                                                 Kode Unit                                                                                                                                                                                                                                diidentifikasi                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                berdasarkan                     LSP-PrO Indo
+                                                                                             atau                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Kriteria Unjuk
+                                                                                          Pengetahuan)
+                                                                                      diidentifikasi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Kerja dan
+                                                                                  berdasarkan                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Pendekatan
+                                                                               Kriteria Unjuk                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Asesmen.
+
+                                                                           Kerja dan
+                                                                       Pendekatan
+                                                                    Asesmen.
+
+   L                                                                L TL T                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  L T CL                                                                                                                                L TL T
+
+                                                                                                                     Jenis
+                                                                                                                  Bukti
+
+   T
+
+5  CL                                                                       Obsevasi langsung                                           Metode dan Perangkat                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Obsevasi langsung
+                                                                                                                                    Asesmen
+   DPT                                                              (kerja nyata/aktivitas waktu nyata                                                                                                                                                                                                                                                                                                                                                                     Judul Unit                                                                       DPT                                                                                                                                   (kerja nyata/aktivitas waktu nyata
+                                                                       di tempat kerja di kingkungan                            CL (Ceklis Observasi), DIT (Daftar Instruksi Terstruktur),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           di tempat kerja di kingkungan
+                                                                                                                             DPL (Daftar Pertanyaan Lisan), DPT (Daftar Pertanyaan
+                                                                     tempat kerja yang disimulasikan)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              tempat kerja yang disimulasikan)
+                                                                                                                         Tertulis), VPK (Verifikasi Pihak Ketiga), CVP (Ceklis
+                                                                               Kegiatan Terstruktur                  Verifikasi Portofolio), CRP (Ceklis Reviu Produk), PW                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Kegiatan Terstruktur
+                                                                      (latihan simulasi dan bermain peran,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          (latihan simulasi dan bermain peran,
+                                                                      proyek,presentasi, lembar kegiatan)         (Pertanyaan Wawancara)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            proyek,presentasi, lembar kegiatan)
+
+                                                                               Tanya Jawab                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Tanya Jawab
+
+                                                                     (pertanyaan tertulis, wawancara,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              (pertanyaan tertulis, wawancara,
+                                                                      asesmen diri, tanya jawab lisan,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              asesmen diri, tanya jawab lisan,
+                                                                      angket, ujian lisan atau tertulis)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            angket, ujian lisan atau tertulis)
+
+                                                                                 Verifikasi Portfolio                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Verifikasi Portfolio
+
+                                                                     (sampel pekerjaaan yang disusunoleh Asesi,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    (sampel pekerjaaan yang disusunoleh Asesi,
+                                                                      produk dengan dokumentasi pendukung,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          produk dengan dokumentasi pendukung,
+                                                                       bukti sejarah, jurnal atau buku catatan,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      bukti sejarah, jurnal atau buku catatan,
+                                                                        informasi tentang pengalaman hidup)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           informasi tentang pengalaman hidup)
+
+                                                                                    Reviu Produk                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Reviu Produk
+                                                                       Produk hasil proyek, ciontoh hasil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Produk hasil proyek, ciontoh hasil
+
+                                                                                    kerja/produk                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  kerja/produk
+
+                                                                              Verifikasi Pihak Ketiga                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Verifikasi Pihak Ketiga
+
+                                                                       (testimoni dan laporan dari atasan, bukti                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     (testimoni dan laporan dari atasan, bukti
+                                                                    pelatihan, otentikasi pencapaian sebelumnya,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  pelatihan, otentikasi pencapaian sebelumnya,
+                                                                    wawancara denganatasan, atau rekan kerja)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     wawancara denganatasan, atau rekan kerja)
+                              Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                         LSP-PrO Indo
+
+throttle gas  Melakukan
+              perawatan free play
+              throttle gas
+
+2. Melakukan Hasil observasi
+
+perawatan langsung dan tanya
+              jawab tentang
+sistem                                L T CL            DPT
+pengereman Melakukan
+              perawatan sistem
+
+              pengereman
+
+3. Melakukan Hasil observasi
+
+perawatan langsung dan tanya
+sistem kemudi jawab tentang
+                   Melakukan          L T CL            DPT
+
+              perawatan sistem
+
+              kemudi
+
+4. Melakukan Hasil observasi
+
+perawatan langsung dan tanya
+              jawab tentang
+sistem        Melakukan               L T CL            DPT
+suspensi
+              perawatan sistem
+
+              suspensi
+
+5. Melakukan Hasil observasi
+
+bongkar       langsung dan tanya
+
+pasang cover jawab tentang            L T CL            DPT
+
+body          Melakukan bongkar
+              pasang cover body
+
+3. Mengidentifikasi Persyaratan Modifikasi dan Kontekstualisasi:
+
+3.1. a. Karakteristik Asesi:                            Ada / tidak ada* karakteristik khusus Asesi
+
+                                                        Jika Ada, tuliskan........................
+
+b. Kebutuhan kontekstualisasi terkait tempat            Ada / tidak ada* kebutuhan kontekstualisasiJika
+   kerja:                                               Ada, tuliskan........................
+
+3.2. Saran yang diberikan oleh paket pelatihan atau     Ada / tidak ada* saran
+     pengembang pelatihan                               Jika Ada, tuliskan........................
+
+3.3. Penyesuaian perangkat asesmen terkait kebutuhan    Ada / tidak ada* penyesuaian perangkatJika Ada,
+     kontekstualisasi
+
+                                                        tuliskan........................
+
+3.4. Peluang untuk kegiatan asesmen terintegrasi dan    Ada / tidak ada* peluang
+      mencatat setiap perubahan yang diperlukan untuk
+
+alat asesmen                                            Jika Ada, tuliskan........................
+
+                                                        - Melakukan bongkar pasang cover body
+
+                                                        - Membaca Electrical Wiring Diagram (EWD)
+
+                                                        dan Repair Manual untuk Electrified Vehicles
+
+    *Coret yang tidak perlu
+Konfirmasi dengan orang yang relevan
+
+                                                     6
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                   LSP-PrO Indo
+
+                           Orang yang relevan            Nama             Tandatangan dan
+Manajer sertifikasi LSP                                                         Tanggal
+
+Master Asesor / Master Trainer / Lead Asesor Kompetensi  KARYANTO
+
+                                                                          18 Januari 2026
+
+Manajer pelatihan Lembaga Training terakreditasi /
+Lembaga Training terdaftar
+
+Manajer atau supervisor ditempat kerja
+
+PENYUSUN DAN VALIDATOR
+
+STATUS     NO           NAMA                             NOMOR MET        TANDA TANGAN
+                                                                           DAN TANGGAL
+
+PENYUSUN   1 GUNADI                                      000.000459 2007
+           2 SAPTONO                                                              18 Januari 2026
+
+                                                         000.003672 2016
+
+                                                                          18 Januari 2026
+
+VALIDATOR  1 RANDI ARDIANSYAH                            000.002498 2013
+
+                                                                          18 Januari 2026
+
+           2 KARYANTO                                    000.008260 2025
+
+                                                                          18 Januari 2026
+
+           3 RIDWAN                                      000.008265 2025
+                                                                                  18 Januari 2026
+
+                                                    7
+

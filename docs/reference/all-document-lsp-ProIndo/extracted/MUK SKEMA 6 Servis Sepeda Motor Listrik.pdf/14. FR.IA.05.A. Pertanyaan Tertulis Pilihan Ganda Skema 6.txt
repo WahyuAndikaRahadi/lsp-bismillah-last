@@ -1,0 +1,354 @@
+                            Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                       LSP-PrO Indo
+
+FR.IA.05A. DPT - PERTANYAAN TERTULIS PILIHAN GANDA
+
+Skema Sertifikasi           Judul  : Servis Sepeda Motor Listrik
+(KKNI/Okupasi/Klaster)      Nomor  : Skema 06/LSP PrO Indo/I/2026
+                                   : Sewaktu/Tempat Kerja/Mandiri*
+TUK                                :
+Nama Asesor                        :
+Nama Asesi                         :
+Tanggal                            :
+Waktu
+
+   *Coret yang tidak perlu
+
+Jawab semua pertanyaan berikut:
+     1. Apa tujuan utama dari Electrical Wiring Diagram (EWD) dalam perbaikan kendaraan listrik...
+
+          a) Untuk menentukan biaya perbaikan komponen.
+          b) Untuk menunjukkan tata letak fisik komponen di dalam sasis kendaraan.
+          c) Untuk membantu dalam pembuatan, pemeliharaan, dan penentuan sumber kesalahan dalam
+
+               rangkaian kelistrikan secara efisien.
+          d) Untuk menyediakan deskripsi naratif tentang cara kerja sirkuit.
+
+2. Dalam EWD, simbol garis zig-zag biasanya mewakili komponen apa...
+
+    a) Kapasitor
+    b) Saklar
+    c) Resistor
+    d) Baterai
+
+3. Warna kabel standar internasional apa yang paling sering digunakan dalam EWD sepeda motor listrik
+    untuk menandai jalur kabel "Ground" atau "Massa"...
+    a) Merah (Red)
+    b) Hijau (Green) atau Hitam (Black), tergantung pabrikan
+    c) Kuning (Yellow).
+    d) Biru Muda (Light Blue)
+
+4. Jika EWD sepeda motor listrik menunjukkan simbol di bawah ini, komponen apa yang diwakilinya...
+
+    a) Meteran bahan bakar
+    b) Motor Listrik (Motor Traksi)
+    c) Modul Kontrol Bodi (BCM)
+    d) Magnet pengapian
+
+5. Apa yang dimaksud dengan "Controller" dalam EWD sepeda motor listrik, dan apa peran utamanya...
+
+    a) Komponen yang mengatur kecepatan putar motor listrik dengan mengontrol aliran daya dari
+          baterai traksi.
+
+    b) Pengisi daya baterai 12V.
+    c) Komponen hiburan dan radio.
+    d) Sebuah saklar sederhana untuk lampu depan.
+
+6. Apa alat ukur utama yang digunakan untuk mengukur tegangan total (State of Charge/SoC) pada
+    baterai sepeda motor listrik...
+    a) Ohmmeter
+    b) Ammeter Clamp
+    c) Termometer Infared
+    d) Multimeter Digital
+
+                                                              1
+                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                                 LSP-PrO Indo
+
+7. Ketika melakukan pengujian baterai Lithium-ion, parameter kunci "State of Health" (SoH) mengacu pada
+    apa...
+    a) Berapa lama waktu yang dibutuhkan untuk mengisi penuh baterai.
+    b) Kapasitas baterai saat ini dibandingkan dengan kapasitas aslinya saat baru (dinyatakan dalam
+          persentase, misal 80% dari kapasitas awal).
+    c) suhu operasional rata-rata baterai.
+    d) Jumlah siklus pengisian daya yang tersisa sebelum baterai meledak.
+
+8. Apa satuan ukur yang digunakan untuk mengukur kapasitas baterai (Battery Capacity) seperti yang
+    tertera pada spesifikasi teknis baterai sepeda motor listrik...
+    a) Volt (V)
+    b) Watt (W)
+    c) Ampere-hour (Ah) atau Watt-hour (Wh)
+    d) Ohm ()
+
+9. Jika hasil pengujian tegangan sel individual dalam paket baterai menunjukkan ketidakseimbangan
+    yang signifikan (misalnya, satu sel 3.0V sementara yang lain 4.1V), tindakan perbaikan apa yang
+    mungkin direkomendasikan dalam repair manual ...
+    a) Mengganti seluruh paket baterai tanpa perbaikan.
+    b) Melakukan prosedur "Cell Balancing" menggunakan peralatan khusus atau BMS.
+    c) Menambahkan air suling ke sel yang rendah tegangannya.
+    d) Mengisi daya baterai hingga 100% dan segera mengurasnya.
+
+10. Prosedur "Equalization Charge" atau Cell Balancing yang dijelaskan dalam repair manual baterai
+    bertujuan untuk
+    a) Mengosongkan baterai sepenuhnya sebelum disimpan.
+
+    b) Menyamakan tingkat tegangan (SoC) pada setiap sel individu dalam paket baterai.
+
+    c) Membersihkan terminal baterai dari korosi.
+
+    d) Menguji IP Rating baterai.
+
+11. Dalam EWD sepeda motor listrik, jalur koneksi apa yang harus diprioritaskan untuk diperiksa
+    kontinuitasnya selama komisioning untuk memastikan sistem keselamatan berfungsi...
+    a) Jalur klakson
+    b) Jalur pemanas grip (hand grip heater).
+    c) Jalur CAN bus dan sirkuit interlock keselamatan (misalnya, sakelar standar samping, sakelar jok).
+    d) Jalur lampu plat nomor.
+
+12. Apa peran sistem pendingin baterai (Battery Cooling System) selama pengujian komisioning setelah
+    pemasangan...
+    a) Untuk menjaga baterai tetap hangat di musim dingin.
+    b) Memastikan suhu baterai tetap dalam rentang operasional yang aman selama pengujian beban
+          awal.
+    c) Mendinginkan motor listrik, bukan baterai.
+    d) Sistem pendingin tidak diuji selama komisioning.
+
+13. Jika selama proses komisioning, EWD menunjukkan adanya service plug atau service disconnect
+    switch, kapan komponen ini harus dipasang Kembali...
+    a) Setelah semua koneksi tegangan tinggi selesai dan area kerja aman, sesaat sebelum pengujian
+         sistem.
+    b) Pada awal proses pemasangan baterai.
+    c) Saat sepeda motor sedang bergerak.
+    d) Tidak perlu dipasang kembali.
+
+14. Saat melakukan komisioning di lingkungan bengkel, area kerja harus memenuhi standar keselamatan
+    tertentu. Apa standar keselamatan yang paling relevan untuk pekerjaan baterai tegangan tinggi..
+    a) Area yang gelap dan tertutup rapat.
+    b) Area basah untuk mendinginkan baterai.
+    c) Area dengan karpet tebal untuk kenyamanan.
+    d) Area yang bersih, kering, berventilasi baik, dengan alat pemadam api yang sesuai tersedia.
+
+                                                              2
+                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                                 LSP-PrO Indo
+
+15. Apa dokumen penting yang harus diisi dan ditandatangani oleh teknisi setelah berhasil menyelesaikan
+    semua langkah komisioning baterai dan pengujian fungsional?
+    a) Faktur pembelian kopi.
+    b) Ceklis Keselamatan dan Laporan Komisioning (Commissioning Report/Checklist) untuk
+          dokumentasi garansi dan servis.
+    c) Kartu identitas teknisi.
+    d) Formulir permintaan suku cadang baru.
+
+16. Indikator pada panel instrumen motor listrik yang menunjukkan sisa kapasitas energi yang tersedia
+    dalam baterai disebut...
+    a) AFuel Gauge
+    b) Odometer
+    c) State of Charge (SoC) atau Indikator Level Baterai
+    d) Tachometer
+
+17. Ketika memonitor kondisi baterai, tanda visual seperti baterai yang menggelembung (swelling)
+    mengindikasikan...
+    a) Baterai dalam kondisi sangat baik dan penuh energi.
+    b) Terjadi kerusakan internal serius, kemungkinan akibat panas berlebih atau overcharging, dan
+          baterai harus diperiksa oleh ahli.
+    c) Baterai siap untuk diisi ulang.
+    d) Motor perlu dicuci.
+
+18. Apa risiko utama jika mengabaikan monitoring kondisi mekanik pada sistem pengereman motor listrik...
+
+    a) Baterai menjadi cepat habis.
+    b) Komponen elektrik menjadi rusak.
+    c) Penurunan efisiensi pengereman yang membahayakan keselamatan berkendara.
+    d) Lampu depan menjadi redup.
+19. Apa fungsi utama dari sistem sinyal pada kendaraan ...
+
+    a) Mengatur suhu mesin
+    b) Mengatur tekanan oli
+    c) Memberikan tanda kepada pengemudi lain
+    d) Mengatur kinerja mesin
+20. Apa yang harus dilakukan jika lampu sein tidak berfungsi ...
+
+    a) Mengganti bola lampu sein
+    b) Mengganti saklar sein
+    c) Memeriksa koneksi kabel sein
+    d) Semua jawaban benar
+21. Apa yang dapat terjadi jika sistem penerangan tidak berfungsi dengan baik ...
+
+    a) Mengurangi visibilitas saat berkendara di malam hari
+    b) Meningkatkan kinerja mesin
+    c) Mengurangi konsumsi bahan bakar
+    d) Tidak ada efek sama sekali
+22. Pemeriksaan yang harus di perhatikan untuk memastikan putaran stationer tidak berubah adalah ...
+
+    a) Memutar keseluruhan stang kemudi ke arah kanan dan kiri
+    b) Memeriksa jarak main bebas handel gas
+    c) Memeriksa sambungan kabel gas
+    d) Pilihan jawaban a, b dan c benar
+
+23. Pemeriksaan free play throttle gas pada throttle body, yang perlu diperhatikan pada gambar berikut
+    adalah ...
+    a) Putaran mesin Idle
+    b) Kebersihan pegas throttle
+    c) Memastikan baut stopscrew tidak berubah
+
+                                                              3
+                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                                 LSP-PrO Indo
+
+    d) Kebersihan Throttle body
+
+24. Berikut ini adalah pengerjaan yang tidak termasuk bagian dari perawatan kabel dan handel gas
+    adalah....
+    a) Pemeriksaan kondisi kelancaran handel gas
+    b) Melepas karet penutup debu dari penyetel
+    c) Jarak main bebas handle gas disetel pada bagian sisi stang kemudi kabel gas
+    d) Jarak main bebas handel gas tidak dapat disetel pada bagian ujung bawah kabel gas
+
+25. Jarak main bebas penyetelan pedal rem belakang adalah ...
+
+    a) 10 ­ 20 mm
+    b) 20 ­ 30 mm
+    c) 15 ­ 25 mm
+    d) 35 ­ 45 mm
+
+26. Jarak main bebas penyetelan tuas rem depan adalah ...
+
+    a) 10 ­ 20 mm
+    b) 20 ­ 30 mm
+    c) 15 ­ 25 mm
+    d) 35 ­ 45 mm
+
+27. Pada sistem rem hidrolik, apabila pengereman kurang efektif, hal ini disebabkan oleh ...
+
+    a) Kapasitas minyak rem kurang
+    b) Ada unsur udara pada sistem hydrolik
+    c) Jenis minyak rem tidak sama
+    d) Volume minyak rem berlebihan
+
+28. Apa fungsi utama dari sistem kemudi pada sepeda motor...
+
+    a) Mengubah kecepatan sepeda motor.
+    b) Mengubah arah gerak sepeda motor sesuai keinginan pengendara.
+    c) Menahan beban pengendara dan penumpang.
+    d) Meredam getaran akibat permukaan jalan yang tidak rata.
+
+29. Jika stang sepeda motor terasa oblak atau goyang saat direm, kemungkinan penyebabnya adalah...
+
+    a) Bantalan roda depan yang rusak.
+    b) Mur penyetel atau pengikat poros kemudi yang longgar.
+    c) Tekanan angin pada ban kurang.
+    d) Rem depan mengalami blong.
+
+30. Apabila pengendalian setang/kemudi terasa berat untuk digerakkan, kemungkinan penyebabnya
+    adalah ....
+    a) Tekanan udara ban terlalu tinggi
+    b) Mur ulir atas poros kemudi terlalu kencang
+    c) Seal suspensi bocor
+    d) Rangka bengkok
+
+31.Apabila menarik ke satu sisi atau tidak dapat lurus, kemungkinan penyebab kerusakan adalah ...
+
+    a) Bearing roda depan aus/rusak
+    b) Tekanan udara ban terlalu keras
+    c) Seal debu rusak
+
+                                                              4
+                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                                 LSP-PrO Indo
+
+    d) Pegas fork lemah
+
+32. Apa fungsi utama dari sistem suspensi pada kendaraan ...
+
+    a) Meredam getaran dan guncangan untuk meningkatkan kenyamanan berkendara.
+    b) Meningkatkan kecepatan maksimum kendaraan.
+    c) Mengurangi konsumsi bahan bakar.
+    d) Menghasilkan tenaga mesin yang lebih besar
+
+33. Salah satu ciri-ciri kerusakan pada shock absorber adalah ...
+
+    a) Mobil terasa lebih stabil saat menikung.
+    b) Tidak ada bunyi saat melewati jalan bergelombang.
+    c) Adanya kebocoran oli pada tabung shock absorber.
+    d) Keausan ban merata pada semua sisi.
+
+34. Apa yang dapat terjadi jika tekanan angin ban tidak sesuai dengan spesifikasi, terutama dalam
+    kaitannya dengan perawatan suspensi ...
+    a) Kenyamanan berkendara meningkat.
+    b) Umur shock absorber menjadi lebih panjang.
+    c) Dapat menyebabkan keausan ban yang tidak merata dan mempengaruhi kinerja suspensi.
+    d) Tidak berdampak sama sekali pada sistem suspensi.
+
+35. Jika suspensi depan sepeda motor terasa terlalu keras atau kaku saat melewati jalan berlubang, apa
+    kemungkinan penyebabnya
+    a) Jumlah oli shock absorber kurang.
+    b) Tekanan angin pada ban terlalu rendah.
+    c) Pegas suspensi sudah terlalu lemah (lunak).
+    d) Penggunaan oli shock absorber yang terlalu kental atau jumlahnya berlebihan.
+
+36. Perawatan rutin apa yang paling krusial untuk menjaga kinerja Chassis (rangka) sepeda motor tetap
+    optimal dan aman
+    a) Mencuci motor setiap hari.
+    b) Memeriksa kekencangan baut-baut utama sasis dan memastikan tidak ada keretakan atau karat
+        parah.
+    c) Mengganti busi secara rutin.
+    d) Menyetel rantai roda belakang.
+
+37. Suspensi belakang yang umum digunakan pada motor sport dan menawarkan stabilitas lebih baik
+    karena hanya menggunakan satu peredam kejut adalah...
+    a) Suspensi teleskopik
+    b) Suspensi ganda (double shockbreaker)
+    c) suspensi tunggal (monoshock)
+    d) Suspensi girder
+
+38. Apa yang harus dilakukan jika cover body tidak pas dengan sempurna setelah dipasang ...
+
+    a) Memaksakan cover body agar pas
+    b) Mengecek kembali kesesuaian dan melakukan penyesuaian
+    c) Meninggalkan cover body tidak terpasang
+    d) Menggunakan lem untuk menempelkannya
+
+39. Apa yang harus diperiksa setelah melakukan pemasangan cover body...
+
+                                                              5
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                   LSP-PrO Indo
+
+    a) Kinerja mesin
+    b) Sistem pendingin
+    c) Kencangnya baut dan kesesuaian cover body
+    d) Sistem rem
+
+40. Apa yang harus dilakukan sebelum melepas baut penahan cover body ...
+
+    a) Membersihkan area sekitar
+    b) Mengamati posisi dan jumlah baut
+    c) Menggunakan kunci yang sesuai
+    d) Melepaskan semua baut secara bersamaan
+
+PENYUSUN DAN VALIDATOR
+
+STATUS     NO           NAMA      NOMOR MET                               TANDA TANGAN
+                                                                           DAN TANGGAL
+
+PENYUSUN   1 GUNADI               000.000459 2007
+           2 SAPTONO                                       18 Januari 2026
+
+                                  000.003672 2016
+
+                                                                          18 Januari 2026
+
+VALIDATOR  1 RANDI ARDIANSYAH     000.002498 2013
+
+                                                                          18 Januari 2026
+
+           2 KARYANTO             000.008260 2025
+
+                                                                          18 Januari 2026
+
+           3 RIDWAN               000.008265 2025
+                                                           18 Januari 2026
+
+                               6
+

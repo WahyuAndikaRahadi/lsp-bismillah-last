@@ -1,0 +1,246 @@
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.03. PMO - PERTANYAAN MENDUKUNG OBSERVASI
+
+  Skema Sertifikasi       Judul  : Mekanik Junior
+  (KKNI/Okupasi/Klaster)  Nomor  : 05/LSP PrO Indo/I/2026
+                                 : Sewaktu/Tempat Kerja/Mandiri*
+  TUK                            :
+  Nama Asesor                    :
+  Nama Asesi                     :
+  Tanggal
+*Coret yang tidak perlu
+
+PANDUAN BAGI ASESOR
+
+· Formulir ini di isi oleh asesor kompetensi dapat sebelum, pada saat atau setelah melakukan
+    asesmen dengan metode observasi demonstrasi.
+
+· Pertanyaan dibuat dengan tujuan untuk menggali, dapat berisi pertanyaan yang berkaitan
+    dengan dimensi kompetensi, batasan variabel dan aspek kritis yang relevan dengan skenario
+    tugas dan praktik demonstrasi.
+
+· Jika pertanyaan disampaikan sebelum asesi melakukan praktik demonstrasi, maka
+    pertanyaan dibuat berkaitan dengan aspek K3L, SOP, penggunaan peralatan dan
+    perlengkapan.
+
+· Jika setelah asesi melakukan praktik demonstrasi terdapat item pertanyaan pendukung
+    observasi telah terpenuhi, maka pertanyaan tersebut tidak perlu ditanyakan lagi dan cukup
+    memberi catatan bahwa sudah terpenuhi pada saat tugas praktek demonstrasi pada kolom
+    tanggapan
+
+· Jika pada saat observasi ada hal yang perlu dikonfirmasi sedangkan di instrumen daftar
+    pertanyaan pendukung observasi tidak ada, maka asesor dapat memberikan pertanyaan
+    dengan syarat pertanyaan harus berkaitan dengan tugas praktek demonstrasi. Jika dilakukan,
+    asesor harus mencatat dalam instrumen pertanyaan pendukung observasi.
+
+· Tanggapan asesi ditulis pada kolom tanggapan.
+
+                          No. Kode Unit                           Judul Unit
+
+                          1. G.45TSM01.018.2 Melakukan Perawatan Karburator
+
+                          2. G.45TSM01.020.2 Melakukan Perawatan Renggang Klep
+
+                          3. G.45TSM01.021.2 Melakukan Perawatan Free Play Throttle Gas
+
+                          4. G.45TSM01.022.2 Melakukan Perawatan Filter Udara
+
+Kelompok Pekerjaan 1      5. G.45TSM01.023.2 Melakukan Perawatan Sistem Clucth / Kopling
+   Persiapan servis
+
+                          6. G.45TSM01.024.2 Melakukan pemeriksaan dan penggantian oli
+
+                          7.     G.45TSM01.025.2  Melakukan pemeriksaan sistem pelumasan
+                                                  mesin
+
+                          8.     G.45TSM01.027.2  Melakukan Perawatan Sistem Continuosly
+                                                  Variable Tansmission (CVT)
+
+                          9. G.45TSM01.028.2 Melakukan Perawatan Sistem Pendinginan
+                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                                                                Pencapaian
+
+                  Pertanyaan                                                    Ya  Tdk
+
+1.  Apa yang terjadi jika setelan campuran udara dan bahan bakar (air-fuel
+
+    mixture) pada karburator terlalu kaya (terlalu banyak bensin)?
+
+Tanggapan:                                                                          
+
+2.  Sebutkan Langkah-langkah yang dilakukan sebelum melakukan penyetelan
+
+    celah katup pada mesin sepeda motor ?
+
+Tanggapan:                                                                          
+
+3.  Pekerjaan dan pemeriksaan apa saja yang dilakukan saat perawatan kabel dan
+
+    handel gas ?
+
+Tanggapan:                                                                          
+
+4.  Pada jadwal perawatan berkala yang ditunjukan Buku Pedoman Reparasi
+
+    tanda "G" untuk item perawatan saringan udara memiliki arti ?
+
+Tanggapan:                                                                          
+
+5.  Sebutkan langkah-langkah penyetelan kopling sepeda motor tipe cub
+
+    (bebek)?
+
+Tanggapan:                                                                          
+
+6.  Sebutkan langkah-langkah penggantian oli pada sepeda motor tipe cub
+
+    (bebek)?
+
+Tanggapan:                                                                          
+
+7.  Prosedur pemeriksaan tinggi permukaan oli pada mesin sepeda motor
+
+    adalah?
+
+Tanggapan:                                                                          
+
+8.  Komponen utama pada CVT sepeda motor yang bergerak membuka dan                  
+
+    menutup untuk mengubah diameter puli dan rasio putaran adalah?
+
+Tanggapan:
+
+9.  Alat tepat yang dipergunakan untuk menguji kebocoran sistem pendinginan
+
+    air pada sepeda motor adalah ?
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Tanggapan:                                                                               
+
+                               No.  Kode Unit                            Judul Unit
+
+    Kelompok Pekerjaan 2 Fuel  1 G.45TSM01.019.2 Melakukan Perawatan Sistem Injeksi
+          injection service
+                               2 G.45TSM01.053.2 Melakukan Pembersihan Injector
+
+                               3 G.45TSM01.055.2 Mengoperasikan diagnostic tools
+
+                                                                                     Pencapaian
+
+                                   Pertanyaan                                        Ya  Tdk
+
+1.  Apa fungsi utama dari komponen injektor (injector) pada sistem bahan bakar
+
+    sepeda motor injeksi ?
+
+Tanggapan:                                                                               
+
+2.  Metode pembersihan injektor yang paling umum dan dianjurkan dalam
+
+    perawatan berkala di bengkel resmi adalah?
+
+Tanggapan:                                                                               
+
+3.                                                                                       
+Tanggapan:
+
+                               No.  Kode Unit                            Judul Unit
+
+    Kelompok Pekerjaan 3       1. G.45TSM01.039.2 Melakukan Perawatan Baterai
+            Electrik
+                               2. G.45TSM01.026.2 Melakukan Perawatan Busi
+
+                               3.   G.45TSM01.040.2  Melakukan perawatan instrumen kelistrikan
+                                                     (sistem sinyal dan penerangan)
+
+                                                                                     Pencapaian
+
+                                   Pertanyaan                                        Ya  Tdk
+
+1.  Bagaimana cara mengganti baterai motor yang benar?
+
+Tanggapan:                                                                               
+
+2.  Apa dampak jika celah busi terlalu lebar dari spesifikasi pabrikan?
+            Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Tanggapan:                                                                            
+
+3.  Apa yang dapat terjadi jika sistem penerangan tidak berfungsi dengan baik?
+
+Tanggapan:                                                                            
+
+                          No.  Kode Unit                              Judul Unit
+
+                          1. G.45TSM01.029.2 Melakukan Penggantian Rantai Roda
+
+                          2. G.45TSM01.030.2 Melakukan Pemeriksaan Keolengan Roda
+
+    Kelompok Pekerjaan 4  3. G.45TSM01.031.2 Melakukan Perawatan Sistem Pengereman
+             Chassis
+                          4. G.45TSM01.032.2 Melakukan Perawatan Sistem Kemudi
+
+                          5. G.45TSM01.033.2 Melakukan Perawatan Sistem Suspensi
+
+                          6. G.45TSM01.034.2 Melakukan Bongkar Pasang Cover Body
+
+                          7. G.45TSM01.043.2 Melakukan Pemeriksaan Chassis
+
+                                                                                  Pencapaian
+
+                          Pertanyaan                                              Ya  Tdk
+
+1.          Berapa Jarak main bebas rantai roda ?
+
+Tanggapan:                                                                            
+
+2.          Roda depan terasa bergoyang kemungkinan penyebab adalah?
+
+Tanggapan:                                                                            
+
+3.  Jarak main bebas penyetelan pedal rem belakang adalah ?                           
+
+Tanggapan:
+
+4.  Apabila pengendalian setang/kemudi terasa berat untuk digerakkan,                 
+
+    kemungkinan penyebabnya adalah?
+
+Tanggapan:
+
+5.  Sebutkan ciri-ciri kerusakan pada shock absorber ?
+                 Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Tanggapan:                                                                       
+
+6.          Apa yang harus diperiksa setelah melakukan pemasangan cover body?
+
+Tanggapan:                                                                       
+
+7.        Apabila ditemukan retakan pada rangka (frame) chassis, tindakan
+
+          perbaikan yang paling tepat adalah?
+
+Tanggapan:                                                                       
+
+Asesi :
+
+Nama        :
+
+Tanda tangan/ :
+Tanggal
+
+Asesor :
+
+Nama        :
+
+No. Reg     :
+
+Tanda tangan/ :
+Tanggal
+
+Diadaptasi dari template yang disediakan di Departemen Pendidikan dan Pelatihan, Australia.Merancang
+instrumen asesmen untuk hasil yang berkualitas di VET, 2008 di VET, 2008
+

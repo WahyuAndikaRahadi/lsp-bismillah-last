@@ -1,0 +1,287 @@
+                              Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.02A ­ Report Sheet                                                   Lembar : Peserta
+
+Skema Sertifikasi/  Judul  :  Periodical Maintenance Electrified Vehicles (Perawatan Berkala Mobil
+Okupasi Nasional    Nomor     Listrik)
+
+                           : 03/LSP PrO Indo/I/2026
+
+TUK                             Sewaktu                      Tempat Kerja               Mandiri
+
+                           :
+
+Nama Asesor                :
+Nama Asesi                 :
+Tanggal                    :
+Durasi Waktu
+                               60 Menit
+
+     Kode dan Judul                          Item dan Hasil Pemeriksaan                       Hasil
+     Unit Kompetensi       (item apa saja yang perlu dilakukan pemeriksaan dan lihat
+No                                                                                      Baik         Tidak
+                                                  manual perbaikan)                                  Baik
+
+1. C.29SEV01.003.1 Persiapan :
+
+     Melaksanakan - APD Sesuai Prosedur
+
+     Prosedur              - Area Kerja
+
+     Keselamatan dan - Pelindung kendaraan
+
+     Kesehatan Kerja - Kendaraan pada stall khusus BEV/Hybrid
+
+     (K3) dan Ringkas, - Safety Shoes
+
+     Rapi, Resik, Rawat, - Sarung tangan tegangan tinggi
+
+     dan Rajin (5R)        - Pakaian Kerja
+
+     untuk Penanganan - Helm
+
+     Servis Electrified - Kacamata
+
+     Vehicles /            - Tanda high voltage
+
+     Persiapan servis - Tools yg terinsulated
+
+2. C.29SEV01.004.1 - Menggunakan sarung tangan tegangan tinggi
+
+     Memutuskan            - Gunakan Tools yg terinsulated
+
+     Pengaman Utama - Melepas terminal negative Auxiliary battery
+
+     High Voltage          - Melepas Service Plug (Hybrid)/Power Betery High Voltege(
+
+     Circuit               BEV) sesuai Prosedur
+
+                           - Tunggu 3-5 menit
+
+3. C.29SEV01.005.1 Lihat Buku Manual (Workshop Manual) yang tersedia
+
+     Membaca               - Membaca spesifikasi
+
+     Electrical Wiring - Membaca skema & wiring diagram
+
+     Diagram (EWD) - Membaca lokasi part
+
+     dan Repair            - Membaca symbol symbol kelistrikan
+
+     Manual untuk
+
+     Electrified
+
+     Vehicles
+
+4. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja
+
+     Melaksanakan - Konfirmasi temuan
+
+     Komunikasi di         - Melaporkan Data Hasil Pekerjaan Keseluruhan Kepada Atasan
+
+     Tempat Kerja
+               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+5. G.45OTO01.007.2 Lihat Buku Manual (Workshop Manual) yang tersedia
+
+Membaca Gambar - Membuka halaman buku sesuai judul sistem
+
+Teknik         - Membaca sistem cara kerja
+
+               - Menemukan part
+
+               - Menemukan jalur
+
+6. G.45OTO01.008.2 Alat Ukur
+
+Menggunakan - Gunakan alat ukur sesuai spesifikasi
+
+Alat Ukur      - Voltmeter diatas 750 volt.
+
+               - Penempatan tools & equipment dengan benar
+
+7. G.45OTO01.002.2 Persiapan :
+
+Menggunakan - Pengecekan Tools & Equipment
+
+Peralatan dan  - Kalibrasi peralatan
+
+Perlengkapan   - Pengecekan kebersihan
+
+Tempat Kerja
+
+8. C.29SEV02.001.1 Final Inspection
+
+Melakukan Final - Check semua system sudah berfungsi
+
+Inspection pada - Menggunakan Diagnostic Scantools
+
+Electrified    - Melihat indicator pada layar Dasboard
+
+Vehicles (EV)  - Check semua komponen secara visual
+
+9. C.29SEV03.001.1 Mengecheck Fluida
+
+Melakukan      - Kondisi fluida pada reservoir pendingin inverter ,
+
+Perawatan Cooling - Level fluida
+
+System pada
+
+Electrified
+
+Vehicles (EV)
+
+10. C.29SEV03.002.1 Perawatan Brake :
+
+Melakukan      - Periksa Pedal Rem dan Fungsi rem Parkir
+
+Perawatan Brake - Periksa Kanvas dan Tromol rem
+
+System pada    - Periksa Brake Pad dan Pirinngan Rem
+
+Electrified    - Periksa minyak rem
+
+Vehicles (EV)
+
+11. G.45OTO01.004.2 Pemeliharaan Komponen Kendaraan:
+
+Melaksanakan - Periksa semua Lampu
+
+Pemeliharaan   - Nyalakan Mesin dan Periksa Semua Instrumen/Indikator
+
+Komponen       - Periksa Kondisi Tempat Duduk dan Sabuk Pengaman
+
+               - Periksa Kondisi Body Interior dan Exterior Kendaraan (Lumasin
+
+               Engsel Pintu)
+
+               - Periksa Wiper dan Washer (Stel Jika diperlukan)
+
+12. G.45OTO01.044.2 Memeriksa Roda
+
+Melaksanakan   Tekanan angin roda..............Psi
+
+wheel balance  Ketebalan ban.....................mm
+
+               Bagian luar ban
+
+               Kondisi velg
+
+               Runout roda .......................mm
+
+               Bantalan roda
+
+               Menggunakan Wheel Balancer
+                Jenis Roda .................
+             Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+             Dimensi roda
+
+             a. Offset /Jarak Roda dari Balancer...............
+
+             w. Lebar roda............................................
+
+             d. Diameter roda........................................
+
+             Membaca wheel balancer
+
+                                 Sebelum               Sesudah
+
+             Inside / left rim : ................      ................
+
+             Outside / right rim : ...............     ................
+
+13. G.45OTO01.039.2 Memeriksa Sistem Kemudi
+
+Melaksanakan - Steering wheel free play................mm
+
+Perawatan Sistem - Steering wheel angel
+
+Kemudi       · Bagian dalam ............. 
+
+             · Bagian luar ................ 
+
+             - Gunakan diagnostic scantools untuk mengecheck system EPS
+
+             (Electronic Power Steering)
+
+             - Tie rod end
+
+             - Tie rod adjusting sleeve
+
+             - Steering gear / coupler
+
+             - Rack dan pinion streering
+
+14. G.45OTO01.042.2 Memeriksa Sistem Suspensi
+
+Memeriksa Sistem - Ride height / system
+
+Suspensi     · Left front...............mm Right front.............mm
+
+             · Left rear...............mm Right rear..............mm
+
+             - Ball joints
+
+             - Idler arm
+
+             - Pitman arm
+
+             - Center link
+
+             - Control arm / bushing
+
+             - Stabilizer bushing
+
+             - Spring shackle bushing
+
+             - Shock absorber
+
+             - Spring / torsion bar
+
+15. G.45OTO01.065.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)
+
+Memelihara   - Kondisi terminal
+
+Baterai      - Kondisi bodi
+
+             - Tegangan ------------- Volt
+
+             - Kesehatan baterai..................%
+
+16. G.45OTO01.084.2 Memelihara Sistem Air Conditioner
+
+Memelihara   - Membersihkan saringan udara AC
+
+Sistem Air   - Melakukan pengukuran suhu awal AC di kabin kendaraan
+
+Conditioner  ..........
+
+             - Melakukan pengetesan kebocoran AC
+
+             - Melakukan pengukuran tekanan rendah dan tekanan tinggi AC
+
+             pada kondisi mesin / AC mati
+
+             · Tekanan rendah /pipa biru..................................Psi
+
+             · Tekanan tinggi / pipa merah...............................Psi
+
+             - Melakukan pengukuran tekanan rendah dan tekanan tinggi AC
+
+             pada kondisi mesin / AC hidup
+                                               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                  · Tekanan rendah /pipa biru..................................Psi
+                                  · Tekanan tinggi / pipa merah................................Psi
+Catatan Hasil Pemeriksaan :
+
+Nama Asesi :                                Ttd & Tanggal :
+
+..........................................  ..........................................
+Nama Asesor :                               Ttd & Tanggal :
+
+..........................................  ..........................................
+

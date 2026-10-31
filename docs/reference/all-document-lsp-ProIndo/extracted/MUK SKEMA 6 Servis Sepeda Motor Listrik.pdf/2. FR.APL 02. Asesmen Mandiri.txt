@@ -1,0 +1,850 @@
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                            LSP-PrO Indo
+
+FR.APL.02. ASESMEN MANDIRI
+
+Skema Sertifikasi  Judul         : Servis Sepeda Motor Listrik
+                                 : 06/LSP PrO Indo/I/2026
+(KKNI/Okupasi/Klaster) Nomor
+
+PANDUAN ASESMEN MANDIRI
+
+Instruksi:
+· Baca setiap pertanyaan di kolom sebelah kiri
+· Beri tanda centang () pada kotak jika Anda yakin dapat melakukan tugas yang dijelaskan.
+· Isi kolom di sebelah kanan dengan menuliskan bukti yang relevan anda miliki untuk menunjukkan
+
+     bahwa anda melakukan pekerjaan
+
+Unit Kompetensi 1  Kode Unit     : C.29SEV01.005.1
+                   Judul Unit
+                                 :  Membaca Electrical Wiring Diagram (EWD) dan Repair Manual
+                                    untuk Electrified Vehicles
+
+Dapatkah Saya ................?                          K BK   Bukti yang relevan
+
+1. Elemen: Menyiapkan pembacaan EWD dan                  
+     Repair Manual untuk EV
+
+          · Kriteria Unjuk Kerja:
+          1.1 Jenis EV diidentifikasi.
+          1.2 Jenis dan fungsi komponen-komponen
+
+                EV diidentifikasi.
+          1.3 Jenis gambar teknik pada EV
+
+                diidentifikasi.
+          1.4 Jenis dan simbol komponen pada
+
+                gambar teknik diidentifikasi.
+          1.5 Prosedur Keselamatan dan Kesehatan
+
+                Kerja (K3), serta Ringkas, Rapi, Resik,
+                Rawat, dan Rajin (5R) diterapkan dalam
+                kegiatan ini.
+          1.6 Repair Manual/wiring diagram disiapkan
+                sesuai prosedur berdasarkan tahun dan
+                jenis kendaraan.
+          1.7 Indikator abnormality pada kendaraan
+                diidentifikasi sesuai prosedur.
+
+2. Elemen: Membaca Repair Manual
+
+· Kriteria Unjuk Kerja:
+
+2.1 Gambar teknik bagian-bagian sistem EV
+
+diidentifikasi sesuai prosedur.
+
+2.2 Cara kerja sistem fluida diidentifikasi
+
+     sesuai prosedur.                                    
+2.3 Posisi komponen pada gambar teknik
+
+Repair Manual diidentifikasi sesuai
+
+prosedur.
+
+2.4 Prosedur pelepasan, pembongkaran, dan
+
+pemasangan diidentifikasi berdasarkan
+
+gambar teknik pada Repair Manual.
+
+                                             1
+                   Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                              LSP-PrO Indo
+
+3. Elemen: Membaca EWD                                      
+
+          · Kriteria Unjuk Kerja:
+          3.1 Cara kerja sistem kelistrikan pada EWD
+
+                diidentifikasi sesuai prosedur.
+          3.2 Wiring diagram High Voltage dan Low
+
+                Voltage pada electrified vehicle
+                diidentifikasi sesuai prosedur.
+          3.3 Controller Area Network (CAN) system
+                diidentifikasi sesuai prosedur.
+          3.4 Posisi komponen kelistrikan pada
+                gambar teknik EWD diidentifikasi sesuai
+                prosedur.
+          3.5 Prosedur pelepasan dan pemasangan
+                komponen kelistrikan diidentifikasi
+                berdasarkan gambar teknik pada
+                EWD.Prosedur pelepasan,
+
+Unit Kompetensi 2  Kode Unit   : C.27BAT00.005.1
+                   Judul Unit  : Melaksanakan Pengujian Spesifikasi Teknis Pak Baterai
+
+Dapatkah Saya ................?                             K BK  Bukti yang relevan
+     1. Elemen: Menyiapkan peralatan dan                     
+          perlengkapan pengujian pak baterai
+
+                · Kriteria Unjuk Kerja:
+                     1.1 Peralatan diidentifikasi sesuai
+                           dengan kebutuhan.
+                     1.2 Pak Baterai diidentifikasi sesuai
+                           dengan spesifikasi teknis.
+                     1.3 Metode pengujian diidentifikasi
+                           sesuai dengan standar.
+                     1.4 Parameter pengujian disesuaikan
+                           dengan kebutuhan.
+
+2. Elemen: Melakukan pengujian pak baterai
+
+· Kriteria Unjuk Kerja:
+
+2.1 Pengosongan dan pengisian muatan
+
+                   dilakukan sesuai dengan laju
+
+                   pengisian yang ditentukan.
+
+2.2 Pengujian dilakukan sesuai dengan                       
+     batasan tegangan yang ditentukan.
+
+2.3 Pengujian dilakukan sesuai dengan
+
+                   rentang waktu yang ditentukan.
+
+2.4 Hasil pengujian Pak Baterai
+
+                   dilaporkan kepada atasan langsung.
+
+                                                   2
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                            LSP-PrO Indo
+
+Unit Kompetensi 3  Kode Unit          : C.27BAT00.006.1
+                   Judul Unit         : Melaksanakan Komisioning Pak Baterai pada Sistem
+
+Dapatkah Saya ................?                          K BK  Bukti yang relevan
+
+1. Elemen: Memastikan semua rangkaian pak
+
+baterai, komunikasi dan keamanan sistem
+
+berfungsi
+
+· Kriteria Unjuk Kerja:
+
+1.1 Spesifikasi Teknis diidentifikasi
+
+                   seusai kebutuhan.
+
+1.2 Pak Baterai dipastikan berfungsi
+
+                   sesuai dengan peruntukkannya.
+
+1.3 Kapasitas pak baterai dipastikan
+
+                   dalam keadaan terisi.
+
+1.4 Pak Baterai dipasang (install) ke
+
+                   sistem sesuai dengan prosedur.
+
+1.5 Instalasi perangkat yang akan
+
+                   dipasang Pak Baterai diperiksa agar
+
+                   berfungsi sesuai dengan               
+                   peruntukkannya.
+
+1.6 Fungsi sistem komunikasi antara
+
+                   baterai dan perangkat diperiksa
+
+                   sesuai dengan peruntukkannya.
+
+1.7 Indikator sistem perangkat
+
+                   dinyalakan agar berfungsi sesuai
+
+                   dengan peruntukkannya.
+
+1.8 Seluruh koneksi dan pentanahan
+
+                   pada rangkaian dihubungkan sesuai
+
+                   dengan standar.
+
+1.9 Sistem keamanan dipastikan memiliki
+
+                   pemutus arus utama sesuai dengan
+
+                   standar.
+
+1.10 Gejala ketidaksesuaian dilaporkan
+
+                   kepada atasan langsung.
+
+2. Elemen: Memastikan pengisi daya memiliki
+
+kapasitas dan konektor yang sesuai dengan
+
+spesifikasi pak baterai
+
+· Kriteria Unjuk Kerja:
+
+2.1 Sistem pengisian daya diidentifikasi
+
+                   sesuai dengan spesifikasi teknis pak
+
+                   baterai.
+
+2.2 Konektor pengisi daya perangkat                      
+     yang digunakan dipastikan sesuai
+
+                   dengan kebutuhan.
+
+2.3 Sistem komunikasi pengisian daya
+
+                   dengan perangkat dipastikan sesuai
+
+                   dan berfungsi.
+
+2.4 Hasil uji komisioning dilaporkan
+
+                   kepada atasan langsung.
+
+                                                    3
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                            LSP-PrO Indo
+
+Unit Kompetensi 4  Kode Unit          : C.27BAT00.007.1
+                   Judul Unit
+                                      : Melaksanakan Monitoring Kondisi Mekanik,Elektrik, dan Indikator
+                                           Pak Baterai agar Berfungsi Optimal
+
+Dapatkah Saya ................?                               K BK  Bukti yang relevan
+
+1. Elemen: Melakukan persiapan monitoring kondisi
+
+mekanik, elektrik, dan indikator pak baterai
+
+· Kriteria Unjuk Kerja:
+
+1.1 Sistem keselamatan dan Kesehatan
+
+                   kerja diidentifikasi sesuai kebutuhan
+
+                   di tempat kerja.
+
+1.2 Sistem perangkat yang akan                                
+
+                   dimonitor diidentifikasi sesuai dengan
+
+                   buku manual.
+
+1.3 Peralatan monitoring disiapkan
+
+                   sesuai kebutuhan.
+
+1.4 Daftar periksa monitoring disiapkan
+
+                   sesuai prosedur.
+
+2. Elemen: Melakukan monitoring kondisi mekanik,
+
+elektrik, dan indikator pak baterai
+
+· Kriteria Unjuk Kerja:
+
+2.1 Parameter Pak Baterai dipastikan
+
+                   sesuai dengan spesifikasi teknis
+
+                   melalui perangkat lunak.
+
+2.2 Kondisi fisik Pak Baterai diperiksa
+
+                   sesuai dengan ketentuan.                   
+
+2.3 Indikator sistem perangkat dipastikan
+
+                   berfungsi sesuai peruntukannya.
+
+2.4 Ketidaksesuaian fungsi keamanan
+
+                   baterai diidentifikasi sesuai hasil
+
+                   monitoring.
+
+2.5 Hasil monitoring dilaporkan kepada
+
+                   atasan langsung.
+
+Unit Kompetensi 5  Kode Unit          : G45TSM01.040.2
+                   Judul Unit
+                                      : Melakukan perawatan instrumen kelistrikan (sistem sinyal dan
+                                         penerangan)
+
+Dapatkah Saya ................?                               K BK  Bukti yang relevan
+     1. Elemen: Menyiapkan perawatan instrumen                 
+          kelistrikan (sistem sinyal dan penerangan)
+
+                · Kriteria Unjuk Kerja:
+                     1.1 Fungsi, jenis, spesifikasi, wiring,
+                           dan cara kerja dari
+                           komponen pada instrumen
+                           kelistrikan (sistem sinyal dan
+                           penerangan) diidentifikasi.
+                     1.2 Kondisi normal dan tidak normal
+                           dari komponen-komponen pada
+                           istrumen kelistrikan (sistem
+                           sinyal dan penerangan)
+                           diidentifikasi.
+                     1.3 Standar kinerja dari setiap
+                           komponen instrumen kelistrikan
+                           (sistem sinyal dan penerangan)
+                           diidentifikasi.
+
+                                                        4
+                             Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                        LSP-PrO Indo
+
+         1.4 Prosedur bongkar pasang
+
+                   instrumen kelistrikan diidentifikasi.
+
+         1.5 Prosedur               pemeriksaan
+
+                   sistem kelistrikan diidentifikasi.
+
+         1.6 Perintah kerja diidentifikasi.
+
+         1.7 General tools, alat ukur, dan
+
+                   alat pembersih diidentifikasi dan
+
+                   disiapkan.
+
+         1.8 Prosedur K3 diterapkan
+
+                   pada pelaksanaan proses kerja.
+
+2. Elemen: Melakukan pemeriksaan komponen
+
+dari instrumen kelistrikan (sistem sinyal dan
+
+penerangan)
+
+· Kriteria Unjuk Kerja:
+
+         2.1 Fungsi instrumen kelistrikan (sistem
+
+                   sinyal dan penerangan) diperiksa               
+                   sesuai prosedur.
+
+         2.2 Komponen dilepas sesuai prosedur.
+
+         2.3 Kondisi dan kelengkapan instrumen
+
+                   kelistrikan sistem sinyal dan
+
+                   penerangan) diperiksa sesuai
+
+                   standar.
+
+3. Elemen: Memastikan kinerja instrumen
+
+kelistrikan (sistem sinyal dan penerangan) sesuai
+
+standar
+
+· Kriteria Unjuk Kerja:
+
+         3.1 Komponen-komponen Instrumen
+
+                   kelistrikan (sistem sinyal dan  
+
+                   (penerangan) dirakit dan dipasang
+
+                   sesuai prosedur.
+
+         3.2 Instrumen kelistrikan (sistem sinyal
+
+                   dan penerangan) dipastikan berfungsi
+
+                   sesuai standar.
+
+Unit Kompetensi 6  Kode Unit         : G.45TSM01.021.2
+                   Judul Unit        : Melakukan perawatan free play throttle gas
+
+Dapatkah Saya ................?                                 K BK  Bukti yang relevan
+     1. Elemen: Menyiapkan perawatan free play                   
+          throttle gas
+
+                · Kriteria Unjuk Kerja:
+                     1.1 Fungsi, jenis, spesifikasi, dan cara
+                           kerja komponen pada sistem throttle
+                           gas diidentifikasi.
+                     1.2 Fungsi, jenis, spesifikasi, dan cara
+                           kerja bagian-bagian sistem throttle
+                           gas diidentifikasi.
+                     1.3 Fungsi, kondisi, dan cara kerja
+                           bagian-bagian throttle gas
+                           diidentifikasi.
+                     1.4 Kondisi dan free play throttle gas
+                           diidentifikasi sesuai standar.
+                     1.5 Perintah kerja diidentifikasi.
+                     1.6 General tools dan bahan pembersih
+                           disiapkan.
+
+                                                       5
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                            LSP-PrO Indo
+
+         1.7 Prosedur K3 diterapkan dalam
+
+                   melaksanakan unit kompetensi ini.
+
+2. Elemen: Melakukan pemeriksaan komponen
+
+dari sistem throttle gas
+
+· Kriteria Unjuk Kerja:
+
+         2.1 Kelancaran buka dan tutup throttle
+
+                   gas diperiksa sesuai prosedur.
+
+         2.2 Kondisi dan kelengkapan sistem                
+
+                   throttle gas diperiksa sesuai standar.
+
+         2.3 Jalur/routing kabel gas diperiksa
+
+                   sesuai prosedur.
+
+         2.4 Kondisi kabel gas diperiksa sesuai
+
+                   prosedur.
+
+3. Elemen: Memastikan kinerja throttle gas sesuai
+
+standar
+
+· Kriteria Unjuk Kerja:
+
+         3.1 Sistem throttle gas dilumasi sesuai
+
+                   prosedur.
+
+         3.2 Komponen-komponen throttle gas                
+
+                   dirakit sesuai prosedur.
+
+         3.3 Mur penyetelan free play kabel gas
+
+                   disetel sesuai standar.
+
+         3.4 Throttle gas dipastikan berfungsi
+
+                   dengan normal.
+
+Unit Kompetensi 7  Kode Unit         : G45TSM01.031.2
+                   Judul Unit        : Melakukan perawatan sistem pengereman
+
+Dapatkah Saya ................?                            K BK  Bukti yang relevan
+
+1. Elemen: Menyiapkan perawatan sistem
+
+pengereman
+
+· Kriteria Unjuk Kerja:
+
+         1.1 Fungsi, jenis, dan spesifikasi sistem
+
+                   pengereman diidentifikasi.
+
+         1.2 Fungsi, jenis, spesifikasi, dan cara
+
+                   kerja komponen dari sistem
+
+                   pengereman diidentifikasi.
+
+         1.3 Fungsi, kondisi dan cara kerja
+
+                   bagianbagian komponen sistem
+
+                   pengereman diidentifikasi.
+
+         1.4 Kondisi normal atau tidak normal
+
+              diidentifikasi.                              
+         1.5 Service limit dari setiap komponen
+
+                   bagian sistem pengereman
+
+                   diidentifikasi.
+
+         1.6 Jenis-jenis minyak rem diidentifikasi.
+
+         1.7 Standar penyetelan diidentifikasi.
+
+         1.8 Perintah kerja diidentifikasi.
+
+         1.9 Prosedur bongkar pasang komponen
+
+                   pengereman diidentifikasi.
+
+1.10 Prosedur bongkar pasang bagian-
+
+                   bagian komponen pengereman
+
+                   diidentifikasi.
+
+1.11 Tools, alat ukur, special service
+
+                   tools/special tools, alat dan bahan
+
+                                                   6
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                            LSP-PrO Indo
+
+                   pembersih kampas rem diidentifikasi
+
+                   dan disiapkan.
+
+1.12 Prosedur K3 diterapkan pada
+
+                   pelaksanaan proses kerja.
+
+2. Elemen: Melakukan pemeriksaan pada
+
+sistem pengereman
+
+· Kriteria Unjuk Kerja:
+
+2.1 Sistem pengereman diperiksa sesuai
+
+                   standar.
+
+2.2 Komponen sistem pengereman                            
+     diperiksa sesuai standar.
+
+2.3 Bagian-bagian komponen sistem
+
+                   pengereman diperiksa sesuai
+
+                   standar.
+
+2.4 Kondisi minyak rem dipastikan sesuai
+
+                   standar.
+
+3. Elemen: Memastikan kinerja pengereman
+
+sesuai standar
+
+· Kriteria Unjuk Kerja:
+
+3.1 Komponen sistem pengereman
+
+                   dibongkar pasang sesuai prosedur.
+
+3.2 Bagian komponen sistem
+
+                   pengereman dibongkar pasang            
+                   sesuai prosedur.
+
+3.3 Bagian-bagian sistem pengereman
+
+                   dilumasi sesuai prosedur.
+
+3.4 Free play tuas atau pedal rem disetel
+
+                   sesuai standar.
+
+3.5 Kinerja sistem pengereman
+
+                   dipastikan berfungsi sesuai prosedur.
+
+Unit Kompetensi 8  Kode Unit        : G45TSM01.032.2
+                   Judul Unit       : Melakukan perawatan sistem kemudi
+
+Dapatkah Saya ................?                           K BK           Bukti yang relevan
+
+1. Elemen: Menyiapkan perawatan sistem kemudi
+
+· Kriteria Unjuk Kerja:
+
+1.1 Fungsi dan cara kerja sistem kemudi
+
+                   diidentifikasi.
+
+1.2 Kondisi normal dan ketidaknormalan
+
+                   sistem kemudi diidentifikasi.
+
+1.3 Fungsi, kondisi standar dan cara
+
+                   kerja bagian-bagian sistem kemudi
+
+                   diidentifikasi.
+
+1.4 Prosedur bongkar pasang headlight  
+
+                   assy, cover body dan cowl
+
+                   diidentifikasi.
+
+1.5 Prosedur bongkar pasang sistem
+
+                   kemudi diidentifikasi.
+
+1.6 Prosedur deteksi ketidaknormalan
+
+                   setiap bagian dari sistem kemudi
+
+                   sepeda motor diidentifikasi.
+
+1.7 Prosedur penyetelan setiap bagian
+
+                   dari sistem kemudi diidentifikasi.
+
+                                                       7
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                            LSP-PrO Indo
+
+                1.8 General tools, kunci torsi, service    
+                     special tools/special tools
+                     diidentifikasi dan disiapkan.
+
+                1.9 Prosedur K3 diterapkan pada
+                     pelaksanaan proses kerja.
+
+2. Elemen: Memastikan sistem kemudi dalam
+     kondisi normal
+
+          · Kriteria Unjuk Kerja:
+                2.1 Identifikasi kenormalan dan
+                     ketidaknormalan fungsi sistem
+                     kemudi dilakukan.
+                2.2 Pembongkaran sistem kemudi
+                     dilakukan sesuai prosedur.
+                2.3 Bagian-bagian sistem kemudi
+                     dilakukan penggantian sesuai
+                     prosedur.
+                2.4 Bagian-bagian dari sistem kemudi
+                     dirakit sesuai prosedur.
+
+Unit Kompetensi 9  Kode Unit        : G45TSM01.033.2
+                   Judul Unit       : Melakukan perawatan sistem suspensi
+
+Dapatkah Saya ................?                            K BK  Bukti yang relevan
+
+1. Elemen: Menyiapkan perawatan sistem
+
+suspensi
+
+· Kriteria Unjuk Kerja:
+
+1.1 Fungsi, jenis, spesifikasi, dan cara
+
+                   kerja dari komponen pada sistem
+
+                   suspense diidentifikasi.
+
+1.2 Fungsi, jenis, spesifikasi, dan cara
+
+                   kerja bagian bagian dari sistem
+
+                   suspensi diidentifikasi.
+
+1.3 Kondisi normal dan tidak normal dari
+
+                   komponen-komponen pada sistem
+
+                   suspensi diidentifikasi.
+
+1.4 Kondisi dari bagian suspense
+
+                   diidentifikasi sesuai standar.          
+
+1.5 Prosedur bongkar pasang roda
+
+                   diidentifikasi.
+
+1.6 Prosedur bongkar pasang sistem
+
+                   suspensi diidentifikasi.
+
+1.7 Perintah kerja diidentifikasi.
+
+1.8 General tools, alat ukur, service
+
+                   special tools/special tools, dan bahan
+
+                   pembersih diidentifikasi dan
+
+                   disiapkan.
+
+1.9 Prosedur K3 diterapkan pada
+
+                   pelaksanaan proses kerja.
+
+2. Elemen: Melakukan pemeriksaan komponen                  
+     dari sistem suspensi
+          · Kriteria Unjuk Kerja:
+                2.1 Fungsi suspensi diperiksa sesuai
+                     prosedur.
+
+                                                    8
+                                 Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                            LSP-PrO Indo
+
+                2.2 Kondisi dan kelengkapan suspense
+                     diperiksa sesuai standar.
+
+                2.3 Kondisi oil seal/seal shock diperiksa
+                     sesuai prosedur.
+
+                2.4 Kondisi oli shock diperiksa sesuai
+                     prosedur.
+
+                2.5 Kondisi inner tube diperiksa sesuai
+                     prosedur.
+
+                2.6 Kondisi spring diperiksa sesuai
+                     prosedur.
+
+                2.7 Kondisi bushing diperiksa sesuai
+                     prosedur.
+
+3. Elemen: Memastikan kinerja suspensi sesuai
+     standar
+
+          · Kriteria Unjuk Kerja:
+                3.1 Bagian bagian sistem suspense
+                     dibongkar sesuai prosedur.
+                3.2 Oil seal/seal shock, oli shock,
+                     bushing diganti sesuai prosedur.
+                3.3 Komponen-komponen suspense
+                     dibersihkan dan dirakit sesuai
+                     prosedur.
+                3.4 Baut dan mur pada sistem suspense
+                     dipastikan terpasang sesuai
+                     prosedur.
+
+                               Kode Unit   : G45TSM01.034.2
+Unit Kompetensi 10                         : Melakukan perawatan sistem suspensi
+
+                               Judul Unit
+
+Dapatkah Saya ................?                            K BK  Bukti yang relevan
+
+1. Elemen: Menyiapkan bongkarpasang cover
+
+body
+
+· Kriteria Unjuk Kerja:
+
+      1.1 Fungsi, jenis, dan spesifikasi material
+
+      dari komponen pada cover body
+
+      diidentifikasi.
+
+      1.2 Fungsi dan kondisi dari komponen
+
+      pada cover body diidentifikasi.
+
+      1.3 Bentuk dan ukuran dari bagian cover
+
+      body diidentifikasi.
+
+      1.4 Prosedur bongkar pasang cover                    
+
+      body diidentifikasi.
+
+      1.5 Perintah kerja diidentifikasi.
+
+      1.6 Perlalatan yang sesuai diidentifikasi
+
+      dan disiapkan.
+
+      1.7 Supporting tools dipastikan
+
+      ketersediaannya.
+
+      1.8 Pit area dan tempat peletakan cover
+
+      body dipastikan kesiapannya.
+
+      1.9 Prosedur K3 diterapkan pada
+
+      pelaksanaan proses kerja.
+
+2. Elemen: Melakukan pelepasan komponen
+
+cover body                                                 
+     · Kriteria Unjuk Kerja:
+
+      2.1 Cover body dilepas sesuai prosedur.
+
+                                           9
+Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                           LSP-PrO Indo
+
+                2.2 Ukuran, tipe baut, ring, bushing dan
+                     damper cover body diperiksa sesuai
+                     standar.
+
+                2.3 Pengait cover body diperiksa sesuai
+                     prosedur.
+
+                2.4 komponen penerangan dilepas
+                     sesuai prosedur.
+
+                2.5 Komponen spidometer dilepas
+                     sesuai prosedur.
+
+3. Elemen: Memastikan cover body terpasang
+     sesuai standarKriteria Unjuk Kerja:
+                3.1 Komponen penerangan dipasang
+                     sesuai prosedur.
+                3.2 Komponen spidometer dipasang
+                     sesuai prosedur.
+                3.3 Komponen-komponen cover body
+                     dipasang sesuai prosedur.
+
+Asesmen dapat / tidak dapat dilanjutkan  Nama
+
+                                         Tanda tangan/
+                                         Tanggal
+
+                                         Ditinjau Oleh Asesor :
+                                         Nama :
+
+                                         No. Reg:
+
+                                         Tanda tangan/
+                                         Tanggal
+
+                                         10
+

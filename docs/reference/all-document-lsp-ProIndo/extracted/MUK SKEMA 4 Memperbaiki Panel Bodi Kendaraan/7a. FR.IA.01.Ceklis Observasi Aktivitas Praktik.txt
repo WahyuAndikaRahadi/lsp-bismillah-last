@@ -1,0 +1,586 @@
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.01. CL - CEKLIS OBSERVASI AKTIVITAS DI TEMPAT KERJA ATAU TEMPAT KERJA
+             SIMULASI
+
+  Skema Sertifikasi       Judul       : Memperbaiki Panel Bodi Kendaraan
+  (KKNI/Okupasi/Klaster)  Nomor       : 04/LSP PrO Indo/I/2026
+                                      : Sewaktu/Tempat Kerja/Mandiri*
+  TUK                                 :
+  Nama Asesor                         :
+  Nama Asesi                          :
+  Tanggal
+*Coret yang tidak perlu
+
+PANDUAN BAGI ASESOR
+
+� Lengkapi nama unit kompetensi, elemen, dan kriteria unjuk kerja sesuai kolom dalam tabel.
+� Isilah standar industri atau tempat kerja
+� Beri tanda centang () pada kolom "YA" jika Anda yakin asesi dapat melakukan/
+
+    mendemonstrasikan tugas sesuai KUK, atau centang () pada kolom "Tidak" bila sebaliknya.
+� Penilaian Lanjut diisi bila hasil belum dapat disimpulkan, untuk itu gunakan metode lain
+
+    sehingga keputusan dapat dibuat.
+� Isilah kolom KUK sesuai dengan Unit Kompetensi/ SKKNI
+
+                   No.       Kode Unit                              Judul Unit
+
+                    1.    G.45OTO01.001.2       Melaksanakan Keselamatan dan Kesehatan Kerja
+                                                Menggunakan Peralatan dan Perlengkapan
+ Kelompok           2.    G.45OTO01.002.2       Tempat Kerja
+Pekerjaan 1               G.45OTO01.003.2       Melaksanakan Komunikasi di Tempat Kerja
+                          G.45OTO01.004.2       Melaksanakan Pemeliharaan Komponen
+   General          3.    G.45OTO01.007.2       Membaca Gambar Teknik
+                          G.45OTO01.008.2       Menggunakan Alat Ukur
+   Service          4.
+
+                    5
+
+                    6.
+
+Unit Kompetensi 1         Kode Unit   : G.45OTO01.001.2
+                          Judul Unit  : Melaksanakan Keselamatan dan Kesehatan Kerja
+
+No.         Elemen        Kriteria Unjuk Kerja             Standar     Pencapaian     Penilaian
+                                                        Industri atau  Ya Tidak        Lanjut
+
+                                                           Tempat
+                                                            Kerja
+
+     Menyiapkan           1.1 Potensi bahaya pada area
+
+1    prosedur                   kerja diidentifikasi.   Repair manual     
+     Keselamatan dan      1.2 APD disiapkan di tempat   Report sheet
+
+     Kesehatan Kerja.     kerja.
+
+                                           1
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+     Melaksanakanan 2.1 APD digunakan sesuai
+
+     prosedur                  prosedur.
+
+     Keselamatan dan 2.2 Prosedur kesehatan dan
+
+     Kesehatan Kerja           keselamatan kerja                            
+
+2                              dilaksanakan di tempat
+
+                               kerja.
+
+                          2.3 Pencegahan bahaya
+
+                               Keselamatan dan
+
+                               Kesehatan Kerja dilakukan
+
+Unit Kompetensi 2         Kode Unit    : G.45OTO01.002.2
+                          Judul Unit   : Menggunakan Peralatan dan Perlengkapan Tempat Kerja
+
+                                                          Standar         Pencapaian  Penilaian
+                                                                          Ya Tidak     Lanjut
+No.        Elemen              Kriteria Unjuk Kerja       Industri atau
+                                                             Tempat
+
+                                                          Kerja
+
+     Memilih peralatan 1.1 Peralatan dan
+     dan perlengkapan
+                               perlengkapan tempat
+     tempat kerja secara
+1                              kerja diidentifikasi.                        
+     aman                 1.2  Peralatan dan
+
+                               perlengkapan disiapkan di
+
+                               tempat kerja.              Repair manual
+
+    Menggunakan           2.1 Peralatan dan               Report sheet
+    peralatan dan               perlengkapan dikalibrasi
+    perlengkapan                sesuai jenis dan fungsi.                    
+2 di tempat kerja
+                          2.2 Peralatan dan
+
+                               perlengkapan digunakan
+
+                               sesuai manual perbaikan
+
+Unit Kompetensi 3         Kode Unit    : G.45OTO01.003.2
+                          Judul Unit   : Melaksanakan Komunikasi di Tempat Kerja
+
+No.        Elemen                Kriteria Unjuk Kerja         Standar     Pencapaian  Penilaian
+                                                           Industri atau  Ya Tidak     Lanjut
+                          1.1 Data dan informasi
+    Mempersiapkan               yang akan                     Tempat        
+    informasi dan               disampaikan                     Kerja
+    komunikasi di               diidentifikasi
+1 tempatkerja                   kebenarannya.             Repair manual
+                                                           Report sheet
+                          1.2 Data informasi dan
+
+                                                      2
+                   Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+    Menyampaikan         bukti disiapkan                             
+    informasi dan        sesuai prosedur.
+    komunikasi di
+    tempatkerja    1.3 Data informasi dan
+
+2                        diperiksa ulang
+                         sebelum
+
+                         dikomunikasikan.
+
+                   2.1 Data Informasi dan bukti
+                       dikomunikasikan
+                       kerekan kerja dan atasan
+                       di tempat kerja
+
+                   2.2 Data informasi dan
+                       bukti komunikasi
+                       dicatat.
+
+                   2.3 Data informasi dan
+                       Bukti komunikasi
+                       disimpan.
+
+Unit Kompetensi 4  Kode Unit   : G.45OTO01.004.2
+                   Judul Unit  : Melaksanakan Pemeliharaan Komponen
+
+No.  Elemen               Kriteria Unjuk Kerja      Standar     Pencapaian  Penilaian
+                                                 Industri atau  Ya Tidak     Lanjut
+                   1.1 Form pemeriksa
+                         disiapkan.                 Tempat
+                                                     Kerja
+                   1.2 Jenis kendaraan
+     Menyiapkan          diidentifikasi.
+     pemeliharaan
+     komponen      1.3 Manual perbaikan
+                         dipersiapkan di
+1                        tempatkerja.                                
+
+                   1.4 Tools dan SST             Repair manual
+                         dipersiapkan di          Report sheet
+                         tempatkerja.
+    Melaksanakan                                                     
+    pemeliharaan   2.1 Komponen diperiksa
+    komponen             dengan alat sesuai
+                         dengan manual
+2                        perbaikan.
+
+                   2.2 Hasil pemeriksaan
+                         dicatat di Form
+                         pemeriksa.
+
+                   2.3 Hasil pemeriksaan
+                         disimpan.
+
+                               3
+                       Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Unit Kompetensi 5      Kode Unit   : G.45OTO01.007.2
+                       Judul Unit  : Membaca Gambar Teknik
+
+No.  Elemen            Kriteria Unjuk Kerja           Standar              Pencapaian  Penilaian
+                                                   Industri atau           Ya Tidak     Lanjut
+
+                                                      Tempat
+                                                       Kerja
+
+    Menyiapkan gambar  1.1 Gambar Teknik                                     
+1 teknik                   diidentifikasi sesuai
+                           kebutuhan.
+2 Membaca gambar
+    teknik             1.2 Gambar teknik disiapkan.
+                                                            Repair manual
+                                                                             
+                       2.1 Simbol dan kode gambar Report sheet
+                           teknik diidentifikasi.
+
+                       2.2 Gambar teknik dijelaskan
+                           sesuai fungsi dan cara
+                           kerja.
+
+Unit Kompetensi 6      Kode Unit   : G.45OTO01.008.2
+                       Judul Unit  : Menggunakan Alat Ukur
+
+                                                   Standar                 Pencapaian  Penilaian
+                                                                           Ya Tidak     Lanjut
+No.  Elemen            Kriteria Unjuk Kerja        Industri atau
+                                                      Tempat
+
+                                                   Kerja
+
+1 Menyiapkan alat 1.1 Jenis alat ukur dan
+
+     ukur dan komponen komponen diidentifikasi.
+
+                       1.2 Alat ukur yang sesuai                             
+
+                       disiapkan di tempat kerja.
+
+                       1.3 Alat ukur dikalibrasi
+
+2 Menggunakan alat           sebelum digunakan     Repair manual
+    ukur                                            Report sheet
+                       2.1 Alat ukur digunakan
+                             sesuai prosedur.
+
+                       2.2 Alat ukur digunakan                               
+
+                       sesuai fungsi dan jenis
+
+                       alat ukur.
+
+                       2.3 Hasil pengukuran
+
+                       didokumentasikan
+
+                                             4
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                   No.              Kode Unit                                  Judul Unit
+
+ Kelompok          1. G.45OBR02.008.2                Melakukan Analisis Kerusakan Bodi Kendaraan
+Pekerjaan 2        2. G.45OBR02.010.2                Mengkomunikasikan Prosedur Perawatan Bodi
+                                                     Kendaraan
+   Service
+  Advisor
+
+    (SA)
+
+Unit Kompetensi 1       Kode Unit   : G.45OBR02.008.2
+                        Judul Unit  : Melakukan Analisis Kerusakan Bodi Kendaraan
+
+No.  Elemen             Kriteria Unjuk Kerja            Standar     Pencapaian     Penilaian
+                                                     Industri atau  Ya Tidak        Lanjut
+
+                                                        Tempat
+                                                         Kerja
+
+1 Menyiapkan            1.1 Prosedur menetapkan
+    analisis kerusakan
+    bodi                jenis dan tingkat
+
+                        kerusakan diidentifikasi.
+
+                        1.2 Perubahan bentuk bodi
+
+                        kendaraan diidentifikasi.
+
+                        1.3 Jenis dan tingkat
+
+                        kerusakan serta prosedur
+
+                        perbaikannya                                  
+
+                        diidentifikasi.
+
+                        1.4 Efek benturan kerusakan
+
+                        diidentifikasi.
+
+                        1.5 Prosedur menetapkan Repair manual
+
+                        Jenis dan tingkat            Report sheet
+
+                        kerusakan diidentifikasi.
+
+                        1.6 Perubahan bentuk bodi
+
+                        kendaraan diidentifikasi.
+
+2 Menetapkan            2.1 Perubahan bentuk bodi
+    perbaikan
+    kerusakan bodi      kendaraan diperiksa
+    kendaraan
+                        sesuai prosedur.
+
+                        2.2 Perubahan bentuk bodi
+
+                        kendaraan dan fungsinya                       
+
+                        dianalisis sesuai prosedur.
+
+                        2.3 Estimasi durasi dan
+
+                        biaya perbaikan
+
+                        ditetapkan
+
+Unit Kompetensi 2       Kode Unit   : G.45OBR02.010.2
+                        Judul Unit  : Mengkomunikasikan Prosedur Perawatan Bodi Kendaraan
+
+                                               5
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                                       Standar         Pencapaian  Penilaian
+                                                                       Ya Tidak     Lanjut
+No.        Elemen       Kriteria Unjuk Kerja           Industri atau
+                                                          Tempat
+
+                                                       Kerja
+
+1 Menyiapkan            1.1 Jenis, tipe,dan
+    penjelasan
+    prosedur            spesifikasi kendaraan
+    perawatan bodi
+    kendaraan           diidentifikasi.
+
+                        1.2 Panel, komponen,dan
+
+                        aksesoris bodi kendaraan
+
+                        diidentifikasi.
+
+                        1.3 Alat dan bahan
+
+                        perawatan bodi                                   
+
+                        kendaraan diidentifikasi.
+
+                        1.4 Jenis-jenis dan prosedur Repair manual
+                              perawatan bodi kendaraan Report sheet
+                              diidentifikasi.
+
+                        1.5 Spesifikasi teknis bahan
+
+                        bodi kendaraan
+
+                        diidentifikasi.
+
+2 Memastikan            2.1 Perubahan bentuk bodi                        
+    performa bodi             kendaraan diperiksa
+    kendaraan                 sesuai prosedur.
+
+                        2.2 Perubahan bentuk bodi
+                              kendaraan dan fungsinya
+                              dianalisis
+
+Kelompok           No.              Kode Unit                                    Judul Unit
+
+Pekerjaan 3                                            Melepas dan Memasang Rangkaian Elektrikal
+                                                       Pada Bodi Kendaraan
+Teknisi Bongkar    1.   G.45OBR02.014.2
+    Pasang
+
+Unit Kompetensi 1       Kode Unit   : G.45OBR02.014.2
+                        Judul Unit  : Melepas dan Memasang Rangkaian Elektrikal Pada Bodi
+
+                                        Kendaraan
+
+No.        Elemen       Kriteria Unjuk Kerja               Standar     Pencapaian  Penilaian
+                                                        Industri atau  Ya Tidak     Lanjut
+
+1 Menyiapkan            1.1 Nama, jenis, spesifikasi,      Tempat
+                                                             Kerja
+     pelepasan dan      fungsi, dan lokasi
+                                                       Repair manual
+     pemasangan         komponen electrical bodi        Report sheet
+
+     rangkaian electrical kendaraan diidentifikasi                       
+                        1.2 Prosedur melepas dan
+     bodi
+                        memasang komponen
+
+                        rangkaian electrical bodi
+
+                        diidentifikasi.
+
+                                               6
+                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                  1.3 Sistem rangkaian
+
+                  electrical bodi kendaraan
+
+                  diidentifikasi.
+
+                  1.4 Pengoperasian multi
+
+                  tester diidentifikasi
+
+                  1.5 .Pengoperasian multi
+
+                  scan diidentifikasi
+
+                  1.6 Peralatan dan
+
+                  perlengkapan disiapkan di
+
+                  meja kerja
+
+2 Menangani       2.1 Sumber arus listrik baterai
+
+pelepasan dan     dilepas sesuai prosedur.
+
+pemasangan        2.2 Komponen rangkaian
+
+rangkaian electrical electrical bodi dilepas
+                  sesuai prosedur.
+bodi
+                  2.3 Jenis     dan
+
+                  spesifikasi komponen
+
+                  electrical bodi
+
+                  diidentifikasi.
+
+                  2.4 Komponen electrical
+
+                  bodi dicek kondisinya
+
+                  sesuai spesifikasi.
+
+                  2.5 Hasil     pengecekan
+
+                  kondisi komponen
+
+                  electrical bodi
+
+                  ditindaklanjuti sesuai
+
+                  spesifikasi.
+
+                  2.6 Hasil     pengecekan           
+
+                  kondisi komponen
+
+                  electrical bodi
+
+                  ditindaklanjuti sesuai
+
+                  spesifikasi.
+
+                  2.7 Komponen rangkaian
+
+                  electrical bodi dipasang
+
+                  sesuai prosedur.
+
+                  2.8 Hasil pemasangan
+
+                  komponen electrical bodi
+
+                  dilaporkan sesuai prosedur.
+
+                  2.9 Hasil     pemasangan
+
+                  komponen electrical
+
+                  bodi didokumentasikan
+
+                  sesuai prosedur.
+
+                  2.10 Kegiatan pada unit
+
+                  inimerujuk pada prosedur
+
+                  K3 yang terkait.
+
+Kelompok     No.             Kode Unit             Judul Unit
+
+Pekerjaan 4
+
+Teknisi      1.   G.45OBR02.022.2             Memperbaiki Panel Bodi Kendaraan dengan Palu
+ Bodi                                         Dan Dolly
+
+                                           7
+                       Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Unit Kompetensi 1      Kode Unit   : G.45OBR02.022.2
+                       Judul Unit  : Memperbaiki Panel Bodi Kendaraan dengan Palu Dan Dolly
+
+No.  Elemen            Kriteria Unjuk Kerja                  Standar     Pencapaian  Penilaian
+                                                          Industri atau  Ya Tidak     Lanjut
+
+                                                             Tempat
+                                                              Kerja
+
+1 Menyiapkan           1.1 Jenis, area dan tingkat
+    perbaikan panel        kerusakan panel bodi
+    bodi kendaraan         kendaraan diidentifikasi.
+    dengan palu dan
+    dolly              1.2 Prosedur penggunaan
+
+                       palu dan dolly diidentifikasi.
+
+                       1.3 Peralatan dan                                   
+                           perlengkapan yang
+                           diperlukan untuk
+                           memperbaiki panel bodi
+                           diidentifikasi dan disiapkan.
+
+                       1.4 Panel bodi kendaraan yang
+                           tidak memerlukan
+                           perbaikan ditutup sesuai
+                           prosedur.
+
+2 Mengembalikan        1.5 Kegiatan pada unit ini         Repair manual
+    bentuk panel bodi      dilaksanakan dengan             Report sheet
+    kendaraan sesuai       merujuk pada prosedur
+    spesifikasi            K3L yang terkait.
+
+                       2.1 Aksesoris, anti karat dan
+                            peredam suara pada panel
+                            bodi yang diperbaiki dilepas
+                            sesuai prosedur.
+
+                       2.2 Perbaikan panel bodi
+                            kendaraan dengan palu dan
+                            dolly dilakukan sesuai
+                            prosedur.
+
+                       2.3 Pengerutan dilakukan pada
+                            panel yang mulur/ lentur.
+
+                       2.4 Kebersihan, kerataan, celah,                    
+                            dan bentuk panel hasil
+                            perbaikan diperiksa sesuai
+                            standar.
+
+                       2.5 Anti karat diaplikasikan pada
+                            panel bodi kendaraan yang
+                            diperbaiki.
+
+                       2.6 Hasil perbaikan panel bodi
+
+                            kendaraan dengan palu dan
+                            dolly dilaporkan sesuai
+
+                           prosedur.
+
+                                   8
+                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+Umpan Balik untuk asesi:
+
+Rekomendasi:                      Asesi
+ Asesi telah memenuhi pencapaian
+
+seluruh kriteria unjuk kerja,     Nama       :
+
+direkomendasikan KOMPETEN
+
+ Asesi belum memenuhi pencapaian Tanda tangan/ Tanggal :
+
+seluruh kriteria unjuk kerja,
+
+direkomendasikan BELUM            Asesor
+
+KOMPETEN                          Nama       :
+pada:
+
+Kelompok Pekerjaan: ...           No. Reg    :
+
+Unit: .....
+
+Elemen: .....                     Tanda tangan/ Tanggal :
+KUK: .......
+
+                                          9
+Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+                           10
+

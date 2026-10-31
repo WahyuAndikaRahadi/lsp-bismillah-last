@@ -1,0 +1,534 @@
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.APL.02. ASESMEN MANDIRI
+
+Skema Sertifikasi       Judul       : Skema Sertifikasi Klaster Maintenance Gasoline Engine
+                                      Injection System
+(KKNI/Okupasi/Klaster)
+                                    : Skema 02/LSP PrO Indo/XI/2025
+                        Nomor
+
+PANDUAN ASESMEN MANDIRI
+
+Instruksi:
+· Baca setiap pertanyaan di kolom sebelah kiri
+· Beri tanda centang () pada kotak jika Anda yakin dapat melakukan tugas yang dijelaskan.
+· Isi kolom di sebelah kanan dengan menuliskan bukti yang relevan anda miliki untuk menunjukkan
+
+     bahwa anda melakukan pekerjaan
+
+Unit Kompetensi 1       Kode Unit         : G.45OTO01.001.2
+                        Judul Unit        : Melaksanakan Keselamatan dan Kesehatan Kerja
+
+Dapatkah Saya ................?                           K BK  Bukti yang relevan
+     1. Elemen: Menyiapkan prosedur Keselamatan           
+          dan Kesehatan Kerja
+                · Kriteria Unjuk Kerja:                    
+                1.1 Potensi bahaya pada area kerja
+                     diidentifikasi.
+                1.2 APD disiapkan di tempat kerja.
+     2. Elemen: Melaksanakanan prosedur
+          Keselamatan dan Kesehatan Kerja
+                · Kriteria Unjuk Kerja:
+                2.1 APD digunakan sesuai prosedur.
+                2.2 Prosedur kesehatan dan keselamatan
+                     kerja dilaksanakan di tempat kerja.
+                2.3 Pencegahan bahaya Keselamatan dan
+                     Kesehatan Kerja dilakukan
+
+Unit Kompetensi 2       Kode Unit         : G.45OTO01.002.2
+                        Judul Unit        : Menggunakan Peralatan dan Perlengkapan Tempat Kerja
+
+Dapatkah Saya ................?                           K BK  Bukti yang relevan
+
+1. Elemen: Memilih peralatan dan perlengkapan
+
+tempat kerja secara aman
+
+· Kriteria Unjuk Kerja:
+
+1.1 Peralatan dan perlengkapan tempat  
+
+                   kerja diidentifikasi.
+
+1.2 Peralatan dan perlengkapan
+
+                   disiapkan di tempat kerja.
+
+2. Elemen: Menggunakan peralatan dan
+
+perlengkapan di tempat kerja
+
+· Kriteria Unjuk Kerja:
+
+2.1 Peralatan dan perlengkapan                            
+
+                   dikalibrasi sesuai jenis dan fungsi.
+
+2.2 Peralatan dan perlengkapan
+
+                   digunakan sesuai manual perbaikan.
+
+                                               1
+                   Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Unit Kompetensi 3  Kode Unit      : G.45OTO01.007.2
+                   Judul Unit     : Membaca Gambar Teknik
+
+Dapatkah Saya ................?                                  K BK  Bukti yang relevan
+     1. Elemen: Menyiapkan gambar teknik                               Bukti yang relevan
+                · Kriteria Unjuk Kerja:                                Bukti yang relevan
+                     1.1 Gambar Teknik diidentifikasi sesuai      
+                           kebutuhan.
+                     1.2 Gambar teknik disiapkan.
+     2. Elemen: Membaca gambar teknik
+                · Kriteria Unjuk Kerja:
+                     2.1 Simbol dan kode gambar teknik
+                           diidentifikasi.
+                     2.2 Gambar teknik dijelaskan sesuai
+                           fungsi dan cara kerja.
+
+Unit Kompetensi 4  Kode Unit      : G.45OTO01.008.2
+                   Judul Unit     : Menggunakan Alat Ukur
+
+Dapatkah Saya ................?                                  K BK
+
+1. Elemen: Menyiapkan alat ukur dan komponen
+
+· Kriteria Unjuk Kerja:
+
+1.1 Jenis alat ukur dan komponen
+
+     diidentifikasi.                                             
+1.2 Alat ukur yang sesuai disiapkan di
+
+                   tempat kerja.
+
+1.3 Alat ukur dikalibrasi sebelum
+
+                   digunakan.
+
+2. Elemen: Menggunakan alat ukur
+
+· Kriteria Unjuk Kerja:
+
+2.1 Alat ukur digunakan sesuai prosedur.                           
+2.2 Alat ukur digunakan sesuai fungsi
+
+                   dan jenis alat ukur.
+
+2.3 Hasil pengukuran didokumentasikan.
+
+Unit Kompetensi 5  Kode Unit      : G.45OTO01.009.2
+                   Judul Unit     : Melaksanakan Diagnosis
+
+Dapatkah Saya ................?                                  K BK
+     1. Elemen: Mempersiapkan diagnosis                           
+                · Kriteria Unjuk Kerja:
+                     1.1 Komponen, alat, SST dan Diagnosis        
+                           tools diidentifikasi.
+                     1.2 Komponen, alat, SST dan Diagnosis
+                           tools disiapkan di tempat kerja.
+     2. Elemen: Melakukan diagnosis
+                · Kriteria Unjuk Kerja:
+                     2.1 Komponen, alat, SST dan Diagnosis
+                           tools dikalibrasi sebelum digunakan.
+                     2.2 Komponen, alat, SST dan Diagnosis
+                           tools digunakan sesuai manual
+                           perbaikan.
+
+                                         2
+                   Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+2.3 Hasil diagnosis didokumentasikan
+2.4 Hasil diagnosis dievaluasi dan
+
+     dipresentasikan.
+
+Unit Kompetensi 6  Kode Unit         : G.45OTO01.010.2
+                   Judul Unit        : Melakukan Perawatan Berkala Engine
+
+Dapatkah Saya ................?                            K BK            Bukti yang relevan
+
+1. Elemen: Menyiapkan Perawatan engine
+
+· Kriteria Unjuk Kerja:
+
+1.1 Nama, jenis, spesifikasi, fungsi,
+
+                   prinsip kerja engine diidentifikasi
+
+                   sesuai prosedur.
+
+1.2 Prosedur pengoperasian alat ukur
+
+                   dan peralatan khusus/SST untuk
+
+                   perawatan berkala engine
+
+                   diidentifikasi sesuai prosedur.
+
+1.3 Peralatan, perlengkapan dan bahan  
+
+                   disiapkan di tempat kerja sesuai
+
+                   prosedur.
+
+1.4 Manual perbaikan engine disiapkan
+
+                   di tempat kerja sesuai prosedur.
+
+1.5 Data perawatan berkala engine
+
+                   diidentifikasi sesuai prosedur.
+
+1.6 Kendaraan yang akan dilakukan
+
+                   perawatan berkala engine disiapkan
+
+                   di area kerja sesuai prosedur.
+
+2. Elemen: Melakukan Pemeriksaan engine
+
+· Kriteria Unjuk Kerja:
+
+2.1 Engine dibersihkan dari kotoran
+
+                   sesuai prosedur.
+
+2.2 Sistem pelumasan engine diperiksa
+
+                   sesuai prosedur.
+
+2.3 Sistem pendinginan engine dan
+
+                   komponen engine diperiksa sesuai
+
+                   prosedur.
+
+2.4 Sistem pemasukan udara dan sistem
+
+                   gas buang engine diperiksa sesuai
+
+                   prosedur.
+
+2.5 Sistem pengapian engine diperiksa                      
+
+                   sesuai prosedur.
+
+2.6 Sistem bahan bakar diperiksa sesuai
+
+                   prosedur.
+
+2.7 Emisi gas buang engine diperiksa
+
+                   sesuai prosedur.
+
+2.8 Hasil pemeriksaan engine
+
+                   ditindaklanjuti sesuai dengan kondisi.
+
+2.9 Hasil pemeriksaan engine diuji
+
+                   kinerjanya sesuai prosedur.
+
+2.10 Hasil pemeriksaan engine
+
+                   didokumentasikan dan dilaporkan
+
+                   sesuai prosedur.
+
+                                                        3
+                   Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+Unit Kompetensi 7  Kode Unit          : G.45OTO01.065.2
+                   Judul Unit         : Memelihara Baterai
+
+Dapatkah Saya ................?                               K BK  Bukti yang relevan
+
+1. Elemen: Menyiapkan pemeliharaan baterai
+
+kendaraan ringan
+
+· Kriteria Unjuk Kerja:
+
+1.1 Manual perbaikan pemeliharaan
+
+                   baterai yang digunakan disiapkan.
+
+1.2 Peralatan dan perangkat kerja
+
+                   pendukung diperiksa atas kondisi
+
+                   dan kelayakan pakai berdasarkan
+
+                   kebutuhan pemeliharaan.
+
+1.3 Baterai yang digunakan disiapkan                          
+
+                   untuk menentukan proses
+
+                   pemeliharaan.
+
+1.4 Level cairan elektrolit diperiksa dan
+
+                   disesuaikan pada level yang tepat
+
+                   berdasarkan manual perbaikan.
+
+                   (Hanya berlaku untuk baterai basah).
+
+1.5 Perlengkapan pelindung kendaraan
+
+                   dipasang berdasarkan prosedur di
+
+                   tempat kerja.
+
+2. Elemen: Melaksanakan pemeliharaan baterai
+
+· Kriteria Unjuk Kerja:
+
+2.1 Kondisi rumah atau casing baterai,
+
+                   terminal baterai dan koneksi ke kabel
+
+                   kendaraan diperiksa sesuai manual
+
+                   perbaikan.
+
+2.2 Tegangan baterai diperiksa dengan
+
+                   menggunakan alat ukur yang sesuai
+
+                   dengan manual perbaikan.                   
+
+2.3 Berat jenis air baterai diperiksa
+
+                   menggunakan alat ukur yang sesuai
+
+                   dengan manual perbaikan.
+
+2.4 Baterai dan terminal dibersihkan
+
+                   sesuai dengan manual perbaikan.
+
+2.5 Dokumen pemeriksaan baterai diisi
+
+                   sesuai dengan hasil pelaksanaan
+
+                   pemeriksaan baterai.
+
+3. Elemen: Menguji baterai pada kendaraan
+
+· Kriteria Unjuk Kerja:
+
+3.1 Baterai di uji dengan menggunakan
+
+                   diagnostic tool sesuai dengan              
+
+                   manual perbaikan.
+
+3.2 Hasil pekerjaan menguji baterai
+
+                   didokumentasikan.
+
+Unit Kompetensi 8  Kode Unit          : G.45OTO01.073.2
+                   Judul Unit         : Memperbaiki Kerusakan Pada Sistem Pengaman Kelistrikan
+
+Dapatkah Saya ................?                               K BK  Bukti yang relevan
+     1. Elemen: Menyiapkan pekerjaan memperbaiki               
+          kerusakan pada sistem pengaman kelistrikan
+
+                                                           4
+                   Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+· Kriteria Unjuk Kerja:
+
+1.1 Manual perbaikan sistem pengaman
+
+                   disiapkan sesuai dengan kendaraan
+
+                   yang digunakan.
+
+1.2 Peralatan dan perangkat kerja
+
+                   pendukung diperiksa atas kondisi
+
+                   dan kelayakan pakai berdasarkan
+
+                   kebutuhan perbaikan.
+
+1.3 Sistem pengaman yang akan
+
+                   diperbaiki disiapkan.
+
+1.4 Perlengkapan pelindung kendaraan
+
+                   dipasang berdasarkan prosedur di
+
+                   tempat kerja.
+
+2. Elemen: Melaksanakan pengujian pada sistem
+
+pengaman kelistrikan
+
+· Kriteria Unjuk Kerja:
+
+2.1 Sistem pengaman kelistrikan diuji
+
+                   sesuai manual perbaikan.
+
+2.2 Hasil pengujian sistem pengaman                    
+
+                   kelistrikan ditemukan berdasarkan
+
+                   manual perbaikan.
+
+2.3 Dokumen pengujian sistem
+
+                   pengaman kelistrikan diisi sesuai
+
+                   hasil pengujian.
+
+3. Elemen: Melaksanakan perbaikan pada sistem
+
+pengaman kelistrikan
+
+· Kriteria Unjuk Kerja:
+
+3.1 Sistem pengaman kelistrikan
+
+                   diperbaiki berdasarkan hasil
+
+                   pengujian.
+
+3.2 Hasil perbaikan sistem pengaman
+
+                   kelistrikan dilakukan berdasarkan
+
+                   hasil pengujian.
+
+3.3 Dokumen perbaikan sistem
+
+                   pengaman kelistrikan diisi sesuai
+
+                   hasil pengujian.
+
+Unit Kompetensi 9  Kode Unit          : G.45OTO01.078.2
+                   Judul Unit         : Memperbaiki Sistem Manajemen Engine
+
+Dapatkah Saya ................?                        K BK  Bukti yang relevan
+
+1. Elemen: Menyiapkan perbaikan sistem
+
+manajemen engine
+
+· Kriteria Unjuk Kerja:
+
+1.1 Manual perbaikan memperbaiki
+
+                   sistem manajemen engine disiapkan
+
+                   sesuai prosedur.
+
+1.2 Peralatan dan bahan serta perangkat
+
+                   kerja lain diperiksa atas kondisi dan  
+
+                   kelayakan pakai berdasarkan
+
+                   kebutuhan kerja.
+
+1.3 Perlengkapan pelindung kendaraan
+
+                   dipasang berdasarkan prosedur di
+
+                   tempat kerja.
+
+1.4 Sistem manajemen engine diperiksa
+
+                   dengan menggunakan diagnostic tool
+
+                                                 5
+        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+        untuk memudahkan mengetahui
+
+        kerusakan pada sistem manajemen
+
+        engine.
+
+2. Elemen: Mendiagnosa sistem manajemen
+
+engine
+
+· Kriteria Unjuk Kerja:
+
+        2.1 Sistem manajemen engine dasar dan
+
+        elektronis diperiksa menggunakan
+
+        diagnostic tool untuk mengetahui
+
+        kerusakan atau kesalahan sesuai
+
+             prosedur.                          
+        2.2 Sistem Manajemen engine diperiksa
+
+        secara visual untuk mengetahui
+
+        kemungkinan terjadi kerusakan yang
+
+        tidak bisa diketahui melalui
+
+        diagnostic tool.
+
+        2.3 Dokumen pekerjaan Mendiagnosa
+
+        sistem manajemen engine diisi
+
+        sesuai dengan hasil diagnosa.
+
+3. Elemen: Melaksanakan perbaikan sistem
+
+engine
+
+· Kriteria Unjuk Kerja:
+
+        3.1 Sistem manajemen engine diperbaiki
+
+        berdasarkan manual perbaikan.
+
+        3.2 Peralatan, teknik dan bahan yang
+
+        sesuai digunakan berdasarkan
+
+        manual perbaikan.
+
+        3.3 Hasil perbaikan diuji dengan
+
+        menggunakan diagnostic tool sesuai
+
+        manual perbaikan.
+
+        3.4 Dokumen perbaikan sistem
+
+        manajemen engine diisi sesuai hasil
+
+        perbaikan dan dilaporkan sesuai
+
+        prosedur.
+
+Asesmen dapat / tidak dapat dilanjutkan   Nama
+                                          Tanda tangan/
+                                          Tanggal
+                                          Ditinjau Oleh Asesor :
+                                          Nama :
+
+                                          No. Reg:
+
+                                          Tanda tangan/
+                                          Tanggal
+
+                                          6
+

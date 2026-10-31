@@ -20,14 +20,19 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'full_name',
         'email',
         'password',
         'role',
+        'status',
         'nik',
         'phone',
         'is_active',
         'avatar',
         'signature_image',
+        'assessor_registration_number',
+        'is_committee_head',
+        'tuk_id',
     ];
 
     /**
@@ -50,24 +55,94 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
-            'role' => UserRole::class,
             'is_active' => 'boolean',
+            'is_committee_head' => 'boolean',
         ];
+    }
+
+    public function getFullNameAttribute(): string
+    {
+        return $this->attributes['full_name'] ?? $this->attributes['name'] ?? '';
+    }
+
+    public function setFullNameAttribute($val): void
+    {
+        $this->attributes['full_name'] = $val;
+        if (empty($this->attributes['name'])) {
+            $this->attributes['name'] = $val;
+        }
+    }
+
+    public function profile(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(UserProfile::class, 'user_id');
+    }
+
+    public function assignedSchedules(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Schedule::class, 't_schedule_assessors', 'assessor_id', 'schedule_id');
+    }
+
+    public function scheduleAssessments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Assessment::class, 'asesi_id');
+    }
+
+    public function assessorAssessments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Assessment::class, 'assessor_id');
+    }
+
+    public function isRole(string $role): bool
+    {
+        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
+        $map = [
+            'admin' => ['admin', 'ADMIN_LSP', 'SUPER_ADMIN'],
+            'asesor' => ['asesor', 'ASESOR'],
+            'asesi' => ['asesi', 'ASESI'],
+            'SUPER_ADMIN' => ['SUPER_ADMIN', 'admin'],
+            'ADMIN_LSP' => ['ADMIN_LSP', 'admin'],
+            'ASESOR' => ['ASESOR', 'asesor'],
+            'ASESI' => ['ASESI', 'asesi'],
+        ];
+
+        return in_array($currentRole, $map[$role] ?? [$role], true);
+    }
+
+    public function isProfileComplete(): bool
+    {
+        if (! $this->isRole('ASESI') && ! $this->isAsesi()) {
+            return true;
+        }
+
+        $profile = $this->profile ?? $this->profile()->first();
+        if (! $profile) {
+            return false;
+        }
+
+        return ! empty($profile->nik)
+            && ! empty($profile->tempat_lahir)
+            && ! empty($profile->tanggal_lahir)
+            && ! empty($profile->alamat_rumah)
+            && ! empty($profile->signature_data);
     }
 
     public function isAdmin(): bool
     {
-        return $this->role === UserRole::Admin;
+        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
+        return in_array($currentRole, ['admin', 'SUPER_ADMIN', 'ADMIN_LSP'], true);
     }
 
     public function isAsesor(): bool
     {
-        return $this->role === UserRole::Asesor;
+        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
+        return in_array($currentRole, ['asesor', 'ASESOR'], true);
     }
 
     public function isAsesi(): bool
     {
-        return $this->role === UserRole::Asesi;
+        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
+        return in_array($currentRole, ['asesi', 'ASESI'], true);
     }
 
     public function asesorProfile(): \Illuminate\Database\Eloquent\Relations\HasOne

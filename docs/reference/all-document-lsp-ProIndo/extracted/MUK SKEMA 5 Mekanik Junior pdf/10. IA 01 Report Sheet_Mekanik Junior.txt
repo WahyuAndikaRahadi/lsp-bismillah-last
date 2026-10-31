@@ -1,0 +1,439 @@
+                           Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.01B ­ Report Sheet                                                          Lembar : Peserta
+
+Skema Sertifikasi/  Judul  : MEKANIK JUNIOR
+Okupasi Nasional    Nomor
+                           : 05/LSP PrO Indo/I/2026
+
+TUK                         :                   Sewaktu      Tempat Kerja                     Mandiri
+
+Nama Asesor                :
+Nama Asesi                 :
+Tanggal                    :
+Durasi Waktu
+                               60 Menit
+
+No   Kode dan Judul                              Item dan Hasil Pemeriksaan                                   Hasil
+     Unit Kompetensi
+                           (item apa saja yang perlu dilakukan pemeriksaan dan lihat manual perbaikan)  Baik Tidak
+                                                                                                                    Baik
+
+Kelompok Pekerjaan : Persiapan Servis
+
+1. G.45TSM01.018.2 Lakukan Perawatan Karburator (Gunakan Buku Pedoman Reparasi)
+
+     Melakukan             - Persiapan & K3     Wearpack, Sepatu, Alat disiapkan
+
+     Perawatan
+
+     Karburator            - Melepas Karburator Buka jok/bodi, melepas kabel gas, selang
+                                                       bensin, intake manifold
+
+                           - Membongkar         Buka mangkuk karbu, main jet, pilot jet,
+                            Karburator          pelampung, jarum pelampung, skep (throttle
+                                                valve)
+                           - Pembersihan        Bersihkan semua komponen dengan carb
+                                                cleaner dan udara bertekanan. Pastikan
+                                                saluran tidak tersumbat.
+
+                           - Pemeriksaan        Kondisi jarum pelampung (aus/tidak):
+                            Komponen            Kondisi karet seal/paking:
+                                                Kondisi main/pilot jet (sumbat/tidak):
+                                                Kondisi skep/piston valve (baret/tidak)
+
+                           - Perakitan Kembali  Rakit komponen sesuai urutan (pastikan seal
+                                                tidak terjepit)
+
+                           - Pemasangan         Pasang kembali karburator ke mesin
+
+                           - Penyetelan         Hidupkan mesin, atur stasioner (1400-1600
+                            (Idle & Mixture)    rpm), atur Hidupkan mesin, atur stasioner
+                                                (1400-1600 rpm), atur sekrup udara (putaran
+                                                standar)
+
+                           - Uji Fungsi (Final Test) Pastikan putaran mesin stabil, respon gas baik,
+                                                       tidak ada bocor
+
+                           - Pembersihan        Membersihkan Alat dan area kerja
+                            Area Kerja
+
+                                                         1
+                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+2. G.45TSM01.020.2 Lakukan Perawatan Renggang Klep (Gunakan Buku Pedoman
+
+Melakukan         Reparasi)
+
+perawatan renggang Periksa Celah Katup (Lakukan penyetelan jika diperlukan)
+
+klep              In mm Ex mm
+
+3. G.45TSM01.021.2 Persiapan :
+
+Melakukan         Pengecekan Tools & Equipment
+
+perawatan free play Kalibrasi peralatan
+
+throttle gas      Pengecekan kebersihan
+
+                  Lakukan Pemeriksaan Free Play Throttle Gas (Gunakan Buku
+
+                  Pedoman Reparasi)
+
+                  Free Play
+
+                  Throttle Gas
+
+                  ......... mm
+
+                  Kelancaran
+
+                  Gerak Kabel
+
+                  Gas
+
+4. G.45TSM01.022.2 Lakukan Perawatan Filter Udara (Gunakan Buku Pedoman
+
+Melakukan         Reparasi)
+
+perawatan filter  Identifikasi Jenis Filter Udara........
+
+udara             Prosedur Pembersihan Filter Udara
+
+                  Penyetelan Putaran Stationer
+
+                  (Type tertentu)
+
+5. G.45TSM01.023.2 Lakukan Perawatan Unit Kopling Manual / Otomatik berikut
+
+Melakukan         komponen-komponen Sistem Pengoperasiannya
+
+Perawatan Sistem Penggunaan Buku Bepoman Reparasi Merek /
+
+Clucth / Kopling Type ....
+
+                  Penggunaan peralatan kerja
+
+                  Jarak main bebas tuas kopling (Type tertentu)
+
+                  Periksa cara kerja perpindahan transmisi untuk type bebek
+
+6. G.45TSM01.024.2 Lakukan pemeriksaan dan penggantian oli mesin, oli transmisi,
+
+Melakukan         dan filter oli (Gunakan Buku Pedoman Reparasi)
+
+pemeriksaan dan Oddo Meter..................km
+
+penggantian oli Hasil pemeriksaan oli mesin (lakukan penggantian jika sudah tidak
+
+mesin, oli transmisi, bagus) ...........
+
+dan filter oli    Periksa Oli transmisi (lakukan penggantian jika sudah tidak bagus)
+
+                  (Jika ada)......................
+
+                  Periksa filter oli (Type tertentu)
+
+                  Kebocoran oli dipastikan tidak ada
+
+7. G.45TSM01.025.2 Lakukan Pemeriksaan Sistem Pelumasan (Gunakan Buku
+
+Melakukan         Pedoman Reparasi)
+
+Pemeriksaan Sistem Volume Oli.......................
+
+Pelumasan Mesin Warna Oli.......................
+
+                  Viskositas
+
+                  (Kekentalan)...................
+
+                  Kontaminasi..............................
+
+                  Periksa kebocoran pada mesin
+
+                                                             2
+                              Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+8. G.45TSM01.027.2 Lakukan Melakukan Perawatan Sistem Continuosly Variable
+
+Melakukan             Tansmission (CVT) (Gunakan Buku Pedoman Reparasi)
+
+Perawatan Sistem Kondisi komponen :
+
+Continuosly Variable                        Kondisi Baik Perlu Perbaikan/Ganti
+
+Tansmission (CVT) V-Belt                    []                 []               .................. ..............
+                                                                                .................. ...............
+                      Roller                []                 []               .................. ...............
+                                                                                .................. ...............
+                      Rumah Roller          []                 []               .................. ...............
+                                                                                .................. ...............
+                      Kipas Pulley          []                 []               .................. ...............
+
+                      Kampas Kopling        []                 []
+
+                      Seal Oli              []                 []
+
+                      Kebersihan (Grease) [ ]                  []
+
+9. G.45TSM01.028.2 Lakukan Pemeliharaan Sistim Pendingin berikut komponen-
+
+Melakukan             komponennya (Gunakan Buku Pedoman Reparasi)
+
+Perawatan Sistem Kipas, rusuk pendingin
+
+Pendingin             Tekanan / kebocoran radiator (jika ada)                   .................. ..............
+                                                                                .................. ...............
+                      Tutup Radiator            (jika ada)                      .................. ...............
+                                                                                .................. ...............
+                      Level Reservoir           (jika ada)                      .................. ...............
+                                                                                .................. ...............
+                      Kondisi Baut, Klem pada sistim pendingin sesuai standar   .................. ...............
+
+                      Kondisi Air Pendingin (Jika ada)
+
+                      Kondisi Thermostat        (Jika ada)
+
+                      Kondisi Water Pump        (Jika ada)
+
+Kelompok Pekerjaan: Fuel injection service
+
+10. G.45TSM01.019.2 Lakukan Perawatan Sistem Bahan Bakar Injeksi (Gunakan Buku
+
+Melakukan             Pedoman Reparasi)
+
+perawatan sistem Periksa Throttle Body
+
+injeksi               Periksa Injektor                                          .................. ..............
+
+                      Periksa sensor IAT,MAP, dan sensor O2                     .................. ...............
+
+                      Periksa tekanan pompa bahan bakar Periksa kebocoran saluran bahan .................. ...............
+
+                      bakar
+
+                                                3
+                              Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+11. G.45TSM01.053.2 Lakukan Pembersihan Injector
+
+Melakukan             Penggunaan Buku Pedoman Reparasi Merek /
+Pembersihan Injector
+
+                      Type ....                                                                .................. ..............
+                                                                                               .................. ...............
+                      Penggunaan alat pembersih injector                                       .................. ...............
+                                                                                               .................. ...............
+                      Pembongkaran cover body dan fuel tank                                    .................. ...............
+                                                                                               .................. ...............
+                      Membersihkan Injector (Type tertentu)                                    .................. ...............
+                                                                                               .................. ...............
+                      Hasil pembersihan injector berfungsi normal (Type tertentu)
+
+                      Pastikan Kondisi Konektor Selang Injector normal
+
+                      Pemasangan cover body dan fuel tank
+
+                      Prosedur K3 pada proses kerja diterapkan
+
+12. G.45TSM01.055.2 Gunakan diagnostic tools sesuai dengan prosedur
+
+Mengoperasikan
+
+diagnostic tools Lakukan Analisis Data Dinamis (Live Data Stream)
+
+                      Pemeriksaan Putaran Mesin              Rpm
+
+                      Throttle Position Sensor kondisi terbuka : ......................        ................ ................
+                                                                                               ................ ................
+                      Throttle Position Sensor kondisi tertutup : ......................       ................ ................
+                                                                                               ................ ................
+                      Injector                                       : ......................  ................ ................
+                                                                                               ................ ................
+                      Engine Oil / Coolent Temperatur Sensor : .....................           ................ ................
+                                                                                               ................ ................
+                      O2 Sensor                                      : .....................   ................ ................
+                                                                                               ................ ................
+                      Crankshaft Position Sensor                     : ......................  ................ ................
+                                                                                               ................ ................
+                      Intake Air Temperature Sensor (type tertentu) : ......................
+                                                                                               ................ ................
+                      Manifold Absolute Pressure (type tertentu) : ......................      ................ ................
+                                                                                               ................ ................
+                      Ignition Coil (type tertentu)                  : ......................  ................ ................
+
+                      Kondisi ISC (type tertentu)                    : ......................
+
+                      Ketinggian / Altitude (type tertentu)          : ......................
+
+                      Pemeriksaan CO (type tertentu)                 : .....................
+
+Kelompok Pekerjaan: Electrik
+
+13. G.45TSM01.039.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)
+
+Melakukan             Kondisi terminal
+
+perawatan baterai Kondisi bodi
+
+                      Tegangan ------------ Volt
+
+                      Kesehatan baterai................ %
+
+                      Berat jenis -------------(bila baterai basah)
+
+                      Ketinggian air baterai (bila baterai basah)
+
+                                                      4
+                            Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+14. G.45TSM01.026.2 Lakukan Perawatan Busi
+
+Melakukan         Penggunaan Buku Pedoman Reparasi Merek /
+
+Perawatan Busi Type ....
+
+                  a. Celah Busi            : ........ mm                                  ................ ................
+                                                                                          ................ ................
+                  b. Tahanan Cup Busi : .........  / K                                    ................ ................
+
+                  c. Kondisi Elektroda Busi : .............................               ................ ................
+                                                                                          ................ ................
+15. G.45TSM01.040.2 Lakukan Perawatan Instrumen Sistem Kelistrikan ((Gunakan Buku         ................ ................
+                                                                                          ................ ................
+Melakukan         Pedoman Reparasi)                                                       ................ ................
+                                                                                          ................ ................
+perawatan         Lampu-lampu Indikator                                      (Kondisi)
+
+instrumen kelistrikan Lampu Depan Jauh / Dekat                               (Kondisi)
+(sistem sinyal dan Lampu Sen                                                 (Kondisi)
+penerangan)                                                                  (Kondisi)
+                  Lampu Rem
+
+                  Lampu Belakang                                             (Kondisi)
+
+                  Horn / Klakson                                             (Kondisi)
+
+                            · Saklar Sistem Lampu Penerangan dan tanda Isyarat (Kondisi)
+
+Kelompok Pekerjaan Chassis
+
+16. G.45TSM01.029.2 Lakukan Penggantian Rantai Roda (Gunakan Buku Pedoman
+
+Melakukan         Reparasi)
+
+penggantian rantai Penyetelan jarak main bebas rantai roda ............... mm             ................. .................
+                                                                                          ................. .................
+roda              Kondisi Rantai Roda (ganti rantai roda jika diperlukan)                 ................. .................
+                                                                                          ................. .................
+                  Kondisi Gear Sprocket Set (Ganti gear sprocket set jika diperlukan)
+                                                                                          ............... ...............
+                  Pelumas rantai roda menggunakan SAE : .......                           .................. ...............
+
+17 G.45TSM01.030.2 Lakukan Pemeriksaan Keolengan Roda(Gunakan Buku Pedoman
+
+Melakukan         Reparasi)
+
+pemeriksaan       Keolengan Roda Depan mm
+
+keolengan roda    Keolengan Roda Belakang .....................mm
+
+18. G.45TSM01.031.2 Lakukan Perawatan Sistem Pengereman (Gunakan Buku
+
+Melakukan         Pedoman Reparasi)
+
+perawatan sistem Jenis Rem Cakram (Depan dan Belakang)                                    .................. ...............
+
+pengereman                  · Kinerja Rem                                                 .................. ...............
+
+                            [ ] Pakem [ ] Keras [ ] Terlalu Dalam                         .................. ...............
+                                                                                          .................. ...............
+                            · Level Minyak Rem(Cakram): [ ] Lower. [ ] Upper              .................. ...............
+
+                            · Jarak Main Bebas Pedal/Tuas:.............. mm               ................... ...................
+                                                                                          ................... ...................
+                            · Ketebalan Kanvas Rem/Pad set .............. mm
+
+                  Jenis Rem Tromol(Depan dan Belakang)
+
+                            · Jarak Main Bebas Pedal/Tuas:..............mm
+
+                            · Ketebalan Kanvas Rem/Pad set .............. mm
+
+19. G.45TSM01.032.2 Lakukan Pemeriksaan Sistem Kemudi (Gunakan Buku Pedoman
+
+Melakukan         Reparasi)
+perawatan sistem  Periksa Gerak Stang Sistem Kemudi
+kemudi
+                  Periksa Gerak Poros Kemudi
+
+                  Periksa Gerak Poros Sistem Kemudi
+
+20. G.45TSM01.033.2 Lakukan Perawatan Sistem Suspensi (Gunakan Buku Pedoman
+
+Melakukan         Reparasi)
+
+perawatan sistem Depan
+
+suspensi          Periksa inner tube/as shock [ ] Baik [ ] Baret/Bengkok
+
+                  Periksa seal shock.                     [ ] Baik [ ] Bocor/Getas
+
+                  Periksa kinerja suspensi
+
+                  Belakang
+
+                                                5
+                                            Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+                                            Periksa inner tube/as shock [ ] Baik                       [ ] Baret/Bengkok
+                                                                                                       [ ] Bocor/Getas
+                                            Periksa seal shock.        [ ] Baik                        [ ] Pecah/Aus      ................... ...................
+                                                                                                                          ................... ...................
+                                            Peiksa Bush / Rubber Mount. [ ] Baik                                          ................... ...................
+
+                                            Pelumasan pada area Pro-Link (jika ada)
+
+                                            Cek kekencangan baut Triple Clamp & Anting.
+
+21. G.45TSM01.034.2 Pelepasan Cover Body:                                                                                 ................... ...................
+      Melakukan bongkar Identifikasi Jenis Pengikat baut, sekrup, dan plastic clip (rivet)                                ................... ...................
+      pasang cover body Lepas Cover Body Sesuai dengan SOP (Sesuai dengan kebutuhan)
+
+                               Pemasangan Cover Body:
+                               Bersihkan Jalur Pengait dan Pengikat Identifikasi Jenis Pengikat baut,
+                               sekrup, dan plastic clip (rivet)
+                               Pasang Cover Body Sesuai dengan SOP (Pastikan sambungan antar
+                               bodi rapat dan tidak ada bagian yang goyang)
+
+22. G.45TSM01.043.2 Lakukan Pemeriksaan Chassis (Gunakan Buku Pedoman Reparasi)
+
+Melakukan                                   - Lakukan inspeksi visual menyeluruh pada rangka (frame) utama. ................... ...................
+Pemeriksaan                                    Periksa adanya retak, bengkok, bekas las yang tidak standar, atau
+Chassis
+
+                                            korosi parah.
+
+                                            - Periksa semua dudukan mesin (engine mounting) dan baut                      ................... ...................
+
+                                            pengikatnya. Pastikan terpasang kencang dan tidak ada keretakan
+
+                                            di sekitar area tersebut.
+
+                                            - Periksa fungsi dan kondisi standar samping dan standar tengah. ................... ...................
+
+                                            Pastikan pegas pengembali bekerja dengan baik.
+
+                                            - Periksa kondisi rantai dan sprocket (sistem penggerak akhir).               ................... ...................
+
+Catatan Hasil Pemeriksaan :
+
+Nama Asesi :                                               Ttd & Tanggal :
+                                                           ..........................................
+..........................................                 Ttd & Tanggal :
+Nama Asesor :                                              ..........................................
+
+..........................................                              6
+

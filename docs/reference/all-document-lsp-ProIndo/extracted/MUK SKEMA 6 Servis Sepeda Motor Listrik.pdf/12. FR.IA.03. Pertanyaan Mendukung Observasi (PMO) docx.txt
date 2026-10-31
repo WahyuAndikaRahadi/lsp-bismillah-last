@@ -1,0 +1,198 @@
+                            Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                       LSP-PrO Indo
+
+FR.IA.03. PMO - PERTANYAAN MENDUKUNG OBSERVASI
+
+  Skema Sertifikasi         Judul  : Servis Sepeda Motor Listrik
+  (KKNI/Okupasi/Klaster)    Nomor  : 06/LSP PrO Indo/I/2026
+                                   : Sewaktu/Tempat Kerja/Mandiri*
+  TUK                              :
+  Nama Asesor                      :
+  Nama Asesi                       :
+  Tanggal
+*Coret yang tidak perlu
+
+PANDUAN BAGI ASESOR
+
+· Formulir ini di isi oleh asesor kompetensi dapat sebelum, pada saat atau setelah melakukan
+    asesmen dengan metode observasi demonstrasi.
+
+· Pertanyaan dibuat dengan tujuan untuk menggali, dapat berisi pertanyaan yang berkaitan
+    dengan dimensi kompetensi, batasan variabel dan aspek kritis yang relevan dengan skenario
+    tugas dan praktik demonstrasi.
+
+· Jika pertanyaan disampaikan sebelum asesi melakukan praktik demonstrasi, maka
+    pertanyaan dibuat berkaitan dengan aspek K3L, SOP, penggunaan peralatan dan
+    perlengkapan.
+
+· Jika setelah asesi melakukan praktik demonstrasi terdapat item pertanyaan pendukung
+    observasi telah terpenuhi, maka pertanyaan tersebut tidak perlu ditanyakan lagi dan cukup
+    memberi catatan bahwa sudah terpenuhi pada saat tugas praktek demonstrasi pada kolom
+    tanggapan
+
+· Jika pada saat observasi ada hal yang perlu dikonfirmasi sedangkan di instrumen daftar
+    pertanyaan pendukung observasi tidak ada, maka asesor dapat memberikan pertanyaan
+    dengan syarat pertanyaan harus berkaitan dengan tugas praktek demonstrasi. Jika dilakukan,
+    asesor harus mencatat dalam instrumen pertanyaan pendukung observasi.
+
+· Tanggapan asesi ditulis pada kolom tanggapan.
+
+                       No.  Kode Unit             Judul Unit
+    Kelompok
+
+    Pekerjaan 1
+
+    Persiapan    1.         C.29SEV01.005.1    Membaca Electrical Wiring Diagram (EWD) dan Repair
+      servis                                   Manual untuk Electrified Vehicles
+
+                                                                           Pencapaian
+
+                                   Pertanyaan                              Ya        Tdk
+
+1.  Apa tujuan utama dari Electrical Wiring Diagram (EWD) dalam perbaikan
+
+    kendaraan listrik?
+
+Tanggapan:                                                                           
+
+                                               1
+                               Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                          LSP-PrO Indo
+
+                           No.    Kode                                Judul Unit
+
+    Kelompok Pekerjaan 2          Unit
+         Memastikan
+                               1  C.27BAT00.005.1  Melaksanakan Pengujian Spesifikasi Teknis Pak
+       proses pengujian,                           Baterai
+       komisioning, dan
+       pemasangan Pak          2  C.27BAT00.006.1  Melaksanakan Komisioning Pak Baterai pada
+    Baterai sesuai dengan                          Sistem
+
+            Standar
+
+                                  Pertanyaan                                        Pencapaian
+                                                                                    Ya Tidak
+
+1.  Jika hasil pengujian tegangan sel individual dalam paket baterai menunjukkan
+
+    ketidakseimbangan yang signifikan (misalnya, satu sel 3.0V sementara yang
+
+    lain 4.1V), tindakan perbaikan apa yang mungkin direkomendasikan dalam
+
+    repair manual?
+
+Tanggapan:                                                                              
+
+2.  Saat melakukan komisioning di lingkungan bengkel, area kerja harus
+
+    memenuhi standar keselamatan tertentu. Apa standar keselamatan yang
+
+    paling relevan untuk pekerjaan baterai tegangan tinggi?
+
+Tanggapan:                                                                              
+
+              Kelompok     No.    Kode Unit                  Judul Unit
+          Pekerjaan 3
+     Memastikan proses                             Melaksanakan Monitoring Kondisi
+       monitoring, dan
+      penyimpanan, Pak     1.     C.27BAT00.007.1 Mekanik,Elektrik, dan Indikator Pak Baterai agar
+    Baterai sesuai dengan
+                                                   Berfungsi Optimal
+             standar
+
+                                  Pertanyaan                                        Pencapaian
+                                                                                    Ya Tidak
+
+1.  Apa risiko utama jika mengabaikan monitoring kondisi mekanik pada sistem
+
+    pengereman motor listrik ?
+
+Tanggapan:                                                                                    
+
+                                              2
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                     LSP-PrO Indo
+
+                    No.   Kode Unit                             Judul Unit
+
+     Kelompok       1.    G45TSM01.040.2  Melakukan perawatan instrumen kelistrikan
+    Pekerjaan 4                           (sistem sinyal dan penerangan)
+
+     Electrical
+
+                          Pertanyaan                                          Pencapaian
+                                                                              Ya Tidak
+
+1.  Apa yang harus dilakukan jika lampu sein tidak berfungsi ?
+
+Tanggapan:                                                                         
+
+                    No.   Kode Unit                             Judul Unit
+
+                    1. G.45TSM01.021.2 Melakukan perawatan free play throttle gas
+
+     Kelompok       2. G45TSM01.031.2 Melakukan perawatan sistem pengereman
+Pekerjaan 5 Chasis
+
+                    3. G45TSM01.032.2 Melakukan perawatan sistem kemudi
+
+                    4. G45TSM01.033.2 Melakukan perawatan sistem suspensi
+
+                    5.    G45TSM01.034.2 Melakukan bongkar pasang cover body
+
+                                                                              Pencapaian
+
+                          Pertanyaan                                          Ya   Tdk
+
+1.  pengerjaan apa saja yang dilakukan saat perawatan kabel dan handel gas ?
+
+Tanggapan:                                                                         
+
+2.  Jarak main bebas penyetelan pedal rem belakang adalah ?
+
+Tanggapan:                                                                         
+
+3.  Jika stang sepeda motor terasa oblak atau goyang saat direm, kemungkinan       
+
+    penyebabnya adalah ?
+
+Tanggapan:
+
+                                      3
+                          Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia
+                                                     LSP-PrO Indo
+
+4.        Salah satu ciri-ciri kerusakan pada shock absorber adalah ?              
+
+Tanggapan:
+
+5.        Perawatan rutin apa yang paling krusial untuk menjaga kinerja Chassis
+
+          (rangka) sepeda motor tetap optimal dan aman ?
+
+Tanggapan:                                                                         
+
+Umpan balik untuk asesi:
+
+Asesi :
+
+Nama        :
+
+Tanda tangan/ :
+Tanggal
+
+Asesor :
+
+Nama        :
+
+No. Reg     :
+
+Tanda tangan/ :
+Tanggal
+
+Diadaptasi dari template yang disediakan di Departemen Pendidikan dan Pelatihan, Australia.Merancang
+instrumen asesmen untuk hasil yang berkualitas di VET, 2008 di VET, 2008
+
+                          4
+

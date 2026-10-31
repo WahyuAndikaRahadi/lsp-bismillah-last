@@ -10,54 +10,37 @@ class AssessmentAppeal extends Model
 {
     use HasFactory;
 
+    protected $table = 't_assessment_appeals';
+
     protected $fillable = [
-        'nomor_banding',
-        'application_id',
-        'asesi_id',
-        'alasan_banding',
-        'bukti_pendukung',
+        'assessment_id',
+        'appeal_date',
+        'appeal_reasons',
+        'contested_units',
         'status',
-        'keputusan_komite',
-        'komite_id',
-        'tgl_keputusan',
+        'decision_notes',
+        'decision_date',
+        'decided_by',
+        'appeals_committee_chair',
+        'assessor_notes',
     ];
 
     protected function casts(): array
     {
         return [
-            'tgl_keputusan' => 'datetime',
+            'appeal_date' => 'date',
+            'decision_date' => 'date',
+            'contested_units' => 'array',
         ];
     }
 
-    public function application(): BelongsTo
+    public function assessment(): BelongsTo
     {
-        return $this->belongsTo(AssessmentApplication::class, 'application_id');
+        return $this->belongsTo(Assessment::class);
     }
 
-    public function asesi(): BelongsTo
+    public function decider(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'asesi_id');
-    }
-
-    public function komite(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'komite_id');
-    }
-
-    public static function generateNomorBanding(): string
-    {
-        $year = date('Y');
-        $prefix = "BDG-{$year}-";
-        $last = self::where('nomor_banding', 'LIKE', "{$prefix}%")
-            ->orderByDesc('id')
-            ->first();
-
-        $seq = 1;
-        if ($last) {
-            $parts = explode('-', $last->nomor_banding);
-            $seq = intval(end($parts)) + 1;
-        }
-
-        return $prefix . str_pad((string)$seq, 4, '0', STR_PAD_LEFT);
+        return $this->belongsTo(User::class, 'decided_by');
     }
 }

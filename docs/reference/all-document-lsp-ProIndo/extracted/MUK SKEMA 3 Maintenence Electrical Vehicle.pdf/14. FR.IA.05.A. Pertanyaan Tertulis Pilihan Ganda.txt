@@ -1,0 +1,238 @@
+                            Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+FR.IA.05A. DPT - PERTANYAAN TERTULIS PILIHAN GANDA
+
+Skema Sertifikasi           Judul  : Periodical Maintenance Electrified Vehicles (Perawatan Berkala
+(KKNI/Okupasi/Klaster)      Nomor      Mobil Listrik)
+
+TUK                                : 03/LSP PrO Indo/I/2026
+Nama Asesor                        : Sewaktu/Tempat Kerja/Mandiri*
+Nama Asesi                         :
+Tanggal
+Waktu                              :
+
+   *Coret yang tidak perlu         :
+
+                                   :
+
+Jawab semua pertanyaan berikut:
+  1. Dalam komunikasi di tempat kerja, apa yang harus dilakukan teknisi jika menerima instruksi kerja
+  yang kurang jelas dari supervisor?
+     A. Melakukan konfirmasi kembali (feedback) untuk memperjelas instruksi
+
+B. Menunggu teman kerja lain mengerjakan terlebih dahulu
+
+C. Langsung mengerjakan sesuai perkiraan
+
+   D. Mengabaikan instruksi tersebut
+2. Apa tujuan utama dari kegiatan 'Rawat' dalam prinsip 5R di bengkel EV?
+
+   A. Membersihkan tempat kerja dari debu
+
+B. Mempertahankan standar ringkas, rapi, dan resik secara konsisten
+
+C. Membuang barang yang tidak perlu
+
+D. Menyusun alat berdasarkan ukuran
+
+3. Pada gambar teknik, garis putus-putus pendek biasanya digunakan untuk menunjukkan...
+   A. Batas pemotongan
+   B. Garis ukuran
+   C. Garis sumbu
+   D. Bagian benda yang tidak tampak/tersembunyi
+
+                                          1
+                                      Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+ 4. Alat ukur presisi yang paling tepat untuk mengukur diameter luar poros motor listrik dengan
+ ketelitian 0,01 mm adalah...
+
+    A. Mistar baja
+    B. Dial gauge
+    C. Micrometer luar
+    D. Feeler gauge
+5. Alat untuk menyangga kendaraan setelah diangkat dongkrak adalah...
+    A. Two-post lift
+    B. Creeper
+    C. Jack stand
+    D. Floor jack
+ 6. Warna kabel yang menandakan sirkuit tegangan tinggi (HV) pada EV adalah...
+      A. Biru
+      B. Kuning
+      C. Merah
+      D. Oranye
+ 7. Sebelum melepas Service Plug, tindakan wajib yang dilakukan adalah...
+
+      A. Mematikan sistem (Power OFF) dan mencabut kunci kontak/keyless
+      B. Melepas roda kendaraan
+      C. Mengisi daya baterai hingga penuh
+      D. Membuka semua jendela mobil
+ 8. Apa tujuan menunggu 'discharge time' setelah Service Plug dilepas?
+      A. Membiarkan kapasitor inverter membuang sisa muatan listrik
+      B. Membiarkan sistem pendingin baterai mati
+      C. Menunggu perintah dari supervisor
+      D. Mendinginkan suhu motor listrik
+
+                                                                  2
+                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+9. Simbol garis tiga horizontal bertingkat pada EWD menunjukkan...
+   A. Sekring (Fuse)
+   B. Sambungan massa/ground ke bodi kendaraan
+   C. Sakelar utama
+   D. Sambungan ke terminal positif baterai
+
+10. Apa yang dimaksud dengan 'Zero Point Calibration'?
+   A. Menghapus semua data diagnosa
+   B. Mematikan alat ukur
+   C. Mengisi baterai hingga 0%
+   D. Menyetel alat ukur pada posisi nol agar pengukuran akurat
+
+11. Indikator 'Ready' di dashboard menandakan bahwa...
+    A. Kendaraan siap untuk dijalankan (sirkuit HV aktif)
+    B. Kabel charger masih terhubung
+    C. Pengereman regeneratif sedang bekerja
+    D. Baterai 12V sedang diisi
+
+12. Cairan pendingin baterai EV harus memiliki sifat...
+     A. Konduktivitas rendah (Dielectric)
+     B. Berbahan dasar oli mesin
+     C. Konduktif tinggi
+     D. Sangat kental
+
+13. Mengapa pemeriksaan kampas rem tetap penting pada EV?
+    A. Karena pengereman regeneratif merusak kampas rem
+    B. Karena rem fisik digunakan untuk mengisi daya baterai
+    C. Karena kampas rem EV terbuat dari bahan plastik
+    D. Karena rem fisik tetap bekerja pada pengereman darurat dan kecepatan rendah
+
+14. Gejala ban yang tidak balans biasanya dirasakan berupa...
+    A. Bunyi mendecit saat ngerem
+
+                                                                 3
+                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+    B. Rem terasa blong
+    C. Mobil sulit belok
+    D. Getaran pada setir di kecepatan tertentu
+15. Tenaga bantuan pada sistem EPS dihasilkan oleh...
+   A. Motor listrik
+   B. Pompa oli
+   C. Gaya magnet permanen roda
+   D. Tekanan udara
+16. Komponen yang menyerap kejutan jalan dan menahan ayunan adalah...
+    A. Shock absorber
+    B. Knuckle arm
+    C. Tie rod
+    D. Lower arm
+17. Apa fungsi utama dari Battery Management System (BMS)?
+    A. Menggerakkan roda
+    B. Memantau suhu, tegangan, dan arus tiap sel baterai
+    C. Mendinginkan kabin mobil
+    D. Mengubah arus AC menjadi DC untuk motor
+18. Mengapa oli kompresor AC EV harus bertipe khusus (POE)?
+    A. Warnanya lebih jernih
+    B. Tidak bisa membeku
+    C. Harganya lebih murah
+    D. Memiliki sifat isolasi listrik yang baik
+19. Alat untuk mengecek kebocoran arus tegangan tinggi ke bodi adalah...
+    A. Insulation Tester (Megger)
+    B. Tire gauge
+    C. Multimeter biasa
+
+                                                                 4
+                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+    D. Hydrometer
+20. Dalam EWD, simbol berbentuk zig-zag menunjukkan...
+
+    A. Baterai
+    B. Resistor
+    C. Lampu
+    D. Kapasitor
+21. Menekan bodi mobil dan melihat pantulannya bertujuan mengecek...
+    A. Kinerja shock absorber
+    B. Sudut camber
+    C. Kekencangan baut roda
+    D. Keausan ban
+22. Penggunaan sarung tangan karet (insulating) harus dipastikan...
+   A. Basah agar dingin
+   B. Berwarna cerah
+   C. Tidak bocor dengan tes udara
+   D. Tipis agar nyaman
+23. Prosedur 'Bleeding' pada sistem rem bertujuan untuk...
+   A. Menambah tekanan minyak rem
+   B. Membuang udara yang terjebak di sirkuit hidrolis
+   C. Mengencangkan baut roda
+   D. Membersihkan karat pada piringan
+
+24. Komponen untuk menyeimbangkan massa velg disebut...
+   A. Rubber patch
+   B. Bearing
+   C. Spacer
+   D. Balance weight (timah)
+
+25. Komponen yang mengubah tegangan DC tinggi ke DC 12V adalah...
+
+                                                                 5
+                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+
+    A. On-Board Charger
+    B. Inverter
+    C. Motor Controller
+    D. DC-DC Converter
+26. Pemeriksaan 'Play' (gerak bebas) setir mengecek keausan pada...
+    A. Steering linkage/joint
+    B. Ban
+    C. Shock absorber
+    D. Pompa rem
+27. Perlengkapan K3 yang DILARANG saat bekerja pada HV baterai adalah...
+    A. Face shield
+    B. Cincin dan jam tangan logam
+    C. Sepatu Safety Non-Konduktif
+    D. Insulated tools
+28. Langkah pembongkaran komponen yang benar dapat dilihat pada...
+    A. Katalog suku cadang
+    B. Repair Manual
+    C. Buku garansi
+    D. EWD
+29. Kebocoran pada sistem AC EV dideteksi dengan alat...
+   A. Multimeter
+   B. Leak detector
+   C. Compression tester
+   D. Vernier caliper
+30. Apa yang dilakukan BMS jika baterai traksi mengalami overheat?
+    A. Membatasi daya output (Power Limitation)
+    B. Mematikan lampu utama
+
+                                                                 6
+                                Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+C. Melepas Service Plug secara otomatis
+D. Meningkatkan tenaga motor
+
+PENYUSUN DAN VALIDATOR  NAMA     NOMOR MET            TANDA
+       STATUS NO                                  TANGAN DAN
+
+                                                    TANGGAL
+
+          1 RIDWAN               000.008265 2025
+
+PENYUSUN                                          12 Januari 2026
+
+          2 RANDI ARDIANSYAH     000.002498 2013
+
+                                                  12 Januari 2026
+
+          1 SAPTONO              000.003672 2016
+
+                                                  12 Januari 2026
+
+VALIDATOR 2 KARYANTO             000.008260 2025
+
+                                                  12 Januari 2026
+
+          3 GUNADI               000.000459 2007
+                                                            12 Januari 2026
+
+                              7
+
