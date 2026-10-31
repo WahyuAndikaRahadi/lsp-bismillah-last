@@ -52,6 +52,11 @@ class CertificationScheme extends Model
         return $this->hasMany(SchemeRequirement::class, 'scheme_id')->orderBy('urutan');
     }
 
+    public function applications(): HasMany
+    {
+        return $this->hasMany(AssessmentApplication::class, 'scheme_id');
+    }
+
     public function asesors(): BelongsToMany
     {
         return $this->belongsToMany(AsesorProfile::class, 'asesor_scheme', 'scheme_id', 'asesor_profile_id')

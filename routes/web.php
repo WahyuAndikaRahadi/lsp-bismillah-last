@@ -122,6 +122,56 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/surveillance', [\App\Http\Controllers\Admin\SurveillanceController::class, 'index'])->name('surveillance.index');
         Route::patch('/surveillance/{surveillance}/verify', [\App\Http\Controllers\Admin\SurveillanceController::class, 'verify'])->name('surveillance.verify');
+
+        // Layanan Banding Asesmen
+        Route::get('/appeals', [\App\Http\Controllers\Admin\AppealController::class, 'index'])->name('appeals.index');
+
+        // Laporan & Ekspor Lengkap Parity Demo
+        Route::prefix('reports')->name('reports.')->group(function () {
+            Route::get('/general', [\App\Http\Controllers\Admin\ReportController::class, 'general'])->name('general');
+            Route::get('/monthly', [\App\Http\Controllers\Admin\ReportController::class, 'monthly'])->name('monthly');
+            Route::get('/annual', [\App\Http\Controllers\Admin\ReportController::class, 'annual'])->name('annual');
+            Route::get('/asesor-performance', [\App\Http\Controllers\Admin\ReportController::class, 'asesorPerformance'])->name('asesor-performance');
+            Route::get('/tuk-performance', [\App\Http\Controllers\Admin\ReportController::class, 'tukPerformance'])->name('tuk-performance');
+            Route::get('/certificates', [\App\Http\Controllers\Admin\ReportController::class, 'certificates'])->name('certificates');
+        });
+
+        // Penjaminan Mutu & Audit Internal
+        Route::prefix('quality')->name('quality.')->group(function () {
+            Route::get('/documents', [\App\Http\Controllers\Admin\QualityController::class, 'documents'])->name('documents.index');
+            Route::post('/documents', [\App\Http\Controllers\Admin\QualityController::class, 'storeDocument'])->name('documents.store');
+            Route::get('/audits', [\App\Http\Controllers\Admin\QualityController::class, 'audits'])->name('audits.index');
+            Route::post('/audits', [\App\Http\Controllers\Admin\QualityController::class, 'storeAudit'])->name('audits.store');
+        });
+
+        // Keuangan, Biaya & Rekening Bank
+        Route::prefix('finance')->name('finance.')->group(function () {
+            Route::get('/bank-accounts', [\App\Http\Controllers\Admin\FinanceController::class, 'bankAccounts'])->name('bank-accounts.index');
+            Route::post('/bank-accounts', [\App\Http\Controllers\Admin\FinanceController::class, 'storeBankAccount'])->name('bank-accounts.store');
+            Route::get('/pricing', [\App\Http\Controllers\Admin\FinanceController::class, 'pricing'])->name('pricing');
+            Route::get('/transactions', [\App\Http\Controllers\Admin\FinanceController::class, 'transactions'])->name('transactions.index');
+            Route::post('/transactions', [\App\Http\Controllers\Admin\FinanceController::class, 'storeTransaction'])->name('transactions.store');
+            Route::get('/balance-sheet', [\App\Http\Controllers\Admin\FinanceController::class, 'balanceSheet'])->name('balance-sheet');
+            Route::get('/income-statement', [\App\Http\Controllers\Admin\FinanceController::class, 'incomeStatement'])->name('income-statement');
+        });
+
+        // Persuratan Resmi LSP
+        Route::get('/letters', [\App\Http\Controllers\Admin\LetterController::class, 'index'])->name('letters.index');
+        Route::post('/letters', [\App\Http\Controllers\Admin\LetterController::class, 'store'])->name('letters.store');
+
+        // Log SMS & Notifikasi Masuk/Keluar
+        Route::prefix('messages')->name('messages.')->group(function () {
+            Route::get('/sent', [\App\Http\Controllers\Admin\MessageController::class, 'sent'])->name('sent');
+            Route::get('/inbox', [\App\Http\Controllers\Admin\MessageController::class, 'inbox'])->name('inbox');
+        });
+
+        // Asesi Submodules
+        Route::prefix('asesi')->name('asesi.')->group(function () {
+            Route::get('/unscheduled', [\App\Http\Controllers\Admin\AsesiSubmoduleController::class, 'unscheduled'])->name('unscheduled');
+            Route::get('/scheduled', [\App\Http\Controllers\Admin\AsesiSubmoduleController::class, 'scheduled'])->name('scheduled');
+            Route::get('/competent', [\App\Http\Controllers\Admin\AsesiSubmoduleController::class, 'competent'])->name('competent');
+            Route::get('/incompetent', [\App\Http\Controllers\Admin\AsesiSubmoduleController::class, 'incompetent'])->name('incompetent');
+        });
     });
 
     // 2. Asesor Kompetensi Area (Lengkap & Terperinci Parity Web Demo)

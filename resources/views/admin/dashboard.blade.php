@@ -1,173 +1,198 @@
 <x-app-layout title="Dashboard Admin LSP">
     <div class="space-y-6">
 
-        <!-- Welcome Banner -->
-        <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-2xl p-6 sm:p-8 text-white shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <!-- Top Header & Status LSP (Restrained, Dignified, Zero AI Slop) -->
+        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-blue-500/30 text-blue-200 border border-blue-400/30 mb-2">
-                    Panel Operasional Admin
-                </span>
-                <h2 class="text-xl sm:text-2xl font-bold tracking-tight">Selamat Datang, {{ auth()->user()->name }}</h2>
-                <p class="text-xs sm:text-sm text-blue-200 mt-1 max-w-xl">
-                    Sistem Sertifikasi Profesi siap dikonfigurasi. Seluruh alur sertifikasi dan data master dikontrol melalui dashboard ini.
+                <div class="flex items-center gap-2 mb-1.5">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
+                        Panel Operasional Admin
+                    </span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        Sistem Beroperasi Normal
+                    </span>
+                </div>
+                <h1 class="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">
+                    Pusat Kendali Operasional LSP
+                </h1>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 max-w-xl">
+                    Kelola seluruh siklus sertifikasi BNSP: master skema, verifikasi APL-01, penugasan asesor, pelaksanaan uji, sidang pleno, hingga penerbitan sertifikat.
                 </p>
             </div>
-            <div class="shrink-0 flex items-center gap-3">
-                <span class="px-3 py-1.5 bg-white/10 rounded-xl text-xs font-medium text-white border border-white/20 backdrop-blur-sm">
-                    Status Sistem: Aktif
-                </span>
-            </div>
-        </div>
 
-        <!-- Metric Stat Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <!-- Card 1 -->
-            <div class="bg-white p-5 rounded-2xl border border-zinc-200 shadow-sm flex items-center justify-between">
-                <div>
-                    <span class="text-xs font-medium text-zinc-500">Total Pengguna</span>
-                    <p class="text-2xl font-bold text-zinc-900 mt-1">{{ $stats['total_users'] }}</p>
-                    <span class="text-[11px] text-zinc-400 mt-1 block">Akun terdaftar</span>
-                </div>
-                <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="bg-white p-5 rounded-2xl border border-zinc-200 shadow-sm flex items-center justify-between">
-                <div>
-                    <span class="text-xs font-medium text-zinc-500">Asesor Terdaftar</span>
-                    <p class="text-2xl font-bold text-zinc-900 mt-1">{{ $stats['total_asesor'] }}</p>
-                    <span class="text-[11px] text-blue-600 font-medium mt-1 block">Memiliki lisensi MET</span>
-                </div>
-                <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white p-5 rounded-2xl border border-zinc-200 shadow-sm flex items-center justify-between">
-                <div>
-                    <span class="text-xs font-medium text-zinc-500">Asesi / Pendaftar</span>
-                    <p class="text-2xl font-bold text-zinc-900 mt-1">{{ $stats['total_asesi'] }}</p>
-                    <span class="text-[11px] text-emerald-600 font-medium mt-1 block">Calon & peserta uji</span>
-                </div>
-                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="bg-white p-5 rounded-2xl border border-zinc-200 shadow-sm flex items-center justify-between">
-                <div>
-                    <span class="text-xs font-medium text-zinc-500">Staf Admin</span>
-                    <p class="text-2xl font-bold text-zinc-900 mt-1">{{ $stats['total_admin'] }}</p>
-                    <span class="text-[11px] text-purple-600 font-medium mt-1 block">Pengelola LSP</span>
-                </div>
-                <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-
-        <!-- Antrean Verifikasi APL-01 (Fase 4 Quick Card) -->
-        <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="space-y-1">
-                <div class="flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full {{ $stats['pending_verifications'] > 0 ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500' }}"></span>
-                    <h3 class="text-sm font-bold text-zinc-900 uppercase tracking-wider">Antrean Verifikasi Berkas APL-01</h3>
-                </div>
-                <p class="text-xs text-zinc-500">
-                    Terdapat <strong class="text-amber-700 font-bold">{{ $stats['pending_verifications'] }} permohonan baru</strong> yang menunggu verifikasi bukti kelengkapan dari total {{ $stats['total_applications'] }} permohonan masuk.
-                </p>
-            </div>
-            <div class="shrink-0 flex items-center gap-3">
-                <a href="{{ route('admin.verifications.index', ['status' => 'diajukan']) }}" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition">
-                    <span>Buka Antrean Verifikasi</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
+            <div class="flex flex-wrap items-center gap-2">
+                <a href="{{ route('admin.verifications.index') }}" class="inline-flex items-center px-3 py-2 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 active:scale-[0.98] transition">
+                    Verifikasi Berkas APL-01
+                </a>
+                <a href="{{ route('admin.schedules.create') }}" class="inline-flex items-center px-3 py-2 rounded-lg text-xs font-medium border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
+                    + Jadwal Uji Baru
                 </a>
             </div>
         </div>
 
-        <!-- Recent Registered Users Table -->
-        <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden">
-            <div class="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
-                <div>
-                    <h3 class="text-sm font-bold text-zinc-900">Pengguna Terakhir Terdaftar</h3>
-                    <p class="text-xs text-zinc-500 mt-0.5">Daftar akun yang baru dibuat dalam sistem.</p>
+        <!-- 8 Core Metric Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
+            <a href="{{ route('admin.verifications.index') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Verifikasi Pending</span>
+                <span class="text-2xl font-bold font-mono text-amber-600 mt-1 block">{{ $stats['pending_verifications'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">Berkas APL-01 masuk &rarr;</span>
+            </a>
+
+            <a href="{{ route('admin.schedules.index') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Jadwal Asesmen</span>
+                <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $stats['total_schedules'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">Jadwal uji aktif &rarr;</span>
+            </a>
+
+            <a href="{{ route('admin.reports.certificates') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Sertifikat Terbit</span>
+                <span class="text-2xl font-bold font-mono text-emerald-700 mt-1 block">{{ $stats['total_certificates'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">No. Sertifikat BNSP &rarr;</span>
+            </a>
+
+            <a href="{{ route('admin.schemes.index') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Skema Sertifikasi</span>
+                <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $stats['total_schemes'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">Klaster / Okupasi / KKNI &rarr;</span>
+            </a>
+
+            <a href="{{ route('admin.asesors.index') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Asesor Terdaftar</span>
+                <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $stats['total_asesor'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">Lisensi MET BNSP &rarr;</span>
+            </a>
+
+            <a href="{{ route('admin.tuks.index') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Lokasi Uji (TUK)</span>
+                <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $stats['total_tuks'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">Mandiri / Sewaktu &rarr;</span>
+            </a>
+
+            <a href="{{ route('admin.asesi.competent') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Asesi Diterima</span>
+                <span class="text-2xl font-bold font-mono text-emerald-700 mt-1 block">{{ $stats['accepted_applications'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">Lulus asesmen &rarr;</span>
+            </a>
+
+            <a href="{{ route('admin.exports.bnsp.index') }}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+                <span class="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider block">Total Pendaftar</span>
+                <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $stats['total_applications'] }}</span>
+                <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600">Data Sisfo BNSP &rarr;</span>
+            </a>
+        </div>
+
+        <!-- 2 Grid Tables (Recent Applications & Upcoming Schedules) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- Permohonan Asesi Terbaru -->
+            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+                <div class="p-4 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold text-zinc-900 dark:text-white">Permohonan Asesi Terbaru</h2>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Asesi yang baru saja mendaftarkan diri secara mandiri</p>
+                    </div>
+                    <a href="{{ route('admin.verifications.index') }}" class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:underline">
+                        Lihat Semua &rarr;
+                    </a>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                            <tr>
+                                <th class="p-3">Nama Asesi</th>
+                                <th class="p-3">Skema</th>
+                                <th class="p-3 text-center">Status</th>
+                                <th class="p-3 text-right">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-zinc-200 dark:divide-zinc-800">
+                            @forelse ($recentApplications as $app)
+                                <tr class="hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40 transition">
+                                    <td class="p-3">
+                                        <strong class="text-zinc-900 dark:text-zinc-100 block">{{ $app->asesi?->user?->name }}</strong>
+                                        <span class="font-mono text-[10px] text-zinc-400">NIK: {{ $app->asesi?->nik }}</span>
+                                    </td>
+                                    <td class="p-3 text-zinc-700 dark:text-zinc-300 truncate max-w-xs">
+                                        {{ $app->scheme?->name }}
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold uppercase
+                                            {{ $app->status->value === 'diterima' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : ($app->status->value === 'diajukan' ? 'bg-amber-50 text-amber-700 border border-amber-200' : 'bg-zinc-100 text-zinc-600') }}">
+                                            {{ $app->status->value }}
+                                        </span>
+                                    </td>
+                                    <td class="p-3 text-right">
+                                        <a href="{{ route('admin.verifications.show', $app) }}" class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition">
+                                            Tinjau
+                                        </a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="4" class="p-6 text-center text-zinc-500">
+                                        Belum ada permohonan asesi terbaru.
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs text-zinc-600">
-                    <thead class="bg-zinc-50 text-zinc-500 uppercase font-semibold border-b border-zinc-200/80">
-                        <tr>
-                            <th class="px-6 py-3">Nama Pengguna</th>
-                            <th class="px-6 py-3">Email & Kontak</th>
-                            <th class="px-6 py-3">NIK</th>
-                            <th class="px-6 py-3">Peran (Role)</th>
-                            <th class="px-6 py-3">Status</th>
-                            <th class="px-6 py-3">Terdaftar</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-zinc-100">
-                        @forelse ($recentUsers as $user)
-                            <tr class="hover:bg-zinc-50/80 transition">
-                                <td class="px-6 py-3.5 font-medium text-zinc-900 flex items-center gap-2.5">
-                                    <div class="w-7 h-7 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-[10px]">
-                                        {{ $user->initials }}
-                                    </div>
-                                    <span>{{ $user->name }}</span>
-                                </td>
-                                <td class="px-6 py-3.5">
-                                    <div>{{ $user->email }}</div>
-                                    <div class="text-[11px] text-zinc-400 font-mono">{{ $user->phone ?? '-' }}</div>
-                                </td>
-                                <td class="px-6 py-3.5 font-mono text-[11px]">
-                                    {{ $user->nik ?? '-' }}
-                                </td>
-                                <td class="px-6 py-3.5">
-                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold {{ $user->role->badgeClasses() }}">
-                                        {{ $user->role->label() }}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-3.5">
-                                    @if ($user->is_active)
-                                        <span class="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                                            Aktif
-                                        </span>
-                                    @else
-                                        <span class="inline-flex items-center gap-1 text-[11px] font-medium text-rose-600">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
-                                            Non-aktif
-                                        </span>
-                                    @endif
-                                </td>
-                                <td class="px-6 py-3.5 text-zinc-400 text-[11px]">
-                                    {{ $user->created_at->format('d M Y H:i') }}
-                                </td>
-                            </tr>
-                        @empty
+            <!-- Jadwal Asesmen Terdekat -->
+            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+                <div class="p-4 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold text-zinc-900 dark:text-white">Jadwal Uji Terdekat</h2>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Sesi uji kompetensi yang akan segera berlangsung</p>
+                    </div>
+                    <a href="{{ route('admin.schedules.index') }}" class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:underline">
+                        Lihat Semua &rarr;
+                    </a>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                             <tr>
-                                <td colspan="6" class="px-6 py-8 text-center text-zinc-400">
-                                    Belum ada pengguna terdaftar.
-                                </td>
+                                <th class="p-3">Kode & Skema</th>
+                                <th class="p-3">TUK</th>
+                                <th class="p-3 text-center">Tanggal</th>
+                                <th class="p-3 text-right">Aksi</th>
                             </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody class="divide-y divide-zinc-200 dark:divide-zinc-800">
+                            @forelse ($recentSchedules as $sched)
+                                <tr class="hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40 transition">
+                                    <td class="p-3">
+                                        <strong class="font-mono text-zinc-900 dark:text-zinc-100 block">{{ $sched->kode_jadwal }}</strong>
+                                        <span class="text-[11px] text-zinc-500 truncate max-w-xs block">{{ $sched->scheme?->name }}</span>
+                                    </td>
+                                    <td class="p-3 text-zinc-700 dark:text-zinc-300">
+                                        {{ $sched->tuk?->name }}
+                                    </td>
+                                    <td class="p-3 text-center font-mono text-zinc-700 dark:text-zinc-300">
+                                        {{ $sched->tgl_asesmen?->translatedFormat('d M Y') }}
+                                    </td>
+                                    <td class="p-3 text-right">
+                                        <a href="{{ route('admin.schedules.show', $sched) }}" class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition">
+                                            Detail
+                                        </a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="4" class="p-6 text-center text-zinc-500">
+                                        Belum ada jadwal uji terdekat.
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
         </div>
 
     </div>
