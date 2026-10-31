@@ -19,7 +19,7 @@ class DashboardController extends Controller
             'total_schemes' => \App\Models\CertificationScheme::count(),
             'total_schedules' => \App\Models\AssessmentSchedule::count(),
             'total_tuks' => \App\Models\Tuk::count(),
-            'total_certificates' => \App\Models\AssessmentApplication::whereNotNull('nomor_sertifikat_bnsp')->count(),
+            'total_certificates' => \App\Models\AssessmentApplication::whereNotNull('no_sertifikat')->count(),
             'total_applications' => \App\Models\AssessmentApplication::count(),
             'pending_verifications' => \App\Models\AssessmentApplication::where('status', \App\Enums\ApplicationStatus::Diajukan)->count(),
             'accepted_applications' => \App\Models\AssessmentApplication::where('status', \App\Enums\ApplicationStatus::Diterima)->count(),

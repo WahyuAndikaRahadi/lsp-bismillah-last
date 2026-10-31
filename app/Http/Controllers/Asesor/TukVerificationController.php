@@ -22,7 +22,7 @@ class TukVerificationController extends Controller
             ->latest('verification_date')
             ->paginate(15);
 
-        $tuks = Tuk::where('is_active', true)->orderBy('name')->get();
+        $tuks = Tuk::where('is_active', true)->orderBy('nama_tuk')->get();
 
         return view('asesor.tuk_verifications.index', [
             'verifications' => $verifications,

@@ -38,13 +38,13 @@
                                     <span class="font-mono text-[11px] text-zinc-500 block">{{ $cert->scheme?->code }}</span>
                                 </td>
                                 <td class="p-3.5 font-mono font-bold text-zinc-900 dark:text-white">
-                                    {{ $cert->nomor_sertifikat_bnsp }}
+                                    {{ $cert->no_sertifikat ?? $cert->nomor_sertifikat_bnsp }}
                                 </td>
                                 <td class="p-3.5 font-mono text-zinc-700 dark:text-zinc-300">
                                     {{ $cert->tgl_terbit_sertifikat?->translatedFormat('d M Y') ?? '-' }}
                                 </td>
                                 <td class="p-3.5 font-mono text-zinc-700 dark:text-zinc-300">
-                                    {{ $cert->tgl_kadaluarsa_sertifikat?->translatedFormat('d M Y') ?? '3 Tahun' }}
+                                    {{ $cert->masa_berlaku_sertifikat?->translatedFormat('d M Y') ?? '3 Tahun' }}
                                 </td>
                                 <td class="p-3.5 text-right">
                                     <a href="{{ route('documents.sertifikat', $cert) }}" target="_blank" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition">

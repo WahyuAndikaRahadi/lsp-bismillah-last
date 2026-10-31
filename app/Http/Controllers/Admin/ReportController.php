@@ -78,7 +78,7 @@ class ReportController extends Controller
     public function certificates(): View
     {
         $certificates = AssessmentApplication::with(['asesi.user', 'scheme'])
-            ->whereNotNull('nomor_sertifikat_bnsp')
+            ->whereNotNull('no_sertifikat')
             ->latest('tgl_terbit_sertifikat')
             ->paginate(20);
 

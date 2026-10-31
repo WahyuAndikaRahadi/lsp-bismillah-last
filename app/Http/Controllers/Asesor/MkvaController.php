@@ -23,8 +23,8 @@ class MkvaController extends Controller
             ->latest('assignment_date')
             ->paginate(15);
 
-        $schemes = CertificationScheme::where('is_active', true)->orderBy('name')->get();
-        $schedules = AssessmentSchedule::latest('assessment_date')->take(20)->get();
+        $schemes = CertificationScheme::where('is_active', true)->orderBy('nama_skema')->get();
+        $schedules = AssessmentSchedule::latest('tgl_asesmen')->take(20)->get();
 
         return view('asesor.mkva.index', [
             'assignments' => $assignments,

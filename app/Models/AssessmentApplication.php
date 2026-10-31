@@ -44,12 +44,19 @@ class AssessmentApplication extends Model
             'admin_verified_at' => 'datetime',
             'tgl_pengajuan' => 'datetime',
             'tgl_ttd_asesi' => 'datetime',
+            'tgl_terbit_sertifikat' => 'date',
+            'masa_berlaku_sertifikat' => 'date',
         ];
     }
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function asesi(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function scheme(): BelongsTo
@@ -82,7 +89,17 @@ class AssessmentApplication extends Model
         return $this->hasOne(Apl02Assessment::class, 'application_id');
     }
 
+    public function apl02Assessment(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Apl02Assessment::class, 'application_id');
+    }
+
     public function ak01(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Ak01Agreement::class, 'application_id');
+    }
+
+    public function ak01Agreement(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Ak01Agreement::class, 'application_id');
     }
@@ -92,9 +109,34 @@ class AssessmentApplication extends Model
         return $this->hasOne(Ak02Assessment::class, 'application_id');
     }
 
+    public function ak02Assessment(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Ak02Assessment::class, 'application_id');
+    }
+
     public function ak03(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Ak03Feedback::class, 'application_id');
+    }
+
+    public function ak03Feedback(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Ak03Feedback::class, 'application_id');
+    }
+
+    public function getNomorSertifikatBnspAttribute(): ?string
+    {
+        return $this->attributes['no_sertifikat'] ?? null;
+    }
+
+    public function setNomorSertifikatBnspAttribute(?string $value): void
+    {
+        $this->attributes['no_sertifikat'] = $value;
+    }
+
+    public function getTglKadaluarsaSertifikatAttribute()
+    {
+        return $this->masa_berlaku_sertifikat;
     }
 
     public function documents(): HasMany

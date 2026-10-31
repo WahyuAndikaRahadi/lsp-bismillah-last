@@ -80,6 +80,16 @@ class User extends Authenticatable
         return $this->hasOne(AsesiProfile::class, 'user_id');
     }
 
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(self::class, 'id');
+    }
+
+    public function getOrganizationAttribute(): ?string
+    {
+        return $this->asesiProfile?->nama_perusahaan;
+    }
+
     public function applications(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(AssessmentApplication::class, 'user_id');

@@ -20,7 +20,7 @@ class ScheduleController extends Controller
             ->when($request->filled('status'), function ($q) use ($request) {
                 $q->where('status', $request->status);
             })
-            ->latest('assessment_date')
+            ->latest('tgl_asesmen')
             ->paginate(15);
 
         return view('asesor.schedules.index', [
@@ -35,7 +35,7 @@ class ScheduleController extends Controller
             'scheme.units.elements.criterias',
             'tuk',
             'event',
-            'asesors.user',
+            'asesors.asesorProfile',
             'applications.asesi.user',
             'applications.documents',
             'applications.apl02Assessment',

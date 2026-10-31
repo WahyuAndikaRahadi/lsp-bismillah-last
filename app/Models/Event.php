@@ -40,4 +40,19 @@ class Event extends Model
     {
         return $this->tgl_mulai->format('d M Y') . ' s.d. ' . $this->tgl_selesai->format('d M Y');
     }
+
+    public function getTitleAttribute(): ?string
+    {
+        return $this->nama_event;
+    }
+
+    public function getNameAttribute(): ?string
+    {
+        return $this->nama_event;
+    }
+
+    public function getCodeAttribute(): ?string
+    {
+        return $this->kode_event;
+    }
 }

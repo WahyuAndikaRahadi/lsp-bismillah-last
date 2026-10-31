@@ -53,6 +53,20 @@ class Ak02Assessment extends Model
 
     public function isKompeten(): bool
     {
-        return $this->rekomendasi_akhir === 'K';
+        return $this->rekomendasi_akhir === 'K' || strtolower($this->rekomendasi_akhir ?? '') === 'kompeten';
+    }
+
+    public function getRecommendationAttribute(): ?string
+    {
+        if (empty($this->rekomendasi_akhir)) {
+            return null;
+        }
+
+        $val = strtolower($this->rekomendasi_akhir);
+        if ($val === 'k' || $val === 'kompeten') {
+            return 'kompeten';
+        }
+
+        return 'belum_kompeten';
     }
 }

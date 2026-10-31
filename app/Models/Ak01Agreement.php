@@ -49,4 +49,14 @@ class Ak01Agreement extends Model
     {
         return !empty($this->ttd_asesi) && !empty($this->ttd_asesor);
     }
+
+    public function getSignedByAsesorAtAttribute()
+    {
+        return $this->tgl_ttd_asesor;
+    }
+
+    public function getIsSignedByAsesorAttribute(): bool
+    {
+        return !empty($this->tgl_ttd_asesor) || (bool) $this->is_asesor_agreed;
+    }
 }

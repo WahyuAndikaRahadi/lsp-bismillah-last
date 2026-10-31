@@ -44,7 +44,7 @@ class AsesiSubmoduleController extends Controller
     {
         $applications = AssessmentApplication::with(['asesi.user', 'scheme'])
             ->where('status', 'diterima')
-            ->whereNotNull('nomor_sertifikat_bnsp')
+            ->whereNotNull('no_sertifikat')
             ->latest()
             ->paginate(15);
 

@@ -22,7 +22,7 @@ class InstrumentReviewController extends Controller
             ->latest('review_date')
             ->paginate(15);
 
-        $schemes = CertificationScheme::where('is_active', true)->orderBy('name')->get();
+        $schemes = CertificationScheme::where('is_active', true)->orderBy('nama_skema')->get();
 
         return view('asesor.instrument_reviews.index', [
             'reviews' => $reviews,
