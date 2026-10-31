@@ -73,6 +73,21 @@ class AssessmentApplication extends Model
         return $this->hasOne(Apl02Assessment::class, 'application_id');
     }
 
+    public function ak01(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Ak01Agreement::class, 'application_id');
+    }
+
+    public function ak02(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Ak02Assessment::class, 'application_id');
+    }
+
+    public function ak03(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Ak03Feedback::class, 'application_id');
+    }
+
     public function documents(): HasMany
     {
         return $this->hasMany(ApplicationDocument::class, 'application_id');

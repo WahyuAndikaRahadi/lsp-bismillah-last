@@ -73,6 +73,11 @@ class AssessmentSchedule extends Model
             ->withTimestamps();
     }
 
+    public function ak05Report(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Ak05Report::class, 'schedule_id');
+    }
+
     public function getEnrolledCountAttribute(): int
     {
         return $this->applications()->where('status', '!=', 'ditolak')->count();

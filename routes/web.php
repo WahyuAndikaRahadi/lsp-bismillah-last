@@ -98,15 +98,22 @@ Route::middleware('auth')->group(function () {
         Route::post('/verifications/documents/{document}', [\App\Http\Controllers\Admin\VerificationController::class, 'verifyDocument'])->name('verifications.verify-document');
     });
 
-    // 2. Asesor Kompetensi Area (Fase 5)
+    // 2. Asesor Kompetensi Area (Fase 5 & 6)
     Route::middleware('role:asesor')->prefix('asesor')->name('asesor.')->group(function () {
         Route::get('/dashboard', [AsesorDashboardController::class, 'index'])->name('dashboard');
         Route::get('/apl-02', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'index'])->name('apl02.index');
         Route::get('/apl-02/{apl02}/review', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'review'])->name('apl02.review');
         Route::put('/apl-02/{apl02}', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'update'])->name('apl02.update');
+
+        // Pelaksanaan Asesmen (Fase 6: AK-01, AK-02, AK-05)
+        Route::post('/applications/{application}/ak-01/sign', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'signAk01'])->name('ak01.sign');
+        Route::get('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'showAk02'])->name('ak02.form');
+        Route::post('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk02'])->name('ak02.store');
+        Route::get('/schedules/{schedule}/ak-05', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'showAk05'])->name('ak05.report');
+        Route::post('/schedules/{schedule}/ak-05', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk05'])->name('ak05.store');
     });
 
-    // 3. Asesi Mandiri Area (Fase 4 & 5)
+    // 3. Asesi Mandiri Area (Fase 4, 5, 6)
     Route::middleware('role:asesi')->prefix('asesi')->name('asesi.')->group(function () {
         Route::get('/dashboard', [AsesiDashboardController::class, 'index'])->name('dashboard');
         Route::resource('/applications', \App\Http\Controllers\Asesi\ApplicationController::class)->except(['destroy']);
@@ -115,6 +122,14 @@ Route::middleware('auth')->group(function () {
         Route::get('/applications/{application}/apl-02/create', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'create'])->name('applications.apl02.create');
         Route::post('/applications/{application}/apl-02', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'store'])->name('applications.apl02.store');
         Route::get('/applications/{application}/apl-02', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'show'])->name('applications.apl02.show');
+
+        // Pelaksanaan Asesmen (Fase 6: AK-01, AK-02, AK-03)
+        Route::get('/applications/{application}/ak-01', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'showAk01'])->name('applications.ak01');
+        Route::post('/applications/{application}/ak-01/sign', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'signAk01'])->name('applications.ak01.sign');
+        Route::get('/applications/{application}/ak-02', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'showAk02'])->name('applications.ak02');
+        Route::post('/applications/{application}/ak-02/sign', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'signAk02'])->name('applications.ak02.sign');
+        Route::get('/applications/{application}/ak-03', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'showAk03'])->name('applications.ak03');
+        Route::post('/applications/{application}/ak-03', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'storeAk03'])->name('applications.ak03.store');
     });
 });
 
