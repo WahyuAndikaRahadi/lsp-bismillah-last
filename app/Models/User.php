@@ -70,6 +70,11 @@ class User extends Authenticatable
         return $this->role === UserRole::Asesi;
     }
 
+    public function asesorProfile(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(AsesorProfile::class, 'user_id');
+    }
+
     public function hasRole(UserRole|string $role): bool
     {
         if ($role instanceof UserRole) {

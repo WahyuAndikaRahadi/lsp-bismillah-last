@@ -56,6 +56,31 @@ Route::middleware('auth')->group(function () {
     // 1. Admin LSP Area
     Route::middleware('role:admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+        // Master Data Engine (Fase 2)
+        Route::get('/lsp-profile', [\App\Http\Controllers\Admin\LspProfileController::class, 'edit'])->name('lsp-profile.edit');
+        Route::put('/lsp-profile', [\App\Http\Controllers\Admin\LspProfileController::class, 'update'])->name('lsp-profile.update');
+
+        Route::resource('/standards', \App\Http\Controllers\Admin\StandardController::class)->except(['create', 'show', 'edit']);
+        Route::resource('/schemes', \App\Http\Controllers\Admin\CertificationSchemeController::class);
+        
+        Route::post('/schemes/{scheme}/requirements', [\App\Http\Controllers\Admin\CertificationSchemeController::class, 'storeRequirement'])->name('schemes.requirements.store');
+        Route::delete('/requirements/{requirement}', [\App\Http\Controllers\Admin\CertificationSchemeController::class, 'destroyRequirement'])->name('schemes.requirements.destroy');
+
+        Route::post('/schemes/{scheme}/units', [\App\Http\Controllers\Admin\CompetencyUnitController::class, 'store'])->name('schemes.units.store');
+        Route::put('/units/{unit}', [\App\Http\Controllers\Admin\CompetencyUnitController::class, 'update'])->name('schemes.units.update');
+        Route::delete('/units/{unit}', [\App\Http\Controllers\Admin\CompetencyUnitController::class, 'destroy'])->name('schemes.units.destroy');
+
+        Route::post('/units/{unit}/elements', [\App\Http\Controllers\Admin\CompetencyUnitController::class, 'storeElement'])->name('schemes.elements.store');
+        Route::delete('/elements/{element}', [\App\Http\Controllers\Admin\CompetencyUnitController::class, 'destroyElement'])->name('schemes.elements.destroy');
+
+        Route::post('/elements/{element}/criterias', [\App\Http\Controllers\Admin\CompetencyUnitController::class, 'storeCriteria'])->name('schemes.criterias.store');
+        Route::delete('/criterias/{criteria}', [\App\Http\Controllers\Admin\CompetencyUnitController::class, 'destroyCriteria'])->name('schemes.criterias.destroy');
+
+        Route::resource('/tuks', \App\Http\Controllers\Admin\TukController::class)->except(['create', 'show', 'edit']);
+        Route::patch('/tuks/{tuk}/toggle-status', [\App\Http\Controllers\Admin\TukController::class, 'toggleStatus'])->name('tuks.toggle-status');
+
+        Route::resource('/asesors', \App\Http\Controllers\Admin\AsesorManagementController::class)->except(['create', 'show', 'edit']);
     });
 
     // 2. Asesor Kompetensi Area

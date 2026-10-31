@@ -55,5 +55,8 @@ class DatabaseSeeder extends Seeder
                 'email_verified_at' => now(),
             ]
         );
+
+        // 4. Seed Master Data (Profil LSP, SKKNI, Skema, Unit, KUK, TUK, Asesor)
+        $this->call(MasterDataSeeder::class);
     }
 }
