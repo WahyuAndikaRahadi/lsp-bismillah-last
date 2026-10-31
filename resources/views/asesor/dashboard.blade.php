@@ -2,7 +2,7 @@
     <div class="space-y-6">
 
         <!-- Welcome Banner (Refined, Zero AI Slop, Dignified) -->
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="bg-white rounded-xl border border-zinc-200 p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
                 <div class="flex items-center gap-2 mb-1.5">
                     <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
@@ -35,25 +35,25 @@
 
         <!-- 4 Key Control Counters -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="{{ route('asesor.schedules.index') }}" class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+            <a href="{{ route('asesor.schedules.index') }}" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
                 <span class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block">Jadwal Uji</span>
                 <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $activeSchedulesCount }}</span>
                 <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600 transition">Jadwal aktif ditugaskan &rarr;</span>
             </a>
 
-            <a href="{{ route('asesor.apl02.index') }}" class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+            <a href="{{ route('asesor.apl02.index') }}" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
                 <span class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block">Verifikasi APL-02</span>
                 <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">Tersedia</span>
                 <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600 transition">Asesmen mandiri & portofolio &rarr;</span>
             </a>
 
-            <a href="{{ route('asesor.tuks.index') }}" class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+            <a href="{{ route('asesor.tuks.index') }}" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
                 <span class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block">Verifikasi TUK</span>
                 <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $tukVerificationsCount }}</span>
                 <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600 transition">Checklist sarana prasarana &rarr;</span>
             </a>
 
-            <a href="{{ route('asesor.instruments.index') }}" class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
+            <a href="{{ route('asesor.instruments.index') }}" class="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 dark:hover:border-zinc-600 transition group">
                 <span class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block">Tinjau Instrumen</span>
                 <span class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1 block">{{ $instrumentReviewsCount }}</span>
                 <span class="text-[11px] text-zinc-400 mt-1 block group-hover:text-zinc-600 transition">Validasi MAPA & bank soal &rarr;</span>
@@ -64,8 +64,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             <!-- Jadwal Asesmen Aktif (2 Cols) -->
-            <div class="lg:col-span-2 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-                <div class="p-4 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+            <div class="lg:col-span-2 bg-white rounded-xl border border-zinc-200 overflow-hidden">
+                <div class="p-4 border-b border-zinc-200 flex items-center justify-between">
                     <div>
                         <h2 class="text-sm font-bold text-zinc-900 dark:text-white">Jadwal Asesmen Anda</h2>
                         <p class="text-[11px] text-zinc-500 mt-0.5">Penugasan asesmen kompetensi yang aktif</p>
@@ -92,7 +92,7 @@
                                     </p>
                                 </div>
                                 <div class="shrink-0 flex items-center gap-2">
-                                    <a href="{{ route('asesor.schedules.show', $sched) }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 active:scale-[0.98] transition">
+                                    <a href="{{ route('asesor.schedules.show', $sched) }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 active:scale-[0.98] transition">
                                         Peserta & Penilaian
                                     </a>
                                 </div>
@@ -113,7 +113,7 @@
             <div class="space-y-6">
 
                 <!-- Ringkasan Profil & Dokumen Pokok -->
-                <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+                <div class="bg-white rounded-xl border border-zinc-200 p-4">
                     <h3 class="text-xs font-bold text-zinc-900 dark:text-white uppercase tracking-wider mb-3">Status Dokumen Asesor</h3>
                     <div class="space-y-2 text-xs">
                         <div class="flex items-center justify-between p-2 rounded bg-zinc-50 dark:bg-zinc-800/50">
@@ -129,7 +129,7 @@
                             <span class="text-zinc-900 dark:text-white font-bold font-mono text-[11px]">{{ $schemesCount }} Skema</span>
                         </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-zinc-800">
+                    <div class="mt-4 pt-3 border-t border-zinc-200">
                         <a href="{{ route('asesor.profile.show') }}" class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:underline flex items-center justify-between">
                             <span>Lengkapi Dokumen Profil</span>
                             <span>&rarr;</span>
@@ -138,7 +138,7 @@
                 </div>
 
                 <!-- Alur Kerja Digital Asesor BNSP -->
-                <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+                <div class="bg-white rounded-xl border border-zinc-200 p-4">
                     <h3 class="text-xs font-bold text-zinc-900 dark:text-white uppercase tracking-wider mb-2">Alur Kerja Digital</h3>
                     <p class="text-[11px] text-zinc-500 mb-3 leading-relaxed">Tahapan baku asesmen BNSP:</p>
                     <ol class="space-y-2 text-[11px] text-zinc-600 dark:text-zinc-300 list-decimal list-inside">

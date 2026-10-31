@@ -82,7 +82,7 @@
             <div class="space-y-6">
                 @foreach ($application->scheme->competencyUnits as $unitIdx => $unit)
                     <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden">
-                        <div class="p-4 bg-zinc-900 text-white flex items-center justify-between">
+                        <div class="p-4 bg-lsp-navy text-white flex items-center justify-between">
                             <div>
                                 <span class="text-[10px] font-bold text-blue-400 uppercase font-mono">Unit {{ $unitIdx + 1 }}: {{ $unit->kode_unit }}</span>
                                 <h3 class="text-xs font-bold">{{ $unit->judul_unit }}</h3>

@@ -115,7 +115,7 @@
 
                                 <div class="shrink-0 flex items-center gap-2">
                                     <!-- Tombol Buka Drawer Quick-View -->
-                                    <button type="button" @click="openDrawer({{ $doc->id }}, '{{ addslashes($doc->nama_dokumen) }}', '{{ $doc->file_url }}', '{{ $doc->file_type }}', '{{ $doc->status_verifikasi->value }}', '{{ addslashes($doc->catatan ?? '') }}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold shadow-xs transition">
+                                    <button type="button" @click="openDrawer({{ $doc->id }}, '{{ addslashes($doc->nama_dokumen) }}', '{{ $doc->file_url }}', '{{ $doc->file_type }}', '{{ $doc->status_verifikasi->value }}', '{{ addslashes($doc->catatan ?? '') }}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-lsp-navy hover:bg-lsp-navy-dark text-white text-xs font-semibold shadow-xs transition">
                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -242,7 +242,7 @@
                 <div class="w-screen max-w-2xl bg-white shadow-2xl flex flex-col">
                     
                     <!-- Drawer Header -->
-                    <div class="px-6 py-4 bg-zinc-900 text-white flex items-center justify-between">
+                    <div class="px-6 py-4 bg-lsp-navy text-white flex items-center justify-between">
                         <div>
                             <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Pratinjau Cepat Dokumen</span>
                             <h3 class="text-sm font-bold truncate max-w-md" x-text="drawerDocName"></h3>

@@ -7,7 +7,7 @@
                 <span>&larr;</span> Kembali ke Daftar Jadwal
             </a>
             <div class="flex items-center gap-2">
-                <a href="{{ route('asesor.ak05.report', $schedule) }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition">
+                <a href="{{ route('asesor.ak05.report', $schedule) }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 transition">
                     Laporan Asesor (FR-AK-05)
                 </a>
                 <a href="{{ route('documents.berita-acara-asesmen', $schedule) }}" target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 transition">
@@ -17,7 +17,7 @@
         </div>
 
         <!-- Schedule Overview Card -->
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6">
+        <div class="bg-white rounded-xl border border-zinc-200 p-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div>
                     <span class="text-[11px] text-zinc-400 uppercase font-semibold">Kode Jadwal</span>
@@ -43,8 +43,8 @@
         </div>
 
         <!-- Participants Table (Cockpit Penilaian Asesor) -->
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
-            <div class="p-4 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+        <div class="bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
+            <div class="p-4 border-b border-zinc-200 flex items-center justify-between">
                 <div>
                     <h2 class="text-sm font-bold text-zinc-900 dark:text-white">Daftar Peserta Uji Kompetensi</h2>
                     <p class="text-[11px] text-zinc-500 mt-0.5">Lakukan verifikasi APL-02, persetujuan AK-01, dan penilaian observasi AK-02 per asesi.</p>
@@ -53,7 +53,7 @@
 
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                         <tr>
                             <th class="p-3.5 w-12 text-center">No</th>
                             <th class="p-3.5">Nama Asesi & NIK</th>
@@ -121,7 +121,7 @@
                                             APL-02
                                         </a>
                                     @endif
-                                    <a href="{{ route('asesor.ak02.form', $app) }}" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 active:scale-[0.98] transition">
+                                    <a href="{{ route('asesor.ak02.form', $app) }}" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 active:scale-[0.98] transition">
                                         Penilaian AK-02
                                     </a>
                                 </td>

@@ -156,6 +156,34 @@ class User extends Authenticatable
         return in_array($currentRole, ['asesi', 'ASESI'], true);
     }
 
+    public function getRoleLabelAttribute(): string
+    {
+        $roleStr = is_object($this->role) ? ($this->role->value ?? '') : (string) $this->role;
+        return match (strtoupper($roleStr)) {
+            'SUPER_ADMIN' => 'Super Admin',
+            'ADMIN_LSP', 'ADMIN' => 'Admin LSP',
+            'KOMITE_TEKNIS' => 'Komite Teknis',
+            'ASESOR' => 'Asesor Kompetensi',
+            'TUK_ADMIN' => 'Admin TUK',
+            'ASESI' => 'Asesi (Peserta)',
+            default => ucfirst(strtolower($roleStr ?: 'Pengguna')),
+        };
+    }
+
+    public function getRoleBadgeClassesAttribute(): string
+    {
+        $roleStr = is_object($this->role) ? ($this->role->value ?? '') : (string) $this->role;
+        return match (strtoupper($roleStr)) {
+            'SUPER_ADMIN' => 'bg-purple-50 text-purple-700 border border-purple-200',
+            'ADMIN_LSP', 'ADMIN' => 'bg-indigo-50 text-indigo-700 border border-indigo-200',
+            'KOMITE_TEKNIS' => 'bg-amber-50 text-amber-700 border border-amber-200',
+            'ASESOR' => 'bg-blue-50 text-blue-700 border border-blue-200',
+            'TUK_ADMIN' => 'bg-cyan-50 text-cyan-700 border border-cyan-200',
+            'ASESI' => 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+            default => 'bg-slate-50 text-slate-700 border border-slate-200',
+        };
+    }
+
     public function asesorProfile(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(AsesorProfile::class, 'user_id');

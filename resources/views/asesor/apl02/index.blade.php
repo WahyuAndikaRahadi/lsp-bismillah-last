@@ -20,14 +20,14 @@
 
         <!-- Assigned Schedules Overview -->
         @if ($schedules->isNotEmpty())
-            <div class="bg-zinc-900 rounded-2xl p-5 text-white space-y-3">
-                <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Jadwal Asesmen yang Ditugaskan Kepada Anda</span>
+            <div class="bg-lsp-navy rounded-xl p-5 text-white space-y-3 shadow-xs">
+                <span class="text-[10px] font-bold text-amber-200 uppercase tracking-wider">Jadwal Asesmen yang Ditugaskan Kepada Anda</span>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                     @foreach ($schedules as $sch)
                         <div class="p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
                             <div class="font-bold text-white">{{ $sch->nama_jadwal }}</div>
-                            <div class="text-[11px] text-zinc-300 mt-0.5">{{ $sch->scheme->nama_skema }}</div>
-                            <div class="text-[11px] text-zinc-400 mt-1">Tgl: {{ $sch->formatted_tanggal }} &bull; {{ $sch->tuk->nama_tuk }}</div>
+                            <div class="text-[11px] text-slate-200 mt-0.5">{{ $sch->scheme->nama_skema }}</div>
+                            <div class="text-[11px] text-slate-300 mt-1">Tgl: {{ $sch->formatted_tanggal }} &bull; {{ $sch->tuk->nama_tuk }}</div>
                         </div>
                     @endforeach
                 </div>

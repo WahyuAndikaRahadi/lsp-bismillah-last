@@ -6,15 +6,15 @@
                 <h1 class="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">Tarif & Biaya Uji Sertifikasi</h1>
                 <p class="text-xs text-zinc-500 mt-1">Daftar tarif resmi per skema sertifikasi kompetensi.</p>
             </div>
-            <a href="{{ route('admin.schemes.index') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-zinc-900 text-white hover:bg-zinc-800 transition">
+            <a href="{{ route('admin.schemes.index') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-lsp-navy text-white hover:bg-zinc-800 transition">
                 Kelola Skema
             </a>
         </div>
 
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+        <div class="bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                         <tr>
                             <th class="p-3.5 w-12 text-center">No</th>
                             <th class="p-3.5">Kode Skema</th>

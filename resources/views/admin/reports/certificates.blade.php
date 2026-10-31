@@ -6,15 +6,15 @@
                 <h1 class="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">Daftar Pemegang Sertifikat BNSP</h1>
                 <p class="text-xs text-zinc-500 mt-1">Daftar asesi yang telah dinyatakan kompeten dan diterbitkan sertifikat kompetensi resmi BNSP.</p>
             </div>
-            <a href="{{ route('admin.exports.bnsp.index') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-zinc-900 text-white hover:bg-zinc-800 transition">
+            <a href="{{ route('admin.exports.bnsp.index') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-lsp-navy text-white hover:bg-zinc-800 transition">
                 Ekspor Sisfo BNSP
             </a>
         </div>
 
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+        <div class="bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                         <tr>
                             <th class="p-3.5 w-12 text-center">No</th>
                             <th class="p-3.5">Nama Asesi & NIK</th>
@@ -47,7 +47,7 @@
                                     {{ $cert->masa_berlaku_sertifikat?->translatedFormat('d M Y') ?? '3 Tahun' }}
                                 </td>
                                 <td class="p-3.5 text-right">
-                                    <a href="{{ route('documents.sertifikat', $cert) }}" target="_blank" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition">
+                                    <a href="{{ route('documents.sertifikat', $cert) }}" target="_blank" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 transition">
                                         Cetak PDF
                                     </a>
                                 </td>
@@ -64,7 +64,7 @@
             </div>
 
             @if ($certificates->hasPages())
-                <div class="p-4 border-t border-zinc-200 dark:border-zinc-800">
+                <div class="p-4 border-t border-zinc-200">
                     {{ $certificates->links() }}
                 </div>
             @endif

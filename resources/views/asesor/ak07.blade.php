@@ -86,22 +86,22 @@
 @section('content')
 <div class="space-y-6 max-w-7xl mx-auto">
     {{-- Header Navigation --}}
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-2 border-b border-slate-200">
         <div>
-            <a href="{{ route('asesor.jadwal.asesi', $jadwal->id) }}" class="text-xs text-brand-600 hover:text-brand-700 font-bold">&larr; Kembali ke Daftar Asesi</a>
-            <h1 class="text-2xl font-black text-slate-900 tracking-tight mt-1">FR.AK.07. CEKLIS PENYESUAIAN YANG WAJAR DAN BERALASAN</h1>
-            <p class="text-xs text-slate-500 font-medium">Lembaga Sertifikasi Profesi Praktisi Otomotif (LSP-PrO Indo)</p>
+            <a href="{{ route('asesor.jadwal.asesi', $jadwal->id) }}" class="text-xs text-lsp-navy hover:text-lsp-navy-dark font-bold inline-flex items-center gap-1">&larr; Kembali ke Daftar Asesi</a>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-lsp-title tracking-tight mt-1 font-heading">FR.AK.07 CEKLIS PENYESUAIAN YANG WAJAR DAN BERALASAN</h1>
+            <p class="text-xs text-lsp-muted font-medium">Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia (LSP PrO Indo)</p>
         </div>
         <div class="flex items-center space-x-2">
-            <a href="{{ route('asesor.schedule.ruang-uji', $jadwal->id) }}" class="inline-flex items-center px-4 py-2 text-xs font-bold text-slate-700 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0_0_rgba(0,0,0,0.9)] hover:bg-slate-50 transition">
+            <a href="{{ route('asesor.schedule.ruang-uji', $jadwal->id) }}" class="inline-flex items-center px-4 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition shadow-xs">
                 Lewati & Langsung ke Ruang Uji &rarr;
             </a>
         </div>
     </div>
 
     {{-- Info Box (Pengisian Opsional) --}}
-    <div class="bg-blue-50 border-2 border-blue-400 rounded-xl p-4 text-xs text-blue-900 shadow-sm flex items-start gap-3">
-        <span class="text-base text-blue-600 font-black">ℹ</span>
+    <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 shadow-xs flex items-start gap-3">
+        <span class="text-base text-blue-600 font-bold">ℹ</span>
         <div>
             <span class="font-bold">Formulir Bersifat Opsional:</span> Pengisian FR.AK07 hanya dilakukan apabila terdapat asesi yang membutuhkan penyesuaian wajar berdasarkan keterbatasan karakteristik atau kondisi khusus. Apabila tidak ada penyesuaian khusus, formulir dapat dibiarkan kosong (default) dan Anda dapat langsung klik tombol <strong>"Simpan FR.AK07 & Lanjut ke Ruang Uji"</strong> atau <strong>"Lewati & Langsung ke Ruang Uji"</strong>.
         </div>
@@ -111,10 +111,10 @@
         @csrf
 
         {{-- Meta Table --}}
-        <div class="bg-white rounded-xl border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.9)] overflow-hidden">
-            <div class="bg-slate-900 text-white px-6 py-3 border-b-2 border-black flex items-center justify-between">
-                <span class="text-xs font-mono font-bold tracking-wider uppercase text-amber-300">Data Asesmen & Identifikasi Jadwal</span>
-                <span class="text-xs text-slate-300">{{ $jadwal->code }}</span>
+        <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+            <div class="bg-lsp-navy text-white px-6 py-3.5 border-b border-slate-200 flex items-center justify-between">
+                <span class="text-xs font-mono font-bold tracking-wider uppercase text-amber-200">Data Asesmen & Identifikasi Jadwal</span>
+                <span class="text-xs text-slate-200">{{ $jadwal->code }}</span>
             </div>
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
@@ -139,7 +139,7 @@
                         @foreach($assessments as $assessment)
                             <label class="flex items-center space-x-2.5 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
                                 <input type="checkbox" name="assessment_ids[]" value="{{ $assessment->id }}"
-                                    class="rounded border-slate-400 text-brand-600 focus:ring-brand-500 w-4 h-4"
+                                    class="rounded border-slate-300 text-lsp-navy focus:ring-lsp-navy w-4 h-4"
                                     {{ (empty(old('assessment_ids')) || in_array($assessment->id, old('assessment_ids', [])) || (string)$selectedAssessmentId === (string)$assessment->id) ? 'checked' : '' }}>
                                 <div class="truncate">
                                     <div class="font-bold text-slate-900 text-xs truncate">{{ $assessment->asesi->full_name }}</div>
@@ -153,8 +153,8 @@
         </div>
 
         {{-- Panduan Bagi Asesor Box --}}
-        <div class="bg-white rounded-xl border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.9)] p-6 space-y-3">
-            <h2 class="text-sm font-black text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-2">
+        <div class="bg-white rounded-xl border border-slate-200 shadow-xs p-6 space-y-3">
+            <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-2">
                 PANDUAN BAGI ASESOR
             </h2>
             <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside leading-relaxed">
@@ -188,21 +188,21 @@
         </div>
 
         {{-- Tabel 8 Karakteristik Asesi Sesuai Dokumen MUK PDF --}}
-        <div class="bg-white rounded-xl border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.9)] overflow-hidden">
-            <div class="bg-slate-900 text-white px-6 py-3 border-b-2 border-black flex items-center justify-between">
-                <h2 class="text-xs font-black uppercase tracking-wider text-amber-300">
+        <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+            <div class="bg-lsp-navy text-white px-6 py-3.5 border-b border-slate-200 flex items-center justify-between">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-amber-200">
                     Mengidentifikasi Persyaratan Modifikasi dan Kontekstualisasi (Karakteristik Asesi)
                 </h2>
-                <span class="text-xs text-slate-300 font-mono">8 Indikator Karakteristik</span>
+                <span class="text-xs text-slate-200 font-mono">8 Indikator Karakteristik</span>
             </div>
 
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs border-collapse">
-                    <thead class="bg-slate-100 border-b-2 border-black text-slate-900 font-black uppercase tracking-wider">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-slate-800 font-bold uppercase tracking-wider">
                         <tr>
-                            <th class="px-4 py-3 w-12 text-center border-r border-slate-300">No</th>
-                            <th class="px-4 py-3 w-2/5 border-r border-slate-300">Mengidentifikasi Persyaratan Modifikasi & Kontekstualisasi</th>
-                            <th class="px-4 py-3 w-36 text-center border-r border-slate-300">Diperlukan Penyesuaian?</th>
+                            <th class="px-4 py-3 w-12 text-center border-r border-slate-200">No</th>
+                            <th class="px-4 py-3 w-2/5 border-r border-slate-200">Mengidentifikasi Persyaratan Modifikasi & Kontekstualisasi</th>
+                            <th class="px-4 py-3 w-36 text-center border-r border-slate-200">Diperlukan Penyesuaian?</th>
                             <th class="px-4 py-3">Keterangan & Bentuk Penyesuaian</th>
                         </tr>
                     </thead>
@@ -232,13 +232,13 @@
                                     <div class="space-y-1.5">
                                         @foreach($def['options'] as $opt)
                                             <label class="flex items-start space-x-2 text-slate-700 cursor-pointer">
-                                                <input type="checkbox" name="items[{{ $idx }}][options][]" value="{{ $opt }}" class="mt-0.5 rounded border-slate-300 text-brand-600 focus:ring-brand-500 w-3.5 h-3.5">
+                                                <input type="checkbox" name="items[{{ $idx }}][options][]" value="{{ $opt }}" class="mt-0.5 rounded border-slate-300 text-lsp-navy focus:ring-lsp-navy w-3.5 h-3.5">
                                                 <span>{{ $opt }}</span>
                                             </label>
                                         @endforeach
                                     </div>
                                     <div class="pt-1">
-                                        <input type="text" name="items[{{ $idx }}][custom_note]" placeholder="Keterangan lain / catatan penyesuaian spesifik..." class="w-full text-xs px-2.5 py-1.5 rounded border border-slate-300 focus:ring-1 focus:ring-brand-500 focus:outline-none bg-white">
+                                        <input type="text" name="items[{{ $idx }}][custom_note]" placeholder="Keterangan lain / catatan penyesuaian spesifik..." class="w-full text-xs px-2.5 py-1.5 rounded border border-slate-300 focus:ring-1 focus:ring-lsp-navy focus:outline-none bg-white">
                                     </div>
                                 </td>
                             </tr>
@@ -249,8 +249,8 @@
         </div>
 
         {{-- Hasil Kesepakatan Asesor dan Asesi --}}
-        <div class="bg-white rounded-xl border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.9)] p-6 space-y-4">
-            <h2 class="text-sm font-black text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-2">
+        <div class="bg-white rounded-xl border border-slate-200 shadow-xs p-6 space-y-4">
+            <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wide border-b border-slate-200 pb-2">
                 HASIL KESEPAKATAN ANTARA ASESOR DAN ASESI
             </h2>
             <p class="text-xs text-slate-600">
@@ -272,32 +272,32 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-2">
                 <div>
                     <label class="block font-semibold text-slate-700 mb-1">1) Acuan Pembanding Asesmen:</label>
-                    <input type="text" name="agreement_benchmark" placeholder="Contoh: SKKNI No. 097/2018..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-brand-500 focus:outline-none bg-slate-50">
+                    <input type="text" name="agreement_benchmark" placeholder="Contoh: SKKNI No. 097/2018..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-lsp-navy focus:outline-none bg-slate-50">
                 </div>
                 <div>
                     <label class="block font-semibold text-slate-700 mb-1">2) Metode Asesmen yang Disepakati:</label>
-                    <input type="text" name="agreement_method" placeholder="Contoh: Observasi Demonstrasi & Wawancara..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-brand-500 focus:outline-none bg-slate-50">
+                    <input type="text" name="agreement_method" placeholder="Contoh: Observasi Demonstrasi & Wawancara..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-lsp-navy focus:outline-none bg-slate-50">
                 </div>
                 <div>
                     <label class="block font-semibold text-slate-700 mb-1">3) Instrumen Asesmen Disepakati:</label>
-                    <input type="text" name="agreement_instrument" placeholder="Contoh: FR.IA.01, FR.IA.02..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-brand-500 focus:outline-none bg-slate-50">
+                    <input type="text" name="agreement_instrument" placeholder="Contoh: FR.IA.01, FR.IA.02..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-lsp-navy focus:outline-none bg-slate-50">
                 </div>
             </div>
 
             <div class="pt-2 text-xs">
                 <label class="block font-semibold text-slate-700 mb-1">4) Catatan Tambahan / Uraian Penyesuaian:</label>
-                <textarea name="agreement_notes" rows="2" placeholder="Catatan kesepakatan penyesuaian khusus (jika ada)..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-brand-500 focus:outline-none bg-slate-50"></textarea>
+                <textarea name="agreement_notes" rows="2" placeholder="Catatan kesepakatan penyesuaian khusus (jika ada)..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:ring-1 focus:ring-lsp-navy focus:outline-none bg-slate-50"></textarea>
             </div>
         </div>
 
         {{-- Form Actions --}}
         <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-            <a href="{{ route('asesor.schedule.ruang-uji', $jadwal->id) }}" class="w-full sm:w-auto text-center px-5 py-2.5 text-xs font-bold text-slate-700 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0_0_rgba(0,0,0,0.9)] hover:bg-slate-50 transition">
+            <a href="{{ route('asesor.schedule.ruang-uji', $jadwal->id) }}" class="w-full sm:w-auto text-center px-5 py-2.5 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition shadow-xs">
                 &larr; Lewati (Tanpa Penyesuaian) ke Ruang Uji
             </a>
             <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
-                <a href="{{ route('asesor.jadwal.asesi', $jadwal->id) }}" class="px-5 py-2.5 text-xs font-bold text-slate-700 bg-white border-2 border-slate-300 rounded-lg hover:bg-slate-50 transition">Kembali ke Daftar Asesi</a>
-                <button type="submit" class="px-6 py-2.5 text-xs font-black uppercase tracking-wider bg-brand-600 hover:bg-brand-700 text-white rounded-lg border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.9)] transition">
+                <a href="{{ route('asesor.jadwal.asesi', $jadwal->id) }}" class="px-5 py-2.5 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition">Kembali ke Daftar Asesi</a>
+                <button type="submit" class="px-6 py-2.5 text-xs font-bold uppercase tracking-wider bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg shadow-xs transition">
                     Simpan FR.AK07 & Lanjut ke Ruang Uji &rarr;
                 </button>
             </div>

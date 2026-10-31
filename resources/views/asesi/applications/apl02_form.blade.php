@@ -72,7 +72,7 @@
             @foreach ($application->scheme->competencyUnits as $unitIdx => $unit)
                 <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden">
                     <!-- Unit Header -->
-                    <div class="p-5 bg-zinc-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="p-5 bg-lsp-navy text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div>
                             <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Unit Kompetensi #{{ $unitIdx + 1 }}</span>
                             <h3 class="text-sm font-bold mt-0.5">{{ $unit->judul_unit }}</h3>

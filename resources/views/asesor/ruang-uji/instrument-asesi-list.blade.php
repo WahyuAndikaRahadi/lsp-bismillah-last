@@ -11,10 +11,10 @@
                 <span class="text-slate-700">{{ $meta['code'] }}</span>
             </div>
             <div class="flex items-center space-x-3 mt-1">
-                <span class="font-mono text-xs font-black px-2.5 py-1 rounded border-2 border-black {{ $meta['badge_color'] }}">
+                <span class="font-mono text-xs font-bold px-2.5 py-1 rounded border border-slate-300 {{ $meta['badge_color'] }}">
                     {{ $meta['code'] }}
                 </span>
-                <h1 class="text-2xl font-black text-slate-900 tracking-tight">{{ $meta['title'] }}</h1>
+                <h1 class="text-xl sm:text-2xl font-extrabold text-lsp-title tracking-tight font-heading">{{ $meta['title'] }}</h1>
             </div>
             <p class="text-xs text-slate-600 mt-1">{{ $meta['desc'] }}</p>
         </div>
@@ -61,7 +61,7 @@
         @else
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
-                    <thead class="bg-slate-100 text-left text-xs font-bold text-slate-700 uppercase tracking-wider border-b-2 border-black">
+                    <thead class="bg-slate-50 text-left text-xs font-bold text-slate-700 uppercase tracking-wider border-b border-slate-200">
                         <tr>
                             <th class="px-6 py-3 w-16 text-center">No</th>
                             <th class="px-6 py-3">Data Peserta Asesi</th>
@@ -70,7 +70,7 @@
                             <th class="px-6 py-3 text-right">Aksi Penilaian</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y-2 divide-slate-200">
+                    <tbody class="divide-y divide-slate-200">
                         @foreach($asesiList as $idx => $item)
                             <tr class="hover:bg-slate-50/80 transition">
                                 <td class="px-6 py-4 text-center font-mono font-bold text-xs text-slate-600">
@@ -78,7 +78,7 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center space-x-3">
-                                        <div class="w-9 h-9 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-xs shrink-0 border border-black">
+                                        <div class="w-9 h-9 rounded-full bg-lsp-navy text-white font-bold flex items-center justify-center text-xs shrink-0 border border-lsp-navy-dark shadow-xs">
                                             {{ strtoupper(substr($item->asesi->full_name, 0, 2)) }}
                                         </div>
                                         <div>
@@ -102,7 +102,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center">
-                                    <span class="px-2.5 py-1 rounded text-xs font-bold border border-slate-300 {{ $item->assessment->apl_status === 'APPROVED' ? 'bg-emerald-50 text-emerald-700 border-emerald-300' : 'bg-slate-100 text-slate-600' }}">
+                                    <span class="px-2.5 py-1 rounded text-xs font-bold border border-slate-200 {{ $item->assessment->apl_status === 'APPROVED' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-600' }}">
                                         {{ str_replace('_', ' ', $item->assessment->apl_status) }}
                                     </span>
                                 </td>
@@ -118,11 +118,11 @@
                                         @endif
                                         @if($meta['code'] === 'IA02')
                                             @if($item->has_evidence)
-                                                <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">
+                                                <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                                                     ✓ Lembar Kertas Ada
                                                 </span>
                                             @else
-                                                <span class="text-[10px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-300">
+                                                <span class="text-[10px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
                                                     Lembar Kertas Belum Diunggah
                                                 </span>
                                             @endif
@@ -132,7 +132,7 @@
                                 <td class="px-6 py-4 text-right">
                                     @if($item->is_my_candidate)
                                         <a href="{{ $item->inspect_url }}"
-                                           class="inline-flex items-center space-x-1.5 px-4 py-2 text-xs font-bold {{ $item->is_completed ? 'bg-slate-900 hover:bg-slate-800 text-white' : 'bg-brand-600 hover:bg-brand-700 text-white' }} rounded-lg shadow-sm transition">
+                                           class="inline-flex items-center space-x-1.5 px-4 py-2 text-xs font-bold {{ $item->is_completed ? 'bg-slate-700 hover:bg-slate-800 text-white' : 'bg-lsp-navy hover:bg-lsp-navy-dark text-white' }} rounded-lg shadow-xs transition">
                                             <span>{{ $item->is_completed ? 'Tinjau / Ubah Penilaian' : 'Periksa Hasil Asesi' }}</span>
                                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>

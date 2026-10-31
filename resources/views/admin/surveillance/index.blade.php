@@ -13,7 +13,7 @@
         <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-4">
             <form method="GET" action="{{ route('admin.surveillance.index') }}" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div class="flex flex-wrap items-center gap-2">
-                    <a href="{{ route('admin.surveillance.index') }}" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition {{ !request('status') ? 'bg-zinc-900 text-white' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200' }}">
+                    <a href="{{ route('admin.surveillance.index') }}" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition {{ !request('status') ? 'bg-lsp-navy text-white' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200' }}">
                         Semua Laporan
                     </a>
                     <a href="{{ route('admin.surveillance.index', ['status' => 'menunggu_verifikasi']) }}" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition {{ request('status') === 'menunggu_verifikasi' ? 'bg-amber-600 text-white' : 'bg-amber-50 text-amber-700 hover:bg-amber-100' }}">

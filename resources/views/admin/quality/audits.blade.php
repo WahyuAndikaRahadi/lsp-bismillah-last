@@ -11,7 +11,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             <!-- Form Tambah Audit (1 Col) -->
-            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 shadow-sm">
+            <div class="bg-white rounded-xl border border-zinc-200 p-5 shadow-sm">
                 <h2 class="text-xs font-bold text-zinc-900 dark:text-white uppercase tracking-wider mb-4">Input Jadwal Audit</h2>
 
                 <form method="POST" action="{{ route('admin.quality.audits.store') }}" class="space-y-4 text-xs">
@@ -42,21 +42,21 @@
                         <textarea name="findings" rows="3" placeholder="Catatan hasil audit..." class="w-full rounded-lg border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 text-xs p-3 focus:ring-zinc-900"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-2.5 px-4 rounded-lg bg-zinc-900 text-white font-semibold text-xs hover:bg-zinc-800 active:scale-[0.98] transition">
+                    <button type="submit" class="w-full py-2.5 px-4 rounded-lg bg-lsp-navy text-white font-semibold text-xs hover:bg-zinc-800 active:scale-[0.98] transition">
                         Simpan Audit Internal
                     </button>
                 </form>
             </div>
 
             <!-- Tabel Jadwal Audit (2 Cols) -->
-            <div class="lg:col-span-2 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
-                <div class="p-4 border-b border-zinc-200 dark:border-zinc-800">
+            <div class="lg:col-span-2 bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
+                <div class="p-4 border-b border-zinc-200">
                     <h2 class="text-sm font-bold text-zinc-900 dark:text-white">Rekaman Audit Mutu Internal</h2>
                 </div>
 
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs">
-                        <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                        <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                             <tr>
                                 <th class="p-3.5 w-12 text-center">No</th>
                                 <th class="p-3.5">Kode Audit</th>
@@ -92,7 +92,7 @@
                 </div>
 
                 @if ($audits->hasPages())
-                    <div class="p-4 border-t border-zinc-200 dark:border-zinc-800">
+                    <div class="p-4 border-t border-zinc-200">
                         {{ $audits->links() }}
                     </div>
                 @endif

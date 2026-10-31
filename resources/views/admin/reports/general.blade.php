@@ -6,36 +6,36 @@
                 <h1 class="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">Laporan Umum Sertifikasi</h1>
                 <p class="text-xs text-zinc-500 mt-1">Rekapitulasi total asesi terdaftar, lulus kompeten, dan performa skema sertifikasi.</p>
             </div>
-            <a href="{{ route('admin.exports.bnsp.index') }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition">
+            <a href="{{ route('admin.exports.bnsp.index') }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 transition">
                 Ekspor Sisfo BNSP
             </a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+            <div class="p-5 rounded-xl bg-white border border-zinc-200">
                 <span class="text-[11px] font-semibold text-zinc-400 uppercase">Total Pendaftar Asesi</span>
                 <p class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1">{{ $totalApplications }}</p>
                 <span class="text-[11px] text-zinc-500 mt-1 block">Permohonan APL-01 masuk</span>
             </div>
-            <div class="p-5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+            <div class="p-5 rounded-xl bg-white border border-zinc-200">
                 <span class="text-[11px] font-semibold text-zinc-400 uppercase">Asesi Kompeten (K)</span>
                 <p class="text-2xl font-bold font-mono text-emerald-700 mt-1">{{ $competentCount }}</p>
                 <span class="text-[11px] text-zinc-500 mt-1 block">Ditetapkan melalui sidang pleno</span>
             </div>
-            <div class="p-5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+            <div class="p-5 rounded-xl bg-white border border-zinc-200">
                 <span class="text-[11px] font-semibold text-zinc-400 uppercase">Jumlah Skema Aktif</span>
                 <p class="text-2xl font-bold font-mono text-zinc-900 dark:text-white mt-1">{{ $schemes->count() }}</p>
                 <span class="text-[11px] text-zinc-500 mt-1 block">Tersedia untuk pendaftaran</span>
             </div>
         </div>
 
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
-            <div class="p-4 border-b border-zinc-200 dark:border-zinc-800">
+        <div class="bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
+            <div class="p-4 border-b border-zinc-200">
                 <h2 class="text-sm font-bold text-zinc-900 dark:text-white">Rekapitulasi Per Skema Sertifikasi</h2>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                         <tr>
                             <th class="p-3.5 w-12 text-center">No</th>
                             <th class="p-3.5">Kode Skema</th>

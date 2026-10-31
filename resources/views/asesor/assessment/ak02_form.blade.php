@@ -61,7 +61,7 @@
 
             <!-- Matriks Penilaian per Unit Kompetensi -->
             <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden">
-                <div class="p-4 bg-zinc-900 text-white flex items-center justify-between">
+                <div class="p-4 bg-lsp-navy text-white flex items-center justify-between">
                     <div>
                         <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Matriks Hasil Asesmen</span>
                         <h3 class="text-xs font-bold mt-0.5">Penilaian Kompetensi per Unit Kemasan</h3>

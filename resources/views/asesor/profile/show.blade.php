@@ -20,7 +20,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             <!-- Card Identitas & Lisensi MET (1 Col) -->
-            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 space-y-6">
+            <div class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6">
                 <div>
                     <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                         LISENSI BNSP AKTIF
@@ -29,7 +29,7 @@
                     <p class="text-xs text-zinc-500 font-mono mt-0.5">{{ $user->email }}</p>
                 </div>
 
-                <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800 space-y-3 text-xs">
+                <div class="pt-4 border-t border-zinc-200 space-y-3 text-xs">
                     <div>
                         <span class="text-[11px] text-zinc-400 block font-semibold uppercase">No. Registrasi Asesor (MET)</span>
                         <span class="font-mono font-bold text-zinc-800 dark:text-zinc-200 text-sm">{{ $asesor->no_met ?? '-' }}</span>
@@ -54,7 +54,7 @@
                 </div>
 
                 <!-- Skema Sertifikasi yang Diampu -->
-                <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                <div class="pt-4 border-t border-zinc-200">
                     <span class="text-[11px] text-zinc-400 block font-semibold uppercase mb-2">Ruang Lingkup Skema Kompetensi</span>
                     <div class="space-y-1.5">
                         @forelse ($asesor->schemes as $scheme)
@@ -70,7 +70,7 @@
             </div>
 
             <!-- Form Edit Profil & Update Kontak (2 Cols) -->
-            <div class="lg:col-span-2 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 shadow-sm">
+            <div class="lg:col-span-2 bg-white rounded-xl border border-zinc-200 p-6 shadow-sm">
                 <h2 class="text-sm font-bold text-zinc-900 dark:text-white mb-1">Perbarui Data Profil Asesor</h2>
                 <p class="text-xs text-zinc-500 mb-6">Pastikan nomor handphone dan NIK sesuai dengan database BNSP untuk keperluan surat tugas & sertifikasi.</p>
 
@@ -105,8 +105,8 @@
                         </div>
                     </div>
 
-                    <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex justify-end">
-                        <button type="submit" class="py-2.5 px-5 rounded-lg bg-zinc-900 text-white font-semibold text-xs hover:bg-zinc-800 active:scale-[0.98] transition">
+                    <div class="pt-4 border-t border-zinc-200 flex justify-end">
+                        <button type="submit" class="py-2.5 px-5 rounded-lg bg-lsp-navy text-white font-semibold text-xs hover:bg-zinc-800 active:scale-[0.98] transition">
                             Simpan Perubahan Profil
                         </button>
                     </div>

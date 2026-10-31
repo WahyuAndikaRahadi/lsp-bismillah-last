@@ -7,16 +7,16 @@
                 <p class="text-xs text-zinc-500 mt-1">{{ $subtitle }}</p>
             </div>
             <div class="flex items-center gap-2">
-                <a href="{{ route('admin.verifications.index') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-zinc-900 text-white hover:bg-zinc-800 transition">
+                <a href="{{ route('admin.verifications.index') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-lsp-navy text-white hover:bg-zinc-800 transition">
                     Verifikasi Dokumen APL-01
                 </a>
             </div>
         </div>
 
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+        <div class="bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                         <tr>
                             <th class="p-3.5 w-12 text-center">No</th>
                             <th class="p-3.5">Nama Asesi & Kontak</th>
@@ -58,7 +58,7 @@
                                     </span>
                                 </td>
                                 <td class="p-3.5 text-right whitespace-nowrap">
-                                    <a href="{{ route('admin.verifications.show', $app) }}" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 active:scale-[0.98] transition">
+                                    <a href="{{ route('admin.verifications.show', $app) }}" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 active:scale-[0.98] transition">
                                         Detail & Dokumen
                                     </a>
                                 </td>
@@ -75,7 +75,7 @@
             </div>
 
             @if ($applications->hasPages())
-                <div class="p-4 border-t border-zinc-200 dark:border-zinc-800">
+                <div class="p-4 border-t border-zinc-200">
                     {{ $applications->links() }}
                 </div>
             @endif

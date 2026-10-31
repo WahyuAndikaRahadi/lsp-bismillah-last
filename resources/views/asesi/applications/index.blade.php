@@ -120,7 +120,7 @@
                                 </a>
                             @endif
 
-                            <a href="{{ route('asesi.applications.show', $app) }}" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold shadow-sm transition">
+                            <a href="{{ route('asesi.applications.show', $app) }}" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-lsp-navy hover:bg-lsp-navy-dark text-white text-xs font-semibold shadow-sm transition">
                                 <span>Lihat Detail FR-APL-01</span>
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

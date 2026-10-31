@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <button type="submit" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl text-xs transition">
+                    <button type="submit" class="px-4 py-2 bg-lsp-navy hover:bg-lsp-navy-dark text-white font-semibold rounded-xl text-xs transition">
                         Terapkan Filter
                     </button>
                     <a href="{{ route('admin.exports.bnsp.index') }}" class="px-3 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-semibold rounded-xl text-xs transition">

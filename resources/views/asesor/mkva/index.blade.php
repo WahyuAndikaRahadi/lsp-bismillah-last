@@ -11,7 +11,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             <!-- Form MKVA Baru (1 Col) -->
-            <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 shadow-sm">
+            <div class="bg-white rounded-xl border border-zinc-200 p-5 shadow-sm">
                 <h2 class="text-xs font-bold text-zinc-900 dark:text-white uppercase tracking-wider mb-4">Input Evaluasi Perangkat Asesmen</h2>
 
                 <form method="POST" action="{{ route('asesor.mkva.store') }}" class="space-y-4 text-xs">
@@ -52,22 +52,22 @@
                         <textarea name="improvement_plan" rows="3" placeholder="Saran pembaruan bank soal atau lembar observasi..." class="w-full rounded-lg border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 text-xs p-3 focus:ring-zinc-900"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-2.5 px-4 rounded-lg bg-zinc-900 text-white font-semibold text-xs hover:bg-zinc-800 active:scale-[0.98] transition">
+                    <button type="submit" class="w-full py-2.5 px-4 rounded-lg bg-lsp-navy text-white font-semibold text-xs hover:bg-zinc-800 active:scale-[0.98] transition">
                         Simpan Laporan MKVA
                     </button>
                 </form>
             </div>
 
             <!-- Daftar Riwayat MKVA (2 Cols) -->
-            <div class="lg:col-span-2 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
-                <div class="p-4 border-b border-zinc-200 dark:border-zinc-800">
+            <div class="lg:col-span-2 bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
+                <div class="p-4 border-b border-zinc-200">
                     <h2 class="text-sm font-bold text-zinc-900 dark:text-white">Riwayat Evaluasi MKVA</h2>
                     <p class="text-[11px] text-zinc-500 mt-0.5">Laporan tinjauan dan pengembangan perangkat asesmen oleh asesor.</p>
                 </div>
 
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs">
-                        <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                        <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                             <tr>
                                 <th class="p-3.5 w-12 text-center">No</th>
                                 <th class="p-3.5">Skema Sertifikasi</th>
@@ -106,7 +106,7 @@
                 </div>
 
                 @if ($assignments->hasPages())
-                    <div class="p-4 border-t border-zinc-200 dark:border-zinc-800">
+                    <div class="p-4 border-t border-zinc-200">
                         {{ $assignments->links() }}
                     </div>
                 @endif

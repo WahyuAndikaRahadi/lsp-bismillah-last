@@ -11,10 +11,10 @@
             </a>
         </div>
 
-        <div class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+        <div class="bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
+                    <thead class="bg-zinc-50 dark:bg-zinc-800/60 border-b border-zinc-200 text-zinc-500 font-semibold uppercase tracking-wider text-[11px]">
                         <tr>
                             <th class="p-3.5 w-12 text-center">No</th>
                             <th class="p-3.5">Waktu Kirim</th>
@@ -61,7 +61,7 @@
             </div>
 
             @if ($messages->hasPages())
-                <div class="p-4 border-t border-zinc-200 dark:border-zinc-800">
+                <div class="p-4 border-t border-zinc-200">
                     {{ $messages->links() }}
                 </div>
             @endif
