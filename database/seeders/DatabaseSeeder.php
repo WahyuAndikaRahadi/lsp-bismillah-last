@@ -61,5 +61,8 @@ class DatabaseSeeder extends Seeder
 
         // 5. Seed Event & Jadwal Asesmen (Fase 3)
         $this->call(EventScheduleSeeder::class);
+
+        // 6. Seed Pendaftaran & Verifikasi APL-01 (Fase 4)
+        $this->call(Apl01ApplicationSeeder::class);
     }
 }

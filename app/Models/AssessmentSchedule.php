@@ -56,6 +56,21 @@ class AssessmentSchedule extends Model
         return $this->belongsTo(Tuk::class, 'tuk_id');
     }
 
+    public function applications(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(AssessmentApplication::class, 'schedule_id');
+    }
+
+    public function getEnrolledCountAttribute(): int
+    {
+        return $this->applications()->where('status', '!=', 'ditolak')->count();
+    }
+
+    public function getSisaKuotaAttribute(): int
+    {
+        return max(0, $this->kuota_peserta - $this->enrolled_count);
+    }
+
     public function getFormattedTanggalAttribute(): string
     {
         if ($this->tgl_selesai && $this->tgl_selesai->ne($this->tgl_asesmen)) {

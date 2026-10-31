@@ -86,6 +86,13 @@ Route::middleware('auth')->group(function () {
         Route::resource('/events', \App\Http\Controllers\Admin\EventController::class);
         Route::resource('/schedules', \App\Http\Controllers\Admin\AssessmentScheduleController::class);
         Route::patch('/schedules/{schedule}/status', [\App\Http\Controllers\Admin\AssessmentScheduleController::class, 'updateStatus'])->name('schedules.update-status');
+
+        // Verifikasi Permohonan & Berkas APL-01 (Fase 4)
+        Route::get('/verifications', [\App\Http\Controllers\Admin\VerificationController::class, 'index'])->name('verifications.index');
+        Route::get('/verifications/{application}', [\App\Http\Controllers\Admin\VerificationController::class, 'show'])->name('verifications.show');
+        Route::post('/verifications/{application}/status', [\App\Http\Controllers\Admin\VerificationController::class, 'updateStatus'])->name('verifications.update-status');
+        Route::post('/verifications/{application}/plot', [\App\Http\Controllers\Admin\VerificationController::class, 'plotSchedule'])->name('verifications.plot-schedule');
+        Route::post('/verifications/documents/{document}', [\App\Http\Controllers\Admin\VerificationController::class, 'verifyDocument'])->name('verifications.verify-document');
     });
 
     // 2. Asesor Kompetensi Area
@@ -93,8 +100,21 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [AsesorDashboardController::class, 'index'])->name('dashboard');
     });
 
-    // 3. Asesi Mandiri Area
+    // 3. Asesi Mandiri Area (Fase 4)
     Route::middleware('role:asesi')->prefix('asesi')->name('asesi.')->group(function () {
         Route::get('/dashboard', [AsesiDashboardController::class, 'index'])->name('dashboard');
+        Route::resource('/applications', \App\Http\Controllers\Asesi\ApplicationController::class)->except(['destroy']);
     });
+});
+
+/*
+|--------------------------------------------------------------------------
+| Wilayah Indonesia API (Cascading Dropdown)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('api/wilayah')->name('api.wilayah.')->group(function () {
+    Route::get('/provinces', [\App\Http\Controllers\Api\WilayahController::class, 'provinces'])->name('provinces');
+    Route::get('/regencies', [\App\Http\Controllers\Api\WilayahController::class, 'regencies'])->name('regencies');
+    Route::get('/districts', [\App\Http\Controllers\Api\WilayahController::class, 'districts'])->name('districts');
+    Route::get('/villages', [\App\Http\Controllers\Api\WilayahController::class, 'villages'])->name('villages');
 });

@@ -16,6 +16,10 @@ class DashboardController extends Controller
             'total_admin' => User::where('role', UserRole::Admin)->count(),
             'total_asesor' => User::where('role', UserRole::Asesor)->count(),
             'total_asesi' => User::where('role', UserRole::Asesi)->count(),
+            'total_applications' => \App\Models\AssessmentApplication::count(),
+            'pending_verifications' => \App\Models\AssessmentApplication::where('status', \App\Enums\ApplicationStatus::Diajukan)->count(),
+            'accepted_applications' => \App\Models\AssessmentApplication::where('status', \App\Enums\ApplicationStatus::Diterima)->count(),
+            'revision_applications' => \App\Models\AssessmentApplication::where('status', \App\Enums\ApplicationStatus::Revisi)->count(),
         ];
 
         $recentUsers = User::latest()->take(5)->get();

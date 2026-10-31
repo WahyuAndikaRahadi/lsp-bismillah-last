@@ -131,9 +131,21 @@
                         <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center justify-between">
                             <span class="text-[11px] text-zinc-400 font-mono">{{ $sch->kode_jadwal }}</span>
                             @if ($sch->status->isRegistrationOpen())
-                                <a href="{{ route('register') }}" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow-xs transition">
-                                    Daftar Uji
-                                </a>
+                                @auth
+                                    @if(auth()->user()->isAsesi())
+                                        <a href="{{ route('asesi.applications.create', ['schedule_id' => $sch->id, 'scheme_id' => $sch->scheme_id]) }}" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow-xs transition">
+                                            Daftar Uji
+                                        </a>
+                                    @else
+                                        <a href="{{ route(auth()->user()->role->dashboardRoute()) }}" class="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs rounded-xl shadow-xs transition">
+                                            Dashboard
+                                        </a>
+                                    @endif
+                                @else
+                                    <a href="{{ route('register') }}" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow-xs transition">
+                                        Daftar Uji
+                                    </a>
+                                @endauth
                             @else
                                 <span class="text-xs text-zinc-400">Segera Dibuka</span>
                             @endif

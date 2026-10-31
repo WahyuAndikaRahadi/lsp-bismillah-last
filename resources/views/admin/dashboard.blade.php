@@ -78,6 +78,27 @@
             </div>
         </div>
 
+        <!-- Antrean Verifikasi APL-01 (Fase 4 Quick Card) -->
+        <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full {{ $stats['pending_verifications'] > 0 ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500' }}"></span>
+                    <h3 class="text-sm font-bold text-zinc-900 uppercase tracking-wider">Antrean Verifikasi Berkas APL-01</h3>
+                </div>
+                <p class="text-xs text-zinc-500">
+                    Terdapat <strong class="text-amber-700 font-bold">{{ $stats['pending_verifications'] }} permohonan baru</strong> yang menunggu verifikasi bukti kelengkapan dari total {{ $stats['total_applications'] }} permohonan masuk.
+                </p>
+            </div>
+            <div class="shrink-0 flex items-center gap-3">
+                <a href="{{ route('admin.verifications.index', ['status' => 'diajukan']) }}" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition">
+                    <span>Buka Antrean Verifikasi</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
         <!-- Recent Registered Users Table -->
         <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden">
             <div class="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">

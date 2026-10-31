@@ -42,6 +42,11 @@ class CertificationScheme extends Model
         return $this->hasMany(CompetencyUnit::class, 'scheme_id')->orderBy('urutan');
     }
 
+    public function competencyUnits(): HasMany
+    {
+        return $this->units();
+    }
+
     public function requirements(): HasMany
     {
         return $this->hasMany(SchemeRequirement::class, 'scheme_id')->orderBy('urutan');

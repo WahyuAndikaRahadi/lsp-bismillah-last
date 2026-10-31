@@ -130,8 +130,24 @@
                         <span>Jadwal Uji Kompetensi</span>
                     </a>
 
-                    <div class="pt-4 px-3 pb-2 text-[10px] font-semibold tracking-wider text-zinc-400 uppercase">Pelaksanaan & Dokumen (Fase 4-7)</div>
-                    <div class="px-3 py-2 text-xs text-zinc-500 italic">Tersedia di Fase 4 s.d. 7</div>
+                    <div class="pt-4 px-3 pb-2 text-[10px] font-semibold tracking-wider text-zinc-400 uppercase">Verifikasi & Pendaftaran (Fase 4)</div>
+                    
+                    <a href="{{ route('admin.verifications.index') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('admin.verifications.*') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Verifikasi APL-01</span>
+                        </div>
+                        @php
+                            $pendingVerificationCount = \App\Models\AssessmentApplication::where('status', \App\Enums\ApplicationStatus::Diajukan)->count();
+                        @endphp
+                        @if ($pendingVerificationCount > 0)
+                            <span class="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-amber-500 text-white">
+                                {{ $pendingVerificationCount }}
+                            </span>
+                        @endif
+                    </a>
                 @endif
 
                 {{-- ASESOR NAVIGATION --}}
@@ -154,7 +170,21 @@
                         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
-                        <span>Status Sertifikasi</span>
+                        <span>Dashboard Asesi</span>
+                    </a>
+
+                    <a href="{{ route('asesi.applications.create') }}" class="flex items-center gap-3 px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesi.applications.create') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <span>Daftar Sertifikasi Baru</span>
+                    </a>
+
+                    <a href="{{ route('asesi.applications.index') }}" class="flex items-center gap-3 px-3 py-2 text-xs font-medium rounded-lg transition {{ request()->routeIs('asesi.applications.index') || request()->routeIs('asesi.applications.show') || request()->routeIs('asesi.applications.edit') ? 'bg-blue-600 text-white' : 'hover:bg-zinc-800 text-zinc-300 hover:text-white' }}">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span>Permohonan Saya (APL-01)</span>
                     </a>
                 @endif
 
