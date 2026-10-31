@@ -19,6 +19,7 @@ class AssessmentApplication extends Model
         'user_id',
         'scheme_id',
         'schedule_id',
+        'asesor_id',
         'tujuan_asesmen',
         'status',
         'catatan_revisi',
@@ -60,6 +61,16 @@ class AssessmentApplication extends Model
     public function admin(): BelongsTo
     {
         return $this->belongsTo(User::class, 'admin_id');
+    }
+
+    public function asesor(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'asesor_id');
+    }
+
+    public function apl02(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Apl02Assessment::class, 'application_id');
     }
 
     public function documents(): HasMany

@@ -82,10 +82,13 @@ Route::middleware('auth')->group(function () {
 
         Route::resource('/asesors', \App\Http\Controllers\Admin\AsesorManagementController::class)->except(['create', 'show', 'edit']);
 
-        // Event & Manajemen Jadwal (Fase 3)
+        // Event & Manajemen Jadwal (Fase 3 & 5)
         Route::resource('/events', \App\Http\Controllers\Admin\EventController::class);
         Route::resource('/schedules', \App\Http\Controllers\Admin\AssessmentScheduleController::class);
         Route::patch('/schedules/{schedule}/status', [\App\Http\Controllers\Admin\AssessmentScheduleController::class, 'updateStatus'])->name('schedules.update-status');
+        Route::post('/schedules/{schedule}/asesors', [\App\Http\Controllers\Admin\AssessmentScheduleController::class, 'assignAsesor'])->name('schedules.asesors.assign');
+        Route::delete('/schedules/{schedule}/asesors/{scheduleAsesor}', [\App\Http\Controllers\Admin\AssessmentScheduleController::class, 'removeAsesor'])->name('schedules.asesors.remove');
+        Route::post('/schedules/{schedule}/plot-asesor', [\App\Http\Controllers\Admin\AssessmentScheduleController::class, 'plotAsesiToAsesor'])->name('schedules.plot-asesor');
 
         // Verifikasi Permohonan & Berkas APL-01 (Fase 4)
         Route::get('/verifications', [\App\Http\Controllers\Admin\VerificationController::class, 'index'])->name('verifications.index');
@@ -95,15 +98,23 @@ Route::middleware('auth')->group(function () {
         Route::post('/verifications/documents/{document}', [\App\Http\Controllers\Admin\VerificationController::class, 'verifyDocument'])->name('verifications.verify-document');
     });
 
-    // 2. Asesor Kompetensi Area
+    // 2. Asesor Kompetensi Area (Fase 5)
     Route::middleware('role:asesor')->prefix('asesor')->name('asesor.')->group(function () {
         Route::get('/dashboard', [AsesorDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/apl-02', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'index'])->name('apl02.index');
+        Route::get('/apl-02/{apl02}/review', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'review'])->name('apl02.review');
+        Route::put('/apl-02/{apl02}', [\App\Http\Controllers\Asesor\Apl02ReviewController::class, 'update'])->name('apl02.update');
     });
 
-    // 3. Asesi Mandiri Area (Fase 4)
+    // 3. Asesi Mandiri Area (Fase 4 & 5)
     Route::middleware('role:asesi')->prefix('asesi')->name('asesi.')->group(function () {
         Route::get('/dashboard', [AsesiDashboardController::class, 'index'])->name('dashboard');
         Route::resource('/applications', \App\Http\Controllers\Asesi\ApplicationController::class)->except(['destroy']);
+
+        // APL-02 Asesmen Mandiri
+        Route::get('/applications/{application}/apl-02/create', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'create'])->name('applications.apl02.create');
+        Route::post('/applications/{application}/apl-02', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'store'])->name('applications.apl02.store');
+        Route::get('/applications/{application}/apl-02', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'show'])->name('applications.apl02.show');
     });
 });
 

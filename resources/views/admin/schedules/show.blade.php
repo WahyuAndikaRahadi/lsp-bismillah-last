@@ -187,31 +187,120 @@
             </div>
         </div>
 
-        <!-- Section Plotting Asesor & Asesi (Placeholder / Ready for Fase 4 & 5) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6">
+        <!-- Section Plotting Asesor & Asesi (Fase 4 & 5 Aktif Penuh) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- 1. Penugasan Asesor Penguji (Surat Tugas) -->
+            <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 space-y-4">
                 <div class="flex items-center justify-between pb-3 border-b border-zinc-100">
                     <div>
-                        <h4 class="text-xs font-bold text-zinc-900 uppercase tracking-wider">Penugasan Asesor Penguji (Fase 5)</h4>
-                        <p class="text-[11px] text-zinc-500 mt-0.5">Plotting asesor penguji dan penerbitan Surat Tugas.</p>
+                        <h4 class="text-xs font-bold text-zinc-900 uppercase tracking-wider">Tim Asesor Penguji (Surat Tugas)</h4>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Asesor yang ditugaskan menguji pada jadwal ini.</p>
                     </div>
-                    <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-100 text-zinc-600">Fase 5</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+                        {{ $schedule->scheduleAsesors->count() }} Asesor
+                    </span>
                 </div>
-                <div class="py-8 text-center text-zinc-400 text-xs">
-                    Plotting Asesor Penguji dan generate Surat Tugas resmi BNSP akan aktif di Fase 5.
+
+                <!-- Form Tambah Asesor -->
+                <form action="{{ route('admin.schedules.asesors.assign', $schedule) }}" method="POST" class="p-3 bg-zinc-50 rounded-xl border border-zinc-200 space-y-3">
+                    @csrf
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div>
+                            <label class="block font-bold text-zinc-700 mb-1">Pilih Asesor</label>
+                            <select name="asesor_id" required class="w-full text-xs rounded-lg border-zinc-300">
+                                <option value="">-- Pilih Asesor --</option>
+                                @foreach ($availableAsesors as $asr)
+                                    <option value="{{ $asr->id }}">
+                                        {{ $asr->name }} (No. MET: {{ $asr->asesorProfile?->no_met ?? '-' }})
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-zinc-700 mb-1">Peran Penugasan</label>
+                            <select name="peran" required class="w-full text-xs rounded-lg border-zinc-300">
+                                <option value="Lead Asesor">Lead Asesor (Ketua)</option>
+                                <option value="Anggota" selected>Anggota Asesor</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2 flex items-end gap-2">
+                            <div class="flex-1">
+                                <label class="block font-bold text-zinc-700 mb-1">No. Surat Tugas (Auto/Manual)</label>
+                                <input type="text" name="no_surat_tugas" placeholder="Kosongkan untuk nomor otomatis" class="w-full text-xs rounded-lg border-zinc-300">
+                            </div>
+                            <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-lg transition shrink-0">
+                                + Tugaskan Asesor
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- List Asesor Ditugaskan -->
+                <div class="space-y-2">
+                    @forelse ($schedule->scheduleAsesors as $sa)
+                        <div class="p-3 bg-white border border-zinc-200 rounded-xl flex items-center justify-between text-xs">
+                            <div>
+                                <div class="font-bold text-zinc-900 flex items-center gap-2">
+                                    <span>{{ $sa->asesor->name }}</span>
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-semibold {{ $sa->peran === 'Lead Asesor' ? 'bg-purple-100 text-purple-800' : 'bg-zinc-100 text-zinc-700' }}">
+                                        {{ $sa->peran }}
+                                    </span>
+                                </div>
+                                <div class="text-[11px] text-zinc-500 mt-0.5">
+                                    No. MET: <span class="font-mono">{{ $sa->asesor->asesorProfile?->no_met ?? '-' }}</span> &bull; 
+                                    Surat Tugas: <span class="font-mono text-zinc-700">{{ $sa->no_surat_tugas }}</span>
+                                </div>
+                            </div>
+                            <form action="{{ route('admin.schedules.asesors.remove', [$schedule, $sa]) }}" method="POST" onsubmit="return confirm('Hapus penugasan asesor ini?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-rose-600 hover:text-rose-700 p-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                </button>
+                            </form>
+                        </div>
+                    @empty
+                        <p class="text-center text-zinc-400 text-xs py-4">Belum ada asesor yang ditugaskan pada jadwal ini.</p>
+                    @endforelse
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6">
+            <!-- 2. Daftar Peserta Terdaftar & Plotting Asesi ke Asesor -->
+            <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 space-y-4">
                 <div class="flex items-center justify-between pb-3 border-b border-zinc-100">
                     <div>
-                        <h4 class="text-xs font-bold text-zinc-900 uppercase tracking-wider">Daftar Asesi Terdaftar (Fase 4)</h4>
-                        <p class="text-[11px] text-zinc-500 mt-0.5">Peserta uji yang terverifikasi berkas APL-01.</p>
+                        <h4 class="text-xs font-bold text-zinc-900 uppercase tracking-wider">Peserta Terdaftar (Plotting Asesor)</h4>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Pasangkan setiap peserta dengan asesor penguji.</p>
                     </div>
-                    <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-100 text-zinc-600">Fase 4</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        {{ $schedule->applications->count() }} Peserta
+                    </span>
                 </div>
-                <div class="py-8 text-center text-zinc-400 text-xs">
-                    Plotting calon asesi yang mendaftar dan verifikasi APL-01 akan aktif di Fase 4.
+
+                <div class="space-y-2">
+                    @forelse ($schedule->applications as $app)
+                        <div class="p-3 bg-zinc-50 border border-zinc-200 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                            <div>
+                                <div class="font-bold text-zinc-900">{{ $app->user->name }}</div>
+                                <div class="text-[11px] text-zinc-500 font-mono">{{ $app->nomor_pendaftaran }} &bull; NIK: {{ $app->user->nik ?? '-' }}</div>
+                            </div>
+
+                            <form action="{{ route('admin.schedules.plot-asesor', $schedule) }}" method="POST" class="flex items-center gap-1.5 shrink-0">
+                                @csrf
+                                <input type="hidden" name="application_id" value="{{ $app->id }}">
+                                <select name="asesor_id" onchange="this.form.submit()" class="text-xs rounded-lg border-zinc-300 py-1">
+                                    <option value="">-- Pilih Asesor Penguji --</option>
+                                    @foreach ($schedule->scheduleAsesors as $sa)
+                                        <option value="{{ $sa->asesor_id }}" {{ $app->asesor_id === $sa->asesor_id ? 'selected' : '' }}>
+                                            {{ $sa->asesor->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </form>
+                        </div>
+                    @empty
+                        <p class="text-center text-zinc-400 text-xs py-4">Belum ada peserta yang di-plot ke jadwal ini.</p>
+                    @endforelse
                 </div>
             </div>
         </div>

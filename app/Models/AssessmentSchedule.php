@@ -61,6 +61,18 @@ class AssessmentSchedule extends Model
         return $this->hasMany(AssessmentApplication::class, 'schedule_id');
     }
 
+    public function scheduleAsesors(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ScheduleAsesor::class, 'schedule_id');
+    }
+
+    public function asesors(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'schedule_asesors', 'schedule_id', 'asesor_id')
+            ->withPivot(['peran', 'no_surat_tugas', 'tgl_surat_tugas'])
+            ->withTimestamps();
+    }
+
     public function getEnrolledCountAttribute(): int
     {
         return $this->applications()->where('status', '!=', 'ditolak')->count();

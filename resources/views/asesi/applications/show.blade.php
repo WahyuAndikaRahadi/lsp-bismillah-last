@@ -21,6 +21,11 @@
                 </div>
             </div>
             <div class="shrink-0 flex items-center gap-2">
+                @if ($application->status === \App\Enums\ApplicationStatus::Diterima)
+                    <a href="{{ route('asesi.applications.apl02.create', $application) }}" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition">
+                        <span>FR-APL-02 (Mandiri)</span>
+                    </a>
+                @endif
                 @if ($application->status->canEdit())
                     <a href="{{ route('asesi.applications.edit', $application) }}" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-semibold shadow-sm transition">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,6 +83,12 @@
                         Jadwal asesmen sedang diproses oleh admin LSP. Anda akan menerima notifikasi segera setelah jadwal ditetapkan.
                     @endif
                 </p>
+                <div class="pl-7 pt-2">
+                    <a href="{{ route('asesi.applications.apl02.create', $application) }}" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition">
+                        <span>Lanjut ke Formulir Asesmen Mandiri (FR-APL-02)</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </a>
+                </div>
             </div>
         @endif
 

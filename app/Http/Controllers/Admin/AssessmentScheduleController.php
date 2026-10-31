@@ -95,9 +95,75 @@ class AssessmentScheduleController extends Controller
             'event',
             'scheme.units',
             'tuk',
+            'scheduleAsesors.asesor.asesorProfile',
+            'applications.user.asesiProfile',
+            'applications.asesor',
         ]);
 
-        return view('admin.schedules.show', compact('schedule'));
+        $availableAsesors = \App\Models\User::where('role', \App\Enums\UserRole::Asesor)
+            ->where('is_active', true)
+            ->with('asesorProfile')
+            ->get();
+
+        return view('admin.schedules.show', compact('schedule', 'availableAsesors'));
+    }
+
+    public function assignAsesor(Request $request, AssessmentSchedule $schedule): RedirectResponse
+    {
+        $request->validate([
+            'asesor_id' => ['required', 'exists:users,id'],
+            'peran' => ['required', 'string', 'in:Lead Asesor,Anggota'],
+            'no_surat_tugas' => ['nullable', 'string', 'max:100'],
+            'tgl_surat_tugas' => ['nullable', 'date'],
+        ]);
+
+        $noSurat = $request->no_surat_tugas ?: \App\Models\ScheduleAsesor::generateNomorSuratTugas();
+
+        \App\Models\ScheduleAsesor::updateOrCreate(
+            [
+                'schedule_id' => $schedule->id,
+                'asesor_id' => $request->asesor_id,
+            ],
+            [
+                'peran' => $request->peran,
+                'no_surat_tugas' => $noSurat,
+                'tgl_surat_tugas' => $request->tgl_surat_tugas ?: now()->toDateString(),
+            ]
+        );
+
+        return back()->with('success', 'Asesor penguji berhasil ditugaskan ke jadwal ini.');
+    }
+
+    public function removeAsesor(AssessmentSchedule $schedule, \App\Models\ScheduleAsesor $scheduleAsesor): RedirectResponse
+    {
+        if ($scheduleAsesor->schedule_id === $schedule->id) {
+            // Unset asesor_id on applications assigned to this asesor
+            \App\Models\AssessmentApplication::where('schedule_id', $schedule->id)
+                ->where('asesor_id', $scheduleAsesor->asesor_id)
+                ->update(['asesor_id' => null]);
+
+            $scheduleAsesor->delete();
+        }
+
+        return back()->with('success', 'Penugasan asesor berhasil dihapus.');
+    }
+
+    public function plotAsesiToAsesor(Request $request, AssessmentSchedule $schedule): RedirectResponse
+    {
+        $request->validate([
+            'application_id' => ['required', 'exists:assessment_applications,id'],
+            'asesor_id' => ['required', 'exists:users,id'],
+        ]);
+
+        $application = \App\Models\AssessmentApplication::where('id', $request->application_id)
+            ->where('schedule_id', $schedule->id)
+            ->firstOrFail();
+
+        $application->update([
+            'asesor_id' => $request->asesor_id,
+        ]);
+
+        return back()->with('success', "Asesi {$application->user->name} berhasil di-plot ke asesor penguji.");
     }
 
     public function edit(AssessmentSchedule $schedule): View
