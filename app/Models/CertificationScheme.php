@@ -39,7 +39,7 @@ class CertificationScheme extends Model
 
     public function units(): HasMany
     {
-        return $this->hasMany(CompetencyUnit::class, 'scheme_id')->orderBy('urutan');
+        return $this->hasMany(LegacyCompetencyUnit::class, 'scheme_id')->orderBy('urutan');
     }
 
     public function competencyUnits(): HasMany

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\AsesorProfile;
 use App\Models\CertificationScheme;
 use App\Models\CompetencyElement;
-use App\Models\CompetencyUnit;
+use App\Models\LegacyCompetencyUnit as CompetencyUnit;
 use App\Models\LspProfile;
 use App\Models\SchemeRequirement;
 use App\Models\Standard;

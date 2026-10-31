@@ -28,7 +28,7 @@ class CompetencyElement extends Model
 
     public function unit(): BelongsTo
     {
-        return $this->belongsTo(CompetencyUnit::class, 'unit_id');
+        return $this->belongsTo(LegacyCompetencyUnit::class, 'unit_id');
     }
 
     public function criterias(): HasMany

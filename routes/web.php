@@ -227,17 +227,49 @@ Route::middleware('auth')->group(function () {
         Route::post('/schedules/{schedule}/ak-05', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk05'])->name('ak05.store');
     });
 
-    // 3. Asesi Mandiri Area (Fase 4, 5, 6)
-    Route::middleware('role:asesi')->prefix('asesi')->name('asesi.')->group(function () {
-        Route::get('/dashboard', [AsesiDashboardController::class, 'index'])->name('dashboard');
-        Route::resource('/applications', \App\Http\Controllers\Asesi\ApplicationController::class)->except(['destroy']);
+    // Secure Document & Evidence Access
+    Route::get('/secure-file/proof/{proof}', [\App\Http\Controllers\SecureFileController::class, 'showProof'])->name('secure-file.proof');
+    Route::get('/secure-file/evidence/{response}', [\App\Http\Controllers\SecureFileController::class, 'showEvidence'])->name('secure-file.evidence');
 
-        // APL-02 Asesmen Mandiri
+    // 3. Asesi Mandiri Area (Fase 4, 5, 6)
+    Route::middleware('role:asesi,ASESI')->prefix('asesi')->name('asesi.')->group(function () {
+        Route::get('/dashboard', [\App\Http\Controllers\Asesi\JadwalController::class, 'dashboard'])->name('dashboard');
+        Route::get('/profile', [\App\Http\Controllers\Asesi\ProfileController::class, 'edit'])->name('profile.edit');
+        Route::post('/profile', [\App\Http\Controllers\Asesi\ProfileController::class, 'update'])->name('profile.update');
+
+        // Jadwal
+        Route::get('/jadwal', [\App\Http\Controllers\Asesi\JadwalController::class, 'index'])->name('jadwal.index');
+        Route::post('/jadwal/join', [\App\Http\Controllers\Asesi\JadwalController::class, 'join'])->middleware('throttle:10,1')->name('jadwal.join');
+
+        // Asesmen & APL
+        Route::get('/assessment/{assessment}/apl', [\App\Http\Controllers\Asesi\AplController::class, 'show'])->name('assessment.apl');
+        Route::post('/assessment/{assessment}/apl', [\App\Http\Controllers\Asesi\AplController::class, 'store'])->name('assessment.apl.store');
+
+        // Ruang Uji (Protected by APL Approval Gate)
+        Route::middleware(['apl.approved'])->prefix('assessment/{assessment}')->name('assessment.')->group(function () {
+            Route::get('/ak01', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'ak01'])->name('ak01');
+            Route::post('/ak01', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'signAk01'])->name('ak01.sign');
+            Route::post('/consent-esign', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'consentEsign'])->name('consent-esign');
+
+            Route::get('/ruang-uji', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'hub'])->name('ruang-uji');
+
+            // FR.IA Instruments
+            Route::get('/instrument/IA05', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'ia05'])->name('instrument.ia05');
+            Route::post('/instrument/IA05', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'submitIa05'])->name('instrument.ia05.submit');
+
+            Route::post('/instrument/{code}/upload-evidence', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'uploadEvidence'])->name('instrument.upload-evidence');
+
+            Route::get('/ak03', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'showAk03'])->name('ak03');
+            Route::post('/ak03', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'submitAk03'])->name('ak03.submit');
+            Route::get('/appeal', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'showAppeal'])->name('appeal');
+            Route::post('/appeal', [\App\Http\Controllers\Asesi\RuangUjiController::class, 'submitAppeal'])->name('appeal.submit');
+        });
+
+        // Backward compatibility routes for legacy application links
+        Route::resource('/applications', \App\Http\Controllers\Asesi\ApplicationController::class)->except(['destroy']);
         Route::get('/applications/{application}/apl-02/create', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'create'])->name('applications.apl02.create');
         Route::post('/applications/{application}/apl-02', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'store'])->name('applications.apl02.store');
         Route::get('/applications/{application}/apl-02', [\App\Http\Controllers\Asesi\Apl02Controller::class, 'show'])->name('applications.apl02.show');
-
-        // Pelaksanaan Asesmen (Fase 6: AK-01, AK-02, AK-03)
         Route::get('/applications/{application}/ak-01', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'showAk01'])->name('applications.ak01');
         Route::post('/applications/{application}/ak-01/sign', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'signAk01'])->name('applications.ak01.sign');
         Route::get('/applications/{application}/ak-02', [\App\Http\Controllers\Asesi\AssessmentExecutionController::class, 'showAk02'])->name('applications.ak02');

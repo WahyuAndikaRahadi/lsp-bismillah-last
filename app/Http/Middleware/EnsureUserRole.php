@@ -33,7 +33,18 @@ class EnsureUserRole
 
         $userRoleValue = $user->role instanceof UserRole ? $user->role->value : (string) $user->role;
 
-        if (! in_array($userRoleValue, $roles, true)) {
+        $hasAccess = false;
+        foreach ($roles as $roleGroup) {
+            foreach (explode(',', $roleGroup) as $r) {
+                $r = trim($r);
+                if ($user->isRole($r) || $userRoleValue === $r) {
+                    $hasAccess = true;
+                    break 2;
+                }
+            }
+        }
+
+        if (! $hasAccess) {
             // Redirect user to their own proper dashboard instead of generic 403 where applicable
             if ($user->isAdmin()) {
                 return redirect()->route('admin.dashboard')->with('error', 'Anda tidak memiliki hak akses ke halaman tersebut.');

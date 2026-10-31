@@ -14,6 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'role' => \App\Http\Middleware\EnsureUserRole::class,
+            'apl.approved' => \App\Http\Middleware\CheckAplApproved::class,
+            'track.step' => \App\Http\Middleware\TrackLastStep::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
