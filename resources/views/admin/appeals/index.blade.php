@@ -5,7 +5,7 @@
     <div class="flex items-center justify-between">
         <div>
             <h1 class="text-2xl font-black text-slate-900 tracking-tight">Pengajuan Banding Asesmen (FR.AK.04)</h1>
-            <p class="text-xs text-slate-500">Kelola dan putuskan sanggahan hasil uji kompetensi dari asesi</p>
+            <p class="text-xs text-slate-500">Layanan Banding Asesmen - Kelola dan putuskan sanggahan hasil uji kompetensi dari asesi</p>
         </div>
     </div>
 

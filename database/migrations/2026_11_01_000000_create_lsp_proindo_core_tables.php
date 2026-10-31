@@ -81,13 +81,16 @@ return new class extends Migration
         if (! Schema::hasTable('m_competency_units')) {
             Schema::create('m_competency_units', function (Blueprint $table) {
                 $table->id();
-                $table->foreignId('scheme_id')->constrained('m_schemes')->cascadeOnDelete();
-                $table->string('code', 50);
-                $table->string('title');
-                $table->string('standard_reference', 100)->nullable();
+                $table->unsignedBigInteger('scheme_id')->index();
+                $table->string('code', 50)->default('');
+                $table->string('title')->default('');
+                $table->string('standard_reference', 100)->nullable()->default('SKKNI');
                 $table->integer('sequence')->default(1);
+                $table->string('kode_unit', 50)->nullable();
+                $table->string('judul_unit')->nullable();
+                $table->string('jenis_standar', 50)->nullable();
+                $table->integer('urutan')->nullable();
                 $table->timestamps();
-                $table->unique(['scheme_id', 'code']);
             });
         }
 

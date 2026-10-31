@@ -45,7 +45,7 @@
                 REGISTRASI PESERTA
             </span>
             <h2 class="font-sans text-2xl md:text-3xl font-extrabold text-lsp-title mb-1">
-                Buat Akun Baru
+                Pendaftaran Calon Asesi
             </h2>
             <p class="text-xs text-lsp-muted mb-6">
                 Isi data di bawah untuk membuat akun peserta asesmen.

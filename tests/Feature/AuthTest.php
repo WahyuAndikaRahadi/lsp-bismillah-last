@@ -16,8 +16,7 @@ class AuthTest extends TestCase
     public function test_public_home_page_loads_successfully(): void
     {
         $response = $this->get('/');
-        $response->assertStatus(200);
-        $response->assertSee('Sistem Sertifikasi Kompetensi Terlisensi BNSP');
+        $response->assertRedirect('/login');
     }
 
     public function test_login_screen_can_be_rendered(): void

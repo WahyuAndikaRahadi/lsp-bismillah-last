@@ -6,7 +6,7 @@
     <div class="bg-gradient-to-r from-lsp-navy to-lsp-navy-dark rounded-xl p-5 sm:p-6 md:p-8 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 border-t-4 border-lsp-red">
         <div>
             <span class="inline-block px-2.5 py-0.5 rounded-full bg-white/10 text-lsp-red border border-lsp-red/30 text-[10px] font-extrabold tracking-wider uppercase mb-2">
-                Panel Administrasi LSP PrO Indo
+                Panel Administrasi LSP PrO Indo - Panel Operasional Admin
             </span>
             <h1 class="font-sans text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">
                 Selamat Datang, {{ auth()->user()->full_name }}!

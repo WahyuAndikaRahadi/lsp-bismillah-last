@@ -49,7 +49,7 @@
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                         Nomor Registrasi Asesor (No. Reg MET)
                     </label>
-                    <input type="text" name="assessor_registration_number" value="{{ old('assessor_registration_number', $user->assessor_registration_number) }}"
+                    <input type="text" name="assessor_registration_number" value="{{ old('assessor_registration_number', $user->assessor_registration_number ?? $user->asesorProfile?->no_met ?? $p->met_number) }}"
                         placeholder="Contoh: MET.000.002498 2013"
                         class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm font-mono focus:ring-2 focus:ring-brand-500 focus:outline-none">
                     @error('assessor_registration_number') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror

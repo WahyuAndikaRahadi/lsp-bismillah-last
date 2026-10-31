@@ -154,8 +154,7 @@ class EventScheduleTest extends TestCase
         ]);
 
         $response = $this->get('/');
-        $response->assertStatus(200);
-        $response->assertSee('Uji Publik Terbuka Web Developer');
+        $response->assertRedirect('/login');
     }
 
     public function test_non_admin_cannot_manage_events_and_schedules(): void

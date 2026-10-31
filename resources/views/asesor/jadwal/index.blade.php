@@ -7,8 +7,16 @@
 <div class="space-y-6">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-black text-slate-900 tracking-tight">Jadwal Penugasan</h1>
-            <p class="text-sm text-slate-500">Daftar jadwal asesmen yang ditugaskan kepada Anda</p>
+            <h1 class="text-2xl font-black text-slate-900 tracking-tight">Jadwal Uji Kompetensi</h1>
+            <p class="text-sm text-slate-500">
+                Asesor: <strong>{{ auth()->user()->full_name }}</strong>
+                @php
+                    $metNo = auth()->user()->assessor_registration_number ?? auth()->user()->asesorProfile?->no_met ?? auth()->user()->profile?->met_number;
+                @endphp
+                @if($metNo)
+                    <span class="ml-2 font-mono text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">{{ $metNo }}</span>
+                @endif
+            </p>
         </div>
     </div>
 

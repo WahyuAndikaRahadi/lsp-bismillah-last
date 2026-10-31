@@ -229,11 +229,12 @@ Route::middleware('auth')->group(function () {
     // 2. Asesor Kompetensi Area
     Route::middleware('role:asesor,ASESOR')->prefix('asesor')->name('asesor.')->group(function () {
         Route::get('/dashboard', function () {
-            return redirect()->route('asesor.jadwal.index');
+            return app(\App\Http\Controllers\Asesor\JadwalController::class)->index();
         })->name('dashboard');
 
         Route::get('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'edit'])->name('profile.edit');
-        Route::post('/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'update'])->name('profile.update');
+        Route::get('/profile/show', [\App\Http\Controllers\Asesor\ProfileController::class, 'edit'])->name('profile.show');
+        Route::match(['post', 'put'], '/profile', [\App\Http\Controllers\Asesor\ProfileController::class, 'update'])->name('profile.update');
 
         Route::get('/jadwal', [\App\Http\Controllers\Asesor\JadwalController::class, 'index'])->name('jadwal.index');
         Route::get('/jadwal/{schedule}/asesi', [\App\Http\Controllers\Asesor\JadwalController::class, 'asesiList'])->name('jadwal.asesi');
@@ -246,7 +247,17 @@ Route::middleware('auth')->group(function () {
 
         // AK01
         Route::get('/schedule/{schedule}/ak01', [\App\Http\Controllers\Asesor\InstrumentController::class, 'ak01Schedule'])->name('schedule.ak01');
-        Route::post('/assessment/{assessment}/ak01/sign', [\App\Http\Controllers\Asesor\InstrumentController::class, 'ak01Sign'])->name('ak01.sign');
+        Route::post('/ak-01-sign/{id}', function (\Illuminate\Http\Request $request, $id) {
+            if ($assessment = \App\Models\Assessment::find($id)) {
+                return app(\App\Http\Controllers\Asesor\InstrumentController::class)->ak01Sign($assessment, $request);
+            }
+            if ($app = \App\Models\AssessmentApplication::find($id)) {
+                return app(\App\Http\Controllers\Asesor\AssessmentExecutionController::class)->signAk01($request, $app);
+            }
+            abort(404);
+        })->name('ak01.sign');
+        Route::post('/assessment/{assessment}/ak01/sign', [\App\Http\Controllers\Asesor\InstrumentController::class, 'ak01Sign']);
+        Route::post('/applications/{application}/ak-01/sign', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'signAk01']);
 
         // AK07 Penyesuaian Wajar (Single & Batch)
         Route::get('/schedule/{schedule}/ak07', [\App\Http\Controllers\Asesor\Ak07Controller::class, 'index'])->name('schedule.ak07');
@@ -272,12 +283,52 @@ Route::middleware('auth')->group(function () {
             ->name('assessment.instrument.store');
 
         // AK02 Rekaman Asesmen
+        Route::get('/ak-02-form/{id}', function ($id) {
+            if ($assessment = \App\Models\Assessment::find($id)) {
+                return app(\App\Http\Controllers\Asesor\FinalizationController::class)->showAk02($assessment);
+            }
+            if ($app = \App\Models\AssessmentApplication::find($id)) {
+                return app(\App\Http\Controllers\Asesor\AssessmentExecutionController::class)->showAk02($app);
+            }
+            abort(404);
+        })->name('ak02.form');
+        Route::post('/ak-02-store/{id}', function (\Illuminate\Http\Request $request, $id) {
+            if ($assessment = \App\Models\Assessment::find($id)) {
+                return app(\App\Http\Controllers\Asesor\FinalizationController::class)->updateAk02($assessment, $request);
+            }
+            if ($app = \App\Models\AssessmentApplication::find($id)) {
+                return app(\App\Http\Controllers\Asesor\AssessmentExecutionController::class)->storeAk02($request, $app);
+            }
+            abort(404);
+        })->name('ak02.store');
         Route::get('/assessment/{assessment}/ak02', [\App\Http\Controllers\Asesor\FinalizationController::class, 'showAk02'])->name('assessment.ak02');
         Route::post('/assessment/{assessment}/ak02', [\App\Http\Controllers\Asesor\FinalizationController::class, 'updateAk02'])->name('assessment.ak02.update');
+        Route::get('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'showAk02']);
+        Route::post('/applications/{application}/ak-02', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk02']);
 
         // AK05 & AK06 Reports
+        Route::get('/ak-05-report/{id}', function ($id) {
+            if ($schedule = \App\Models\Schedule::find($id)) {
+                return app(\App\Http\Controllers\Asesor\FinalizationController::class)->showReports($schedule);
+            }
+            if ($sched = \App\Models\AssessmentSchedule::find($id)) {
+                return app(\App\Http\Controllers\Asesor\AssessmentExecutionController::class)->showAk05($sched);
+            }
+            abort(404);
+        })->name('ak05.report');
+        Route::post('/ak-05-store/{id}', function (\Illuminate\Http\Request $request, $id) {
+            if ($schedule = \App\Models\Schedule::find($id)) {
+                return app(\App\Http\Controllers\Asesor\FinalizationController::class)->submitReports($schedule, $request);
+            }
+            if ($sched = \App\Models\AssessmentSchedule::find($id)) {
+                return app(\App\Http\Controllers\Asesor\AssessmentExecutionController::class)->storeAk05($request, $sched);
+            }
+            abort(404);
+        })->name('ak05.store');
         Route::get('/schedule/{schedule}/reports', [\App\Http\Controllers\Asesor\FinalizationController::class, 'showReports'])->name('schedule.reports');
         Route::post('/schedule/{schedule}/reports', [\App\Http\Controllers\Asesor\FinalizationController::class, 'submitReports'])->name('schedule.reports.submit');
+        Route::get('/schedules/{schedule}/ak-05', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'showAk05']);
+        Route::post('/schedules/{schedule}/ak-05', [\App\Http\Controllers\Asesor\AssessmentExecutionController::class, 'storeAk05']);
 
         // Finalize
         Route::post('/schedule/{schedule}/finalize', [\App\Http\Controllers\Asesor\FinalizationController::class, 'finalize'])->name('schedule.finalize');

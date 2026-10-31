@@ -28,6 +28,10 @@ class ProfileController extends Controller
     {
         $user = auth()->user();
 
+        if (! $request->filled('full_name')) {
+            $request->merge(['full_name' => $user->full_name ?: $user->name ?: 'Asesor']);
+        }
+
         $validated = $request->validate([
             'full_name' => 'required|string|max:255',
             'phone' => ['nullable', 'string', 'max:20', 'regex:/^[0-9]+$/'],

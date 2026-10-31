@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\CertificationScheme;
 use App\Models\CompetencyElement;
 use App\Models\CompetencyUnit;
+use App\Models\Scheme;
+use App\Models\UnitElement;
 use App\Models\WorkKeyCriteria;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -22,7 +24,25 @@ class CompetencyUnitController extends Controller
 
         $validated['urutan'] = $scheme->units()->count() + 1;
 
-        $scheme->units()->create($validated);
+        $legacyUnit = $scheme->units()->create($validated);
+
+        $mScheme = Scheme::where('id', $scheme->id)->orWhere('code', $scheme->kode_skema)->first();
+        if ($mScheme) {
+            CompetencyUnit::updateOrCreate(
+                ['id' => $legacyUnit->id],
+                [
+                    'scheme_id' => $mScheme->id,
+                    'code' => $validated['kode_unit'],
+                    'title' => $validated['judul_unit'],
+                    'standard_reference' => $validated['jenis_standar'],
+                    'sequence' => $validated['urutan'],
+                    'kode_unit' => $validated['kode_unit'],
+                    'judul_unit' => $validated['judul_unit'],
+                    'jenis_standar' => $validated['jenis_standar'],
+                    'urutan' => $validated['urutan'],
+                ]
+            );
+        }
 
         return back()->with('success', 'Unit kompetensi berhasil ditambahkan ke skema.');
     }
@@ -53,11 +73,21 @@ class CompetencyUnitController extends Controller
             'nama_elemen' => ['required', 'string'],
         ]);
 
-        $nextNumber = $unit->elements()->count() + 1;
+        $nextNumber = CompetencyElement::where('unit_id', $unit->id)->count() + 1;
+        $validated['unit_id'] = $unit->id;
         $validated['nomor_elemen'] = $nextNumber;
         $validated['urutan'] = $nextNumber;
 
-        $unit->elements()->create($validated);
+        $element = CompetencyElement::create($validated);
+
+        UnitElement::updateOrCreate(
+            ['id' => $element->id],
+            [
+                'competency_unit_id' => $unit->id,
+                'title' => $validated['nama_elemen'],
+                'sequence' => $nextNumber,
+            ]
+        );
 
         return back()->with('success', 'Elemen kompetensi berhasil ditambahkan.');
     }

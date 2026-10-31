@@ -45,7 +45,7 @@
                 PORTAL PENGGUNA
             </span>
             <h2 class="font-sans text-2xl md:text-3xl font-extrabold text-lsp-title mb-2">
-                Masuk ke akun Anda
+                Masuk ke Portal Sertifikasi
             </h2>
             <p class="text-xs text-lsp-muted mb-6">
                 Masukkan email dan kata sandi yang telah terdaftar.
