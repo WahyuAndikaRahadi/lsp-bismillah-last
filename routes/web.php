@@ -105,6 +105,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/dokumen-muk/{schedule}/export-hadir-asesor', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportHadirAsesor'])->name('dokumen-muk.export-hadir-asesor');
         Route::get('/dokumen-muk/{schedule}/export-hadir-asesi', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportHadirAsesi'])->name('dokumen-muk.export-hadir-asesi');
         Route::get('/dokumen-muk/{schedule}/export-excel-biodata', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportExcelBiodata'])->name('dokumen-muk.export-excel-biodata');
+        Route::get('/dokumen-muk/{schedule}/export-excel-hadir-asesi', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportExcelHadirAsesi'])->name('dokumen-muk.export-excel-hadir-asesi');
+        Route::get('/dokumen-muk/{schedule}/export-excel-hadir-asesor', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportExcelHadirAsesor'])->name('dokumen-muk.export-excel-hadir-asesor');
         Route::get('/dokumen-muk/individual/{assessment}', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportIndividual'])->name('dokumen-muk.export-individual');
 
         // Proxy Impersonation

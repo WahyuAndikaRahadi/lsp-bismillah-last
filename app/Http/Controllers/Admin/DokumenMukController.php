@@ -129,9 +129,31 @@ class DokumenMukController extends Controller
         return $this->exportSchedule($schedule, 'hadir-asesi');
     }
 
-    public function exportExcelBiodata(Schedule $schedule)
+    public function exportExcelBiodata(Schedule $schedule, Request $request)
     {
-        return $this->exportSchedule($schedule, 'excel-biodata');
+        if ($request->query('format') === 'html') {
+            return $this->exportSchedule($schedule, 'excel-biodata');
+        }
+
+        return $this->exporter->exportExcelBiodata($schedule);
+    }
+
+    public function exportExcelHadirAsesi(Schedule $schedule, Request $request)
+    {
+        if ($request->query('format') === 'html') {
+            return $this->exportHadirAsesi($schedule);
+        }
+
+        return $this->exporter->exportExcelDaftarHadirAsesi($schedule);
+    }
+
+    public function exportExcelHadirAsesor(Schedule $schedule, Request $request)
+    {
+        if ($request->query('format') === 'html') {
+            return $this->exportHadirAsesor($schedule);
+        }
+
+        return $this->exporter->exportExcelDaftarHadirAsesor($schedule);
     }
 
     public function exportIndividual(Assessment $assessment, Request $request)
