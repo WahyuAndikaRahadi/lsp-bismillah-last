@@ -62,6 +62,8 @@ class DatabaseSeeder extends Seeder
             EventScheduleSeeder::class,
             Apl01ApplicationSeeder::class,
             ExtendedModulesSeeder::class,
+            ProindoSchemesAndMukSeeder::class,
+            ProindoUserSeeder::class,
         ]);
 
         // 5. Seed Event & Jadwal Asesmen (Fase 3)
