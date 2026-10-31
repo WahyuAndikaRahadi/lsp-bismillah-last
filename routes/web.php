@@ -65,6 +65,10 @@ Route::middleware('guest')->group(function () {
 */
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
+    Route::post('/proxy/switch-back', [LoginController::class, 'proxySwitchBack'])->name('proxy.switch-back');
+    Route::post('/admin/proxy/switch/{user}', [\App\Http\Controllers\Admin\ProxyController::class, 'impersonate'])
+        ->middleware('role:admin,ADMIN_LSP,SUPER_ADMIN')
+        ->name('proxy.switch');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -76,15 +80,48 @@ Route::middleware('auth')->group(function () {
     |--------------------------------------------------------------------------
     */
     // 1. Admin LSP Area
-    Route::middleware('role:admin')->prefix('admin')->name('admin.')->group(function () {
-        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::middleware('role:admin,ADMIN_LSP,SUPER_ADMIN,KOMITE_TEKNIS,TUK_ADMIN')->prefix('admin')->name('admin.')->group(function () {
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+
+        // ProIndo Jadwal Management
+        Route::get('/jadwal', [\App\Http\Controllers\Admin\JadwalController::class, 'index'])->name('jadwal.index');
+        Route::get('/jadwal/create', [\App\Http\Controllers\Admin\JadwalController::class, 'create'])->name('jadwal.create');
+        Route::post('/jadwal', [\App\Http\Controllers\Admin\JadwalController::class, 'store'])->name('jadwal.store');
+        Route::get('/jadwal/{jadwal}', [\App\Http\Controllers\Admin\JadwalController::class, 'show'])->name('jadwal.show');
+        Route::get('/jadwal/{jadwal}/edit', [\App\Http\Controllers\Admin\JadwalController::class, 'edit'])->name('jadwal.edit');
+        Route::match(['put', 'patch'], '/jadwal/{jadwal}', [\App\Http\Controllers\Admin\JadwalController::class, 'update'])->name('jadwal.update');
+        Route::delete('/jadwal/{jadwal}', [\App\Http\Controllers\Admin\JadwalController::class, 'destroy'])->name('jadwal.destroy');
+
+        Route::post('/assessment/{assessment}/review-registration', [\App\Http\Controllers\Admin\JadwalController::class, 'reviewRegistration'])->name('assessment.review-registration');
+        Route::post('/jadwal/{jadwal}/batch-review-registration', [\App\Http\Controllers\Admin\JadwalController::class, 'batchReviewRegistration'])->name('jadwal.batch-review-registration');
+        Route::post('/assessment/{assessment}/mark-absent', [\App\Http\Controllers\Admin\JadwalController::class, 'markAbsent'])->name('assessment.mark-absent');
+
+        // ProIndo Dokumen MUK Center & Exports
+        Route::get('/dokumen-muk', [\App\Http\Controllers\Admin\DokumenMukController::class, 'index'])->name('dokumen-muk.index');
+        Route::get('/dokumen-muk/{schedule}/export/{type}', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportSchedule'])->name('dokumen-muk.export');
+        Route::get('/dokumen-muk/asesi/{assessment}/export/{type}', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportAsesi'])->name('dokumen-muk.export-asesi');
+        Route::get('/dokumen-muk/{schedule}/export-sertifikat', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportSertifikat'])->name('dokumen-muk.export-sertifikat');
+        Route::get('/dokumen-muk/{schedule}/export-ba', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportBa'])->name('dokumen-muk.export-ba');
+        Route::get('/dokumen-muk/{schedule}/export-hadir-asesor', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportHadirAsesor'])->name('dokumen-muk.export-hadir-asesor');
+        Route::get('/dokumen-muk/{schedule}/export-hadir-asesi', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportHadirAsesi'])->name('dokumen-muk.export-hadir-asesi');
+        Route::get('/dokumen-muk/{schedule}/export-excel-biodata', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportExcelBiodata'])->name('dokumen-muk.export-excel-biodata');
+        Route::get('/dokumen-muk/individual/{assessment}', [\App\Http\Controllers\Admin\DokumenMukController::class, 'exportIndividual'])->name('dokumen-muk.export-individual');
+
+        // Proxy Impersonation
+        Route::get('/proxy', [\App\Http\Controllers\Admin\ProxyController::class, 'index'])->name('proxy.index');
+        Route::post('/proxy/{user}', [\App\Http\Controllers\Admin\ProxyController::class, 'impersonate'])->name('proxy.impersonate');
+
+        // Master Data ProIndo
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+        Route::resource('schemes', \App\Http\Controllers\Admin\SchemeController::class);
+        Route::resource('question-banks', \App\Http\Controllers\Admin\QuestionBankController::class);
 
         // Master Data Engine (Fase 2)
         Route::get('/lsp-profile', [\App\Http\Controllers\Admin\LspProfileController::class, 'edit'])->name('lsp-profile.edit');
         Route::put('/lsp-profile', [\App\Http\Controllers\Admin\LspProfileController::class, 'update'])->name('lsp-profile.update');
 
         Route::resource('/standards', \App\Http\Controllers\Admin\StandardController::class)->except(['create', 'show', 'edit']);
-        Route::resource('/schemes', \App\Http\Controllers\Admin\CertificationSchemeController::class);
+        Route::resource('/legacy-schemes', \App\Http\Controllers\Admin\CertificationSchemeController::class)->names('legacy_schemes');
         
         Route::post('/schemes/{scheme}/requirements', [\App\Http\Controllers\Admin\CertificationSchemeController::class, 'storeRequirement'])->name('schemes.requirements.store');
         Route::delete('/requirements/{requirement}', [\App\Http\Controllers\Admin\CertificationSchemeController::class, 'destroyRequirement'])->name('schemes.requirements.destroy');

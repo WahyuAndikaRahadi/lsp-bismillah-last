@@ -50,4 +50,20 @@ class LoginController extends Controller
 
         return redirect()->route('login')->with('info', 'Anda telah berhasil keluar dari sistem.');
     }
+
+    public function proxySwitchBack(Request $request): RedirectResponse
+    {
+        if ($originalAdminId = session('admin_impersonator_id')) {
+            session()->forget('admin_impersonator_id');
+            $admin = \App\Models\User::find($originalAdminId);
+            if ($admin && ($admin->isAdmin() || $admin->isRole('admin') || in_array($admin->role, ['SUPER_ADMIN', 'ADMIN_LSP'], true))) {
+                $request->session()->regenerate();
+                Auth::login($admin);
+
+                return redirect()->route('admin.proxy.index')->with('success', 'Kembali ke sesi Admin.');
+            }
+        }
+
+        return redirect()->route('login');
+    }
 }
