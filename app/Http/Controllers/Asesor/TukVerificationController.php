@@ -34,6 +34,17 @@ class TukVerificationController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $asesor = $request->user()->asesorProfile;
+        if (! $asesor && $request->user()->isAsesor()) {
+            $asesor = \App\Models\AsesorProfile::firstOrCreate(
+                ['user_id' => $request->user()->id],
+                [
+                    'no_met' => $request->user()->assessor_registration_number ?? $request->user()->profile?->assessor_registration_number ?? ('MET.000.00' . $request->user()->id . ' 2026'),
+                    'masa_berlaku' => now()->addYears(3),
+                    'bidang_keahlian' => 'Otomotif Kendaraan Ringan & Sepeda Motor',
+                    'is_active' => true,
+                ]
+            );
+        }
         if (! $asesor) {
             abort(403, 'Akses khusus asesor terdaftar.');
         }

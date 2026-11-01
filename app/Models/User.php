@@ -83,6 +83,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Schedule::class, 't_schedule_assessors', 'assessor_id', 'schedule_id');
     }
 
+    public function assessments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->scheduleAssessments();
+    }
+
     public function scheduleAssessments(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Assessment::class, 'asesi_id');
@@ -187,6 +192,24 @@ class User extends Authenticatable
     public function asesorProfile(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(AsesorProfile::class, 'user_id');
+    }
+
+    public function getAsesorProfileAttribute(): ?AsesorProfile
+    {
+        $profile = $this->getRelationValue('asesorProfile');
+        if (! $profile && $this->isAsesor() && $this->exists) {
+            $profile = AsesorProfile::firstOrCreate(
+                ['user_id' => $this->id],
+                [
+                    'no_met' => $this->assessor_registration_number ?? $this->profile?->assessor_registration_number ?? ('MET.000.00' . $this->id . ' 2026'),
+                    'masa_berlaku' => now()->addYears(3),
+                    'bidang_keahlian' => 'Otomotif Kendaraan Ringan & Sepeda Motor',
+                    'is_active' => true,
+                ]
+            );
+            $this->setRelation('asesorProfile', $profile);
+        }
+        return $profile;
     }
 
     public function asesiProfile(): \Illuminate\Database\Eloquent\Relations\HasOne
