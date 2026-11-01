@@ -43,8 +43,10 @@
                     <tbody class="divide-y divide-slate-100">
                         @foreach($schedules as $sch)
                             <tr class="hover:bg-slate-50/60 transition">
-                                <td class="px-6 py-4 font-mono font-bold text-xs text-brand-700">
-                                    {{ $sch->code }}
+                                <td class="px-6 py-4 font-mono font-bold text-xs">
+                                    <a href="{{ route('admin.jadwal.show', $sch->id) }}" class="text-brand-700 hover:text-brand-900 hover:underline">
+                                        {{ $sch->code }}
+                                    </a>
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="font-bold text-slate-900">{{ $sch->name ?? $sch->scheme->name }}</div>

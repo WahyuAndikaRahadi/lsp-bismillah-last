@@ -154,8 +154,11 @@ class RuangUjiController extends Controller
                 ->with('info', "Jawaban ujian CBT (IA.05) Anda telah tersimpan sebelumnya dengan skor: {$existing->score}.");
         }
 
-        $result = DB::transaction(function () use ($assessment, $request, $grader) {
-            $graded = $grader->grade($assessment, $request->input('answers', []));
+        $rawAnswers = $request->input('answers', []);
+        $answers = is_array($rawAnswers) ? $rawAnswers : (json_decode($rawAnswers, true) ?: []);
+
+        $result = DB::transaction(function () use ($assessment, $answers, $grader) {
+            $graded = $grader->grade($assessment, $answers);
             $assessment->update(['last_active_step' => 'ruang-uji']);
 
             return $graded;

@@ -45,10 +45,13 @@ class JadwalController extends Controller
         }
 
         $request->validate([
-            'code' => 'required|string',
+            'code' => 'required_without:schedule_code|nullable|string',
+            'schedule_code' => 'nullable|string',
         ]);
 
-        $schedule = Schedule::where('code', $request->code)->first();
+        $code = $request->input('code') ?: $request->input('schedule_code');
+
+        $schedule = Schedule::where('code', $code)->first();
 
         if (! $schedule || $schedule->status !== 'ACTIVE' || $schedule->is_closed) {
             return back()->with('error', 'Kode jadwal tidak ditemukan atau jadwal sudah tidak aktif/ditutup.');
