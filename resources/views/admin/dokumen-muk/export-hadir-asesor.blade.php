@@ -1,56 +1,87 @@
 @extends('layouts.print-muk')
 
-@section('title', 'Daftar Hadir Asesor - ' . $schedule->code)
+@section('title', 'Daftar Hadir Asesor - ' . ($schedule->code ?? ''))
 @section('doc-title', 'Daftar Hadir Asesor')
 
+@push('styles')
+<style>
+    @page {
+        size: 210.26mm 297.04mm;
+        margin: 5.29mm 12.0mm 15.0mm 10.05mm;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, 'Liberation Sans', sans-serif;
+    }
+    .sheet {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 190.16mm !important;
+    }
+</style>
+@endpush
+
 @section('content')
-<div style="font-size: 10pt; line-height: 1.4;">
-    {{-- Header Title --}}
-    <div style="text-align: center; margin-bottom: 25px;">
-        <h2 style="font-size: 12pt; font-weight: bold; text-decoration: underline; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">
-            DAFTAR HADIR ASESOR
-        </h2>
+<div style="width: 190.16mm; font-family: Arial, 'Liberation Sans', sans-serif; font-size: 11pt; color: #000;">
+    {{-- Master Kop Surat at y = 5.29mm --}}
+    <div style="margin: 0; padding: 0; height: 34.66mm;">
+        <img src="/images/muk/kop_surat.png" alt="Kop Surat LSP ProIndo" style="width: 190.16mm; height: 34.66mm; display: block;">
     </div>
 
-    {{-- Meta List 1-5 --}}
-    <div style="margin-bottom: 20px; line-height: 1.8;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 10pt;">
-            <tr>
-                <td style="width: 18%; vertical-align: top;">1. Skema</td>
-                <td style="width: 3%; vertical-align: top; text-align: center;">:</td>
-                <td style="width: 79%; vertical-align: top;"><strong>{{ $scheme->name }}</strong></td>
+    {{-- Title at y = 42.8mm, x = 88.2mm (offset 78.15mm) --}}
+    <div style="text-align: left; padding-left: 78.15mm; margin-top: 2.85mm; height: 4.3mm; margin-bottom: 10.2mm;">
+        <span style="font-size: 11pt; font-weight: bold; line-height: 1;">DAFTAR HADIR ASESOR</span>
+    </div>
+
+    {{-- Meta List 1-5 at y = 57.3mm, x = 30.7mm (offset 20.65mm) --}}
+    <div style="margin-left: 20.65mm; margin-bottom: 6.3mm; font-size: 11pt;">
+        <table style="width: 169.5mm; border-collapse: collapse; font-size: 11pt; line-height: 1.18;">
+            <tr style="height: 5.2mm;">
+                <td style="width: 31.7mm; vertical-align: top; padding: 0;">1. Skema</td>
+                <td style="width: 3.5mm; text-align: center; vertical-align: top; padding: 0;">:</td>
+                <td style="vertical-align: top; padding: 0;">{{ $scheme->name ?: 'Mekanik Junior' }}</td>
             </tr>
-            <tr>
-                <td style="vertical-align: top;">2. TUK</td>
-                <td style="vertical-align: top; text-align: center;">:</td>
-                <td style="vertical-align: top;"><strong>{{ $schedule->tuk_name }}</strong></td>
+            <tr style="height: 5.2mm;">
+                <td style="vertical-align: top; padding: 0;">2. TUK</td>
+                <td style="text-align: center; vertical-align: top; padding: 0;">:</td>
+                <td style="vertical-align: top; padding: 0;">{{ $schedule->tuk_name ?: 'SMK Negeri 3 Karawang' }}</td>
             </tr>
-            <tr>
-                <td style="vertical-align: top;">3. Alamat</td>
-                <td style="vertical-align: top; text-align: center;">:</td>
-                <td style="vertical-align: top;">{{ $schedule->tuk_address ?? 'Tempat Uji Kompetensi Terverifikasi LSP PrO Indo' }}</td>
+            <tr style="height: 7.7mm;">
+                <td style="vertical-align: top; padding: 0;">3. &nbsp;Alamat</td>
+                <td style="text-align: center; vertical-align: top; padding: 0;">:</td>
+                <td style="vertical-align: top; padding: 0; line-height: 1.05;">
+                    Perumahan Griya Kondang Asri, Kelurahan Kondangjaya, Kecamatan Karawang<br>
+                    <span style="font-family: 'Calibri', 'Carlito', sans-serif; font-size: 12pt; padding-left: 3.5mm;">Timur, Kabupaten Karawang, Jawa Barat (Kode Pos 41317)</span>
+                </td>
             </tr>
-            <tr>
-                <td style="vertical-align: top;">4. Tanggal Uji</td>
-                <td style="vertical-align: top; text-align: center;">:</td>
-                <td style="vertical-align: top;">{{ \Carbon\Carbon::parse($schedule->date)->translatedFormat('l, d F Y') }}</td>
+            <tr style="height: 5.2mm;">
+                <td style="vertical-align: top; padding: 0;">4. Tanggal Uji</td>
+                <td style="text-align: center; vertical-align: top; padding: 0;">:</td>
+                <td style="vertical-align: top; padding: 0;">{{ ($mode ?? '') === 'empty' ? '.......................................' : \Carbon\Carbon::parse($schedule->date)->translatedFormat('l, d F Y') }}</td>
             </tr>
-            <tr>
-                <td style="vertical-align: top;">5. Jumlah Asesi</td>
-                <td style="vertical-align: top; text-align: center;">:</td>
-                <td style="vertical-align: top;"><strong>{{ $total_asesi }}</strong> orang</td>
+            <tr style="height: 5.2mm;">
+                <td style="vertical-align: top; padding: 0;">5. Jumlah Asesi</td>
+                <td style="text-align: center; vertical-align: top; padding: 0;">:</td>
+                <td style="vertical-align: top; padding: 0;">{{ ($mode ?? '') === 'empty' ? '........................................' : ($total_asesi . ' orang') }}</td>
             </tr>
         </table>
     </div>
 
-    {{-- Assessor Table --}}
-    <table class="bnsp-table" style="width: 100%; font-size: 9.5pt;">
+    {{-- Assessor Table at y = 96.5mm, x = 17.73mm (offset 7.68mm) --}}
+    <table class="bnsp-table" style="width: 179.92mm; margin-left: 7.68mm; border-collapse: collapse; font-size: 11pt; margin-top: 0; margin-bottom: 8.3mm;">
+        <colgroup>
+            <col style="width: 9.26mm;">
+            <col style="width: 58.47mm;">
+            <col style="width: 52.65mm;">
+            <col style="width: 59.53mm;">
+        </colgroup>
         <thead>
-            <tr>
-                <th style="width: 8%;">No.</th>
-                <th style="width: 42%;">Nama Asesor Kompetensi</th>
-                <th style="width: 25%;">No. MET</th>
-                <th style="width: 25%;">Tanda Tangan</th>
+            <tr style="height: 7.0mm;">
+                <th style="border: 1px solid #000; text-align: center; font-weight: bold; padding: 1px 2px; background: #fff;">No.</th>
+                <th style="border: 1px solid #000; text-align: center; font-weight: bold; padding: 1px 2px; background: #fff;">Nama Asesor Kompetensi</th>
+                <th style="border: 1px solid #000; text-align: center; font-weight: bold; padding: 1px 2px; background: #fff;">No.MET</th>
+                <th style="border: 1px solid #000; text-align: center; font-weight: bold; padding: 1px 2px; background: #fff;">Tanda Tangan</th>
             </tr>
         </thead>
         <tbody>
@@ -62,21 +93,13 @@
                 @php
                     $assr = $assessorList[$i] ?? null;
                 @endphp
-                <tr>
-                    <td style="text-align: center; height: 42px; vertical-align: middle;">{{ $i + 1 }}.</td>
-                    <td style="vertical-align: middle; font-weight: bold;">
-                        {{ $assr?->full_name ?? $assr?->name ?? '' }}
-                    </td>
-                    <td style="vertical-align: middle; text-align: center; font-family: monospace;">
-                        {{ $assr?->assessor_registration_number ?? $assr?->profile?->met_number ?? '' }}
-                    </td>
-                    <td style="vertical-align: middle; text-align: center;">
-                        @if($assr?->profile?->signature_path)
-                            <img src="{{ asset('storage/' . $assr->profile->signature_path) }}" style="max-height: 38px; max-width: 120px;" alt="TTD">
-                        @elseif($assessments->first()?->assessor_signature && $i === 0)
-                            <img src="{{ $assessments->first()->assessor_signature }}" style="max-height: 38px; max-width: 120px;" alt="TTD">
-                        @else
-                            <div style="height: 35px;"></div>
+                <tr style="height: 8.2mm;">
+                    <td style="border: 1px solid #000; text-align: center; font-weight: bold; padding: 1px 2px;">{{ $i + 1 }}.</td>
+                    <td style="border: 1px solid #000; padding: 1px 4px;">{{ $assr?->full_name ?? $assr?->name ?? '' }}</td>
+                    <td style="border: 1px solid #000; text-align: center; padding: 1px 2px;">{{ $assr?->assessor_registration_number ?? $assr?->profile?->met_number ?? '' }}</td>
+                    <td style="border: 1px solid #000; text-align: center; padding: 1px 2px;">
+                        @if(($mode ?? '') !== 'empty' && $assr?->profile?->signature_path)
+                            <img src="{{ asset('storage/' . $assr->profile->signature_path) }}" style="max-height: 7mm; max-width: 45mm;" alt="TTD">
                         @endif
                     </td>
                 </tr>
@@ -84,36 +107,22 @@
         </tbody>
     </table>
 
-    {{-- PIC TUK Signature on Right Side --}}
-    <div style="margin-top: 35px; width: 100%; display: flex; justify-content: flex-end; page-break-inside: avoid;">
-        <div style="width: 45%; margin-left: auto;">
-            <div style="margin-bottom: 10px;">
-                {{ $schedule->tuk_city ?? 'Karawang' }}, {{ \Carbon\Carbon::parse($schedule->date)->translatedFormat('d F Y') }}
-            </div>
-            <div style="font-weight: bold; margin-bottom: 6px;">Penanggungjawab kegiatan</div>
-            <table style="width: 100%; border-collapse: collapse; font-size: 9.5pt; line-height: 1.6;">
-                <tr>
-                    <td style="width: 32%;">Nama</td>
-                    <td style="width: 5%;">:</td>
-                    <td style="width: 63%;"><strong>{{ $schedule->pic_tuk_name ?? '........................................' }}</strong></td>
-                </tr>
-                <tr>
-                    <td>Jabatan</td>
-                    <td>:</td>
-                    <td>{{ $schedule->pic_tuk_position ?? 'Penanggung Jawab TUK' }}</td>
-                </tr>
-                <tr>
-                    <td colspan="3" style="padding-top: 6px;">Tanda tangan :</td>
-                </tr>
-            </table>
-            <div class="sig-box" style="margin-top: 8px;">
-                @if($schedule->pic_tuk_signature)
-                    <img src="{{ $schedule->pic_tuk_signature }}" class="sig-img" alt="TTD Penanggung Jawab">
-                @else
-                    <div style="height: 50px;"></div>
+    {{-- PIC TUK Signature on Right Side at x = 114.3mm (offset 104.25mm) --}}
+    <div style="margin-left: 104.25mm; font-size: 11pt;">
+        <div style="margin-bottom: 4.5mm;">
+            {{ ($mode ?? '') === 'empty' ? '……………….., ………………….2026' : (($schedule->tuk_city ?? 'Karawang') . ', ' . \Carbon\Carbon::parse($schedule->date)->translatedFormat('d F Y')) }}
+        </div>
+        <div style="font-family: 'Calibri', 'Carlito', sans-serif; font-size: 12pt; line-height: 1.15;">
+            <div style="height: 4.5mm;">Penanggungjawab kegiatan</div>
+            <div style="height: 4.5mm;">Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ ($mode ?? '') === 'empty' ? '' : ($schedule->pic_tuk_name ?? '') }}</div>
+            <div style="height: 4.5mm;">Jabatan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ ($mode ?? '') === 'empty' ? '' : ($schedule->pic_tuk_position ?? '') }}</div>
+            <div style="height: 4.5mm;">Tanda tangan &nbsp;:</div>
+            <div style="height: 16.0mm;">
+                @if(($mode ?? '') !== 'empty' && $schedule->pic_tuk_signature)
+                    <img src="{{ $schedule->pic_tuk_signature }}" style="max-height: 14mm;" alt="TTD">
                 @endif
-                <div style="border-bottom: 1px dotted #000; width: 85%; margin-top: 4px;"></div>
             </div>
+            <div style="font-family: Arial, 'Liberation Sans', sans-serif; font-size: 12pt;">………………………………….</div>
         </div>
     </div>
 </div>
