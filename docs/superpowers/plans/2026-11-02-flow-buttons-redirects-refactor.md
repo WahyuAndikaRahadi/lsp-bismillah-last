@@ -46,13 +46,13 @@
 - Buat method helper pada `Assessment`: `isCompetent()`, `isApprovedByAdmin()`, `isCompleted()`.
 
 **Step-by-step instructions:**
-- [ ] 1. Buat test di `tests/Feature/ProindoModelAndSchemaTest.php` untuk memverifikasi atribut sertifikat di `t_assessments` dan relasi pleno di `Schedule`.
-- [ ] 2. Jalankan `php artisan test --filter=ProindoModelAndSchemaTest` dan pastikan gagal karena kolom belum ada.
-- [ ] 3. Buat file migrasi `2026_11_02_000000_unify_proindo_core_certification_fields.php` yang menambahkan kolom sertifikat pada `t_assessments` dan foreign key relasi.
-- [ ] 4. Jalankan `php artisan migrate`.
-- [ ] 5. Perbarui model `app/Models/Assessment.php`, `app/Models/Schedule.php`, dan `app/Models/PlenoMeeting.php` dengan fillable, casts, dan relasi yang sesuai.
-- [ ] 6. Jalankan kembali `php artisan test --filter=ProindoModelAndSchemaTest` dan pastikan hijau.
-- [ ] 7. Commit perubahan dengan pesan `feat: unify certification and pleno fields onto proindo core models`.
+- [x] 1. Buat test di `tests/Feature/ProindoModelAndSchemaTest.php` untuk memverifikasi atribut sertifikat di `t_assessments` dan relasi pleno di `Schedule`.
+- [x] 2. Jalankan `php artisan test --filter=ProindoModelAndSchemaTest` dan pastikan gagal karena kolom belum ada.
+- [x] 3. Buat file migrasi `2026_11_02_000000_unify_proindo_core_certification_fields.php` yang menambahkan kolom sertifikat pada `t_assessments` dan foreign key relasi.
+- [x] 4. Jalankan `php artisan migrate`.
+- [x] 5. Perbarui model `app/Models/Assessment.php`, `app/Models/Schedule.php`, dan `app/Models/PlenoMeeting.php` dengan fillable, casts, dan relasi yang sesuai.
+- [x] 6. Jalankan kembali `php artisan test --filter=ProindoModelAndSchemaTest` dan pastikan hijau.
+- [x] 7. Commit perubahan dengan pesan `feat: unify certification and pleno fields onto proindo core models`.
 
 ---
 
@@ -70,12 +70,12 @@
 - Jika user belum login mengakses URL tertentu, setelah login berhasil, sistem harus mengembalikan user ke URL tujuan semula (*intended URL*), bukan selalu ke home.
 
 **Step-by-step instructions:**
-- [ ] 1. Tulis test di `tests/Feature/RoleAccessAndRedirectionTest.php` untuk memvalidasi: asesi akses `/admin/schedules` dialihkan ke `/asesi/dashboard` dengan flash warning; asesor akses `/admin/users` dialihkan ke `/asesor/dashboard`; login mengembalikan ke intended URL.
-- [ ] 2. Jalankan test untuk memverifikasi kegagalan (masih melempar 403).
-- [ ] 3. Perbarui `RoleMiddleware.php` dan `EnsureUserRole.php`: tangkap ketidaksesuaian role, ambil `$user->dashboardRoute()`, dan lakukan redirect dengan session flash info.
-- [ ] 4. Perbarui `LoginController.php` agar menggunakan `redirect()->intended(route($user->dashboardRoute()))`.
-- [ ] 5. Jalankan `php artisan test --filter=RoleAccessAndRedirectionTest` dan pastikan seluruh test lolos.
-- [ ] 6. Commit dengan pesan `feat: graceful cross-role redirection and intended url support`.
+- [x] 1. Tulis test di `tests/Feature/RoleAccessAndRedirectionTest.php` untuk memvalidasi: asesi akses `/admin/schedules` dialihkan ke `/asesi/dashboard` dengan flash warning; asesor akses `/admin/users` dialihkan ke `/asesor/dashboard`; login mengembalikan ke intended URL.
+- [x] 2. Jalankan test untuk memverifikasi kegagalan (masih melempar 403).
+- [x] 3. Perbarui `RoleMiddleware.php` dan `EnsureUserRole.php`: tangkap ketidaksesuaian role, ambil `$user->dashboardRoute()`, dan lakukan redirect dengan session flash info.
+- [x] 4. Perbarui `LoginController.php` agar menggunakan `redirect()->intended(route($user->dashboardRoute()))`.
+- [x] 5. Jalankan `php artisan test --filter=RoleAccessAndRedirectionTest` dan pastikan seluruh test lolos.
+- [x] 6. Commit dengan pesan `feat: graceful cross-role redirection and intended url support`.
 
 ---
 

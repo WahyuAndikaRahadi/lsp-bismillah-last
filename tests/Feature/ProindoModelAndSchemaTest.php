@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Assessment;
 use App\Models\CompetencyUnit;
 use App\Models\Kuk;
+use App\Models\PlenoMeeting;
 use App\Models\QuestionBank;
 use App\Models\Schedule;
 use App\Models\Scheme;
@@ -141,5 +142,73 @@ class ProindoModelAndSchemaTest extends TestCase
         $this->assertCount(1, $schedule->assessments);
         $this->assertEquals('LSP-TEST-99', $assessment->schedule->code);
         $this->assertEquals('Asesi Uji', $assessment->asesi->name);
+    }
+
+    public function test_assessment_certificate_fields_and_helpers_and_pleno_relationship(): void
+    {
+        $admin = User::create([
+            'name' => 'Admin LSP',
+            'email' => 'admin_pleno@proindo.test',
+            'password' => 'secret123',
+            'role' => 'ADMIN_LSP',
+        ]);
+
+        $scheme = Scheme::create([
+            'code' => 'SKM-TEST-03',
+            'name' => 'EV Specialist',
+            'scheme_type' => 'OKUPASI',
+        ]);
+
+        $schedule = Schedule::create([
+            'code' => 'LSP-TEST-PLENO',
+            'name' => 'Jadwal Uji EV Pleno',
+            'scheme_id' => $scheme->id,
+            'tuk_name' => 'Bengkel EV',
+            'date' => now()->toDateString(),
+            'start_time' => '08:00',
+            'end_time' => '16:00',
+            'duration_minutes' => 480,
+            'selected_instruments' => ['AK01', 'IA02', 'IA05'],
+            'created_by' => $admin->id,
+        ]);
+
+        $asesi = User::create([
+            'name' => 'Asesi Lulus',
+            'email' => 'asesi_lulus@proindo.test',
+            'password' => 'secret123',
+            'role' => 'ASESI',
+        ]);
+
+        $assessment = Assessment::create([
+            'schedule_id' => $schedule->id,
+            'asesi_id' => $asesi->id,
+            'status' => 'COMPLETED',
+            'admin_status' => 'APPROVED',
+            'final_result' => 'KOMPETEN',
+            'pleno_decision' => 'KOMPETEN',
+            'no_sertifikat' => 'BNSP-EV-2026-0001',
+            'tgl_terbit_sertifikat' => now()->toDateString(),
+            'masa_berlaku_sertifikat' => now()->addYears(3)->toDateString(),
+        ]);
+
+        $this->assertTrue($assessment->isCompetent());
+        $this->assertTrue($assessment->isApprovedByAdmin());
+        $this->assertTrue($assessment->isCompleted());
+        $this->assertEquals('BNSP-EV-2026-0001', $assessment->no_sertifikat);
+        $this->assertNotNull($assessment->tgl_terbit_sertifikat);
+        $this->assertNotNull($assessment->masa_berlaku_sertifikat);
+
+        $pleno = PlenoMeeting::create([
+            'schedule_id' => $schedule->id,
+            'nomor_ba_pleno' => '001/BA-PLENO/XI/2026',
+            'tanggal_pleno' => now()->toDateString(),
+            'tempat' => 'Ruang Pleno LSP ProIndo',
+            'ketua_komite' => 'Dr. H. Ahmad Dahlan, M.Pd',
+            'status' => 'disahkan',
+        ]);
+
+        $this->assertNotNull($schedule->plenoMeeting);
+        $this->assertEquals('001/BA-PLENO/XI/2026', $schedule->plenoMeeting->nomor_ba_pleno);
+        $this->assertEquals($schedule->id, $pleno->schedule->id);
     }
 }

@@ -40,6 +40,9 @@ class Assessment extends Model
         'esign_consent_at',
         'pleno_decision',
         'pleno_notes',
+        'no_sertifikat',
+        'tgl_terbit_sertifikat',
+        'masa_berlaku_sertifikat',
         'registered_at',
         'approved_at',
         'completed_at',
@@ -58,6 +61,8 @@ class Assessment extends Model
             'final_result_at' => 'datetime',
             'assessor_signed_at' => 'datetime',
             'asesi_signed_at' => 'datetime',
+            'tgl_terbit_sertifikat' => 'date',
+            'masa_berlaku_sertifikat' => 'date',
         ];
     }
 
@@ -139,5 +144,21 @@ class Assessment extends Model
     public function canAccessAppeal(): bool
     {
         return $this->status === 'COMPLETED' && in_array($this->final_result, ['KOMPETEN', 'BELUM_KOMPETEN', 'K', 'BK'], true);
+    }
+
+    public function isCompetent(): bool
+    {
+        return in_array($this->final_result, ['KOMPETEN', 'kompeten', 'K'], true)
+            || in_array($this->pleno_decision, ['KOMPETEN', 'kompeten', 'K', 'disahkan'], true);
+    }
+
+    public function isApprovedByAdmin(): bool
+    {
+        return $this->admin_status === 'APPROVED';
+    }
+
+    public function isCompleted(): bool
+    {
+        return $this->status === 'COMPLETED';
     }
 }

@@ -33,6 +33,11 @@ class PlenoMeeting extends Model
 
     public function schedule(): BelongsTo
     {
+        return $this->belongsTo(Schedule::class, 'schedule_id');
+    }
+
+    public function legacySchedule(): BelongsTo
+    {
         return $this->belongsTo(AssessmentSchedule::class, 'schedule_id');
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         // 1. Rapat Pleno Penetapan Hasil Asesmen (Admin Pleno)
         Schema::create('pleno_meetings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('schedule_id')->unique()->constrained('assessment_schedules')->cascadeOnDelete();
+            $table->unsignedBigInteger('schedule_id')->unique();
             $table->string('nomor_ba_pleno', 100)->unique();
             $table->date('tanggal_pleno');
             $table->string('waktu_mulai', 20)->default('09:00 WIB');

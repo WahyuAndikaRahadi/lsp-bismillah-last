@@ -19,7 +19,7 @@ class EnsureUserRole
         $user = $request->user();
 
         if (! $user) {
-            return redirect()->route('login');
+            return redirect()->guest(route('login'));
         }
 
         if (! $user->is_active) {
@@ -44,18 +44,12 @@ class EnsureUserRole
         }
 
         if (! $hasAccess) {
-            // Redirect user to their own proper dashboard instead of generic 403 where applicable
-            if ($user->isAdmin()) {
-                return redirect()->route('admin.dashboard')->with('error', 'Anda tidak memiliki hak akses ke halaman tersebut.');
-            }
-            if ($user->isAsesor()) {
-                return redirect()->route('asesor.dashboard')->with('error', 'Anda tidak memiliki hak akses ke halaman tersebut.');
-            }
-            if ($user->isAsesi()) {
-                return redirect()->route('asesi.dashboard')->with('error', 'Anda tidak memiliki hak akses ke halaman tersebut.');
-            }
+            $dashboardRoute = $user->dashboardRoute();
+            $message = 'Anda dialihkan ke dashboard Anda karena tidak memiliki akses ke halaman tersebut.';
 
-            abort(403, 'Akses tidak diizinkan untuk peran akun Anda.');
+            return redirect()->route($dashboardRoute)
+                ->with('warning', $message)
+                ->with('error', $message);
         }
 
         return $next($request);

@@ -18,7 +18,7 @@ class RoleMiddleware
         $user = $request->user();
 
         if (! $user) {
-            abort(403);
+            return redirect()->guest(route('login'));
         }
 
         $allowedRoles = [];
@@ -31,8 +31,22 @@ class RoleMiddleware
             }
         }
 
-        if (! in_array($user->role, $allowedRoles, true)) {
-            abort(403);
+        $userRoleValue = is_object($user->role) ? $user->role->value : (string) $user->role;
+        $hasAccess = false;
+        foreach ($allowedRoles as $allowed) {
+            if ($user->isRole($allowed) || $userRoleValue === $allowed || (string) $user->role === $allowed) {
+                $hasAccess = true;
+                break;
+            }
+        }
+
+        if (! $hasAccess) {
+            $dashboardRoute = $user->dashboardRoute();
+            $message = 'Anda dialihkan ke dashboard Anda karena tidak memiliki akses ke halaman tersebut.';
+
+            return redirect()->route($dashboardRoute)
+                ->with('warning', $message)
+                ->with('error', $message);
         }
 
         return $next($request);
