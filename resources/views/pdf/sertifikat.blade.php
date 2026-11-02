@@ -156,7 +156,7 @@
             <span style="font-style: italic; font-size: 9.5pt; color: #64748b;">This is to certify that,</span>
 
             <div class="cert-name">{{ $application->user->name ?? '-' }}</div>
-            <div class="cert-nik">NIK: {{ $application->user->asesiProfile->nik ?? '-' }} | No. Reg: {{ $application->nomor_permohonan }}</div>
+            <div class="cert-nik">NIK: {{ $application->user->asesiProfile->nik ?? '-' }} | No. Reg: {{ $application->nomor_permohonan ?? '-' }}</div>
 
             Telah kompeten pada kualifikasi / bidang profesi:<br>
             <span style="font-style: italic; font-size: 9.5pt; color: #64748b;">Is competent in the qualification / profession of:</span>

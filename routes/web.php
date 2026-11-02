@@ -127,7 +127,7 @@ Route::middleware('auth')->group(function () {
     |--------------------------------------------------------------------------
     */
     // 1. Admin LSP Area
-    Route::middleware('role:admin,ADMIN_LSP,SUPER_ADMIN,KOMITE_TEKNIS,TUK_ADMIN')->prefix('admin')->name('admin.')->group(function () {
+    Route::middleware('role:admin,ADMIN_LSP,SUPER_ADMIN')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         // ProIndo Jadwal Management
@@ -471,7 +471,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/fr-ak-02/{application}', [PdfDocumentController::class, 'frAk02'])->name('fr-ak-02');
         Route::get('/fr-ak-03/{application}', [PdfDocumentController::class, 'frAk03'])->name('fr-ak-03');
         Route::get('/fr-ak-05/{schedule}', [PdfDocumentController::class, 'frAk05'])->name('fr-ak-05');
-        Route::get('/sertifikat/{application}', [PdfDocumentController::class, 'sertifikat'])->name('sertifikat');
+        Route::get('/sertifikat/{id}', [PdfDocumentController::class, 'sertifikat'])->name('sertifikat');
     });
 });
 

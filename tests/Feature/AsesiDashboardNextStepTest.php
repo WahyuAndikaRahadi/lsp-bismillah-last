@@ -169,4 +169,25 @@ class AsesiDashboardNextStepTest extends TestCase
         $response->assertSee('Hasil & Sertifikat');
         $response->assertSee('Unduh Sertifikat');
     }
+
+    public function test_competent_asesi_can_download_bnsp_certificate_pdf(): void
+    {
+        $assessment = Assessment::create([
+            'schedule_id' => $this->schedule->id,
+            'asesi_id' => $this->asesi->id,
+            'assessor_id' => $this->asesor->id,
+            'apl_status' => 'APPROVED',
+            'ak01_agreed_at' => now(),
+            'final_result' => 'KOMPETEN',
+            'status' => 'COMPLETED',
+            'no_sertifikat' => 'BNSP-2026-9999',
+            'tgl_terbit_sertifikat' => now()->toDateString(),
+            'masa_berlaku_sertifikat' => now()->addYears(3)->toDateString(),
+        ]);
+
+        $response = $this->actingAs($this->asesi)->get(route('documents.sertifikat', $assessment->id));
+
+        $response->assertStatus(200);
+        $response->assertHeader('content-type', 'application/pdf');
+    }
 }

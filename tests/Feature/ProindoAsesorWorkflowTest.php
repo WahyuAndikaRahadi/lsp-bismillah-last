@@ -160,4 +160,42 @@ class ProindoAsesorWorkflowTest extends TestCase
             'final_result' => 'KOMPETEN',
         ]);
     }
+
+    public function test_asesor_can_submit_ak05_and_ak06_reports_and_close_schedule(): void
+    {
+        // Set candidate as completed
+        $this->assessment->update([
+            'apl_status' => 'APPROVED',
+            'status' => 'COMPLETED',
+            'final_result' => 'KOMPETEN',
+        ]);
+
+        $responseView = $this->actingAs($this->asesor)->get(route('asesor.schedule.reports', $this->schedule));
+        $responseView->assertOk();
+        $responseView->assertSee('FR.AK.05');
+        $responseView->assertSee('FR.AK.06');
+
+        $responseSubmit = $this->actingAs($this->asesor)->post(route('asesor.schedule.reports.submit', $this->schedule), [
+            'ak05_aspek_positif' => 'Sarana prasarana bengkel TUK lengkap dan APD memadai.',
+            'ak05_aspek_negatif' => 'Tidak ditemukan kendala teknis yang menghambat asesmen.',
+            'ak05_rekomendasi' => 'Peningkatan durasi pengenalan SST sebelum unjuk kerja.',
+            'ak06_valid' => 'YA',
+            'ak06_valid_notes' => 'Bukti berpatokan langsung pada KUK.',
+            'ak06_reliabel' => 'YA',
+            'ak06_reliabel_notes' => 'Rubrik penilaian diterapkan secara objektif dan seragam.',
+            'ak06_fleksibel' => 'YA',
+            'ak06_fleksibel_notes' => 'Tersedia instrumen penyesuaian wajar FR.AK.07.',
+            'ak06_adil' => 'YA',
+            'ak06_adil_notes' => 'Setiap asesi diperlakukan secara transparan dan adil.',
+            'ak06_catatan_peninjau' => 'Seluruh tahapan asesmen telah memenuhi SOP BNSP.',
+            'confirm_draft_review' => '1',
+        ]);
+
+        $responseSubmit->assertRedirect(route('asesor.jadwal.index'));
+        $this->schedule->refresh();
+        $this->assertTrue((bool) $this->schedule->is_closed);
+        $this->assertEquals('FINISHED', $this->schedule->status);
+        $this->assertNotNull($this->schedule->ak05_report);
+        $this->assertNotNull($this->schedule->ak06_review);
+    }
 }
