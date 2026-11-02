@@ -636,7 +636,7 @@
     },
     {
       "number": 7,
-      "question_text": "Fuse blade mempunyai identifikasi warna sebagai berikut :\n\f                               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "question_text": "Fuse blade mempunyai identifikasi warna sebagai berikut :",
       "option_a": "Merah 10 A, Biru 15 A, Kuning 20 A",
       "option_b": "Biru 10 A, Merah 15A, Hijau 20 A",
       "option_c": "Hijau 10 A, Kuning 15 A. Biru 20 A",
@@ -708,7 +708,7 @@
     },
     {
       "number": 15,
-      "question_text": "Bila Check Engine menyala saat mesin hidup menunjukkan bahwa :\n\f                               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "question_text": "Bila Check Engine menyala saat mesin hidup menunjukkan bahwa :",
       "option_a": "Terjadi gangguan pada salah satu sensor",
       "option_b": "Terjadi gangguan pada sistem bahan bakar",
       "option_c": "Terjadi gangguan pada main relay",
@@ -789,7 +789,7 @@
     },
     {
       "number": 24,
-      "question_text": "Gambar dibawah ini merupakan rangkaian sederhana dari komponen resistor, transistor dan condensor/\n     capacitor. Apa yang terjadi jika Switch dari posisi ON dipindah ke posisi OFF ?\n\fLembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "question_text": "Gambar dibawah ini merupakan rangkaian sederhana dari komponen resistor, transistor dan condensor/\n     capacitor. Apa yang terjadi jika Switch dari posisi ON dipindah ke posisi OFF ?",
       "option_a": "Lampu tetap hidup terus menerus         Switch",
       "option_b": "Lampu hidup sesaat kemudian mati",
       "option_c": "Lampu langsung mati               R=1K          C :100",
@@ -847,7 +847,7 @@
       "option_a": "Manifold absolut pressure sensor",
       "option_b": "Idle actuator control",
       "option_c": "Intake air temperatura sensor",
-      "option_d": "Speed sensor\n\f               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo\n\nPENYUSUN DAN VALIDATOR\n\nSTATUS     NO           NAMA   NOMOR MET        TANDA TANGAN\n                                                 DAN TANGGAL\n\n           1 RIDWAN            000.008265 2025\n           2 RANDI ARDIANSYAH\nPENYUSUN                                        12 Januari 2026\n\n                               000.002498 2013\n\n                                                12 Januari 2026\n\n           1 SAPTONO           000.003672 2016\n\n                                                12 Januari 2026\n\nVALIDATOR  2 KARYANTO          000.008260 2025\n\n                                                12 Januari 2026\n\n           3 GUNADI            000.000459 2007\n\n                                                12 Januari 2026",
+      "option_d": "Speed sensor",
       "correct_answer": "B"
     }
   ],

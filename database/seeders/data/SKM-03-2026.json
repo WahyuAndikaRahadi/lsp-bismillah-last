@@ -1,829 +1,829 @@
 {
-    "scheme": {
-        "code": "SKM-03-2026",
-        "name": "Periodical Maintenance Electrified Vehicles",
-        "scheme_type": "KLASTER",
-        "version": "1.0",
-        "muk_code": "03/LSP PrO Indo/I/2026",
-        "description": "Skema Sertifikasi Periodical Maintenance Electrified Vehicles - LSP Praktisi Otomotif Indonesia",
-        "passing_grade_theory": 75,
-        "is_active": true
-    },
-    "units": [
+  "scheme": {
+    "code": "SKM-03-2026",
+    "name": "Periodical Maintenance Electrified Vehicles",
+    "scheme_type": "KLASTER",
+    "version": "1.0",
+    "muk_code": "03/LSP PrO Indo/I/2026",
+    "description": "Skema Sertifikasi Periodical Maintenance Electrified Vehicles - LSP Praktisi Otomotif Indonesia",
+    "passing_grade_theory": 75,
+    "is_active": true
+  },
+  "units": [
+    {
+      "code": "G.45OTO01.003.2",
+      "title": "Melaksanakan Komunikasi di Tempat Kerja",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 1,
+      "elements": [
         {
-            "code": "G.45OTO01.003.2",
-            "title": "Melaksanakan Komunikasi di Tempat Kerja",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 1,
-            "elements": [
-                {
-                    "title": "Mempersiapkan informasi dan",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Mempersiapkan informasi dan sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                },
-                {
-                    "title": "Menyampaikan informasi dan",
-                    "sequence": 2,
-                    "kuks": [
-                        {
-                            "code_number": "2.1",
-                            "statement": "Melaksanakan Menyampaikan informasi dan sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.004.2",
-            "title": "Melaksanakan Pemeliharaan Komponen",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 2,
-            "elements": [
-                {
-                    "title": "Melaksanakan pemeliharaan komponen",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melaksanakan pemeliharaan komponen sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.007.2",
-            "title": "Membaca Gambar Teknik",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 3,
-            "elements": [
-                {
-                    "title": "Membaca gambar teknik",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Membaca gambar teknik sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.008.2",
-            "title": "Menggunakan Alat Ukur",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 4,
-            "elements": [
-                {
-                    "title": "Menggunakan alat ukur",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Menggunakan alat ukur sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.002.2",
-            "title": "Menggunakan Peralatan dan Perlengkapan Tempat Kerja",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 5,
-            "elements": [
-                {
-                    "title": "Menggunakan peralatan dan",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Menggunakan peralatan dan sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "C.29SEV01.003.1",
-            "title": "Melaksanakan Prosedur K3 dan 5R di Tempat Kerja EV",
-            "standard_reference": "SKKNI Terkait",
-            "sequence": 6,
-            "elements": [
-                {
-                    "title": "Melaksanakan daily prosedur K3 dan 5R",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melaksanakan daily prosedur K3 dan 5R sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "C.29SEV01.004.1",
-            "title": "Melaksanakan Prosedur Pemutusan Pengaman Sistem EV",
-            "standard_reference": "SKKNI Terkait",
-            "sequence": 7,
-            "elements": [
-                {
-                    "title": "Melaksanakan pemutusan pengaman",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melaksanakan pemutusan pengaman sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "C.29SEV01.005.1",
-            "title": "Membaca dan Memahami Repair Manual serta Electrical Wiring Diagram (EWD)",
-            "standard_reference": "SKKNI Terkait",
-            "sequence": 8,
-            "elements": [
-                {
-                    "title": "Membaca Repair Manual",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Membaca Repair Manual sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                },
-                {
-                    "title": "Membaca EWD",
-                    "sequence": 2,
-                    "kuks": [
-                        {
-                            "code_number": "2.1",
-                            "statement": "Melaksanakan Membaca EWD sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "C.29SEV02.001.1",
-            "title": "Melakukan Pemeriksaan Akhir Service Electrified Vehicles",
-            "standard_reference": "SKKNI Terkait",
-            "sequence": 9,
-            "elements": [
-                {
-                    "title": "Melakukan pemeriksaan akhir service EV",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melakukan pemeriksaan akhir service EV sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "C.29SEV03.001.1",
-            "title": "Melaksanakan Perawatan Coolant dan Komponen Sistem Termal EV",
-            "standard_reference": "SKKNI Terkait",
-            "sequence": 10,
-            "elements": [
-                {
-                    "title": "Melaksanakan perawatan coolant dan",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melaksanakan perawatan coolant dan sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "C.29SEV03.002.1",
-            "title": "Memeriksa dan Memelihara Kondisi Brake System Electrified Vehicles (EV)",
-            "standard_reference": "SKKNI Terkait",
-            "sequence": 11,
-            "elements": [
-                {
-                    "title": "Memeriksa kondisi Brake System EV",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Memeriksa kondisi Brake System EV sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.044.2",
-            "title": "Melaksanakan Balans Roda (Wheel Balance)",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 12,
-            "elements": [
-                {
-                    "title": "Melaksanakan wheel balance",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melaksanakan wheel balance sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.039.2",
-            "title": "Melaksanakan Pemeliharaan Sistem Suspensi",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 13,
-            "elements": [
-                {
-                    "title": "Melaksanakan perawatan sistem",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melaksanakan perawatan sistem sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.042.2",
-            "title": "Melaksanakan Pemeliharaan/Servis Sistem Rem",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 14,
-            "elements": [
-                {
-                    "title": "Melaksanakan pemeriksaan",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Melaksanakan pemeriksaan sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.065.2",
-            "title": "Memelihara Baterai (Battery Maintenance)",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 15,
-            "elements": [
-                {
-                    "title": "Menyiapkan pemeliharaan baterai",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Manual perbaikan pemeliharaan baterai",
-                            "sequence": 1
-                        },
-                        {
-                            "code_number": "1.2",
-                            "statement": "Peralatan dan perangkat kerja",
-                            "sequence": 2
-                        },
-                        {
-                            "code_number": "1.3",
-                            "statement": "Baterai yang digunakan disiapkan",
-                            "sequence": 3
-                        },
-                        {
-                            "code_number": "1.4",
-                            "statement": "Level cairan elektrolit diperiksa dan",
-                            "sequence": 4
-                        },
-                        {
-                            "code_number": "1.5",
-                            "statement": "Perlengkapan pelindung kendaraan",
-                            "sequence": 5
-                        }
-                    ]
-                },
-                {
-                    "title": "Melaksanakan pemeliharaan baterai",
-                    "sequence": 2,
-                    "kuks": [
-                        {
-                            "code_number": "2.1",
-                            "statement": "Kondisi rumah atau casing baterai,",
-                            "sequence": 1
-                        },
-                        {
-                            "code_number": "2.2",
-                            "statement": "Tegangan baterai diperiksa dengan",
-                            "sequence": 2
-                        },
-                        {
-                            "code_number": "2.3",
-                            "statement": "Berat jenis air baterai diperiksa",
-                            "sequence": 3
-                        },
-                        {
-                            "code_number": "2.4",
-                            "statement": "Baterai dan terminal dibersihkan",
-                            "sequence": 4
-                        },
-                        {
-                            "code_number": "2.5",
-                            "statement": "Dokumen pemeriksaan baterai diisi",
-                            "sequence": 5
-                        }
-                    ]
-                },
-                {
-                    "title": "Menguji baterai pada kendaraan",
-                    "sequence": 3,
-                    "kuks": [
-                        {
-                            "code_number": "3.1",
-                            "statement": "Baterai di uji dengan menggunakan",
-                            "sequence": 1
-                        },
-                        {
-                            "code_number": "3.2",
-                            "statement": "Hasil pekerjaan menguji baterai",
-                            "sequence": 2
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "code": "G.45OTO01.084.2",
-            "title": "Memelihara Komponen Air Conditioner (AC)",
-            "standard_reference": "SKKNI No. 097 Tahun 2018",
-            "sequence": 16,
-            "elements": [
-                {
-                    "title": "Memelihara komponen air conditioner",
-                    "sequence": 1,
-                    "kuks": [
-                        {
-                            "code_number": "1.1",
-                            "statement": "Melaksanakan Memelihara komponen air conditioner sesuai SOP",
-                            "sequence": 1
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "questions": [
-        {
-            "number": 1,
-            "question_text": "Dalam komunikasi di tempat kerja, apa yang harus dilakukan teknisi jika menerima instruksi kerja\n  yang kurang jelas dari supervisor?",
-            "option_a": "Melakukan konfirmasi kembali (feedback) untuk memperjelas instruksi",
-            "option_b": "Menunggu teman kerja lain mengerjakan terlebih dahulu",
-            "option_c": "Langsung mengerjakan sesuai perkiraan",
-            "option_d": "Mengabaikan instruksi tersebut",
-            "correct_answer": "B"
-        },
-        {
-            "number": 2,
-            "question_text": "Apa tujuan utama dari kegiatan 'Rawat' dalam prinsip 5R di bengkel EV?",
-            "option_a": "Membersihkan tempat kerja dari debu",
-            "option_b": "Mempertahankan standar ringkas, rapi, dan resik secara konsisten",
-            "option_c": "Membuang barang yang tidak perlu",
-            "option_d": "Menyusun alat berdasarkan ukuran",
-            "correct_answer": "C"
-        },
-        {
-            "number": 3,
-            "question_text": "Pada gambar teknik, garis putus-putus pendek biasanya digunakan untuk menunjukkan...",
-            "option_a": "Batas pemotongan",
-            "option_b": "Garis ukuran",
-            "option_c": "Garis sumbu",
-            "option_d": "Bagian benda yang tidak tampak/tersembunyi\n\n                                          1\n\f                                      Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
-            "correct_answer": "A"
-        },
-        {
-            "number": 4,
-            "question_text": "Alat ukur presisi yang paling tepat untuk mengukur diameter luar poros motor listrik dengan\n ketelitian 0,01 mm adalah...",
-            "option_a": "Mistar baja",
-            "option_b": "Dial gauge",
-            "option_c": "Micrometer luar",
-            "option_d": "Feeler gauge",
-            "correct_answer": "B"
-        },
-        {
-            "number": 5,
-            "question_text": "Alat untuk menyangga kendaraan setelah diangkat dongkrak adalah...",
-            "option_a": "Two-post lift",
-            "option_b": "Creeper",
-            "option_c": "Jack stand",
-            "option_d": "Floor jack",
-            "correct_answer": "A"
-        },
-        {
-            "number": 6,
-            "question_text": "Warna kabel yang menandakan sirkuit tegangan tinggi (HV) pada EV adalah...",
-            "option_a": "Biru",
-            "option_b": "Kuning",
-            "option_c": "Merah",
-            "option_d": "Oranye",
-            "correct_answer": "C"
-        },
-        {
-            "number": 7,
-            "question_text": "Sebelum melepas Service Plug, tindakan wajib yang dilakukan adalah...",
-            "option_a": "Mematikan sistem (Power OFF) dan mencabut kunci kontak/keyless",
-            "option_b": "Melepas roda kendaraan",
-            "option_c": "Mengisi daya baterai hingga penuh",
-            "option_d": "Membuka semua jendela mobil",
-            "correct_answer": "A"
-        },
-        {
-            "number": 8,
-            "question_text": "Apa tujuan menunggu 'discharge time' setelah Service Plug dilepas?",
-            "option_a": "Membiarkan kapasitor inverter membuang sisa muatan listrik",
-            "option_b": "Membiarkan sistem pendingin baterai mati",
-            "option_c": "Menunggu perintah dari supervisor",
-            "option_d": "Mendinginkan suhu motor listrik\n\n                                                                  2\n\f                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
-            "correct_answer": "B"
-        },
-        {
-            "number": 9,
-            "question_text": "Simbol garis tiga horizontal bertingkat pada EWD menunjukkan...",
-            "option_a": "Sekring (Fuse)",
-            "option_b": "Sambungan massa/ground ke bodi kendaraan",
-            "option_c": "Sakelar utama",
-            "option_d": "Sambungan ke terminal positif baterai",
-            "correct_answer": "B"
-        },
-        {
-            "number": 10,
-            "question_text": "Apa yang dimaksud dengan 'Zero Point Calibration'?",
-            "option_a": "Menghapus semua data diagnosa",
-            "option_b": "Mematikan alat ukur",
-            "option_c": "Mengisi baterai hingga 0%",
-            "option_d": "Menyetel alat ukur pada posisi nol agar pengukuran akurat",
-            "correct_answer": "B"
-        },
-        {
-            "number": 11,
-            "question_text": "Indikator 'Ready' di dashboard menandakan bahwa...",
-            "option_a": "Kendaraan siap untuk dijalankan (sirkuit HV aktif)",
-            "option_b": "Kabel charger masih terhubung",
-            "option_c": "Pengereman regeneratif sedang bekerja",
-            "option_d": "Baterai 12V sedang diisi",
-            "correct_answer": "B"
-        },
-        {
-            "number": 12,
-            "question_text": "Cairan pendingin baterai EV harus memiliki sifat...",
-            "option_a": "Konduktivitas rendah (Dielectric)",
-            "option_b": "Berbahan dasar oli mesin",
-            "option_c": "Konduktif tinggi",
-            "option_d": "Sangat kental",
-            "correct_answer": "C"
-        },
-        {
-            "number": 13,
-            "question_text": "Mengapa pemeriksaan kampas rem tetap penting pada EV?",
-            "option_a": "Karena pengereman regeneratif merusak kampas rem",
-            "option_b": "Karena rem fisik digunakan untuk mengisi daya baterai",
-            "option_c": "Karena kampas rem EV terbuat dari bahan plastik",
-            "option_d": "Karena rem fisik tetap bekerja pada pengereman darurat dan kecepatan rendah",
-            "correct_answer": "A"
-        },
-        {
-            "number": 14,
-            "question_text": "Gejala ban yang tidak balans biasanya dirasakan berupa...",
-            "option_a": "Bunyi mendecit saat ngerem\n\n                                                                 3\n\f                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
-            "option_b": "Rem terasa blong",
-            "option_c": "Mobil sulit belok",
-            "option_d": "Getaran pada setir di kecepatan tertentu",
-            "correct_answer": "B"
-        },
-        {
-            "number": 15,
-            "question_text": "Tenaga bantuan pada sistem EPS dihasilkan oleh...",
-            "option_a": "Motor listrik",
-            "option_b": "Pompa oli",
-            "option_c": "Gaya magnet permanen roda",
-            "option_d": "Tekanan udara",
-            "correct_answer": "B"
-        },
-        {
-            "number": 16,
-            "question_text": "Komponen yang menyerap kejutan jalan dan menahan ayunan adalah...",
-            "option_a": "Shock absorber",
-            "option_b": "Knuckle arm",
-            "option_c": "Tie rod",
-            "option_d": "Lower arm",
-            "correct_answer": "B"
-        },
-        {
-            "number": 17,
-            "question_text": "Apa fungsi utama dari Battery Management System (BMS)?",
-            "option_a": "Menggerakkan roda",
-            "option_b": "Memantau suhu, tegangan, dan arus tiap sel baterai",
-            "option_c": "Mendinginkan kabin mobil",
-            "option_d": "Mengubah arus AC menjadi DC untuk motor",
-            "correct_answer": "B"
-        },
-        {
-            "number": 18,
-            "question_text": "Mengapa oli kompresor AC EV harus bertipe khusus (POE)?",
-            "option_a": "Warnanya lebih jernih",
-            "option_b": "Tidak bisa membeku",
-            "option_c": "Harganya lebih murah",
-            "option_d": "Memiliki sifat isolasi listrik yang baik",
-            "correct_answer": "B"
-        },
-        {
-            "number": 19,
-            "question_text": "Alat untuk mengecek kebocoran arus tegangan tinggi ke bodi adalah...",
-            "option_a": "Insulation Tester (Megger)",
-            "option_b": "Tire gauge",
-            "option_c": "Multimeter biasa\n\n                                                                 4\n\f                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
-            "option_d": "Hydrometer",
-            "correct_answer": "B"
-        },
-        {
-            "number": 20,
-            "question_text": "Dalam EWD, simbol berbentuk zig-zag menunjukkan...",
-            "option_a": "Baterai",
-            "option_b": "Resistor",
-            "option_c": "Lampu",
-            "option_d": "Kapasitor",
-            "correct_answer": "B"
-        },
-        {
-            "number": 21,
-            "question_text": "Menekan bodi mobil dan melihat pantulannya bertujuan mengecek...",
-            "option_a": "Kinerja shock absorber",
-            "option_b": "Sudut camber",
-            "option_c": "Kekencangan baut roda",
-            "option_d": "Keausan ban",
-            "correct_answer": "B"
-        },
-        {
-            "number": 22,
-            "question_text": "Penggunaan sarung tangan karet (insulating) harus dipastikan...",
-            "option_a": "Basah agar dingin",
-            "option_b": "Berwarna cerah",
-            "option_c": "Tidak bocor dengan tes udara",
-            "option_d": "Tipis agar nyaman",
-            "correct_answer": "A"
-        },
-        {
-            "number": 23,
-            "question_text": "Prosedur 'Bleeding' pada sistem rem bertujuan untuk...",
-            "option_a": "Menambah tekanan minyak rem",
-            "option_b": "Membuang udara yang terjebak di sirkuit hidrolis",
-            "option_c": "Mengencangkan baut roda",
-            "option_d": "Membersihkan karat pada piringan",
-            "correct_answer": "B"
-        },
-        {
-            "number": 24,
-            "question_text": "Komponen untuk menyeimbangkan massa velg disebut...",
-            "option_a": "Rubber patch",
-            "option_b": "Bearing",
-            "option_c": "Spacer",
-            "option_d": "Balance weight (timah)",
-            "correct_answer": "B"
-        },
-        {
-            "number": 25,
-            "question_text": "Komponen yang mengubah tegangan DC tinggi ke DC 12V adalah...\n\n                                                                 5\n\f                                     Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
-            "option_a": "On-Board Charger",
-            "option_b": "Inverter",
-            "option_c": "Motor Controller",
-            "option_d": "DC-DC Converter",
-            "correct_answer": "B"
-        },
-        {
-            "number": 26,
-            "question_text": "Pemeriksaan 'Play' (gerak bebas) setir mengecek keausan pada...",
-            "option_a": "Steering linkage/joint",
-            "option_b": "Ban",
-            "option_c": "Shock absorber",
-            "option_d": "Pompa rem",
-            "correct_answer": "B"
-        },
-        {
-            "number": 27,
-            "question_text": "Perlengkapan K3 yang DILARANG saat bekerja pada HV baterai adalah...",
-            "option_a": "Face shield",
-            "option_b": "Cincin dan jam tangan logam",
-            "option_c": "Sepatu Safety Non-Konduktif",
-            "option_d": "Insulated tools",
-            "correct_answer": "D"
-        },
-        {
-            "number": 28,
-            "question_text": "Langkah pembongkaran komponen yang benar dapat dilihat pada...",
-            "option_a": "Katalog suku cadang",
-            "option_b": "Repair Manual",
-            "option_c": "Buku garansi",
-            "option_d": "EWD",
-            "correct_answer": "B"
-        },
-        {
-            "number": 29,
-            "question_text": "Kebocoran pada sistem AC EV dideteksi dengan alat...",
-            "option_a": "Multimeter",
-            "option_b": "Leak detector",
-            "option_c": "Compression tester",
-            "option_d": "Vernier caliper",
-            "correct_answer": "A"
-        },
-        {
-            "number": 30,
-            "question_text": "Apa yang dilakukan BMS jika baterai traksi mengalami overheat?",
-            "option_a": "Membatasi daya output (Power Limitation)",
-            "option_b": "Mematikan lampu utama\n\n                                                                 6\n\f                                Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
-            "option_c": "Melepas Service Plug secara otomatis",
-            "option_d": "Meningkatkan tenaga motor\n\nPENYUSUN DAN VALIDATOR  NAMA     NOMOR MET            TANDA\n       STATUS NO                                  TANGAN DAN\n\n                                                    TANGGAL\n\n          1 RIDWAN               000.008265 2025\n\nPENYUSUN                                          12 Januari 2026\n\n          2 RANDI ARDIANSYAH     000.002498 2013\n\n                                                  12 Januari 2026\n\n          1 SAPTONO              000.003672 2016\n\n                                                  12 Januari 2026\n\nVALIDATOR 2 KARYANTO             000.008260 2025\n\n                                                  12 Januari 2026\n\n          3 GUNADI               000.000459 2007\n                                                            12 Januari 2026\n\n                              7",
-            "correct_answer": "B"
-        }
-    ],
-    "tpd": {
-        "scenario": "No. Judul Unit Kode Unit 1. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja Kelompok 2. G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen Pekerjaan 1 3. G.45OTO01.007.2 Membaca Gambar Teknik General service 4. G.45OTO01.008.2 Menggunakan Alat Ukur 5. G.45OTO01.002.2 MenggunakanPeralatandan Perlengkapan Tempat Kerja Skenario Tugas Praktik Demonstrasi:",
-        "time_limit": "20 Menit",
-        "tasks": [
+          "title": "Mempersiapkan informasi dan",
+          "sequence": 1,
+          "kuks": [
             {
-                "id": "1",
-                "instruction": "Baca dan pelajari setiap instruksi kerja di bawah ini dengan cermat sebelum"
-            },
-            {
-                "id": "2",
-                "instruction": "Klarifikasi kepada asesor kompetensi apabila ada hal-hal yang belum jelas"
-            },
-            {
-                "id": "3",
-                "instruction": "Laksanakan pekerjaan sesuai dengan urutan proses yang sudah ditetapkan"
-            },
-            {
-                "id": "4",
-                "instruction": "Seluruh proses kerja mengacu kepada SOP/WI yang dipersyaratkan (Jika Ada)"
+              "code_number": "1.1",
+              "statement": "Melaksanakan Mempersiapkan informasi dan sesuai SOP",
+              "sequence": 1
             }
-        ]
+          ]
+        },
+        {
+          "title": "Menyampaikan informasi dan",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Melaksanakan Menyampaikan informasi dan sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
     },
-    "pmo": [
+    {
+      "code": "G.45OTO01.004.2",
+      "title": "Melaksanakan Pemeliharaan Komponen",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 2,
+      "elements": [
         {
-            "number": "1",
-            "question": "Seorang teknisi akan melakukan pengukuran tegangan pada baterai kendaraan",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "2",
-            "question": "Saat melakukan pemeriksaan pada baterai traksi (HV battery), Anda",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "1",
-            "question": "Sebelum memulai pekerjaan pada sistem tegangan tinggi (High Voltage),",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "2",
-            "question": "Sebuah mobil listrik mengalami penurunan efisiensi pengereman regeneratif.",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "1",
-            "question": "Saat memeriksa port pengisian daya (Charging Port), Anda menemukan",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "2",
-            "question": "Dalam pemeriksaan sistem pendingin baterai, ditemukan volume coolant",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "1",
-            "question": "Seorang teknisi akan melakukan pengisian cairan pendingin setelah mengganti",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "2",
-            "question": "Dua mobil listrik identik menempuh rute yang sama. Mobil A menggunakan",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "1",
-            "question": "Sebuah mobil listrik berperforma tinggi sering mengalami getaran pada",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "2",
-            "question": "Setelah melakukan penggantian tie-rod end, Anda harus memastikan posisi",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "1",
-            "question": "Bagaimana cara yang benar dalam menerapkan pengisian daya untuk menjaga",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
-        },
-        {
-            "number": "2",
-            "question": "Seorang pemilik mobil listrik jarang menggunakan kendaraannya dan",
-            "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+          "title": "Melaksanakan pemeliharaan komponen",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melaksanakan pemeliharaan komponen sesuai SOP",
+              "sequence": 1
+            }
+          ]
         }
-    ],
-    "report_sheet": [
+      ]
+    },
+    {
+      "code": "G.45OTO01.007.2",
+      "title": "Membaca Gambar Teknik",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 3,
+      "elements": [
         {
-            "item": "1. C.29SEV01.003.1 Persiapan :",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "2. C.29SEV01.004.1 - Menggunakan sarung tangan tegangan tinggi",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "3. C.29SEV01.005.1 Lihat Buku Manual (Workshop Manual) yang tersedia",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "4. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "5. G.45OTO01.007.2 Lihat Buku Manual (Workshop Manual) yang tersedia",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "6. G.45OTO01.008.2 Alat Ukur",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "7. G.45OTO01.002.2 Persiapan :",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "8. C.29SEV02.001.1 Final Inspection",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "9. C.29SEV03.001.1 Mengecheck Fluida",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "10. C.29SEV03.002.1 Perawatan Brake :",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "11. G.45OTO01.004.2 Pemeliharaan Komponen Kendaraan:",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "12. G.45OTO01.044.2 Memeriksa Roda",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "13. G.45OTO01.039.2 Memeriksa Sistem Kemudi",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "14. G.45OTO01.042.2 Memeriksa Sistem Suspensi",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "15. G.45OTO01.065.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
-        },
-        {
-            "item": "16. G.45OTO01.084.2 Memelihara Sistem Air Conditioner",
-            "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+          "title": "Membaca gambar teknik",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Membaca gambar teknik sesuai SOP",
+              "sequence": 1
+            }
+          ]
         }
+      ]
+    },
+    {
+      "code": "G.45OTO01.008.2",
+      "title": "Menggunakan Alat Ukur",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 4,
+      "elements": [
+        {
+          "title": "Menggunakan alat ukur",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Menggunakan alat ukur sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.002.2",
+      "title": "Menggunakan Peralatan dan Perlengkapan Tempat Kerja",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 5,
+      "elements": [
+        {
+          "title": "Menggunakan peralatan dan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Menggunakan peralatan dan sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C.29SEV01.003.1",
+      "title": "Melaksanakan Prosedur K3 dan 5R di Tempat Kerja EV",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 6,
+      "elements": [
+        {
+          "title": "Melaksanakan daily prosedur K3 dan 5R",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melaksanakan daily prosedur K3 dan 5R sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C.29SEV01.004.1",
+      "title": "Melaksanakan Prosedur Pemutusan Pengaman Sistem EV",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 7,
+      "elements": [
+        {
+          "title": "Melaksanakan pemutusan pengaman",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melaksanakan pemutusan pengaman sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C.29SEV01.005.1",
+      "title": "Membaca dan Memahami Repair Manual serta Electrical Wiring Diagram (EWD)",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 8,
+      "elements": [
+        {
+          "title": "Membaca Repair Manual",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Membaca Repair Manual sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        },
+        {
+          "title": "Membaca EWD",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Melaksanakan Membaca EWD sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C.29SEV02.001.1",
+      "title": "Melakukan Pemeriksaan Akhir Service Electrified Vehicles",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 9,
+      "elements": [
+        {
+          "title": "Melakukan pemeriksaan akhir service EV",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melakukan pemeriksaan akhir service EV sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C.29SEV03.001.1",
+      "title": "Melaksanakan Perawatan Coolant dan Komponen Sistem Termal EV",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 10,
+      "elements": [
+        {
+          "title": "Melaksanakan perawatan coolant dan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melaksanakan perawatan coolant dan sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C.29SEV03.002.1",
+      "title": "Memeriksa dan Memelihara Kondisi Brake System Electrified Vehicles (EV)",
+      "standard_reference": "SKKNI Terkait",
+      "sequence": 11,
+      "elements": [
+        {
+          "title": "Memeriksa kondisi Brake System EV",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Memeriksa kondisi Brake System EV sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.044.2",
+      "title": "Melaksanakan Balans Roda (Wheel Balance)",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 12,
+      "elements": [
+        {
+          "title": "Melaksanakan wheel balance",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melaksanakan wheel balance sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.039.2",
+      "title": "Melaksanakan Pemeliharaan Sistem Suspensi",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 13,
+      "elements": [
+        {
+          "title": "Melaksanakan perawatan sistem",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melaksanakan perawatan sistem sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.042.2",
+      "title": "Melaksanakan Pemeliharaan/Servis Sistem Rem",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 14,
+      "elements": [
+        {
+          "title": "Melaksanakan pemeriksaan",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Melaksanakan pemeriksaan sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.065.2",
+      "title": "Memelihara Baterai (Battery Maintenance)",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 15,
+      "elements": [
+        {
+          "title": "Menyiapkan pemeliharaan baterai",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Manual perbaikan pemeliharaan baterai",
+              "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Peralatan dan perangkat kerja",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Baterai yang digunakan disiapkan",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Level cairan elektrolit diperiksa dan",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Perlengkapan pelindung kendaraan",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Melaksanakan pemeliharaan baterai",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kondisi rumah atau casing baterai,",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Tegangan baterai diperiksa dengan",
+              "sequence": 2
+            },
+            {
+              "code_number": "2.3",
+              "statement": "Berat jenis air baterai diperiksa",
+              "sequence": 3
+            },
+            {
+              "code_number": "2.4",
+              "statement": "Baterai dan terminal dibersihkan",
+              "sequence": 4
+            },
+            {
+              "code_number": "2.5",
+              "statement": "Dokumen pemeriksaan baterai diisi",
+              "sequence": 5
+            }
+          ]
+        },
+        {
+          "title": "Menguji baterai pada kendaraan",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Baterai di uji dengan menggunakan",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Hasil pekerjaan menguji baterai",
+              "sequence": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "G.45OTO01.084.2",
+      "title": "Memelihara Komponen Air Conditioner (AC)",
+      "standard_reference": "SKKNI No. 097 Tahun 2018",
+      "sequence": 16,
+      "elements": [
+        {
+          "title": "Memelihara komponen air conditioner",
+          "sequence": 1,
+          "kuks": [
+            {
+              "code_number": "1.1",
+              "statement": "Melaksanakan Memelihara komponen air conditioner sesuai SOP",
+              "sequence": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "question_text": "Dalam komunikasi di tempat kerja, apa yang harus dilakukan teknisi jika menerima instruksi kerja\n  yang kurang jelas dari supervisor?",
+      "option_a": "Melakukan konfirmasi kembali (feedback) untuk memperjelas instruksi",
+      "option_b": "Menunggu teman kerja lain mengerjakan terlebih dahulu",
+      "option_c": "Langsung mengerjakan sesuai perkiraan",
+      "option_d": "Mengabaikan instruksi tersebut",
+      "correct_answer": "B"
+    },
+    {
+      "number": 2,
+      "question_text": "Apa tujuan utama dari kegiatan 'Rawat' dalam prinsip 5R di bengkel EV?",
+      "option_a": "Membersihkan tempat kerja dari debu",
+      "option_b": "Mempertahankan standar ringkas, rapi, dan resik secara konsisten",
+      "option_c": "Membuang barang yang tidak perlu",
+      "option_d": "Menyusun alat berdasarkan ukuran",
+      "correct_answer": "C"
+    },
+    {
+      "number": 3,
+      "question_text": "Pada gambar teknik, garis putus-putus pendek biasanya digunakan untuk menunjukkan...",
+      "option_a": "Batas pemotongan",
+      "option_b": "Garis ukuran",
+      "option_c": "Garis sumbu",
+      "option_d": "Bagian benda yang tidak tampak/tersembunyi",
+      "correct_answer": "A"
+    },
+    {
+      "number": 4,
+      "question_text": "Alat ukur presisi yang paling tepat untuk mengukur diameter luar poros motor listrik dengan\n ketelitian 0,01 mm adalah...",
+      "option_a": "Mistar baja",
+      "option_b": "Dial gauge",
+      "option_c": "Micrometer luar",
+      "option_d": "Feeler gauge",
+      "correct_answer": "B"
+    },
+    {
+      "number": 5,
+      "question_text": "Alat untuk menyangga kendaraan setelah diangkat dongkrak adalah...",
+      "option_a": "Two-post lift",
+      "option_b": "Creeper",
+      "option_c": "Jack stand",
+      "option_d": "Floor jack",
+      "correct_answer": "A"
+    },
+    {
+      "number": 6,
+      "question_text": "Warna kabel yang menandakan sirkuit tegangan tinggi (HV) pada EV adalah...",
+      "option_a": "Biru",
+      "option_b": "Kuning",
+      "option_c": "Merah",
+      "option_d": "Oranye",
+      "correct_answer": "C"
+    },
+    {
+      "number": 7,
+      "question_text": "Sebelum melepas Service Plug, tindakan wajib yang dilakukan adalah...",
+      "option_a": "Mematikan sistem (Power OFF) dan mencabut kunci kontak/keyless",
+      "option_b": "Melepas roda kendaraan",
+      "option_c": "Mengisi daya baterai hingga penuh",
+      "option_d": "Membuka semua jendela mobil",
+      "correct_answer": "A"
+    },
+    {
+      "number": 8,
+      "question_text": "Apa tujuan menunggu 'discharge time' setelah Service Plug dilepas?",
+      "option_a": "Membiarkan kapasitor inverter membuang sisa muatan listrik",
+      "option_b": "Membiarkan sistem pendingin baterai mati",
+      "option_c": "Menunggu perintah dari supervisor",
+      "option_d": "Mendinginkan suhu motor listrik",
+      "correct_answer": "B"
+    },
+    {
+      "number": 9,
+      "question_text": "Simbol garis tiga horizontal bertingkat pada EWD menunjukkan...",
+      "option_a": "Sekring (Fuse)",
+      "option_b": "Sambungan massa/ground ke bodi kendaraan",
+      "option_c": "Sakelar utama",
+      "option_d": "Sambungan ke terminal positif baterai",
+      "correct_answer": "B"
+    },
+    {
+      "number": 10,
+      "question_text": "Apa yang dimaksud dengan 'Zero Point Calibration'?",
+      "option_a": "Menghapus semua data diagnosa",
+      "option_b": "Mematikan alat ukur",
+      "option_c": "Mengisi baterai hingga 0%",
+      "option_d": "Menyetel alat ukur pada posisi nol agar pengukuran akurat",
+      "correct_answer": "B"
+    },
+    {
+      "number": 11,
+      "question_text": "Indikator 'Ready' di dashboard menandakan bahwa...",
+      "option_a": "Kendaraan siap untuk dijalankan (sirkuit HV aktif)",
+      "option_b": "Kabel charger masih terhubung",
+      "option_c": "Pengereman regeneratif sedang bekerja",
+      "option_d": "Baterai 12V sedang diisi",
+      "correct_answer": "B"
+    },
+    {
+      "number": 12,
+      "question_text": "Cairan pendingin baterai EV harus memiliki sifat...",
+      "option_a": "Konduktivitas rendah (Dielectric)",
+      "option_b": "Berbahan dasar oli mesin",
+      "option_c": "Konduktif tinggi",
+      "option_d": "Sangat kental",
+      "correct_answer": "C"
+    },
+    {
+      "number": 13,
+      "question_text": "Mengapa pemeriksaan kampas rem tetap penting pada EV?",
+      "option_a": "Karena pengereman regeneratif merusak kampas rem",
+      "option_b": "Karena rem fisik digunakan untuk mengisi daya baterai",
+      "option_c": "Karena kampas rem EV terbuat dari bahan plastik",
+      "option_d": "Karena rem fisik tetap bekerja pada pengereman darurat dan kecepatan rendah",
+      "correct_answer": "A"
+    },
+    {
+      "number": 14,
+      "question_text": "Gejala ban yang tidak balans biasanya dirasakan berupa...",
+      "option_a": "Bunyi mendecit saat ngerem",
+      "option_b": "Rem terasa blong",
+      "option_c": "Mobil sulit belok",
+      "option_d": "Getaran pada setir di kecepatan tertentu",
+      "correct_answer": "B"
+    },
+    {
+      "number": 15,
+      "question_text": "Tenaga bantuan pada sistem EPS dihasilkan oleh...",
+      "option_a": "Motor listrik",
+      "option_b": "Pompa oli",
+      "option_c": "Gaya magnet permanen roda",
+      "option_d": "Tekanan udara",
+      "correct_answer": "B"
+    },
+    {
+      "number": 16,
+      "question_text": "Komponen yang menyerap kejutan jalan dan menahan ayunan adalah...",
+      "option_a": "Shock absorber",
+      "option_b": "Knuckle arm",
+      "option_c": "Tie rod",
+      "option_d": "Lower arm",
+      "correct_answer": "B"
+    },
+    {
+      "number": 17,
+      "question_text": "Apa fungsi utama dari Battery Management System (BMS)?",
+      "option_a": "Menggerakkan roda",
+      "option_b": "Memantau suhu, tegangan, dan arus tiap sel baterai",
+      "option_c": "Mendinginkan kabin mobil",
+      "option_d": "Mengubah arus AC menjadi DC untuk motor",
+      "correct_answer": "B"
+    },
+    {
+      "number": 18,
+      "question_text": "Mengapa oli kompresor AC EV harus bertipe khusus (POE)?",
+      "option_a": "Warnanya lebih jernih",
+      "option_b": "Tidak bisa membeku",
+      "option_c": "Harganya lebih murah",
+      "option_d": "Memiliki sifat isolasi listrik yang baik",
+      "correct_answer": "B"
+    },
+    {
+      "number": 19,
+      "question_text": "Alat untuk mengecek kebocoran arus tegangan tinggi ke bodi adalah...",
+      "option_a": "Insulation Tester (Megger)",
+      "option_b": "Tire gauge",
+      "option_c": "Multimeter biasa",
+      "option_d": "Hydrometer",
+      "correct_answer": "B"
+    },
+    {
+      "number": 20,
+      "question_text": "Dalam EWD, simbol berbentuk zig-zag menunjukkan...",
+      "option_a": "Baterai",
+      "option_b": "Resistor",
+      "option_c": "Lampu",
+      "option_d": "Kapasitor",
+      "correct_answer": "B"
+    },
+    {
+      "number": 21,
+      "question_text": "Menekan bodi mobil dan melihat pantulannya bertujuan mengecek...",
+      "option_a": "Kinerja shock absorber",
+      "option_b": "Sudut camber",
+      "option_c": "Kekencangan baut roda",
+      "option_d": "Keausan ban",
+      "correct_answer": "B"
+    },
+    {
+      "number": 22,
+      "question_text": "Penggunaan sarung tangan karet (insulating) harus dipastikan...",
+      "option_a": "Basah agar dingin",
+      "option_b": "Berwarna cerah",
+      "option_c": "Tidak bocor dengan tes udara",
+      "option_d": "Tipis agar nyaman",
+      "correct_answer": "A"
+    },
+    {
+      "number": 23,
+      "question_text": "Prosedur 'Bleeding' pada sistem rem bertujuan untuk...",
+      "option_a": "Menambah tekanan minyak rem",
+      "option_b": "Membuang udara yang terjebak di sirkuit hidrolis",
+      "option_c": "Mengencangkan baut roda",
+      "option_d": "Membersihkan karat pada piringan",
+      "correct_answer": "B"
+    },
+    {
+      "number": 24,
+      "question_text": "Komponen untuk menyeimbangkan massa velg disebut...",
+      "option_a": "Rubber patch",
+      "option_b": "Bearing",
+      "option_c": "Spacer",
+      "option_d": "Balance weight (timah)",
+      "correct_answer": "B"
+    },
+    {
+      "number": 25,
+      "question_text": "Komponen yang mengubah tegangan DC tinggi ke DC 12V adalah...",
+      "option_a": "On-Board Charger",
+      "option_b": "Inverter",
+      "option_c": "Motor Controller",
+      "option_d": "DC-DC Converter",
+      "correct_answer": "B"
+    },
+    {
+      "number": 26,
+      "question_text": "Pemeriksaan 'Play' (gerak bebas) setir mengecek keausan pada...",
+      "option_a": "Steering linkage/joint",
+      "option_b": "Ban",
+      "option_c": "Shock absorber",
+      "option_d": "Pompa rem",
+      "correct_answer": "B"
+    },
+    {
+      "number": 27,
+      "question_text": "Perlengkapan K3 yang DILARANG saat bekerja pada HV baterai adalah...",
+      "option_a": "Face shield",
+      "option_b": "Cincin dan jam tangan logam",
+      "option_c": "Sepatu Safety Non-Konduktif",
+      "option_d": "Insulated tools",
+      "correct_answer": "D"
+    },
+    {
+      "number": 28,
+      "question_text": "Langkah pembongkaran komponen yang benar dapat dilihat pada...",
+      "option_a": "Katalog suku cadang",
+      "option_b": "Repair Manual",
+      "option_c": "Buku garansi",
+      "option_d": "EWD",
+      "correct_answer": "B"
+    },
+    {
+      "number": 29,
+      "question_text": "Kebocoran pada sistem AC EV dideteksi dengan alat...",
+      "option_a": "Multimeter",
+      "option_b": "Leak detector",
+      "option_c": "Compression tester",
+      "option_d": "Vernier caliper",
+      "correct_answer": "A"
+    },
+    {
+      "number": 30,
+      "question_text": "Apa yang dilakukan BMS jika baterai traksi mengalami overheat?",
+      "option_a": "Membatasi daya output (Power Limitation)",
+      "option_b": "Mematikan lampu utama",
+      "option_c": "Melepas Service Plug secara otomatis",
+      "option_d": "Meningkatkan tenaga motor",
+      "correct_answer": "B"
+    }
+  ],
+  "tpd": {
+    "scenario": "No. Judul Unit Kode Unit 1. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja Kelompok 2. G.45OTO01.004.2 Melaksanakan Pemeliharaan Komponen Pekerjaan 1 3. G.45OTO01.007.2 Membaca Gambar Teknik General service 4. G.45OTO01.008.2 Menggunakan Alat Ukur 5. G.45OTO01.002.2 MenggunakanPeralatandan Perlengkapan Tempat Kerja Skenario Tugas Praktik Demonstrasi:",
+    "time_limit": "20 Menit",
+    "tasks": [
+      {
+        "id": "1",
+        "instruction": "Baca dan pelajari setiap instruksi kerja di bawah ini dengan cermat sebelum"
+      },
+      {
+        "id": "2",
+        "instruction": "Klarifikasi kepada asesor kompetensi apabila ada hal-hal yang belum jelas"
+      },
+      {
+        "id": "3",
+        "instruction": "Laksanakan pekerjaan sesuai dengan urutan proses yang sudah ditetapkan"
+      },
+      {
+        "id": "4",
+        "instruction": "Seluruh proses kerja mengacu kepada SOP/WI yang dipersyaratkan (Jika Ada)"
+      }
     ]
+  },
+  "pmo": [
+    {
+      "number": "1",
+      "question": "Seorang teknisi akan melakukan pengukuran tegangan pada baterai kendaraan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Saat melakukan pemeriksaan pada baterai traksi (HV battery), Anda",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Sebelum memulai pekerjaan pada sistem tegangan tinggi (High Voltage),",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Sebuah mobil listrik mengalami penurunan efisiensi pengereman regeneratif.",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Saat memeriksa port pengisian daya (Charging Port), Anda menemukan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Dalam pemeriksaan sistem pendingin baterai, ditemukan volume coolant",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Seorang teknisi akan melakukan pengisian cairan pendingin setelah mengganti",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Dua mobil listrik identik menempuh rute yang sama. Mobil A menggunakan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Sebuah mobil listrik berperforma tinggi sering mengalami getaran pada",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Setelah melakukan penggantian tie-rod end, Anda harus memastikan posisi",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "1",
+      "question": "Bagaimana cara yang benar dalam menerapkan pengisian daya untuk menjaga",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    },
+    {
+      "number": "2",
+      "question": "Seorang pemilik mobil listrik jarang menggunakan kendaraannya dan",
+      "expected_answer": "Menjelaskan prosedur dan tindakan teknis sesuai pedoman reparasi resmi."
+    }
+  ],
+  "report_sheet": [
+    {
+      "item": "1. C.29SEV01.003.1 Persiapan :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "2. C.29SEV01.004.1 - Menggunakan sarung tangan tegangan tinggi",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "3. C.29SEV01.005.1 Lihat Buku Manual (Workshop Manual) yang tersedia",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "4. G.45OTO01.003.2 Melaksanakan Komunikasi di Tempat Kerja",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "5. G.45OTO01.007.2 Lihat Buku Manual (Workshop Manual) yang tersedia",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "6. G.45OTO01.008.2 Alat Ukur",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "7. G.45OTO01.002.2 Persiapan :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "8. C.29SEV02.001.1 Final Inspection",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "9. C.29SEV03.001.1 Mengecheck Fluida",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "10. C.29SEV03.002.1 Perawatan Brake :",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "11. G.45OTO01.004.2 Pemeliharaan Komponen Kendaraan:",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "12. G.45OTO01.044.2 Memeriksa Roda",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "13. G.45OTO01.039.2 Memeriksa Sistem Kemudi",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "14. G.45OTO01.042.2 Memeriksa Sistem Suspensi",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "15. G.45OTO01.065.2 Periksa Kondisi Baterai (sesuai baterai pada unit kendaraan)",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    },
+    {
+      "item": "16. G.45OTO01.084.2 Memelihara Sistem Air Conditioner",
+      "standard": "Lihat Manual Servis Pabrik / Workshop Manual"
+    }
+  ]
 }

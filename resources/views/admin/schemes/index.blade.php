@@ -47,9 +47,14 @@
                                 {{ $scheme->category ?? 'Otomotif' }}
                             </td>
                             <td class="px-6 py-4 text-center">
-                                <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700">
-                                    {{ $scheme->competency_units_count ?? $scheme->units_count ?? ($scheme->units ? $scheme->units->count() : 0) }} Unit
-                                </span>
+                                <div class="flex items-center justify-center gap-1.5 flex-wrap">
+                                    <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700">
+                                        {{ $scheme->competency_units_count ?? $scheme->units_count ?? ($scheme->units ? $scheme->units->count() : 0) }} Unit
+                                    </span>
+                                    <a href="{{ route('admin.question-banks.index', ['scheme_id' => $scheme->id]) }}" class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 transition" title="Lihat Bank Soal CBT">
+                                        {{ $scheme->question_banks_count ?? 0 }} Soal CBT
+                                    </a>
+                                </div>
                             </td>
                             <td class="px-6 py-4">
                                 <span class="px-2 py-0.5 text-xs font-semibold rounded bg-emerald-50 text-emerald-700 border border-emerald-200">

@@ -167,10 +167,10 @@
 
             <!-- Sidebar Navigation -->
             <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-                   class="fixed inset-y-0 left-0 md:left-1.5 z-50 md:z-30 w-72 md:w-64 bg-white border-r border-slate-200 shadow-xl md:shadow-none flex flex-col justify-between transition-transform duration-200 ease-in-out md:translate-x-0">
+                   class="fixed inset-y-0 left-0 md:left-1.5 z-50 md:z-30 w-72 md:w-64 bg-white border-r border-slate-200 shadow-xl md:shadow-none flex flex-col h-screen transition-transform duration-200 ease-in-out md:translate-x-0">
                 
-                <!-- Sidebar Top Section -->
-                <div>
+                <!-- Sidebar Top Section (Fixed Header) -->
+                <div class="shrink-0">
                     <!-- Top Horizontal Dual Stripe -->
                     <div class="w-full flex h-1">
                         <div class="w-2/3 bg-lsp-navy"></div>
@@ -206,9 +206,10 @@
                             </svg>
                         </button>
                     </div>
+                </div>
 
-                    <!-- Navigation Links Grouped by Role -->
-                    <nav class="p-3 space-y-1 text-xs">
+                <!-- Navigation Links (Scrollable Nav Area) -->
+                <nav class="flex-1 overflow-y-auto min-h-0 p-3 space-y-1 text-xs overscroll-contain">
                         
                         @if(auth()->user()->isRole('ASESI'))
                             <div class="px-3 pt-3 pb-1 text-[10px] font-extrabold text-lsp-muted uppercase tracking-wider">
@@ -399,11 +400,10 @@
                             @endif
                         @endif
 
-                    </nav>
-                </div>
+                </nav>
 
-                <!-- Sidebar Bottom: User Profile & Logout -->
-                <div class="p-3 border-t border-slate-200 bg-slate-50/70">
+                <!-- Sidebar Bottom: User Profile & Logout (Fixed Bottom) -->
+                <div class="shrink-0 p-3 border-t border-slate-200 bg-slate-50/70">
                     <div class="flex items-center justify-between p-1.5">
                         <a href="{{ route('profile.edit') }}" 
                            title="Buka Pengaturan Profil & Akun" 

@@ -158,4 +158,20 @@ class AdminSchemeCrudTest extends TestCase
         $deleteElemResponse->assertRedirect();
         $this->assertDatabaseMissing('m_unit_elements', ['id' => $element->id]);
     }
+
+    public function test_admin_can_view_question_banks_and_filter(): void
+    {
+        // 1. Check index displays question bank packages and total questions
+        $response = $this->actingAs($this->admin)->get(route('admin.question-banks.index'));
+        $response->assertOk();
+        $response->assertSee('Bank Soal Asesmen CBT (FR.IA.05)');
+        $response->assertSee('Ringkasan Paket Bank Soal per Skema');
+        $response->assertSee('330');
+
+        // 2. Filter by scheme_id
+        $filterResponse = $this->actingAs($this->admin)
+            ->get(route('admin.question-banks.index', ['scheme_id' => $this->scheme->id]));
+        $filterResponse->assertOk();
+        $filterResponse->assertSee($this->scheme->name);
+    }
 }

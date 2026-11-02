@@ -1029,7 +1029,7 @@
       "option_a": "Ohmmeter",
       "option_b": "Ammeter Clamp",
       "option_c": "Termometer Infared",
-      "option_d": "Multimeter Digital\n\n                                                              1\n\f                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia\n                                                                 LSP-PrO Indo",
+      "option_d": "Multimeter Digital",
       "correct_answer": "D"
     },
     {
@@ -1101,7 +1101,7 @@
       "option_a": "Area yang gelap dan tertutup rapat.",
       "option_b": "Area basah untuk mendinginkan baterai.",
       "option_c": "Area dengan karpet tebal untuk kenyamanan.",
-      "option_d": "Area yang bersih, kering, berventilasi baik, dengan alat pemadam api yang sesuai tersedia.\n\n                                                              2\n\f                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia\n                                                                 LSP-PrO Indo",
+      "option_d": "Area yang bersih, kering, berventilasi baik, dengan alat pemadam api yang sesuai tersedia.",
       "correct_answer": "D"
     },
     {
@@ -1181,7 +1181,7 @@
       "question_text": "Pemeriksaan free play throttle gas pada throttle body, yang perlu diperhatikan pada gambar berikut\n    adalah ...",
       "option_a": "Putaran mesin Idle",
       "option_b": "Kebersihan pegas throttle",
-      "option_c": "Memastikan baut stopscrew tidak berubah\n\n                                                              3\n\f                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia\n                                                                 LSP-PrO Indo",
+      "option_c": "Memastikan baut stopscrew tidak berubah",
       "option_d": "Kebersihan Throttle body",
       "correct_answer": "A"
     },
@@ -1253,7 +1253,7 @@
       "question_text": "Apabila menarik ke satu sisi atau tidak dapat lurus, kemungkinan penyebab kerusakan adalah ...",
       "option_a": "Bearing roda depan aus/rusak",
       "option_b": "Tekanan udara ban terlalu keras",
-      "option_c": "Seal debu rusak\n\n                                                              4\n\f                                      Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia\n                                                                 LSP-PrO Indo",
+      "option_c": "Seal debu rusak",
       "option_d": "Pegas fork lemah",
       "correct_answer": "D"
     },
@@ -1322,7 +1322,7 @@
     },
     {
       "number": 39,
-      "question_text": "Apa yang harus diperiksa setelah melakukan pemasangan cover body...\n\n                                                              5\n\f                        Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia\n                                                   LSP-PrO Indo",
+      "question_text": "Apa yang harus diperiksa setelah melakukan pemasangan cover body...",
       "option_a": "Kinerja mesin",
       "option_b": "Sistem pendingin",
       "option_c": "Kencangnya baut dan kesesuaian cover body",
@@ -1335,7 +1335,7 @@
       "option_a": "Membersihkan area sekitar",
       "option_b": "Mengamati posisi dan jumlah baut",
       "option_c": "Menggunakan kunci yang sesuai",
-      "option_d": "Melepaskan semua baut secara bersamaan\n\nPENYUSUN DAN VALIDATOR\n\nSTATUS     NO           NAMA      NOMOR MET                               TANDA TANGAN\n                                                                           DAN TANGGAL\n\nPENYUSUN   1 GUNADI               000.000459 2007\n           2 SAPTONO                                       18 Januari 2026\n\n                                  000.003672 2016\n\n                                                                          18 Januari 2026\n\nVALIDATOR  1 RANDI ARDIANSYAH     000.002498 2013\n\n                                                                          18 Januari 2026\n\n           2 KARYANTO             000.008260 2025\n\n                                                                          18 Januari 2026\n\n           3 RIDWAN               000.008265 2025\n                                                           18 Januari 2026\n\n                               6",
+      "option_d": "Melepaskan semua baut secara bersamaan",
       "correct_answer": "B"
     }
   ],

@@ -1888,7 +1888,7 @@
       "option_a": "Tidak boleh disemprot, tetapi tetap di buka dan dibersihkan dengan cara di lap",
       "option_b": "Membersihkan filter udara dengan udara bertekanan",
       "option_c": "Menambahkan pelumas pada filter udara",
-      "option_d": "Dibersihkan dengan cairan pembersih\n\n                                                    1\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_d": "Dibersihkan dengan cairan pembersih",
       "correct_answer": "A"
     },
     {
@@ -1978,7 +1978,7 @@
       "option_a": "SAE/API Service",
       "option_b": "Jarak Tempuh kendaran",
       "option_c": "Kapasitas Oli",
-      "option_d": "a,b dan c benar semua\n\n                                                              2\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_d": "a,b dan c benar semua",
       "correct_answer": "D"
     },
     {
@@ -2050,7 +2050,7 @@
       "option_a": "Dalam keadaan Normal",
       "option_b": "Dalam kondisi Tidak Normal",
       "option_c": "Menyimpan Memori pada ECM",
-      "option_d": "Fuel Pump dalam kondisi Normal\n\n                                                              3\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_d": "Fuel Pump dalam kondisi Normal",
       "correct_answer": "A"
     },
     {
@@ -2122,7 +2122,7 @@
       "option_a": "Mengganti ECM",
       "option_b": "Mereset ECM/ECU secara manual",
       "option_c": "Melakukan perbaikan kerusakan terlebih dahulu",
-      "option_d": "Memanaskan engine mencapai temperatur kerja\n\n                                                              4\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_d": "Memanaskan engine mencapai temperatur kerja",
       "correct_answer": "C"
     },
     {
@@ -2203,7 +2203,7 @@
       "option_a": "Mengganti bola lampu sein",
       "option_b": "Mengganti saklar sein",
       "option_c": "Memeriksa koneksi kabel sein",
-      "option_d": "Semua jawaban benar\n\n                                                              5\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_d": "Semua jawaban benar",
       "correct_answer": "D"
     },
     {
@@ -2275,7 +2275,7 @@
       "option_a": "Agar mudah saat memasang kembali",
       "option_b": "Agar mudah saat melepaskannya",
       "option_c": "Hanya sekedar variasi",
-      "option_d": "Agar tidak lepas dan tersangkut pada komponen yang lain saat rantai berputar\n\n                                                              6\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_d": "Agar tidak lepas dan tersangkut pada komponen yang lain saat rantai berputar",
       "correct_answer": "D"
     },
     {
@@ -2356,7 +2356,7 @@
       "option_a": "Memaksakan cover body agar pas",
       "option_b": "Mengecek kembali kesesuaian dan melakukan penyesuaian",
       "option_c": "Meninggalkan cover body tidak terpasang",
-      "option_d": "Menggunakan lem untuk menempelkannya\n\n                                                              7\n\f                                  Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo",
+      "option_d": "Menggunakan lem untuk menempelkannya",
       "correct_answer": "B"
     },
     {
@@ -2419,7 +2419,7 @@
       "option_a": "Mencuci motor setiap hari.",
       "option_b": "Memeriksa kekencangan baut-baut utama sasis dan memastikan tidak ada keretakan atau karat\n\n        parah.",
       "option_c": "Mengganti busi secara rutin.",
-      "option_d": "Menyetel rantai roda belakang.\n\n                                                              8\n\f               Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo\n\nPENYUSUN DAN VALIDATOR\n\nSTATUS     NO           NAMA      NOMOR MET        TANDA TANGAN\n                                                    DAN TANGGAL\n\n           1 GUNADI               000.000459 2007\n           2 SAPTONO\nPENYUSUN                                           12 Januari 2026\n\n                                  000.003672 2016\n\n                                                   12 Januari 2026\n\n           1 RANDI ARDIANSYAH     000.002498 2013\n\n                                                   12 Januari 2026\n\nVALIDATOR  2 KARYANTO             000.008260 2025\n\n                                                   12 Januari 2026\n\n           3 RIDWAN               000.008265 2025\n\n                                                   12 Januari 2026\n\n                               9",
+      "option_d": "Menyetel rantai roda belakang.",
       "correct_answer": "A"
     }
   ],
