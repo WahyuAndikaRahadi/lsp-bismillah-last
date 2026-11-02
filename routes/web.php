@@ -180,9 +180,11 @@ Route::middleware('auth')->group(function () {
         Route::delete('/units/{unit}', [CompetencyUnitController::class, 'destroy'])->name('schemes.units.destroy');
 
         Route::post('/units/{unit}/elements', [CompetencyUnitController::class, 'storeElement'])->name('schemes.elements.store');
+        Route::put('/elements/{element}', [CompetencyUnitController::class, 'updateElement'])->name('schemes.elements.update');
         Route::delete('/elements/{element}', [CompetencyUnitController::class, 'destroyElement'])->name('schemes.elements.destroy');
 
         Route::post('/elements/{element}/criterias', [CompetencyUnitController::class, 'storeCriteria'])->name('schemes.criterias.store');
+        Route::put('/criterias/{criteria}', [CompetencyUnitController::class, 'updateCriteria'])->name('schemes.criterias.update');
         Route::delete('/criterias/{criteria}', [CompetencyUnitController::class, 'destroyCriteria'])->name('schemes.criterias.destroy');
 
         Route::resource('/tuks', TukController::class)->except(['create', 'show', 'edit']);

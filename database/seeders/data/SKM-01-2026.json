@@ -512,7 +512,7 @@
     },
     {
       "code": "G.45OTO01.020.2",
-      "title": "Unit Kompetensi",
+      "title": "Memelihara Sistem Pelumasan Engine",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 10,
       "elements": [
@@ -597,7 +597,7 @@
     },
     {
       "code": "G.45OTO01.022.2",
-      "title": "Unit Kompetensi",
+      "title": "Memelihara Sistem Pendinginan Engine",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 11,
       "elements": [
@@ -687,7 +687,7 @@
     },
     {
       "code": "G.45OTO01.026.2",
-      "title": "Unit Kompetensi",
+      "title": "Memelihara Sistem Bahan Bakar Bensin",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 12,
       "elements": [
@@ -772,7 +772,7 @@
     },
     {
       "code": "G.45OTO01.032.2",
-      "title": "Unit Kompetensi",
+      "title": "Memelihara Sistem Kontrol Emisi",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 13,
       "elements": [
@@ -857,7 +857,7 @@
     },
     {
       "code": "G.45OTO01.065.2",
-      "title": "Unit Kompetensi",
+      "title": "Memelihara Baterai",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 14,
       "elements": [
@@ -943,7 +943,7 @@
     },
     {
       "code": "G.45OTO01.066.2",
-      "title": "Unit Kompetensi",
+      "title": "Mengganti Baterai Kendaraan Ringan",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 15,
       "elements": [
@@ -1009,7 +1009,7 @@
     },
     {
       "code": "G.45OTO01.067.2",
-      "title": "Unit Kompetensi",
+      "title": "Melepas Komponen Kelistrikan",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 16,
       "elements": [
@@ -1069,7 +1069,7 @@
     },
     {
       "code": "G.45OTO01.024.2",
-      "title": "Unit Kompetensi",
+      "title": "Mengganti Cairan pada Sistem Pendinginan Engine",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 17,
       "elements": [
@@ -1159,7 +1159,7 @@
     },
     {
       "code": "G.45OTO01.084.2",
-      "title": "Unit Kompetensi",
+      "title": "Memelihara Sistem Air Conditioner",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 18,
       "elements": [

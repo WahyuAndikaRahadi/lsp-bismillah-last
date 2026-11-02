@@ -33,4 +33,9 @@ class UnitElement extends Model
     {
         return $this->hasMany(Kuk::class);
     }
+
+    public function getNameAttribute(): string
+    {
+        return $this->attributes['title'] ?? '';
+    }
 }

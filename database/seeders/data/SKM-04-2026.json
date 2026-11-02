@@ -12,7 +12,7 @@
   "units": [
     {
       "code": "G.45OTO01.001.2",
-      "title": "Unit Kompetensi",
+      "title": "Melaksanakan Keselamatan dan Kesehatan Kerja",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 1,
       "elements": [
@@ -57,7 +57,7 @@
     },
     {
       "code": "G.45OTO01.002.2",
-      "title": "Unit Kompetensi",
+      "title": "Menggunakan Peralatan dan Perlengkapan Tempat Kerja",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 2,
       "elements": [
@@ -97,7 +97,7 @@
     },
     {
       "code": "G.45OTO01.003.2",
-      "title": "Unit Kompetensi",
+      "title": "Melaksanakan Komunikasi di Tempat Kerja",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 3,
       "elements": [
@@ -147,7 +147,7 @@
     },
     {
       "code": "G.45OTO01.004.2",
-      "title": "Unit Kompetensi",
+      "title": "Melaksanakan Pemeliharaan Komponen",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 4,
       "elements": [
@@ -202,7 +202,7 @@
     },
     {
       "code": "G.45OTO01.007.2",
-      "title": "Unit Kompetensi",
+      "title": "Membaca Gambar Teknik",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 5,
       "elements": [
@@ -242,7 +242,7 @@
     },
     {
       "code": "G.45OTO01.008.2",
-      "title": "Unit Kompetensi",
+      "title": "Menggunakan Alat Ukur",
       "standard_reference": "SKKNI No. 097 Tahun 2018",
       "sequence": 6,
       "elements": [
@@ -292,7 +292,7 @@
     },
     {
       "code": "G.45OBR02.008.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Analisis Kerusakan Bodi Kendaraan",
       "standard_reference": "SKKNI Terkait",
       "sequence": 7,
       "elements": [
@@ -357,7 +357,7 @@
     },
     {
       "code": "G.45OBR02.010.2",
-      "title": "Unit Kompetensi",
+      "title": "Mengkomunikasikan Prosedur Perawatan Bodi Kendaraan",
       "standard_reference": "SKKNI Terkait",
       "sequence": 8,
       "elements": [
@@ -412,7 +412,7 @@
     },
     {
       "code": "G.45OBR02.014.2",
-      "title": "Unit Kompetensi",
+      "title": "Melepas dan Memasang Rangkaian Elektrikal Pada Bodi",
       "standard_reference": "SKKNI Terkait",
       "sequence": 9,
       "elements": [

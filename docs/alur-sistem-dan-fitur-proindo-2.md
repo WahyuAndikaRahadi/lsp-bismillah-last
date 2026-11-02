@@ -159,14 +159,17 @@ Asesi adalah calon peserta yang mendaftar dan mengikuti seluruh tahapan sertifik
 
 ---
 
-### D. Komite Teknis & Admin TUK
+### D. Penyelarasan Peran: Komite Teknis & Tempat Uji Kompetensi (TUK)
 
-1. **Komite Teknis LSP**:
-   - Mengkaji hasil rekomendasi asesor pada Rapat Pleno (`/admin/pleno`).
-   - Menetapkan kelulusan final penerbitan sertifikat kompetensi berlogo Garuda BNSP.
-2. **Admin Tempat Uji Kompetensi (TUK)**:
-   - Mengelola kelayakan fasilitas sarana & prasarana bengkel/lab uji.
-   - Memverifikasi absensi fisik peserta dan kelengkapan alat kerja sebelum uji kompetensi dimulai.
+Untuk menjaga prinsip desain modern **Anti-Bloat** dan menghilangkan friksi birokrasi berputar-putar (seperti pada sistem legacy yang memaksakan 5 portal login terpisah):
+
+1. **Fungsi Komite Teknis (Dilebur ke Modul Admin / Pleno)**:
+   - **Bukan portal mandiri**: Tidak ada portal `/komite`. Anggota/Ketua Komite Teknis mengakses modul Rapat Pleno terintegrasi di [`/admin/pleno`](file:///home/wahyuandika/Dokumen/coding-experiment/rea-application-lsp/routes/web.php).
+   - **Ketua Komite Teknis** (`komite@gmail.com` / `is_committee_head = true`): Bertindak sebagai pejabat pengesah yang menandatangani secara digital Berita Acara Rapat Pleno dan menetapkan keputusan final kelulusan (Kompeten / Belum Kompeten).
+2. **Tempat Uji Kompetensi (TUK Sebagai Master Data Fasilitas)**:
+   - **Bukan akun interaktif pengguna**: Pengelola lokasi bengkel/sekolah tidak memerlukan akun login tersendiri.
+   - **Admin LSP** mengelola sarana TUK sebagai entitas data master di [`/admin/tuks`](file:///home/wahyuandika/Dokumen/coding-experiment/rea-application-lsp/routes/web.php).
+   - **Asesor Penguji** memverifikasi kelayakan fisik, peralatan bengkel, dan keselamatan kerja TUK secara langsung di lapangan melalui menu [`/asesor/tuk-verifications`](file:///home/wahyuandika/Dokumen/coding-experiment/rea-application-lsp/app/Http/Controllers/Asesor/TukVerificationController.php).
 
 ---
 

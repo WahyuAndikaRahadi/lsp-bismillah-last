@@ -48,7 +48,7 @@
                             </td>
                             <td class="px-6 py-4 text-center">
                                 <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700">
-                                    {{ $scheme->units_count ?? ($scheme->units ? $scheme->units->count() : 0) }} Unit
+                                    {{ $scheme->competency_units_count ?? $scheme->units_count ?? ($scheme->units ? $scheme->units->count() : 0) }} Unit
                                 </span>
                             </td>
                             <td class="px-6 py-4">

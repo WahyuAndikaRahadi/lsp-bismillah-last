@@ -35,6 +35,18 @@ class Scheme extends Model
         return $this->hasMany(CompetencyUnit::class);
     }
 
+    public function units(): HasMany
+    {
+        return $this->competencyUnits();
+    }
+
+    public function getUnitsCountAttribute(): int
+    {
+        return $this->attributes['competency_units_count']
+            ?? $this->attributes['units_count']
+            ?? $this->competencyUnits()->count();
+    }
+
     public function questionBanks(): HasMany
     {
         return $this->hasMany(QuestionBank::class);

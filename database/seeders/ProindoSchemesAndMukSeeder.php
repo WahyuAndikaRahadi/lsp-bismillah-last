@@ -56,6 +56,11 @@ class ProindoSchemesAndMukSeeder extends Seeder
                 );
                 $unitModels[$uData['code']] = $unit;
 
+                // Remove placeholder/dummy elements if previously seeded
+                UnitElement::where('competency_unit_id', $unit->id)
+                    ->where('title', 'like', '%Melaksanakan Unit Kompetensi%')
+                    ->delete();
+
                 // Elements
                 foreach ($uData['elements'] ?? [] as $eData) {
                     $element = UnitElement::updateOrCreate(

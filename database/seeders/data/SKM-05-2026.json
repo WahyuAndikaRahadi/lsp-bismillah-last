@@ -848,7 +848,7 @@
     },
     {
       "code": "G.45TSM01.030.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Pemeriksaan Keolengan Roda",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 10,
       "elements": [
@@ -954,7 +954,7 @@
     },
     {
       "code": "G.45TSM01.031.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Sistem Pengereman",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 11,
       "elements": [
@@ -1085,7 +1085,7 @@
     },
     {
       "code": "G.45TSM01.032.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Sistem Kemudi",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 12,
       "elements": [
@@ -1170,7 +1170,7 @@
     },
     {
       "code": "G.45TSM01.033.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Sistem Suspensi",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 13,
       "elements": [
@@ -1296,7 +1296,7 @@
     },
     {
       "code": "G.45TSM01.034.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Bongkar Pasang Cover Body",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 14,
       "elements": [
@@ -1417,7 +1417,7 @@
     },
     {
       "code": "G.45TSM01.039.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Baterai",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 15,
       "elements": [
@@ -1508,7 +1508,7 @@
     },
     {
       "code": "G.45TSM01.019.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Sistem Injeksi",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 16,
       "elements": [
@@ -1609,7 +1609,7 @@
     },
     {
       "code": "G45.TSM01.027.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Sistem Continuously Variable Transmission",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 17,
       "elements": [
@@ -1700,7 +1700,7 @@
     },
     {
       "code": "G.45TSM01.028.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Sistem Pendinginan",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 18,
       "elements": [
@@ -1806,7 +1806,7 @@
     },
     {
       "code": "G.45TSM01.040.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Perawatan Instrumen Kelistrikan (Sistem Sinyal dan Penerangan)",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 19,
       "elements": [
@@ -1897,18 +1897,95 @@
     },
     {
       "code": "G.45TSM01.043.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Pemeriksaan Chassis",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 20,
       "elements": [
         {
-          "title": "Melaksanakan Unit Kompetensi",
+          "title": "Menyiapkan pemeriksaan chassis",
           "sequence": 1,
           "kuks": [
             {
               "code_number": "1.1",
-              "statement": "Kompetensi Unit Kompetensi didemonstrasikan sesuai standar",
+              "statement": "Fungsi dan jenis dari chassis diidentifikasi.",
               "sequence": 1
+            },
+            {
+              "code_number": "1.2",
+              "statement": "Prosedur pemeriksaan fungsi dan jenis chassis diidentifikasi.",
+              "sequence": 2
+            },
+            {
+              "code_number": "1.3",
+              "statement": "Fungsi dan kondisi komponen chassis diidentifikasi.",
+              "sequence": 3
+            },
+            {
+              "code_number": "1.4",
+              "statement": "Prosedur melepas dan merakit komponen chassis diidentifikasi.",
+              "sequence": 4
+            },
+            {
+              "code_number": "1.5",
+              "statement": "Service limit/batas toleransi dari setiap komponen chassis diidentifikasi.",
+              "sequence": 5
+            },
+            {
+              "code_number": "1.6",
+              "statement": "Kondisi posisi chassis diidentifikasi sesuai standar.",
+              "sequence": 6
+            },
+            {
+              "code_number": "1.7",
+              "statement": "Tools, special tools, alat ukur, alat dan bahan pembersih chassis diidentifikasi dan disiapkan.",
+              "sequence": 7
+            },
+            {
+              "code_number": "1.8",
+              "statement": "Prosedur K3 diterapkan pada pelaksanaan proses kerja.",
+              "sequence": 8
+            }
+          ]
+        },
+        {
+          "title": "Melakukan pemeriksaan komponen dari chassis",
+          "sequence": 2,
+          "kuks": [
+            {
+              "code_number": "2.1",
+              "statement": "Kondisi chassis diperiksa sesuai standar.",
+              "sequence": 1
+            },
+            {
+              "code_number": "2.2",
+              "statement": "Komponen-komponen dari chassis diperiksa sesuai buku pedoman reparasi/manual book.",
+              "sequence": 2
+            }
+          ]
+        },
+        {
+          "title": "Memastikan kinerja chassis",
+          "sequence": 3,
+          "kuks": [
+            {
+              "code_number": "3.1",
+              "statement": "Komponen-komponen chassis dibongkar sesuai buku pedoman reparasi/manual book.",
+              "sequence": 1
+            },
+            {
+              "code_number": "3.2",
+              "statement": "Komponen-komponen chassis dibersihkan sesuai buku pedoman reparasi/manual book.",
+              "sequence": 2
+            },
+            {
+              "code_number": "3.3",
+              "statement": "Komponen-komponen chassis dirakit sesuai buku pedoman reparasi/manual book.",
+              "sequence": 3
+            },
+            {
+              "code_number": "3.4",
+              "statement": "Semua baut dan mur pada komponen dari chassis dipastikan kekencangannya sesuai buku pedoman reparasi/manual book.",
+              "sequence": 4
             }
           ]
         }
@@ -1916,7 +1993,7 @@
     },
     {
       "code": "G.45TSM01.053.2",
-      "title": "Unit Kompetensi",
+      "title": "Melakukan Pembersihan Injector",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 21,
       "elements": [
@@ -2006,7 +2083,7 @@
     },
     {
       "code": "G.45TSM01.055.2",
-      "title": "Unit Kompetensi",
+      "title": "Mengoperasikan Diagnostic Tools",
       "standard_reference": "SKKNI No. 147 Tahun 2019",
       "sequence": 22,
       "elements": [

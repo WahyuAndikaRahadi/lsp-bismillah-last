@@ -35,6 +35,11 @@ class Kuk extends Model
         return $this->hasMany(AssessmentApl02Item::class);
     }
 
+    public function getCriteriaNumberAttribute(): string
+    {
+        return $this->attributes['code_number'] ?? '';
+    }
+
     public function getDescriptionAttribute(): string
     {
         return $this->statement;
