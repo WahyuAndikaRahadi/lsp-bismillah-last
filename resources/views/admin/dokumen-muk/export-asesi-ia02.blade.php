@@ -1,109 +1,471 @@
-@extends('layouts.print-muk', [
-    'title' => 'FR.IA.02 Tugas Praktik Demonstrasi - ' . $asesi->full_name,
-    'docCode' => 'FR.IA.02',
-    'docTitle' => 'TPD - TUGAS PRAKTIK DEMONSTRASI'
-])
+@extends('layouts.print-muk')
 
-@section('print-content')
-@php
-    $ia02Response = $iaResponses->firstWhere('instrument_code', 'IA02');
-    $tasks = $ia02Response?->data_json['tasks'] ?? [];
-    $defaultTasks = [
-        ['title' => 'Menerapkan prosedur keselamatan dan kesehatan kerja (K3) serta pemakaian APD bengkel.', 'result' => 'YA', 'note' => 'Memakai wearpack, safety shoes, dan kacamata pelindung.'],
-        ['title' => 'Menyiapkan peralatan tangan (hand tools) dan special service tools (SST) sesuai kebutuhan pekerjaan.', 'result' => 'YA', 'note' => 'Peralatan disiapkan di caddy/toolbox dalam kondisi bersih dan terkalibrasi.'],
-        ['title' => 'Melaksanakan pemeriksaan dan penyetelan celah katup sesuai standar spesifikasi manual service.', 'result' => 'YA', 'note' => 'Menggunakan feeler gauge dengan teknik tarikan yang tepat.'],
-        ['title' => 'Melakukan pemeriksaan sistem pengapian dan penggantian busi sesuai spesifikasi pabrik.', 'result' => 'YA', 'note' => 'Mengukur celah elektroda dengan wire thickness gauge.'],
-        ['title' => 'Melakukan pemeriksaan tekanan bahan bakar dan pembersihan injektor / sistem suplai bahan bakar.', 'result' => 'YA', 'note' => 'Tekanan bahan bakar terbaca 300 kPa pada pressure gauge.'],
-        ['title' => 'Membersihkan area kerja dan mengembalikan peralatan ke tempat semula (5S / Housekeeping).', 'result' => 'YA', 'note' => 'Area kerja bersih dari ceceran oli dan limbah B3 dipisahkan.'],
-    ];
-    $displayTasks = !empty($tasks) ? $tasks : $defaultTasks;
-@endphp
+@section('title', 'FR.IA.02 Tugas Praktik Demonstrasi - ' . ($asesi->full_name ?? ''))
 
-@include('admin.dokumen-muk.partials.meta-box', [
-    'dateLabel' => 'Tanggal & Alokasi Waktu',
-    'timeAllocation' => '45 Menit',
-])
+@section('content')
+<style>
+    @page {
+        size: 210mm 297mm;
+        margin: 0;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Calibri, 'Carlito', sans-serif;
+        font-size: 10pt;
+        line-height: 1.18;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+    }
+    .page-sheet {
+        width: 210mm;
+        max-height: 295mm;
+        box-sizing: border-box;
+        padding: 5.0mm 15.0mm 5.0mm 25.5mm;
+        page-break-after: always;
+        position: relative;
+    }
+    .page-sheet:last-child {
+        page-break-after: avoid;
+    }
+    .kop-table {
+        width: 174.5mm;
+        border-collapse: collapse;
+        border: 1pt solid #000;
+        margin-bottom: 2.5mm;
+    }
+    .kop-table td {
+        border: 1pt solid #000;
+        vertical-align: middle;
+    }
+    .kop-logo {
+        width: 34.5mm;
+        height: 17.6mm;
+        text-align: center;
+        padding: 0;
+    }
+    .kop-logo img {
+        max-width: 30mm;
+        max-height: 15mm;
+    }
+    .kop-text {
+        width: 140.0mm;
+        text-align: center;
+        font-family: Tahoma, sans-serif;
+        font-size: 11pt;
+        font-weight: bold;
+    }
+    .doc-main-title {
+        font-size: 11pt;
+        font-weight: bold;
+        line-height: 1.25;
+        margin-bottom: 2.5mm;
+    }
+    .meta-table {
+        width: 110.0mm;
+        border-collapse: collapse;
+        margin-bottom: 2.5mm;
+        font-size: 10pt;
+    }
+    .meta-table td {
+        padding: 0.5mm 1.0mm;
+        vertical-align: top;
+    }
+    .meta-table td.col-left {
+        width: 40.0mm;
+        font-weight: bold;
+    }
+    .meta-table td.col-mid {
+        width: 16.0mm;
+    }
+    .meta-table td.col-colon {
+        width: 4.0mm;
+        text-align: center;
+    }
+    .meta-table td.col-val {
+        font-weight: normal;
+    }
+    .content-table {
+        width: 174.5mm;
+        border-collapse: collapse;
+        border: 1pt solid #000;
+        margin-bottom: 2.5mm;
+        font-size: 9.5pt;
+    }
+    .content-table th, .content-table td {
+        border: 1pt solid #000;
+        padding: 0.5mm 1.2mm;
+        vertical-align: middle;
+    }
+    .content-table th {
+        font-weight: bold;
+        text-align: center;
+    }
+    .text-center { text-align: center; }
+    .text-bold { font-weight: bold; }
+    .nowrap { white-space: nowrap; }
+</style>
 
-{{-- Scenario & Instructions Box --}}
-<div class="border border-black p-3 bg-slate-50 text-[11px] mb-4">
-    <span class="font-bold block mb-1">A. Skenario & Petunjuk Kerja Praktik:</span>
-    <p class="text-slate-700 mb-2 leading-relaxed">
-        Anda adalah seorang teknisi otomotif pada bengkel resmi. Laksanakan demonstrasi praktik perawatan berkala engine dan kelistrikan kendaraan sesuai standar operasional prosedur (SOP) bengkel dan manual service manufaktur.
-    </p>
-    <span class="font-bold block mb-1">B. Peralatan dan Bahan:</span>
-    <p class="text-slate-700">
-        Vehicle engine stand/unit kendaraan, Toolkit set, Multimeter digital, Feeler gauge, Compression tester, Fuel pressure gauge gauge set, Manual service book, APD lengkap.
-    </p>
-</div>
-
-{{-- Demonstration Tasks Table --}}
-<table class="w-full text-xs border border-black mb-6 border-collapse">
-    <thead>
-        <tr class="bg-slate-200 border-b border-black text-center font-bold">
-            <th class="p-2 border-r border-black w-10">No</th>
-            <th class="p-2 border-r border-black text-left">Instruksi Kerja / Rincian Langkah Praktik</th>
-            <th class="p-1 border-r border-black w-14">Pencapaian<br><span class="text-[9px] font-normal">Ya / Tidak</span></th>
-            <th class="p-2 border-black w-48 text-left">Catatan Hasil Pengamatan Asesor</th>
+{-- ==================== PAGE 1 ==================== --}
+<div class="page-sheet">
+    <table class="kop-table">
+        <tr>
+            <td class="kop-logo"><img src="{{ asset('images/logo-lsp.png') }}" alt="LSP Logo"></td>
+            <td class="kop-text">Lembaga Sertifikasi Profesi Praktisi Otomotif &nbsp;LSP-PrO Indo</td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach($displayTasks as $idx => $task)
-            @php
-                $res = strtoupper($task['result'] ?? 'YA');
-                $isYa = in_array($res, ['YA', 'K', '1', 'TRUE']);
-            @endphp
-            <tr class="border-b border-black">
-                <td class="p-2 text-center font-mono font-bold border-r border-black">{{ $idx + 1 }}</td>
-                <td class="p-2 font-medium border-r border-black leading-tight">{{ $task['title'] ?? $task['instruction'] ?? '-' }}</td>
-                <td class="p-1 text-center font-black text-xs border-r border-black {{ $isYa ? 'text-emerald-800 bg-emerald-50' : 'text-rose-800 bg-rose-50' }}">
-                    {{ $isYa ? 'YA' : 'TIDAK' }}
-                </td>
-                <td class="p-2 border-black text-[11px] text-slate-600">
-                    {{ $task['note'] ?? 'Telah dikerjakan sesuai SOP pabrikan.' }}
-                </td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+    </table>
+    <div class="doc-main-title">FR.IA.02. TPD - TUGAS PRAKTIK DEMONSTRASI</div>
 
-{{-- Notes Box --}}
-<div class="border border-black p-3 bg-slate-50 text-xs mb-6">
-    <span class="font-bold block mb-1">Catatan Umpan Balik Asesor Terhadap Praktik Demonstrasi:</span>
-    <p class="text-slate-700 italic">
-        {{ $ia02Response?->data_json['notes'] ?? 'Asesi mendemonstrasikan penguasaan keterampilan praktik secara mandiri, sistematis, dan mengutamakan keselamatan kerja (K3).' }}
-    </p>
+    <table class="meta-table">
+        <tr>
+            <td class="col-left" rowspan="2">Skema Sertifikasi<br>(KKNI/Okupasi/Klaster)</td>
+            <td class="col-mid">Judul</td>
+            <td class="col-colon">:</td>
+            <td class="col-val">{{ $scheme->name ?? 'Mekanik Junior' }}</td>
+        </tr>
+        <tr>
+            <td class="col-mid">Nomor</td>
+            <td class="col-colon">:</td>
+            <td class="col-val">&nbsp;{{ $scheme->code ?? '05/LSP PrO Indo/I/2026' }}</td>
+        </tr>
+        <tr>
+            <td class="col-left">TUK</td>
+            <td colspan="3">: Sewaktu/Tempat Kerja/Mandiri*</td>
+        </tr>
+        <tr>
+            <td class="col-left">Nama Asesor</td>
+            <td colspan="3">: {{ $leadAssessor->full_name ?? '' }}</td>
+        </tr>
+        <tr>
+            <td class="col-left">Nama Asesi</td>
+            <td colspan="3">: {{ $asesi->full_name ?? '' }}</td>
+        </tr>
+        <tr>
+            <td class="col-left">Tanggal</td>
+            <td colspan="3">: {{ $assessmentDate ?? '05 Januari 2026' }}</td>
+        </tr>
+    </table>
+    <div style="font-size: 8.5pt; font-style: italic; margin-bottom: 2.0mm;">*Coret yang tidak perlu</div>
+
+    <div style="font-weight: bold; margin-bottom: 1.0mm;">A. Petunjuk</div>
+    <ol style="margin: 0 0 2.0mm 5.0mm; padding: 0;">
+        <li>Baca dan pelajari setiap instruksi kerja di bawah ini dengan cermat sebelum melaksanakan praktek</li>
+        <li>Klarifikasi kepada asesor kompetensi apabila ada hal-hal yang belum jelas</li>
+        <li>Laksanakan pekerjaan sesuai dengan urutan proses yang sudah ditetapkan</li>
+        <li>Seluruh proses kerja mengacu kepada SOP/WI yang dipersyaratkan (Jika Ada)</li>
+    </ol>
+
+    <div style="font-weight: bold; margin-bottom: 1.5mm;">B. Skenario Tugas Praktik Demonstrasi</div>
+
+    {{-- Kelompok 1 Table --}}
+    <table class="content-table" style="margin-bottom: 2.0mm;">
+        <colgroup>
+            <col style="width: 30.0mm;">
+            <col style="width: 10.0mm;">
+            <col style="width: 32.0mm;">
+            <col style="width: 102.5mm;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="10" style="vertical-align: middle; text-align: center; font-weight: bold;">
+                    Kelompok Pekerjaan 1<br><br>Engine
+                </th>
+                <th>No.</th>
+                <th>Kode Unit</th>
+                <th>Judul Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="text-center">1.</td><td class="nowrap">G.45TSM01.018.2</td><td>Melakukan Perawatan Karburator</td></tr>
+            <tr><td class="text-center">2.</td><td class="nowrap">G.45TSM01.020.2</td><td>Melakukan Perawatan Renggang Klep</td></tr>
+            <tr><td class="text-center">3.</td><td class="nowrap">G.45TSM01.021.2</td><td>Melakukan Perawatan Free Play Throttle Gas</td></tr>
+            <tr><td class="text-center">4.</td><td class="nowrap">G.45TSM01.022.2</td><td>Melakukan Perawatan Filter Udara</td></tr>
+            <tr><td class="text-center">5.</td><td class="nowrap">G.45TSM01.023.2</td><td>Melakukan Perawatan Sistem Clucth / Kopling</td></tr>
+            <tr><td class="text-center">6.</td><td class="nowrap">G.45TSM01.024.2</td><td>Melakukan pemeriksaan dan penggantian oli</td></tr>
+            <tr><td class="text-center">7.</td><td class="nowrap">G.45TSM01.025.2</td><td>Melakukan pemeriksaan sistem pelumasan mesin</td></tr>
+            <tr><td class="text-center">8.</td><td class="nowrap">G.45TSM01.027.2</td><td>Melakukan Perawatan Sistem Continuosly Variable Tansmission (CVT)</td></tr>
+            <tr><td class="text-center">9.</td><td class="nowrap">G.45TSM01.028.2</td><td>Melakukan Perawatan Sistem Pendinginan</td></tr>
+        </tbody>
+    </table>
+
+    <div style="font-size: 9.5pt; line-height: 1.2;">
+        <strong>Skenario Tugas Praktik Demonstrasi:</strong><br>
+        <strong>S.</strong> Anda seorang asesi mengajukan permohonan uji kompetensi Mekanik Junior dengan persyaratan memiliki :<br>
+        - Ijazah SMK otomotif; atau<br>
+        - Surat Keterangan Peserta didik SMK Jurusan Otomotif yang telah menyelesaikan mata pelajaran bidang Mekanik Junior sesuai unit kompetensi skema dengan dibuktikan nilai raport semester 1-4 dan fotocopy Surat Keterangan/Sertifikat mengikuti prakerin; atau<br>
+        - Ijazah SMA sederajat dan fotocopy sertifikat pelatihan berbasis kompetensi Mekanik Junior dari lembaga pelatihan kerja yang Terakreditasi/Kredibel; atau<br>
+        - Surat keterangan pengalaman kerja sesuai bidang Mekanik Junior minimal 1 tahun.<br>
+        <strong>T.</strong> Anda diminta mendemonstrasikan atau Mempraktekan
+    </div>
 </div>
 
-{{-- Signature Box --}}
-<div class="border border-black p-4">
-    <div class="grid grid-cols-2 gap-8 text-xs">
-        <div>
-            <p class="font-bold text-slate-800 mb-1">Asesi (Peserta Uji):</p>
-            <p class="text-[11px] text-slate-600 mb-1">Menyatakan telah menyelesaikan tugas demonstrasi</p>
-            <div class="h-16 flex items-center">
-                @if($profile?->signature_data || $assessment->asesi_signature)
-                    <img src="{{ $profile?->signature_data ?? $assessment->asesi_signature }}" alt="TTD Asesi" class="max-h-14">
-                @else
-                    <span class="text-[10px] text-slate-400 italic">(Tanda Tangan Asesi)</span>
-                @endif
-            </div>
-            <div class="border-b border-black w-48 mb-1"></div>
-            <p class="font-bold">{{ $asesi->full_name }}</p>
-        </div>
-        <div>
-            <p class="font-bold text-slate-800 mb-1">Asesor Kompetensi:</p>
-            <p class="text-[11px] text-slate-600 mb-1">Penilai Pelaksanaan Tugas Praktik Demonstrasi</p>
-            <div class="h-16 flex items-center">
-                @if($assessor?->profile?->signature_data || $assessment->assessor_signature)
-                    <img src="{{ $assessor?->profile?->signature_data ?? $assessment->assessor_signature }}" alt="TTD Asesor" class="max-h-14">
-                @else
-                    <span class="text-[10px] text-slate-400 italic">(Tanda Tangan Asesor)</span>
-                @endif
-            </div>
-            <div class="border-b border-black w-48 mb-1"></div>
-            <p class="font-bold">{{ $assessor->full_name ?? '-' }}</p>
-            <p class="text-[10px] text-slate-500 font-mono">No. MET: {{ $assessor->profile?->no_reg_asesor ?? '-' }}</p>
-        </div>
+{-- ==================== PAGE 2 ==================== --}
+<div class="page-sheet">
+    <table class="kop-table">
+        <tr>
+            <td class="kop-logo"><img src="{{ asset('images/logo-lsp.png') }}" alt="LSP Logo"></td>
+            <td class="kop-text">Lembaga Sertifikasi Profesi Praktisi Otomotif &nbsp;LSP-PrO Indo</td>
+        </tr>
+    </table>
+    <div style="font-size: 9.5pt; line-height: 1.2; margin-bottom: 2.5mm;">
+        − &nbsp;Kelompok Pekerjaan Engine,<br><br>
+        <strong>A.</strong> Untuk melaksakanakan pekerjaan tersebut kepada anda diberikan :<br>
+        Report sheet, Repair Manual ,SOP yang meliputi Penerapan K3, persiapan dan pengoperasian<br>
+        <strong>Perlengkapan dan Peralatan :</strong><br>
+        <strong>Peralatan :</strong> Peralatan tangan atau hand tool, Alat bertenaga listrik dan pneumatis,Diagnostic tool,Peralatan khusus atau special tool,Alat ukur dan alat uji kelistrikan, Alat pembersih Peralatan tangan/hand tool,Two post lift (jika ada),Peralatan khusus/special tool,Pompa pengganti pelumas Corong pengisi cairan (air dan minyak pelumas),Gelas ukur (untuk minyak pelumas) Peralatan tangan/hand tool,Two post lift (jika ada),<br>
+        <strong>Perlengkapan :</strong> Oli pelumas,Kain lap/majun,pembersih karburator/sistem injeksi,Cairan pendingin (coolant),Grease,Bak penampung pelumas,Saringan udara, saringan bensin, saringan oli dan tali kipas, ring baut oil drainer.<br>
+        <strong>R.</strong> Hasil dari pekerjaan tersebut performa engine meningkat.<br>
+        <strong>Waktu :</strong> 30 Menit
     </div>
+
+    {{-- Kelompok 2 Table --}}
+    <table class="content-table" style="margin-bottom: 2.0mm;">
+        <colgroup>
+            <col style="width: 30.0mm;">
+            <col style="width: 10.0mm;">
+            <col style="width: 32.0mm;">
+            <col style="width: 102.5mm;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="4" style="vertical-align: middle; text-align: center; font-weight: bold;">
+                    Kelompok Pekerjaan 2<br><br>Fuel injection service
+                </th>
+                <th>No.</th>
+                <th>Kode Unit</th>
+                <th>Judul Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="text-center">1.</td><td class="nowrap">G.45TSM01.019.2</td><td>Melakukan Perawatan Sistem Injeksi</td></tr>
+            <tr><td class="text-center">2.</td><td class="nowrap">G.45TSM01.053.2</td><td>Melakukan Pembersihan Injector</td></tr>
+            <tr><td class="text-center">3.</td><td class="nowrap">G.45TSM01.055.2</td><td>Mengoperasikan diagnostic tools</td></tr>
+        </tbody>
+    </table>
+
+    <div style="font-size: 9.5pt; line-height: 1.2;">
+        <strong>Skenario Tugas Praktik Demonstrasi:</strong><br>
+        <strong>S.</strong> Anda seorang asesi mengajukan permohonan uji kompetensi Mekanik Junior dengan persyaratan memiliki :<br>
+        - Ijazah SMK otomotif; atau<br>
+        - Surat Keterangan Peserta didik SMK Jurusan Otomotif yang telah menyelesaikan mata pelajaran bidang Mekanik Junior sesuai unit kompetensi skema dengan dibuktikan nilai raport semester 1-4 dan fotocopy Surat Keterangan/Sertifikat mengikuti prakerin; atau<br>
+        - Ijazah SMA sederajat dan fotocopy sertifikat pelatihan berbasis kompetensi Mekanik Junior dari lembaga pelatihan kerja yang Terakreditasi/Kredibel; atau<br>
+        - Surat keterangan pengalaman kerja sesuai bidang Mekanik Junior minimal 1 tahun.<br>
+        <strong>T.</strong> Anda diminta mendemonstrasikan atau Mempraktekan<br>
+        − &nbsp;Kelompok Pekerjaan Fuel injection service<br>
+        <strong>A.</strong> Untuk melaksakanakan pekerjaan tersebut kepada anda diberikan :<br>
+        Report sheet, Repair Manual ,SOP yang meliputi Penerapan K3, persiapan dan pengoperasian<br>
+        <strong>Perlengkapan dan Peralatan :</strong><br>
+        <strong>Peralatan :</strong> Peralatan tangan atau hand tool, Alat bertenaga listrik dan pneumatis,Diagnostic tool,Peralatan khusus atau special tool,Alat ukur dan alat uji kelistrikan, Alat pembersih Peralatan tangan/hand tool,Two post lift (jika ada),Peralatan khusus/special tool,Pompa pengganti pelumas Corong pengisi cairan (air dan minyak pelumas),Gelas ukur (untuk minyak pelumas) Peralatan tangan/hand tool,Two post lift (jika ada),
+    </div>
+</div>
+
+{-- ==================== PAGE 3 ==================== --}
+<div class="page-sheet">
+    <table class="kop-table">
+        <tr>
+            <td class="kop-logo"><img src="{{ asset('images/logo-lsp.png') }}" alt="LSP Logo"></td>
+            <td class="kop-text">Lembaga Sertifikasi Profesi Praktisi Otomotif &nbsp;LSP-PrO Indo</td>
+        </tr>
+    </table>
+    <div style="font-size: 9.5pt; line-height: 1.2; margin-bottom: 2.5mm;">
+        <strong>Perlengkapan :</strong> Oli pelumas,Kain lap/majun, injektion cleaner.<br>
+        <strong>R.</strong> Hasil dari pekerjaan tersebut Fuel injection berfungsi normal .<br>
+        <strong>Waktu :</strong> 20 Menit
+    </div>
+
+    {{-- Kelompok 3 Table --}}
+    <table class="content-table" style="margin-bottom: 2.0mm;">
+        <colgroup>
+            <col style="width: 30.0mm;">
+            <col style="width: 10.0mm;">
+            <col style="width: 32.0mm;">
+            <col style="width: 102.5mm;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="4" style="vertical-align: middle; text-align: center; font-weight: bold;">
+                    Kelompok Pekerjaan 3<br><br>Electrik
+                </th>
+                <th>No.</th>
+                <th>Kode Unit</th>
+                <th>Judul Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="text-center">1.</td><td class="nowrap">G.45TSM01.039.2</td><td>Melakukan Perawatan Baterai</td></tr>
+            <tr><td class="text-center">2.</td><td class="nowrap">G.45TSM01.026.2</td><td>Melakukan Perawatan Busi</td></tr>
+            <tr><td class="text-center">3.</td><td class="nowrap">G.45TSM01.040.2</td><td>Melakukan perawatan instrumen kelistrikan (sistem sinyal dan penerangan)</td></tr>
+        </tbody>
+    </table>
+
+    <div style="font-size: 9.5pt; line-height: 1.2;">
+        <strong>Skenario Tugas  Praktik Demonstrasi:</strong><br>
+        <strong>S.</strong> Anda seorang asesi mengajukan permohonan uji kompetensi Mekanik Junior dengan persyaratan memiliki :<br>
+        - Ijazah SMK otomotif; atau<br>
+        - Surat Keterangan Peserta didik SMK Jurusan Otomotif yang telah menyelesaikan mata pelajaran bidang Mekanik Junior sesuai unit kompetensi skema dengan dibuktikan nilai raport semester 1-4 dan fotocopy Surat Keterangan/Sertifikat mengikuti prakerin; atau<br>
+        - Ijazah SMA sederajat dan fotocopy sertifikat pelatihan berbasis kompetensi Mekanik Junior dari lembaga pelatihan kerja yang Terakreditasi/Kredibel; atau<br>
+        - Surat keterangan pengalaman kerja sesuai bidang Mekanik Junior minimal 1 tahun.<br>
+        <strong>T.</strong> Anda diminta mendemonstrasikan atau Mempraktekan<br>
+        − &nbsp;Kelompok Pekerjaan  Electrik<br>
+        <strong>A.</strong> Untuk melaksakanakan pekerjaan tersebut kepada anda diberikan :<br>
+        Report sheet, Repair Manual ,SOP yang meliputi Penerapan K3, persiapan dan pengoperasian<br>
+        <strong>Perlengkapan dan Peralatan :</strong><br>
+        <strong>Peralatan :</strong> Peralatan tangan atau hand tool, Alat bertenaga listrik dan pneumatis,Diagnostic tool,Peralatan khusus atau special tool,Alat ukur dan alat uji kelistrikan, Alat pembersih Peralatan tangan/hand tool,Two post lift (jika ada),Peralatan khusus/special tool,Pompa pengganti pelumas Corong pengisi cairan (air dan minyak pelumas),Gelas ukur (untuk minyak pelumas) Peralatan tangan/hand tool,Two post lift (jika ada),<br>
+        <strong>Perlengkapan :</strong> Kain lap/majun ,WD 40, komponen electric cleaner<br>
+        <strong>R.</strong> Hasil dari pekerjaan tersebut electric system berfungsi normal.<br>
+        <strong>Waktu :</strong> 20 Menit
+    </div>
+</div>
+
+{-- ==================== PAGE 4 ==================== --}
+<div class="page-sheet">
+    <table class="kop-table">
+        <tr>
+            <td class="kop-logo"><img src="{{ asset('images/logo-lsp.png') }}" alt="LSP Logo"></td>
+            <td class="kop-text">Lembaga Sertifikasi Profesi Praktisi Otomotif &nbsp;LSP-PrO Indo</td>
+        </tr>
+    </table>
+    {{-- Kelompok 4 Table --}}
+    <table class="content-table" style="margin-bottom: 2.0mm;">
+        <colgroup>
+            <col style="width: 30.0mm;">
+            <col style="width: 10.0mm;">
+            <col style="width: 32.0mm;">
+            <col style="width: 102.5mm;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="8" style="vertical-align: middle; text-align: center; font-weight: bold;">
+                    Kelompok Pekerjaan 4<br><br>Chassis
+                </th>
+                <th>No.</th>
+                <th>Kode Unit</th>
+                <th>Judul Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="text-center">1.</td><td class="nowrap">G.45TSM01.029.2</td><td>Melakukan Penggantian Rantai Roda</td></tr>
+            <tr><td class="text-center">2.</td><td class="nowrap">G.45TSM01.030.2</td><td>Melakukan Pemeriksaan Keolengan Roda</td></tr>
+            <tr><td class="text-center">3.</td><td class="nowrap">G.45TSM01.031.2</td><td>Melakukan Perawatan Sistem Pengereman</td></tr>
+            <tr><td class="text-center">4.</td><td class="nowrap">G.45TSM01.032.2</td><td>Melakukan Perawatan Sistem Kemudi</td></tr>
+            <tr><td class="text-center">5.</td><td class="nowrap">G.45TSM01.033.2</td><td>Melakukan Perawatan Sistem Suspensi</td></tr>
+            <tr><td class="text-center">6.</td><td class="nowrap">G.45TSM01.034.2</td><td>Melakukan Bongkar Pasang Cover Body</td></tr>
+            <tr><td class="text-center">7.</td><td class="nowrap">G.45TSM01.043.2</td><td>Melakukan Pemeriksaan Chassis</td></tr>
+        </tbody>
+    </table>
+
+    <div style="font-size: 9.5pt; line-height: 1.2;">
+        <strong>Skenario Tugas Praktik Demonstrasi:</strong><br>
+        <strong>S.</strong> Anda seorang asesi mengajukan permohonan uji kompetensi Mekanik Junior dengan persyaratan memiliki :<br>
+        - Ijazah SMK otomotif; atau<br>
+        - Surat Keterangan Peserta didik SMK Jurusan Otomotif yang telah menyelesaikan mata pelajaran bidang Mekanik Junior sesuai unit kompetensi skema dengan dibuktikan nilai raport semester 1-4 dan fotocopy Surat Keterangan/Sertifikat mengikuti prakerin; atau<br>
+        - Ijazah SMA sederajat dan fotocopy sertifikat pelatihan berbasis kompetensi Mekanik Junior dari lembaga pelatihan kerja yang Terakreditasi/Kredibel; atau<br>
+        - Surat keterangan pengalaman kerja sesuai bidang Mekanik Junior minimal 1 tahun.<br>
+        <strong>T.</strong> Anda diminta mendemonstrasikan atau Mempraktekan<br>
+        − &nbsp;Kelompok Pekerjaan Chassis<br>
+        <strong>A.</strong> Untuk melaksakanakan pekerjaan tersebut kepada anda diberikan :<br>
+        Report sheet, Repair Manual ,SOP yang meliputi Penerapan K3, persiapan dan pengoperasian<br>
+        <strong>Perlengkapan dan Peralatan :</strong><br>
+        <strong>Peralatan :</strong> Peralatan tangan atau hand tool, Alat bertenaga listrik dan pneumatis,Diagnostic tool,Peralatan khusus atau special tool,Alat ukur dan alat uji kelistrikan, Alat pembersih Peralatan tangan/hand tool,Two post lift (jika ada),Peralatan khusus/special tool,Pompa pengganti pelumas Corong pengisi cairan (air dan minyak pelumas),Gelas ukur (untuk minyak pelumas) Peralatan tangan/hand tool,Two post lift (jika ada),
+    </div>
+</div>
+
+{-- ==================== PAGE 5 ==================== --}
+<div class="page-sheet">
+    <table class="kop-table">
+        <tr>
+            <td class="kop-logo"><img src="{{ asset('images/logo-lsp.png') }}" alt="LSP Logo"></td>
+            <td class="kop-text">Lembaga Sertifikasi Profesi Praktisi Otomotif &nbsp;LSP-PrO Indo</td>
+        </tr>
+    </table>
+    <div style="font-size: 9.5pt; line-height: 1.2; margin-bottom: 3.0mm;">
+        <strong>Perlengkapan :</strong> Penetrant , Kain lap/majun<br>
+        <strong>R.</strong> Hasil dari pekerjaan tersebut Chasis kondisi normal.<br>
+        <strong>Waktu :</strong> 20 Menit
+    </div>
+
+    <table class="content-table" style="width: 174.5mm; margin-bottom: 4.0mm;">
+        <tr>
+            <td style="width: 50%; padding: 2.0mm;">
+                <strong>ASESI :</strong><br>
+                Nama : {{ $asesi->full_name ?? '' }}<br>
+                Tanda tangan/ Tanggal :
+            </td>
+            <td style="width: 50%; padding: 2.0mm;">
+                <strong>ASESOR :</strong><br>
+                Nama : {{ $leadAssessor->full_name ?? '' }}<br>
+                No. Reg : {{ $leadAssessor->profile?->no_reg_asesor ?? '' }}<br>
+                Tanda tangan/ Tanggal :
+            </td>
+        </tr>
+    </table>
+
+    <div class="doc-main-title" style="text-align: center; margin-bottom: 2.5mm;">
+        PENYUSUN DAN VALIDATOR
+    </div>
+
+    <table class="content-table" style="width: 174.5mm;">
+        <colgroup>
+            <col style="width: 35.0mm;">
+            <col style="width: 12.0mm;">
+            <col style="width: 50.0mm;">
+            <col style="width: 40.0mm;">
+            <col style="width: 37.5mm;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>STATUS</th>
+                <th>NO</th>
+                <th>NAMA</th>
+                <th>NOMOR MET</th>
+                <th>TANDA TANGAN DAN TANGGAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2" class="text-center text-bold" style="vertical-align: middle;">PENYUSUN</td>
+                <td class="text-center">1</td>
+                <td><strong>GUNADI</strong></td>
+                <td>000.000459 2007</td>
+                <td class="text-center">27 Januari 2026</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td><strong>SAPTONO</strong></td>
+                <td>000.003672 2016</td>
+                <td class="text-center">27 Januari 2026</td>
+            </tr>
+            <tr>
+                <td rowspan="3" class="text-center text-bold" style="vertical-align: middle;">VALIDATOR</td>
+                <td class="text-center">1</td>
+                <td><strong>RANDI ARDIANSYAH</strong></td>
+                <td>000.002498 2013</td>
+                <td class="text-center">27 Januari 2026</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td><strong>KARYANTO</strong></td>
+                <td>000.008260 2025</td>
+                <td class="text-center">27 Januari 2026</td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td><strong>RIDWAN</strong></td>
+                <td>000.008265 2025</td>
+                <td class="text-center">27 Januari 2026</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{-- ==================== PAGE 6 ==================== --}
+<div class="page-sheet">
+    <table class="kop-table">
+        <tr>
+            <td class="kop-logo"><img src="{{ asset('images/logo-lsp.png') }}" alt="LSP Logo"></td>
+            <td class="kop-text">Lembaga Sertifikasi Profesi Praktisi Otomotif &nbsp;LSP-PrO Indo</td>
+        </tr>
+    </table>
+    <div style="height: 100mm;"></div>
 </div>
 @endsection
