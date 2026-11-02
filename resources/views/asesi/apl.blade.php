@@ -1,58 +1,63 @@
 @extends('layouts.app')
 
-@section('title', 'FR.APL.01 & FR.APL.02 - Pendaftaran & Asesmen Mandiri')
+@section('title', 'FR.APL.01 & FR.APL.02 - Permohonan Sertifikasi & Asesmen Mandiri')
 
 @section('content')
 <div class="max-w-5xl mx-auto space-y-8 py-6">
-    {{-- Header --}}
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    {{-- Top Status Banner --}}
+    <div class="bg-white rounded-xl shadow-sm border border-slate-300 p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
-                Skema: {{ $assessment->schedule->scheme->code }}
-            </span>
-            <h1 class="text-2xl font-bold text-slate-800 mt-2">{{ $assessment->schedule->scheme->name }}</h1>
-            <p class="text-sm text-slate-500 mt-1">
-                TUK: <span class="font-medium text-slate-700">{{ $assessment->schedule->tuk_name }}</span> | 
-                Tanggal Uji: <span class="font-medium text-slate-700">{{ \Carbon\Carbon::parse($assessment->schedule->date)->translatedFormat('d F Y') }}</span>
+            <div class="flex items-center gap-2 mb-1">
+                <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-slate-100 text-slate-800 border border-slate-300">
+                    {{ $assessment->schedule->scheme->code }}
+                </span>
+                <span class="text-xs text-slate-500 font-medium">TUK: {{ $assessment->schedule->tuk_name }}</span>
+            </div>
+            <h1 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">{{ $assessment->schedule->scheme->name }}</h1>
+            <p class="text-xs text-slate-600 mt-1">
+                Jadwal Uji: <strong>{{ \Carbon\Carbon::parse($assessment->schedule->date)->translatedFormat('d F Y') }}</strong> ({{ substr($assessment->schedule->start_time, 0, 5) }} - {{ substr($assessment->schedule->end_time, 0, 5) }} WIB)
             </p>
         </div>
-        <div>
+        <div class="shrink-0">
             @if($assessment->apl_status === 'APPROVED')
                 <div class="text-right">
-                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500 text-white shadow-sm">
-                        ✓ Disetujui Asesor
+                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white shadow-xs">
+                        ✓ Berkas Disetujui Asesor
                     </span>
-                    <a href="{{ route('asesi.assessment.ruang-uji', $assessment) }}" class="mt-2 inline-block text-sm text-indigo-600 hover:underline font-medium">
-                        Lanjut ke Ruang Uji →
-                    </a>
+                    <div class="mt-2">
+                        <a href="{{ route('asesi.assessment.ruang-uji', $assessment) }}" class="inline-flex items-center px-4 py-2 bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg text-xs font-bold shadow-xs transition gap-1.5">
+                            <span>Masuk Ruang Uji</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
                 </div>
             @elseif($assessment->apl_status === 'SUBMITTED')
                 <div class="text-right">
-                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-semibold bg-amber-500 text-white shadow-sm">
+                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-white shadow-xs">
                         ⏳ Menunggu Verifikasi Asesor
                     </span>
-                    <p class="text-xs text-slate-500 mt-1">Form terkunci sampai diverifikasi</p>
+                    <p class="text-[11px] text-slate-500 mt-1">Formulir terkunci sampai diverifikasi</p>
                 </div>
             @elseif($assessment->apl_status === 'REVISION_REQUESTED')
-                <div class="bg-rose-50 border border-rose-200 rounded-lg p-3 text-right">
-                    <span class="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-rose-600 text-white">
-                        Perlu Revisi
+                <div class="bg-rose-50 border border-rose-300 rounded-lg p-3 text-right">
+                    <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold bg-rose-600 text-white">
+                        Perlu Perbaikan
                     </span>
-                    <p class="text-xs text-rose-700 mt-1 font-medium">Catatan Asesor:</p>
-                    <p class="text-xs text-slate-700 italic">{{ $assessment->apl_revision_notes }}</p>
+                    <p class="text-xs text-rose-800 mt-1 font-semibold">Catatan Asesor:</p>
+                    <p class="text-xs text-slate-700 italic">{{ $assessment->apl_revision_notes ?? $assessment->admin_notes }}</p>
                 </div>
             @else
-                <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-semibold bg-slate-100 text-slate-700">
-                    Draft Permohonan
+                <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 border border-slate-300">
+                    Draft Permohonan Sertifikasi
                 </span>
             @endif
         </div>
     </div>
 
     @if($errors->any())
-        <div class="p-4 bg-rose-50 border-l-4 border-rose-500 text-rose-700 rounded-lg text-sm">
-            <p class="font-bold">Mohon periksa kembali formulir Anda:</p>
-            <ul class="list-disc pl-5 mt-1 space-y-1">
+        <div class="p-4 bg-rose-50 border-l-4 border-rose-500 text-rose-800 rounded-lg text-xs space-y-1">
+            <p class="font-bold text-sm">Mohon periksa kembali formulir Anda:</p>
+            <ul class="list-disc pl-5 space-y-0.5">
                 @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
@@ -63,90 +68,185 @@
     <form action="{{ route('asesi.assessment.apl.store', $assessment) }}" method="POST" enctype="multipart/form-data" class="space-y-8" id="aplForm">
         @csrf
 
-        {{-- BAGIAN 1: FR.APL.01 DATA PEMOHON --}}
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div class="bg-gradient-to-r from-slate-800 to-slate-900 px-6 py-4 flex items-center justify-between text-white">
-                <div>
-                    <h2 class="text-lg font-bold">FR.APL.01. PERMOHONAN SERTIFIKASI KOMPETENSI</h2>
-                    <p class="text-xs text-slate-300">Bagian 1: Rincian Data Pribadi & Administratif (Auto-fetch)</p>
+        {{-- ======================================================== --}}
+        {{-- FORMULIR FR.APL.01. PERMOHONAN SERTIFIKASI KOMPETENSI     --}}
+        {{-- ======================================================== --}}
+        <div class="bg-white rounded-xl shadow-sm border border-slate-300 overflow-hidden">
+            {{-- Header Dokumen MUK APL.01 --}}
+            <div class="border-b border-slate-300 p-5 bg-slate-50 text-slate-900">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-3">
+                    <div class="font-extrabold text-sm tracking-wider uppercase text-lsp-navy">
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-500">
+                        Skema: {{ $assessment->schedule->scheme->code }}
+                    </div>
                 </div>
-                <a href="{{ route('asesi.profile.edit') }}" class="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded border border-white/20 transition">
-                    ✎ Edit Profil
-                </a>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+                            FR.APL.01. PERMOHONAN SERTIFIKASI KOMPETENSI
+                        </h2>
+                        <p class="text-xs text-slate-600 mt-1">Formulir Pendaftaran & Rincian Data Calon Peserta Uji Kompetensi</p>
+                    </div>
+                    <a href="{{ route('asesi.profile.edit') }}" class="text-xs bg-white hover:bg-slate-100 text-slate-700 px-3 py-1.5 rounded border border-slate-300 transition font-semibold shadow-xs">
+                        ✎ Ubah Biodata Profil
+                    </a>
+                </div>
             </div>
 
-            <div class="p-6">
-                @php
-                    $isProfileComplete = $profile && !empty($profile->nik) && !empty($profile->tempat_lahir) && !empty($profile->tanggal_lahir) && !empty($profile->jenis_kelamin) && !empty($profile->alamat_rumah) && !empty($profile->kode_pos) && !empty($profile->pendidikan_terakhir) && !empty($profile->jabatan) && !empty(auth()->user()->phone);
-                @endphp
+            <div class="p-5 sm:p-6 space-y-6">
+                {{-- Bagian 1 : Rincian Data Pemohon Sertifikasi --}}
+                <div>
+                    <div class="bg-slate-100 border border-slate-300 px-3.5 py-2 font-bold text-xs text-slate-900 uppercase tracking-wider mb-2">
+                        Bagian 1 : Rincian Data Pemohon Sertifikasi
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 italic">
+                        Pada bagian ini, cantumkan data pribadi, data pendidikan formal serta data pekerjaan anda pada saat ini.
+                    </p>
 
-                @if(! $isProfileComplete)
-                    <div class="mb-5 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
-                        <div class="flex items-start gap-2.5">
-                            <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                            <div>
-                                <p class="text-xs font-bold text-amber-900">Perhatian: Data Profil FR.APL.01 Belum Lengkap</p>
-                                <p class="text-xs text-amber-700 mt-0.5">Seluruh data identitas pribadi dan jabatan posisi di APL.01 wajib diisi lengkap sebelum mengajukan permohonan asesmen.</p>
-                            </div>
-                        </div>
-                        <a href="{{ route('asesi.profile.edit') }}" class="shrink-0 px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-lg transition shadow-xs flex items-center gap-1">
-                            <span>Lengkapi Profil</span>
-                            <span>&rarr;</span>
-                        </a>
-                    </div>
-                @endif
+                    {{-- a. Data Pribadi --}}
+                    <h3 class="text-xs font-bold text-slate-900 mb-1.5">a. Data Pribadi</h3>
+                    <table class="w-full text-xs border border-slate-300 border-collapse mb-5">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/4 bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Nama lengkap</td>
+                                <td class="w-1/4 px-3 py-2 border border-slate-300 font-bold text-slate-900">{{ auth()->user()->full_name }}</td>
+                                <td class="w-1/4 bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">No. KTP/NIK/Paspor</td>
+                                <td class="w-1/4 px-3 py-2 border border-slate-300 font-mono text-slate-900">{{ $profile?->nik ?? '-' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Tempat / tgl. Lahir</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">
+                                    {{ $profile?->tempat_lahir ?? '-' }}, {{ $profile?->tanggal_lahir ? \Carbon\Carbon::parse($profile->tanggal_lahir)->translatedFormat('d F Y') : '-' }}
+                                </td>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Jenis kelamin</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">
+                                    {{ $profile?->jenis_kelamin === 'L' ? 'Laki-laki' : ($profile?->jenis_kelamin === 'P' ? 'Perempuan' : '-') }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Kebangsaan</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">{{ $profile?->kebangsaan ?? 'Indonesia' }}</td>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Kualifikasi Pendidikan</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">{{ $profile?->pendidikan_terakhir ?? '-' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Alamat rumah</td>
+                                <td colspan="3" class="px-3 py-2 border border-slate-300 text-slate-900">
+                                    {{ $profile?->alamat_rumah ?? '-' }} (Kode Pos: {{ $profile?->kode_pos ?? '-' }})
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">No. Telepon/HP</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">{{ auth()->user()->phone ?? '-' }}</td>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">E-mail</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">{{ auth()->user()->email }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm bg-slate-50 p-4 rounded-lg border border-slate-200 mb-6">
-                    <div>
-                        <span class="text-xs text-slate-500 block">Nama Lengkap</span>
-                        <span class="font-semibold text-slate-800">{{ auth()->user()->full_name }}</span>
-                    </div>
-                    <div>
-                        <span class="text-xs text-slate-500 block">NIK / No. KTP</span>
-                        <span class="font-semibold text-slate-800">{{ $profile?->nik ?? '-' }}</span>
-                    </div>
-                    <div>
-                        <span class="text-xs text-slate-500 block">Tempat, Tanggal Lahir</span>
-                        <span class="font-semibold text-slate-800">
-                            {{ $profile?->tempat_lahir ?? '-' }}, {{ $profile?->tanggal_lahir ? \Carbon\Carbon::parse($profile->tanggal_lahir)->translatedFormat('d F Y') : '-' }}
-                        </span>
-                    </div>
-                    <div>
-                        <span class="text-xs text-slate-500 block">Jenis Kelamin / Kebangsaan</span>
-                        <span class="font-semibold text-slate-800">
-                            {{ $profile?->jenis_kelamin === 'L' ? 'Laki-laki' : ($profile?->jenis_kelamin === 'P' ? 'Perempuan' : '-') }} / {{ $profile?->kebangsaan ?? 'Indonesia' }}
-                        </span>
-                    </div>
-                    <div class="md:col-span-2">
-                        <span class="text-xs text-slate-500 block">Alamat Rumah</span>
-                        <span class="font-semibold text-slate-800">{{ $profile?->alamat_rumah ?? '-' }} (Kode Pos: {{ $profile?->kode_pos ?? '-' }})</span>
-                    </div>
-                    <div>
-                        <span class="text-xs text-slate-500 block">Kontak Telepon / Email</span>
-                        <span class="font-semibold text-slate-800">{{ auth()->user()->phone ?? '-' }} / {{ auth()->user()->email }}</span>
-                    </div>
-                    <div>
-                        <span class="text-xs text-slate-500 block">Pendidikan Terakhir</span>
-                        <span class="font-semibold text-slate-800">{{ $profile?->pendidikan_terakhir ?? '-' }}</span>
-                    </div>
-                    <div class="md:col-span-2">
-                        <span class="text-xs text-slate-500 block">Institusi / Perusahaan & Jabatan</span>
-                        <span class="font-semibold text-slate-800">{{ $profile?->nama_institusi_perusahaan ?? '-' }} ({{ $profile?->jabatan ?? '-' }})</span>
-                    </div>
+                    {{-- b. Data Pekerjaan Sekarang --}}
+                    <h3 class="text-xs font-bold text-slate-900 mb-1.5">b. Data Pekerjaan Sekarang</h3>
+                    <table class="w-full text-xs border border-slate-300 border-collapse">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/4 bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Nama Institusi / Perusahaan</td>
+                                <td class="w-1/4 px-3 py-2 border border-slate-300 text-slate-900 font-medium">
+                                    {{ $profile?->nama_institusi ?? $profile?->nama_institusi_perusahaan ?? '-' }}
+                                </td>
+                                <td class="w-1/4 bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Jabatan</td>
+                                <td class="w-1/4 px-3 py-2 border border-slate-300 text-slate-900 font-medium">{{ $profile?->jabatan ?? '-' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Alamat Kantor</td>
+                                <td colspan="3" class="px-3 py-2 border border-slate-300 text-slate-900">
+                                    {{ $profile?->alamat_kantor ?? '-' }} (Kode Pos: {{ $profile?->kode_pos ?? '-' }})
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                {{-- Pemilihan Asesor Penguji --}}
+                {{-- Bagian 2 : Data Sertifikasi --}}
+                <div>
+                    <div class="bg-slate-100 border border-slate-300 px-3.5 py-2 font-bold text-xs text-slate-900 uppercase tracking-wider mb-2">
+                        Bagian 2 : Data Sertifikasi
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 italic">
+                        Tuliskan Judul dan Nomor Skema Sertifikasi yang anda ajukan berikut Daftar Unit Kompetensi sesuai kemasan pada skema sertifikasi untuk mendapatkan pengakuan sesuai dengan latar belakang pendidikan, pelatihan serta pengalaman kerja yang anda miliki.
+                    </p>
+
+                    <table class="w-full text-xs border border-slate-300 border-collapse mb-4">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/4 bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Skema Sertifikasi (KKNI/Okupasi/Klaster)</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">
+                                    Judul : <strong class="text-lsp-navy">{{ $assessment->schedule->scheme->name }}</strong><br>
+                                    Nomor : <span class="font-mono text-slate-700">{{ $assessment->schedule->scheme->code }}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-slate-50 font-semibold px-3 py-2 border border-slate-300 text-slate-700">Tujuan Asesmen</td>
+                                <td class="px-3 py-2 border border-slate-300 text-slate-900">
+                                    <div class="flex items-center gap-4 flex-wrap">
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="tujuan_asesmen" value="Sertifikasi" checked class="text-lsp-navy focus:ring-lsp-navy">
+                                            <span>Sertifikasi</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="tujuan_asesmen" value="PKT" class="text-lsp-navy focus:ring-lsp-navy">
+                                            <span>Pengakuan Kompetensi Terkini (PKT)</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="tujuan_asesmen" value="RPL" class="text-lsp-navy focus:ring-lsp-navy">
+                                            <span>Rekognisi Pembelajaran Lampau (RPL)</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="tujuan_asesmen" value="Lainnya" class="text-lsp-navy focus:ring-lsp-navy">
+                                            <span>Lainnya</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-xs font-bold text-slate-900 mb-1.5">Daftar Unit Kompetensi sesuai kemasan:</h3>
+                    <table class="w-full text-xs border border-slate-300 border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 font-bold text-slate-800">
+                                <th class="border border-slate-300 px-3 py-2 w-12 text-center">No.</th>
+                                <th class="border border-slate-300 px-3 py-2 w-48 text-left">Kode Unit</th>
+                                <th class="border border-slate-300 px-3 py-2 text-left">Judul Unit</th>
+                                <th class="border border-slate-300 px-3 py-2 w-40 text-center">Standar Kompetensi Kerja</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($assessment->schedule->scheme->competencyUnits as $unit)
+                                <tr class="hover:bg-slate-50">
+                                    <td class="border border-slate-300 px-3 py-2 text-center font-mono text-slate-500">{{ $loop->iteration }}</td>
+                                    <td class="border border-slate-300 px-3 py-2 font-mono font-bold text-slate-800">{{ $unit->code }}</td>
+                                    <td class="border border-slate-300 px-3 py-2 text-slate-800">{{ $unit->title }}</td>
+                                    <td class="border border-slate-300 px-3 py-2 text-center text-slate-600">SKKNI</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+                {{-- Pemilihan Asesor Penguji Dari Jadwal --}}
                 @php
                     $scheduleAssessors = $assessment->schedule->assessors ?? collect();
                 @endphp
                 @if($scheduleAssessors->isNotEmpty())
-                    <div class="mt-4 p-4 rounded-xl border border-indigo-100 bg-indigo-50/50 mb-6">
-                        <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5 flex items-center justify-between">
-                            <span>Pilih Asesor Penguji <span class="text-rose-500">*</span></span>
+                    <div class="p-3.5 bg-slate-50 border border-slate-300 rounded-lg">
+                        <label class="block text-xs font-bold text-slate-900 uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                            <span>Pilih Asesor Penguji Yang Bertugas <span class="text-rose-600">*</span></span>
                             <span class="text-[11px] text-slate-500 font-normal lowercase">Asesor yang akan memverifikasi berkas & menguji Anda</span>
                         </label>
-                        <select name="assessor_id" required class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 bg-white text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                            <option value="">-- Pilih Salah Satu Asesor Penguji --</option>
+                        <select name="assessor_id" required class="w-full px-3 py-2 rounded border border-slate-300 bg-white text-xs font-medium focus:ring-1 focus:ring-lsp-navy" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                            <option value="">-- Pilih Asesor Penguji --</option>
                             @foreach($scheduleAssessors as $asesor)
                                 <option value="{{ $asesor->id }}" {{ old('assessor_id', $assessment->assessor_id) == $asesor->id || $scheduleAssessors->count() === 1 ? 'selected' : '' }}>
                                     {{ $asesor->full_name }} (No. Reg: {{ $asesor->assessor_registration_number ?? '-' }})
@@ -157,102 +257,140 @@
                     </div>
                 @endif
 
-                {{-- BUKTI PERSYARATAN UPLOAD SECTION (IMAGE 2 STYLE) --}}
-                <div class="mt-6">
-                    <h3 class="text-base font-bold text-slate-800 mb-1">Upload Bukti Kelengkapan Pemohon</h3>
-                    <p class="text-xs text-slate-500 mb-4">Unggah dokumen pendukung untuk diverifikasi oleh asesor kompetensi.</p>
+                {{-- Bagian 3 : Bukti Kelengkapan Pemohon --}}
+                <div>
+                    <div class="bg-slate-100 border border-slate-300 px-3.5 py-2 font-bold text-xs text-slate-900 uppercase tracking-wider mb-2">
+                        Bagian 3 : Bukti Kelengkapan Pemohon
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 italic">
+                        Lampirkan dokumen bukti persyaratan dasar dan administratif sesuai acuan skema sertifikasi BNSP.
+                    </p>
 
                     @php
                         $existingProofs = $assessment->proofs->keyBy('proof_type');
                     @endphp
 
-                    {{-- Bukti Persyaratan Dasar (Minimal 1 dari 4) --}}
-                    <div class="mb-6 p-4 rounded-xl border border-indigo-100 bg-indigo-50/50">
-                        <div class="flex items-center justify-between mb-3">
-                            <h4 class="text-sm font-bold text-indigo-900 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs flex items-center justify-center font-bold">1</span>
-                                Bukti Persyaratan Dasar
-                            </h4>
-                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800">
-                                Wajib pilih & upload minimal 1 opsi
-                            </span>
-                        </div>
+                    {{-- 3.1 Bukti Persyaratan Dasar Pemohon --}}
+                    <h3 class="text-xs font-bold text-slate-900 mb-1.5">3.1 Bukti Persyaratan Dasar Pemohon (Pilih minimal salah satu)</h3>
+                    <table class="w-full text-xs border border-slate-300 border-collapse mb-4">
+                        <thead>
+                            <tr class="bg-slate-100 font-bold text-slate-800">
+                                <th class="border border-slate-300 px-3 py-2 w-12 text-center">No.</th>
+                                <th class="border border-slate-300 px-3 py-2 text-left">Bukti Persyaratan Dasar</th>
+                                <th class="border border-slate-300 px-3 py-2 w-72 text-left">Unggah Berkas (PDF/JPG/PNG max 5MB)</th>
+                                <th class="border border-slate-300 px-3 py-2 w-28 text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-slate-300 px-3 py-2 text-center font-mono">1</td>
+                                <td class="border border-slate-300 px-3 py-2 text-slate-800">Fotocopy Ijazah SMK Otomotif</td>
+                                <td class="border border-slate-300 px-3 py-2">
+                                    <input type="file" name="proofs[IJAZAH_SMK]" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-xs file:mr-2 file:py-1 file:px-2 file:border-0 file:rounded file:text-xs file:bg-slate-100 file:text-slate-800 hover:file:bg-slate-200" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                </td>
+                                <td class="border border-slate-300 px-3 py-2 text-center">
+                                    @if(isset($existingProofs['IJAZAH_SMK']))
+                                        <span class="text-emerald-700 font-bold text-[11px]">✓ Terunggah</span>
+                                    @else
+                                        <span class="text-slate-400 text-[11px]">-</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 px-3 py-2 text-center font-mono">2</td>
+                                <td class="border border-slate-300 px-3 py-2 text-slate-800">Surat Keterangan Peserta Didik SMK Jurusan Otomotif / Siswa Aktif</td>
+                                <td class="border border-slate-300 px-3 py-2">
+                                    <input type="file" name="proofs[SURAT_SISWA_AKTIF]" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-xs file:mr-2 file:py-1 file:px-2 file:border-0 file:rounded file:text-xs file:bg-slate-100 file:text-slate-800 hover:file:bg-slate-200" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                </td>
+                                <td class="border border-slate-300 px-3 py-2 text-center">
+                                    @if(isset($existingProofs['SURAT_SISWA_AKTIF']))
+                                        <span class="text-emerald-700 font-bold text-[11px]">✓ Terunggah</span>
+                                    @else
+                                        <span class="text-slate-400 text-[11px]">-</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 px-3 py-2 text-center font-mono">3</td>
+                                <td class="border border-slate-300 px-3 py-2 text-slate-800">Fotocopy Ijazah SMA Sederajat + Sertifikat Pelatihan Otomotif Terakreditasi</td>
+                                <td class="border border-slate-300 px-3 py-2">
+                                    <input type="file" name="proofs[IJAZAH_SMA_SERTIFIKAT]" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-xs file:mr-2 file:py-1 file:px-2 file:border-0 file:rounded file:text-xs file:bg-slate-100 file:text-slate-800 hover:file:bg-slate-200" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                </td>
+                                <td class="border border-slate-300 px-3 py-2 text-center">
+                                    @if(isset($existingProofs['IJAZAH_SMA_SERTIFIKAT']))
+                                        <span class="text-emerald-700 font-bold text-[11px]">✓ Terunggah</span>
+                                    @else
+                                        <span class="text-slate-400 text-[11px]">-</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 px-3 py-2 text-center font-mono">4</td>
+                                <td class="border border-slate-300 px-3 py-2 text-slate-800">Surat Keterangan Pengalaman Kerja Bengkel Otomotif Minimal 1 Tahun</td>
+                                <td class="border border-slate-300 px-3 py-2">
+                                    <input type="file" name="proofs[PENGALAMAN_KERJA]" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-xs file:mr-2 file:py-1 file:px-2 file:border-0 file:rounded file:text-xs file:bg-slate-100 file:text-slate-800 hover:file:bg-slate-200" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                </td>
+                                <td class="border border-slate-300 px-3 py-2 text-center">
+                                    @if(isset($existingProofs['PENGALAMAN_KERJA']))
+                                        <span class="text-emerald-700 font-bold text-[11px]">✓ Terunggah</span>
+                                    @else
+                                        <span class="text-slate-400 text-[11px]">-</span>
+                                    @endif
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {{-- Opsi A --}}
-                            <div class="bg-white p-3 rounded-lg border border-slate-200">
-                                <label class="block text-xs font-bold text-slate-700 mb-1">A. Ijazah SMK Otomotif</label>
-                                <input type="file" name="proofs[IJAZAH_SMK]" accept=".jpg,.jpeg,.png,.pdf" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                @if(isset($existingProofs['IJAZAH_SMK']))
-                                    <span class="text-xs text-emerald-600 font-medium mt-1 inline-block">✓ Terunggah: {{ $existingProofs['IJAZAH_SMK']->original_filename }}</span>
-                                @endif
-                            </div>
-
-                            {{-- Opsi B --}}
-                            <div class="bg-white p-3 rounded-lg border border-slate-200">
-                                <label class="block text-xs font-bold text-slate-700 mb-1">B. Surat Keterangan Siswa Aktif SMK</label>
-                                <input type="file" name="proofs[SURAT_SISWA_AKTIF]" accept=".jpg,.jpeg,.png,.pdf" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                @if(isset($existingProofs['SURAT_SISWA_AKTIF']))
-                                    <span class="text-xs text-emerald-600 font-medium mt-1 inline-block">✓ Terunggah: {{ $existingProofs['SURAT_SISWA_AKTIF']->original_filename }}</span>
-                                @endif
-                            </div>
-
-                            {{-- Opsi C --}}
-                            <div class="bg-white p-3 rounded-lg border border-slate-200">
-                                <label class="block text-xs font-bold text-slate-700 mb-1">C. Ijazah SMA + Sertifikat Pelatihan Otomotif</label>
-                                <input type="file" name="proofs[IJAZAH_SMA_SERTIFIKAT]" accept=".jpg,.jpeg,.png,.pdf" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                @if(isset($existingProofs['IJAZAH_SMA_SERTIFIKAT']))
-                                    <span class="text-xs text-emerald-600 font-medium mt-1 inline-block">✓ Terunggah: {{ $existingProofs['IJAZAH_SMA_SERTIFIKAT']->original_filename }}</span>
-                                @endif
-                            </div>
-
-                            {{-- Opsi D --}}
-                            <div class="bg-white p-3 rounded-lg border border-slate-200">
-                                <label class="block text-xs font-bold text-slate-700 mb-1">D. Surat Pengalaman Kerja Bengkel Otomotif</label>
-                                <input type="file" name="proofs[PENGALAMAN_KERJA]" accept=".jpg,.jpeg,.png,.pdf" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                @if(isset($existingProofs['PENGALAMAN_KERJA']))
-                                    <span class="text-xs text-emerald-600 font-medium mt-1 inline-block">✓ Terunggah: {{ $existingProofs['PENGALAMAN_KERJA']->original_filename }}</span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Bukti Administratif (Wajib Keduanya) --}}
-                    <div class="p-4 rounded-xl border border-amber-100 bg-amber-50/50">
-                        <div class="flex items-center justify-between mb-3">
-                            <h4 class="text-sm font-bold text-amber-900 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs flex items-center justify-center font-bold">2</span>
-                                Bukti Administratif
-                            </h4>
-                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800">
-                                Wajib diunggah keduanya
-                            </span>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-white p-3 rounded-lg border border-slate-200">
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Fotokopi KTP / Identitas Diri <span class="text-rose-500">*</span></label>
-                                <input type="file" name="proofs[KTP]" accept=".jpg,.jpeg,.png,.pdf" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                @if(isset($existingProofs['KTP']))
-                                    <span class="text-xs text-emerald-600 font-medium mt-1 inline-block">✓ Terunggah: {{ $existingProofs['KTP']->original_filename }}</span>
-                                @endif
-                            </div>
-
-                            <div class="bg-white p-3 rounded-lg border border-slate-200">
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Pas Foto 3x4 (Latar Belakang Merah) <span class="text-rose-500">*</span></label>
-                                <input type="file" name="proofs[PAS_FOTO]" accept=".jpg,.jpeg,.png,.pdf" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1 file:px-2.5 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                @if(isset($existingProofs['PAS_FOTO']))
-                                    <span class="text-xs text-emerald-600 font-medium mt-1 inline-block">✓ Terunggah: {{ $existingProofs['PAS_FOTO']->original_filename }}</span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                    {{-- 3.2 Bukti Administratif --}}
+                    <h3 class="text-xs font-bold text-slate-900 mb-1.5">3.2 Bukti Administratif (Wajib diunggah seluruhnya)</h3>
+                    <table class="w-full text-xs border border-slate-300 border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 font-bold text-slate-800">
+                                <th class="border border-slate-300 px-3 py-2 w-12 text-center">No.</th>
+                                <th class="border border-slate-300 px-3 py-2 text-left">Bukti Administratif</th>
+                                <th class="border border-slate-300 px-3 py-2 w-72 text-left">Unggah Berkas</th>
+                                <th class="border border-slate-300 px-3 py-2 w-28 text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-slate-300 px-3 py-2 text-center font-mono">1</td>
+                                <td class="border border-slate-300 px-3 py-2 text-slate-800">Fotocopy Kartu Tanda Penduduk (KTP) <span class="text-rose-600 font-bold">*</span></td>
+                                <td class="border border-slate-300 px-3 py-2">
+                                    <input type="file" name="proofs[KTP]" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-xs file:mr-2 file:py-1 file:px-2 file:border-0 file:rounded file:text-xs file:bg-slate-100 file:text-slate-800 hover:file:bg-slate-200" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                </td>
+                                <td class="border border-slate-300 px-3 py-2 text-center">
+                                    @if(isset($existingProofs['KTP']))
+                                        <span class="text-emerald-700 font-bold text-[11px]">✓ Terunggah</span>
+                                    @else
+                                        <span class="text-rose-600 font-bold text-[11px]">Wajib</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 px-3 py-2 text-center font-mono">2</td>
+                                <td class="border border-slate-300 px-3 py-2 text-slate-800">Pas photo 3x4 background warna merah <span class="text-rose-600 font-bold">*</span></td>
+                                <td class="border border-slate-300 px-3 py-2">
+                                    <input type="file" name="proofs[PAS_FOTO]" accept=".jpg,.jpeg,.png" class="w-full text-xs file:mr-2 file:py-1 file:px-2 file:border-0 file:rounded file:text-xs file:bg-slate-100 file:text-slate-800 hover:file:bg-slate-200" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                </td>
+                                <td class="border border-slate-300 px-3 py-2 text-center">
+                                    @if(isset($existingProofs['PAS_FOTO']))
+                                        <span class="text-emerald-700 font-bold text-[11px]">✓ Terunggah</span>
+                                    @else
+                                        <span class="text-rose-600 font-bold text-[11px]">Wajib</span>
+                                    @endif
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
 
-        {{-- BAGIAN 2: FR.APL.02 ASESMEN MANDIRI --}}
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden" x-data="{
+        {{-- ======================================================== --}}
+        {{-- FORMULIR FR.APL.02. ASESMEN MANDIRI                      --}}
+        {{-- ======================================================== --}}
+        <div class="bg-white rounded-xl shadow-sm border border-slate-300 overflow-hidden" x-data="{
             setAll(val) {
                 document.querySelectorAll('input.radio-kuk-' + val).forEach(el => el.checked = true);
             },
@@ -261,141 +399,188 @@
                 document.querySelectorAll('select.select-proof').forEach(el => el.value = val);
             }
         }">
-            <div class="bg-gradient-to-r from-indigo-700 to-indigo-900 px-6 py-4 flex flex-col md:flex-row md:items-center justify-between text-white gap-4">
-                <div>
-                    <h2 class="text-lg font-bold">FR.APL.02. ASESMEN MANDIRI</h2>
-                    <p class="text-xs text-indigo-200">Panduan Asesmen Mandiri: Nilai kesiapan Anda pada setiap Kriteria Unjuk Kerja (KUK)</p>
+            {{-- Header Dokumen MUK APL.02 --}}
+            <div class="border-b border-slate-300 p-5 bg-slate-50 text-slate-900">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-3">
+                    <div class="font-extrabold text-sm tracking-wider uppercase text-lsp-navy">
+                        Lembaga Sertifikasi Profesi Praktisi Otomotif LSP-PrO Indo
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-500">
+                        Skema: {{ $assessment->schedule->scheme->code }}
+                    </div>
                 </div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+                            FR.APL.02. ASESMEN MANDIRI
+                        </h2>
+                        <p class="text-xs text-slate-600 mt-1 italic">
+                            Panduan Asesmen Mandiri: Nilai kesiapan Anda pada setiap Kriteria Unjuk Kerja (KUK) dengan memilih K (Kompeten) atau BK (Belum Kompeten).
+                        </p>
+                    </div>
 
-                @if($assessment->apl_status !== 'APPROVED' && $assessment->apl_status !== 'SUBMITTED')
-                    {{-- Fast Actions --}}
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <button type="button" @click="setAll('K')" class="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded text-xs font-bold shadow-sm transition">
-                            ✓ Semua K (Kompeten)
-                        </button>
-                        <button type="button" @click="setAll('BK')" class="px-3 py-1.5 bg-rose-500 hover:bg-rose-600 text-white rounded text-xs font-bold shadow-sm transition">
-                            ✕ Semua BK
-                        </button>
-                        <select @change="setDefaultProof($event.target.value)" class="px-2 py-1.5 bg-white text-slate-800 rounded text-xs font-medium border-0 focus:ring-2 focus:ring-indigo-300">
-                            <option value="">-- Set Bukti Semua --</option>
-                            <option value="IJAZAH_SMK">Ijazah SMK Otomotif</option>
-                            <option value="SURAT_SISWA_AKTIF">Surat Keterangan Siswa Aktif</option>
-                            <option value="IJAZAH_SMA_SERTIFIKAT">Ijazah + Sertifikat</option>
-                            <option value="PENGALAMAN_KERJA">Surat Pengalaman Kerja</option>
-                        </select>
-                    </div>
-                @else
-                    <div class="flex items-center gap-2">
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 text-white rounded text-xs font-semibold">
-                            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            Formulir Terkunci &amp; Terkirim
+                    @if($assessment->apl_status !== 'APPROVED' && $assessment->apl_status !== 'SUBMITTED')
+                        <div class="flex items-center gap-2 flex-wrap shrink-0">
+                            <button type="button" @click="setAll('K')" class="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded text-xs font-bold shadow-xs transition">
+                                ✓ Pilih Semua Kompeten (K)
+                            </button>
+                            <button type="button" @click="setAll('BK')" class="px-3 py-1.5 bg-rose-700 hover:bg-rose-800 text-white rounded text-xs font-bold shadow-xs transition">
+                                ✕ Semua BK
+                            </button>
+                        </div>
+                    @else
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-700 border border-slate-300 rounded text-xs font-semibold">
+                            🔒 Formulir Terkunci &amp; Terkirim
                         </span>
-                    </div>
-                @endif
+                    @endif
+                </div>
             </div>
 
-            <div class="p-6 overflow-x-auto">
+            <div class="p-5 sm:p-6 overflow-x-auto space-y-6">
                 @php
                     $existingApl02 = $assessment->apl02Items->keyBy('kuk_id');
+                    $kukCounter = 1;
                 @endphp
 
-                <table class="w-full text-left border-collapse text-xs">
-                    <thead>
-                        <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
-                            <th class="p-3 w-12 text-center">No</th>
-                            <th class="p-3">Unit Kompetensi / Elemen / Kriteria Unjuk Kerja (KUK)</th>
-                            <th class="p-3 w-20 text-center bg-emerald-50 text-emerald-800">K</th>
-                            <th class="p-3 w-20 text-center bg-rose-50 text-rose-800">BK</th>
-                            <th class="p-3 w-64">Bukti Pendukung Relevan</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200">
-                        @php $kukCounter = 1; @endphp
-                        @foreach($assessment->schedule->scheme->competencyUnits as $unit)
-                            <tr class="bg-slate-50 font-bold text-slate-800">
-                                <td colspan="5" class="p-2.5 bg-slate-100 text-slate-800">
-                                    Unit {{ $loop->iteration }}: {{ $unit->code }} - {{ $unit->title }}
-                                </td>
-                            </tr>
-                            @foreach($unit->elements as $element)
-                                <tr class="bg-white text-slate-600 font-semibold italic">
-                                    <td class="p-2 text-center text-slate-400">#</td>
-                                    <td colspan="4" class="p-2 pl-4">
-                                        Elemen {{ $loop->iteration }}: {{ $element->title }}
-                                    </td>
+                @foreach($assessment->schedule->scheme->competencyUnits as $unit)
+                    <div class="border border-slate-300 rounded-lg overflow-hidden">
+                        <div class="bg-slate-100 border-b border-slate-300 px-4 py-2.5 font-bold text-xs text-slate-900 flex items-center justify-between">
+                            <span>Unit {{ $loop->iteration }}: {{ $unit->code }} - {{ $unit->title }}</span>
+                            <span class="text-[11px] font-mono text-slate-500">Standar: SKKNI</span>
+                        </div>
+
+                        <table class="w-full text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 text-slate-800 font-bold border-b border-slate-300">
+                                    <th class="p-2.5 w-12 text-center border-r border-slate-300">No</th>
+                                    <th class="p-2.5 text-left border-r border-slate-300">Elemen &amp; Kriteria Unjuk Kerja (KUK)</th>
+                                    <th class="p-2.5 w-16 text-center border-r border-slate-300 bg-emerald-50 text-emerald-900">K</th>
+                                    <th class="p-2.5 w-16 text-center border-r border-slate-300 bg-rose-50 text-rose-900">BK</th>
+                                    <th class="p-2.5 w-60 text-left">Bukti Pendukung Relevan</th>
                                 </tr>
-                                @foreach($element->kuks as $kuk)
-                                    @php
-                                        $savedItem = $existingApl02[$kuk->id] ?? null;
-                                        $val = $savedItem?->assessment_value ?? 'K';
-                                        $proof = $savedItem?->selected_proof_type ?? 'IJAZAH_SMK';
-                                    @endphp
-                                    <tr class="hover:bg-indigo-50/30 transition">
-                                        <td class="p-3 text-center text-slate-500 font-mono">{{ $kukCounter++ }}</td>
-                                        <td class="p-3 pl-6">
-                                            <span class="font-bold text-slate-700 mr-1">{{ $kuk->code_number }}</span>
-                                            <span class="text-slate-600">{{ $kuk->statement }}</span>
-                                        </td>
-                                        <td class="p-3 text-center bg-emerald-50/50">
-                                            <input type="radio" name="kuks[{{ $kuk->id }}][value]" value="K" class="radio-kuk-K text-emerald-600 focus:ring-emerald-500 w-4 h-4 cursor-pointer" @checked($val === 'K') @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                        </td>
-                                        <td class="p-3 text-center bg-rose-50/50">
-                                            <input type="radio" name="kuks[{{ $kuk->id }}][value]" value="BK" class="radio-kuk-BK text-rose-600 focus:ring-rose-500 w-4 h-4 cursor-pointer" @checked($val === 'BK') @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                        </td>
-                                        <td class="p-3">
-                                            <select name="kuks[{{ $kuk->id }}][proof_type]" class="select-proof w-full text-xs border border-slate-200 rounded px-2 py-1 bg-white focus:ring-1 focus:ring-indigo-500" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
-                                                <option value="IJAZAH_SMK" @selected($proof === 'IJAZAH_SMK')>Ijazah SMK Otomotif</option>
-                                                <option value="SURAT_SISWA_AKTIF" @selected($proof === 'SURAT_SISWA_AKTIF')>Surat Keterangan Siswa Aktif</option>
-                                                <option value="IJAZAH_SMA_SERTIFIKAT" @selected($proof === 'IJAZAH_SMA_SERTIFIKAT')>Ijazah SMA + Sertifikat Pelatihan</option>
-                                                <option value="PENGALAMAN_KERJA" @selected($proof === 'PENGALAMAN_KERJA')>Surat Pengalaman Kerja</option>
-                                            </select>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                @foreach($unit->elements as $element)
+                                    <tr class="bg-slate-50/70 text-slate-700 font-bold border-b border-slate-200">
+                                        <td class="p-2 text-center text-slate-400 border-r border-slate-300 font-mono">#</td>
+                                        <td colspan="4" class="p-2 pl-3">
+                                            Elemen {{ $loop->iteration }}: {{ $element->title }}
                                         </td>
                                     </tr>
+                                    @foreach($element->kuks as $kuk)
+                                        @php
+                                            $savedItem = $existingApl02[$kuk->id] ?? null;
+                                            $val = $savedItem?->assessment_value ?? 'K';
+                                            $proof = $savedItem?->selected_proof_type ?? 'IJAZAH_SMK';
+                                        @endphp
+                                        <tr class="hover:bg-slate-50 transition">
+                                            <td class="p-2.5 text-center text-slate-500 font-mono border-r border-slate-300">{{ $kukCounter++ }}</td>
+                                            <td class="p-2.5 pl-4 border-r border-slate-300">
+                                                <strong class="font-mono text-slate-800 mr-1.5">{{ $kuk->code_number }}</strong>
+                                                <span class="text-slate-700 leading-relaxed">{{ $kuk->statement }}</span>
+                                            </td>
+                                            <td class="p-2.5 text-center bg-emerald-50/40 border-r border-slate-300">
+                                                <input type="radio" name="kuks[{{ $kuk->id }}][value]" value="K" class="radio-kuk-K text-emerald-700 focus:ring-emerald-600 w-4 h-4 cursor-pointer" @checked($val === 'K') @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                            </td>
+                                            <td class="p-2.5 text-center bg-rose-50/40 border-r border-slate-300">
+                                                <input type="radio" name="kuks[{{ $kuk->id }}][value]" value="BK" class="radio-kuk-BK text-rose-700 focus:ring-rose-600 w-4 h-4 cursor-pointer" @checked($val === 'BK') @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                            </td>
+                                            <td class="p-2.5">
+                                                <select name="kuks[{{ $kuk->id }}][proof_type]" class="select-proof w-full text-xs border border-slate-300 rounded px-2 py-1 bg-white focus:ring-1 focus:ring-lsp-navy" @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                                                    <option value="IJAZAH_SMK" @selected($proof === 'IJAZAH_SMK')>Ijazah SMK Otomotif</option>
+                                                    <option value="SURAT_SISWA_AKTIF" @selected($proof === 'SURAT_SISWA_AKTIF')>Surat Keterangan Siswa Aktif</option>
+                                                    <option value="IJAZAH_SMA_SERTIFIKAT" @selected($proof === 'IJAZAH_SMA_SERTIFIKAT')>Ijazah SMA + Sertifikat Pelatihan</option>
+                                                    <option value="PENGALAMAN_KERJA" @selected($proof === 'PENGALAMAN_KERJA')>Surat Pengalaman Kerja</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 @endforeach
-                            @endforeach
-                        @endforeach
-                    </tbody>
-                </table>
+                            </tbody>
+                        </table>
+                    </div>
+                @endforeach
             </div>
 
-            {{-- Signature Section & Save Button --}}
-            <div class="p-6 bg-slate-50 border-t border-slate-200 flex flex-col md:flex-row items-end justify-between gap-6">
-                <div class="w-full md:w-80">
-                    <x-signature-pad 
-                        name="signature_data" 
-                        :value="$assessment->asesi_signature ?? old('signature_data')" 
-                        :profileSignature="$profile?->signature_data"
-                        label="Tanda Tangan Pemohon (Asesi)" 
-                        :required="true"
-                        height="140" 
-                        :disabled="$assessment->apl_status === 'SUBMITTED' || $assessment->apl_status === 'APPROVED'"
-                    />
+            {{-- Rekomendasi & Tanda Tangan Footer Sesuai MUK --}}
+            <div class="p-5 sm:p-6 bg-slate-50 border-t border-slate-300 space-y-6">
+                {{-- Pernyataan Integritas --}}
+                <div class="p-3.5 bg-white border border-slate-300 rounded-lg">
+                    <label class="flex items-start gap-2.5 cursor-pointer">
+                        <input type="checkbox" name="statement_integrity" value="1" required class="mt-0.5 rounded text-lsp-navy focus:ring-lsp-navy" {{ old('statement_integrity', '1') ? 'checked' : '' }} @disabled($assessment->apl_status === 'APPROVED' || $assessment->apl_status === 'SUBMITTED')>
+                        <span class="text-xs text-slate-800 leading-relaxed">
+                            <strong>Pernyataan Pemohon (Asesi):</strong> Saya menyatakan dengan sesungguhnya bahwa seluruh data permohonan sertifikasi (FR.APL.01) dan penilaian mandiri (FR.APL.02) ini saya isi secara jujur, mandiri, dan bertanggung jawab sesuai bukti yang sah dan dapat dipertanggungjawabkan.
+                        </span>
+                    </label>
                 </div>
 
-                <div class="w-full md:w-auto flex flex-col items-end gap-2">
+                {{-- Tabel Tanda Tangan Dua Kolom Resmi --}}
+                <table class="w-full text-xs border border-slate-300 border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-800 font-bold border-b border-slate-300">
+                            <th class="w-1/2 p-3 text-center border-r border-slate-300">Pemohon / Kandidat (Asesi)</th>
+                            <th class="w-1/2 p-3 text-center">Rekomendasi Admin / Asesor LSP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4 border-r border-slate-300 align-top">
+                                <div class="space-y-3">
+                                    <x-signature-pad 
+                                        name="signature_data" 
+                                        :value="$assessment->asesi_signature ?? old('signature_data')" 
+                                        :profileSignature="$profile?->signature_data"
+                                        label="Tanda Tangan Pemohon" 
+                                        :required="true"
+                                        height="120" 
+                                        :disabled="$assessment->apl_status === 'SUBMITTED' || $assessment->apl_status === 'APPROVED'"
+                                    />
+                                    <div class="text-slate-700">
+                                        Nama : <strong>{{ auth()->user()->full_name }}</strong><br>
+                                        Tanggal : <strong>{{ \Carbon\Carbon::parse($assessment->schedule->date)->format('d/m/Y') }}</strong>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4 align-top bg-slate-50/50">
+                                <div class="space-y-3">
+                                    <div class="p-2 border border-slate-300 rounded bg-white text-xs">
+                                        <p class="font-bold text-slate-800 mb-1">Rekomendasi:</p>
+                                        <p class="text-slate-600 italic">
+                                            @if($assessment->apl_status === 'APPROVED')
+                                                <strong class="text-emerald-700">DITERIMA</strong> sebagai peserta sertifikasi.
+                                            @elseif($assessment->apl_status === 'SUBMITTED')
+                                                Dalam proses verifikasi berkas oleh asesor penguji.
+                                            @else
+                                                Diisi oleh Asesor saat verifikasi permohonan.
+                                            @endif
+                                        </p>
+                                    </div>
+                                    <div class="text-slate-700 pt-2">
+                                        Nama Asesor : <strong>{{ $assessment->assessor?->full_name ?? 'Tim Asesor LSP' }}</strong><br>
+                                        No. Reg MET : <strong>{{ $assessment->assessor?->assessor_registration_number ?? '-' }}</strong>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                {{-- Single Prominent Primary Action Button --}}
+                <div class="flex items-center justify-end pt-2">
                     @if($assessment->apl_status === 'APPROVED')
-                        <a href="{{ route('asesi.assessment.ruang-uji', $assessment) }}" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2">
-                            <span>Lanjut ke Ruang Uji</span>
-                            <span>→</span>
+                        <a href="{{ route('asesi.assessment.ruang-uji', $assessment) }}" class="px-8 py-3 bg-lsp-navy hover:bg-lsp-navy-dark text-white font-bold rounded-lg shadow-sm transition flex items-center gap-2">
+                            <span>Masuk Ruang Uji</span>
+                            <span>&rarr;</span>
                         </a>
                     @elseif($assessment->apl_status === 'SUBMITTED')
-                        <button type="button" disabled class="px-6 py-3 bg-slate-400 text-white font-bold rounded-xl shadow-md cursor-not-allowed">
+                        <button type="button" disabled class="px-8 py-3 bg-slate-400 text-white font-bold rounded-lg cursor-not-allowed">
                             Menunggu Verifikasi Asesor
                         </button>
                     @else
-                        <div class="mb-2 p-3 bg-indigo-50/70 border border-indigo-200 rounded-lg text-left w-full md:max-w-md">
-                            <label class="flex items-start gap-2.5 cursor-pointer">
-                                <input type="checkbox" name="statement_integrity" value="1" required class="mt-0.5 rounded border-indigo-300 text-indigo-600 focus:ring-indigo-500">
-                                <span class="text-xs text-indigo-950 leading-relaxed">
-                                    <strong>Pernyataan Pemohon (Asesi):</strong> Saya menyatakan dengan sesungguhnya bahwa seluruh data asesmen mandiri (FR.APL.02) ini saya isi secara jujur, mandiri, dan bertanggung jawab sesuai bukti yang sah.
-                                </span>
-                            </label>
-                        </div>
-                        <button type="submit" class="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition transform active:scale-95 flex items-center gap-2">
-                            <span>Simpan & Ajukan Permohonan</span>
-                            <span>→</span>
+                        <button type="submit" class="px-8 py-3.5 bg-lsp-navy hover:bg-lsp-navy-dark text-white font-bold rounded-lg shadow-sm transition flex items-center gap-2">
+                            <span>Simpan &amp; Kirim Permohonan Asesmen (APL-01/02)</span>
+                            <span>&rarr;</span>
                         </button>
-                        <p class="text-xs text-slate-400">Pastikan dokumen bukti telah dipilih dengan benar.</p>
                     @endif
                 </div>
             </div>

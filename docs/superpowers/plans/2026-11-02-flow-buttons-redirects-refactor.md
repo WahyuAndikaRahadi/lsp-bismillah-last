@@ -148,12 +148,12 @@
 - Nilai input form dipertahankan jika validasi gagal (`old()`).
 
 **Step-by-step instructions:**
-- [ ] 1. Tulis test di `tests/Feature/AsesiAplFormParityTest.php` yang menguji render view APL-01/02 dengan data pemohon, unit kompetensi skema, dan submission form.
-- [ ] 2. Jalankan test untuk memverifikasi kebutuhan yang belum terpenuhi.
-- [ ] 3. Rancang ulang `resources/views/asesi/apl.blade.php` dengan layout tabel resmi BNSP yang compact, border tegas `border-slate-300`, dan styling Tailwind 4 bersih.
-- [ ] 4. Pastikan tombol cepat "Pilih Semua Kompeten" berfungsi dengan Vanilla JS tanpa reload.
-- [ ] 5. Jalankan `php artisan test --filter=AsesiAplFormParityTest` dan pastikan hijau.
-- [ ] 6. Commit dengan pesan `feat: align asesi apl-01 and apl-02 form layout with official bnsp standards`.
+- [x] 1. Tulis test di `tests/Feature/AsesiAplFormParityTest.php` yang menguji render view APL-01/02 dengan data pemohon, unit kompetensi skema, dan submission form.
+- [x] 2. Jalankan test untuk memverifikasi kebutuhan yang belum terpenuhi.
+- [x] 3. Rancang ulang `resources/views/asesi/apl.blade.php` dengan layout tabel resmi BNSP yang compact, border tegas `border-slate-300`, dan styling Tailwind 4 bersih.
+- [x] 4. Pastikan tombol cepat "Pilih Semua Kompeten" berfungsi dengan Vanilla JS tanpa reload.
+- [x] 5. Jalankan `php artisan test --filter=AsesiAplFormParityTest` dan pastikan hijau.
+- [x] 6. Commit dengan pesan `feat: align asesi apl-01 and apl-02 form layout with official bnsp standards`.
 
 ---
 
@@ -172,13 +172,13 @@
 - Saat tombol "Kirim Jawaban CBT ✓" ditekan dan berhasil dinilai, bersihkan draft di localStorage.
 
 **Step-by-step instructions:**
-- [ ] 1. Tulis test di `tests/Feature/CbtAnswerPersistenceTest.php` untuk memvalidasi endpoint penyimpanan draft CBT dan restorasi jawaban saat ujian dibuka kembali.
-- [ ] 2. Jalankan test untuk memverifikasi endpoint draft belum ada.
-- [ ] 3. Tambahkan method `saveIa05Draft` pada `RuangUjiController.php` dan daftarkan route-nya di `routes/web.php`.
-- [ ] 4. Di file view `resources/views/asesi/ruang-uji/ia05.blade.php`, pasang script auto-save ke `localStorage` dan debounce sync ke backend.
-- [ ] 5. Pasang inisialisasi restore jawaban dari draft data backend/localStorage saat halaman di-load.
-- [ ] 6. Jalankan `php artisan test --filter=CbtAnswerPersistenceTest` dan pastikan berhasil.
-- [ ] 7. Commit dengan pesan `feat: add client-side and draft persistence for cbt ia05 questions`.
+- [x] 1. Tulis test di `tests/Feature/CbtAnswerPersistenceTest.php` untuk memvalidasi endpoint penyimpanan draft CBT dan restorasi jawaban saat ujian dibuka kembali.
+- [x] 2. Jalankan test untuk memverifikasi endpoint draft belum ada.
+- [x] 3. Tambahkan method `saveIa05Draft` pada `RuangUjiController.php` dan daftarkan route-nya di `routes/web.php`.
+- [x] 4. Di file view `resources/views/asesi/ruang-uji/ia05.blade.php`, pasang script auto-save ke `localStorage` dan debounce sync ke backend.
+- [x] 5. Pasang inisialisasi restore jawaban dari draft data backend/localStorage saat halaman di-load.
+- [x] 6. Jalankan `php artisan test --filter=CbtAnswerPersistenceTest` dan pastikan berhasil.
+- [x] 7. Commit dengan pesan `feat: add client-side and draft persistence for cbt ia05 questions`.
 
 ---
 

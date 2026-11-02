@@ -25,6 +25,7 @@ class UserProfile extends Model
         'no_telepon_kantor',
         'pendidikan_terakhir',
         'nama_institusi_perusahaan',
+        'nama_institusi',
         'jabatan',
         'alamat_kantor',
         'signature_data',
@@ -70,6 +71,16 @@ class UserProfile extends Model
     public function getCompanyAttribute(): ?string
     {
         return $this->nama_institusi_perusahaan;
+    }
+
+    public function getNamaInstitusiAttribute(): ?string
+    {
+        return $this->nama_institusi_perusahaan;
+    }
+
+    public function setNamaInstitusiAttribute(?string $value): void
+    {
+        $this->attributes['nama_institusi_perusahaan'] = $value;
     }
 
     public function getJobTitleAttribute(): ?string

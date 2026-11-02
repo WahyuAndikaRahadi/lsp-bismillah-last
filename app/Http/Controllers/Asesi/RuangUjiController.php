@@ -11,6 +11,7 @@ use App\Models\QuestionBank;
 use App\Rules\ValidSignature;
 use App\Services\AkWorkflowService;
 use App\Services\AutoGradeService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,7 @@ class RuangUjiController extends Controller
                 ->with('error', 'FR.AK.01 hanya dapat diakses setelah permohonan APL Anda disetujui asesor.');
         }
 
-        $assessment->load('schedule.scheme');
+        $assessment->load(['schedule.scheme', 'iaResponses']);
 
         return view('asesi.ruang-uji.ak01', compact('assessment'));
     }
@@ -124,7 +125,7 @@ class RuangUjiController extends Controller
     {
         abort_if($assessment->asesi_id !== auth()->id(), 403);
 
-        $assessment->load('schedule.scheme');
+        $assessment->load(['schedule.scheme', 'iaResponses']);
         $questions = QuestionBank::where('scheme_id', $assessment->schedule->scheme_id)->get();
 
         return view('asesi.ruang-uji.ia05', compact('assessment', 'questions'));
@@ -164,6 +165,40 @@ class RuangUjiController extends Controller
 
         return redirect()->route('asesi.assessment.ruang-uji', $assessment)
             ->with('success', "Jawaban tersimpan. Skor: {$result->score}");
+    }
+
+    public function saveIa05Draft(Assessment $assessment, Request $request): JsonResponse
+    {
+        abort_if($assessment->asesi_id !== auth()->id(), 403);
+
+        if ($assessment->schedule && $assessment->schedule->is_closed) {
+            return response()->json(['status' => 'error', 'message' => 'Jadwal asesmen sudah resmi ditutup.'], 403);
+        }
+
+        $existing = AssessmentIaResponse::where('assessment_id', $assessment->id)
+            ->where('instrument_code', 'IA05')
+            ->first();
+
+        if ($existing && $existing->asesi_signed_at) {
+            return response()->json(['status' => 'error', 'message' => 'Ujian CBT telah selesai dikerjakan dan tidak dapat diubah.'], 400);
+        }
+
+        $rawAnswers = $request->input('answers', []);
+        $answers = is_array($rawAnswers) ? $rawAnswers : (json_decode($rawAnswers, true) ?: []);
+
+        $response = $existing ?? new AssessmentIaResponse([
+            'assessment_id' => $assessment->id,
+            'instrument_code' => 'IA05',
+        ]);
+
+        $response->data_json = $answers;
+        $response->save();
+
+        return response()->json([
+            'status' => 'success',
+            'saved_at' => now()->toIso8601String(),
+            'count' => count($answers),
+        ]);
     }
 
     public function uploadEvidence(Assessment $assessment, $code, Request $request): RedirectResponse

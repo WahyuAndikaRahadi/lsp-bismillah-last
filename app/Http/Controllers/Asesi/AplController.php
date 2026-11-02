@@ -186,7 +186,7 @@ class AplController extends Controller
             ]);
         }
 
-        $kukInputs = $request->input('kuks', $request->input('apl02', []));
+        $kukInputs = $request->input('kuks', $request->input('apl02', $request->input('kuk', [])));
 
         DB::transaction(function () use ($assessment, $kukInputs, $request, $signature, $profile) {
             foreach ($kukInputs as $kukId => $data) {
