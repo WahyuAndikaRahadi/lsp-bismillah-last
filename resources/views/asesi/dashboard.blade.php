@@ -2,17 +2,22 @@
 
 @section('content')
 <div class="space-y-6">
-    {{-- Header Banner --}}
+    {{-- Header Banner Lembaga Sertifikasi --}}
     <div class="bg-gradient-to-r from-lsp-navy to-lsp-navy-dark rounded-xl p-5 sm:p-6 md:p-8 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 border-t-4 border-lsp-red">
         <div>
-            <span class="inline-block px-2.5 py-0.5 rounded-full bg-white/10 text-lsp-red border border-lsp-red/30 text-[10px] font-extrabold tracking-wider uppercase mb-2">
-                Peserta Asesmen Kompetensi
-            </span>
+            <div class="flex items-center space-x-2 mb-2">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-white/10 text-lsp-red border border-lsp-red/30 text-[10px] font-extrabold tracking-wider uppercase">
+                    LSP PrO Indo &bull; Berlisensi BNSP
+                </span>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-200 border border-blue-400/20 text-[10px] font-semibold tracking-wider">
+                    Sistem Asesmen Berbasis Modul MUK
+                </span>
+            </div>
             <h1 class="font-sans text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">
                 Selamat Datang, {{ auth()->user()->full_name }}!
             </h1>
             <p class="text-blue-100/80 text-xs mt-1 max-w-xl">
-                LSP PrO Indo mendigitalisasi proses sertifikasi kompetensi profesi teknisi otomotif Indonesia berstandar BNSP.
+                Portofolio digital asesmen kompetensi profesi teknisi otomotif terintegrasi standar Badan Nasional Sertifikasi Profesi (BNSP).
             </p>
         </div>
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:space-x-3 shrink-0">
@@ -23,7 +28,7 @@
                 <span>Gabung Jadwal Baru</span>
             </a>
             <a href="{{ route('asesi.profile.edit') }}" class="px-4 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-lg text-xs font-semibold transition text-center justify-center">
-                Profil Saya
+                Profil & TTD Saya
             </a>
         </div>
     </div>
@@ -52,56 +57,53 @@
         </div>
     @endif
 
-    {{-- Langkah Berikutnya (Single Focused Next-Step Card) --}}
+    {{-- Status Panduan / Single Status Guide (Non-animated, Professional, Sober) --}}
     @if(isset($nextStep))
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 border-l-4 border-l-lsp-navy">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div class="space-y-2 flex-1">
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 border-l-4 border-l-lsp-navy">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="space-y-1.5 flex-1">
                     <div class="flex items-center space-x-2">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-800 border border-slate-300">
-                            <svg class="w-3.5 h-3.5 mr-1 text-lsp-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-800 border border-slate-300">
                             Langkah Berikutnya
                         </span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-semibold border {{ $nextStep['badge_color'] }}">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold border {{ $nextStep['badge_color'] }}">
                             {{ $nextStep['badge'] }}
                         </span>
                     </div>
 
-                    <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">
+                    <h2 class="text-lg font-bold text-slate-900 tracking-tight">
                         {{ $nextStep['title'] }}
                     </h2>
 
-                    <p class="text-sm text-slate-600 max-w-2xl leading-relaxed">
+                    <p class="text-xs text-slate-600 max-w-3xl leading-relaxed">
                         {{ $nextStep['description'] }}
                     </p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
                     @if(!empty($nextStep['is_code_form']))
                         <form action="{{ route('asesi.jadwal.join') }}" method="POST" class="flex flex-col sm:flex-row items-stretch gap-2">
                             @csrf
-                            <input type="text" name="code" placeholder="Kode Jadwal" required maxlength="20" class="px-3.5 py-2.5 text-xs font-mono uppercase border border-slate-300 rounded-lg focus:ring-2 focus:ring-lsp-navy text-slate-900 bg-white">
-                            <button type="submit" class="px-5 py-2.5 bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg text-xs font-bold shadow-sm transition flex items-center justify-center space-x-1.5">
+                            <input type="text" name="code" placeholder="Kode Jadwal (4 Digit)" required maxlength="20" class="px-3 py-2 text-xs font-mono uppercase border border-slate-300 rounded-lg focus:ring-2 focus:ring-lsp-navy text-slate-900 bg-white">
+                            <button type="submit" class="px-4 py-2 bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg text-xs font-bold shadow-sm transition flex items-center justify-center space-x-1.5">
                                 <span>{{ $nextStep['action_label'] }}</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                                 </svg>
                             </button>
                         </form>
                     @else
                         @if(!empty($nextStep['action_url']) && !empty($nextStep['action_label']))
-                            <a href="{{ $nextStep['action_url'] }}" class="px-5 py-2.5 bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg text-xs font-bold shadow-sm transition flex items-center justify-center space-x-1.5 text-center">
+                            <a href="{{ $nextStep['action_url'] }}" class="px-4 py-2 bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg text-xs font-bold shadow-sm transition flex items-center justify-center space-x-1.5 text-center">
                                 <span>{{ $nextStep['action_label'] }}</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                                 </svg>
                             </a>
                         @endif
 
                         @if(!empty($nextStep['secondary_url']) && !empty($nextStep['secondary_label']))
-                            <a href="{{ $nextStep['secondary_url'] }}" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold border border-slate-300 transition text-center">
+                            <a href="{{ $nextStep['secondary_url'] }}" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold border border-slate-300 transition text-center">
                                 {{ $nextStep['secondary_label'] }}
                             </a>
                         @endif
@@ -118,50 +120,50 @@
         $approvedCount = $assessments->where('apl_status', 'APPROVED')->count();
         $completedCount = $assessments->where('status', 'COMPLETED')->count();
     @endphp
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-600 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
             </div>
             <div>
                 <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Jadwal Terdaftar</p>
-                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">{{ $totalAssessments }}</h3>
+                <h3 class="text-xl font-bold text-slate-900">{{ $totalAssessments }}</h3>
             </div>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
             </div>
             <div>
                 <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">APL Disetujui</p>
-                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">{{ $approvedCount }}</h3>
+                <h3 class="text-xl font-bold text-slate-900">{{ $approvedCount }}</h3>
             </div>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
             </div>
             <div>
                 <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Asesmen Selesai</p>
-                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">{{ $completedCount }}</h3>
+                <h3 class="text-xl font-bold text-slate-900">{{ $completedCount }}</h3>
             </div>
         </div>
     </div>
 
-    {{-- Enrolled Schedules Section --}}
+    {{-- Enrolled Schedules & Modular MUK System Matrix --}}
     <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
         <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
             <div>
-                <h2 class="text-base font-bold text-slate-900">Jadwal Asesmen Terkini</h2>
-                <p class="text-xs text-slate-500">Daftar sertifikasi kompetensi yang sedang atau telah Anda ikuti</p>
+                <h2 class="text-base font-bold text-slate-900">Program Sertifikasi Kompetensi Terdaftar</h2>
+                <p class="text-xs text-slate-500">Setiap jadwal dijalankan berdasarkan modul instrumen asesmen MUK berstandar BNSP</p>
             </div>
             <a href="{{ route('asesi.jadwal.index') }}" class="text-xs font-semibold text-brand-600 hover:text-brand-700">
                 Lihat Semua Jadwal &rarr;
@@ -177,7 +179,7 @@
                 </div>
                 <h3 class="text-sm font-semibold text-slate-700">Belum Ada Jadwal Uji</h3>
                 <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
-                    Masukkan kode jadwal dari sekolah atau penyelenggara untuk mulai mendaftar dan mengikuti asesmen.
+                    Masukkan kode jadwal asesmen 4-digit dari penyelenggara TUK untuk mendaftar dan memulai modul sertifikasi.
                 </p>
                 <div class="mt-4">
                     <a href="{{ route('asesi.jadwal.index') }}" class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-lg bg-brand-600 text-white hover:bg-brand-700 shadow-sm transition">
@@ -186,128 +188,183 @@
                 </div>
             </div>
         @else
-            <div class="divide-y divide-slate-100">
+            <div class="divide-y divide-slate-200">
                 @foreach($assessments as $item)
                     @php
                         $sch = $item->schedule;
-
                         $hasFinalDecision = ($item->status === 'COMPLETED') || in_array($item->final_result, ['KOMPETEN', 'BELUM_KOMPETEN', 'K', 'BK'], true);
-
-                        // 5-Stage progress determination
-                        if ($hasFinalDecision) {
-                            $stageNumber = 5;
-                            $stageTitle = 'Tahap 5 dari 5: Hasil Keputusan Asesmen (' . ($item->final_result ?? 'Selesai') . ')';
-                            $stageBadgeColor = in_array($item->final_result, ['KOMPETEN', 'K'], true) ? 'bg-emerald-100 text-emerald-800 border-emerald-300' : 'bg-rose-100 text-rose-800 border-rose-300';
-                            $targetUrl = route('asesi.assessment.ruang-uji', $item->id);
-                        } elseif ($item->apl_status === 'APPROVED' && !empty($item->ak01_agreed_at)) {
-                            $stageNumber = 4;
-                            $stageTitle = 'Tahap 4 dari 5: Pelaksanaan Uji Kompetensi (Ruang Uji & CBT)';
-                            $stageBadgeColor = 'bg-indigo-100 text-indigo-800 border-indigo-200';
-                            $targetUrl = route('asesi.assessment.ruang-uji', $item->id);
-                        } elseif ($item->apl_status === 'APPROVED') {
-                            $stageNumber = 3;
-                            $stageTitle = 'Disetujui: Siap Uji Kompetensi (Ruang Uji & CBT)';
-                            $stageBadgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200';
-                            $targetUrl = route('asesi.assessment.ruang-uji', $item->id);
-                        } elseif ($item->apl_status === 'SUBMITTED') {
-                            $stageNumber = 2;
-                            $stageTitle = 'Menunggu Verifikasi APL oleh Asesor';
-                            $stageBadgeColor = 'bg-amber-100 text-amber-800 border-amber-200';
-                            $targetUrl = route('asesi.assessment.apl', $item->id);
-                        } elseif ($item->apl_status === 'REVISION_REQUESTED') {
-                            $stageNumber = 2;
-                            $stageTitle = 'Perbaikan Dokumen / Asesmen Mandiri (APL-02)';
-                            $stageBadgeColor = 'bg-rose-100 text-rose-800 border-rose-300';
-                            $targetUrl = route('asesi.assessment.apl', $item->id);
-                        } else {
-                            $stageNumber = 1;
-                            $stageTitle = 'Pengisian Formulir APL.01 & APL.02';
-                            $stageBadgeColor = 'bg-slate-100 text-slate-800 border-slate-300';
-                            $targetUrl = route('asesi.assessment.apl', $item->id);
-                        }
+                        $isKompeten = $item->isCompetent();
+                        $aplApproved = $item->apl_status === 'APPROVED';
+                        $ak01Agreed = !empty($item->ak01_agreed_at);
                     @endphp
-                    <div class="p-4 sm:p-6 hover:bg-slate-50/60 transition flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="space-y-2 flex-1 min-w-0">
-                            {{-- Stage & Schedule Code Badges --}}
-                            <div class="flex items-center space-x-2.5 flex-wrap gap-y-1">
-                                <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">
-                                    {{ $sch->code }}
-                                </span>
-                                <span class="px-2.5 py-0.5 rounded text-xs font-bold border {{ $stageBadgeColor }}">
-                                    {{ $stageTitle }}
-                                </span>
-                            </div>
 
-                            <h3 class="text-base font-bold text-slate-900 leading-snug">
-                                {{ $sch->name ?? $sch->scheme->name }}
-                            </h3>
-
-                            <div class="flex items-center text-xs text-slate-500 space-x-4 flex-wrap gap-y-1">
-                                <span class="flex items-center">
-                                    <svg class="w-3.5 h-3.5 mr-1 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                    </svg>
-                                    TUK: <strong class="ml-1 text-slate-700">{{ $sch->tuk_name }}</strong>
-                                </span>
-                                <span class="flex items-center">
-                                    <svg class="w-3.5 h-3.5 mr-1 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                    </svg>
-                                    {{ \Carbon\Carbon::parse($sch->date)->isoFormat('D MMMM Y') }} ({{ substr($sch->start_time, 0, 5) }} - {{ substr($sch->end_time, 0, 5) }})
-                                </span>
-                                @if($item->assessor)
-                                    <span class="flex items-center">
-                                        <svg class="w-3.5 h-3.5 mr-1 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7 7z"/>
-                                        </svg>
-                                        Asesor: <strong class="ml-1 text-slate-700">{{ $item->assessor->full_name }}</strong>
+                    <div class="p-5 sm:p-6 space-y-5">
+                        {{-- Schedule & Scheme Header --}}
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                            <div>
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
+                                        {{ $sch->code }}
                                     </span>
-                                @endif
+                                    <span class="px-2 py-0.5 rounded text-xs font-bold border {{ $aplApproved ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-amber-50 text-amber-800 border-amber-200' }}">
+                                        {{ $aplApproved ? 'APL Disetujui' : 'APL: ' . str_replace('_', ' ', $item->apl_status ?? 'DRAFT') }}
+                                    </span>
+                                    @if($hasFinalDecision)
+                                        <span class="px-2 py-0.5 rounded text-xs font-bold border {{ $isKompeten ? 'bg-emerald-100 text-emerald-800 border-emerald-300' : 'bg-rose-100 text-rose-800 border-rose-300' }}">
+                                            Hasil: {{ $item->final_result }}
+                                        </span>
+                                    @endif
+                                </div>
+                                <h3 class="text-base font-bold text-slate-900 leading-snug">
+                                    {{ $sch->name ?? $sch->scheme->name }}
+                                </h3>
+                                <div class="flex items-center text-xs text-slate-500 space-x-4 flex-wrap gap-y-1 mt-1">
+                                    <span>TUK: <strong class="text-slate-700">{{ $sch->tuk_name }}</strong></span>
+                                    <span>&bull;</span>
+                                    <span>Tanggal: <strong class="text-slate-700">{{ \Carbon\Carbon::parse($sch->date)->isoFormat('D MMMM Y') }}</strong> ({{ substr($sch->start_time, 0, 5) }} - {{ substr($sch->end_time, 0, 5) }} WIB)</span>
+                                    @if($item->assessor)
+                                        <span>&bull;</span>
+                                        <span>Asesor Penguji: <strong class="text-slate-700">{{ $item->assessor->full_name }}</strong></span>
+                                    @endif
+                                </div>
                             </div>
 
-                            {{-- Revision Callout Box --}}
                             @if($item->apl_status === 'REVISION_REQUESTED' && ($item->apl_revision_notes || $item->admin_notes))
-                                <div class="p-3 bg-rose-50 border-l-4 border-rose-500 rounded-r-lg text-xs text-rose-900 mt-2">
-                                    <div class="flex items-center space-x-1.5 font-bold mb-0.5">
-                                        <svg class="w-4 h-4 text-rose-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-                                        <span>Catatan Revisi Persyaratan:</span>
-                                    </div>
-                                    <p class="pl-5 text-rose-800">{{ $item->apl_revision_notes ?? $item->admin_notes }}</p>
+                                <div class="p-3 bg-rose-50 border-l-4 border-rose-500 rounded-r-lg text-xs text-rose-900 max-w-md">
+                                    <div class="font-bold">Catatan Perbaikan Berkas:</div>
+                                    <p class="text-rose-800 mt-0.5">{{ $item->apl_revision_notes ?? $item->admin_notes }}</p>
                                 </div>
                             @endif
                         </div>
 
-                        {{-- Action Buttons --}}
-                        <div class="flex items-center space-x-2 shrink-0 w-full sm:w-auto flex-wrap gap-y-2">
-                            @if($hasFinalDecision)
-                                <a href="{{ route('asesi.assessment.ruang-uji', $item->id) }}" class="px-3 py-2 text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-xs transition">
-                                    Lihat Rekap Hasil
-                                </a>
-                                <a href="{{ route('asesi.assessment.ak03', $item->id) }}" class="px-3 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs transition" title="FR.AK.03 Umpan Balik Asesmen">
-                                    Umpan Balik (AK.03)
-                                </a>
-                                @if($item->final_result === 'BELUM_KOMPETEN' || $item->final_result === 'BK')
-                                    <a href="{{ route('asesi.assessment.appeal', $item->id) }}" class="px-3 py-2 text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-300 rounded-lg shadow-xs transition" title="FR.AK.04 Banding Asesmen">
-                                        Banding (AK.04)
+                        {{-- Modular MUK Architecture Cards (Per-Modul) --}}
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                            {{-- Modul 1: FR.APL.01 & FR.APL.02 --}}
+                            <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $aplApproved ? 'border-emerald-200' : 'border-slate-200' }}">
+                                <div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 1</span>
+                                        @if($aplApproved)
+                                            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Disetujui</span>
+                                        @elseif($item->apl_status === 'SUBMITTED')
+                                            <span class="text-[10px] font-bold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">Diverifikasi</span>
+                                        @elseif($item->apl_status === 'REVISION_REQUESTED')
+                                            <span class="text-[10px] font-bold text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded border border-rose-200">Revisi</span>
+                                        @else
+                                            <span class="text-[10px] font-bold text-slate-600 bg-slate-200 px-1.5 py-0.5 rounded">Draft</span>
+                                        @endif
+                                    </div>
+                                    <h4 class="font-bold text-xs text-slate-900 mt-1.5">{{ 'FR.APL.01 & 02' }}</h4>
+                                    <p class="text-[11px] text-slate-500 mt-0.5">Permohonan pendaftaran & asesmen mandiri K/BK</p>
+                                </div>
+                                <div class="mt-3 pt-2 border-t border-slate-200/60">
+                                    <a href="{{ route('asesi.assessment.apl', $item->id) }}" class="block text-center text-xs font-bold px-3 py-1.5 rounded bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 transition">
+                                        {{ $aplApproved ? 'Lihat Formulir APL' : 'Lengkapi APL (01 & 02) →' }}
                                     </a>
-                                @endif
-                            @elseif($item->apl_status === 'REVISION_REQUESTED')
-                                <a href="{{ route('asesi.assessment.apl', $item->id) }}" class="w-full sm:w-auto text-center justify-center px-5 py-2.5 text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white rounded-lg shadow-sm transition">
-                                    Perbaiki Formulir APL &rarr;
-                                </a>
-                            @elseif($item->apl_status === 'APPROVED' && empty($item->ak01_agreed_at))
-                                <a href="{{ route('asesi.assessment.ak01', $item->id) }}" class="w-full sm:w-auto text-center justify-center px-5 py-2.5 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm transition">
-                                    Setujui Persetujuan (AK.01) &rarr;
-                                </a>
-                            @elseif($item->apl_status === 'APPROVED')
-                                <a href="{{ route('asesi.assessment.ruang-uji', $item->id) }}" class="w-full sm:w-auto text-center justify-center px-5 py-2.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-sm transition">
-                                    Masuk Ruang Uji &rarr;
-                                </a>
-                            @else
-                                <a href="{{ route('asesi.assessment.apl', $item->id) }}" class="w-full sm:w-auto text-center justify-center px-5 py-2.5 text-xs font-bold bg-brand-600 hover:bg-brand-700 text-white rounded-lg shadow-sm transition">
-                                    Lengkapi APL (01 & 02) &rarr;
-                                </a>
-                            @endif
+                                </div>
+                            </div>
+
+                            {{-- Modul 2: FR.AK.01 --}}
+                            <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $ak01Agreed ? 'border-emerald-200' : 'border-slate-200' }}">
+                                <div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 2</span>
+                                        @if($ak01Agreed)
+                                            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Disepakati</span>
+                                        @elseif($aplApproved)
+                                            <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">Menunggu TTD</span>
+                                        @else
+                                            <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">Terkunci</span>
+                                        @endif
+                                    </div>
+                                    <h4 class="font-bold text-xs text-slate-900 mt-1.5">FR.AK.01</h4>
+                                    <p class="text-[11px] text-slate-500 mt-0.5">Persetujuan asesmen dan komitmen kerahasiaan</p>
+                                </div>
+                                <div class="mt-3 pt-2 border-t border-slate-200/60">
+                                    @if($aplApproved)
+                                        <a href="{{ route('asesi.assessment.ak01', $item->id) }}" class="block text-center text-xs font-bold px-3 py-1.5 rounded {{ $ak01Agreed ? 'bg-white hover:bg-slate-100 border border-slate-300 text-slate-700' : 'bg-indigo-600 hover:bg-indigo-700 text-white' }} transition">
+                                            {{ $ak01Agreed ? 'Lihat Lembar AK.01' : 'Setujui Persetujuan (AK.01) →' }}
+                                        </a>
+                                    @else
+                                        <span class="block text-center text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-400 cursor-not-allowed">
+                                            Menunggu APL
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            {{-- Modul 3: Ruang Uji MUK (CBT IA.05, Praktik IA.01/02, Lisan IA.03) --}}
+                            <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $hasFinalDecision ? 'border-emerald-200' : 'border-slate-200' }}">
+                                <div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 3</span>
+                                        @if($hasFinalDecision)
+                                            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Uji Selesai</span>
+                                        @elseif($aplApproved)
+                                            <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">Aktif</span>
+                                        @else
+                                            <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">Terkunci</span>
+                                        @endif
+                                    </div>
+                                    <h4 class="font-bold text-xs text-slate-900 mt-1.5">Ruang Uji MUK</h4>
+                                    <p class="text-[11px] text-slate-500 mt-0.5">Ujian Teori CBT (IA.05), Praktik & PMO sesuai instruksi asesor</p>
+                                </div>
+                                <div class="mt-3 pt-2 border-t border-slate-200/60">
+                                    @if($aplApproved)
+                                        <a href="{{ route('asesi.assessment.ruang-uji', $item->id) }}" class="block text-center text-xs font-bold px-3 py-1.5 rounded bg-brand-600 hover:bg-brand-700 text-white transition">
+                                            Masuk Ruang Uji →
+                                        </a>
+                                    @else
+                                        <span class="block text-center text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-400 cursor-not-allowed">
+                                            Menunggu APL
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            {{-- Modul 4: Hasil & Sertifikat BNSP / Umpan Balik --}}
+                            <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $isKompeten ? 'border-emerald-300 bg-emerald-50/30' : 'border-slate-200' }}">
+                                <div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 4</span>
+                                        @if($isKompeten && $item->no_sertifikat)
+                                            <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">Sertifikat Terbit</span>
+                                        @elseif($hasFinalDecision)
+                                            <span class="text-[10px] font-bold text-slate-700 bg-slate-200 px-1.5 py-0.5 rounded">{{ $item->final_result }}</span>
+                                        @else
+                                            <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">Proses</span>
+                                        @endif
+                                    </div>
+                                    <h4 class="font-bold text-xs text-slate-900 mt-1.5">{{ 'Hasil & Sertifikat' }}</h4>
+                                    <p class="text-[11px] text-slate-500 mt-0.5">
+                                        @if($isKompeten && $item->no_sertifikat)
+                                            No: <strong class="text-slate-800 font-mono">{{ $item->no_sertifikat }}</strong>
+                                        @else
+                                            Rekaman AK.02, Umpan Balik (AK.03) & Sertifikat
+                                        @endif
+                                    </p>
+                                </div>
+                                <div class="mt-3 pt-2 border-t border-slate-200/60 flex items-center space-x-1.5">
+                                    @if($hasFinalDecision)
+                                        @if($isKompeten && $item->no_sertifikat)
+                                            <a href="{{ route('documents.sertifikat', $item->id) }}" class="flex-1 text-center text-xs font-bold px-2 py-1.5 rounded bg-emerald-600 hover:bg-emerald-700 text-white transition">
+                                                Unduh Sertifikat
+                                            </a>
+                                        @else
+                                            <a href="{{ route('asesi.assessment.ruang-uji', $item->id) }}" class="flex-1 text-center text-xs font-bold px-2 py-1.5 rounded bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 transition">
+                                                Lihat Rekap Hasil
+                                            </a>
+                                        @endif
+                                        <a href="{{ route('asesi.assessment.ak03', $item->id) }}" class="text-center text-xs font-bold px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 transition" title="FR.AK.03 Umpan Balik">
+                                            AK.03
+                                        </a>
+                                    @else
+                                        <span class="w-full text-center text-xs font-semibold px-2 py-1.5 rounded bg-slate-100 text-slate-400 cursor-not-allowed">
+                                            Tahap Akhir
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
                 @endforeach

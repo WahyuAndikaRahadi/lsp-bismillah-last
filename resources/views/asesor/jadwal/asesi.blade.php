@@ -180,14 +180,14 @@
                                 <td class="px-4 py-3 text-right">
                                     <div class="flex items-center justify-end space-x-1.5 flex-wrap gap-y-1">
                                         @if(in_array($assessment->apl_status, ['SUBMITTED', 'REVISION_REQUESTED']))
-                                            <a href="{{ route('asesor.review-apl', $assessment->id) }}" class="px-3 py-1.5 text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white rounded-lg shadow-xs transition">
-                                                Review APL &rarr;
+                                            <a href="{{ route('asesor.assessment.workspace', ['assessment' => $assessment->id, 'tab' => 'apl']) }}" class="px-3 py-1.5 text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white rounded-lg shadow-xs transition flex items-center space-x-1">
+                                                <span>Review APL &rarr;</span>
                                             </a>
                                         @elseif($assessment->apl_status === 'APPROVED')
-                                            <a href="{{ route('asesor.assessment.ruang-uji', $assessment->id) }}" class="px-3 py-1.5 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs transition">
-                                                Ruang Uji &rarr;
+                                            <a href="{{ route('asesor.assessment.workspace', $assessment->id) }}" class="px-3 py-1.5 text-xs font-bold text-white bg-lsp-navy hover:bg-lsp-navy-dark rounded-lg shadow-xs transition flex items-center space-x-1">
+                                                <span>Workspace Asesi &rarr;</span>
                                             </a>
-                                            <a href="{{ route('asesor.assessment.ak02', $assessment->id) }}" class="px-3 py-1.5 text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-xs transition" title="FR.AK.02 Rekaman Asesmen">
+                                            <a href="{{ route('asesor.assessment.workspace', ['assessment' => $assessment->id, 'tab' => 'ak02']) }}" class="px-2.5 py-1.5 text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-xs transition" title="FR.AK.02 Rekaman Asesmen">
                                                 FR.AK.02
                                             </a>
                                         @elseif($assessment->apl_status === 'REJECTED')
@@ -195,9 +195,9 @@
                                                 Ditolak
                                             </span>
                                         @else
-                                            <span class="px-2.5 py-1 text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded">
-                                                Menunggu Pengajuan APL
-                                            </span>
+                                            <a href="{{ route('asesor.assessment.workspace', ['assessment' => $assessment->id, 'tab' => 'apl']) }}" class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded transition">
+                                                Buka Workspace
+                                            </a>
                                         @endif
                                     </div>
                                 </td>

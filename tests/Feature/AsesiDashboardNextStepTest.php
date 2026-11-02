@@ -104,6 +104,8 @@ class AsesiDashboardNextStepTest extends TestCase
         $response->assertSee('Langkah Berikutnya');
         $response->assertSee('Lengkapi Formulir APL-01 & APL-02');
         $response->assertSee('Isi Formulir APL-01 & APL-02');
+        $response->assertSee('Sistem Asesmen Berbasis Modul MUK');
+        $response->assertSee('FR.APL.01 & 02');
     }
 
     public function test_dashboard_shows_verification_step_when_submitted(): void
@@ -121,6 +123,7 @@ class AsesiDashboardNextStepTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Langkah Berikutnya');
         $response->assertSee('Berkas Pendaftaran Sedang Diverifikasi');
+        $response->assertSee('FR.APL.01 & 02');
     }
 
     public function test_dashboard_shows_ruang_uji_step_when_approved(): void
@@ -140,6 +143,8 @@ class AsesiDashboardNextStepTest extends TestCase
         $response->assertSee('Langkah Berikutnya');
         $response->assertSee('Ruang Uji Kompetensi Aktif');
         $response->assertSee('Masuk Ruang Uji Kompetensi');
+        $response->assertSee('Ruang Uji MUK');
+        $response->assertSee('FR.AK.01');
     }
 
     public function test_dashboard_shows_completed_step_when_competent(): void
@@ -161,5 +166,7 @@ class AsesiDashboardNextStepTest extends TestCase
         $response->assertSee('Langkah Berikutnya');
         $response->assertSee('Selamat! Anda Dinyatakan KOMPETEN');
         $response->assertSee('BNSP-2026-9999');
+        $response->assertSee('Hasil & Sertifikat');
+        $response->assertSee('Unduh Sertifikat');
     }
 }

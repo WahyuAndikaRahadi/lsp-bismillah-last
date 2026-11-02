@@ -288,6 +288,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/jadwal', [App\Http\Controllers\Asesor\JadwalController::class, 'index'])->name('jadwal.index');
         Route::get('/jadwal/{schedule}/asesi', [App\Http\Controllers\Asesor\JadwalController::class, 'asesiList'])->name('jadwal.asesi');
 
+        // Workspace Terpadu Asesor (Single Unified Workspace per Asesi)
+        Route::get('/assessment/{assessment}/workspace', [App\Http\Controllers\Asesor\WorkspaceController::class, 'show'])->name('assessment.workspace');
+
         // Review APL (both aliases supported)
         Route::get('/assessment/{assessment}/review-apl', [AplReviewController::class, 'show'])->name('apl.review');
         Route::post('/assessment/{assessment}/review-apl', [AplReviewController::class, 'decide'])->name('apl.decide');
