@@ -27,9 +27,9 @@ class PlenoController extends Controller
             'plenoMeeting',
             'scheduleAsesors.asesor',
         ])
-        ->whereIn('status', [ScheduleStatus::Asesmen, ScheduleStatus::Pleno, ScheduleStatus::Selesai])
-        ->latest('tgl_asesmen')
-        ->paginate(10);
+            ->whereIn('status', [ScheduleStatus::Asesmen, ScheduleStatus::Pleno, ScheduleStatus::Selesai])
+            ->latest('tgl_asesmen')
+            ->paginate(10);
 
         return view('admin.pleno.index', compact('schedules'));
     }
@@ -105,7 +105,7 @@ class PlenoController extends Controller
 
                 if ($app) {
                     $noSertifikat = $app->no_sertifikat;
-                    if ($statusLulus === 'kompeten' && !$noSertifikat) {
+                    if ($statusLulus === 'kompeten' && ! $noSertifikat) {
                         $noSertifikat = PlenoMeeting::generateNomorSertifikat($scheme);
                     }
 
@@ -130,7 +130,8 @@ class PlenoController extends Controller
 
         } catch (\Throwable $e) {
             DB::rollBack();
-            return back()->withInput()->with('error', 'Gagal memproses penetapan pleno: ' . $e->getMessage());
+
+            return back()->withInput()->with('error', 'Gagal memproses penetapan pleno: '.$e->getMessage());
         }
     }
 }

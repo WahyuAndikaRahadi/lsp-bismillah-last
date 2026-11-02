@@ -86,7 +86,7 @@
 </style>
 
 @php
-    $isFilled = ($mode !== 'empty');
+    $isFilled = (!empty($mode) && $mode !== 'empty');
     if ($isFilled && !empty($schedule->date)) {
         $cDate = \Carbon\Carbon::parse($schedule->date);
         $dayStr = $cDate->translatedFormat('l');

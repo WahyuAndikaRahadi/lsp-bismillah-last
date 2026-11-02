@@ -119,7 +119,8 @@ class AssessmentExecutionController extends Controller
 
         } catch (\Throwable $e) {
             DB::rollBack();
-            return back()->withInput()->with('error', 'Gagal menyimpan penilaian: ' . $e->getMessage());
+
+            return back()->withInput()->with('error', 'Gagal menyimpan penilaian: '.$e->getMessage());
         }
     }
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Asesi;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ak01Agreement;
-use App\Models\Ak02Assessment;
 use App\Models\Ak03Feedback;
 use App\Models\AssessmentApplication;
 use Illuminate\Http\RedirectResponse;
@@ -70,7 +69,7 @@ class AssessmentExecutionController extends Controller
         }
 
         $ak02 = $application->ak02;
-        if (!$ak02) {
+        if (! $ak02) {
             return redirect()->route('asesi.applications.show', $application)
                 ->with('error', 'Penilaian asesmen (FR-AK-02) belum diterbitkan oleh asesor.');
         }
@@ -109,7 +108,7 @@ class AssessmentExecutionController extends Controller
             abort(403);
         }
 
-        $ak03 = $application->ak03 ?? new Ak03Feedback();
+        $ak03 = $application->ak03 ?? new Ak03Feedback;
 
         return view('asesi.assessment.ak03', compact('application', 'ak03'));
     }

@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\ScheduleStatus;
+use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
+use App\Models\AssessmentApplication;
 use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
 use App\Models\Event;
+use App\Models\ScheduleAsesor;
 use App\Models\Tuk;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -100,7 +104,7 @@ class AssessmentScheduleController extends Controller
             'applications.asesor',
         ]);
 
-        $availableAsesors = \App\Models\User::where('role', \App\Enums\UserRole::Asesor)
+        $availableAsesors = User::where('role', UserRole::Asesor)
             ->where('is_active', true)
             ->with('asesorProfile')
             ->get();
@@ -117,9 +121,9 @@ class AssessmentScheduleController extends Controller
             'tgl_surat_tugas' => ['nullable', 'date'],
         ]);
 
-        $noSurat = $request->no_surat_tugas ?: \App\Models\ScheduleAsesor::generateNomorSuratTugas();
+        $noSurat = $request->no_surat_tugas ?: ScheduleAsesor::generateNomorSuratTugas();
 
-        \App\Models\ScheduleAsesor::updateOrCreate(
+        ScheduleAsesor::updateOrCreate(
             [
                 'schedule_id' => $schedule->id,
                 'asesor_id' => $request->asesor_id,
@@ -134,11 +138,11 @@ class AssessmentScheduleController extends Controller
         return back()->with('success', 'Asesor penguji berhasil ditugaskan ke jadwal ini.');
     }
 
-    public function removeAsesor(AssessmentSchedule $schedule, \App\Models\ScheduleAsesor $scheduleAsesor): RedirectResponse
+    public function removeAsesor(AssessmentSchedule $schedule, ScheduleAsesor $scheduleAsesor): RedirectResponse
     {
         if ($scheduleAsesor->schedule_id === $schedule->id) {
             // Unset asesor_id on applications assigned to this asesor
-            \App\Models\AssessmentApplication::where('schedule_id', $schedule->id)
+            AssessmentApplication::where('schedule_id', $schedule->id)
                 ->where('asesor_id', $scheduleAsesor->asesor_id)
                 ->update(['asesor_id' => null]);
 
@@ -155,7 +159,7 @@ class AssessmentScheduleController extends Controller
             'asesor_id' => ['required', 'exists:users,id'],
         ]);
 
-        $application = \App\Models\AssessmentApplication::where('id', $request->application_id)
+        $application = AssessmentApplication::where('id', $request->application_id)
             ->where('schedule_id', $schedule->id)
             ->firstOrFail();
 
@@ -181,7 +185,7 @@ class AssessmentScheduleController extends Controller
             'event_id' => ['required', 'exists:events,id'],
             'scheme_id' => ['required', 'exists:certification_schemes,id'],
             'tuk_id' => ['required', 'exists:tuks,id'],
-            'kode_jadwal' => ['required', 'string', 'max:50', 'unique:assessment_schedules,kode_jadwal,' . $schedule->id],
+            'kode_jadwal' => ['required', 'string', 'max:50', 'unique:assessment_schedules,kode_jadwal,'.$schedule->id],
             'nama_jadwal' => ['required', 'string', 'max:255'],
             'tgl_pra_asesmen' => ['nullable', 'date'],
             'tgl_asesmen' => ['required', 'date'],

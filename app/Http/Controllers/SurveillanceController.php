@@ -17,6 +17,7 @@ class SurveillanceController extends Controller
     public function create(): View
     {
         $schemes = CertificationScheme::where('is_active', true)->get();
+
         return view('public.surveillance', compact('schemes'));
     }
 

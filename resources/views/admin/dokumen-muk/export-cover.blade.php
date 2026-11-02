@@ -96,7 +96,7 @@
     if (preg_match('/(?:Skema\s*|0)?(\d+)/i', $scheme->code ?? '', $matches)) {
         $mukNum = (int)$matches[1];
     }
-    $fullAsesi = ($mode !== 'empty' && !empty($asesiName)) ? $asesiName : '…………………………………………………………………………………';
+    $fullAsesi = (!empty($mode) && $mode !== 'empty' && !empty($asesiName)) ? $asesiName : '…………………………………………………………………………………';
 @endphp
 
 <div class="cover-container">

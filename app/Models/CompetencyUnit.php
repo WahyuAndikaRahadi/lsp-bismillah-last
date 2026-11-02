@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class CompetencyUnit extends Model
 {
@@ -55,18 +57,18 @@ class CompetencyUnit extends Model
         });
 
         static::created(function ($model) {
-            if (\Illuminate\Support\Facades\Schema::hasTable('competency_units')) {
+            if (Schema::hasTable('competency_units')) {
                 $schemeId = $model->scheme_id;
-                $schemeExists = \Illuminate\Support\Facades\DB::table('certification_schemes')->where('id', $schemeId)->exists();
+                $schemeExists = DB::table('certification_schemes')->where('id', $schemeId)->exists();
                 if (! $schemeExists) {
-                    $firstScheme = \Illuminate\Support\Facades\DB::table('certification_schemes')->first();
+                    $firstScheme = DB::table('certification_schemes')->first();
                     $schemeId = $firstScheme?->id;
                 }
                 if ($schemeId) {
-                    \Illuminate\Support\Facades\DB::table('competency_units')->insertOrIgnore([
+                    DB::table('competency_units')->insertOrIgnore([
                         'id' => $model->id,
                         'scheme_id' => $schemeId,
-                        'kode_unit' => $model->code ?? $model->kode_unit ?? ('UNIT.' . $model->id),
+                        'kode_unit' => $model->code ?? $model->kode_unit ?? ('UNIT.'.$model->id),
                         'judul_unit' => $model->title ?? $model->judul_unit ?? 'Unit Kompetensi',
                         'jenis_standar' => $model->standard_reference ?? $model->jenis_standar ?? 'SKKNI',
                         'urutan' => $model->sequence ?? $model->urutan ?? 1,

@@ -91,7 +91,7 @@ class CertificationSchemeController extends Controller
     public function update(Request $request, CertificationScheme $scheme): RedirectResponse
     {
         $validated = $request->validate([
-            'kode_skema' => ['required', 'string', 'max:50', 'unique:certification_schemes,kode_skema,' . $scheme->id],
+            'kode_skema' => ['required', 'string', 'max:50', 'unique:certification_schemes,kode_skema,'.$scheme->id],
             'nama_skema' => ['required', 'string', 'max:255'],
             'standard_id' => ['nullable', 'exists:standards,id'],
             'jenis_skema' => ['required', 'string', 'in:KKNI,Okupasi,Klaster'],

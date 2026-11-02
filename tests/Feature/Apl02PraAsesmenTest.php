@@ -18,7 +18,6 @@ use App\Models\Tuk;
 use App\Models\User;
 use App\Models\WorkKeyCriteria;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 class Apl02PraAsesmenTest extends TestCase
@@ -26,11 +25,17 @@ class Apl02PraAsesmenTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesor;
+
     protected User $asesi;
+
     protected CertificationScheme $scheme;
+
     protected AssessmentSchedule $schedule;
+
     protected AssessmentApplication $application;
+
     protected WorkKeyCriteria $kuk;
 
     protected function setUp(): void

@@ -36,8 +36,8 @@
 
     {{-- Opening Paragraph at y = 55.7mm with exact master line breaks --}}
     <div style="text-align: justify; line-height: 7.4mm; margin-bottom: 2.5mm;">
-        Pada hari ini, Hari/Tanggal : {{ ($mode ?? '') === 'empty' ? '......................' : \Carbon\Carbon::parse($schedule->date)->translatedFormat('l') }} / {{ ($mode ?? '') === 'empty' ? '.................... 2026' : \Carbon\Carbon::parse($schedule->date)->translatedFormat('d F Y') }} &nbsp; Waktu : Pkl. 08.00 s/d 17.00 bertempat di SMK<br>
-        Negeri 3 Karawang, telah dilaksanakan proses asesmen Skema Sertifikasi Mekanik Junior dengan perincian<br>
+        Pada hari ini, Hari/Tanggal : {{ ($mode ?? '') === 'empty' ? '......................' : \Carbon\Carbon::parse($schedule->date)->translatedFormat('l') }} / {{ ($mode ?? '') === 'empty' ? '.................... 2026' : \Carbon\Carbon::parse($schedule->date)->translatedFormat('d F Y') }} &nbsp; Waktu : Pkl. 08.00 s/d 17.00 bertempat di {{ ($mode ?? '') === 'empty' ? 'SMK' : ($schedule->tuk_name ?: 'SMK') }}<br>
+        {{ ($mode ?? '') === 'empty' ? 'Negeri 3 Karawang' : '' }}{{ ($mode ?? '') === 'empty' ? ',' : '' }} telah dilaksanakan proses asesmen Skema Sertifikasi {{ $scheme->name ?? 'Mekanik Junior' }} dengan perincian<br>
         sebagai berikut :
     </div>
 

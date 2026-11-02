@@ -5,10 +5,10 @@ namespace Tests\Feature;
 use App\Enums\ApplicationStatus;
 use App\Enums\ScheduleStatus;
 use App\Models\Ak02Assessment;
-use App\Models\AssessmentApplication;
-use App\Models\AssessmentSchedule;
 use App\Models\AsesiProfile;
 use App\Models\AsesorProfile;
+use App\Models\AssessmentApplication;
+use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
 use App\Models\Complaint;
 use App\Models\Event;
@@ -24,9 +24,13 @@ class BnspExportAndSurveillanceTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesor;
+
     protected User $asesi;
+
     protected AssessmentSchedule $schedule;
+
     protected AssessmentApplication $application;
 
     protected function setUp(): void
@@ -127,7 +131,7 @@ class BnspExportAndSurveillanceTest extends TestCase
 
     public function test_bnsp_export_service_generates_exact_16_columns(): void
     {
-        $service = new BnspExportService();
+        $service = new BnspExportService;
         $rows = $service->formatRows([$this->application]);
 
         $this->assertCount(1, $rows);

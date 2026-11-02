@@ -20,7 +20,7 @@ class ApplicationSubmittedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Permohonan Sertifikasi Diterima: ' . $this->application->nomor_pendaftaran,
+            subject: 'Permohonan Sertifikasi Diterima: '.$this->application->nomor_pendaftaran,
         );
     }
 

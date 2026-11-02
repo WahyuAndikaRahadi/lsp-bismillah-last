@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->string('jenis_kelamin', 1)->default('L'); // L = Laki-laki, P = Perempuan
             $table->string('kebangsaan', 50)->default('Indonesia');
-            
+
             // Alamat Domisili Bertingkat
             $table->text('alamat');
             $table->string('rt_rw', 20)->nullable();
@@ -55,9 +55,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('scheme_id')->constrained('certification_schemes')->cascadeOnDelete();
             $table->foreignId('schedule_id')->nullable()->constrained('assessment_schedules')->nullOnDelete();
-            
+
             // Tujuan Asesmen sesuai FR-APL-01 Bagian 2
-            $table->string('tujuan_asesmen', 80)->default('Sertifikasi Baru'); 
+            $table->string('tujuan_asesmen', 80)->default('Sertifikasi Baru');
             // Sertifikasi Baru, Sertifikasi Ulang (RCC), Pengakuan Kompetensi Terkini (PKT), Rekognisi Pembelajaran Lampau (RPL), Lainnya
 
             // Status Pendaftaran & Verifikasi APL-01

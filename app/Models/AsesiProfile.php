@@ -55,9 +55,9 @@ class AsesiProfile extends Model
     {
         $parts = array_filter([
             $this->alamat,
-            $this->rt_rw ? 'RT/RW ' . $this->rt_rw : null,
-            $this->kelurahan_nama ? 'Kel. ' . $this->kelurahan_nama : null,
-            $this->kecamatan_nama ? 'Kec. ' . $this->kecamatan_nama : null,
+            $this->rt_rw ? 'RT/RW '.$this->rt_rw : null,
+            $this->kelurahan_nama ? 'Kel. '.$this->kelurahan_nama : null,
+            $this->kecamatan_nama ? 'Kec. '.$this->kecamatan_nama : null,
             $this->kota_nama,
             $this->provinsi_nama,
             $this->kode_pos,

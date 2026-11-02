@@ -24,7 +24,7 @@ class Apl01ApplicationSeeder extends Seeder
         $scheme = CertificationScheme::with('requirements')->first();
         $schedule = AssessmentSchedule::first();
 
-        if (!$asesi1 || !$scheme) {
+        if (! $asesi1 || ! $scheme) {
             return;
         }
 
@@ -82,7 +82,7 @@ class Apl01ApplicationSeeder extends Seeder
 
         // Dokumen Permohonan 1
         foreach ($scheme->requirements as $idx => $req) {
-            $sampleName = 'sample_dokumen_' . ($idx + 1) . '.pdf';
+            $sampleName = 'sample_dokumen_'.($idx + 1).'.pdf';
             ApplicationDocument::firstOrCreate(
                 [
                     'application_id' => $app1->id,

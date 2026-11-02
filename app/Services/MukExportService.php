@@ -4,6 +4,15 @@ namespace App\Services;
 
 use App\Models\Assessment;
 use App\Models\Schedule;
+use Carbon\Carbon;
+use PhpOffice\PhpSpreadsheet\Cell\DataType;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
+use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Color;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class MukExportService
 {
@@ -129,34 +138,34 @@ class MukExportService
     /**
      * Generate native Excel (.xlsx) file containing complete Biodata Asesi using PhpSpreadsheet.
      */
-    public function exportExcelBiodata(Schedule $schedule): \Symfony\Component\HttpFoundation\StreamedResponse
+    public function exportExcelBiodata(Schedule $schedule): StreamedResponse
     {
         $data = $this->getExportData($schedule);
         $assessments = $data['assessments'];
         $scheme = $data['scheme'];
 
-        $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+        $spreadsheet = new Spreadsheet;
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->setTitle('Biodata Asesi');
 
         // Page Title
         $sheet->setCellValue('A1', 'DAFTAR BIODATA ASESI / PESERTA UJI KOMPETENSI');
         $sheet->mergeCells('A1:N1');
-        $sheet->getStyle('A1')->getFont()->setBold(true)->setSize(14)->setColor(new \PhpOffice\PhpSpreadsheet\Style\Color('1E2B6E'));
-        $sheet->getStyle('A1')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle('A1')->getFont()->setBold(true)->setSize(14)->setColor(new Color('1E2B6E'));
+        $sheet->getStyle('A1')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
-        $sheet->setCellValue('A2', 'LSP PrO INDO - ' . ($scheme->name ?? '-'));
+        $sheet->setCellValue('A2', 'LSP PrO INDO - '.($scheme->name ?? '-'));
         $sheet->mergeCells('A2:N2');
         $sheet->getStyle('A2')->getFont()->setBold(true)->setSize(11);
-        $sheet->getStyle('A2')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle('A2')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
         // Schedule Metadata
         $sheet->setCellValue('A4', 'Kode Jadwal');
-        $sheet->setCellValue('C4', ': ' . $schedule->code);
+        $sheet->setCellValue('C4', ': '.$schedule->code);
         $sheet->setCellValue('A5', 'Tempat Uji Kompetensi (TUK)');
-        $sheet->setCellValue('C5', ': ' . $schedule->tuk_name);
+        $sheet->setCellValue('C5', ': '.$schedule->tuk_name);
         $sheet->setCellValue('A6', 'Tanggal Pelaksanaan');
-        $sheet->setCellValue('C6', ': ' . \Carbon\Carbon::parse($schedule->date)->translatedFormat('d F Y'));
+        $sheet->setCellValue('C6', ': '.Carbon::parse($schedule->date)->translatedFormat('d F Y'));
 
         $sheet->getStyle('A4:A6')->getFont()->setBold(true);
 
@@ -185,15 +194,15 @@ class MukExportService
         $headerStyle = [
             'font' => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
             'fill' => [
-                'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                'fillType' => Fill::FILL_SOLID,
                 'startColor' => ['rgb' => '1E2B6E'],
             ],
             'alignment' => [
-                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
-                'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                'horizontal' => Alignment::HORIZONTAL_CENTER,
+                'vertical' => Alignment::VERTICAL_CENTER,
             ],
             'borders' => [
-                'allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN],
+                'allBorders' => ['borderStyle' => Border::BORDER_THIN],
             ],
         ];
         $sheet->getStyle('A8:N8')->applyFromArray($headerStyle);
@@ -207,28 +216,28 @@ class MukExportService
             $profile = $asesi->profile;
 
             $sheet->setCellValue("A{$row}", $no++);
-            $sheet->setCellValueExplicit("B{$row}", $profile->nik ?? $asesi->nik ?? '-', \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $sheet->setCellValueExplicit("B{$row}", $profile->nik ?? $asesi->nik ?? '-', DataType::TYPE_STRING);
             $sheet->setCellValue("C{$row}", $asesi->full_name);
             $sheet->setCellValue("D{$row}", $profile->tempat_lahir ?? '-');
-            $sheet->setCellValue("E{$row}", $profile->tanggal_lahir ? \Carbon\Carbon::parse($profile->tanggal_lahir)->format('d/m/Y') : '-');
+            $sheet->setCellValue("E{$row}", $profile->tanggal_lahir ? Carbon::parse($profile->tanggal_lahir)->format('d/m/Y') : '-');
             $sheet->setCellValue("F{$row}", $profile->jenis_kelamin ?? '-');
             $sheet->setCellValue("G{$row}", $profile->pendidikan_terakhir ?? '-');
             $sheet->setCellValue("H{$row}", $profile->jabatan ?? '-');
             $sheet->setCellValue("I{$row}", $profile->nama_institusi_perusahaan ?? '-');
             $sheet->setCellValue("J{$row}", $profile->alamat_rumah ?? '-');
-            $sheet->setCellValueExplicit("K{$row}", $asesi->phone ?? $profile->no_telepon_rumah ?? '-', \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $sheet->setCellValueExplicit("K{$row}", $asesi->phone ?? $profile->no_telepon_rumah ?? '-', DataType::TYPE_STRING);
             $sheet->setCellValue("L{$row}", $asesi->email);
             $sheet->setCellValue("M{$row}", $item->assessor->full_name ?? '-');
             $sheet->setCellValue("N{$row}", $item->final_result ?? 'BELUM DIASES');
 
             // Alignment
-            $sheet->getStyle("A{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("B{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("E{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("F{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("N{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("A{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("B{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("E{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("F{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("N{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
-            $sheet->getStyle("A{$row}:N{$row}")->getBorders()->getAllBorders()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN);
+            $sheet->getStyle("A{$row}:N{$row}")->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
             $row++;
         }
 
@@ -237,10 +246,10 @@ class MukExportService
             $sheet->getColumnDimension($col)->setAutoSize(true);
         }
 
-        $filename = 'Biodata_Asesi_' . $schedule->code . '_' . date('Ymd_His') . '.xlsx';
+        $filename = 'Biodata_Asesi_'.$schedule->code.'_'.date('Ymd_His').'.xlsx';
 
         return response()->streamDownload(function () use ($spreadsheet) {
-            $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
+            $writer = new Xlsx($spreadsheet);
             $writer->save('php://output');
         }, $filename, [
             'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -251,34 +260,34 @@ class MukExportService
     /**
      * Generate native Excel (.xlsx) file containing Daftar Hadir Peserta Uji Kompetensi.
      */
-    public function exportExcelDaftarHadirAsesi(Schedule $schedule): \Symfony\Component\HttpFoundation\StreamedResponse
+    public function exportExcelDaftarHadirAsesi(Schedule $schedule): StreamedResponse
     {
         $data = $this->getExportData($schedule);
         $assessments = $data['assessments'];
         $scheme = $data['scheme'];
 
-        $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+        $spreadsheet = new Spreadsheet;
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->setTitle('Daftar Hadir Asesi');
 
         // Header
         $sheet->setCellValue('A1', 'DAFTAR HADIR PESERTA UJI KOMPETENSI');
         $sheet->mergeCells('A1:G1');
-        $sheet->getStyle('A1')->getFont()->setBold(true)->setSize(14)->setColor(new \PhpOffice\PhpSpreadsheet\Style\Color('1E2B6E'));
-        $sheet->getStyle('A1')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle('A1')->getFont()->setBold(true)->setSize(14)->setColor(new Color('1E2B6E'));
+        $sheet->getStyle('A1')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
-        $sheet->setCellValue('A2', 'LSP PrO INDO - ' . ($scheme->name ?? '-'));
+        $sheet->setCellValue('A2', 'LSP PrO INDO - '.($scheme->name ?? '-'));
         $sheet->mergeCells('A2:G2');
         $sheet->getStyle('A2')->getFont()->setBold(true)->setSize(11);
-        $sheet->getStyle('A2')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle('A2')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
         // Metadata
         $sheet->setCellValue('A4', 'Kode Jadwal');
-        $sheet->setCellValue('C4', ': ' . $schedule->code);
+        $sheet->setCellValue('C4', ': '.$schedule->code);
         $sheet->setCellValue('A5', 'Tempat Uji Kompetensi');
-        $sheet->setCellValue('C5', ': ' . $schedule->tuk_name);
+        $sheet->setCellValue('C5', ': '.$schedule->tuk_name);
         $sheet->setCellValue('A6', 'Waktu Pelaksanaan');
-        $sheet->setCellValue('C6', ': ' . \Carbon\Carbon::parse($schedule->date)->translatedFormat('d F Y') . ' (' . $schedule->start_time . ' - ' . $schedule->end_time . ')');
+        $sheet->setCellValue('C6', ': '.Carbon::parse($schedule->date)->translatedFormat('d F Y').' ('.$schedule->start_time.' - '.$schedule->end_time.')');
 
         $sheet->getStyle('A4:A6')->getFont()->setBold(true);
 
@@ -299,15 +308,15 @@ class MukExportService
         $headerStyle = [
             'font' => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
             'fill' => [
-                'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                'fillType' => Fill::FILL_SOLID,
                 'startColor' => ['rgb' => '1E2B6E'],
             ],
             'alignment' => [
-                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
-                'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                'horizontal' => Alignment::HORIZONTAL_CENTER,
+                'vertical' => Alignment::VERTICAL_CENTER,
             ],
             'borders' => [
-                'allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN],
+                'allBorders' => ['borderStyle' => Border::BORDER_THIN],
             ],
         ];
         $sheet->getStyle('A8:G8')->applyFromArray($headerStyle);
@@ -321,20 +330,20 @@ class MukExportService
             $hasSig = ! empty($profile->signature_data) || ! empty($item->asesi_signature);
 
             $sheet->setCellValue("A{$row}", $no++);
-            $sheet->setCellValueExplicit("B{$row}", $profile->nik ?? $item->asesi->nik ?? '-', \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $sheet->setCellValueExplicit("B{$row}", $profile->nik ?? $item->asesi->nik ?? '-', DataType::TYPE_STRING);
             $sheet->setCellValue("C{$row}", $item->asesi->full_name);
             $sheet->setCellValue("D{$row}", $profile->nama_institusi_perusahaan ?? '-');
             $sheet->setCellValue("E{$row}", $hasSig ? 'TTD Digital Terverifikasi' : 'Belum TTD');
             $sheet->setCellValue("F{$row}", $item->final_result ?? 'BELUM SELESAI');
             $sheet->setCellValue("G{$row}", $isHadir ? 'Hadir' : 'Tidak Hadir');
 
-            $sheet->getStyle("A{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("B{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("E{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("F{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("G{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("A{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("B{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("E{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("F{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("G{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
-            $sheet->getStyle("A{$row}:G{$row}")->getBorders()->getAllBorders()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN);
+            $sheet->getStyle("A{$row}:G{$row}")->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
             $row++;
         }
 
@@ -342,10 +351,10 @@ class MukExportService
             $sheet->getColumnDimension($col)->setAutoSize(true);
         }
 
-        $filename = 'Daftar_Hadir_Asesi_' . $schedule->code . '_' . date('Ymd_His') . '.xlsx';
+        $filename = 'Daftar_Hadir_Asesi_'.$schedule->code.'_'.date('Ymd_His').'.xlsx';
 
         return response()->streamDownload(function () use ($spreadsheet) {
-            $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
+            $writer = new Xlsx($spreadsheet);
             $writer->save('php://output');
         }, $filename, [
             'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -356,34 +365,34 @@ class MukExportService
     /**
      * Generate native Excel (.xlsx) file containing Daftar Hadir Asesor Penguji.
      */
-    public function exportExcelDaftarHadirAsesor(Schedule $schedule): \Symfony\Component\HttpFoundation\StreamedResponse
+    public function exportExcelDaftarHadirAsesor(Schedule $schedule): StreamedResponse
     {
         $data = $this->getExportData($schedule);
         $assessors = $data['assessors'];
         $scheme = $data['scheme'];
 
-        $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+        $spreadsheet = new Spreadsheet;
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->setTitle('Daftar Hadir Asesor');
 
         // Header
         $sheet->setCellValue('A1', 'DAFTAR HADIR ASESOR PENGUJI KOMPETENSI');
         $sheet->mergeCells('A1:F1');
-        $sheet->getStyle('A1')->getFont()->setBold(true)->setSize(14)->setColor(new \PhpOffice\PhpSpreadsheet\Style\Color('1E2B6E'));
-        $sheet->getStyle('A1')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle('A1')->getFont()->setBold(true)->setSize(14)->setColor(new Color('1E2B6E'));
+        $sheet->getStyle('A1')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
-        $sheet->setCellValue('A2', 'LSP PrO INDO - ' . ($scheme->name ?? '-'));
+        $sheet->setCellValue('A2', 'LSP PrO INDO - '.($scheme->name ?? '-'));
         $sheet->mergeCells('A2:F2');
         $sheet->getStyle('A2')->getFont()->setBold(true)->setSize(11);
-        $sheet->getStyle('A2')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle('A2')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
         // Metadata
         $sheet->setCellValue('A4', 'Kode Jadwal');
-        $sheet->setCellValue('C4', ': ' . $schedule->code);
+        $sheet->setCellValue('C4', ': '.$schedule->code);
         $sheet->setCellValue('A5', 'Tempat Uji Kompetensi');
-        $sheet->setCellValue('C5', ': ' . $schedule->tuk_name);
+        $sheet->setCellValue('C5', ': '.$schedule->tuk_name);
         $sheet->setCellValue('A6', 'Waktu Pelaksanaan');
-        $sheet->setCellValue('C6', ': ' . \Carbon\Carbon::parse($schedule->date)->translatedFormat('d F Y') . ' (' . $schedule->start_time . ' - ' . $schedule->end_time . ')');
+        $sheet->setCellValue('C6', ': '.Carbon::parse($schedule->date)->translatedFormat('d F Y').' ('.$schedule->start_time.' - '.$schedule->end_time.')');
 
         $sheet->getStyle('A4:A6')->getFont()->setBold(true);
 
@@ -403,15 +412,15 @@ class MukExportService
         $headerStyle = [
             'font' => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
             'fill' => [
-                'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                'fillType' => Fill::FILL_SOLID,
                 'startColor' => ['rgb' => '1E2B6E'],
             ],
             'alignment' => [
-                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
-                'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                'horizontal' => Alignment::HORIZONTAL_CENTER,
+                'vertical' => Alignment::VERTICAL_CENTER,
             ],
             'borders' => [
-                'allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN],
+                'allBorders' => ['borderStyle' => Border::BORDER_THIN],
             ],
         ];
         $sheet->getStyle('A8:F8')->applyFromArray($headerStyle);
@@ -425,18 +434,18 @@ class MukExportService
             $roleLabel = ($index === 0) ? 'Lead Assessor (Ketua)' : 'Anggota Asesor';
 
             $sheet->setCellValue("A{$row}", $no++);
-            $sheet->setCellValueExplicit("B{$row}", $profile->met_number ?? $asesor->assessor_registration_number ?? 'MET.000.00' . $asesor->id, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $sheet->setCellValueExplicit("B{$row}", $profile->met_number ?? $asesor->assessor_registration_number ?? 'MET.000.00'.$asesor->id, DataType::TYPE_STRING);
             $sheet->setCellValue("C{$row}", $asesor->full_name);
             $sheet->setCellValue("D{$row}", $roleLabel);
             $sheet->setCellValue("E{$row}", $hasSig ? 'TTD Digital Terverifikasi' : 'Belum TTD');
             $sheet->setCellValue("F{$row}", 'Hadir Bertugas');
 
-            $sheet->getStyle("A{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("B{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("E{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->getStyle("F{$row}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("A{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("B{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("E{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle("F{$row}")->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
-            $sheet->getStyle("A{$row}:F{$row}")->getBorders()->getAllBorders()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN);
+            $sheet->getStyle("A{$row}:F{$row}")->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
             $row++;
         }
 
@@ -444,10 +453,10 @@ class MukExportService
             $sheet->getColumnDimension($col)->setAutoSize(true);
         }
 
-        $filename = 'Daftar_Hadir_Asesor_' . $schedule->code . '_' . date('Ymd_His') . '.xlsx';
+        $filename = 'Daftar_Hadir_Asesor_'.$schedule->code.'_'.date('Ymd_His').'.xlsx';
 
         return response()->streamDownload(function () use ($spreadsheet) {
-            $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
+            $writer = new Xlsx($spreadsheet);
             $writer->save('php://output');
         }, $filename, [
             'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',

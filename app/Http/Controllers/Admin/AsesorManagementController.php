@@ -96,10 +96,10 @@ class AsesorManagementController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:users,email,' . $asesor->user_id],
-            'nik' => ['required', 'string', 'size:16', 'unique:users,nik,' . $asesor->user_id],
+            'email' => ['required', 'email', 'max:255', 'unique:users,email,'.$asesor->user_id],
+            'nik' => ['required', 'string', 'size:16', 'unique:users,nik,'.$asesor->user_id],
             'phone' => ['required', 'string', 'max:25'],
-            'no_met' => ['required', 'string', 'max:50', 'unique:asesor_profiles,no_met,' . $asesor->id],
+            'no_met' => ['required', 'string', 'max:50', 'unique:asesor_profiles,no_met,'.$asesor->id],
             'no_blangko' => ['nullable', 'string', 'max:50'],
             'no_sertifikat' => ['nullable', 'string', 'max:100'],
             'masa_berlaku' => ['nullable', 'date'],

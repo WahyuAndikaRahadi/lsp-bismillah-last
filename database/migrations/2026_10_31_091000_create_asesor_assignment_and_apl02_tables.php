@@ -51,7 +51,7 @@ return new class extends Migration
             $table->foreignId('kuk_id')->constrained('work_key_criterias')->cascadeOnDelete();
             $table->string('penilaian_mandiri', 5)->default('K'); // K (Kompeten) / BK (Belum Kompeten)
             $table->string('bukti_pendukung')->nullable(); // Kode bukti / Nama berkas portofolio
-            
+
             // Verifikasi Tinjauan Asesor (VATM: Valid, Asli, Terkini, Memadai)
             $table->boolean('is_valid')->default(true);
             $table->boolean('is_asli')->default(true);

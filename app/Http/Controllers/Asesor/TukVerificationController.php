@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Asesor;
 
 use App\Http\Controllers\Controller;
+use App\Models\AsesorProfile;
 use App\Models\Tuk;
 use App\Models\TukVerification;
 use Illuminate\Http\RedirectResponse;
@@ -35,10 +36,10 @@ class TukVerificationController extends Controller
     {
         $asesor = $request->user()->asesorProfile;
         if (! $asesor && $request->user()->isAsesor()) {
-            $asesor = \App\Models\AsesorProfile::firstOrCreate(
+            $asesor = AsesorProfile::firstOrCreate(
                 ['user_id' => $request->user()->id],
                 [
-                    'no_met' => $request->user()->assessor_registration_number ?? $request->user()->profile?->assessor_registration_number ?? ('MET.000.00' . $request->user()->id . ' 2026'),
+                    'no_met' => $request->user()->assessor_registration_number ?? $request->user()->profile?->assessor_registration_number ?? ('MET.000.00'.$request->user()->id.' 2026'),
                     'masa_berlaku' => now()->addYears(3),
                     'bidang_keahlian' => 'Otomotif Kendaraan Ringan & Sepeda Motor',
                     'is_active' => true,

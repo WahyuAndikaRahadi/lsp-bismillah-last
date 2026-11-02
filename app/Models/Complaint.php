@@ -38,7 +38,7 @@ class Complaint extends Model
 
     public static function generateTicketNumber(): string
     {
-        $prefix = 'TKT-' . date('Ymd') . '-';
+        $prefix = 'TKT-'.date('Ymd').'-';
         $last = self::where('ticket_number', 'LIKE', "{$prefix}%")
             ->orderByDesc('id')
             ->first();
@@ -49,7 +49,7 @@ class Complaint extends Model
             $seq = intval(end($parts)) + 1;
         }
 
-        return $prefix . str_pad((string)$seq, 3, '0', STR_PAD_LEFT);
+        return $prefix.str_pad((string) $seq, 3, '0', STR_PAD_LEFT);
     }
 
     public function statusBadge(): string

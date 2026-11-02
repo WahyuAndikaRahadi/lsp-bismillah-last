@@ -7,7 +7,6 @@ use App\Enums\DocumentVerificationStatus;
 use App\Enums\ScheduleStatus;
 use App\Enums\UserRole;
 use App\Models\ApplicationDocument;
-use App\Models\AsesiProfile;
 use App\Models\AssessmentApplication;
 use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
@@ -27,9 +26,13 @@ class Apl01RegistrationTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesi;
+
     protected CertificationScheme $scheme;
+
     protected AssessmentSchedule $schedule;
+
     protected SchemeRequirement $requirement;
 
     protected function setUp(): void

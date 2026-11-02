@@ -6,6 +6,9 @@ use App\Enums\ScheduleStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class AssessmentSchedule extends Model
 {
@@ -56,29 +59,29 @@ class AssessmentSchedule extends Model
         return $this->belongsTo(Tuk::class, 'tuk_id');
     }
 
-    public function applications(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function applications(): HasMany
     {
         return $this->hasMany(AssessmentApplication::class, 'schedule_id');
     }
 
-    public function scheduleAsesors(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function scheduleAsesors(): HasMany
     {
         return $this->hasMany(ScheduleAsesor::class, 'schedule_id');
     }
 
-    public function asesors(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function asesors(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'schedule_asesors', 'schedule_id', 'asesor_id')
             ->withPivot(['peran', 'no_surat_tugas', 'tgl_surat_tugas'])
             ->withTimestamps();
     }
 
-    public function ak05Report(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function ak05Report(): HasOne
     {
         return $this->hasOne(Ak05Report::class, 'schedule_id');
     }
 
-    public function plenoMeeting(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function plenoMeeting(): HasOne
     {
         return $this->hasOne(PlenoMeeting::class, 'schedule_id');
     }
@@ -116,7 +119,7 @@ class AssessmentSchedule extends Model
     public function getFormattedTanggalAttribute(): string
     {
         if ($this->tgl_selesai && $this->tgl_selesai->ne($this->tgl_asesmen)) {
-            return $this->tgl_asesmen->format('d M Y') . ' - ' . $this->tgl_selesai->format('d M Y');
+            return $this->tgl_asesmen->format('d M Y').' - '.$this->tgl_selesai->format('d M Y');
         }
 
         return $this->tgl_asesmen->format('d M Y');

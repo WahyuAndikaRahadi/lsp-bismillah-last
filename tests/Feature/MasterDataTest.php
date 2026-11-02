@@ -7,7 +7,6 @@ use App\Models\AsesorProfile;
 use App\Models\CertificationScheme;
 use App\Models\CompetencyElement;
 use App\Models\CompetencyUnit;
-use App\Models\LspProfile;
 use App\Models\Standard;
 use App\Models\Tuk;
 use App\Models\User;
@@ -19,7 +18,9 @@ class MasterDataTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesor;
+
     protected User $asesi;
 
     protected function setUp(): void

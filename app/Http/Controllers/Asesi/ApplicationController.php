@@ -16,7 +16,6 @@ use App\Models\SchemeRequirement;
 use App\Services\WilayahService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -223,7 +222,7 @@ class ApplicationController extends Controller
             // Jika ada dokumen tambahan custom
             if (isset($uploadedFiles['custom'])) {
                 foreach ($uploadedFiles['custom'] as $idx => $customFile) {
-                    $customName = $request->input("custom_names.{$idx}", "Dokumen Tambahan #" . ($idx + 1));
+                    $customName = $request->input("custom_names.{$idx}", 'Dokumen Tambahan #'.($idx + 1));
                     $storedPath = $customFile->store("documents/applications/{$nomorPendaftaran}", 'public');
 
                     ApplicationDocument::create([
@@ -250,8 +249,8 @@ class ApplicationController extends Controller
                 }
             }
 
-            $message = $isDraft 
-                ? 'Draft permohonan sertifikasi berhasil disimpan.' 
+            $message = $isDraft
+                ? 'Draft permohonan sertifikasi berhasil disimpan.'
                 : 'Permohonan sertifikasi (FR-APL-01) berhasil diajukan! Tim admin LSP akan segera memverifikasi berkas Anda.';
 
             return redirect()->route('asesi.applications.show', $application)
@@ -259,7 +258,8 @@ class ApplicationController extends Controller
 
         } catch (\Throwable $e) {
             DB::rollBack();
-            return back()->withInput()->with('error', 'Gagal mengajukan permohonan: ' . $e->getMessage());
+
+            return back()->withInput()->with('error', 'Gagal mengajukan permohonan: '.$e->getMessage());
         }
     }
 
@@ -295,7 +295,7 @@ class ApplicationController extends Controller
             abort(403, 'Akses tidak diizinkan.');
         }
 
-        if (!$application->status->canEdit()) {
+        if (! $application->status->canEdit()) {
             return redirect()->route('asesi.applications.show', $application)
                 ->with('error', 'Permohonan dalam status saat ini tidak dapat diubah.');
         }
@@ -324,7 +324,7 @@ class ApplicationController extends Controller
             abort(403, 'Akses tidak diizinkan.');
         }
 
-        if (!$application->status->canEdit()) {
+        if (! $application->status->canEdit()) {
             return redirect()->route('asesi.applications.show', $application)
                 ->with('error', 'Permohonan tidak dapat diubah.');
         }
@@ -340,7 +340,9 @@ class ApplicationController extends Controller
             $uploadedFiles = $request->file('documents', []);
 
             foreach ($uploadedFiles as $reqId => $file) {
-                if (!$file) continue;
+                if (! $file) {
+                    continue;
+                }
 
                 $requirement = SchemeRequirement::find($reqId);
                 $docName = $requirement ? $requirement->nama_dokumen : 'Dokumen Pendukung';
@@ -392,7 +394,8 @@ class ApplicationController extends Controller
 
         } catch (\Throwable $e) {
             DB::rollBack();
-            return back()->with('error', 'Gagal memperbarui permohonan: ' . $e->getMessage());
+
+            return back()->with('error', 'Gagal memperbarui permohonan: '.$e->getMessage());
         }
     }
 }

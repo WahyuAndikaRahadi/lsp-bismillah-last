@@ -48,12 +48,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('ak02_assessment_id')->constrained('ak02_assessments')->cascadeOnDelete();
             $table->foreignId('unit_id')->constrained('competency_units')->cascadeOnDelete();
-            
+
             // Metode Asesmen yang Digunakan
             $table->boolean('metode_observasi_langsung')->default(true); // L
             $table->boolean('metode_portofolio')->default(false);        // TL
             $table->boolean('metode_pertanyaan')->default(true);         // T
-            
+
             $table->string('rekomendasi_unit', 5)->default('K'); // K / BK
             $table->text('catatan')->nullable();
             $table->timestamps();

@@ -35,7 +35,7 @@ class BnspExportController extends Controller
             'asesor.asesorProfile',
             'ak02',
         ])
-        ->whereNotNull('schedule_id');
+            ->whereNotNull('schedule_id');
 
         if ($request->filled('schedule_id')) {
             $query->where('schedule_id', $request->schedule_id);
@@ -69,7 +69,7 @@ class BnspExportController extends Controller
             'asesor.asesorProfile',
             'ak02',
         ])
-        ->whereNotNull('schedule_id');
+            ->whereNotNull('schedule_id');
 
         if ($request->filled('schedule_id')) {
             $query->where('schedule_id', $request->schedule_id);
@@ -86,7 +86,7 @@ class BnspExportController extends Controller
         }
 
         $applications = $query->get();
-        $filename = 'exporthasilasesmen_' . date('Ymd_His') . '.xls';
+        $filename = 'exporthasilasesmen_'.date('Ymd_His').'.xls';
 
         return $this->exportService->exportXmlSpreadsheet($applications, $filename);
     }
@@ -103,8 +103,8 @@ class BnspExportController extends Controller
             'asesor.asesorProfile',
             'ak02',
         ])
-        ->where('schedule_id', $schedule->id)
-        ->get();
+            ->where('schedule_id', $schedule->id)
+            ->get();
 
         $filename = "exporthasilasesmen_{$schedule->kode_jadwal}.xls";
 

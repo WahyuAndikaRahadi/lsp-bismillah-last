@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Enums\ApplicationStatus;
+use App\Enums\ScheduleStatus;
 use App\Enums\UserRole;
 use App\Models\AsesiProfile;
 use App\Models\AsesorProfile;
@@ -21,9 +22,13 @@ class RouteCrawlTest extends TestCase
     use RefreshDatabase;
 
     private User $admin;
+
     private User $asesor;
+
     private User $asesi;
+
     private AssessmentSchedule $schedule;
+
     private AssessmentApplication $application;
 
     protected function setUp(): void
@@ -100,7 +105,7 @@ class RouteCrawlTest extends TestCase
             'nama_jadwal' => 'Uji Kompetensi Nasional',
             'tgl_asesmen' => now()->addDay()->toDateString(),
             'kuota_peserta' => 30,
-            'status' => \App\Enums\ScheduleStatus::Asesmen,
+            'status' => ScheduleStatus::Asesmen,
         ]);
 
         $this->schedule->asesors()->attach($this->asesor->id);

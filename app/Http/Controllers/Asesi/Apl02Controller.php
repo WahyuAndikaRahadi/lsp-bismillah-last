@@ -104,8 +104,8 @@ class Apl02Controller extends Controller
 
             DB::commit();
 
-            $msg = $isDraft 
-                ? 'Draft asesmen mandiri FR-APL-02 berhasil disimpan.' 
+            $msg = $isDraft
+                ? 'Draft asesmen mandiri FR-APL-02 berhasil disimpan.'
                 : 'Asesmen Mandiri (FR-APL-02) berhasil disubmit! Menunggu peninjauan oleh Asesor Penguji.';
 
             return redirect()->route('asesi.applications.apl02.show', $application)
@@ -113,7 +113,8 @@ class Apl02Controller extends Controller
 
         } catch (\Throwable $e) {
             DB::rollBack();
-            return back()->withInput()->with('error', 'Gagal menyimpan APL-02: ' . $e->getMessage());
+
+            return back()->withInput()->with('error', 'Gagal menyimpan APL-02: '.$e->getMessage());
         }
     }
 
@@ -127,7 +128,7 @@ class Apl02Controller extends Controller
         }
 
         $apl02 = $application->apl02;
-        if (!$apl02) {
+        if (! $apl02) {
             return redirect()->route('asesi.applications.apl02.create', $application);
         }
 

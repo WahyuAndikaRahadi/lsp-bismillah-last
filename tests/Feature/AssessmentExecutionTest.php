@@ -7,8 +7,6 @@ use App\Enums\ScheduleStatus;
 use App\Enums\UserRole;
 use App\Models\Ak01Agreement;
 use App\Models\Ak02Assessment;
-use App\Models\Ak03Feedback;
-use App\Models\Ak05Report;
 use App\Models\AssessmentApplication;
 use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
@@ -24,10 +22,15 @@ class AssessmentExecutionTest extends TestCase
     use RefreshDatabase;
 
     protected User $asesor;
+
     protected User $asesi;
+
     protected CertificationScheme $scheme;
+
     protected CompetencyUnit $unit;
+
     protected AssessmentSchedule $schedule;
+
     protected AssessmentApplication $application;
 
     protected function setUp(): void

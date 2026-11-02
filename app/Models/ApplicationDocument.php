@@ -57,11 +57,12 @@ class ApplicationDocument extends Model
 
     public function getFormattedSizeAttribute(): string
     {
-        if (!$this->file_size) {
+        if (! $this->file_size) {
             return '-';
         }
         $units = ['B', 'KB', 'MB', 'GB'];
         $power = $this->file_size > 0 ? floor(log($this->file_size, 1024)) : 0;
-        return number_format($this->file_size / pow(1024, $power), 1, '.', ',') . ' ' . $units[$power];
+
+        return number_format($this->file_size / pow(1024, $power), 1, '.', ',').' '.$units[$power];
     }
 }

@@ -23,9 +23,9 @@ class NotificationController extends Controller
                 $q->orWhere('recipient_or_sender', 'like', "%{$email}%");
             }
         })
-        ->orWhere('body', 'like', "%{$request->user()->name}%")
-        ->latest()
-        ->paginate(20);
+            ->orWhere('body', 'like', "%{$request->user()->name}%")
+            ->latest()
+            ->paginate(20);
 
         return view('asesor.notifications.index', [
             'messages' => $messages,

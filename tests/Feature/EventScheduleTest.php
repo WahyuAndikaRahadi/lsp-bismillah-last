@@ -17,8 +17,11 @@ class EventScheduleTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesi;
+
     protected CertificationScheme $scheme;
+
     protected Tuk $tuk;
 
     protected function setUp(): void

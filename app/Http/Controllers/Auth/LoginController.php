@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +36,7 @@ class LoginController extends Controller
         $user = Auth::user();
 
         return redirect()->intended(route($user->dashboardRoute()))
-            ->with('success', 'Selamat datang kembali, ' . ($user->full_name ?: $user->name) . '!');
+            ->with('success', 'Selamat datang kembali, '.($user->full_name ?: $user->name).'!');
     }
 
     /**
@@ -55,7 +56,7 @@ class LoginController extends Controller
     {
         if ($originalAdminId = session('admin_impersonator_id')) {
             session()->forget('admin_impersonator_id');
-            $admin = \App\Models\User::find($originalAdminId);
+            $admin = User::find($originalAdminId);
             if ($admin && ($admin->isAdmin() || $admin->isRole('admin') || in_array($admin->role, ['SUPER_ADMIN', 'ADMIN_LSP'], true))) {
                 $request->session()->regenerate();
                 Auth::login($admin);

@@ -5,6 +5,10 @@ namespace App\Models;
 use App\Enums\UserRole;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -73,27 +77,27 @@ class User extends Authenticatable
         }
     }
 
-    public function profile(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function profile(): HasOne
     {
         return $this->hasOne(UserProfile::class, 'user_id');
     }
 
-    public function assignedSchedules(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function assignedSchedules(): BelongsToMany
     {
         return $this->belongsToMany(Schedule::class, 't_schedule_assessors', 'assessor_id', 'schedule_id');
     }
 
-    public function assessments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function assessments(): HasMany
     {
         return $this->scheduleAssessments();
     }
 
-    public function scheduleAssessments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function scheduleAssessments(): HasMany
     {
         return $this->hasMany(Assessment::class, 'asesi_id');
     }
 
-    public function assessorAssessments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function assessorAssessments(): HasMany
     {
         return $this->hasMany(Assessment::class, 'assessor_id');
     }
@@ -135,6 +139,7 @@ class User extends Authenticatable
     public function isAdmin(): bool
     {
         $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
+
         return in_array($currentRole, ['admin', 'SUPER_ADMIN', 'ADMIN_LSP'], true);
     }
 
@@ -146,24 +151,28 @@ class User extends Authenticatable
         if ($this->isAsesor() || $this->isRole('ASESOR')) {
             return 'asesor.dashboard';
         }
+
         return 'asesi.dashboard';
     }
 
     public function isAsesor(): bool
     {
         $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
+
         return in_array($currentRole, ['asesor', 'ASESOR'], true);
     }
 
     public function isAsesi(): bool
     {
         $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
+
         return in_array($currentRole, ['asesi', 'ASESI'], true);
     }
 
     public function getRoleLabelAttribute(): string
     {
         $roleStr = is_object($this->role) ? ($this->role->value ?? '') : (string) $this->role;
+
         return match (strtoupper($roleStr)) {
             'SUPER_ADMIN' => 'Super Admin',
             'ADMIN_LSP', 'ADMIN' => 'Admin LSP',
@@ -178,6 +187,7 @@ class User extends Authenticatable
     public function getRoleBadgeClassesAttribute(): string
     {
         $roleStr = is_object($this->role) ? ($this->role->value ?? '') : (string) $this->role;
+
         return match (strtoupper($roleStr)) {
             'SUPER_ADMIN' => 'bg-purple-50 text-purple-700 border border-purple-200',
             'ADMIN_LSP', 'ADMIN' => 'bg-indigo-50 text-indigo-700 border border-indigo-200',
@@ -189,7 +199,7 @@ class User extends Authenticatable
         };
     }
 
-    public function asesorProfile(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function asesorProfile(): HasOne
     {
         return $this->hasOne(AsesorProfile::class, 'user_id');
     }
@@ -201,7 +211,7 @@ class User extends Authenticatable
             $profile = AsesorProfile::firstOrCreate(
                 ['user_id' => $this->id],
                 [
-                    'no_met' => $this->assessor_registration_number ?? $this->profile?->assessor_registration_number ?? ('MET.000.00' . $this->id . ' 2026'),
+                    'no_met' => $this->assessor_registration_number ?? $this->profile?->assessor_registration_number ?? ('MET.000.00'.$this->id.' 2026'),
                     'masa_berlaku' => now()->addYears(3),
                     'bidang_keahlian' => 'Otomotif Kendaraan Ringan & Sepeda Motor',
                     'is_active' => true,
@@ -209,15 +219,16 @@ class User extends Authenticatable
             );
             $this->setRelation('asesorProfile', $profile);
         }
+
         return $profile;
     }
 
-    public function asesiProfile(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function asesiProfile(): HasOne
     {
         return $this->hasOne(AsesiProfile::class, 'user_id');
     }
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(self::class, 'id');
     }
@@ -227,7 +238,7 @@ class User extends Authenticatable
         return $this->asesiProfile?->nama_perusahaan;
     }
 
-    public function applications(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function applications(): HasMany
     {
         return $this->hasMany(AssessmentApplication::class, 'user_id');
     }
@@ -248,6 +259,7 @@ class User extends Authenticatable
         foreach (array_slice($words, 0, 2) as $w) {
             $initials .= mb_substr($w, 0, 1);
         }
+
         return strtoupper($initials ?: 'U');
     }
 }

@@ -71,7 +71,7 @@ class EventController extends Controller
     public function update(Request $request, Event $event): RedirectResponse
     {
         $validated = $request->validate([
-            'kode_event' => ['required', 'string', 'max:50', 'unique:events,kode_event,' . $event->id],
+            'kode_event' => ['required', 'string', 'max:50', 'unique:events,kode_event,'.$event->id],
             'nama_event' => ['required', 'string', 'max:255'],
             'tahun_anggaran' => ['required', 'integer', 'min:2020', 'max:2099'],
             'sumber_anggaran' => ['required', 'string', 'max:50'],

@@ -138,11 +138,11 @@ class WilayahService
 
         // Fallback untuk provinsi lainnya
         $province = collect($this->getProvinces())->firstWhere('id', $provinsiId);
-        $namaProv = $province ? $province['nama'] : 'PROVINSI ' . $provinsiId;
+        $namaProv = $province ? $province['nama'] : 'PROVINSI '.$provinsiId;
 
         return [
-            ['id' => $provinsiId . '71', 'nama' => 'KOTA UTAMA ' . $namaProv],
-            ['id' => $provinsiId . '01', 'nama' => 'KABUPATEN WILAYAH ' . $namaProv],
+            ['id' => $provinsiId.'71', 'nama' => 'KOTA UTAMA '.$namaProv],
+            ['id' => $provinsiId.'01', 'nama' => 'KABUPATEN WILAYAH '.$namaProv],
         ];
     }
 
@@ -223,11 +223,11 @@ class WilayahService
         }
 
         return [
-            ['id' => $regencyId . '01', 'nama' => 'KECAMATAN PUSAT'],
-            ['id' => $regencyId . '02', 'nama' => 'KECAMATAN UTARA'],
-            ['id' => $regencyId . '03', 'nama' => 'KECAMATAN SELATAN'],
-            ['id' => $regencyId . '04', 'nama' => 'KECAMATAN BARAT'],
-            ['id' => $regencyId . '05', 'nama' => 'KECAMATAN TIMUR'],
+            ['id' => $regencyId.'01', 'nama' => 'KECAMATAN PUSAT'],
+            ['id' => $regencyId.'02', 'nama' => 'KECAMATAN UTARA'],
+            ['id' => $regencyId.'03', 'nama' => 'KECAMATAN SELATAN'],
+            ['id' => $regencyId.'04', 'nama' => 'KECAMATAN BARAT'],
+            ['id' => $regencyId.'05', 'nama' => 'KECAMATAN TIMUR'],
         ];
     }
 
@@ -274,9 +274,9 @@ class WilayahService
         }
 
         return [
-            ['id' => $districtId . '1001', 'nama' => 'KELURAHAN SATU', 'kode_pos' => '10001'],
-            ['id' => $districtId . '1002', 'nama' => 'KELURAHAN DUA', 'kode_pos' => '10002'],
-            ['id' => $districtId . '1003', 'nama' => 'KELURAHAN TIGA', 'kode_pos' => '10003'],
+            ['id' => $districtId.'1001', 'nama' => 'KELURAHAN SATU', 'kode_pos' => '10001'],
+            ['id' => $districtId.'1002', 'nama' => 'KELURAHAN DUA', 'kode_pos' => '10002'],
+            ['id' => $districtId.'1003', 'nama' => 'KELURAHAN TIGA', 'kode_pos' => '10003'],
         ];
     }
 }

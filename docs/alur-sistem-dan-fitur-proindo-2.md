@@ -211,3 +211,11 @@ Seluruh akun seeder otomotif LSP PrO Indo menggunakan kata sandi default:
 | **Excel (`.xlsx`)** | Biodata Peserta Asesi | `admin.dokumen-muk.export-excel-biodata` | Header Navy `#1E2B6E`, border tipis, auto-size cell |
 | **Excel (`.xlsx`)** | Daftar Hadir Peserta Uji | `admin.dokumen-muk.export-excel-hadir-asesi` | Header Navy `#1E2B6E`, kolom NIK, no telp, TTD tanda hadir |
 | **Excel (`.xlsx`)** | Daftar Hadir Asesor Penguji | `admin.dokumen-muk.export-excel-hadir-asesor` | Header Navy `#1E2B6E`, nomor MET, jadwal uji, durasi asesmen |
+
+---
+
+## 6. Standar Cetak MUK & Uji Presisi
+- **Ukuran & Margin**: A4 Portrait (`210mm x 297mm`), `@page { size: A4; margin: 0; }` dengan `.page-sheet` padding `5-8mm` vertikal, `15-25.5mm` horizontal.
+- **Font Stack**: Metrik-kompatibel `Calibri, 'Carlito', sans-serif` dan `Arial, 'Liberation Sans', sans-serif`, ukuran dasar `8.5pt - 11pt`, garis tabel `1pt solid #000`.
+- **Tabel & Paginasi**: HTML semantik dengan `<colgroup>` eksplisit satuan `mm`, thead berulang (`display: table-header-group`), `tr { break-inside: avoid; }`.
+- **Pengujian Lokal**: Jalankan `~/tools-muk/bin/python ~/tools-muk/verify_muk.py <doc_id> [empty|filled|extreme]` (membandingkan render Chromium dengan PDF master).

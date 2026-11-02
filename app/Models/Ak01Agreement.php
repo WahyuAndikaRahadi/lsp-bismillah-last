@@ -47,7 +47,7 @@ class Ak01Agreement extends Model
 
     public function isFullySigned(): bool
     {
-        return !empty($this->ttd_asesi) && !empty($this->ttd_asesor);
+        return ! empty($this->ttd_asesi) && ! empty($this->ttd_asesor);
     }
 
     public function getSignedByAsesorAtAttribute()
@@ -57,6 +57,6 @@ class Ak01Agreement extends Model
 
     public function getIsSignedByAsesorAttribute(): bool
     {
-        return !empty($this->tgl_ttd_asesor) || (bool) $this->is_asesor_agreed;
+        return ! empty($this->tgl_ttd_asesor) || (bool) $this->is_asesor_agreed;
     }
 }

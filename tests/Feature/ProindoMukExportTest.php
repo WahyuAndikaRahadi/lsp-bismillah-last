@@ -17,10 +17,15 @@ class ProindoMukExportTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesor;
+
     protected User $asesi;
+
     protected Scheme $scheme;
+
     protected Schedule $schedule;
+
     protected Assessment $assessment;
 
     protected function setUp(): void

@@ -34,12 +34,12 @@ class Apl02ReviewController extends Controller
             'application.schedule.tuk',
             'items',
         ])
-        ->where(function ($q) use ($asesor) {
-            $q->where('asesor_id', $asesor->id)
-              ->orWhereHas('application', fn($sub) => $sub->where('asesor_id', $asesor->id));
-        })
-        ->latest()
-        ->paginate(10);
+            ->where(function ($q) use ($asesor) {
+                $q->where('asesor_id', $asesor->id)
+                    ->orWhereHas('application', fn ($sub) => $sub->where('asesor_id', $asesor->id));
+            })
+            ->latest()
+            ->paginate(10);
 
         return view('asesor.apl02.index', [
             'apl02List' => $apl02List,
@@ -117,7 +117,8 @@ class Apl02ReviewController extends Controller
 
         } catch (\Throwable $e) {
             DB::rollBack();
-            return back()->withInput()->with('error', 'Gagal menyimpan peninjauan APL-02: ' . $e->getMessage());
+
+            return back()->withInput()->with('error', 'Gagal menyimpan peninjauan APL-02: '.$e->getMessage());
         }
     }
 }

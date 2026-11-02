@@ -36,6 +36,7 @@ class Ak05Report extends Model
     {
         $year = date('Y');
         $month = date('m');
+
         return "LAP-AK05/{$schedule->kode_jadwal}/{$month}/{$year}";
     }
 }

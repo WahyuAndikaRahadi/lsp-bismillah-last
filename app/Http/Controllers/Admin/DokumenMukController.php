@@ -102,6 +102,7 @@ class DokumenMukController extends Controller
         if (view()->exists($scheduleView)) {
             $data['assessors'] = $assessment->schedule?->assessors ?? collect();
             $data['leadAssessor'] = $data['assessor'] ?? $data['assessors']->first();
+            $data['assessments'] = $assessment->schedule?->assessments ?? collect([$assessment]);
 
             return view($scheduleView, $data);
         }

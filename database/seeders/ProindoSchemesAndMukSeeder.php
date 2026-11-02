@@ -18,7 +18,7 @@ class ProindoSchemesAndMukSeeder extends Seeder
     public function run(): void
     {
         $dataPath = database_path('seeders/data');
-        $files = File::glob($dataPath . '/*.json');
+        $files = File::glob($dataPath.'/*.json');
         sort($files);
 
         foreach ($files as $file) {

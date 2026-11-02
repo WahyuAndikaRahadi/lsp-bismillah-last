@@ -21,7 +21,7 @@ class WilayahController extends Controller
     public function regencies(Request $request): JsonResponse
     {
         $provinceId = (string) $request->query('province_id', '');
-        if (!$provinceId) {
+        if (! $provinceId) {
             return response()->json([]);
         }
 
@@ -31,7 +31,7 @@ class WilayahController extends Controller
     public function districts(Request $request): JsonResponse
     {
         $regencyId = (string) $request->query('regency_id', '');
-        if (!$regencyId) {
+        if (! $regencyId) {
             return response()->json([]);
         }
 
@@ -41,7 +41,7 @@ class WilayahController extends Controller
     public function villages(Request $request): JsonResponse
     {
         $districtId = (string) $request->query('district_id', '');
-        if (!$districtId) {
+        if (! $districtId) {
             return response()->json([]);
         }
 

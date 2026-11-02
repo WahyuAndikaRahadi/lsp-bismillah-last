@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Middleware\CheckAplApproved;
+use App\Http\Middleware\EnsureUserRole;
+use App\Http\Middleware\TrackLastStep;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,9 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-            'role' => \App\Http\Middleware\EnsureUserRole::class,
-            'apl.approved' => \App\Http\Middleware\CheckAplApproved::class,
-            'track.step' => \App\Http\Middleware\TrackLastStep::class,
+            'role' => EnsureUserRole::class,
+            'apl.approved' => CheckAplApproved::class,
+            'track.step' => TrackLastStep::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

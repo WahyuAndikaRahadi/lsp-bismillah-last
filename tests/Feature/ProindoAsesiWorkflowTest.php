@@ -3,8 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Assessment;
-use App\Models\AssessmentAk07Item;
-use App\Models\AssessmentProof;
 use App\Models\QuestionBank;
 use App\Models\Schedule;
 use App\Models\Scheme;
@@ -22,9 +20,13 @@ class ProindoAsesiWorkflowTest extends TestCase
     use RefreshDatabase;
 
     protected User $asesi;
+
     protected User $asesor;
+
     protected User $admin;
+
     protected Scheme $scheme;
+
     protected Schedule $schedule;
 
     protected function setUp(): void

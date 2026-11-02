@@ -38,7 +38,7 @@ class Event extends Model
 
     public function getFormattedPeriodeAttribute(): string
     {
-        return $this->tgl_mulai->format('d M Y') . ' s.d. ' . $this->tgl_selesai->format('d M Y');
+        return $this->tgl_mulai->format('d M Y').' s.d. '.$this->tgl_selesai->format('d M Y');
     }
 
     public function getTitleAttribute(): ?string

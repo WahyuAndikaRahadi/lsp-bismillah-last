@@ -16,8 +16,11 @@ class ProindoAdminAndProxyTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesor;
+
     protected User $asesi;
+
     protected Scheme $scheme;
 
     protected function setUp(): void

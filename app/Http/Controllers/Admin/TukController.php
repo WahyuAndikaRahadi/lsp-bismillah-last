@@ -62,7 +62,7 @@ class TukController extends Controller
     public function update(Request $request, Tuk $tuk): RedirectResponse
     {
         $validated = $request->validate([
-            'kode_tuk' => ['required', 'string', 'max:50', 'unique:tuks,kode_tuk,' . $tuk->id],
+            'kode_tuk' => ['required', 'string', 'max:50', 'unique:tuks,kode_tuk,'.$tuk->id],
             'nama_tuk' => ['required', 'string', 'max:255'],
             'jenis_tuk' => ['required', 'string', 'in:Sewaktu,Mandiri,Tempat Kerja'],
             'alamat' => ['nullable', 'string'],

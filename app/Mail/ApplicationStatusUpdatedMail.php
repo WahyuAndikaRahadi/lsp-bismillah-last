@@ -22,7 +22,7 @@ class ApplicationStatusUpdatedMail extends Mailable
         $statusText = $this->application->status->label();
 
         return new Envelope(
-            subject: 'Pembaruan Status Permohonan: ' . $this->application->nomor_pendaftaran . ' [' . $statusText . ']',
+            subject: 'Pembaruan Status Permohonan: '.$this->application->nomor_pendaftaran.' ['.$statusText.']',
         );
     }
 

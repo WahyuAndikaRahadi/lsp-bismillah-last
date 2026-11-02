@@ -26,12 +26,14 @@ class SchemeController extends Controller
     {
         if ($scheme instanceof Scheme) {
             $scheme->load('competencyUnits.elements.kuks');
+
             return view('admin.schemes.show', compact('scheme'));
         }
 
         $mScheme = Scheme::find($scheme);
         if ($mScheme) {
             $mScheme->load('competencyUnits.elements.kuks');
+
             return view('admin.schemes.show', ['scheme' => $mScheme]);
         }
 
@@ -44,6 +46,7 @@ class SchemeController extends Controller
 
         if ($certScheme) {
             $standards = Standard::where('is_active', true)->get();
+
             return view('admin.master.schemes.show', ['scheme' => $certScheme, 'standards' => $standards]);
         }
 
@@ -110,6 +113,7 @@ class SchemeController extends Controller
 
         $certScheme = CertificationScheme::findOrFail($scheme);
         $standards = Standard::where('is_active', true)->get();
+
         return view('admin.master.schemes.edit', ['scheme' => $certScheme, 'standards' => $standards]);
     }
 
@@ -172,11 +176,13 @@ class SchemeController extends Controller
         $certScheme = CertificationScheme::findOrFail($scheme);
         if ($certScheme->schedules()->exists()) {
             $certScheme->update(['is_active' => false]);
+
             return redirect()->route('admin.schemes.index')
                 ->with('warning', 'Skema tidak dapat dihapus permanen karena sudah digunakan dalam jadwal asesmen.');
         }
 
         $certScheme->delete();
+
         return redirect()->route('admin.schemes.index')
             ->with('success', 'Skema berhasil dihapus.');
     }

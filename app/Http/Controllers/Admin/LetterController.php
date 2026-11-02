@@ -15,8 +15,8 @@ class LetterController extends Controller
         $letters = Letter::when($request->filled('category'), function ($q) use ($request) {
             $q->where('category', $request->category);
         })
-        ->latest('letter_date')
-        ->paginate(15);
+            ->latest('letter_date')
+            ->paginate(15);
 
         return view('admin.letters.index', [
             'letters' => $letters,

@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Assessment;
-use App\Models\AssessmentProof;
 use App\Models\CompetencyUnit;
 use App\Models\Kuk;
 use App\Models\QuestionBank;

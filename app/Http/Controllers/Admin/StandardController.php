@@ -54,7 +54,7 @@ class StandardController extends Controller
     public function update(Request $request, Standard $standard): RedirectResponse
     {
         $validated = $request->validate([
-            'kode_standar' => ['required', 'string', 'max:100', 'unique:standards,kode_standar,' . $standard->id],
+            'kode_standar' => ['required', 'string', 'max:100', 'unique:standards,kode_standar,'.$standard->id],
             'judul_standar' => ['required', 'string', 'max:255'],
             'jenis_standar' => ['required', 'string', 'in:SKKNI,Khusus,Internasional'],
             'nomor_sk' => ['nullable', 'string', 'max:100'],

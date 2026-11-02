@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\UserRole;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +28,7 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'role' => \App\Enums\UserRole::Asesi,
+            'role' => UserRole::Asesi,
             'nik' => fake()->numerify('350############'),
             'phone' => fake()->phoneNumber(),
             'is_active' => true,

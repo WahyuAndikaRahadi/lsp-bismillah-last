@@ -67,6 +67,6 @@ class PlenoMeeting extends Model
             $next = '0001';
         }
 
-        return $prefix . $next;
+        return $prefix.$next;
     }
 }

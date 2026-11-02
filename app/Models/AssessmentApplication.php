@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class AssessmentApplication extends Model
 {
@@ -84,42 +85,42 @@ class AssessmentApplication extends Model
         return $this->belongsTo(User::class, 'asesor_id');
     }
 
-    public function apl02(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function apl02(): HasOne
     {
         return $this->hasOne(Apl02Assessment::class, 'application_id');
     }
 
-    public function apl02Assessment(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function apl02Assessment(): HasOne
     {
         return $this->hasOne(Apl02Assessment::class, 'application_id');
     }
 
-    public function ak01(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function ak01(): HasOne
     {
         return $this->hasOne(Ak01Agreement::class, 'application_id');
     }
 
-    public function ak01Agreement(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function ak01Agreement(): HasOne
     {
         return $this->hasOne(Ak01Agreement::class, 'application_id');
     }
 
-    public function ak02(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function ak02(): HasOne
     {
         return $this->hasOne(Ak02Assessment::class, 'application_id');
     }
 
-    public function ak02Assessment(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function ak02Assessment(): HasOne
     {
         return $this->hasOne(Ak02Assessment::class, 'application_id');
     }
 
-    public function ak03(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function ak03(): HasOne
     {
         return $this->hasOne(Ak03Feedback::class, 'application_id');
     }
 
-    public function ak03Feedback(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function ak03Feedback(): HasOne
     {
         return $this->hasOne(Ak03Feedback::class, 'application_id');
     }
@@ -149,8 +150,8 @@ class AssessmentApplication extends Model
      */
     public static function generateRegistrationNumber(): string
     {
-        $prefix = 'REG-' . date('Ym') . '-';
-        $latest = static::where('nomor_pendaftaran', 'LIKE', $prefix . '%')
+        $prefix = 'REG-'.date('Ym').'-';
+        $latest = static::where('nomor_pendaftaran', 'LIKE', $prefix.'%')
             ->orderByDesc('id')
             ->first();
 
@@ -161,7 +162,7 @@ class AssessmentApplication extends Model
             $nextNumber = '0001';
         }
 
-        return $prefix . $nextNumber;
+        return $prefix.$nextNumber;
     }
 
     public function scopeFilter(Builder $query, array $filters): Builder
@@ -196,11 +197,11 @@ class AssessmentApplication extends Model
             return false;
         }
 
-        return $this->documents->every(fn($doc) => $doc->status_verifikasi === DocumentVerificationStatus::Memenuhi);
+        return $this->documents->every(fn ($doc) => $doc->status_verifikasi === DocumentVerificationStatus::Memenuhi);
     }
 
     public function hasInvalidDocument(): bool
     {
-        return $this->documents->contains(fn($doc) => $doc->status_verifikasi === DocumentVerificationStatus::TidakMemenuhi);
+        return $this->documents->contains(fn ($doc) => $doc->status_verifikasi === DocumentVerificationStatus::TidakMemenuhi);
     }
 }

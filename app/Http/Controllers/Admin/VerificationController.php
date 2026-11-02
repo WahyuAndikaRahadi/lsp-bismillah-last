@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\ApplicationStatus;
-use App\Enums\DocumentVerificationStatus;
 use App\Enums\ScheduleStatus;
 use App\Http\Controllers\Controller;
 use App\Mail\ApplicationStatusUpdatedMail;
@@ -139,7 +138,7 @@ class VerificationController extends Controller
             ]);
         }
 
-        return back()->with('success', 'Status berkas ' . $document->nama_dokumen . ' berhasil diperbarui.');
+        return back()->with('success', 'Status berkas '.$document->nama_dokumen.' berhasil diperbarui.');
     }
 
     /**
@@ -160,9 +159,9 @@ class VerificationController extends Controller
             $newStatus = ApplicationStatus::from($request->status);
             $rekomendasi = $request->rekomendasi_admin;
 
-            if ($newStatus === ApplicationStatus::Diterima && !$rekomendasi) {
+            if ($newStatus === ApplicationStatus::Diterima && ! $rekomendasi) {
                 $rekomendasi = 'Diterima sebagai peserta sertifikasi';
-            } elseif ($newStatus === ApplicationStatus::Ditolak && !$rekomendasi) {
+            } elseif ($newStatus === ApplicationStatus::Ditolak && ! $rekomendasi) {
                 $rekomendasi = 'Tidak diterima';
             }
 
@@ -200,11 +199,12 @@ class VerificationController extends Controller
             }
 
             return redirect()->route('admin.verifications.show', $application)
-                ->with('success', 'Keputusan verifikasi permohonan berhasil disimpan. Status: ' . $newStatus->label());
+                ->with('success', 'Keputusan verifikasi permohonan berhasil disimpan. Status: '.$newStatus->label());
 
         } catch (\Throwable $e) {
             DB::rollBack();
-            return back()->with('error', 'Gagal memproses verifikasi: ' . $e->getMessage());
+
+            return back()->with('error', 'Gagal memproses verifikasi: '.$e->getMessage());
         }
     }
 

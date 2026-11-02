@@ -7,12 +7,9 @@ use App\Models\AsesorProfile;
 use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
 use App\Models\Event;
-use App\Models\InstrumentReview;
-use App\Models\MkvaAssignment;
 use App\Models\Standard;
 use App\Models\SystemMessage;
 use App\Models\Tuk;
-use App\Models\TukVerification;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -22,9 +19,13 @@ class AsesorCompletePortalTest extends TestCase
     use RefreshDatabase;
 
     private User $asesorUser;
+
     private AsesorProfile $asesorProfile;
+
     private CertificationScheme $scheme;
+
     private Tuk $tuk;
+
     private AssessmentSchedule $schedule;
 
     protected function setUp(): void

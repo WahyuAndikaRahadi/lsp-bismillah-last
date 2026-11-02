@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enums\Apl02Status;
 use App\Enums\ApplicationStatus;
 use App\Enums\ScheduleStatus;
 use App\Models\Ak01Agreement;
@@ -10,10 +11,10 @@ use App\Models\Ak02UnitAssessment;
 use App\Models\Ak03Feedback;
 use App\Models\Ak05Report;
 use App\Models\Apl02Assessment;
-use App\Models\AssessmentApplication;
-use App\Models\AssessmentSchedule;
 use App\Models\AsesiProfile;
 use App\Models\AsesorProfile;
+use App\Models\AssessmentApplication;
+use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
 use App\Models\CompetencyElement;
 use App\Models\CompetencyUnit;
@@ -32,10 +33,15 @@ class PlenoAndPdfGenerationTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
+
     protected User $asesor;
+
     protected User $asesi;
+
     protected AssessmentSchedule $schedule;
+
     protected AssessmentApplication $application;
+
     protected ScheduleAsesor $scheduleAsesor;
 
     protected function setUp(): void
@@ -162,7 +168,7 @@ class PlenoAndPdfGenerationTest extends TestCase
         $apl02 = Apl02Assessment::create([
             'application_id' => $this->application->id,
             'asesor_id' => $this->asesor->id,
-            'status' => \App\Enums\Apl02Status::Diverifikasi,
+            'status' => Apl02Status::Diverifikasi,
             'rekomendasi' => 'dapat_dilanjutkan',
             'catatan_asesor' => 'Bukti portofolio lengkap dan valid.',
             'tgl_asesi_sign' => now(),
