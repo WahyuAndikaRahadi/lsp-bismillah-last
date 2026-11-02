@@ -183,7 +183,7 @@ class ProindoAsesiWorkflowTest extends TestCase
             'ijazah_smk' => $dummyIjazah,
         ]);
 
-        $response->assertRedirect(route('asesi.assessment.apl', $assessment));
+        $response->assertRedirect(route('asesi.dashboard'));
         $this->assertDatabaseHas('t_assessments', [
             'id' => $assessment->id,
             'apl_status' => 'SUBMITTED',

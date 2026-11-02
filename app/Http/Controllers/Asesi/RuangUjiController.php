@@ -34,10 +34,6 @@ class RuangUjiController extends Controller
             return redirect()->route('asesi.assessment.apl', $assessment)
                 ->with('error', 'FR.AK.01 hanya dapat diakses setelah permohonan APL Anda disetujui asesor.');
         }
-        if (AssessmentAk07Item::where('assessment_id', $assessment->id)->doesntExist()) {
-            return redirect()->route('asesi.dashboard')
-                ->with('warning', 'Asesor belum menetapkan formulir penyesuaian asesmen (FR.AK.07). FR.AK.01 persetujuan asesmen baru dapat diakses setelah FR.AK.07 ditetapkan.');
-        }
 
         $assessment->load('schedule.scheme');
 
@@ -53,9 +49,6 @@ class RuangUjiController extends Controller
         }
         if ($assessment->apl_status !== 'APPROVED') {
             return back()->with('error', 'FR.AK.01 hanya dapat disetujui setelah permohonan APL Anda disetujui asesor.');
-        }
-        if (AssessmentAk07Item::where('assessment_id', $assessment->id)->doesntExist()) {
-            return back()->with('error', 'FR.AK.01 belum dapat ditandatangani karena formulir penyesuaian asesmen (FR.AK.07) belum ditetapkan asesor.');
         }
 
         $request->validate([
@@ -113,6 +106,11 @@ class RuangUjiController extends Controller
         if ($assessment->apl_status !== 'APPROVED') {
             return redirect()->route('asesi.assessment.apl', $assessment)
                 ->with('warning', 'Ruang Uji baru dapat diakses setelah permohonan APL Anda disetujui.');
+        }
+
+        if (! $assessment->ak01_agreed_at) {
+            return redirect()->route('asesi.assessment.ak01', $assessment)
+                ->with('info', 'Silakan setujui Formulir FR.AK.01 (Persetujuan Asesmen & Kerahasiaan) terlebih dahulu sebelum memasuki Ruang Uji.');
         }
 
         $assessment->load('schedule.scheme', 'schedule.assessors', 'iaResponses', 'assessor');

@@ -97,11 +97,11 @@
 - Pastikan tidak ada satupun route yang menyebabkan redirect loop (HTTP 302 bolak-balik).
 
 **Step-by-step instructions:**
-- [ ] 1. Buat test `tests/Feature/RedirectAuditAndLoopEliminationTest.php` yang menguji status asesi pada tiap fase dan memverifikasi respon HTTP bukan rantai redirect berulang (maksimal 1 jump).
-- [ ] 2. Jalankan test dan catat controller mana yang memicu looping atau redirect ganda.
-- [ ] 3. Refactor method di `RuangUjiController.php`, `AplController.php`, dan `JadwalController.php` untuk memastikan alur transisi status langsung ke route tujuan tanpa pantulan.
-- [ ] 4. Jalankan `php artisan test --filter=RedirectAuditAndLoopEliminationTest` dan pastikan lulus.
-- [ ] 5. Commit dengan pesan `refactor: eliminate chain redirects and ensure deterministic routing`.
+- [x] 1. Buat test `tests/Feature/RedirectAuditAndLoopEliminationTest.php` yang menguji status asesi pada tiap fase dan memverifikasi respon HTTP bukan rantai redirect berulang (maksimal 1 jump).
+- [x] 2. Jalankan test dan catat controller mana yang memicu looping atau redirect ganda.
+- [x] 3. Refactor method di `RuangUjiController.php`, `AplController.php`, dan `JadwalController.php` untuk memastikan alur transisi status langsung ke route tujuan tanpa pantulan.
+- [x] 4. Jalankan `php artisan test --filter=RedirectAuditAndLoopEliminationTest` dan pastikan lulus.
+- [x] 5. Commit dengan pesan `refactor: eliminate chain redirects and ensure deterministic routing`.
 
 ---
 
@@ -124,12 +124,12 @@
 - Mengikuti palet resmi: LSP Navy, Dark Navy, LSP Red, dan background bersih tanpa gradien norak.
 
 **Step-by-step instructions:**
-- [ ] 1. Buat test `tests/Feature/AsesiDashboardNextStepTest.php` yang memeriksa konten kartu "Langkah Berikutnya" untuk tiap status asesmen asesi.
-- [ ] 2. Jalankan test dan pastikan gagal karena kartu terpadu belum tersedia.
-- [ ] 3. Di `Asesi\DashboardController.php` dan `Asesi\JadwalController.php`, hitung status aktif dan buat struktur data `$nextStep` (title, description, action_label, action_url, badge).
-- [ ] 4. Refactor `resources/views/asesi/dashboard.blade.php` dengan tata letak rapat, fungsional, dan kartu "Langkah Berikutnya" yang dominan.
-- [ ] 5. Jalankan `php artisan test --filter=AsesiDashboardNextStepTest` dan pastikan hijau.
-- [ ] 6. Commit dengan pesan `feat: add focused single next-step indicator to asesi dashboard`.
+- [x] 1. Buat test `tests/Feature/AsesiDashboardNextStepTest.php` yang memeriksa konten kartu "Langkah Berikutnya" untuk tiap status asesmen asesi.
+- [x] 2. Jalankan test dan pastikan gagal karena kartu terpadu belum tersedia.
+- [x] 3. Di `Asesi\DashboardController.php` dan `Asesi\JadwalController.php`, hitung status aktif dan buat struktur data `$nextStep` (title, description, action_label, action_url, badge).
+- [x] 4. Refactor `resources/views/asesi/dashboard.blade.php` dengan tata letak rapat, fungsional, dan kartu "Langkah Berikutnya" yang dominan.
+- [x] 5. Jalankan `php artisan test --filter=AsesiDashboardNextStepTest` dan pastikan hijau.
+- [x] 6. Commit dengan pesan `feat: add focused single next-step indicator to asesi dashboard`.
 
 ---
 

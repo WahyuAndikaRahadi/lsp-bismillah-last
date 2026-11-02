@@ -44,7 +44,7 @@ class AplController extends Controller
         }
 
         if ($assessment->apl_status === 'SUBMITTED') {
-            return back()->with('info', 'Permohonan APL Anda sudah diajukan dan sedang menunggu verifikasi asesor.');
+            return redirect()->route('asesi.dashboard')->with('info', 'Permohonan APL Anda sudah diajukan dan sedang menunggu verifikasi asesor.');
         }
 
         $scheduleAssessors = $assessment->schedule->assessors ?? collect();
@@ -224,6 +224,6 @@ class AplController extends Controller
             }
         });
 
-        return redirect()->route('asesi.assessment.apl', $assessment)->with('success', 'Menunggu verifikasi asesor');
+        return redirect()->route('asesi.dashboard')->with('success', 'Formulir APL-01 dan APL-02 berhasil dikirim. Menunggu verifikasi berkas oleh asesor.');
     }
 }

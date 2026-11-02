@@ -52,6 +52,65 @@
         </div>
     @endif
 
+    {{-- Langkah Berikutnya (Single Focused Next-Step Card) --}}
+    @if(isset($nextStep))
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 border-l-4 border-l-lsp-navy">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div class="space-y-2 flex-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-800 border border-slate-300">
+                            <svg class="w-3.5 h-3.5 mr-1 text-lsp-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            Langkah Berikutnya
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-semibold border {{ $nextStep['badge_color'] }}">
+                            {{ $nextStep['badge'] }}
+                        </span>
+                    </div>
+
+                    <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">
+                        {{ $nextStep['title'] }}
+                    </h2>
+
+                    <p class="text-sm text-slate-600 max-w-2xl leading-relaxed">
+                        {{ $nextStep['description'] }}
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                    @if(!empty($nextStep['is_code_form']))
+                        <form action="{{ route('asesi.jadwal.join') }}" method="POST" class="flex flex-col sm:flex-row items-stretch gap-2">
+                            @csrf
+                            <input type="text" name="code" placeholder="Kode Jadwal" required maxlength="20" class="px-3.5 py-2.5 text-xs font-mono uppercase border border-slate-300 rounded-lg focus:ring-2 focus:ring-lsp-navy text-slate-900 bg-white">
+                            <button type="submit" class="px-5 py-2.5 bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg text-xs font-bold shadow-sm transition flex items-center justify-center space-x-1.5">
+                                <span>{{ $nextStep['action_label'] }}</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </button>
+                        </form>
+                    @else
+                        @if(!empty($nextStep['action_url']) && !empty($nextStep['action_label']))
+                            <a href="{{ $nextStep['action_url'] }}" class="px-5 py-2.5 bg-lsp-navy hover:bg-lsp-navy-dark text-white rounded-lg text-xs font-bold shadow-sm transition flex items-center justify-center space-x-1.5 text-center">
+                                <span>{{ $nextStep['action_label'] }}</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        @endif
+
+                        @if(!empty($nextStep['secondary_url']) && !empty($nextStep['secondary_label']))
+                            <a href="{{ $nextStep['secondary_url'] }}" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold border border-slate-300 transition text-center">
+                                {{ $nextStep['secondary_label'] }}
+                            </a>
+                        @endif
+                    @endif
+                </div>
+            </div>
+        </div>
+    @endif
+
     {{-- Stats Cards --}}
     @php
         $assessments = $assessments ?? auth()->user()->scheduleAssessments()->with(['schedule.scheme', 'assessor'])->latest()->get();
