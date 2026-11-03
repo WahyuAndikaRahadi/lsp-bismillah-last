@@ -15,3 +15,11 @@ Arsip hanya untuk diagnosis; jangan cherry-pick atau menyalin kode, migration, v
 Original SOP lokal tidak ikut commit dokumentasi. Jika clone implementer tidak memilikinya, dapatkan dari owner dengan hash sesuai `SOURCE_INDEX.md`. Ketidaktersediaan source adalah blocker, bukan izin menebak.
 
 Verifikasi dokumentasi: tautan lokal README/dokumen baru/task valid; 40 task terindeks; 3.766 baris matriks mempunyai tujuh skema, sumber nilai, task capture dan actor; 252 hash original pada indeks cocok dengan file lokal. Diff source `app`, `database`, `resources`, `config`, `routes`, `tests` terhadap `003f90f` kosong. Tidak menjalankan suite/build/runtime aplikasi karena task ini hanya dokumentasi. Verifikasi hash dan struktur CSV tidak berarti seluruh sel original sudah disahkan; pekerjaan transkripsi/konflik yang belum selesai dijelaskan di FIELD_COVERAGE dan pertanyaan owner.
+
+## Bukti Verifikasi Lingkungan Task 00
+- Branch aktif: `impl/gemini-core-certification` (berangkat dari `plan/gemini-core-certification` commit 885d831, parent baseline `003f90f`).
+- Tag `archive/astra-implementation`: utuh.
+- Lingkungan eksekusi: PHP 8.5.10, Composer 2.10.3, Node v26.11.1.
+- Isolasi database test: `phpunit.xml` terisolasi pada `sqlite` in-memory (`:memory:`), `CACHE_STORE=array`, `MAIL_MAILER=array`, `QUEUE_CONNECTION=sync`.
+- File owner: `CLAUDE.md`, `composer.json`, `composer.lock`, `.claude/`, `.mcp.json`, `boost.json`, `docs/reference/` tetap dipertahankan dan tidak disentuh.
+

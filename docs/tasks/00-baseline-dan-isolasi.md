@@ -1,6 +1,6 @@
 # Task 00 — Kunci baseline dan lingkungan implementasi
 
-Status: [ ] belum dikerjakan. Dependency: **—**.
+Status: [x] selesai. Dependency: **—**.
 
 ## Tujuan
 

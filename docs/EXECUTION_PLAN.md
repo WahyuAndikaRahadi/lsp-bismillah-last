@@ -16,7 +16,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | Urutan | Selesai | Task sesi | Dependency | Evidence |
 |---|---|---|---|---|
 
-| 1 | [ ] | [00 — Kunci baseline dan lingkungan implementasi](tasks/00-baseline-dan-isolasi.md) | — | Belum dijalankan |
+| 1 | [x] | [00 — Kunci baseline dan lingkungan implementasi](tasks/00-baseline-dan-isolasi.md) | — | 8c0cc29; git rev-parse, php -v, node -v; exit 0; env isolated sqlite memory; no deviations |
 | 2 | [ ] | [01 — Tutup endpoint berisiko dan modul di luar scope](tasks/01-containment.md) | 00 | Belum dijalankan |
 | 3 | [ ] | [02 — Tetapkan registry formulir bersama dan konflik sumber](tasks/02-registry-original.md) | 00 | Belum dijalankan |
 | 4 | [ ] | [03 — Satu model core dan reconciliation tanpa collision](tasks/03-model-dan-rekonsiliasi.md) | 01,02 (hanya schema common yang sumbernya tersedia) | Belum dijalankan |
