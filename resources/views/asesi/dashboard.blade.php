@@ -237,8 +237,8 @@
                             @endif
                         </div>
 
-                        {{-- Modular MUK Architecture Cards (Per-Modul) --}}
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        {{-- Modular MUK Architecture Cards (Hanya Menampilkan Modul yang Aktif / Terbuka) --}}
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-{{ $hasFinalDecision ? '4' : ($aplApproved ? '3' : '1') }} gap-3">
                             {{-- Modul 1: FR.APL.01 & FR.APL.02 --}}
                             <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $aplApproved ? 'border-emerald-200' : 'border-slate-200' }}">
                                 <div>
@@ -264,88 +264,68 @@
                                 </div>
                             </div>
 
-                            {{-- Modul 2: FR.AK.01 --}}
-                            <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $ak01Agreed ? 'border-emerald-200' : 'border-slate-200' }}">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 2</span>
-                                        @if($ak01Agreed)
+                            @if($aplApproved)
+                                {{-- Modul 2: FR.AK.01 (Persetujuan Otomatis - Asesi Tidak Perlu TTD Manual) --}}
+                                <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 border-emerald-200">
+                                    <div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 2</span>
                                             <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Disepakati</span>
-                                        @elseif($aplApproved)
-                                            <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">Menunggu TTD</span>
-                                        @else
-                                            <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">Terkunci</span>
-                                        @endif
+                                        </div>
+                                        <h4 class="font-bold text-xs text-slate-900 mt-1.5">FR.AK.01</h4>
+                                        <p class="text-[11px] text-slate-500 mt-0.5">Persetujuan asesmen & kerahasiaan (tanda tangan otomatis tersemat)</p>
                                     </div>
-                                    <h4 class="font-bold text-xs text-slate-900 mt-1.5">FR.AK.01</h4>
-                                    <p class="text-[11px] text-slate-500 mt-0.5">Persetujuan asesmen dan komitmen kerahasiaan</p>
-                                </div>
-                                <div class="mt-3 pt-2 border-t border-slate-200/60">
-                                    @if($aplApproved)
-                                        <a href="{{ route('asesi.assessment.ak01', $item->id) }}" class="block text-center text-xs font-bold px-3 py-1.5 rounded {{ $ak01Agreed ? 'bg-white hover:bg-slate-100 border border-slate-300 text-slate-700' : 'bg-indigo-600 hover:bg-indigo-700 text-white' }} transition">
-                                            {{ $ak01Agreed ? 'Lihat Lembar AK.01' : 'Setujui Persetujuan (AK.01) →' }}
+                                    <div class="mt-3 pt-2 border-t border-slate-200/60">
+                                        <a href="{{ route('asesi.assessment.ak01', $item->id) }}" class="block text-center text-xs font-bold px-3 py-1.5 rounded bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 transition">
+                                            Lihat Lembar AK.01
                                         </a>
-                                    @else
-                                        <span class="block text-center text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-400 cursor-not-allowed">
-                                            Menunggu APL
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            {{-- Modul 3: Ruang Uji MUK (CBT IA.05, Praktik IA.01/02, Lisan IA.03) --}}
-                            <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $hasFinalDecision ? 'border-emerald-200' : 'border-slate-200' }}">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 3</span>
-                                        @if($hasFinalDecision)
-                                            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Uji Selesai</span>
-                                        @elseif($aplApproved)
-                                            <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">Aktif</span>
-                                        @else
-                                            <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">Terkunci</span>
-                                        @endif
                                     </div>
-                                    <h4 class="font-bold text-xs text-slate-900 mt-1.5">Ruang Uji MUK</h4>
-                                    <p class="text-[11px] text-slate-500 mt-0.5">Ujian Teori CBT (IA.05), Praktik & PMO sesuai instruksi asesor</p>
                                 </div>
-                                <div class="mt-3 pt-2 border-t border-slate-200/60">
-                                    @if($aplApproved)
+
+                                {{-- Modul 3: Ruang Uji MUK (Aktif & Terbuka) --}}
+                                <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $hasFinalDecision ? 'border-emerald-200' : 'border-indigo-200 ring-1 ring-indigo-500/20' }}">
+                                    <div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 3</span>
+                                            @if($hasFinalDecision)
+                                                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Uji Selesai</span>
+                                            @else
+                                                <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">Aktif Terbuka</span>
+                                            @endif
+                                        </div>
+                                        <h4 class="font-bold text-xs text-slate-900 mt-1.5">Ruang Uji MUK</h4>
+                                        <p class="text-[11px] text-slate-500 mt-0.5">Ujian Teori CBT (IA.05), Praktik & PMO sesuai instruksi asesor</p>
+                                    </div>
+                                    <div class="mt-3 pt-2 border-t border-slate-200/60">
                                         <a href="{{ route('asesi.assessment.ruang-uji', $item->id) }}" class="block text-center text-xs font-bold px-3 py-1.5 rounded bg-brand-600 hover:bg-brand-700 text-white transition">
                                             Masuk Ruang Uji →
                                         </a>
-                                    @else
-                                        <span class="block text-center text-xs font-semibold px-3 py-1.5 rounded bg-slate-100 text-slate-400 cursor-not-allowed">
-                                            Menunggu APL
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            {{-- Modul 4: Hasil & Sertifikat BNSP / Umpan Balik --}}
-                            <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $isKompeten ? 'border-emerald-300 bg-emerald-50/30' : 'border-slate-200' }}">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 4</span>
-                                        @if($isKompeten && $item->no_sertifikat)
-                                            <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">Sertifikat Terbit</span>
-                                        @elseif($hasFinalDecision)
-                                            <span class="text-[10px] font-bold text-slate-700 bg-slate-200 px-1.5 py-0.5 rounded">{{ $item->final_result }}</span>
-                                        @else
-                                            <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">Proses</span>
-                                        @endif
                                     </div>
-                                    <h4 class="font-bold text-xs text-slate-900 mt-1.5">{{ 'Hasil & Sertifikat' }}</h4>
-                                    <p class="text-[11px] text-slate-500 mt-0.5">
-                                        @if($isKompeten && $item->no_sertifikat)
-                                            No: <strong class="text-slate-800 font-mono">{{ $item->no_sertifikat }}</strong>
-                                        @else
-                                            Rekaman AK.02, Umpan Balik (AK.03) & Sertifikat
-                                        @endif
-                                    </p>
                                 </div>
-                                <div class="mt-3 pt-2 border-t border-slate-200/60 flex items-center space-x-1.5">
-                                    @if($hasFinalDecision)
+                            @endif
+
+                            @if($hasFinalDecision)
+                                {{-- Modul 4: Hasil & Sertifikat BNSP / Umpan Balik --}}
+                                <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $isKompeten ? 'border-emerald-300 bg-emerald-50/30' : 'border-slate-200' }}">
+                                    <div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-mono text-[10px] font-bold text-slate-500">MODUL 4</span>
+                                            @if($isKompeten && $item->no_sertifikat)
+                                                <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">Sertifikat Terbit</span>
+                                            @else
+                                                <span class="text-[10px] font-bold text-slate-700 bg-slate-200 px-1.5 py-0.5 rounded">{{ $item->final_result }}</span>
+                                            @endif
+                                        </div>
+                                        <h4 class="font-bold text-xs text-slate-900 mt-1.5">{{ 'Hasil & Sertifikat' }}</h4>
+                                        <p class="text-[11px] text-slate-500 mt-0.5">
+                                            @if($isKompeten && $item->no_sertifikat)
+                                                No: <strong class="text-slate-800 font-mono">{{ $item->no_sertifikat }}</strong>
+                                            @else
+                                                Rekaman AK.02, Umpan Balik (AK.03) & Sertifikat
+                                            @endif
+                                        </p>
+                                    </div>
+                                    <div class="mt-3 pt-2 border-t border-slate-200/60 flex items-center space-x-1.5">
                                         @if($isKompeten && $item->no_sertifikat)
                                             <a href="{{ route('documents.sertifikat', $item->id) }}" class="flex-1 text-center text-xs font-bold px-2 py-1.5 rounded bg-emerald-600 hover:bg-emerald-700 text-white transition">
                                                 Unduh Sertifikat
@@ -358,14 +338,19 @@
                                         <a href="{{ route('asesi.assessment.ak03', $item->id) }}" class="text-center text-xs font-bold px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 transition" title="FR.AK.03 Umpan Balik">
                                             AK.03
                                         </a>
-                                    @else
-                                        <span class="w-full text-center text-xs font-semibold px-2 py-1.5 rounded bg-slate-100 text-slate-400 cursor-not-allowed">
-                                            Tahap Akhir
-                                        </span>
-                                    @endif
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+
+                        @if(!$aplApproved)
+                            <div class="mt-3 px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs text-slate-600">
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                                    <span><strong>Ruang Uji Terbuka Otomatis:</strong> Setelah berkas APL disetujui asesor penguji, instrumen uji akan otomatis aktif di dasbor ini.</span>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 @endforeach
             </div>

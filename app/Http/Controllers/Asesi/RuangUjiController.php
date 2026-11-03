@@ -115,7 +115,7 @@ class RuangUjiController extends Controller
         }
 
         $assessment->load('schedule.scheme', 'schedule.assessors', 'iaResponses', 'assessor');
-        $selectedInstruments = $assessment->schedule->getEffectiveInstruments();
+        $selectedInstruments = $assessment->getUnlockedInstruments();
         $responses = $assessment->iaResponses->keyBy('instrument_code');
 
         return view('asesi.ruang-uji.hub', compact('assessment', 'selectedInstruments', 'responses'));

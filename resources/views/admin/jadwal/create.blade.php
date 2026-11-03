@@ -108,34 +108,6 @@
             </div>
         </div>
 
-        {{-- Instruments Checkboxes --}}
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
-            <h2 class="text-base font-bold text-slate-900">Instrumen Asesmen yang Digunakan</h2>
-            <p class="text-xs text-slate-500">Pilih instrumen yang akan diaktifkan untuk jadwal asesmen ini</p>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                @php
-                    $instruments = [
-                        'AK01' => 'FR.AK.01 - Persetujuan Asesmen',
-                        'AK07' => 'FR.AK.07 - Penyesuaian',
-                        'IA01' => 'FR.IA.01 - Ceklis Observasi',
-                        'IA02' => 'FR.IA.02 - Tugas Praktik Demonstrasi',
-                        'IA03' => 'FR.IA.03 - Pertanyaan PMO (Lisan)',
-                        'IA05' => 'FR.IA.05 - Ujian Tertulis Pilihan Ganda (CBT)',
-                    ];
-                @endphp
-                @foreach($instruments as $key => $label)
-                    <label class="flex items-center space-x-2.5 p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
-                        <input type="checkbox" name="instruments[]" value="{{ $key }}" class="rounded border-slate-300 text-brand-600 focus:ring-brand-500"
-                            {{ in_array($key, old('instruments', ['AK01', 'IA01', 'IA02', 'IA03', 'IA05'])) ? 'checked' : '' }}>
-                        <span class="text-xs font-semibold text-slate-800">{{ $label }}</span>
-                    </label>
-                @endforeach
-            </div>
-            @error('instruments')
-                <p class="text-xs text-rose-600 mt-1">{{ $message }}</p>
-            @enderror
-        </div>
 
         {{-- Schedule Code & Notes --}}
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">

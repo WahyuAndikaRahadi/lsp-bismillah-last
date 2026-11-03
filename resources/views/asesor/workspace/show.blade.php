@@ -285,6 +285,21 @@
                 </p>
             </div>
 
+            {{-- Daftar Instrumen yang Disepakati --}}
+            <div class="rounded-lg bg-slate-50 border border-slate-200 p-4 space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs uppercase tracking-wider text-slate-700">Instrumen Uji Terbuka (Disepakati):</span>
+                    <span class="text-[11px] text-slate-500">Dapat disesuaikan via Aksi Massal Jadwal</span>
+                </div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                    @foreach($assessment->getUnlockedInstruments() as $code)
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-white text-slate-800 border border-slate-300 shadow-2xs">
+                            {{ $code }}
+                        </span>
+                    @endforeach
+                </div>
+            </div>
+
             {{-- Dual Signatures Grid --}}
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                 {{-- Asesi Signature Box --}}

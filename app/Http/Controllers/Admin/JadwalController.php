@@ -59,7 +59,7 @@ class JadwalController extends Controller
             'start_time' => $validated['start_time'] ?? null,
             'end_time' => $validated['end_time'] ?? null,
             'duration_minutes' => $validated['duration_minutes'] ?? null,
-            'selected_instruments' => $validated['selected_instruments'] ?? [],
+            'selected_instruments' => ! empty($validated['selected_instruments']) ? $validated['selected_instruments'] : ['IA01', 'IA01B', 'IA02', 'IA03', 'IA05'],
             'notes' => $validated['notes'] ?? null,
             'code' => $code,
             'status' => 'ACTIVE',

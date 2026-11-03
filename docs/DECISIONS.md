@@ -57,3 +57,14 @@ Dokumen ini mencatat seluruh keputusan arsitektur, alasan mendalam, dan alternat
 - **Keputusan:** Mengadopsi tata letak resmi formulir BNSP (kop lembaga, logo lisensi BNSP, nomor dokumen di pojok kanan atas, kotak metadata, tabel unit dan KUK bergaris tegas, serta kolom tanda tangan dua sisi). Menghilangkan gradien ungu/pink mencolok dan animasi dekoratif yang tidak perlu.
 - **Alasan:** Sistem ini dipersiapkan untuk audit akreditasi BNSP, sehingga tampilan dokumen pada layar dan hasil cetak PDF harus memancarkan kewibawaan institusional lembaga sertifikasi resmi.
 - **Alternatif yang Ditolak:** Memakai tema dashboard modern kasual yang tidak mencerminkan format dokumen resmi negara.
+
+---
+
+### Keputusan 9: Seleksi Massal Asesor (Bulk Action) & Sistem Unlock Modul Ruang Uji
+- **Keputusan:**
+  1. Menghapus kotak pilihan instrumen dari formulir jadwal Admin (`admin/jadwal/create` & `edit`). Admin murni mengelola administrasi (Skema, Tanggal, Jam, TUK, Asesor).
+  2. Memindahkan kendali aktivasi instrumen uji (`FR.IA`) ke ranah Asesor dan kesepakatan `FR.AK.01`.
+  3. Menyediakan fitur **Seleksi Massal (Bulk Action / Multi-Select)** pada dasbor asesor (`asesor/jadwal/{id}/asesi`) dengan tombol satu-klik *"Setujui APL & Buka Ruang Uji Massal"*, yang serentak mengesahkan APL, menyematkan tanda tangan profil asesi & asesor pada `FR.AK.01`, membuat lembar `FR.AK.07` standar, dan membuka Ruang Uji untuk seluruh kandidat terpilih.
+  4. Meniadakan kartu/elemen visual berlabel "Terkunci" pada dasbor asesi dan ruang uji; antarmuka hanya menampilkan modul/instrumen yang memang telah aktif dan siap dikerjakan (*clean progressive unlocking*). Asesi tidak dibebani form penandatanganan manual untuk `FR.AK.01` atau `FR.AK.07`.
+- **Alasan:** Asesor di lapangan (TUK) sering menangani 10–30 peserta sekaligus dalam keterbatasan waktu. Memaksa asesor mengeklik dan menyetujui satu per satu, atau memaksa asesi mengisi form persetujuan tambahan di layar komputer umum, sangat menghambat operasional. Secara metodologi BNSP, penentuan bukti instrumen uji disepakati bersama asesor di `FR.AK.01`, bukan dipatok kaku oleh Admin saat membuat jadwal.
+- **Alternatif yang Ditolak:** Membiarkan Admin mencentang instrumen di jadwal secara kaku, memaksa asesi membuka form AK-01 mandiri untuk klik tanda tangan, dan menampilkan placeholder kartu mati "🔒 Terkunci" yang memenuhi layar asesi.

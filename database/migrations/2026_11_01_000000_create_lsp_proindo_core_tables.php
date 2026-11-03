@@ -161,7 +161,7 @@ return new class extends Migration
                 $table->time('start_time');
                 $table->time('end_time');
                 $table->integer('duration_minutes')->nullable();
-                $table->json('selected_instruments');
+                $table->json('selected_instruments')->nullable();
                 $table->text('notes')->nullable();
                 $table->json('ak05_report')->nullable();
                 $table->json('ak06_review')->nullable();

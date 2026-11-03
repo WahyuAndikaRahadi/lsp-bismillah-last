@@ -66,15 +66,15 @@
     @endif
 
     @php
-        $selectedInstruments = $selectedInstruments ?? $assessment->schedule->getEffectiveInstruments();
+        $unlockedInstruments = $assessment->getUnlockedInstruments();
         $responses = $responses ?? $assessment->iaResponses->keyBy('instrument_code');
-        $hasCbt = in_array('IA05', $selectedInstruments);
-        $hasIa02 = in_array('IA02', $selectedInstruments);
+        $hasCbt = in_array('IA05', $unlockedInstruments);
+        $hasIa02 = in_array('IA02', $unlockedInstruments);
     @endphp
 
     @if($hasCbt || $hasIa02)
         <div class="space-y-3">
-            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">Tugas & Aktivitas Asesi</h2>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">Tugas & Aktivitas Asesi (Instrumen Terbuka)</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 @if($hasCbt)
                     @php $ia05Resp = $responses['IA05'] ?? null; @endphp
@@ -131,14 +131,14 @@
     {{-- Tracker Status Instrumen Asesmen --}}
     <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
         <div class="px-5 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-700 font-mono">Daftar Instrumen Uji Kompetensi</h2>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-700 font-mono">Daftar Instrumen Uji Kompetensi yang Disepakati</h2>
             <span class="text-xs text-slate-500">Tanda tangan otomatis tersemat (FR.AK.01)</span>
         </div>
         <div class="divide-y divide-slate-100 text-xs">
             @php
                 $labels = ['IA01' => ['FR.IA.01 Ceklis Observasi Praktik', 'Dinilai Asesor'], 'IA01B' => ['FR.IA.01B Lembar Laporan Pemeriksaan', 'Dinilai Asesor'], 'IA02' => ['FR.IA.02 Tugas Praktik Demonstrasi', 'Asesi / Asesor'], 'IA03' => ['FR.IA.03 Pertanyaan Mendukung Observasi', 'Dinilai Asesor'], 'IA05' => ['FR.IA.05 Pertanyaan Tertulis (CBT)', 'Mandiri Asesi']];
             @endphp
-            @foreach($selectedInstruments as $instCode)
+            @foreach($unlockedInstruments as $instCode)
                 @php
                     $meta = $labels[$instCode] ?? ['FR.'.$instCode, 'Instrumen'];
                     $resp = $responses[$instCode] ?? null;

@@ -25,6 +25,7 @@ class Assessment extends Model
         'apl_status',
         'apl_revision_notes',
         'last_active_step',
+        'unlocked_instruments',
         'status',
         'admin_status',
         'admin_notes',
@@ -63,6 +64,7 @@ class Assessment extends Model
             'asesi_signed_at' => 'datetime',
             'tgl_terbit_sertifikat' => 'date',
             'masa_berlaku_sertifikat' => 'date',
+            'unlocked_instruments' => 'array',
         ];
     }
 
@@ -160,5 +162,28 @@ class Assessment extends Model
     public function isCompleted(): bool
     {
         return $this->status === 'COMPLETED';
+    }
+
+    /**
+     * Get the active/unlocked MUK instruments for this candidate.
+     * Defaults to the schedule's effective instruments when not customized.
+     */
+    public function getUnlockedInstruments(): array
+    {
+        if (! empty($this->unlocked_instruments) && is_array($this->unlocked_instruments)) {
+            return array_values(array_map('strtoupper', $this->unlocked_instruments));
+        }
+
+        $effective = $this->schedule?->getEffectiveInstruments() ?? ['IA01', 'IA01B', 'IA02', 'IA03', 'IA05'];
+        // Filter out non-IA instruments from ruang uji if any
+        return array_values(array_filter($effective, fn ($code) => ! in_array(strtoupper($code), ['AK01', 'AK07'])));
+    }
+
+    /**
+     * Determine if a specific MUK instrument is unlocked for this candidate.
+     */
+    public function isInstrumentUnlocked(string $code): bool
+    {
+        return in_array(strtoupper($code), $this->getUnlockedInstruments(), true);
     }
 }

@@ -103,6 +103,9 @@ class AplReviewController extends Controller
                     'ak01_agreed_at' => $assessment->ak01_agreed_at ?? $now,
                     'asesi_signature' => $asesiSig,
                     'asesi_signed_at' => $assessment->asesi_signed_at ?? $now,
+                    'assessor_signature' => $assessment->assessor_signature ?? $assessorSig,
+                    'assessor_signed_at' => $assessment->assessor_signed_at ?? $now,
+                    'esign_consent_at' => $assessment->esign_consent_at ?? $now,
                     'last_active_step' => 'ruang-uji',
                 ]);
             }

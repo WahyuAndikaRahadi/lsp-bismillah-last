@@ -287,6 +287,7 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/jadwal', [App\Http\Controllers\Asesor\JadwalController::class, 'index'])->name('jadwal.index');
         Route::get('/jadwal/{schedule}/asesi', [App\Http\Controllers\Asesor\JadwalController::class, 'asesiList'])->name('jadwal.asesi');
+        Route::post('/jadwal/{schedule}/asesi/bulk-action', [App\Http\Controllers\Asesor\JadwalController::class, 'bulkAction'])->name('jadwal.asesi.bulk');
 
         // Workspace Terpadu Asesor (Single Unified Workspace per Asesi)
         Route::get('/assessment/{assessment}/workspace', [App\Http\Controllers\Asesor\WorkspaceController::class, 'show'])->name('assessment.workspace');
