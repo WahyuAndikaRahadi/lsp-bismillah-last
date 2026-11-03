@@ -1,6 +1,6 @@
 # Task 08 — APL-01/02 dan review tanpa consent palsu
 
-Status: [ ] belum dikerjakan. Dependency: **07,11 bagian consent join tersedia; reference skema terkait selesai**.
+Status: [x] selesai. Dependency: **07,11 bagian consent join tersedia; reference skema terkait selesai**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ APL01 Bagian1a/1b/2/3.1/3.2/rekomendasi/signatures dan APL02 unit/elemen/KUK K/B
 
 ## Acceptance criteria
 
-- [ ] All source fields covered/round-trip dan footers actor/timestamp nyata; self K/BK terpisah hasil asesor.
-- [ ] Valid alternative eligibility diterima; missing required evidence ditolak dengan error per field; cross-user file reference ditolak.
-- [ ] Review/resubmit audit lengkap, no GET mutation, approve tidak fabricate consent/result.
+- [x] All source fields covered/round-trip dan footers actor/timestamp nyata; self K/BK terpisah hasil asesor.
+- [x] Valid alternative eligibility diterima; missing required evidence ditolak dengan error per field; cross-user file reference ditolak.
+- [x] Review/resubmit audit lengkap, no GET mutation, approve tidak fabricate consent/result.
 
 ## Test sempit / bukti
 

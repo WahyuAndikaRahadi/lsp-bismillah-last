@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Asesor;
 use App\Http\Controllers\Concerns\AuthorizesAssessor;
 use App\Http\Controllers\Controller;
 use App\Models\Assessment;
-use App\Models\AssessmentAk07Item;
+use App\Models\AuditEvent;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,15 +20,15 @@ class AplReviewController extends Controller
         $this->authorizeAssessorAssessment($assessment);
 
         $assessment->load([
-            'asesi.profile',
             'schedule.scheme.competencyUnits.elements.kuks',
             'proofs',
-            'apl02Items',
+            'apl02Items.kuk.element.competencyUnit',
+            'asesi.profile',
         ]);
 
         $profile = $assessment->asesi->profile;
         $scheme = $assessment->schedule->scheme;
-        $proofs = $assessment->proofs;
+        $proofs = $assessment->proofs->keyBy('proof_type');
         $apl02Items = $assessment->apl02Items->keyBy('kuk_id');
 
         return view('asesor.review-apl', compact(
@@ -74,7 +74,8 @@ class AplReviewController extends Controller
         $notes = $request->input('notes') ?? $request->input('apl_revision_notes') ?? $request->input('catatan');
 
         DB::transaction(function () use ($assessment, $status, $notes) {
-            $assessorId = $assessment->assessor_id ?? auth()->id();
+            $assessor = auth()->user();
+            $assessorId = $assessment->assessor_id ?? $assessor->id;
             $now = now();
 
             $assessment->update([
@@ -85,33 +86,22 @@ class AplReviewController extends Controller
                 'admin_status' => 'APPROVED',
             ]);
 
-            if ($status === 'APPROVED') {
-                // 1. Auto-generate standard FR.AK.07
-                AssessmentAk07Item::firstOrCreate([
+            // Clean audit trail without fabricating AK07, AK01, or competence results
+            AuditEvent::record(
+                action: 'apl.' . strtolower($status),
+                subject: $assessment,
+                reason: "Keputusan review APL oleh Asesor {$assessor->name}: {$status}" . ($notes ? " (Catatan: {$notes})" : ''),
+                details: [
                     'assessment_id' => $assessment->id,
-                ], [
-                    'adjustment_category' => 'Standar',
-                    'adjustment_detail' => 'Tidak ada penyesuaian khusus yang diperlukan (asesmen standar).',
+                    'status' => $status,
+                    'notes' => $notes,
                     'assessor_id' => $assessorId,
-                ]);
-
-                // 2. Auto-agree FR.AK.01 with signatures
-                $asesiSig = $assessment->asesi_signature ?? $assessment->asesi?->profile?->signature_data;
-                $assessorSig = $assessment->assessor_signature ?? auth()->user()->profile?->signature_data;
-
-                $assessment->update([
-                    'ak01_agreed_at' => $assessment->ak01_agreed_at ?? $now,
-                    'asesi_signature' => $asesiSig,
-                    'asesi_signed_at' => $assessment->asesi_signed_at ?? $now,
-                    'assessor_signature' => $assessment->assessor_signature ?? $assessorSig,
-                    'assessor_signed_at' => $assessment->assessor_signed_at ?? $now,
-                    'esign_consent_at' => $assessment->esign_consent_at ?? $now,
-                    'last_active_step' => 'ruang-uji',
-                ]);
-            }
+                ],
+                userId: $assessor->id
+            );
         });
 
         return redirect()->route('asesor.jadwal.asesi', $assessment->schedule_id)
-            ->with('success', $status === 'APPROVED' ? 'APL asesi berhasil disetujui. Asesi telah siap memasuki Ruang Uji.' : 'Keputusan review APL berhasil disimpan.');
+            ->with('success', $status === 'APPROVED' ? 'APL asesi berhasil disetujui. Lanjutkan ke penyusunan MAPA / verifikasi penyesuaian AK07.' : 'Keputusan review APL berhasil disimpan.');
     }
 }

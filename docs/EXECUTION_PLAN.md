@@ -34,7 +34,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 16 | [x] | [09 — MAPA-01 lengkap dan plan revision](tasks/09-mapa01.md) | 07,02; reference skema terkait selesai | 6ef488b; php artisan test --compact tests/Feature/CoreMapa01Test.php; exit 0; 8 tests passed, 25 assertions; no deviations |
 | 17 | [x] | [10 — MAPA-02 semua skema dan AK-07 nyata](tasks/10-mapa02-ak07.md) | 09; reference skema terkait selesai | 6d80dd0; php artisan test --compact tests/Feature/CoreMapa02Ak07Test.php; exit 0; 8 tests passed, 83 assertions; no deviations |
 | 18 | [x] | [11 — Consent jadwal, AK-01 dan attendance event](tasks/11-consent-attendance.md) | 07; integrasi AK01 final setelah 09–10 (consent join dapat dikerjakan lebih awal) | fe91fc5; php artisan test --compact tests/Feature/CoreConsentAttendanceTest.php; exit 0; 9 tests passed, 50 assertions; no deviations |
-| 19 | [ ] | [08 — APL-01/02 dan review tanpa consent palsu](tasks/08-apl.md) | 07,11 bagian consent join tersedia; reference skema terkait selesai | Belum dijalankan |
+| 19 | [x] | [08 — APL-01/02 dan review tanpa consent palsu](tasks/08-apl.md) | 07,11 bagian consent join tersedia; reference skema terkait selesai | 250b8fb; php artisan test --compact tests/Feature/CoreAplWorkflowTest.php; exit 0; 7 tests passed, 85 assertions; no deviations |
 | 20 | [ ] | [12 — Ruang uji fokus dan IA-05 A/B/C](tasks/12-ruang-uji-cbt.md) | 08,10,11 | Belum dijalankan |
 | 21 | [ ] | [13 — IA-01 dan seluruh sel report sheet](tasks/13-observasi-report-sheet.md) | 10,11,12; source report skema terkait diselesaikan Q2/Q3 | Belum dijalankan |
 | 22 | [ ] | [14 — IA-02 skenario dan IA-03 tanggapan](tasks/14-praktik-pmo.md) | 13 | Belum dijalankan |
