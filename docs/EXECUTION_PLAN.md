@@ -47,7 +47,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 29 | [ ] | [15-06 — Implementasi IA.09 setelah source disahkan](tasks/15-06-ia09.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
 | 30 | [ ] | [15-07 — Implementasi IA.10 setelah source disahkan](tasks/15-07-ia10.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
 | 31 | [ ] | [15-08 — Implementasi IA.11 setelah source disahkan](tasks/15-08-ia11.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
-| 32 | [ ] | [16 — Rekomendasi asesor eksplisit dan finalisasi](tasks/16-ak02-finalisasi.md) | 12–15 untuk metode yang dipakai; 11 | Belum dijalankan |
+| 32 | [x] | [16 — Rekomendasi asesor eksplisit dan finalisasi](tasks/16-ak02-finalisasi.md) | 12–15 untuk metode yang dipakai; 11 | d0021d2; php artisan test --compact tests/Feature/CoreRecommendationTest.php; exit 0; 7 tests passed, 31 assertions; no deviations |
 | 33 | [ ] | [17 — AK-03 dan Pengajuan Banding AK-04 (intake)](tasks/17-feedback-ak04.md) | 16 | Belum dijalankan |
 | 34 | [ ] | [18 — AK-05/06 per asesor dan revision](tasks/18-laporan-ak05-ak06.md) | 16,17 | Belum dijalankan |
 | 35 | [ ] | [19 — BA normal dan daftar hadir dari fakta](tasks/19-ba-daftar-hadir.md) | 11,18; Q1 sebelum label final BA | Belum dijalankan |
