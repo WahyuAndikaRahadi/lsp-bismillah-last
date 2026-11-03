@@ -17,6 +17,9 @@ class AssessmentAk02Item extends Model
         'competency_unit_id',
         'methods_json',
         'is_competent',
+        'finding_notes',
+        'assessor_id',
+        'recorded_at',
     ];
 
     protected function casts(): array
@@ -24,7 +27,13 @@ class AssessmentAk02Item extends Model
         return [
             'methods_json' => 'array',
             'is_competent' => 'boolean',
+            'recorded_at' => 'datetime',
         ];
+    }
+
+    public function assessor(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'assessor_id');
     }
 
     public function assessment(): BelongsTo

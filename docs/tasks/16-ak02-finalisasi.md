@@ -1,6 +1,6 @@
 # Task 16 — Rekomendasi asesor eksplisit dan finalisasi
 
-Status: [ ] belum dikerjakan. Dependency: **12–15 untuk metode yang dipakai; 11**.
+Status: [x] selesai. Dependency: **12–15 untuk metode yang dipakai; 11**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ AK02 exact table evidence per unit, overall K/BK, tindak lanjut, comments, start
 
 ## Acceptance criteria
 
-- [ ] GET tidak mutasi; CBT sempurna tanpa observasi/finding tetap belum competent.
-- [ ] AK02 footer/reference bukti lengkap; setiap unit assessment versi itu memiliki temuan yang sah.
-- [ ] Asesor lain/admin tidak mengganti findings; stale/concurrent finalize tidak double decision; BK bukan absen.
+- [x] GET tidak mutasi; CBT sempurna tanpa observasi/finding tetap belum competent.
+- [x] AK02 footer/reference bukti lengkap; setiap unit assessment versi itu memiliki temuan yang sah.
+- [x] Asesor lain/admin tidak mengganti findings; stale/concurrent finalize tidak double decision; BK bukan absen.
 
 ## Test sempit / bukti
 

@@ -35,6 +35,7 @@ class Assessment extends Model
         'admin_reviewer_id',
         'final_result',
         'final_result_at',
+        'rekomendasi_asesor',
         'final_notes',
         'follow_up_action',
         'ak01_agreed_at',

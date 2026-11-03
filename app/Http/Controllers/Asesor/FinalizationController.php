@@ -60,11 +60,6 @@ class FinalizationController extends Controller
             'iaResponses',
         ]);
 
-        if ($assessment->ak02Items->isEmpty()) {
-            $this->workflowService->syncAk02($assessment);
-            $assessment->refresh();
-        }
-
         $units = $assessment->schedule->scheme->competencyUnits;
         $ak02Items = $assessment->ak02Items->keyBy('competency_unit_id');
 
@@ -78,6 +73,11 @@ class FinalizationController extends Controller
     {
         $this->authorizeAssessorAssessment($assessment);
 
+        $readinessService = app(\App\Services\AssessmentReadinessService::class);
+        if (! $readinessService->validateAssessorAuthorization($assessment, auth()->user())) {
+            abort(403, 'Hanya asesor yang ditugaskan pada asesmen ini yang berwenang menetapkan rekomendasi.');
+        }
+
         if ($assessment->schedule && $assessment->schedule->is_closed) {
             return back()->with('error', 'Jadwal asesmen sudah ditutup dan dikunci.');
         }
@@ -86,25 +86,70 @@ class FinalizationController extends Controller
             return back()->with('error', 'FR.AK.02 hanya dapat direkam untuk asesi yang telah disetujui APL-nya.');
         }
 
+        // Stale save / Version conflict check
+        if ($request->filled('lock_version')) {
+            if ((int) $request->input('lock_version') !== (int) ($assessment->lock_version ?? 1)) {
+                abort(409, 'Konflik versi: rekomendasi asesmen telah diperbarui pada sesi lain. Muat ulang halaman.');
+            }
+        }
+
         $unitsInput = $request->input('units', []);
 
         $validated = $request->validate([
             'final_result' => 'required|in:K,BK,KOMPETEN,BELUM_KOMPETEN',
             'final_notes' => 'nullable|string|max:1000',
             'follow_up_action' => 'nullable|string|max:1000',
+            'assessor_signature' => ['nullable', 'string', new \App\Rules\ValidSignature],
+            'lock_version' => 'nullable|integer',
         ], [
             'final_result.required' => 'Rekomendasi hasil asesmen akhir (Kompeten atau Belum Kompeten) wajib dipilih secara eksplisit oleh asesor.',
         ]);
 
-        $finalResult = in_array($validated['final_result'], ['K', 'KOMPETEN'], true) ? 'KOMPETEN' : 'BELUM_KOMPETEN';
+        // Explicit unit findings completeness check
+        $scheme = $assessment->schedule?->scheme ?? $assessment->scheme;
+        $schemeUnits = $scheme ? $scheme->competencyUnits : collect();
+
+        $missingUnits = [];
+        foreach ($schemeUnits as $u) {
+            if (! isset($unitsInput[$u->id]) || ! isset($unitsInput[$u->id]['is_competent']) || $unitsInput[$u->id]['is_competent'] === '') {
+                $missingUnits[] = $u->code ?? $u->kode_unit ?? "Unit #{$u->id}";
+            }
+        }
+
+        if (! empty($missingUnits)) {
+            return back()->withErrors([
+                'units' => 'Seluruh unit kompetensi wajib memiliki temuan asesmen (K/BK) eksplisit. Unit belum dinilai: ' . implode(', ', $missingUnits),
+            ])->withInput();
+        }
+
+        // Recompute recommendation server-side
+        $computed = $readinessService->computeFinalRecommendation($assessment, $unitsInput);
+
+        if (in_array(strtoupper((string) $validated['final_result']), ['K', 'KOMPETEN'], true) && ! $computed['all_competent']) {
+            return back()->withErrors([
+                'final_result' => 'Rekomendasi akhir tidak dapat dinyatakan KOMPETEN (K) karena terdapat unit kompetensi yang dinilai Belum Kompeten (BK).',
+            ])->withInput();
+        }
+
+        // Observation proof required for Competent
+        $iaResponses = $assessment->iaResponses->keyBy('instrument_code');
+        $hasDemonstration = $iaResponses->has('IA01') || $iaResponses->has('IA01B') || $iaResponses->has('IA02');
+        if ($computed['final_result'] === 'KOMPETEN' && ! $hasDemonstration) {
+            return back()->withErrors([
+                'final_result' => 'Rekomendasi KOMPETEN memerlukan rekaman bukti observasi demonstrasi praktik (FR.IA.01/IA.02). Skor CBT tertulis tanpa observasi tidak memenuhi syarat.',
+            ])->withInput();
+        }
+
+        $finalResult = $computed['final_result'];
 
         Log::info('Asesor ID '.auth()->id()." memperbarui FR.AK.02 asesmen #{$assessment->id} dengan hasil {$finalResult}");
 
         $now = now();
 
-        DB::transaction(function () use ($assessment, $unitsInput, $validated, $finalResult, $request) {
+        DB::transaction(function () use ($assessment, $unitsInput, $validated, $finalResult, $computed, $request, $now) {
             foreach ($unitsInput as $unitId => $data) {
-                $methods = [
+                $unitComputed = $computed['units'][$unitId] ?? null;
+                $methods = $unitComputed['methods'] ?? [
                     'observasi_demonstrasi' => ! empty($data['observasi_demonstrasi']),
                     'portofolio' => ! empty($data['portofolio']),
                     'pihak_ketiga' => ! empty($data['pihak_ketiga']),
@@ -121,7 +166,10 @@ class FinalizationController extends Controller
                     ],
                     [
                         'methods_json' => $methods,
-                        'is_competent' => ! empty($data['is_competent']),
+                        'is_competent' => $unitComputed['is_competent'] ?? (! empty($data['is_competent'])),
+                        'finding_notes' => $data['finding_notes'] ?? $data['notes'] ?? null,
+                        'assessor_id' => auth()->id(),
+                        'recorded_at' => $now,
                     ]
                 );
             }
@@ -138,6 +186,23 @@ class FinalizationController extends Controller
                 auth()->user(),
                 $validated['follow_up_action'] ?? null,
                 $newAssessorSig
+            );
+
+            $assessment->rekomendasi_asesor = $computed['rekomendasi_asesor'];
+            $assessment->lock_version = ($assessment->lock_version ?? 1) + 1;
+            $assessment->save();
+
+            \App\Models\AuditEvent::record(
+                action: 'ak02.finalized',
+                subject: $assessment,
+                reason: "Asesor menetapkan rekomendasi final asesmen {$finalResult}",
+                details: [
+                    'final_result' => $finalResult,
+                    'rekomendasi_asesor' => $computed['rekomendasi_asesor'],
+                    'units_count' => count($unitsInput),
+                    'assessor_id' => auth()->id(),
+                ],
+                userId: auth()->id()
             );
         });
 

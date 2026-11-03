@@ -48,10 +48,7 @@ class AkWorkflowService
             $hasDemonstration,
             $hasProofs,
             $hasOral,
-            $hasWritten,
-            $iaResponses,
-            &$allUnitsCompetent,
-            &$finalResult
+            $hasWritten
         ) {
             foreach ($units as $unit) {
                 $methods = [
@@ -64,20 +61,11 @@ class AkWorkflowService
                     'lainnya' => false,
                 ];
 
-                // Determine competence: if IA05 CBT failed (< passing grade), competence is false
-                $isUnitCompetent = true;
-                if ($hasWritten && isset($iaResponses['IA05'])) {
-                    $passingGrade = (float) ($assessment->schedule?->scheme?->passing_grade_theory ?? Setting::get('cbt_passing_grade', 75.0));
-                    $score = (float) $iaResponses['IA05']->score;
-                    if ($score < $passingGrade) {
-                        $isUnitCompetent = false;
-                    }
-                }
+                $existingItem = AssessmentAk02Item::where('assessment_id', $assessment->id)
+                    ->where('competency_unit_id', $unit->id)
+                    ->first();
 
-                if (! $isUnitCompetent) {
-                    $allUnitsCompetent = false;
-                }
-
+                // Preserve existing manual assessor findings; never auto-decide competence
                 AssessmentAk02Item::updateOrCreate(
                     [
                         'assessment_id' => $assessment->id,
@@ -85,27 +73,16 @@ class AkWorkflowService
                     ],
                     [
                         'methods_json' => $methods,
-                        'is_competent' => $isUnitCompetent,
+                        'is_competent' => $existingItem?->is_competent ?? null,
                     ]
                 );
             }
-
-            $finalResult = $allUnitsCompetent ? 'KOMPETEN' : 'BELUM_KOMPETEN';
-            $assessment->update([
-                'final_result' => $finalResult,
-                'final_notes' => $finalResult === 'KOMPETEN'
-                    ? 'Seluruh unjuk kerja memenuhi Kriteria Unjuk Kerja (KUK) dan standar SKKNI.'
-                    : 'Diperlukan tindak lanjut pengayaan dan asesmen ulang pada unit yang belum kompeten.',
-                'follow_up_action' => $finalResult === 'KOMPETEN'
-                    ? 'Diusulkan untuk penerbitan Sertifikat Kompetensi BNSP.'
-                    : 'Mengikuti asesmen ulang pada unit kompetensi terkait.',
-            ]);
         });
 
         return [
-            'final_result' => $finalResult,
+            'final_result' => $assessment->final_result,
             'total_units' => $units->count(),
-            'all_competent' => $allUnitsCompetent,
+            'all_competent' => false,
         ];
     }
 
@@ -320,6 +297,11 @@ class AkWorkflowService
             $now = now();
             $data = [
                 'final_result' => $normalizedResult,
+                'rekomendasi_asesor' => match ($normalizedResult) {
+                    'KOMPETEN' => 'K',
+                    'BELUM_KOMPETEN' => 'BK',
+                    default => null,
+                },
                 'final_result_at' => $assessment->final_result_at ?? $now,
                 'status' => 'COMPLETED',
                 'completed_at' => $assessment->completed_at ?? $now,
