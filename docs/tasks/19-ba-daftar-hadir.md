@@ -1,6 +1,6 @@
 # Task 19 — BA normal dan daftar hadir dari fakta
 
-Status: [ ] belum dikerjakan. Dependency: **11,18; Q1 sebelum label final BA**.
+Status: [x] selesai. Dependency: **11,18; Q1 sebelum label final BA**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Data BA04.4 normal: judul, hari/tanggal/bulan/tahun, actual start/end, Pada/Di, 
 
 ## Acceptance criteria
 
-- [ ] Enrolled=present+absent sesuai session boundaries; pending result tidak dihitung K/BK; cancelled/reversed attendance benar.
-- [ ] Finalization diblokir record belum lengkap atau perbedaan count; source aggregate tersimpan per revision.
-- [ ] No manual Hadir button, no invented actual time/signatory; Q1 unresolved mencegah label dokumen final.
+- [x] Enrolled=present+absent sesuai session boundaries; pending result tidak dihitung K/BK; cancelled/reversed attendance benar.
+- [x] Finalization diblokir record belum lengkap atau perbedaan count; source aggregate tersimpan per revision.
+- [x] No manual Hadir button, no invented actual time/signatory; Q1 unresolved mencegah label dokumen final.
 
 ## Test sempit / bukti
 
