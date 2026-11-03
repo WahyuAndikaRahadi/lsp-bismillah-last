@@ -48,8 +48,6 @@ class CoreContainmentTest extends TestCase
         $outOfScopeUrls = [
             '/proxy',
             '/admin/proxy',
-            '/surveillance',
-            '/admin/surveillance',
             '/admin/complaints',
             '/admin/finance/transactions',
             '/admin/letters',
@@ -57,6 +55,7 @@ class CoreContainmentTest extends TestCase
             '/admin/messages',
             '/sertifikat/1',
             '/admin/exports/bnsp',
+            '/staff',
         ];
 
         foreach ($outOfScopeUrls as $url) {
@@ -145,7 +144,6 @@ class CoreContainmentTest extends TestCase
             'admin/finance',
             'admin/letters',
             'admin/quality',
-            'admin/surveillance',
             'admin/exports',
             'Switch Role (Proxy)',
         ];

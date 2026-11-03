@@ -1,6 +1,6 @@
 # Task 22 — Hapus runtime legacy dan bloat setelah cutover
 
-Status: [ ] belum dikerjakan. Dependency: **01, 03–21, 21-01..21-04 untuk fitur terkait**.
+Status: [x] selesai. Dependency: **01, 03–21, 21-01..21-04 untuk fitur terkait**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Ikuti RETIREMENT persis: explicit mapping complete, no unresolved record active,
 
 ## Acceptance criteria
 
-- [ ] Satu Assessment/Schedule/Scheme runtime; zero numeric fallback; route names duplicate/unused legacy binding tidak ada.
-- [ ] No complaint/staff/capability/finance/chat/messages/letters/quality/impersonation/PDF route, termasuk hidden/direct endpoints.
-- [ ] No owner file loss; archived historical DB dapat dipulihkan; dependency lock konsisten dengan scope. Alur lean banding, ketidakberpihakan, surveilans, dan resertifikasi tetap berfungsi pada tiga role.
+- [x] Satu Assessment/Schedule/Scheme runtime; zero numeric fallback; route names duplicate/unused legacy binding tidak ada.
+- [x] No complaint/staff/capability/finance/chat/messages/letters/quality/impersonation/PDF route, termasuk hidden/direct endpoints.
+- [x] No owner file loss; archived historical DB dapat dipulihkan; dependency lock konsisten dengan scope. Alur lean banding, ketidakberpihakan, surveilans, dan resertifikasi tetap berfungsi pada tiga role.
 
 ## Test sempit / bukti
 
