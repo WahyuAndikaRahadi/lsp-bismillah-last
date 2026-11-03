@@ -1,5 +1,7 @@
 # Log Keputusan Arsitektur & Teknis (docs/DECISIONS.md)
 
+> Catatan historis baseline. Keputusan di bawah yang bertentangan dengan [CONTEXT.md](CONTEXT.md) tidak berlaku untuk implementasi Gemini. Rencana aktif: [EXECUTION_PLAN.md](EXECUTION_PLAN.md).
+
 Dokumen ini mencatat seluruh keputusan arsitektur, alasan mendalam, dan alternatif yang ditolak selama pengerjaan sistem sertifikasi kompetensi LSP PrO Indo.
 
 ---

@@ -1,5 +1,7 @@
 # Daftar Isu Terbuka & Rekomendasi Lanjutan (docs/OPEN_ISSUES.md)
 
+> Backlog historis; bukan izin membangun fitur di luar scope. Gunakan [CONTEXT.md](CONTEXT.md) dan pertanyaan owner pada [EXECUTION_PLAN.md](EXECUTION_PLAN.md), bukan daftar rekomendasi lama ini.
+
 Dokumen ini mencatat secara jujur dan transparan isu terbuka, limitasi teknis, serta rekomendasi pengembangan lanjutan untuk LSP PrO Indo.
 
 ---

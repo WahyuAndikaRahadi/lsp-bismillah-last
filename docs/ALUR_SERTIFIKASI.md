@@ -1,4 +1,6 @@
 # Alur Pengerjaan Sertifikasi Kompetensi Terpadu (End-to-End Timeline)
+
+> Catatan historis baseline, bukan spesifikasi implementasi aktif. Keputusan owner terbaru dan koreksi atas consent, hasil otomatis, sertifikat, peran serta scope ada di [CONTEXT.md](CONTEXT.md); ikuti [EXECUTION_PLAN.md](EXECUTION_PLAN.md).
 **Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia (LSP PrO Indo)**  
 *Dokumen Rujukan Urutan Kejadian Kronologis untuk Pengujian, Operasional Sistem, dan Audit Lisensi BNSP*
 
