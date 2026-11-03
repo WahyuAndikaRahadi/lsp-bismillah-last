@@ -1,122 +1,168 @@
-<x-app-layout title="Pemeliharaan Sertifikasi (Surveilans)">
-    <div class="space-y-6">
+@extends('layouts.app')
 
-        <!-- Header -->
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-                <h2 class="text-xl font-bold text-zinc-900 tracking-tight">Surveilans Pemegang Sertifikat</h2>
-                <p class="text-xs text-zinc-500 mt-0.5">Pemantauan berkala pemeliharaan kompetensi pemegang sertifikat BNSP sesuai Pedoman BNSP 214.</p>
-            </div>
+@section('title', 'Manajemen Surveilans Pemegang Sertifikat (SOP 04 §4 / SOP 19)')
+
+@section('content')
+<div class="container mx-auto px-4 py-6 max-w-7xl">
+    <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900">Surveilans Pemeliharaan Kompetensi (SOP 19)</h1>
+            <p class="text-sm text-gray-600 mt-1">Pengelolaan rencana surveilans berkala pemegang sertifikat, evaluasi bukti (FR.SPS.01), dan penetapan keputusan resmi (FR.SK.01).</p>
         </div>
+    </div>
 
-        <!-- Filter & Search Card -->
-        <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm p-4">
-            <form method="GET" action="{{ route('admin.surveillance.index') }}" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div class="flex flex-wrap items-center gap-2">
-                    <a href="{{ route('admin.surveillance.index') }}" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition {{ !request('status') ? 'bg-lsp-navy text-white' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200' }}">
-                        Semua Laporan
-                    </a>
-                    <a href="{{ route('admin.surveillance.index', ['status' => 'menunggu_verifikasi']) }}" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition {{ request('status') === 'menunggu_verifikasi' ? 'bg-amber-600 text-white' : 'bg-amber-50 text-amber-700 hover:bg-amber-100' }}">
-                        Menunggu Verifikasi
-                    </a>
-                    <a href="{{ route('admin.surveillance.index', ['status' => 'terverifikasi']) }}" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition {{ request('status') === 'terverifikasi' ? 'bg-emerald-600 text-white' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100' }}">
-                        Terverifikasi Aktif
-                    </a>
-                </div>
-
-                <div class="flex items-center gap-2">
-                    <input
-                        type="text"
-                        name="q"
-                        value="{{ request('q') }}"
-                        placeholder="Cari nama, NIK, nomor sertifikat..."
-                        class="px-3 py-1.5 text-xs rounded-xl border border-zinc-300 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600"
-                    />
-                    <button type="submit" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition">
-                        Cari
-                    </button>
-                </div>
-            </form>
+    @if (session('success'))
+        <div class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 text-sm rounded">
+            {{ session('success') }}
         </div>
+    @endif
 
-        <!-- Table Card -->
-        <div class="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden">
+    @if (session('error'))
+        <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 text-sm rounded">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    {{-- Sertifikat Aktif Menunggu Rencana Surveilans --}}
+    @if ($activeCertificates->isNotEmpty())
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-8">
+            <h2 class="text-base font-bold text-blue-900 mb-2">Sertifikat Aktif Siap Dibuatkan Rencana Surveilans ({{ $activeCertificates->count() }})</h2>
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs text-zinc-600">
-                    <thead class="bg-zinc-50/75 text-zinc-500 font-semibold border-b border-zinc-200">
-                        <tr>
-                            <th class="px-6 py-3.5">Pemegang Sertifikat & NIK</th>
-                            <th class="px-6 py-3.5">Nomor Sertifikat & Skema</th>
-                            <th class="px-6 py-3.5">Pekerjaan & Kesesuaian</th>
-                            <th class="px-6 py-3.5 text-center">Status</th>
-                            <th class="px-6 py-3.5 text-right">Verifikasi</th>
+                <table class="min-w-full divide-y divide-blue-200 text-xs">
+                    <thead>
+                        <tr class="text-left font-semibold text-blue-800">
+                            <th class="py-2 px-3">Nomor Sertifikat</th>
+                            <th class="py-2 px-3">Pemegang</th>
+                            <th class="py-2 px-3">Skema</th>
+                            <th class="py-2 px-3">Masa Berlaku</th>
+                            <th class="py-2 px-3 text-right">Aksi</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-zinc-100">
-                        @forelse ($records as $r)
-                            <tr class="hover:bg-zinc-50/50 transition">
-                                <td class="px-6 py-4">
-                                    <div class="font-bold text-zinc-900">{{ $r->nama_lengkap }}</div>
-                                    <div class="text-[11px] text-zinc-500 font-mono mt-0.5">
-                                        NIK: {{ $r->nik }} • {{ $r->telepon }}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="font-mono font-bold text-blue-700">{{ $r->no_sertifikat }}</div>
-                                    <div class="text-[11px] text-zinc-500 mt-0.5">
-                                        {{ $r->scheme->nama_skema ?? 'Skema Tidak Terkait' }}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="font-medium text-zinc-800">{{ $r->jabatan }} di {{ $r->tempat_kerja }}</div>
-                                    <div class="text-[11px] mt-0.5">
-                                        <span class="inline-flex px-1.5 py-0.5 rounded font-semibold text-[10px] {{ $r->kesesuaian_skk === 'Y' ? 'bg-emerald-50 text-emerald-700' : 'bg-zinc-100 text-zinc-600' }}">
-                                            {{ $r->kesesuaianLabel() }}
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold {{ $r->statusBadge() }}">
-                                        {{ ucfirst(str_replace('_', ' ', $r->status)) }}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 text-right">
-                                    @if ($r->status === 'menunggu_verifikasi')
-                                        <form method="POST" action="{{ route('admin.surveillance.verify', $r) }}" class="inline-flex items-center gap-1.5">
-                                            @csrf
-                                            @method('PATCH')
-                                            <input type="hidden" name="status" value="terverifikasi">
-                                            <button
-                                                type="submit"
-                                                class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg text-xs transition"
-                                            >
-                                                Sahkan Verifikasi
-                                            </button>
-                                        </form>
-                                    @else
-                                        <span class="text-zinc-400 text-[11px]">
-                                            Diverifikasi oleh {{ $r->verifier?->name ?? 'Admin' }}
-                                        </span>
-                                    @endif
-                                </td>
-                            </tr>
-                        @empty
+                    <tbody class="divide-y divide-blue-200">
+                        @foreach ($activeCertificates as $c)
                             <tr>
-                                <td colspan="5" class="px-6 py-12 text-center text-zinc-400">
-                                    Belum ada data surveilans yang masuk.
+                                <td class="py-2 px-3 font-mono font-medium text-gray-900">{{ $c->certificate_number }}</td>
+                                <td class="py-2 px-3 font-semibold text-gray-900">{{ $c->assessment?->asesi?->name }}</td>
+                                <td class="py-2 px-3 text-gray-700">{{ $c->assessment?->scheme?->name }}</td>
+                                <td class="py-2 px-3 text-gray-600">{{ $c->valid_from?->format('d/m/Y') }} s/d {{ $c->valid_until?->format('d/m/Y') }}</td>
+                                <td class="py-2 px-3 text-right">
+                                    <a href="{{ route('admin.surveillance.create-plan', $c->id) }}" class="inline-flex items-center px-3 py-1 bg-primary text-white font-medium rounded hover:bg-primary/90">
+                                        Buat rencana surveilans
+                                    </a>
                                 </td>
                             </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>
+        </div>
+    @endif
 
-            @if ($records->hasPages())
-                <div class="px-6 py-4 border-t border-zinc-100">
-                    {{ $records->links() }}
-                </div>
-            @endif
+    {{-- Daftar Rencana Surveilans Berjalan --}}
+    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4 border-b border-gray-200 bg-gray-50 flex items-center justify-between">
+            <h2 class="text-base font-semibold text-gray-900">Rencana & Laporan Surveilans Berkala</h2>
+            <span class="text-xs text-gray-500">Total: {{ $plans->total() }} rencana</span>
         </div>
 
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 text-sm">
+                <thead class="bg-gray-50 text-gray-700">
+                    <tr>
+                        <th class="py-3 px-4 text-left font-semibold">Program Surveilans</th>
+                        <th class="py-3 px-4 text-left font-semibold">Pemegang Sertifikat</th>
+                        <th class="py-3 px-4 text-left font-semibold">Batas Waktu</th>
+                        <th class="py-3 px-4 text-left font-semibold">Status Rencana</th>
+                        <th class="py-3 px-4 text-left font-semibold">Laporan Masuk</th>
+                        <th class="py-3 px-4 text-right font-semibold">Evaluasi & Keputusan</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    @forelse ($plans as $p)
+                        @php $latestReport = $p->latestReport; @endphp
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4">
+                                <div class="font-bold text-gray-900">{{ $p->title }}</div>
+                                <div class="text-xs font-mono text-gray-500">{{ $p->certificate?->certificate_number }} (Tahun ke-{{ $p->surveillance_year }})</div>
+                            </td>
+                            <td class="py-3 px-4">
+                                <div class="font-medium text-gray-900">{{ $p->certificate?->assessment?->asesi?->name }}</div>
+                                <div class="text-xs text-gray-500">{{ $p->certificate?->assessment?->scheme?->name }}</div>
+                            </td>
+                            <td class="py-3 px-4 text-xs text-gray-700">
+                                {{ $p->due_date?->format('d/m/Y') }}
+                            </td>
+                            <td class="py-3 px-4">
+                                <span class="inline-flex px-2 py-0.5 rounded text-xs font-semibold
+                                    {{ $p->status === 'COMPLETED' ? 'bg-green-100 text-green-800' : ($p->status === 'REPORTED' ? 'bg-blue-100 text-blue-800' : 'bg-amber-100 text-amber-800') }}">
+                                    {{ $p->status }}
+                                </span>
+                            </td>
+                            <td class="py-3 px-4 text-xs">
+                                @if ($latestReport)
+                                    <div>
+                                        <span class="text-green-700 font-medium">✓ Masuk: {{ $latestReport->submitted_at?->format('d/m/Y') }}</span>
+                                        @if ($latestReport->decision)
+                                            <div class="mt-1 font-bold text-primary">{{ $latestReport->decision }}</div>
+                                        @endif
+                                    </div>
+                                @else
+                                    <span class="text-gray-400">Menunggu asesi</span>
+                                @endif
+                            </td>
+                            <td class="py-3 px-4 text-right">
+                                @if ($latestReport && ! $latestReport->decision)
+                                    <details class="inline-block text-left">
+                                        <summary class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-xs font-medium rounded cursor-pointer hover:bg-green-700">
+                                            Evaluasi (FR.SK.01)
+                                        </summary>
+                                        <div class="absolute right-10 mt-2 w-96 bg-white border border-gray-200 rounded-lg p-5 shadow-2xl z-20">
+                                            <form action="{{ route('admin.surveillance.evaluate-report', $latestReport->id) }}" method="POST" class="space-y-3 text-xs">
+                                                @csrf
+                                                <h3 class="font-bold text-gray-900 text-sm">Evaluasi Laporan Surveilans</h3>
+                                                <div class="p-2 bg-gray-50 rounded border text-gray-700">
+                                                    <strong>Kegiatan asesi:</strong>
+                                                    <p class="whitespace-pre-wrap mt-1">{{ $latestReport->activity_summary }}</p>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-gray-700 font-medium mb-1">Catatan Verifikasi Temuan (FR.SPS.01):</label>
+                                                    <textarea name="evaluator_notes" required rows="3" class="w-full px-2 py-1.5 border rounded border-gray-300" placeholder="Bukti logbook dan surat keterangan bekerja telah diverifikasi sah..."></textarea>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-gray-700 font-medium mb-1">Keputusan Resmi (FR.SK.01):</label>
+                                                    <select name="decision" required class="w-full px-2 py-1.5 border rounded border-gray-300">
+                                                        <option value="COMPLIANT">Kompetensi Terpelihara (COMPLIANT)</option>
+                                                        <option value="ACTION_REQUIRED">Perlu Tindakan Perbaikan (ACTION_REQUIRED)</option>
+                                                        <option value="SUSPENDED">Sertifikat Dibekukan (SUSPENDED)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="flex justify-end space-x-2 pt-2">
+                                                    <button type="submit" class="px-4 py-1.5 bg-primary text-white rounded font-medium hover:bg-primary/90">
+                                                        Sahkan Keputusan
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </details>
+                                @endif
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="py-8 text-center text-sm text-gray-500">
+                                Belum ada rencana surveilans berkala yang diterbitkan.
+                            </td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+
+        @if ($plans->hasPages())
+            <div class="p-4 border-t border-gray-200 bg-gray-50">
+                {{ $plans->links() }}
+            </div>
+        @endif
     </div>
-</x-app-layout>
+</div>
+@endsection

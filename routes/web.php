@@ -193,6 +193,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/impartiality', [\App\Http\Controllers\Admin\ImpartialityController::class, 'index'])->name('impartiality.index');
         Route::post('/assessments/{assessment}/replace-assessor', [\App\Http\Controllers\Admin\ImpartialityController::class, 'replaceAssessor'])->name('assessments.replace-assessor');
 
+        // Surveilans Pemegang Sertifikat (SOP 04 §4 / SOP 19 / Task 21-03)
+        Route::get('/surveillance', [\App\Http\Controllers\Admin\SurveillanceController::class, 'index'])->name('surveillance.index');
+        Route::get('/certificates/{certificate}/surveillance/create', [\App\Http\Controllers\Admin\SurveillanceController::class, 'createPlan'])->name('surveillance.create-plan');
+        Route::post('/certificates/{certificate}/surveillance', [\App\Http\Controllers\Admin\SurveillanceController::class, 'storePlan'])->name('surveillance.store-plan');
+        Route::post('/surveillance/reports/{report}/evaluate', [\App\Http\Controllers\Admin\SurveillanceController::class, 'evaluateReport'])->name('surveillance.evaluate-report');
+
         // BNSP exports, complaints, baseline surveillance & baseline appeals disabled
 
         // Laporan & Ekspor Lengkap Parity Demo
@@ -385,6 +391,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/certificates/{certificate}', [\App\Http\Controllers\Asesi\CertificateController::class, 'show'])->name('certificates.show');
         Route::get('/certificates/{certificate}/download', [\App\Http\Controllers\Asesi\CertificateController::class, 'download'])->name('certificates.download');
         Route::post('/certificates/{certificate}/acknowledge', [\App\Http\Controllers\Asesi\CertificateController::class, 'acknowledge'])->name('certificates.acknowledge');
+
+        // Surveilans Pemeliharaan Kompetensi (SOP 04 §4 / Task 21-03)
+        Route::get('/surveillance', [\App\Http\Controllers\Asesi\SurveillanceController::class, 'index'])->name('surveillance.index');
+        Route::get('/surveillance/{plan}', [\App\Http\Controllers\Asesi\SurveillanceController::class, 'show'])->name('surveillance.show');
+        Route::post('/surveillance/{plan}/report', [\App\Http\Controllers\Asesi\SurveillanceController::class, 'submitReport'])->name('surveillance.submit-report');
 
         // Asesmen & APL
         Route::get('/assessment/{assessment}/apl', [AplController::class, 'show'])->name('assessment.apl');

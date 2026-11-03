@@ -1,6 +1,6 @@
 # Task 21-03 — Surveilans (SOP 04 §4 & SOP 19)
 
-Status: [ ] belum dikerjakan. Dependency: **21, 04**.
+Status: [x] selesai. Dependency: **21, 04**.
 
 ## Tujuan
 
@@ -22,10 +22,10 @@ Admin/manajer sertifikasi menyusun rencana surveilans berkala (periode, mekanism
 
 ## Acceptance criteria
 
-- [ ] Rencana surveilans periodik tercatat dan terhubung ke sertifikat aktif pemegang.
-- [ ] Asesi pemegang sertifikat dapat mengunggah laporan dan dokumen bukti pemeliharaan kompetensi; asesi lain ditolak.
-- [ ] Evaluasi independen dan penetapan keputusan hasil surveilans dicatat eksplisit dengan temuan dan actor yang berwenang tanpa kelulusan otomatis.
-- [ ] Pemegang sertifikat dapat melihat status hasil surveilans yang telah ditetapkan.
+- [x] Rencana surveilans periodik tercatat dan terhubung ke sertifikat aktif pemegang.
+- [x] Asesi pemegang sertifikat dapat mengunggah laporan dan dokumen bukti pemeliharaan kompetensi; asesi lain ditolak.
+- [x] Evaluasi independen dan penetapan keputusan hasil surveilans dicatat eksplisit dengan temuan dan actor yang berwenang tanpa kelulusan otomatis.
+- [x] Pemegang sertifikat dapat melihat status hasil surveilans yang telah ditetapkan.
 
 ## Test sempit / bukti
 
