@@ -15,6 +15,10 @@ class AssessmentAppeal extends Model
     protected $fillable = [
         'assessment_id',
         'appeal_date',
+        'prosedur_dijelaskan',
+        'diskusi_dengan_asesor',
+        'melibatkan_orang_lain',
+        'asesi_signature',
         'appeal_reasons',
         'contested_units',
         'status',
@@ -31,6 +35,9 @@ class AssessmentAppeal extends Model
             'appeal_date' => 'date',
             'decision_date' => 'date',
             'contested_units' => 'array',
+            'prosedur_dijelaskan' => 'boolean',
+            'diskusi_dengan_asesor' => 'boolean',
+            'melibatkan_orang_lain' => 'boolean',
         ];
     }
 

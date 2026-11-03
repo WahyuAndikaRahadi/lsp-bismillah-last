@@ -375,10 +375,10 @@ Route::middleware('auth')->group(function () {
 
             Route::post('/instrument/{code}/upload-evidence', [RuangUjiController::class, 'uploadEvidence'])->name('instrument.upload-evidence');
 
-            Route::get('/ak03', [RuangUjiController::class, 'showAk03'])->name('ak03');
-            Route::post('/ak03', [RuangUjiController::class, 'submitAk03'])->name('ak03.submit');
-            Route::get('/appeal', [RuangUjiController::class, 'showAppeal'])->name('appeal');
-            Route::post('/appeal', [RuangUjiController::class, 'submitAppeal'])->name('appeal.submit');
+            Route::get('/ak03', [\App\Http\Controllers\Asesi\AssessmentFeedbackController::class, 'showAk03'])->name('ak03');
+            Route::post('/ak03', [\App\Http\Controllers\Asesi\AssessmentFeedbackController::class, 'submitAk03'])->name('ak03.submit');
+            Route::get('/appeal', [\App\Http\Controllers\Asesi\AssessmentFeedbackController::class, 'showAppeal'])->name('appeal');
+            Route::post('/appeal', [\App\Http\Controllers\Asesi\AssessmentFeedbackController::class, 'submitAppeal'])->name('appeal.submit');
         });
 
         // Backward compatibility routes for legacy application links

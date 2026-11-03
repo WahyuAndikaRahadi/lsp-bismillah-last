@@ -1,6 +1,6 @@
 # Task 17 — AK-03 dan Pengajuan Banding AK-04
 
-Status: [ ] belum dikerjakan. Dependency: **16**.
+Status: [x] selesai. Dependency: **16**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ AK03 sepuluh komponen original, Ya/Tidak dan komentar, komentar lain; tampil set
 
 ## Acceptance criteria
 
-- [ ] Exact paper order/labels dan per-row data terjaga; feedback AK-03 tidak mengubah kompetensi.
-- [ ] AK-04 tersimpan sebagai record pengajuan teratribusi dari asesi dengan alasan dan timestamp, siap ditindaklanjuti oleh task 21-01 tanpa hasil otomatis.
-- [ ] Other-candidate dan unauthorized assessor denied; no PDF/print CTA.
+- [x] Exact paper order/labels dan per-row data terjaga; feedback AK-03 tidak mengubah kompetensi.
+- [x] AK-04 tersimpan sebagai record pengajuan teratribusi dari asesi dengan alasan dan timestamp, siap ditindaklanjuti oleh task 21-01 tanpa hasil otomatis.
+- [x] Other-candidate dan unauthorized assessor denied; no PDF/print CTA.
 
 ## Test sempit / bukti
 

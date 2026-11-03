@@ -151,20 +151,25 @@ class AkWorkflowService
     }
 
     /**
-     * Get appeal window in business days (default: 3 days).
-     * Note: 3 days is standard BNSP practice, pending official confirmation by LSP PrO Indo SOP.
+     * Get appeal window in business days (null / off unless explicitly configured).
      */
-    public function getAppealWindowDays(): int
+    public function getAppealWindowDays(): ?int
     {
-        return (int) Setting::get('appeal_window_days', 3);
+        $val = Setting::get('appeal_window_days', null);
+
+        return ($val !== null && $val !== '') ? (int) $val : null;
     }
 
     /**
      * Calculate appeal deadline in Monday-Friday business days (skipping Saturday and Sunday).
      */
-    public function calculateAppealDeadline(Carbon $startDate, ?int $windowDays = null): Carbon
+    public function calculateAppealDeadline(Carbon $startDate, ?int $windowDays = null): ?Carbon
     {
         $days = $windowDays ?? $this->getAppealWindowDays();
+        if ($days === null || $days <= 0) {
+            return null; // Deactivated
+        }
+
         $current = $startDate->copy()->startOfDay();
         $added = 0;
 
@@ -181,7 +186,6 @@ class AkWorkflowService
     /**
      * Get the start date for appeal countdown.
      * Priority: final_result_at (when K/BK was determined/announced) -> completed_at -> schedule->date -> now().
-     * Note: calculating from final_result_at is BNSP standard, pending LSP PrO Indo SOP confirmation.
      */
     public function getAppealBaseDate(Assessment $assessment): Carbon
     {
@@ -205,10 +209,18 @@ class AkWorkflowService
      */
     public function isWithinAppealDeadline(Assessment $assessment, ?Carbon $targetDate = null): bool
     {
+        $windowDays = $this->getAppealWindowDays();
+        if ($windowDays === null || $windowDays <= 0) {
+            return true; // Deactivated unless set
+        }
+
         $target = $targetDate ? $targetDate->copy() : now();
         $baseDate = $this->getAppealBaseDate($assessment);
 
-        $deadline = $this->calculateAppealDeadline($baseDate);
+        $deadline = $this->calculateAppealDeadline($baseDate, $windowDays);
+        if (! $deadline) {
+            return true;
+        }
 
         return $target->lte($deadline);
     }
@@ -216,21 +228,29 @@ class AkWorkflowService
     /**
      * Submit FR.AK.04 Banding Asesmen by Asesi.
      */
-    public function submitAppeal(Assessment $assessment, string $reasons, array $contestedUnits = [], ?Carbon $appealDate = null): AssessmentAppeal
-    {
+    public function submitAppeal(
+        Assessment $assessment,
+        string $reasons,
+        array $contestedUnits = [],
+        ?bool $prosedurDijelaskan = null,
+        ?bool $diskusiDenganAsesor = null,
+        ?bool $melibatkanOrangLain = null,
+        ?string $signature = null,
+        ?Carbon $appealDate = null
+    ): AssessmentAppeal {
         $date = $appealDate ?? now();
 
         if (! $this->isWithinAppealDeadline($assessment, $date)) {
             $days = $this->getAppealWindowDays();
             $baseDate = $this->getAppealBaseDate($assessment);
-            $deadline = $this->calculateAppealDeadline($baseDate);
+            $deadline = $this->calculateAppealDeadline($baseDate, $days);
 
             throw ValidationException::withMessages([
-                'appeal_reasons' => "Batas waktu pengajuan banding ({$days} hari kerja) telah berakhir pada ".$deadline->translatedFormat('d F Y').'. Sesuai ketentuan, pengajuan banding tidak dapat diproses.',
+                'appeal_reasons' => "Batas waktu pengajuan banding ({$days} hari kerja) telah berakhir pada ".($deadline ? $deadline->translatedFormat('d F Y') : 'jadwal').'. Sesuai ketentuan, pengajuan banding tidak dapat diproses.',
             ]);
         }
 
-        return DB::transaction(function () use ($assessment, $date, $reasons, $contestedUnits) {
+        return DB::transaction(function () use ($assessment, $date, $reasons, $contestedUnits, $prosedurDijelaskan, $diskusiDenganAsesor, $melibatkanOrangLain, $signature) {
             $lockedAssessment = Assessment::where('id', $assessment->id)->lockForUpdate()->first();
 
             $existingAppeal = AssessmentAppeal::where('assessment_id', $lockedAssessment->id)
@@ -244,13 +264,31 @@ class AkWorkflowService
                 ]);
             }
 
-            return AssessmentAppeal::create([
+            $appeal = AssessmentAppeal::create([
                 'assessment_id' => $lockedAssessment->id,
                 'appeal_date' => $date->toDateString(),
                 'appeal_reasons' => $reasons,
                 'contested_units' => $contestedUnits,
+                'prosedur_dijelaskan' => $prosedurDijelaskan,
+                'diskusi_dengan_asesor' => $diskusiDenganAsesor,
+                'melibatkan_orang_lain' => $melibatkanOrangLain,
+                'asesi_signature' => $signature,
                 'status' => 'SUBMITTED',
             ]);
+
+            \App\Models\AuditEvent::record(
+                action: 'appeal.submitted',
+                subject: $appeal,
+                reason: 'Asesi mengajukan banding asesmen (FR.AK.04)',
+                details: [
+                    'assessment_id' => $lockedAssessment->id,
+                    'contested_units_count' => count($contestedUnits),
+                    'appeal_date' => $date->toDateString(),
+                ],
+                userId: auth()->id()
+            );
+
+            return $appeal;
         });
     }
 
