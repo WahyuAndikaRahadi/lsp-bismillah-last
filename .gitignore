@@ -25,3 +25,15 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Agent & tooling metadata
+.claude/
+.mcp.json
+boost.json
+skills/
+
+# Reference documents & SOP
+docs/reference/
+*SOP PROINDO*
+*FR-SOP*
+
