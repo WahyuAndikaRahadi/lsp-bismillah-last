@@ -1,6 +1,6 @@
 # Rencana eksekusi Gemini — core sertifikasi
 
-Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan source ke baseline dan menulis dokumen; **tidak ada task implementasi di bawah yang sudah dikerjakan**. Scope: SOP04 penerimaan sampai penyerahan/penggunaan awal sertifikat, SOP05/06/10. PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation dan lifecycle lain tidak termasuk.
+Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan source ke baseline dan menulis dokumen; **tidak ada task implementasi di bawah yang sudah dikerjakan**. Scope: SOP04 penerimaan sampai penyerahan/penggunaan awal sertifikat, SOP05/06/10, serta alur lean banding (SOP 07), ketidakberpihakan (SOP 01), surveilans (SOP 04 §4 / SOP 19), dan resertifikasi (SOP 04 §5) melalui task 21-01 s.d. 21-04. PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation tidak termasuk.
 
 ## Cara melaksanakan
 
@@ -48,14 +48,18 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 30 | [ ] | [15-07 — Implementasi IA.10 setelah source disahkan](tasks/15-07-ia10.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
 | 31 | [ ] | [15-08 — Implementasi IA.11 setelah source disahkan](tasks/15-08-ia11.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
 | 32 | [ ] | [16 — Rekomendasi asesor eksplisit dan finalisasi](tasks/16-ak02-finalisasi.md) | 12–15 untuk metode yang dipakai; 11 | Belum dijalankan |
-| 33 | [ ] | [17 — AK-03 dan AK-04 data-only](tasks/17-feedback-ak04.md) | 16 | Belum dijalankan |
+| 33 | [ ] | [17 — AK-03 dan Pengajuan Banding AK-04 (intake)](tasks/17-feedback-ak04.md) | 16 | Belum dijalankan |
 | 34 | [ ] | [18 — AK-05/06 per asesor dan revision](tasks/18-laporan-ak05-ak06.md) | 16,17 | Belum dijalankan |
 | 35 | [ ] | [19 — BA normal dan daftar hadir dari fakta](tasks/19-ba-daftar-hadir.md) | 11,18; Q1 sebelum label final BA | Belum dijalankan |
 | 36 | [ ] | [20 — Review independen dan keputusan SOP10](tasks/20-pleno-keputusan.md) | 19; Q4 penunjukan/authority resolved | Belum dijalankan |
 | 37 | [ ] | [21 — Upload sertifikat dan FR10.2](tasks/21-sertifikat-eksternal.md) | 20,04,11 | Belum dijalankan |
-| 38 | [ ] | [22 — Hapus runtime legacy dan bloat setelah cutover](tasks/22-hapus-legacy-bloat.md) | 01,03–21 untuk fitur terkait | Belum dijalankan |
-| 39 | [ ] | [23 — Seluruh halaman satu produk dan alur tanpa jalan buntu](tasks/23-konsistensi-semua-halaman.md) | 06–22 | Belum dijalankan |
-| 40 | [ ] | [24 — Integrasi, upgrade produksi dan handoff](tasks/24-release-dan-handoff.md) | 00–23 termasuk 05-01..07; semua blocker owner yang memengaruhi release selesai | Belum dijalankan |
+| 38 | [ ] | [21-01 — Banding Asesmen (SOP 07)](tasks/21-01-banding.md) | 17,04,20 | Belum dijalankan |
+| 39 | [ ] | [21-02 — Ketidakberpihakan (SOP 01)](tasks/21-02-ketidakberpihakan.md) | 04,07 | Belum dijalankan |
+| 40 | [ ] | [21-03 — Surveilans (SOP 04 §4 & SOP 19)](tasks/21-03-surveilans.md) | 21,04 | Belum dijalankan |
+| 41 | [ ] | [21-04 — Resertifikasi (SOP 04 §5)](tasks/21-04-resertifikasi.md) | 21,07,08 | Belum dijalankan |
+| 42 | [ ] | [22 — Hapus runtime legacy dan bloat setelah cutover](tasks/22-hapus-legacy-bloat.md) | 01,03–21, 21-01..21-04 untuk fitur terkait | Belum dijalankan |
+| 43 | [ ] | [23 — Seluruh halaman satu produk dan alur tanpa jalan buntu](tasks/23-konsistensi-semua-halaman.md) | 06–22 | Belum dijalankan |
+| 44 | [ ] | [24 — Integrasi, upgrade produksi dan handoff](tasks/24-release-dan-handoff.md) | 00–23 termasuk 05-01..07, 21-01..21-04; semua blocker owner yang memengaruhi release selesai | Belum dijalankan |
 
 Task15 hanya source gate; task15-01..08 adalah implementasi satu keluarga per sesi. Bila owner menyediakan source bertahap, hanya keluarga yang lengkap boleh berjalan. Release seluruh cakupan menunggu semuanya terselesaikan atau perubahan scope tertulis. Task05-01..07 dapat berstatus draft data siap review; published memerlukan validasi source dan uji coba oleh pejabat nyata, bukan centang AI.
 
@@ -111,4 +115,8 @@ Isi evidence per task di tabel: `commit; command; exit code; jumlah test; blocke
 4. **Q4 — kewenangan nyata:** siapa pejabat/fungsi yang dapat mengesahkan penunjukan, verifikasi TUK, validasi rekomendasi dan keputusan sertifikasi; apakah komite/pimpinan menggunakan akun admin atau dokumen bertanda tangan eksternal; apa bukti partisipasi dan aturan rapat/quorum yang sah? Tidak menambah role/portal.
 5. **Q5 — data operasional:** mohon identitas LSP/pejabat, pola penomoran, kebijakan validitas sertifikat, sumber spesifikasi/manual report sheet, field yang boleh N/A, dan kanal resmi penanganan AK04 di luar aplikasi. Tidak memakai nilai contoh original sebagai fakta produksi.
 6. **Q6 — migrasi/retensi:** adakah database/file produksi yang wajib dimigrasikan, pemilik keputusan conflict mapping, serta kebijakan retensi bukti/identitas/sertifikat dan backup? Sampai jelas, tabel historis/file tidak dihapus dan deployment produksi tetap ditahan.
+7. **Q7 — penyelidik dan reviewer independen:** siapa personel/pejabat yang berhak ditugaskan sebagai tim investigasi banding (FR-SOP-07.1) dan evaluator surveilans independen; bagaimana aturan penugasan memastikan tidak ada konflik kepentingan dengan kandidat atau asesor terkait?
+8. **Q8 — batas waktu banding (appeal deadline):** berapa hari kalender/kerja batas waktu pengajuan banding AK-04 oleh asesi sejak penerbitan rekomendasi asesmen atau keputusan; apakah default tanpa batas waktu sampai ditetapkan SOP/kebijakan resmi?
+9. **Q9 — interval dan bukti surveilans:** berapa interval berkala pelaksanaan surveilans bagi pemegang sertifikat (misal tahun ke-1, tahun ke-2), apa jenis dokumen bukti pemeliharaan kompetensi yang wajib diunggah pemegang sertifikat, dan apa konsekuensi jika pemegang sertifikat tidak melapor?
+10. **Q10 — aturan resertifikasi LSP:** apa syarat teknis kelayakan sertifikasi ulang / perpanjangan sertifikat (misal: verifikasi portofolio pekerjaan berkelanjutan atau uji ulang unit tertentu), dan berapa bulan sebelum kedaluwarsa permohonan resertifikasi mulai dapat diajukan?
 

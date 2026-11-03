@@ -24,5 +24,8 @@ Ini temuan audit sebelumnya untuk dibuktikan oleh implementasi baru, bukan klaim
 | D18 tinggi: file/DB tidak konsisten | upload/download controllers | Staging/hash/transaction/cleanup; receipt setelah policy dan file available; no path/PII leak pada error | 04,21,24 |
 | D19 sedang: UI tidak konsisten | layouts/public/auth/role views, CSS/JS | Shared patterns, self-host fonts, 390/768/1280, accessible errors, focused assessment | 06,23 |
 | D20 sedang: PDF pipeline ganda/bloat | PDF controllers, MukExportService, pdf/exports views | Route/engine dihapus; original/data MUK/certificate download dipertahankan | 01,22 |
+| D21 tinggi: investigasi banding tidak independen / auto-result | `Admin/AppealController.php`, baseline appeal | Tim investigasi independen (FR-SOP-07.1), dilarang melibatkan asesor kasus, temuan & rekomendasi terstruktur (FR-SOP-07.2), tanpa hasil otomatis | 17, 21-01 |
+| D22 tinggi: surveilans dan perpanjangan otomatis tanpa bukti | `Admin/SurveillanceController.php`, baseline surveillance | Rencana berkala, bukti laporan pemegang (FR.SP.01), temuan independen (FR.SPS.01), keputusan eksplisit (FR.SK.01), linked resertifikasi dengan histori utuh | 21-03, 21-04 |
+| D23 tinggi: benturan kepentingan asesor tidak termitigasi | penugasan asesor dan jadwal | Komitmen, pakta integritas (FR-SOP-01.5), deklarasi benturan, blokir tindakan berkonflik, event pergantian asesor resmi (FR-SOP-01.7) | 21-02 |
 
 Test lama yang mengharuskan impersonation atau certificate generation diganti test penolakan route, bukan dihapus sekadar agar suite hijau. Jangan mematikan assertion security ketika fixture lama tidak memenuhi consent/authority yang benar.

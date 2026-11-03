@@ -17,7 +17,7 @@ Kepala Bidang Sertifikasi, Ketua TUK, koordinator, tim teknis/komite, Kabag Admi
 
 SOP 04 §1.4 memerlukan verifikasi asesor/tim asesor ditetapkan. Kolom Admin LSP pada APL-01 tetap berasal dari tindakan administrasi nyata. Pemeriksaan administratif admin dan review asesor tampil pada satu detail permohonan; upload lengkap bukan otomatis memenuhi syarat.
 
-**Hapus dari aplikasi aktif:** complaints, staff/capability portal, finance, chat/messages, generic letters, quality, proxy/impersonation. **Later:** workflow banding, surveilans, resertifikasi, ketidakberpihakan, audit mutu, PDF export. AK-04, AK-07 dan pernyataan pemegang sertifikat tetap menyimpan field original tanpa engine lifecycle. SPT asesor, SPT verifikasi TUK, penunjukan komite, dan keputusan adalah record core, tanpa modul surat umum.
+**Hapus dari aplikasi aktif:** complaints, staff/capability portal, finance, chat/messages, generic letters, quality, proxy/impersonation, dan PDF export. **Keputusan perubahan owner:** alur lean banding (appeals), surveilans (surveillance), resertifikasi (recertification), dan ketidakberpihakan (impartiality) sekarang **IN SCOPE** karena penting bagi sertifikasi dan dipersyaratkan SOP (SOP 07, 01, 04 §4–5, 19) melalui task 21-01 sampai 21-04. Desain lean: attributable records berstatus ringkas, independensi investigator/reviewer (tidak pernah terlibat kasus), kerahasiaan, ketertelusuran, actor dan event nyata, tanpa hasil otomatis. Roles tetap tiga: `admin`, `asesor`, `asesi`. Fungsi independen dicatat sebagai penunjukan orang nyata. AK-04 adalah intake resmi feeding penanganan banding 21-01. SPT asesor, SPT verifikasi TUK, penunjukan komite, dan keputusan adalah record core, tanpa modul surat umum.
 
 ## Peta SOP
 
@@ -31,9 +31,12 @@ SOP 04 §1.4 memerlukan verifikasi asesor/tim asesor ditetapkan. Kolom Admin LSP
 | 06 §4–5 | Keputusan asesmen dan pelaporan: AK-02, AK-03, AK-05/06 dan bukti | 16–18 |
 | 04 §3.1–3.4; 10 §1–5 | Analisis BA/rekomendasi, komite, verifikasi, koreksi, notulen/BA pleno, FR-10.1, keputusan berwenang | 20 |
 | 04 §3.5–3.6 | Sertifikat diterbitkan eksternal, upload privat dan distribusi FR-10.2; tidak ada generator | 21 |
-| 04 §3.7 | Informasi kebijakan surveilans/sertifikasi ulang yang disediakan owner dapat ditampilkan saat penyerahan; workflow-nya tetap later | 21, tanpa modul baru |
+| 07 / FR-SOP-07.x | Penanganan banding: intake AK-04, penugasan tim investigasi independen (07.1), berita acara investigasi & rekomendasi (07.2), deadline configurable | 17, 21-01 |
+| 01 / FR-SOP-01.x | Pengelolaan ketidakberpihakan: komitmen pimpinan (01.1), komitmen personil (01.4), pakta integritas asesor (01.5), deklarasi benturan, pergantian asesor berkonflik (01.7) | 21-02 |
+| 04 §4; 19 / FR-SOP-19 | Pelaksanaan surveilans: rencana periodik, laporan berkala pemegang sertifikat + bukti, evaluasi independen (FR.SPS.01), keputusan eksplisit (FR.SK.01) | 21-03 |
+| 04 §5 | Pelaksanaan sertifikasi ulang (resertifikasi): linked assessment baru pada skema sama dari sertifikat lama, reuse profil, bukti baru | 21-04 |
 | 04 §6.1–6.2 | Informasi penggunaan sertifikat dan pernyataan pemegang | 21 |
-| 04 §4–5 dan penanganan penyalahgunaan §6; SOP lain | Later; tidak ada workflow/menu. Jangan mengklaim semua SOP organisasi diotomasi | — |
+| SOP lain di luar scope | Audit mutu eksternal, penanganan keluhan pihak ketiga, surat umum tetap di luar aplikasi | — |
 
 FR-04.3 mempunyai dua layout; pakai kolom yang sesuai peran, jangan memberi nomor registrasi fiktif. SOP 04 menunjuk BA biasa sebagai **04.05**, sementara original **04.4** adalah BA UJK biasa dan **04.5** berisi asesmen ulang. Simpan data BA normal tanpa memutuskan nomor final sampai Q1. FR-04.6/04.7 terkait asesmen ulang: later.
 
@@ -55,7 +58,7 @@ Revocation memblokir penerapan berikutnya. Admin hanya dapat mencatat koreksi/pe
 
 ## Alur minimal
 
-- Asesi: registrasi → profil sekali → jadwal/consent → APL-01/02 → revisi bila diminta → persetujuan AK-01 → masuk ruang uji → tugas asesi → hasil/AK-03 → semua sertifikat/acknowledgment/download. AK-04 hanya data formulir, bukan workflow banding.
+- Asesi: registrasi → profil sekali → jadwal/consent → APL-01/02 → revisi bila diminta → persetujuan AK-01 → masuk ruang uji → tugas asesi → hasil/AK-03 → pengajuan AK-04 (bila mengajukan banding, ditangani independen) → semua sertifikat/acknowledgment/download → pelaporan surveilans & pengajuan resertifikasi terhubung.
 - Asesor: penugasan/consent → review APL → MAPA/AK-07/AK-01 → sesi → bukti/temuan → AK-02 → AK-05/06 → paket review.
 - Admin: referensi/TUK → jadwal/asesor/koordinator → pemeriksaan administratif/pengecualian → BA → pleno/keputusan → upload sertifikat.
 

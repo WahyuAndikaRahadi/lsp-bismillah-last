@@ -28,7 +28,15 @@ Primary action kanan footer form di desktop, full-width bagian bawah di mobile (
 | Asesi: AK-01 | form | `Setujui rencana asesmen`; identitas/jadwal/bukti/kerahasiaan sesuai original |
 | Asesi: ruang uji | focused detail | `Masuk ruang uji` lalu satu instrumen berikut; daftar progres ringkas, no menu dokumen massal |
 | Asesi: CBT/IA jawaban/report | focused form | `Kirim jawaban`; save status/timer/progress; keluar dengan warning jika ada draft belum tersimpan |
-| Asesi: hasil/AK-03/AK-04 | detail/form | `Isi umpan balik` setelah rekomendasi; AK-04 secondary relevan, tanpa janji investigasi aplikasi |
+| Asesi: hasil/AK-03/AK-04 | detail/form | `Isi umpan balik` setelah rekomendasi; `Ajukan banding (AK-04)` jika tidak puas |
+| Asesi: status & hasil banding | detail | `Lihat hasil banding`; status intake dan temuan resmi setelah diputuskan |
+| Asesi: pelaporan surveilans | form/detail | `Kirim laporan surveilans`; upload bukti berkala pemeliharaan kompetensi |
+| Asesi: permohonan resertifikasi | form/detail | `Ajukan sertifikasi ulang`; mulai assessment baru dari sertifikat lama yang dimiliki |
+| Asesor: integritas & benturan | form | `Tandatangani pakta integritas` / `Laporkan benturan kepentingan` (FR-SOP-01.5) |
+| Admin: penanganan banding | list/detail/form | `Tugaskan tim investigasi` (07.1) / `Simpan berita acara banding` (07.2) |
+| Admin: ketidakberpihakan & pergantian asesor | list/detail/form | `Catat pergantian asesor` (FR-SOP-01.7) untuk asesor berkonflik |
+| Admin: surveilans pemegang | list/detail/form | `Buat rencana surveilans` / `Tetapkan hasil surveilans` (FR.SK.01) |
+| Admin: sertifikasi ulang | list/detail | Verifikasi permohonan resertifikasi dan penugasan jadwal baru |
 | Asesi: sertifikat list/detail | list/detail | `Unduh sertifikat`; tersedia setelah upload sah, menunggu upload dijelaskan |
 | Asesor: beranda/jadwal/roster | list/detail | Tugas berikut sesuai tahap; filter peserta tanpa memindahkan portal |
 | Asesor: review APL | detail/form | `Setujui permohonan` jika lengkap; `Minta perbaikan` terpisah; tidak membuka consent/hasil otomatis |

@@ -39,7 +39,11 @@ Skenario IA-02, petunjuk, daftar alat/bahan, durasi dan manual adalah reference 
 | IA-04A/B, IA-06A/B/C, IA-07–11 | **Original belum tersedia terpisah** | 15, blocked Q2 | Tidak menciptakan field untuk memenuhi checklist |
 | AK-02 | Bukti unit, rekomendasi, tindak lanjut, komentar, lampiran, signature event | 16 | Explicit assessor finding, tidak default |
 | AK-03 | Sepuluh komponen feedback original dan komentar asesi | 17 | Tidak auto-Ya |
-| AK-04 | Pertanyaan YA/TIDAK, identitas, alasan, signature asesi | 17 | Data-only, handling di luar aplikasi |
+| AK-04 | Pertanyaan YA/TIDAK, identitas, alasan, unit dibantah, signature asesi | 17, 21-01 | Intake banding resmi feeding penanganan investigasi independen (task 21-01) |
+| FR-SOP-07.1/07.2 | Penugasan tim investigasi independen, berita acara temuan & rekomendasi | 21-01 | Investigasi independen, tidak mengubah nilai otomatis |
+| FR-SOP-01.1/01.4/01.5/01.7 | Komitmen lembaga/personil, pakta integritas asesor, deklarasi konflik, pergantian asesor | 21-02 | Unresolved conflict memblokir tindakan asesor |
+| FR.SPS.01/FR.SK.01/FR.SP.01 | Rencana berkala, laporan pemegang sertifikat + bukti, rekaman evaluasi, surat keputusan surveilans | 21-03 | Terikat sertifikat aktif, no auto-clearance |
+| Resertifikasi SOP 04 §5 | Prior certificate ID, data permohonan perpanjangan, linked assessment baru | 21-04 | Reusable profile, mempertahankan sertifikat terdahulu |
 | AK-05 | Roster/rekomendasi unit BK, aspek, penolakan, improvement/catatan | 18 | Laporan per asesor/revisi |
 | AK-06 | Matrix prosedur × prinsip, dimensi kompetensi, evidence/improvement, reviewer | 18 | Tidak diganti empat checkbox global |
 | Cover/checklist/pernyataan | Metadata reference, ketersediaan nyata, acknowledgment pemegang | 05/19/21 | Bukan generic letters module |

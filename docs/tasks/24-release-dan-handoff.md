@@ -1,16 +1,16 @@
 # Task 24 — Integrasi, upgrade produksi dan handoff
 
-Status: [ ] belum dikerjakan. Dependency: **00–23 termasuk 05-01..07; semua blocker owner yang memengaruhi release selesai**.
+Status: [ ] belum dikerjakan. Dependency: **00–23 termasuk 05-01..07, 21-01..21-04; semua blocker owner yang memengaruhi release selesai**.
 
 ## Tujuan
 
-Membuktikan sistem core siap release tanpa membawa proyek PDF.
+Membuktikan sistem core dan lean lifecycle siap release tanpa membawa proyek PDF atau modul out-of-scope.
 
 ## Kontrak yang harus dibaca
 
 `../CONTEXT.md`, bagian relevan `../DATA_MODEL.md`, `../FIELD_COVERAGE.md` + baris CSV keluarga/skema task ini, dan `../PAGE_CONTRACT.md`. Path file di bawah relatif root repo. File bertanda baru dibuat oleh task; path existing diperiksa dengan `rg` sebelum edit. Jika file baseline berbeda, catat pemetaan path aktual; jangan membuat controller duplikat hanya untuk mengikuti nama rencana.
 
-Batas tetap: hanya core SOP04/05/06/10; tiga role admin/asesor/asesi; satu LSP; tanpa PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation atau lifecycle later. Original read-only. Jangan menyalin kode arsip. Nilai hasil/consent/attendance harus event nyata, actor dan timestamp; semua akses object-authorized. Ketidakjelasan source = blocker, bukan izin menebak.
+Batas tetap: hanya core SOP04/05/06/10; tiga role admin/asesor/asesi; satu LSP; tanpa PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation; banding, surveilans, resertifikasi, dan ketidakberpihakan hanya melalui task 21-01 sampai 21-04. Original read-only. Jangan menyalin kode arsip. Nilai hasil/consent/attendance harus event nyata, actor dan timestamp; semua akses object-authorized. Ketidakjelasan source = blocker, bukan izin menebak.
 
 ## Scope dan file
 
@@ -25,7 +25,7 @@ Sebelum full run, satu batch existing tests area disentuh untuk menemukan fixtur
 - [ ] Full suite dan build hasil nyata tercatat termasuk jumlah test/skipped; tidak mematikan security tests. Bila failure diperbaiki, jalankan failing subset, catat full run belum diulang/hasilnya, jangan menyebut full suite bersih jika belum.
 - [ ] Semua form×scheme source mappings published tanpa unresolved; seluruh owner questions release-critical terselesaikan atau release dinyatakan blocked.
 - [ ] Authorization/file/PII, migration/seed idempotency, restore, error logs, concurrency dan responsive evidence tersedia; deployment rollback dapat dilakukan tanpa kehilangan new writes.
-- [ ] Dokumen handoff membedakan verified/unverified, tidak mengklaim PDF pixel fidelity/generation atau lifecycle later.
+- [ ] Dokumen handoff membedakan verified/unverified, mencakup status task core dan lean lifecycle (21-01 s.d. 21-04), tidak mengklaim PDF pixel fidelity/generation atau modul out-of-scope (complaint/finance/letters/quality/chat/impersonation).
 
 ## Test sempit / bukti
 

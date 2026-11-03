@@ -8,8 +8,8 @@ Tujuan: satu domain core dan tiga role. Tahap awal menutup route berisiko; tahap
 |---|---|---|
 | Impersonation | `Admin/ProxyController.php`, route proxy/switchback, UI switch user, proxy session helpers dan test yang mewajibkan fitur | Actor audit asli; tidak ada penggantinya |
 | Complaint | `Admin/ComplaintController.php`, root `ComplaintController.php`, `Complaint.php`, views/routes complaint/tracking publik | Tidak ada pengganti atau tracking token |
-| Surveillance | `Admin/SurveillanceController.php`, root `SurveillanceController.php`, `SurveillanceRecord.php`, route public surveillance | Tidak ada workflow pengganti |
-| Appeals workflow | `Admin/AppealController.php`, route pengelolaan banding dan lifecycle pada `AssessmentAppeal.php` | Field AK-04 dipindah menjadi data formulir assessment, tanpa investigasi/state engine |
+| Surveillance baseline | `root/SurveillanceController.php` (route public surveillance tanpa otentikasi) dan direct clearance tanpa evaluasi | Digantikan oleh alur lean surveilans SOP 04 §4 / SOP 19 (task 21-03): rencana periodik, laporan pemegang sertifikat + bukti, temuan independen (FR.SPS.01) dan keputusan eksplisit (FR.SK.01) |
+| Appeals baseline | Logika lama `Admin/AppealController.php` yang mem-bypass investigasi independen atau tanpa checks independensi | Digantikan oleh alur lean banding SOP 07 (task 21-01): intake AK-04 dari asesi (task 17), penugasan tim investigasi independen (FR-SOP-07.1) dan berita acara temuan/rekomendasi (FR-SOP-07.2) |
 | Finance | `Admin/FinanceController.php`, `FinancialAccount.php`, `FinancialTransaction.php`, `BankAccount.php`, views/menu/export finance | Tidak ada tagihan/payment prerequisite core |
 | Generic letters | `Admin/LetterController.php`, `Letter.php`, views/template surat umum | Reference/metadata SPT, penunjukan komite, keputusan di objek core |
 | Messages | `Admin/MessageController.php`, `Asesor/NotificationController.php`, `SystemMessage.php`, chat/message UI dan routes | Status/error/transaksi pada halaman, bukan inbox |
