@@ -1,6 +1,6 @@
 # Task 21-01 — Banding Asesmen (SOP 07)
 
-Status: [ ] belum dikerjakan. Dependency: **17, 04, 20**.
+Status: [x] selesai. Dependency: **17, 04, 20**.
 
 ## Tujuan
 
@@ -22,10 +22,10 @@ Pengajuan AK-04 oleh asesi masuk sebagai permohonan banding tercatat (FR-SOP-07.
 
 ## Acceptance criteria
 
-- [ ] Asesi dapat mengajukan banding AK-04 dalam batas waktu yang dikonfigurasi; pengajuan lewat tenggat waktu ditolak.
-- [ ] Asesor yang terlibat dalam asesmen yang dibanding dilarang ditugaskan sebagai investigator banding (pemeriksaan independensi).
-- [ ] Berita acara dan rekomendasi investigasi (FR-SOP-07.2) tercatat dengan temuan faktual, rekomendasi tindak lanjut, actor, dan waktu nyata tanpa perubahan hasil kompetensi otomatis.
-- [ ] Akses data banding terlindungi secara rahasia; asesi lain dan pihak tidak berwenang ditolak (403/404).
+- [x] Asesi dapat mengajukan banding AK-04 dalam batas waktu yang dikonfigurasi; pengajuan lewat tenggat waktu ditolak.
+- [x] Asesor yang terlibat dalam asesmen yang dibanding dilarang ditugaskan sebagai investigator banding (pemeriksaan independensi).
+- [x] Berita acara dan rekomendasi investigasi (FR-SOP-07.2) tercatat dengan temuan faktual, rekomendasi tindak lanjut, actor, dan waktu nyata tanpa perubahan hasil kompetensi otomatis.
+- [x] Akses data banding terlindungi secara rahasia; asesi lain dan pihak tidak berwenang ditolak (403/404).
 
 ## Test sempit / bukti
 

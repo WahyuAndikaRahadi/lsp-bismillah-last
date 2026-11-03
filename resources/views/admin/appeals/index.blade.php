@@ -1,75 +1,102 @@
-@extends('layouts.app', ['title' => 'Daftar Pengajuan Banding Asesmen (FR.AK.04)'])
+@extends('layouts.app')
+
+@section('title', 'Manajemen Banding Asesmen (SOP 07)')
 
 @section('content')
-<div class="space-y-6">
-    <div class="flex items-center justify-between">
+<div class="container mx-auto px-4 py-6 max-w-7xl">
+    <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-black text-slate-900 tracking-tight">Pengajuan Banding Asesmen (FR.AK.04)</h1>
-            <p class="text-xs text-slate-500">Layanan Banding Asesmen - Kelola dan putuskan sanggahan hasil uji kompetensi dari asesi</p>
+            <h1 class="text-2xl font-bold text-gray-900">Manajemen Banding Asesmen (SOP 07)</h1>
+            <p class="text-sm text-gray-600 mt-1">Pengelolaan berkas permohonan banding (FR-SOP-07.1) dan investigasi independen (FR-SOP-07.2).</p>
         </div>
     </div>
 
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-        <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
-            <h2 class="text-sm font-bold text-slate-900">Daftar Banding Masuk ({{ $appeals->total() }})</h2>
+    @if (session('success'))
+        <div class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 text-sm rounded">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    {{-- Filter Status --}}
+    <div class="mb-6 flex items-center gap-2 text-xs">
+        <a href="{{ route('admin.appeals.index') }}" class="px-3 py-1.5 rounded-md font-medium {{ empty($status) ? 'bg-primary text-white' : 'bg-white border text-gray-700 hover:bg-gray-50' }}">
+            Semua ({{ $appeals->total() }})
+        </a>
+        <a href="{{ route('admin.appeals.index', ['status' => 'SUBMITTED']) }}" class="px-3 py-1.5 rounded-md font-medium {{ $status === 'SUBMITTED' ? 'bg-primary text-white' : 'bg-white border text-gray-700 hover:bg-gray-50' }}">
+            Intake Masuk
+        </a>
+        <a href="{{ route('admin.appeals.index', ['status' => 'ACCEPTED']) }}" class="px-3 py-1.5 rounded-md font-medium {{ $status === 'ACCEPTED' ? 'bg-primary text-white' : 'bg-white border text-gray-700 hover:bg-gray-50' }}">
+            Diterima / Asesmen Ulang
+        </a>
+        <a href="{{ route('admin.appeals.index', ['status' => 'REJECTED']) }}" class="px-3 py-1.5 rounded-md font-medium {{ $status === 'REJECTED' ? 'bg-primary text-white' : 'bg-white border text-gray-700 hover:bg-gray-50' }}">
+            Ditolak / Keputusan Tetap
+        </a>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 text-sm">
+                <thead class="bg-gray-50 text-gray-700">
+                    <tr>
+                        <th class="py-3 px-4 text-left font-semibold">Tanggal & ID</th>
+                        <th class="py-3 px-4 text-left font-semibold">Asesi Pemohon</th>
+                        <th class="py-3 px-4 text-left font-semibold">Skema Sertifikasi</th>
+                        <th class="py-3 px-4 text-left font-semibold">Asesor Terkait</th>
+                        <th class="py-3 px-4 text-left font-semibold">Status Banding</th>
+                        <th class="py-3 px-4 text-left font-semibold">Investigator</th>
+                        <th class="py-3 px-4 text-right font-semibold">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    @forelse ($appeals as $item)
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4">
+                                <div class="font-medium text-gray-900">{{ $item->appeal_date?->format('d/m/Y') }}</div>
+                                <div class="text-xs text-gray-500 font-mono">BND-{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</div>
+                            </td>
+                            <td class="py-3 px-4">
+                                <div class="font-medium text-gray-900">{{ $item->assessment?->asesi?->name }}</div>
+                                <div class="text-xs text-gray-500">NIK: {{ $item->assessment?->asesi?->profile?->nik ?? '-' }}</div>
+                            </td>
+                            <td class="py-3 px-4 text-xs text-gray-700">
+                                {{ $item->assessment?->scheme?->name }}
+                            </td>
+                            <td class="py-3 px-4 text-xs text-gray-700">
+                                {{ $item->assessment?->assessor?->name ?? 'Belum ditentukan' }}
+                            </td>
+                            <td class="py-3 px-4">
+                                @if ($item->status === 'SUBMITTED')
+                                    <span class="inline-flex px-2 py-0.5 rounded text-xs font-semibold bg-amber-100 text-amber-800">INTAKE MASUK</span>
+                                @elseif ($item->status === 'UNDER_REVIEW')
+                                    <span class="inline-flex px-2 py-0.5 rounded text-xs font-semibold bg-blue-100 text-blue-800">DALAM INVESTIGASI</span>
+                                @elseif ($item->status === 'ACCEPTED')
+                                    <span class="inline-flex px-2 py-0.5 rounded text-xs font-semibold bg-green-100 text-green-800">DITERIMA</span>
+                                @elseif ($item->status === 'REJECTED')
+                                    <span class="inline-flex px-2 py-0.5 rounded text-xs font-semibold bg-gray-200 text-gray-800">DITOLAK</span>
+                                @endif
+                            </td>
+                            <td class="py-3 px-4 text-xs text-gray-700">
+                                {{ $item->latestInvestigation?->investigator?->name ?? '-' }}
+                            </td>
+                            <td class="py-3 px-4 text-right">
+                                <a href="{{ route('admin.appeals.show', $item->id) }}" class="inline-flex items-center px-3 py-1 bg-primary text-white text-xs font-medium rounded hover:bg-primary/90">
+                                    Kelola investigasi
+                                </a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="7" class="py-8 px-4 text-center text-sm text-gray-500">
+                                Belum ada berkas pengajuan banding asesmen yang tercatat.
+                            </td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
 
-        @if($appeals->isEmpty())
-            <div class="p-8 text-center text-slate-400 italic text-xs">
-                Belum ada permohonan banding yang diajukan oleh asesi.
-            </div>
-        @else
-            <div class="divide-y divide-slate-100">
-                @foreach($appeals as $appeal)
-                    <div class="p-6 space-y-4">
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                            <div>
-                                <span class="font-bold text-slate-900 text-sm">{{ $appeal->assessment->asesi->full_name }}</span>
-                                <span class="text-xs text-slate-500 ml-2">({{ $appeal->assessment->schedule->scheme->name }})</span>
-                                <div class="text-[11px] text-slate-400 mt-0.5">
-                                    Diajukan: {{ \Carbon\Carbon::parse($appeal->appeal_date)->isoFormat('D MMMM Y') }} | Jadwal: {{ $appeal->assessment->schedule->name }}
-                                </div>
-                            </div>
-                            <div>
-                                <span class="px-3 py-1 text-xs font-bold rounded-lg border {{ $appeal->status === 'ACCEPTED' ? 'bg-emerald-50 text-emerald-700 border-emerald-300' : ($appeal->status === 'REJECTED' ? 'bg-rose-50 text-rose-700 border-rose-300' : 'bg-purple-50 text-purple-700 border-purple-300') }}">
-                                    {{ $appeal->status }}
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 rounded-lg p-3 text-xs space-y-1 border border-slate-200">
-                            <span class="font-bold text-slate-700 block">Alasan Banding:</span>
-                            <p class="text-slate-800 leading-relaxed">{{ $appeal->appeal_reasons }}</p>
-                        </div>
-
-                        @if($appeal->status === 'SUBMITTED' || $appeal->status === 'UNDER_REVIEW')
-                            <form action="{{ route('admin.appeals.decide', $appeal->id) }}" method="POST" class="pt-2 flex flex-col md:flex-row items-center gap-3 text-xs">
-                                @csrf
-                                <input type="text" name="appeals_committee_chair" class="w-full md:w-56 text-xs rounded-lg border-slate-300 focus:ring-brand-500" placeholder="Nama Ketua Tim Banding (opsional)..." value="{{ old('appeals_committee_chair', $appeal->appeals_committee_chair) }}">
-                                <input type="text" name="decision_notes" class="flex-1 text-xs rounded-lg border-slate-300 focus:ring-brand-500" placeholder="Catatan keputusan banding (tindak lanjut/asesmen ulang)..." required>
-                                <div class="flex items-center space-x-2">
-                                    <button type="submit" name="decision" value="ACCEPTED" class="px-4 py-2 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-sm transition">
-                                        Terima Banding
-                                    </button>
-                                    <button type="submit" name="decision" value="REJECTED" class="px-4 py-2 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-lg shadow-sm transition">
-                                        Tolak Banding
-                                    </button>
-                                </div>
-                            </form>
-                        @else
-                            <div class="text-xs text-slate-600 bg-slate-100 p-3 rounded-lg border border-slate-200">
-                                <strong>Catatan Keputusan:</strong> {{ $appeal->decision_notes ?? '-' }}
-                                @if($appeal->appeals_committee_chair)
-                                    <div class="text-slate-800 mt-1"><strong>Ketua Tim Banding:</strong> {{ $appeal->appeals_committee_chair }}</div>
-                                @endif
-                                <span class="text-slate-400 block mt-1">Diputuskan oleh: {{ $appeal->decider->full_name ?? 'Admin' }} pada {{ $appeal->decision_date ? \Carbon\Carbon::parse($appeal->decision_date)->isoFormat('D MMMM Y') : '-' }}</span>
-                            </div>
-                        @endif
-                    </div>
-                @endforeach
-            </div>
-
-            <div class="p-4 border-t border-slate-200">
+        @if ($appeals->hasPages())
+            <div class="px-5 py-3 border-t border-gray-200 bg-gray-50">
                 {{ $appeals->links() }}
             </div>
         @endif

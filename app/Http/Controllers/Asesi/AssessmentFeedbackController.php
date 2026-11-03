@@ -153,4 +153,20 @@ class AssessmentFeedbackController extends Controller
         return redirect()->route('asesi.jadwal.index')
             ->with('success', 'Pengajuan Banding Asesmen (FR.AK.04) berhasil dikirimkan ke LSP dan tercatat sebagai berkas intake.');
     }
+
+    /**
+     * Tampilkan status dan pengumuman hasil investigasi banding untuk asesi (Kerahasiaan terjaga).
+     */
+    public function showAppealStatus(AssessmentAppeal $appeal): View
+    {
+        abort_if($appeal->assessment?->asesi_id !== auth()->id(), 403, 'Akses ditolak.');
+
+        $appeal->load([
+            'assessment.scheme',
+            'assessment.assessor',
+            'latestInvestigation',
+        ]);
+
+        return view('asesi.appeals.show', compact('appeal'));
+    }
 }

@@ -184,6 +184,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/assessment/{assessment}/certificate', [\App\Http\Controllers\Admin\CertificateController::class, 'store'])->name('assessment.certificate.store');
         Route::get('/certificates/{certificate}/download', [\App\Http\Controllers\Admin\CertificateController::class, 'download'])->name('certificates.download');
 
+        // Penanganan Banding Asesmen (SOP 07 / Task 21-01)
+        Route::get('/appeals', [\App\Http\Controllers\Admin\AppealController::class, 'index'])->name('appeals.index');
+        Route::get('/appeals/{appeal}', [\App\Http\Controllers\Admin\AppealController::class, 'show'])->name('appeals.show');
+        Route::post('/appeals/{appeal}/investigate', [\App\Http\Controllers\Admin\AppealController::class, 'recordInvestigation'])->name('appeals.investigate');
+
         // BNSP exports, complaints, baseline surveillance & baseline appeals disabled
 
         // Laporan & Ekspor Lengkap Parity Demo
@@ -399,6 +404,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/appeal', [\App\Http\Controllers\Asesi\AssessmentFeedbackController::class, 'showAppeal'])->name('appeal');
             Route::post('/appeal', [\App\Http\Controllers\Asesi\AssessmentFeedbackController::class, 'submitAppeal'])->name('appeal.submit');
         });
+
+        Route::get('/appeals/{appeal}', [\App\Http\Controllers\Asesi\AssessmentFeedbackController::class, 'showAppealStatus'])->name('appeals.show');
 
         // Backward compatibility routes for legacy application links
         Route::resource('/applications', ApplicationController::class)->except(['destroy']);
