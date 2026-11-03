@@ -35,12 +35,6 @@ class WorkspaceController extends Controller
             'ak07Items',
         ]);
 
-        // Auto sync AK.02 if not yet initialized
-        if ($assessment->ak02Items->isEmpty()) {
-            $this->workflowService->syncAk02($assessment);
-            $assessment->refresh();
-        }
-
         $scheme = $assessment->schedule->scheme;
         $profile = $assessment->asesi->profile;
         $proofs = $assessment->proofs;

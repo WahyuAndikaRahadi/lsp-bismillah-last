@@ -288,28 +288,6 @@
                                 </svg>
                                 <span>Rapat Pleno Komite</span>
                             </a>
-                            <a href="{{ route('admin.dokumen-muk.index') }}" 
-                               class="flex items-center space-x-3 px-3 py-2.5 rounded text-xs font-semibold transition {{ request()->routeIs('admin.dokumen-muk.*') ? 'bg-lsp-input-bg text-lsp-navy border-l-4 border-lsp-navy font-bold' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                <svg class="w-4 h-4 text-lsp-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                                </svg>
-                                <span>Dokumen MUK Ekspor</span>
-                            </a>
-                            <a href="{{ route('admin.appeals.index') }}" 
-                               class="flex items-center space-x-3 px-3 py-2.5 rounded text-xs font-semibold transition {{ request()->routeIs('admin.appeals.*') ? 'bg-lsp-input-bg text-lsp-navy border-l-4 border-lsp-navy font-bold' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                <svg class="w-4 h-4 text-lsp-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
-                                </svg>
-                                <span>Banding Asesmen (AK.04)</span>
-                            </a>
-                            <a href="{{ route('admin.proxy.index') }}" 
-                               class="flex items-center space-x-3 px-3 py-2.5 rounded text-xs font-semibold transition {{ request()->routeIs('admin.proxy.*') ? 'bg-lsp-input-bg text-lsp-navy border-l-4 border-lsp-navy font-bold' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                <svg class="w-4 h-4 text-lsp-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
-                                </svg>
-                                <span>Switch Role (Proxy)</span>
-                            </a>
-
                             @if(auth()->user()->isRole('SUPER_ADMIN') || auth()->user()->isRole('admin'))
                                 <div class="px-3 pt-4 pb-1 text-[10px] font-extrabold text-lsp-muted uppercase tracking-wider">
                                     Master Data & Pengaturan
@@ -351,52 +329,6 @@
                                     <span>Profil Lembaga LSP</span>
                                 </a>
 
-                                <div class="px-3 pt-4 pb-1 text-[10px] font-extrabold text-lsp-muted uppercase tracking-wider">
-                                    Operasional & Administrasi
-                                </div>
-                                <a href="{{ route('admin.quality.documents.index') }}" 
-                                   class="flex items-center space-x-3 px-3 py-2 rounded text-xs font-medium transition {{ request()->routeIs('admin.quality.*') ? 'bg-lsp-input-bg text-lsp-navy font-bold border-l-4 border-lsp-navy' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                    <span>Penjaminan Mutu & Audit</span>
-                                </a>
-                                <a href="{{ route('admin.finance.transactions.index') }}" 
-                                   class="flex items-center space-x-3 px-3 py-2 rounded text-xs font-medium transition {{ request()->routeIs('admin.finance.*') ? 'bg-lsp-input-bg text-lsp-navy font-bold border-l-4 border-lsp-navy' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                    <span>Keuangan & Rekening</span>
-                                </a>
-                                <a href="{{ route('admin.letters.index') }}" 
-                                   class="flex items-center space-x-3 px-3 py-2 rounded text-xs font-medium transition {{ request()->routeIs('admin.letters.*') ? 'bg-lsp-input-bg text-lsp-navy font-bold border-l-4 border-lsp-navy' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                    </svg>
-                                    <span>Persuratan Resmi</span>
-                                </a>
-                                <a href="{{ route('admin.surveillance.index') }}" 
-                                   class="flex items-center space-x-3 px-3 py-2 rounded text-xs font-medium transition {{ request()->routeIs('admin.surveillance.*') ? 'bg-lsp-input-bg text-lsp-navy font-bold border-l-4 border-lsp-navy' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                    <span>Surveilans Pemegang Sertifikat</span>
-                                </a>
-                                <a href="{{ route('admin.complaints.index') }}" 
-                                   class="flex items-center space-x-3 px-3 py-2 rounded text-xs font-medium transition {{ request()->routeIs('admin.complaints.*') ? 'bg-lsp-input-bg text-lsp-navy font-bold border-l-4 border-lsp-navy' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-                                    </svg>
-                                    <span>Layanan Pengaduan Publik</span>
-                                </a>
-                                <a href="{{ route('admin.exports.bnsp.index') }}" 
-                                   class="flex items-center space-x-3 px-3 py-2 rounded text-xs font-medium transition {{ request()->routeIs('admin.exports.*') ? 'bg-lsp-input-bg text-lsp-navy font-bold border-l-4 border-lsp-navy' : 'text-slate-600 hover:text-lsp-navy hover:bg-slate-50' }}">
-                                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                                    </svg>
-                                    <span>Ekspor Format BNSP</span>
-                                </a>
                             @endif
                         @endif
 
@@ -478,18 +410,6 @@
 
                         <!-- Right: Portal & Impersonation Badge -->
                         <div class="flex items-center space-x-2.5 sm:space-x-3 shrink-0">
-                            @if(session('admin_impersonator_id'))
-                                <div class="bg-amber-100 border border-amber-300 px-2.5 py-1 rounded text-[11px] sm:text-xs font-semibold text-amber-900 flex items-center space-x-2 shadow-xs">
-                                    <span class="truncate max-w-[120px] sm:max-w-none">Proxy: <strong>{{ auth()->user()->full_name }}</strong></span>
-                                    <form action="{{ route('proxy.switch-back') }}" method="POST" class="inline">
-                                        @csrf
-                                        <button type="submit" class="bg-amber-800 hover:bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] font-bold transition">
-                                            Kembali &rarr;
-                                        </button>
-                                    </form>
-                                </div>
-                            @endif
-
                             <div class="hidden sm:flex items-center space-x-2 text-xs text-slate-500 font-medium">
                                 <svg class="w-3.5 h-3.5 text-lsp-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>

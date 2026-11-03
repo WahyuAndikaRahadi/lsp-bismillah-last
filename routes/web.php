@@ -77,14 +77,7 @@ Route::get('/', function () {
     return redirect()->route('asesi.dashboard');
 })->name('home');
 
-// Layanan Pengaduan & Aspirasi Publik (Fase 8)
-Route::get('/pengaduan', [ComplaintController::class, 'create'])->name('pengaduan.create');
-Route::post('/pengaduan', [ComplaintController::class, 'store'])->name('pengaduan.store');
-Route::get('/pengaduan/tracking', [ComplaintController::class, 'tracking'])->name('pengaduan.tracking');
-
-// Layanan Surveilans Pemegang Sertifikat (Fase 8)
-Route::get('/surveillance', [SurveillanceController::class, 'create'])->name('surveillance.create');
-Route::post('/surveillance', [SurveillanceController::class, 'store'])->name('surveillance.store');
+// Public pengaduan & surveillance disabled (out-of-scope / contained)
 
 /*
 |--------------------------------------------------------------------------
@@ -112,10 +105,7 @@ Route::middleware('guest')->group(function () {
 */
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
-    Route::post('/proxy/switch-back', [LoginController::class, 'proxySwitchBack'])->name('proxy.switch-back');
-    Route::post('/admin/proxy/switch/{user}', [ProxyController::class, 'impersonate'])
-        ->middleware('role:admin,ADMIN_LSP,SUPER_ADMIN')
-        ->name('proxy.switch');
+    // Proxy / impersonation disabled (out-of-scope / contained)
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -143,22 +133,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/jadwal/{jadwal}/batch-review-registration', [JadwalController::class, 'batchReviewRegistration'])->name('jadwal.batch-review-registration');
         Route::post('/assessment/{assessment}/mark-absent', [JadwalController::class, 'markAbsent'])->name('assessment.mark-absent');
 
-        // ProIndo Dokumen MUK Center & Exports
-        Route::get('/dokumen-muk', [DokumenMukController::class, 'index'])->name('dokumen-muk.index');
-        Route::get('/dokumen-muk/{schedule}/export/{type}', [DokumenMukController::class, 'exportSchedule'])->name('dokumen-muk.export');
-        Route::get('/dokumen-muk/asesi/{assessment}/export/{type}', [DokumenMukController::class, 'exportAsesi'])->name('dokumen-muk.export-asesi');
-        Route::get('/dokumen-muk/{schedule}/export-sertifikat', [DokumenMukController::class, 'exportSertifikat'])->name('dokumen-muk.export-sertifikat');
-        Route::get('/dokumen-muk/{schedule}/export-ba', [DokumenMukController::class, 'exportBa'])->name('dokumen-muk.export-ba');
-        Route::get('/dokumen-muk/{schedule}/export-hadir-asesor', [DokumenMukController::class, 'exportHadirAsesor'])->name('dokumen-muk.export-hadir-asesor');
-        Route::get('/dokumen-muk/{schedule}/export-hadir-asesi', [DokumenMukController::class, 'exportHadirAsesi'])->name('dokumen-muk.export-hadir-asesi');
-        Route::get('/dokumen-muk/{schedule}/export-excel-biodata', [DokumenMukController::class, 'exportExcelBiodata'])->name('dokumen-muk.export-excel-biodata');
-        Route::get('/dokumen-muk/{schedule}/export-excel-hadir-asesi', [DokumenMukController::class, 'exportExcelHadirAsesi'])->name('dokumen-muk.export-excel-hadir-asesi');
-        Route::get('/dokumen-muk/{schedule}/export-excel-hadir-asesor', [DokumenMukController::class, 'exportExcelHadirAsesor'])->name('dokumen-muk.export-excel-hadir-asesor');
-        Route::get('/dokumen-muk/individual/{assessment}', [DokumenMukController::class, 'exportIndividual'])->name('dokumen-muk.export-individual');
-
-        // Proxy Impersonation
-        Route::get('/proxy', [ProxyController::class, 'index'])->name('proxy.index');
-        Route::post('/proxy/{user}', [ProxyController::class, 'impersonate'])->name('proxy.impersonate');
+        // Dokumen MUK export & proxy disabled (out-of-scope / contained)
 
         // Master Data ProIndo
         Route::resource('users', UserController::class);
@@ -212,20 +187,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/pleno/{schedule}', [PlenoController::class, 'show'])->name('pleno.show');
         Route::post('/pleno/{schedule}', [PlenoController::class, 'store'])->name('pleno.store');
 
-        // Ekspor Format BNSP, Pengaduan, & Surveilans (Fase 8)
-        Route::get('/exports/bnsp', [BnspExportController::class, 'index'])->name('exports.bnsp.index');
-        Route::get('/exports/bnsp/download', [BnspExportController::class, 'export'])->name('exports.bnsp.download');
-        Route::get('/exports/bnsp/schedule/{schedule}', [BnspExportController::class, 'exportSchedule'])->name('exports.bnsp.schedule');
-
-        Route::get('/complaints', [App\Http\Controllers\Admin\ComplaintController::class, 'index'])->name('complaints.index');
-        Route::get('/complaints/{complaint}', [App\Http\Controllers\Admin\ComplaintController::class, 'show'])->name('complaints.show');
-        Route::patch('/complaints/{complaint}', [App\Http\Controllers\Admin\ComplaintController::class, 'updateStatus'])->name('complaints.update-status');
-
-        Route::get('/surveillance', [App\Http\Controllers\Admin\SurveillanceController::class, 'index'])->name('surveillance.index');
-        Route::patch('/surveillance/{surveillance}/verify', [App\Http\Controllers\Admin\SurveillanceController::class, 'verify'])->name('surveillance.verify');
-
-        // Layanan Banding Asesmen
-        Route::get('/appeals', [AppealController::class, 'index'])->name('appeals.index');
+        // BNSP exports, complaints, baseline surveillance & baseline appeals disabled
 
         // Laporan & Ekspor Lengkap Parity Demo
         Route::prefix('reports')->name('reports.')->group(function () {
@@ -237,34 +199,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/certificates', [ReportController::class, 'certificates'])->name('certificates');
         });
 
-        // Penjaminan Mutu & Audit Internal
-        Route::prefix('quality')->name('quality.')->group(function () {
-            Route::get('/documents', [QualityController::class, 'documents'])->name('documents.index');
-            Route::post('/documents', [QualityController::class, 'storeDocument'])->name('documents.store');
-            Route::get('/audits', [QualityController::class, 'audits'])->name('audits.index');
-            Route::post('/audits', [QualityController::class, 'storeAudit'])->name('audits.store');
-        });
-
-        // Keuangan, Biaya & Rekening Bank
-        Route::prefix('finance')->name('finance.')->group(function () {
-            Route::get('/bank-accounts', [FinanceController::class, 'bankAccounts'])->name('bank-accounts.index');
-            Route::post('/bank-accounts', [FinanceController::class, 'storeBankAccount'])->name('bank-accounts.store');
-            Route::get('/pricing', [FinanceController::class, 'pricing'])->name('pricing');
-            Route::get('/transactions', [FinanceController::class, 'transactions'])->name('transactions.index');
-            Route::post('/transactions', [FinanceController::class, 'storeTransaction'])->name('transactions.store');
-            Route::get('/balance-sheet', [FinanceController::class, 'balanceSheet'])->name('balance-sheet');
-            Route::get('/income-statement', [FinanceController::class, 'incomeStatement'])->name('income-statement');
-        });
-
-        // Persuratan Resmi LSP
-        Route::get('/letters', [LetterController::class, 'index'])->name('letters.index');
-        Route::post('/letters', [LetterController::class, 'store'])->name('letters.store');
-
-        // Log SMS & Notifikasi Masuk/Keluar
-        Route::prefix('messages')->name('messages.')->group(function () {
-            Route::get('/sent', [MessageController::class, 'sent'])->name('sent');
-            Route::get('/inbox', [MessageController::class, 'inbox'])->name('inbox');
-        });
+        // Quality, finance, letters, messages disabled (out-of-scope / contained)
 
         // Asesi Submodules
         Route::prefix('asesi')->name('asesi.')->group(function () {
@@ -397,7 +332,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/instruments', [InstrumentReviewController::class, 'store'])->name('instruments.store');
         Route::get('/mkva', [MkvaController::class, 'index'])->name('mkva.index');
         Route::post('/mkva', [MkvaController::class, 'store'])->name('mkva.store');
-        Route::get('/messages', [NotificationController::class, 'index'])->name('messages.index');
+        // Asesor messages disabled
         Route::get('/apl-02', [Apl02ReviewController::class, 'index'])->name('apl02.index');
         Route::get('/apl-02/{apl02}/review', [Apl02ReviewController::class, 'review'])->name('apl02.review');
         Route::put('/apl-02/{apl02}', [Apl02ReviewController::class, 'update'])->name('apl02.update');
@@ -460,20 +395,7 @@ Route::middleware('auth')->group(function () {
     | Dokumen Cetak Resmi BNSP & Generator PDF (Fase 7)
     |--------------------------------------------------------------------------
     */
-    Route::prefix('documents')->name('documents.')->group(function () {
-        Route::get('/surat-tugas/{schedule}/{scheduleAsesor}', [PdfDocumentController::class, 'suratTugas'])->name('surat-tugas');
-        Route::get('/berita-acara-asesmen/{schedule}', [PdfDocumentController::class, 'beritaAcaraAsesmen'])->name('berita-acara-asesmen');
-        Route::get('/daftar-hadir-asesmen/{schedule}', [PdfDocumentController::class, 'daftarHadirAsesmen'])->name('daftar-hadir-asesmen');
-        Route::get('/berita-acara-pleno/{schedule}', [PdfDocumentController::class, 'beritaAcaraPleno'])->name('berita-acara-pleno');
-        Route::get('/daftar-hadir-pleno/{schedule}', [PdfDocumentController::class, 'daftarHadirPleno'])->name('daftar-hadir-pleno');
-        Route::get('/fr-apl-01/{application}', [PdfDocumentController::class, 'frApl01'])->name('fr-apl-01');
-        Route::get('/fr-apl-02/{application}', [PdfDocumentController::class, 'frApl02'])->name('fr-apl-02');
-        Route::get('/fr-ak-01/{application}', [PdfDocumentController::class, 'frAk01'])->name('fr-ak-01');
-        Route::get('/fr-ak-02/{application}', [PdfDocumentController::class, 'frAk02'])->name('fr-ak-02');
-        Route::get('/fr-ak-03/{application}', [PdfDocumentController::class, 'frAk03'])->name('fr-ak-03');
-        Route::get('/fr-ak-05/{schedule}', [PdfDocumentController::class, 'frAk05'])->name('fr-ak-05');
-        Route::get('/sertifikat/{id}', [PdfDocumentController::class, 'sertifikat'])->name('sertifikat');
-    });
+    // Documents PDF generator disabled (out-of-scope / contained)
 });
 
 /*

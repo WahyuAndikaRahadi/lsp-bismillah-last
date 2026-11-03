@@ -1,6 +1,6 @@
 # Task 01 — Tutup endpoint berisiko dan modul di luar scope
 
-Status: [ ] belum dikerjakan. Dependency: **00**.
+Status: [x] selesai. Dependency: **00**.
 
 ## Tujuan
 
@@ -10,7 +10,7 @@ Menghilangkan jalur eksploitasi baseline sebelum fitur baru dibuat.
 
 `../CONTEXT.md`, bagian relevan `../DATA_MODEL.md`, `../FIELD_COVERAGE.md` + baris CSV keluarga/skema task ini, dan `../PAGE_CONTRACT.md`. Path file di bawah relatif root repo. File bertanda baru dibuat oleh task; path existing diperiksa dengan `rg` sebelum edit. Jika file baseline berbeda, catat pemetaan path aktual; jangan membuat controller duplikat hanya untuk mengikuti nama rencana.
 
-Batas tetap: hanya core SOP04/05/06/10; tiga role admin/asesor/asesi; satu LSP; tanpa PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation ; banding, surveilans, resertifikasi, dan ketidakberpihakan hanya melalui task 21-01 sampai 21-04. Original read-only. Jangan menyalin kode arsip. Nilai hasil/consent/attendance harus event nyata, actor dan timestamp; semua akses object-authorized. Ketidakjelasan source = blocker, bukan izin menebak.
+Batas tetap: hanya core SOP04/05/06/10; tiga role admin/asesor/asesi; satu LSP; tanpa PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation; banding, surveilans, resertifikasi, dan ketidakberpihakan hanya melalui task 21-01 sampai 21-04. Original read-only. Jangan menyalin kode arsip. Nilai hasil/consent/attendance harus event nyata, actor dan timestamp; semua akses object-authorized. Ketidakjelasan source = blocker, bukan izin menebak.
 
 ## Scope dan file
 
@@ -22,9 +22,9 @@ Disable seluruh PDF/export/print/generate certificate, proxy/switchback, complai
 
 ## Acceptance criteria
 
-- [ ] Route out-of-scope tidak dapat dipanggil langsung walau URL diketahui; no proxy session recovery.
-- [ ] Snapshot tabel domain sebelum/sesudah GET/HEAD sama; tidak ada automatic K/BK/consent.
-- [ ] Tidak ada link aktif ke endpoint yang ditutup; aplikasi dapat memberi status belum tersedia yang jelas.
+- [x] Route out-of-scope tidak dapat dipanggil langsung walau URL diketahui; no proxy session recovery.
+- [x] Snapshot tabel domain sebelum/sesudah GET/HEAD sama; tidak ada automatic K/BK/consent.
+- [x] Tidak ada link aktif ke endpoint yang ditutup; aplikasi dapat memberi status belum tersedia yang jelas.
 
 ## Test sempit / bukti
 

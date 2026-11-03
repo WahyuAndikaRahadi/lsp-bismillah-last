@@ -39,8 +39,6 @@
                     <a href="{{ url('/#skema') }}" class="hover:text-blue-600 transition">Skema Sertifikasi</a>
                     <a href="{{ url('/#jadwal') }}" class="hover:text-blue-600 transition">Jadwal Asesmen</a>
                     <a href="{{ url('/#tuk') }}" class="hover:text-blue-600 transition">Tempat Uji (TUK)</a>
-                    <a href="{{ route('surveillance.create') }}" class="hover:text-blue-600 transition {{ request()->routeIs('surveillance.*') ? 'text-blue-600 font-semibold' : '' }}">Surveilans</a>
-                    <a href="{{ route('pengaduan.create') }}" class="hover:text-blue-600 transition {{ request()->routeIs('pengaduan.*') ? 'text-blue-600 font-semibold' : '' }}">Pengaduan</a>
                 </nav>
 
                 <!-- Auth Buttons -->
