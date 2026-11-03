@@ -53,7 +53,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 35 | [x] | [19 — BA normal dan daftar hadir dari fakta](tasks/19-ba-daftar-hadir.md) | 11,18; Q1 sebelum label final BA | bf5f950; php artisan test --compact tests/Feature/CoreMinutesAttendanceTest.php; exit 0; 6 tests passed, 33 assertions; no deviations |
 | 36 | [x] | [20 — Review independen dan keputusan SOP10](tasks/20-pleno-keputusan.md) | 19; Q4 penunjukan/authority resolved | b60238b; php artisan test --compact tests/Feature/CoreCertificationDecisionTest.php; exit 0; 5 tests passed, 37 assertions; no deviations |
 | 37 | [x] | [21 — Upload sertifikat dan FR10.2](tasks/21-sertifikat-eksternal.md) | 20,04,11 | 5c06cb2; php artisan test --compact tests/Feature/CoreCertificatesTest.php; exit 0; 6 tests passed, 43 assertions; no deviations |
-| 38 | [ ] | [21-01 — Banding Asesmen (SOP 07)](tasks/21-01-banding.md) | 17,04,20 | Belum dijalankan |
+| 38 | [x] | [21-01 — Banding Asesmen (SOP 07)](tasks/21-01-banding.md) | 17,04,20 | 91f97df; php artisan test --compact tests/Feature/CoreAppealTest.php; exit 0; 5 tests passed, 25 assertions; no deviations |
 | 39 | [ ] | [21-02 — Ketidakberpihakan (SOP 01)](tasks/21-02-ketidakberpihakan.md) | 04,07 | Belum dijalankan |
 | 40 | [ ] | [21-03 — Surveilans (SOP 04 §4 & SOP 19)](tasks/21-03-surveilans.md) | 21,04 | Belum dijalankan |
 | 41 | [ ] | [21-04 — Resertifikasi (SOP 04 §5)](tasks/21-04-resertifikasi.md) | 21,07,08 | Belum dijalankan |
