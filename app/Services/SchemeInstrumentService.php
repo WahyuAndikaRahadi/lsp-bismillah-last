@@ -170,10 +170,24 @@ class SchemeInstrumentService
     /**
      * Get FR.IA.03 (Pertanyaan Mendukung Observasi - PMO) questions for a scheme.
      */
-    public function getPmoQuestions(Scheme $scheme): array
+    public function getPmoQuestions(Scheme $scheme, ?string $variant = null): array
     {
         $data = $this->getSchemeData($scheme);
         $pmo = $data['pmo'] ?? [];
+
+        if ($scheme->code === 'SKM-03-2026') {
+            // Conflicting PMO in Scheme S3 must NOT be selected automatically
+            if (empty($variant)) {
+                return [];
+            }
+            if ($variant === 'kelompok_1') {
+                return array_slice($pmo, 0, 6);
+            }
+            if ($variant === 'kelompok_2') {
+                return array_slice($pmo, 6);
+            }
+            return $pmo;
+        }
 
         if (! empty($pmo)) {
             return $pmo;

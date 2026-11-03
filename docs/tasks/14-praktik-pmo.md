@@ -1,6 +1,6 @@
 # Task 14 — IA-02 skenario dan IA-03 tanggapan
 
-Status: [ ] belum dikerjakan. Dependency: **13**.
+Status: [x] selesai. Dependency: **13**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ IA02 petunjuk/group/unit/S-T-A-R/alat/bahan/manual/waktu verbatim approved sourc
 
 ## Acceptance criteria
 
-- [ ] Isi skenario/PMO tepat versi skema dan varian approved; conflicting PMO skema3 tidak dipilih otomatis.
-- [ ] Tanggapan kosong tidak auto-sufficient; referensi observasi harus milik assessment yang sama.
-- [ ] Tambahan pertanyaan tidak mengubah bank soal/master semua peserta.
+- [x] Isi skenario/PMO tepat versi skema dan varian approved; conflicting PMO skema3 tidak dipilih otomatis.
+- [x] Tanggapan kosong tidak auto-sufficient; referensi observasi harus milik assessment yang sama.
+- [x] Tambahan pertanyaan tidak mengubah bank soal/master semua peserta.
 
 ## Test sempit / bukti
 

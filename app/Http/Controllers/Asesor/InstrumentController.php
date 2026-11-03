@@ -370,6 +370,46 @@ class InstrumentController extends Controller
                     }
                 }
             }
+        } elseif ($code === 'IA03') {
+            $scheme = $assessment->schedule?->scheme ?? $assessment->scheme;
+
+            // 1. Conflicting PMO in Scheme 3 must not be auto-selected
+            if ($scheme && $scheme->code === 'SKM-03-2026') {
+                $variant = $request->input('pmo_variant');
+                if (empty($variant)) {
+                    return back()->withErrors([
+                        'pmo_variant' => 'Skema S3 memiliki varian PMO yang berpotensi konflik; varian approved wajib dipilih secara eksplisit dan tidak dapat dipilih otomatis.',
+                    ])->withInput();
+                }
+            }
+
+            // 2. Questions validation
+            $questions = $request->input('questions', []);
+            foreach ($questions as $idx => $q) {
+                $pencapaian = strtoupper((string) ($q['pencapaian'] ?? ''));
+                $tanggapan = trim((string) ($q['tanggapan'] ?? ''));
+                $fulfilledByObs = ! empty($q['is_fulfilled_by_observation']);
+                $obsRef = trim((string) ($q['observation_reference'] ?? ''));
+                $foreignAssessmentId = $q['observation_assessment_id'] ?? null;
+
+                if (in_array($pencapaian, ['YA', 'Y', 'K']) && empty($tanggapan) && ! $fulfilledByObs) {
+                    return back()->withErrors([
+                        "questions.{$idx}.tanggapan" => 'Tanggapan kosong tidak dapat dinyatakan tercapai (YA) tanpa bukti konfirmasi observasi demonstrasi.',
+                    ])->withInput();
+                }
+
+                if ($fulfilledByObs && empty($obsRef)) {
+                    return back()->withErrors([
+                        "questions.{$idx}.observation_reference" => 'Rujukan bukti observasi wajib diisi apabila pertanyaan dipenuhi melalui unjuk kerja praktik.',
+                    ])->withInput();
+                }
+
+                if ($foreignAssessmentId && (int) $foreignAssessmentId !== (int) $assessment->id) {
+                    return back()->withErrors([
+                        "questions.{$idx}.observation_reference" => 'Rujukan bukti observasi harus berasal dari asesmen yang sama. Cross-assessment reference ditolak.',
+                    ])->withInput();
+                }
+            }
         }
 
         $data = $request->input('data') ?? [
@@ -377,7 +417,35 @@ class InstrumentController extends Controller
             'tasks' => $request->input('tasks'),
             'questions' => $request->input('questions'),
             'items' => $request->input('items'),
+            'supplementary_questions' => $request->input('supplementary_questions'),
+            'pmo_variant' => $request->input('pmo_variant'),
         ];
+
+        if ($code === 'IA03') {
+            $data['pmo_variant'] = $request->input('pmo_variant');
+            $data['questions'] = $request->input('questions');
+            if ($request->filled('supplementary_questions')) {
+                $supp = [];
+                foreach ($request->input('supplementary_questions', []) as $sq) {
+                    $supp[] = [
+                        'question' => $sq['question'],
+                        'tanggapan' => $sq['tanggapan'] ?? '',
+                        'pencapaian' => strtoupper((string) ($sq['pencapaian'] ?? 'YA')),
+                        'reason' => $sq['reason'] ?? 'Pertanyaan tambahan observasi',
+                        'asked_by_id' => auth()->id(),
+                        'asked_at' => now()->toIso8601String(),
+                    ];
+                }
+                $data['supplementary_questions'] = $supp;
+            }
+        } elseif ($code === 'IA02') {
+            $scheme = $assessment->schedule?->scheme ?? $assessment->scheme;
+            $tpdData = $this->instrumentService->getTpdData($scheme);
+            $data['scenario'] = $tpdData['scenario'] ?? '';
+            $data['time_limit'] = $tpdData['time_limit'] ?? '30 Menit';
+            $data['tasks'] = $request->input('tasks') ?? $tpdData['tasks'] ?? [];
+            $data['equipment_checked'] = $request->input('equipment_checked') ?? [];
+        }
 
         $existingData = is_array($existing?->data_json)
             ? $existing->data_json
@@ -507,7 +575,8 @@ class InstrumentController extends Controller
 
     private function resolveIa03($scheme, $assessment, $response, array $savedData): array
     {
-        $pmoQuestions = $this->instrumentService->getPmoQuestions($scheme);
+        $variant = $savedData['pmo_variant'] ?? request('variant');
+        $pmoQuestions = $this->instrumentService->getPmoQuestions($scheme, $variant);
         $questions = collect($pmoQuestions)->values()->map(function ($q, $idx) {
             $num = $idx + 1;
 
@@ -519,7 +588,14 @@ class InstrumentController extends Controller
             ];
         });
 
-        return ['questions' => $questions, 'pmoQuestions' => $pmoQuestions];
+        $supplementaryQuestions = $savedData['supplementary_questions'] ?? [];
+
+        return [
+            'questions' => $questions,
+            'pmoQuestions' => $pmoQuestions,
+            'supplementaryQuestions' => $supplementaryQuestions,
+            'pmoVariant' => $variant,
+        ];
     }
 
     private function resolveIa05($scheme, $assessment, $response, array $savedData): array
