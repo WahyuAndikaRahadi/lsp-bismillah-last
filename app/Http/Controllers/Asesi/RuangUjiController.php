@@ -148,17 +148,27 @@ class RuangUjiController extends Controller
         return view('asesi.ruang-uji.hub', compact('assessment', 'selectedInstruments', 'responses'));
     }
 
-    public function ia05(Assessment $assessment): View
+    public function ia05(Assessment $assessment, \App\Services\CbtAttemptService $cbtService): View|RedirectResponse
     {
         abort_if($assessment->asesi_id !== auth()->id(), 403);
 
-        $assessment->load(['schedule.scheme', 'iaResponses']);
-        $questions = QuestionBank::where('scheme_id', $assessment->schedule->scheme_id)->get();
+        if ($assessment->apl_status !== 'APPROVED') {
+            return redirect()->route('asesi.assessment.apl', $assessment)
+                ->with('error', 'Ujian CBT hanya dapat diikuti setelah permohonan APL Anda disetujui.');
+        }
 
-        return view('asesi.ruang-uji.ia05', compact('assessment', 'questions'));
+        if (! $assessment->ak01_agreed_at) {
+            return redirect()->route('asesi.assessment.ak01', $assessment)
+                ->with('info', 'Silakan setujui Formulir FR.AK.01 terlebih dahulu sebelum memulai ujian CBT.');
+        }
+
+        $attemptData = $cbtService->startOrResumeAttempt($assessment);
+        $questions = $attemptData['questions'];
+
+        return view('asesi.ruang-uji.ia05', compact('assessment', 'attemptData', 'questions'));
     }
 
-    public function submitIa05(Assessment $assessment, Request $request, AutoGradeService $grader): RedirectResponse
+    public function submitIa05(Assessment $assessment, Request $request, \App\Services\CbtAttemptService $cbtService): RedirectResponse
     {
         abort_if($assessment->asesi_id !== auth()->id(), 403);
 
@@ -170,31 +180,17 @@ class RuangUjiController extends Controller
             return back()->with('error', 'Ujian CBT hanya dapat diikuti setelah permohonan APL Anda disetujui.');
         }
 
-        $existing = AssessmentIaResponse::where('assessment_id', $assessment->id)
-            ->where('instrument_code', 'IA05')
-            ->whereNotNull('asesi_signed_at')
-            ->first();
-
-        if ($existing) {
-            return redirect()->route('asesi.assessment.ruang-uji', $assessment)
-                ->with('info', "Jawaban ujian CBT (IA.05) Anda telah tersimpan sebelumnya dengan skor: {$existing->score}.");
-        }
-
         $rawAnswers = $request->input('answers', []);
         $answers = is_array($rawAnswers) ? $rawAnswers : (json_decode($rawAnswers, true) ?: []);
+        $signature = $request->input('asesi_signature') ?? $request->input('signature_data');
 
-        $result = DB::transaction(function () use ($assessment, $answers, $grader) {
-            $graded = $grader->grade($assessment, $answers);
-            $assessment->update(['last_active_step' => 'ruang-uji']);
-
-            return $graded;
-        });
+        $result = $cbtService->submitFinal($assessment, $answers, $signature);
 
         return redirect()->route('asesi.assessment.ruang-uji', $assessment)
-            ->with('success', "Jawaban tersimpan. Skor: {$result->score}");
+            ->with('success', "Jawaban ujian CBT (FR.IA.05) berhasil dikirim. Skor yang dicapai: {$result->score}");
     }
 
-    public function saveIa05Draft(Assessment $assessment, Request $request): JsonResponse
+    public function saveIa05Draft(Assessment $assessment, Request $request, \App\Services\CbtAttemptService $cbtService): JsonResponse
     {
         abort_if($assessment->asesi_id !== auth()->id(), 403);
 
@@ -202,30 +198,17 @@ class RuangUjiController extends Controller
             return response()->json(['status' => 'error', 'message' => 'Jadwal asesmen sudah resmi ditutup.'], 403);
         }
 
-        $existing = AssessmentIaResponse::where('assessment_id', $assessment->id)
-            ->where('instrument_code', 'IA05')
-            ->first();
-
-        if ($existing && $existing->asesi_signed_at) {
-            return response()->json(['status' => 'error', 'message' => 'Ujian CBT telah selesai dikerjakan dan tidak dapat diubah.'], 400);
-        }
-
         $rawAnswers = $request->input('answers', []);
         $answers = is_array($rawAnswers) ? $rawAnswers : (json_decode($rawAnswers, true) ?: []);
+        $version = (int) $request->input('version', 1);
 
-        $response = $existing ?? new AssessmentIaResponse([
-            'assessment_id' => $assessment->id,
-            'instrument_code' => 'IA05',
-        ]);
+        try {
+            $saved = $cbtService->saveDraft($assessment, $answers, $version);
 
-        $response->data_json = $answers;
-        $response->save();
-
-        return response()->json([
-            'status' => 'success',
-            'saved_at' => now()->toIso8601String(),
-            'count' => count($answers),
-        ]);
+            return response()->json($saved);
+        } catch (\RuntimeException $e) {
+            return response()->json(['status' => 'error', 'message' => $e->getMessage()], 422);
+        }
     }
 
     public function uploadEvidence(Assessment $assessment, $code, Request $request): RedirectResponse

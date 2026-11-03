@@ -15,6 +15,12 @@ class AssessmentIaResponse extends Model
     protected $fillable = [
         'assessment_id',
         'instrument_code',
+        'started_at',
+        'duration_seconds',
+        'time_remaining_seconds',
+        'submitted_at',
+        'attempt_version',
+        'is_expired',
         'data_json',
         'score',
         'assessor_notes',
@@ -28,6 +34,12 @@ class AssessmentIaResponse extends Model
     protected function casts(): array
     {
         return [
+            'started_at' => 'datetime',
+            'submitted_at' => 'datetime',
+            'duration_seconds' => 'integer',
+            'time_remaining_seconds' => 'integer',
+            'attempt_version' => 'integer',
+            'is_expired' => 'boolean',
             'data_json' => 'array',
             'score' => 'decimal:2',
             'assessor_signed_at' => 'datetime',
@@ -38,5 +50,10 @@ class AssessmentIaResponse extends Model
     public function assessment(): BelongsTo
     {
         return $this->belongsTo(Assessment::class);
+    }
+
+    public function isSubmitted(): bool
+    {
+        return $this->submitted_at !== null || $this->asesi_signed_at !== null;
     }
 }

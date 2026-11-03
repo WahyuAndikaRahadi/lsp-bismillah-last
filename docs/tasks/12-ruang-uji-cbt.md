@@ -1,6 +1,6 @@
 # Task 12 — Ruang uji fokus dan IA-05 A/B/C
 
-Status: [ ] belum dikerjakan. Dependency: **08,10,11**.
+Status: [x] selesai. Dependency: **08,10,11**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Ruang uji focused shell: progress, timer jika relevan, save status, satu next in
 
 ## Acceptance criteria
 
-- [ ] Candidate tidak menerima correct_answer dalam HTML/JSON/assets/reference; tugas lain tidak muncul jika di luar rencana.
-- [ ] Reload/network retry/multi-tab/timer expiry aman, rejected save menjelaskan error dan mempertahankan draft.
-- [ ] Tidak ada redirect loop, competing menu atau tombol generate/Hadir; submit mengarah satu kali ke status/next action.
+- [x] Candidate tidak menerima correct_answer dalam HTML/JSON/assets/reference; tugas lain tidak muncul jika di luar rencana.
+- [x] Reload/network retry/multi-tab/timer expiry aman, rejected save menjelaskan error dan mempertahankan draft.
+- [x] Tidak ada redirect loop, competing menu atau tombol generate/Hadir; submit mengarah satu kali ke status/next action.
 
 ## Test sempit / bukti
 

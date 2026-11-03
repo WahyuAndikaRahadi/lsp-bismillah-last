@@ -87,8 +87,8 @@
                 </div>
                 <div class="text-right flex items-center gap-3">
                     <span class="text-xs font-semibold text-slate-600">Hasil Penilaian:</span>
-                    <span class="px-3 py-1 rounded text-sm font-black {{ $existingResp->score >= 75 ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-rose-100 text-rose-800 border border-rose-300' }}">
-                        Skor: {{ $existingResp->score }}% ({{ $existingResp->score >= 75 ? 'KOMPETEN' : 'BELUM KOMPETEN' }})
+                    <span class="px-3 py-1 rounded text-sm font-black bg-blue-50 text-blue-800 border border-blue-200">
+                        Skor Capaian: {{ $existingResp->score }}% (Penetapan K/BK dilakukan oleh Asesor)
                     </span>
                 </div>
             </div>
