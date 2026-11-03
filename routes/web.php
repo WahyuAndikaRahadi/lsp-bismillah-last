@@ -217,6 +217,11 @@ Route::middleware('auth')->group(function () {
         Route::match(['put', 'patch'], '/assessment-plans/{plan}', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'update'])->name('mapa01.update');
         Route::post('/assessment-plans/{plan}/lock', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'lock'])->name('mapa01.lock');
 
+        // MAPA-02 Peta Instrumen Asesmen
+        Route::get('/schedule/{schedule}/mapa-02', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'editMapa02'])->name('mapa02.edit');
+        Route::post('/schedule/{schedule}/mapa-02', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'storeMapa02'])->name('mapa02.store');
+        Route::match(['put', 'patch'], '/assessment-plans/{plan}/mapa-02', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'updateMapa02'])->name('mapa02.update');
+
         // Workspace Terpadu Asesor (Single Unified Workspace per Asesi)
         Route::get('/assessment/{assessment}/workspace', [App\Http\Controllers\Asesor\WorkspaceController::class, 'show'])->name('assessment.workspace');
 
@@ -354,6 +359,7 @@ Route::middleware('auth')->group(function () {
         Route::middleware(['apl.approved'])->prefix('assessment/{assessment}')->name('assessment.')->group(function () {
             Route::get('/ak01', [RuangUjiController::class, 'ak01'])->name('ak01');
             Route::post('/ak01', [RuangUjiController::class, 'signAk01'])->name('ak01.sign');
+            Route::post('/ak07/acknowledge', [\App\Http\Controllers\Asesor\Ak07Controller::class, 'acknowledge'])->name('ak07.acknowledge');
             Route::post('/consent-esign', [RuangUjiController::class, 'consentEsign'])->name('consent-esign');
 
             Route::get('/ruang-uji', [RuangUjiController::class, 'hub'])->name('ruang-uji');

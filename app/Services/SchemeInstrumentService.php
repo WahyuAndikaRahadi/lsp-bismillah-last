@@ -105,6 +105,39 @@ class SchemeInstrumentService
     }
 
     /**
+     * Get default MAPA-02 instrument map template for a scheme.
+     */
+    public function getMapa02Template(Scheme $scheme): array
+    {
+        $groups = $this->getMapa01Groups($scheme);
+        if (empty($groups)) {
+            $groups = [
+                ['name' => 'Kelompok Kerja ' . ($scheme->name ?? 'Utama')]
+            ];
+        }
+
+        $instrumentList = [
+            ['code' => 'FR.IA.01', 'name' => 'CL - Ceklis Observasi Aktivitas Di Tempat Kerja / Simulasi', 'is_active' => true, 'potensi' => [1]],
+            ['code' => 'FR.IA.02', 'name' => 'TPD - Tugas Praktik Demonstrasi', 'is_active' => true, 'potensi' => [1]],
+            ['code' => 'FR.IA.03', 'name' => 'PMO - Pertanyaan Untuk Mendukung Observasi', 'is_active' => true, 'potensi' => [1]],
+            ['code' => 'FR.IA.04A', 'name' => 'DIT - Penjelasan Singkat Proyek Terkait Pekerjaan', 'is_active' => false, 'potensi' => []],
+            ['code' => 'FR.IA.04B', 'name' => 'DIT - Penjelasan Kegiatan Terstruktur Lainnya', 'is_active' => false, 'potensi' => []],
+            ['code' => 'FR.IA.05', 'name' => 'DPT - Daftar Pertanyaan Tertulis Pilihan Ganda', 'is_active' => true, 'potensi' => [1]],
+            ['code' => 'FR.IA.06', 'name' => 'DPT - Daftar Pertanyaan Tertulis Esai', 'is_active' => false, 'potensi' => []],
+            ['code' => 'FR.IA.07', 'name' => 'DPL - Daftar Pertanyaan Lisan', 'is_active' => false, 'potensi' => []],
+            ['code' => 'FR.IA.08', 'name' => 'CVP - Ceklis Verifikasi Portofolio', 'is_active' => false, 'potensi' => []],
+            ['code' => 'FR.IA.09', 'name' => 'PW - Pertanyaan Wawancara', 'is_active' => false, 'potensi' => []],
+            ['code' => 'FR.IA.10', 'name' => 'VPK - Verifikasi Pihak Ketiga', 'is_active' => false, 'potensi' => []],
+            ['code' => 'FR.IA.11', 'name' => 'CRP - Ceklis Reviu Produk', 'is_active' => false, 'potensi' => []],
+        ];
+
+        return array_map(fn ($g) => [
+            'group_name' => $g['name'],
+            'instruments' => $instrumentList,
+        ], $groups);
+    }
+
+    /**
      * Get FR.IA.02 (Tugas Praktik Demonstrasi - TPD) data for a scheme.
      */
     public function getTpdData(Scheme $scheme): array

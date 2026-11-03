@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Asesor;
 
 use App\Http\Controllers\Concerns\AuthorizesAssessor;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Ak07Request;
+use App\Models\Assessment;
 use App\Models\AssessmentAk07Item;
+use App\Models\AuditEvent;
 use App\Models\Schedule;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -34,7 +37,7 @@ class Ak07Controller extends Controller
         return view('asesor.ak07', compact('schedule', 'jadwal', 'assessments', 'selectedAssessmentId'));
     }
 
-    public function store(Schedule $schedule, Request $request): RedirectResponse
+    public function store(Schedule $schedule, Ak07Request $request): RedirectResponse
     {
         $this->authorizeAssessorSchedule($schedule);
 
@@ -48,127 +51,133 @@ class Ak07Controller extends Controller
                 ->with('error', 'Penyesuaian tidak dapat disimpan karena belum seluruh asesi disetujui APL-nya.');
         }
 
-        $ids = $request->input('assessment_ids', $request->input('asesi_ids', []));
+        $validated = $request->validated();
 
-        // If asesor submits without selecting any asesi or adjustments (unfilled/optional)
+        $ids = $request->input('assessment_ids', []);
+        if (empty($ids) && $request->filled('assessment_id')) {
+            $ids = [$request->input('assessment_id')];
+        }
+
         if (empty($ids)) {
-            foreach ($schedule->assessments as $assessment) {
-                AssessmentAk07Item::firstOrCreate([
-                    'assessment_id' => $assessment->id,
-                ], [
-                    'adjustment_category' => 'Standar',
-                    'adjustment_detail' => 'Tidak ada penyesuaian khusus yang diperlukan (asesmen standar).',
-                    'assessor_id' => auth()->id(),
-                ]);
-            }
-
-            return redirect()->route('asesor.schedule.ak01', $schedule->id)
-                ->with('info', 'FR.AK07 ditetapkan tanpa penyesuaian khusus. Melanjutkan ke FR.AK01 (Persetujuan Asesmen & Kerahasiaan).');
+            $ids = $schedule->assessments()->pluck('id')->toArray();
         }
 
         $items = $request->input('items', []);
-        $agreementStatus = $request->input('agreement_status');
+        $timing = $request->input('timing', 'sebelum_pra_asesmen');
+        $isAgreed = $request->boolean('is_agreed') || strtoupper((string) $request->input('agreement_status')) === 'YA';
+        $agreedBenchmark = $request->input('agreed_benchmark', $request->input('agreement_benchmark'));
+        $agreedMethod = $request->input('agreed_method', $request->input('agreement_method'));
+        $agreedInstrument = $request->input('agreed_instrument', $request->input('agreement_instrument'));
         $agreementNotes = $request->input('agreement_notes');
-        $legacyCategory = $request->input('category');
-        $legacyNotes = $request->input('notes');
-
-        $savedAny = false;
 
         DB::transaction(function () use (
             $ids,
             $items,
-            $agreementStatus,
-            $agreementNotes,
-            $legacyCategory,
-            $legacyNotes,
-            &$savedAny
+            $timing,
+            $isAgreed,
+            $agreedBenchmark,
+            $agreedMethod,
+            $agreedInstrument,
+            $agreementNotes
         ) {
-            // Idempotency: clear previous AK07 items for selected assessments to avoid duplicates
-            AssessmentAk07Item::whereIn('assessment_id', $ids)->delete();
+            $assessorId = auth()->id();
 
-            // Process 8-item table format if present
-            if (! empty($items) && is_array($items)) {
-                foreach ($items as $itemIndex => $itemData) {
-                    $needed = strtoupper($itemData['needed'] ?? '');
-                    if ($needed === 'YA') {
-                        $selectedOptions = $itemData['options'] ?? [];
-                        $customNote = trim($itemData['custom_note'] ?? '');
-                        $descParts = [];
-                        if (! empty($selectedOptions)) {
-                            $descParts[] = implode('; ', $selectedOptions);
-                        }
-                        if ($customNote !== '') {
-                            $descParts[] = "Catatan: {$customNote}";
-                        }
-                        $detailText = ! empty($descParts) ? implode(' | ', $descParts) : 'Penyesuaian wajar disetujui';
+            foreach ($ids as $assessmentId) {
+                $assessment = Assessment::find($assessmentId);
+                if (! $assessment) {
+                    continue;
+                }
 
-                        $categoryName = $itemData['title'] ?? "Karakteristik #{$itemIndex}";
+                // Check if existing items had adjustments to record audit and invalidate AK-01
+                $hadPreviousAdjustments = AssessmentAk07Item::where('assessment_id', $assessmentId)
+                    ->where('decision', 'ya')
+                    ->exists();
 
-                        foreach ($ids as $assessmentId) {
-                            AssessmentAk07Item::updateOrCreate(
-                                [
-                                    'assessment_id' => $assessmentId,
-                                    'adjustment_category' => substr($categoryName, 0, 100),
-                                ],
-                                [
-                                    'adjustment_detail' => $detailText,
-                                    'assessor_id' => auth()->id(),
-                                ]
-                            );
-                        }
-                        $savedAny = true;
+                // Idempotently purge prior AK07 items
+                AssessmentAk07Item::where('assessment_id', $assessmentId)->delete();
+
+                $anyYes = false;
+
+                foreach ($items as $idx => $itemData) {
+                    $catNum = (int) ($itemData['category_number'] ?? $idx);
+                    $title = $itemData['title'] ?? "Karakteristik #{$catNum}";
+                    $decision = strtolower($itemData['decision'] ?? $itemData['needed'] ?? 'tidak');
+                    $options = $itemData['options'] ?? [];
+                    $detail = trim(($itemData['detail'] ?? '') . ' ' . ($itemData['custom_note'] ?? ''));
+
+                    if ($decision === 'ya') {
+                        $anyYes = true;
                     }
-                }
-            }
 
-            // Process agreement notes or legacy format
-            if ($legacyCategory && $legacyNotes) {
-                foreach ($ids as $assessmentId) {
-                    AssessmentAk07Item::updateOrCreate(
-                        [
-                            'assessment_id' => $assessmentId,
-                            'adjustment_category' => substr($legacyCategory, 0, 100),
-                        ],
-                        [
-                            'adjustment_detail' => $legacyNotes,
-                            'assessor_id' => auth()->id(),
-                        ]
-                    );
-                }
-                $savedAny = true;
-            } elseif ($agreementStatus === 'YA' && ! empty($agreementNotes)) {
-                foreach ($ids as $assessmentId) {
-                    AssessmentAk07Item::updateOrCreate(
-                        [
-                            'assessment_id' => $assessmentId,
-                            'adjustment_category' => 'Kesepakatan Asesor-Asesi',
-                        ],
-                        [
-                            'adjustment_detail' => $agreementNotes,
-                            'assessor_id' => auth()->id(),
-                        ]
-                    );
-                }
-                $savedAny = true;
-            }
-
-            if (! $savedAny) {
-                foreach ($ids as $assessmentId) {
-                    AssessmentAk07Item::firstOrCreate([
+                    AssessmentAk07Item::create([
                         'assessment_id' => $assessmentId,
-                    ], [
-                        'adjustment_category' => 'Standar',
-                        'adjustment_detail' => 'Tidak ada penyesuaian khusus yang diperlukan (asesmen standar).',
-                        'assessor_id' => auth()->id(),
+                        'assessor_id' => $assessorId,
+                        'category_number' => $catNum,
+                        'adjustment_category' => $title,
+                        'decision' => $decision,
+                        'selected_options' => $options,
+                        'adjustment_detail' => $detail ?: ($decision === 'ya' ? 'Penyesuaian wajar' : null),
+                        'timing' => $timing,
+                        'is_agreed' => $isAgreed,
+                        'agreed_benchmark' => $agreedBenchmark,
+                        'agreed_method' => $agreedMethod,
+                        'agreed_instrument' => $agreedInstrument,
+                        'asesor_signed_at' => now(),
+                        'asesi_signed_at' => null, // Never automatically sign for asesi
                     ]);
+                }
+
+                // Perubahan akomodasi memicu plan revision/acceptance yang relevan tanpa mengubah kompetensi
+                if ($anyYes || $hadPreviousAdjustments) {
+                    if ($assessment->ak01_agreed_at !== null) {
+                        $assessment->update([
+                            'ak01_agreed_at' => null,
+                        ]);
+                    }
+
+                    AuditEvent::record(
+                        action: 'ak07_adjustment_updated',
+                        subject: $assessment,
+                        reason: 'Penyesuaian yang wajar (FR.AK.07) dimutakhirkan. Persetujuan AK-01 direset untuk konfirmasi ulang.',
+                        details: [
+                            'assessment_id' => $assessmentId,
+                            'timing' => $timing,
+                            'has_adjustments' => $anyYes,
+                            'invalidated_ak01' => $assessment->ak01_agreed_at !== null,
+                        ]
+                    );
                 }
             }
         });
 
-        $msg = $savedAny
-            ? 'Penyesuaian yang wajar (FR.AK07) berhasil disimpan. Melanjutkan ke FR.AK01 (Persetujuan Asesmen & Kerahasiaan).'
-            : 'FR.AK07 disimpan tanpa penyesuaian khusus. Melanjutkan ke FR.AK01 (Persetujuan Asesmen & Kerahasiaan).';
+        return redirect()->route('asesor.schedule.ak01', $schedule->id)
+            ->with('success', 'FR.AK07 berhasil disimpan. Melanjutkan ke FR.AK01 (Persetujuan Asesmen & Kerahasiaan).');
+    }
 
-        return redirect()->route('asesor.schedule.ak01', $schedule->id)->with('success', $msg);
+    /**
+     * Asesi acknowledges agreed adjustments.
+     */
+    public function acknowledge(Request $request, Assessment $assessment): RedirectResponse
+    {
+        $user = auth()->user();
+
+        if (! $user->isAsesi() || $assessment->asesi_id !== $user->id) {
+            abort(403, 'Hanya asesi bersangkutan yang dapat menandatangani persetujuan akomodasi ini.');
+        }
+
+        AssessmentAk07Item::where('assessment_id', $assessment->id)
+            ->whereNull('asesi_signed_at')
+            ->update([
+                'asesi_signed_at' => now(),
+            ]);
+
+        AuditEvent::record(
+            action: 'ak07_asesi_acknowledged',
+            subject: $assessment,
+            reason: 'Asesi menyetujui dan menandatangani kesepakatan penyesuaian wajar (FR.AK.07).',
+            details: ['asesi_id' => $user->id]
+        );
+
+        return back()->with('success', 'Kesepakatan penyesuaian wajar (FR.AK.07) berhasil ditandatangani.');
     }
 }

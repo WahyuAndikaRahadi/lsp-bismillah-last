@@ -21,6 +21,7 @@ class AssessmentPlan extends Model
         'work_groups' => 'array',
         'modifications' => 'array',
         'confirmation_data' => 'array',
+        'mapa02_data' => 'array',
         'validated_at' => 'datetime',
     ];
 
