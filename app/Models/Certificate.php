@@ -57,6 +57,11 @@ class Certificate extends Model
         return $this->hasMany(SurveillancePlan::class, 'certificate_id');
     }
 
+    public function recertificationAssessments(): HasMany
+    {
+        return $this->hasMany(Assessment::class, 'prior_certificate_id');
+    }
+
     public function isAcknowledged(): bool
     {
         return $this->receiptEvents()->where('event_type', 'acknowledge')->exists();

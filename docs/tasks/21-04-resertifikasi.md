@@ -1,6 +1,6 @@
 # Task 21-04 — Resertifikasi (SOP 04 §5)
 
-Status: [ ] belum dikerjakan. Dependency: **21, 07, 08**.
+Status: [x] selesai. Dependency: **21, 07, 08**.
 
 ## Tujuan
 
@@ -22,10 +22,10 @@ Permohonan resertifikasi diajukan oleh pemegang sertifikat yang masa berlakunya 
 
 ## Acceptance criteria
 
-- [ ] Pendaftaran resertifikasi hanya dapat dilakukan oleh pemilik sertifikat yang sah dan mengacu pada sertifikat skema terkait.
-- [ ] Record assessment baru tercipta dengan referensi tertaut ke prior certificate dan menggunakan data profil yang ada.
-- [ ] Seluruh riwayat sertifikat terdahulu tetap ada dan dapat diakses (tidak terhapus atau tertimpa).
-- [ ] Asesmen baru resertifikasi wajib melalui tahapan verifikasi bukti dan keputusan komite tanpa bypass instan.
+- [x] Pendaftaran resertifikasi hanya dapat dilakukan oleh pemilik sertifikat yang sah dan mengacu pada sertifikat skema terkait.
+- [x] Record assessment baru tercipta dengan referensi tertaut ke prior certificate dan menggunakan data profil yang ada.
+- [x] Seluruh riwayat sertifikat terdahulu tetap ada dan dapat diakses (tidak terhapus atau tertimpa).
+- [x] Asesmen baru resertifikasi wajib melalui tahapan verifikasi bukti dan keputusan komite tanpa bypass instan.
 
 ## Test sempit / bukti
 

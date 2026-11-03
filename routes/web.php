@@ -199,6 +199,9 @@ Route::middleware('auth')->group(function () {
         Route::post('/certificates/{certificate}/surveillance', [\App\Http\Controllers\Admin\SurveillanceController::class, 'storePlan'])->name('surveillance.store-plan');
         Route::post('/surveillance/reports/{report}/evaluate', [\App\Http\Controllers\Admin\SurveillanceController::class, 'evaluateReport'])->name('surveillance.evaluate-report');
 
+        // Resertifikasi Sertifikat Lama (SOP 04 §5 / Task 21-04)
+        Route::get('/recertification', [\App\Http\Controllers\Admin\RecertificationController::class, 'index'])->name('recertification.index');
+
         // BNSP exports, complaints, baseline surveillance & baseline appeals disabled
 
         // Laporan & Ekspor Lengkap Parity Demo
@@ -396,6 +399,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/surveillance', [\App\Http\Controllers\Asesi\SurveillanceController::class, 'index'])->name('surveillance.index');
         Route::get('/surveillance/{plan}', [\App\Http\Controllers\Asesi\SurveillanceController::class, 'show'])->name('surveillance.show');
         Route::post('/surveillance/{plan}/report', [\App\Http\Controllers\Asesi\SurveillanceController::class, 'submitReport'])->name('surveillance.submit-report');
+
+        // Resertifikasi Sertifikat Lama (SOP 04 §5 / Task 21-04)
+        Route::get('/certificates/{certificate}/recertify', [\App\Http\Controllers\Asesi\RecertificationController::class, 'create'])->name('certificates.recertify');
+        Route::post('/certificates/{certificate}/recertify', [\App\Http\Controllers\Asesi\RecertificationController::class, 'store'])->name('certificates.recertify.store');
 
         // Asesmen & APL
         Route::get('/assessment/{assessment}/apl', [AplController::class, 'show'])->name('assessment.apl');
