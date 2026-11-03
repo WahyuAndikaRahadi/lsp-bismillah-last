@@ -1,0 +1,1138 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-11-03T19:50:00Z",
+  "schemes": {
+    "S1": {
+      "code": "SKM-01-2026",
+      "title": "Engine Junior Technician",
+      "source_dir": "MUK SKEMA 1 Engine Junior Technician"
+    },
+    "S2": {
+      "code": "SKM-02-2026",
+      "title": "Klaster Maintenance Gasoline Engine Injection",
+      "source_dir": "MUK SKEMA 2 Klaster Maintenance Gasoline Engine Injection"
+    },
+    "S3": {
+      "code": "SKM-03-2026",
+      "title": "Periodical Maintenance Electrified Vehicles",
+      "source_dir": "MUK SKEMA 3 Maintenence Electrical Vehicle.pdf"
+    },
+    "S4": {
+      "code": "SKM-04-2026",
+      "title": "Memperbaiki Panel Bodi Kendaraan",
+      "source_dir": "MUK SKEMA 4 Memperbaiki Panel Bodi Kendaraan"
+    },
+    "S5": {
+      "code": "SKM-05-2026",
+      "title": "Mekanik Junior",
+      "source_dir": "MUK SKEMA 5 Mekanik Junior"
+    },
+    "S6": {
+      "code": "SKM-06-2026",
+      "title": "Servis Sepeda Motor Listrik",
+      "source_dir": "MUK SKEMA 6 Servis Sepeda Motor Listrik"
+    },
+    "S7": {
+      "code": "SKM-07-2026",
+      "title": "Klaster Servis Sepeda Motor Injeksi",
+      "source_dir": "MUK SKEMA 7 Klaster Servis Sepeda Motor Injeksi"
+    }
+  },
+  "blocked_sources": {
+    "IA-04.A": {
+      "code": "FR.IA.04.A",
+      "title": "Daftar Cek Verifikasi Portofolio",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-04.B": {
+      "code": "FR.IA.04.B",
+      "title": "Penilaian Portofolio",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-06.A": {
+      "code": "FR.IA.06.A",
+      "title": "Pertanyaan Tertulis Esai",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-06.B": {
+      "code": "FR.IA.06.B",
+      "title": "Kunci Jawaban Pertanyaan Tertulis Esai",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-06.C": {
+      "code": "FR.IA.06.C",
+      "title": "Lembar Jawaban Pertanyaan Tertulis Esai",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-07": {
+      "code": "FR.IA.07",
+      "title": "Pertanyaan Lisan",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-08": {
+      "code": "FR.IA.08",
+      "title": "Daftar Cek Verifikasi Pihak Ketiga",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-09": {
+      "code": "FR.IA.09",
+      "title": "Pertanyaan Wawancara",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-10": {
+      "code": "FR.IA.10",
+      "title": "Klarifikasi Bukti Tambahan",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    },
+    "IA-11": {
+      "code": "FR.IA.11",
+      "title": "Cek Portofolio Lanjutan",
+      "status": "BLOCKED-SOURCE",
+      "reason": "Original PDF belum tersedia secara terpisah di repositori",
+      "owner_question": "Q2",
+      "approved": false
+    }
+  },
+  "forms": {
+    "FR-SOP-04.1": {
+      "code": "FR-SOP-04.1",
+      "title": "Surat Tugas Asesor",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/04. SOP Sertifikasi Kompetensi/FR-SOP-04.1 Surat Tugas Asesor.pdf",
+      "sections": {
+        "header": {
+          "title": "Header Surat Tugas",
+          "fields": [
+            {
+              "field_key": "surat_tugas_nomor",
+              "original_label": "Nomor Surat Tugas",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "surat_tugas_tanggal",
+              "original_label": "Tanggal Penetapan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "surat_tugas_pejabat",
+              "original_label": "Nama Pejabat Penandatangan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        },
+        "body": {
+          "title": "Daftar Penugasan Asesor",
+          "fields": [
+            {
+              "field_key": "asesor_nama",
+              "original_label": "Nama Asesor",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "asesor_no_reg",
+              "original_label": "No. Reg. MET",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "jadwal_tuk_nama",
+              "original_label": "Tempat Uji Kompetensi (TUK)",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "jadwal_rentang_tanggal",
+              "original_label": "Rentang Waktu Pelaksanaan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-04.2": {
+      "code": "FR-SOP-04.2",
+      "title": "SPT Verifikasi TUK",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/04. SOP Sertifikasi Kompetensi/FR-SOP-04.2 SPT Verifikasi TUK.pdf",
+      "sections": {
+        "header": {
+          "title": "Surat Tugas Verifikasi",
+          "fields": [
+            {
+              "field_key": "spt_nomor",
+              "original_label": "Nomor SPT",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "spt_verifier_name",
+              "original_label": "Nama Personel Verifikasi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "spt_tuk_target",
+              "original_label": "Nama TUK Sasaran",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "spt_tanggal",
+              "original_label": "Tanggal Pelaksanaan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-04.3": {
+      "code": "FR-SOP-04.3",
+      "title": "Daftar Hadir Uji Kompetensi",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/04. SOP Sertifikasi Kompetensi/FR-SOP-04.3 Daftar hadir.pdf",
+      "sections": {
+        "metadata": {
+          "title": "Metadata Kegiatan",
+          "fields": [
+            {
+              "field_key": "hadir_skema_judul",
+              "original_label": "Skema Sertifikasi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "hadir_tuk_nama",
+              "original_label": "Tempat Uji Kompetensi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "hadir_tanggal_pelaksanaan",
+              "original_label": "Hari / Tanggal",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        },
+        "table": {
+          "title": "Tabel Peserta Hadir",
+          "fields": [
+            {
+              "field_key": "peserta_nomor_urut",
+              "original_label": "No.",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "peserta_nama_lengkap",
+              "original_label": "Nama Lengkap Peserta",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "peserta_tanda_tangan",
+              "original_label": "Tanda Tangan Kehadiran",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-04.4": {
+      "code": "FR-SOP-04.4",
+      "title": "Berita Acara Pelaksanaan Uji Kompetensi",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/04. SOP Sertifikasi Kompetensi/FR-SOP-04.4 Formulir Berita Acara.pdf",
+      "sections": {
+        "waktu_tempat": {
+          "title": "Waktu dan Tempat Pelaksanaan",
+          "fields": [
+            {
+              "field_key": "ba_hari_tanggal",
+              "original_label": "Hari dan Tanggal",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_waktu_mulai_selesai",
+              "original_label": "Pukul Pelaksanaan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_tuk_nama",
+              "original_label": "Tempat Uji Kompetensi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        },
+        "rekapitulasi": {
+          "title": "Rekapitulasi Hasil",
+          "fields": [
+            {
+              "field_key": "ba_jumlah_terdaftar",
+              "original_label": "Jumlah Peserta Terdaftar",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_jumlah_hadir",
+              "original_label": "Jumlah Peserta Hadir",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_jumlah_kompeten",
+              "original_label": "Rekomendasi Kompeten (K)",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_jumlah_belum_kompeten",
+              "original_label": "Rekomendasi Belum Kompeten (BK)",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-10.1": {
+      "code": "FR-SOP-10.1",
+      "title": "Berita Acara Pleno Komite Teknis",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/10.  SOP Membuat Keputusan Hasil Rekomendasi Asesmen/",
+      "sections": {
+        "rapat": {
+          "title": "Sidang Pleno",
+          "fields": [
+            {
+              "field_key": "pleno_agenda",
+              "original_label": "Agenda Rapat Pleno",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pleno_tanggal",
+              "original_label": "Tanggal Sidang Pleno",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pleno_tempat",
+              "original_label": "Tempat Rapat",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pleno_ketua",
+              "original_label": "Ketua Sidang Pleno",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-10.2": {
+      "code": "FR-SOP-10.2",
+      "title": "Tanda Terima Sertifikat Kompetensi",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/10.  SOP Membuat Keputusan Hasil Rekomendasi Asesmen/",
+      "sections": {
+        "penerimaan": {
+          "title": "Bukti Penyerahan Fisik / Digital",
+          "fields": [
+            {
+              "field_key": "tanda_terima_nama_pemegang",
+              "original_label": "Nama Pemegang Sertifikat",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "tanda_terima_nomor_sertifikat",
+              "original_label": "Nomor Sertifikat Kompetensi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "tanda_terima_tanggal",
+              "original_label": "Tanggal Penerimaan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "tanda_terima_signature",
+              "original_label": "Tanda Tangan Penerima",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-07.1": {
+      "code": "FR-SOP-07.1",
+      "title": "Surat Penugasan Investigasi Banding",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/07. SOP Menangani Banding/FR-SOP-07.1 Formulir Surat Penugasan Investigasi Banding.pdf",
+      "sections": {
+        "penugasan": {
+          "title": "Penugasan Tim Investigasi",
+          "fields": [
+            {
+              "field_key": "banding_st_nomor",
+              "original_label": "Nomor Surat Tugas Investigasi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "banding_investigator_nama",
+              "original_label": "Nama Anggota Tim Investigasi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "banding_investigator_jabatan",
+              "original_label": "Jabatan Tim",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "banding_masa_tugas",
+              "original_label": "Masa Pelaksanaan Tugas",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-07.2": {
+      "code": "FR-SOP-07.2",
+      "title": "Berita Acara Investigasi Banding dan Rekomendasi",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/07. SOP Menangani Banding/FR-SOP-07.2 Formulir banding Investigasi dan Rekomendasi Tindak Lanjut.pdf",
+      "sections": {
+        "kasus": {
+          "title": "Identitas Banding",
+          "fields": [
+            {
+              "field_key": "ba_banding_hari_tanggal",
+              "original_label": "Hari dan Tanggal Investigasi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_banding_nama_asesi",
+              "original_label": "Nama Asesi Pemohon",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_banding_nama_asesor",
+              "original_label": "Nama Asesor Penguji",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_banding_tanggal_asesmen",
+              "original_label": "Tanggal Pelaksanaan Asesmen",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_banding_unit_dibantah",
+              "original_label": "Unit Kompetensi yang Dibantah",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        },
+        "hasil": {
+          "title": "Temuan dan Rekomendasi",
+          "fields": [
+            {
+              "field_key": "ba_banding_temuan",
+              "original_label": "Temuan Faktual Investigasi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ba_banding_rekomendasi",
+              "original_label": "Rekomendasi Tindak Lanjut",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-01.1": {
+      "code": "FR-SOP-01.1",
+      "title": "Komitmen Ketidakberpihakan Lembaga",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/01. SOP Mengelola Ketidakberpihakan/FR-SOP-01.1 Komitmen Ketidakberpihakkan.pdf",
+      "sections": {
+        "komitmen": {
+          "title": "Pernyataan Lembaga",
+          "fields": [
+            {
+              "field_key": "komitmen_lembaga_teks",
+              "original_label": "Pernyataan Komitmen Ketidakberpihakan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "komitmen_lembaga_direktur",
+              "original_label": "Direktur LSP P3 PrO Indo",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "komitmen_lembaga_tanggal",
+              "original_label": "Tanggal Pengesahan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-01.4": {
+      "code": "FR-SOP-01.4",
+      "title": "Komitmen Personil LSP",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/01. SOP Mengelola Ketidakberpihakan/FR-SOP-01.4 Komitmen Personil LSP.pdf",
+      "sections": {
+        "identitas": {
+          "title": "Identitas Personil",
+          "fields": [
+            {
+              "field_key": "personil_nama",
+              "original_label": "Nama Personil",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "personil_jabatan",
+              "original_label": "Jabatan di LSP",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "personil_komitmen_signed_at",
+              "original_label": "Tanggal Pernyataan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-01.5": {
+      "code": "FR-SOP-01.5",
+      "title": "Pakta Integritas Asesor",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/01. SOP Mengelola Ketidakberpihakan/FR-SOP-01.5 Pakta Integritas.pdf",
+      "sections": {
+        "asesor": {
+          "title": "Identitas Asesor",
+          "fields": [
+            {
+              "field_key": "pakta_asesor_nama",
+              "original_label": "Nama Asesor",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pakta_asesor_met",
+              "original_label": "No. MET Asesor",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pakta_asesor_asal_unit",
+              "original_label": "Asal Unit Kerja",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pakta_asesor_signed_at",
+              "original_label": "Tanggal Penandatanganan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-SOP-01.7": {
+      "code": "FR-SOP-01.7",
+      "title": "Formulir Pergantian Asesor",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/01. SOP Mengelola Ketidakberpihakan/FR-SOP-01.7 Formulir Pergantian Asesor.pdf",
+      "sections": {
+        "pergantian": {
+          "title": "Data Pergantian Asesor",
+          "fields": [
+            {
+              "field_key": "pergantian_nama_asesi",
+              "original_label": "Nama Asesi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pergantian_asesor_semula",
+              "original_label": "Asesor Kompetensi Semula",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pergantian_asesor_pengganti",
+              "original_label": "Asesor Kompetensi Pengganti",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pergantian_alasan",
+              "original_label": "Alasan / Dasar Pergantian",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "pergantian_pengesah",
+              "original_label": "Manajer Sertifikasi / Direktur",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-APL-01": {
+      "code": "FR-APL-01",
+      "title": "Permohonan Sertifikasi Kompetensi",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/0. FR.APL-01...",
+      "sections": {
+        "data_pribadi": {
+          "title": "Bagian 1 : Rincian Data Pemohon Sertifikasi",
+          "fields": [
+            {
+              "field_key": "nama_lengkap",
+              "original_label": "Nama Lengkap",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "no_ktp",
+              "original_label": "No. KTP/NIK/Paspor",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "tempat_lahir",
+              "original_label": "Tempat Lahir",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "tanggal_lahir",
+              "original_label": "Tanggal Lahir",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "jenis_kelamin",
+              "original_label": "Jenis Kelamin",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "kebangsaan",
+              "original_label": "Kebangsaan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "alamat_rumah",
+              "original_label": "Alamat Rumah",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "no_hp",
+              "original_label": "No. Telepon/HP",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "email",
+              "original_label": "E-mail",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "kualifikasi_pendidikan",
+              "original_label": "Kualifikasi Pendidikan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        },
+        "data_pekerjaan": {
+          "title": "Data Pekerjaan Sekarang",
+          "fields": [
+            {
+              "field_key": "pekerjaan_institusi",
+              "original_label": "Nama Institusi / Perusahaan",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            },
+            {
+              "field_key": "pekerjaan_jabatan",
+              "original_label": "Jabatan",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            },
+            {
+              "field_key": "pekerjaan_alamat",
+              "original_label": "Alamat Kantor",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            }
+          ]
+        }
+      }
+    },
+    "FR-APL-02": {
+      "code": "FR-APL-02",
+      "title": "Asesmen Mandiri",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/2. FR.APL 02. Asesmen Mandiri.pdf",
+      "sections": {
+        "panduan": {
+          "title": "Panduan Asesmen Mandiri",
+          "fields": [
+            {
+              "field_key": "apl02_petunjuk",
+              "original_label": "Instruksi Peserta",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        },
+        "penilaian_mandiri": {
+          "title": "Daftar Kriteria Unjuk Kerja dan Penilaian Diri",
+          "fields": [
+            {
+              "field_key": "self_evaluation_kuk_id",
+              "original_label": "Nomor KUK",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            },
+            {
+              "field_key": "self_evaluation_result",
+              "original_label": "Kompeten (K) / Belum Kompeten (BK)",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            },
+            {
+              "field_key": "self_evaluation_evidence",
+              "original_label": "Bukti Pendukung Relevan",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            }
+          ]
+        }
+      }
+    },
+    "FR-MAPA-01": {
+      "code": "FR-MAPA-01",
+      "title": "Merencanakan Aktivitas dan Proses Asesmen",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/3. FR.MAPA.01. Merencanakan Aktivitas dan Proses.pdf",
+      "sections": {
+        "pendekatan": {
+          "title": "1. Pendekatan Asesmen",
+          "fields": [
+            {
+              "field_key": "mapa01_calon_peserta",
+              "original_label": "Karakteristik Calon Peserta",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "mapa01_tujuan_asesmen",
+              "original_label": "Tujuan Asesmen",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "mapa01_konteks_asesmen",
+              "original_label": "Konteks Asesmen: Lingkungan / Peluang Bukti",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-MAPA-02": {
+      "code": "FR-MAPA-02",
+      "title": "Peta Instrumen Asesmen",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/4. FR.MAPA.02. Peta Instrumen Asesmen.pdf",
+      "sections": {
+        "peta": {
+          "title": "Pemetaan Instrumen per Unit",
+          "fields": [
+            {
+              "field_key": "mapa02_unit_code",
+              "original_label": "Kode Unit",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "mapa02_selected_instruments",
+              "original_label": "Instrumen Terpilih",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-AK-01": {
+      "code": "FR-AK-01",
+      "title": "Persetujuan Asesmen dan Kerahasiaan",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/5. FR.AK.01. Persetujuan Asesmen dan Kerahasian  Rev 19 docx.pdf",
+      "sections": {
+        "persetujuan": {
+          "title": "Persetujuan Rencana dan Kerahasiaan",
+          "fields": [
+            {
+              "field_key": "ak01_pernyataan_kerahasiaan",
+              "original_label": "Klausul Kerahasiaan",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak01_asesi_signature",
+              "original_label": "Tanda Tangan Asesi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak01_asesor_signature",
+              "original_label": "Tanda Tangan Asesor",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-AK-02": {
+      "code": "FR-AK-02",
+      "title": "Rekaman Asesmen Kompetensi",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/12. FR.AK.02. Rekaman Asesmen Kompetensi.pdf",
+      "sections": {
+        "rekomendasi": {
+          "title": "Rekomendasi Asesor per Unit",
+          "fields": [
+            {
+              "field_key": "ak02_unit_code",
+              "original_label": "Kode Unit",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak02_unit_result",
+              "original_label": "Hasil Rekomendasi (K/BK)",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak02_overall_recommendation",
+              "original_label": "Rekomendasi Keseluruhan",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            },
+            {
+              "field_key": "ak02_follow_up",
+              "original_label": "Tindak Lanjut yang Dibutuhkan",
+              "type": "printed",
+              "printed": true,
+              "page": 2
+            }
+          ]
+        }
+      }
+    },
+    "FR-AK-03": {
+      "code": "FR-AK-03",
+      "title": "Umpan Balik dan Catatan Asesmen",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/13. FR.AK.03. Umpan Balik dan Catatan Asesmen.pdf",
+      "sections": {
+        "umpan_balik": {
+          "title": "Komponen Umpan Balik Peserta",
+          "fields": [
+            {
+              "field_key": "ak03_komponen_evaluasi",
+              "original_label": "Komponen yang Dievaluasi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak03_komentar_asesi",
+              "original_label": "Catatan / Komentar Asesi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-AK-04": {
+      "code": "FR-AK-04",
+      "title": "Banding Asesmen",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 3 Maintenence Electrical Vehicle.pdf/8. FR.AK.04. Banding Asesmen.pdf",
+      "sections": {
+        "pengajuan": {
+          "title": "Formulir Pengajuan Banding",
+          "fields": [
+            {
+              "field_key": "ak04_penjelasan_proses",
+              "original_label": "Apakah Proses Banding telah dijelaskan kepada Anda?",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak04_diskusi_asesor",
+              "original_label": "Apakah Anda telah mendiskusikan Banding dengan Asesor?",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak04_bantuan_orang_lain",
+              "original_label": "Apakah Anda mau melibatkan orang lain membantu Anda dalam Proses Banding?",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak04_alasan_banding",
+              "original_label": "Banding ini diajukan atas alasan pembuktian sebagai berikut",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak04_signature",
+              "original_label": "Tanda Tangan Pemohon Banding",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-AK-05": {
+      "code": "FR-AK-05",
+      "title": "Laporan Asesmen",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/04. SOP Sertifikasi Kompetensi/",
+      "sections": {
+        "laporan": {
+          "title": "Laporan Pelaksanaan Asesmen",
+          "fields": [
+            {
+              "field_key": "ak05_roster_hasil",
+              "original_label": "Daftar Hasil Rekomendasi Peserta",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak05_catatan_penolakan",
+              "original_label": "Aspek dan Catatan Penolakan / Tindak Lanjut",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-AK-06": {
+      "code": "FR-AK-06",
+      "title": "Meninjau Proses Asesmen",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/SOP PROINDO/04. SOP Sertifikasi Kompetensi/",
+      "sections": {
+        "tinjauan": {
+          "title": "Kaji Ulang Proses Asesmen",
+          "fields": [
+            {
+              "field_key": "ak06_prosedur_prinsip",
+              "original_label": "Kesesuaian Prosedur dan Prinsip Asesmen",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak06_dimensi_kompetensi",
+              "original_label": "Pemenuhan 5 Dimensi Kompetensi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak06_rekomendasi_perbaikan",
+              "original_label": "Rekomendasi Peningkatan Mutu",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    },
+    "FR-AK-07": {
+      "code": "FR-AK-07",
+      "title": "Penyesuaian yang Wajar",
+      "source_path": "docs/reference/all-document-lsp-ProIndo/MUK SKEMA 1 Engine Junior Technician/6. FR.AK.07-Penyesuan-wajar-alasan.pdf",
+      "sections": {
+        "penyesuaian": {
+          "title": "Penyesuaian Khusus",
+          "fields": [
+            {
+              "field_key": "ak07_kategori_penyesuaian",
+              "original_label": "Potensi Kebutuhan Penyesuaian Asesi",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            },
+            {
+              "field_key": "ak07_tindakan_penyesuaian",
+              "original_label": "Metode / Instrumen yang Disepakati",
+              "type": "printed",
+              "printed": true,
+              "page": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+}

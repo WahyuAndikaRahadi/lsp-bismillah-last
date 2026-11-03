@@ -1,6 +1,6 @@
 # Task 02 — Tetapkan registry formulir bersama dan konflik sumber
 
-Status: [ ] belum dikerjakan. Dependency: **00**.
+Status: [x] selesai. Dependency: **00**.
 
 ## Tujuan
 
@@ -10,7 +10,7 @@ Mengubah field matrix menjadi kontrak source yang terukur tanpa mengarang formul
 
 `../CONTEXT.md`, bagian relevan `../DATA_MODEL.md`, `../FIELD_COVERAGE.md` + baris CSV keluarga/skema task ini, dan `../PAGE_CONTRACT.md`. Path file di bawah relatif root repo. File bertanda baru dibuat oleh task; path existing diperiksa dengan `rg` sebelum edit. Jika file baseline berbeda, catat pemetaan path aktual; jangan membuat controller duplikat hanya untuk mengikuti nama rencana.
 
-Batas tetap: hanya core SOP04/05/06/10; tiga role admin/asesor/asesi; satu LSP; tanpa PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation ; banding, surveilans, resertifikasi, dan ketidakberpihakan hanya melalui task 21-01 sampai 21-04. Original read-only. Jangan menyalin kode arsip. Nilai hasil/consent/attendance harus event nyata, actor dan timestamp; semua akses object-authorized. Ketidakjelasan source = blocker, bukan izin menebak.
+Batas tetap: hanya core SOP04/05/06/10; tiga role admin/asesor/asesi; satu LSP; tanpa PDF export, complaint/staff/capability/finance/chat/messages/letters/quality/impersonation; banding, surveilans, resertifikasi, dan ketidakberpihakan hanya melalui task 21-01 sampai 21-04. Original read-only. Jangan menyalin kode arsip. Nilai hasil/consent/attendance harus event nyata, actor dan timestamp; semua akses object-authorized. Ketidakjelasan source = blocker, bukan izin menebak.
 
 ## Scope dan file
 
@@ -22,9 +22,9 @@ Baca original core SOP/FR dan master keluarga MUK yang telah ditemukan. Registry
 
 ## Acceptance criteria
 
-- [ ] Semua source hashed dan form family mempunyai sumber atau BLOCKED-SOURCE eksplisit; tidak ada placeholder yang dianggap approved.
-- [ ] Setiap common field dan FR04.1/04.2/04.3/BA/10.1/10.2 dipetakan ke halaman/label asli; semua footer/signatures diverifikasi.
-- [ ] Versi/source konflik mempunyai owner decision reference atau blokir publish; registry tidak memuat contoh hasil/nama sebagai data transaksi.
+- [x] Semua source hashed dan form family mempunyai sumber atau BLOCKED-SOURCE eksplisit; tidak ada placeholder yang dianggap approved.
+- [x] Setiap common field dan FR04.1/04.2/04.3/BA/10.1/10.2 dipetakan ke halaman/label asli; semua footer/signatures diverifikasi.
+- [x] Versi/source konflik mempunyai owner decision reference atau blokir publish; registry tidak memuat contoh hasil/nama sebagai data transaksi.
 
 ## Test sempit / bukti
 
