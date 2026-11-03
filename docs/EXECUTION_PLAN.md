@@ -38,15 +38,15 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 20 | [x] | [12 — Ruang uji fokus dan IA-05 A/B/C](tasks/12-ruang-uji-cbt.md) | 08,10,11 | 3f6c92b; php artisan test --compact tests/Feature/CoreExamFlowTest.php; exit 0; 8 tests passed, 30 assertions; no deviations |
 | 21 | [x] | [13 — IA-01 dan seluruh sel report sheet](tasks/13-observasi-report-sheet.md) | 10,11,12; source report skema terkait diselesaikan Q2/Q3 | 5a6699d; php artisan test --compact tests/Feature/CoreObservationReportTest.php; exit 0; 6 tests passed, 38 assertions; no deviations |
 | 22 | [x] | [14 — IA-02 skenario dan IA-03 tanggapan](tasks/14-praktik-pmo.md) | 13 | c09a8dc; php artisan test --compact tests/Feature/CorePracticalPmoTest.php; exit 0; 5 tests passed, 28 assertions; no deviations |
-| 23 | [ ] | [15 — Instrumen lain setelah original tersedia](tasks/15-instrumen-sumber-tertunda.md) | 02,05-01..05-07,14; Q2 terselesaikan untuk form terkait | Belum dijalankan |
-| 24 | [ ] | [15-01 — Implementasi IA.04.A setelah source disahkan](tasks/15-01-ia04a.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
-| 25 | [ ] | [15-02 — Implementasi IA.04.B setelah source disahkan](tasks/15-02-ia04b.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
-| 26 | [ ] | [15-03 — Implementasi IA.06.A/B/C setelah source disahkan](tasks/15-03-ia06.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
-| 27 | [ ] | [15-04 — Implementasi IA.07 setelah source disahkan](tasks/15-04-ia07.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
-| 28 | [ ] | [15-05 — Implementasi IA.08 setelah source disahkan](tasks/15-05-ia08.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
-| 29 | [ ] | [15-06 — Implementasi IA.09 setelah source disahkan](tasks/15-06-ia09.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
-| 30 | [ ] | [15-07 — Implementasi IA.10 setelah source disahkan](tasks/15-07-ia10.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
-| 31 | [ ] | [15-08 — Implementasi IA.11 setelah source disahkan](tasks/15-08-ia11.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
+| 23 | [x] | [15 — Instrumen lain setelah original tersedia](tasks/15-instrumen-sumber-tertunda.md) | 02,05-01..05-07,14; Q2 terselesaikan untuk form terkait | 63dc2b7; php artisan test --compact tests/Unit/RemainingInstrumentSourceGateTest.php; exit 0; 2 tests passed, 9 assertions; gate active |
+| 24 | [ ] | [15-01 — Implementasi IA.04.A setelah source disahkan](tasks/15-01-ia04a.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
+| 25 | [ ] | [15-02 — Implementasi IA.04.B setelah source disahkan](tasks/15-02-ia04b.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
+| 26 | [ ] | [15-03 — Implementasi IA.06.A/B/C setelah source disahkan](tasks/15-03-ia06.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
+| 27 | [ ] | [15-04 — Implementasi IA.07 setelah source disahkan](tasks/15-04-ia07.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
+| 28 | [ ] | [15-05 — Implementasi IA.08 setelah source disahkan](tasks/15-05-ia08.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
+| 29 | [ ] | [15-06 — Implementasi IA.09 setelah source disahkan](tasks/15-06-ia09.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
+| 30 | [ ] | [15-07 — Implementasi IA.10 setelah source disahkan](tasks/15-07-ia10.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
+| 31 | [ ] | [15-08 — Implementasi IA.11 setelah source disahkan](tasks/15-08-ia11.md) | 15,12–14; original keluarga ini disahkan owner | blocked: dokumen fisik original belum tersedia (Q2 OWNER_QUESTIONS.md) |
 | 32 | [ ] | [16 — Rekomendasi asesor eksplisit dan finalisasi](tasks/16-ak02-finalisasi.md) | 12–15 untuk metode yang dipakai; 11 | Belum dijalankan |
 | 33 | [ ] | [17 — AK-03 dan Pengajuan Banding AK-04 (intake)](tasks/17-feedback-ak04.md) | 16 | Belum dijalankan |
 | 34 | [ ] | [18 — AK-05/06 per asesor dan revision](tasks/18-laporan-ak05-ak06.md) | 16,17 | Belum dijalankan |
