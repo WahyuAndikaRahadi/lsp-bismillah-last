@@ -37,7 +37,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 19 | [x] | [08 — APL-01/02 dan review tanpa consent palsu](tasks/08-apl.md) | 07,11 bagian consent join tersedia; reference skema terkait selesai | 250b8fb; php artisan test --compact tests/Feature/CoreAplWorkflowTest.php; exit 0; 7 tests passed, 85 assertions; no deviations |
 | 20 | [x] | [12 — Ruang uji fokus dan IA-05 A/B/C](tasks/12-ruang-uji-cbt.md) | 08,10,11 | 3f6c92b; php artisan test --compact tests/Feature/CoreExamFlowTest.php; exit 0; 8 tests passed, 30 assertions; no deviations |
 | 21 | [x] | [13 — IA-01 dan seluruh sel report sheet](tasks/13-observasi-report-sheet.md) | 10,11,12; source report skema terkait diselesaikan Q2/Q3 | 5a6699d; php artisan test --compact tests/Feature/CoreObservationReportTest.php; exit 0; 6 tests passed, 38 assertions; no deviations |
-| 22 | [ ] | [14 — IA-02 skenario dan IA-03 tanggapan](tasks/14-praktik-pmo.md) | 13 | Belum dijalankan |
+| 22 | [x] | [14 — IA-02 skenario dan IA-03 tanggapan](tasks/14-praktik-pmo.md) | 13 | c09a8dc; php artisan test --compact tests/Feature/CorePracticalPmoTest.php; exit 0; 5 tests passed, 28 assertions; no deviations |
 | 23 | [ ] | [15 — Instrumen lain setelah original tersedia](tasks/15-instrumen-sumber-tertunda.md) | 02,05-01..05-07,14; Q2 terselesaikan untuk form terkait | Belum dijalankan |
 | 24 | [ ] | [15-01 — Implementasi IA.04.A setelah source disahkan](tasks/15-01-ia04a.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
 | 25 | [ ] | [15-02 — Implementasi IA.04.B setelah source disahkan](tasks/15-02-ia04b.md) | 15,12–14; original keluarga ini disahkan owner | Belum dijalankan |
