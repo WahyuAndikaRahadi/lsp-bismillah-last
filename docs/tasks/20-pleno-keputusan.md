@@ -1,6 +1,6 @@
 # Task 20 — Review independen dan keputusan SOP10
 
-Status: [ ] belum dikerjakan. Dependency: **19; Q4 penunjukan/authority resolved**.
+Status: [x] selesai. Dependency: **19; Q4 penunjukan/authority resolved**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Interface admin core merekam penunjukan tim/komite, scope/members/functions/auth
 
 ## Acceptance criteria
 
-- [ ] Keputusan approved/rejected/correction terpisah AK02; positive recommendation tidak auto-certified.
-- [ ] Self-decision, missing authority/evidence, unresolved discrepancy dan stale report version ditolak.
-- [ ] FR10.1 attendance actual, decision immutable; reversal/supersession menonaktifkan certificate terdampak tanpa menghapus history.
+- [x] Keputusan approved/rejected/correction terpisah AK02; positive recommendation tidak auto-certified.
+- [x] Self-decision, missing authority/evidence, unresolved discrepancy dan stale report version ditolak.
+- [x] FR10.1 attendance actual, decision immutable; reversal/supersession menonaktifkan certificate terdampak tanpa menghapus history.
 
 ## Test sempit / bukti
 

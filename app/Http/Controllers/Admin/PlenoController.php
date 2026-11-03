@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Enums\ScheduleStatus;
 use App\Http\Controllers\Controller;
-use App\Models\AssessmentApplication;
-use App\Models\AssessmentSchedule;
+use App\Models\Assessment;
 use App\Models\PlenoMeeting;
+use App\Models\Schedule;
+use App\Services\CertificationDecisionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,20 +15,23 @@ use Illuminate\View\View;
 
 class PlenoController extends Controller
 {
+    public function __construct(
+        protected CertificationDecisionService $decisionService
+    ) {}
+
     /**
      * Daftar jadwal asesmen untuk penetapan rapat pleno
      */
     public function index(Request $request): View
     {
-        $schedules = AssessmentSchedule::with([
+        $schedules = Schedule::with([
             'scheme',
             'tuk',
-            'applications.ak02',
+            'assessments.ak02Items',
             'plenoMeeting',
-            'scheduleAsesors.asesor',
+            'assessors',
         ])
-            ->whereIn('status', [ScheduleStatus::Asesmen, ScheduleStatus::Pleno, ScheduleStatus::Selesai])
-            ->latest('tgl_asesmen')
+            ->latest('date')
             ->paginate(10);
 
         return view('admin.pleno.index', compact('schedules'));
@@ -37,14 +40,15 @@ class PlenoController extends Controller
     /**
      * Lembar kerja Rapat Pleno penetapan kelulusan
      */
-    public function show(AssessmentSchedule $schedule): View
+    public function show(Schedule $schedule): View
     {
         $schedule->load([
             'scheme.competencyUnits',
             'tuk',
-            'applications.user.asesiProfile',
-            'applications.ak02',
-            'scheduleAsesors.asesor',
+            'assessments.asesi.profile',
+            'assessments.assessor',
+            'assessments.ak02Items',
+            'assessors',
             'plenoMeeting',
         ]);
 
@@ -53,28 +57,34 @@ class PlenoController extends Controller
             'nomor_ba_pleno' => PlenoMeeting::generateNomorBaPleno(),
             'tanggal_pleno' => now()->toDateString(),
             'tempat' => 'Ruang Rapat Pleno LSP / Daring',
-            'ketua_komite' => Auth::user()->name,
-            'anggota_komite' => '1. Ketua Komite Teknis\n2. Asesor Penguji\n3. Bagian Sertifikasi LSP',
+            'ketua_komite' => Auth::user()?->name ?? 'Ketua Komite Teknis',
+            'anggota_komite' => "1. Ketua Komite Teknis\n2. Manajer Sertifikasi\n3. Perwakilan Pengurus LSP",
         ]);
 
         return view('admin.pleno.show', compact('schedule', 'pleno'));
     }
 
     /**
-     * Simpan penetapan Rapat Pleno & terbitkan nomor sertifikat BNSP
+     * Simpan penetapan Rapat Pleno & keputusan sertifikasi independen.
      */
-    public function store(Request $request, AssessmentSchedule $schedule): RedirectResponse
+    public function store(Request $request, Schedule $schedule): RedirectResponse
     {
-        $request->validate([
+        $validated = $request->validate([
             'nomor_ba_pleno' => ['required', 'string', 'max:100'],
             'tanggal_pleno' => ['required', 'date'],
             'tempat' => ['required', 'string', 'max:255'],
             'ketua_komite' => ['required', 'string', 'max:100'],
             'anggota_komite' => ['nullable', 'string'],
             'catatan_pleno' => ['nullable', 'string'],
-            'kelulusan' => ['required', 'array'],
-            'kelulusan.*' => ['required', 'in:kompeten,belum_kompeten'],
+            'decisions' => ['required', 'array'],
+            'decisions.*.decision' => ['required', 'in:KOMPETEN,BELUM_KOMPETEN,CORRECTION_REQUESTED,kompeten,belum_kompeten,k,bk'],
+            'decisions.*.notes' => ['nullable', 'string'],
+            'decisions.*.corrective_action' => ['nullable', 'string'],
+        ], [
+            'decisions.required' => 'Keputusan sertifikasi untuk asesi pada jadwal ini wajib ditetapkan.',
         ]);
+
+        $actor = Auth::user();
 
         DB::beginTransaction();
         try {
@@ -82,56 +92,53 @@ class PlenoController extends Controller
             $pleno = PlenoMeeting::updateOrCreate(
                 ['schedule_id' => $schedule->id],
                 [
-                    'nomor_ba_pleno' => $request->nomor_ba_pleno,
-                    'tanggal_pleno' => $request->tanggal_pleno,
-                    'tempat' => $request->tempat,
-                    'ketua_komite' => $request->ketua_komite,
-                    'anggota_komite' => $request->anggota_komite,
-                    'catatan_pleno' => $request->catatan_pleno,
+                    'nomor_ba_pleno' => $validated['nomor_ba_pleno'],
+                    'tanggal_pleno' => $validated['tanggal_pleno'],
+                    'tempat' => $validated['tempat'],
+                    'ketua_komite' => $validated['ketua_komite'],
+                    'anggota_komite' => $validated['anggota_komite'] ?? null,
+                    'catatan_pleno' => $validated['catatan_pleno'] ?? null,
                     'status' => 'disahkan',
-                    'ttd_ketua' => Auth::user()->signature_image,
+                    'ttd_ketua' => $actor->profile?->signature_data ?? $actor->signature_image,
                 ]
             );
 
-            // 2. Update status kelulusan peserta & terbitkan nomor sertifikat
-            $scheme = $schedule->scheme;
-            $tglTerbit = now()->toDateString();
-            $masaBerlaku = now()->addYears(3)->toDateString(); // Lisensi BNSP berlaku 3 tahun
-
-            foreach ($request->kelulusan as $appId => $statusLulus) {
-                $app = AssessmentApplication::where('id', $appId)
+            // 2. Catat keputusan sertifikasi per assessment via CertificationDecisionService
+            foreach ($validated['decisions'] as $assessmentId => $item) {
+                $assessment = Assessment::where('id', $assessmentId)
                     ->where('schedule_id', $schedule->id)
                     ->first();
 
-                if ($app) {
-                    $noSertifikat = $app->no_sertifikat;
-                    if ($statusLulus === 'kompeten' && ! $noSertifikat) {
-                        $noSertifikat = PlenoMeeting::generateNomorSertifikat($scheme);
-                    }
-
-                    $app->update([
-                        'status_kelulusan' => $statusLulus,
-                        'no_sertifikat' => $statusLulus === 'kompeten' ? $noSertifikat : null,
-                        'tgl_terbit_sertifikat' => $statusLulus === 'kompeten' ? $tglTerbit : null,
-                        'masa_berlaku_sertifikat' => $statusLulus === 'kompeten' ? $masaBerlaku : null,
-                    ]);
+                if (! $assessment) {
+                    continue;
                 }
+
+                $this->decisionService->recordDecision(
+                    assessment: $assessment,
+                    decision: $item['decision'],
+                    actor: $actor,
+                    authorityRole: $validated['ketua_komite'],
+                    decisionNotes: $item['notes'] ?? null,
+                    correctiveAction: $item['corrective_action'] ?? null,
+                    validationNotes: 'Diverifikasi dalam Rapat Pleno Komite Teknis',
+                    plenoMeetingId: $pleno->id
+                );
             }
 
-            // 3. Update status jadwal ke 'selesai'
+            // 3. Update status jadwal ke FINISHED bila semua selesai
             $schedule->update([
-                'status' => ScheduleStatus::Selesai,
+                'status' => 'FINISHED',
             ]);
 
             DB::commit();
 
             return redirect()->route('admin.pleno.show', $schedule)
-                ->with('success', "Keputusan Rapat Pleno untuk jadwal {$schedule->nama_jadwal} berhasil disahkan! Sertifikat kompetensi resmi telah diterbitkan.");
+                ->with('success', "Keputusan Rapat Pleno untuk jadwal {$schedule->name} ({$schedule->code}) berhasil disahkan.");
 
         } catch (\Throwable $e) {
             DB::rollBack();
 
-            return back()->withInput()->with('error', 'Gagal memproses penetapan pleno: '.$e->getMessage());
+            return back()->withInput()->with('error', 'Gagal memproses penetapan pleno: ' . $e->getMessage());
         }
     }
 }
