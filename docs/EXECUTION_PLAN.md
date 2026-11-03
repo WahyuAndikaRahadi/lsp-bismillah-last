@@ -55,7 +55,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 37 | [x] | [21 — Upload sertifikat dan FR10.2](tasks/21-sertifikat-eksternal.md) | 20,04,11 | 5c06cb2; php artisan test --compact tests/Feature/CoreCertificatesTest.php; exit 0; 6 tests passed, 43 assertions; no deviations |
 | 38 | [x] | [21-01 — Banding Asesmen (SOP 07)](tasks/21-01-banding.md) | 17,04,20 | 91f97df; php artisan test --compact tests/Feature/CoreAppealTest.php; exit 0; 5 tests passed, 25 assertions; no deviations |
 | 39 | [x] | [21-02 — Ketidakberpihakan (SOP 01)](tasks/21-02-ketidakberpihakan.md) | 04,07 | 3ac645e; php artisan test --compact tests/Feature/CoreImpartialityTest.php; exit 0; 4 tests passed, 21 assertions; no deviations |
-| 40 | [ ] | [21-03 — Surveilans (SOP 04 §4 & SOP 19)](tasks/21-03-surveilans.md) | 21,04 | Belum dijalankan |
+| 40 | [x] | [21-03 — Surveilans (SOP 04 §4 & SOP 19)](tasks/21-03-surveilans.md) | 21,04 | 2001544; php artisan test --compact tests/Feature/CoreSurveillanceTest.php; exit 0; 4 tests passed, 29 assertions; no deviations |
 | 41 | [ ] | [21-04 — Resertifikasi (SOP 04 §5)](tasks/21-04-resertifikasi.md) | 21,07,08 | Belum dijalankan |
 | 42 | [ ] | [22 — Hapus runtime legacy dan bloat setelah cutover](tasks/22-hapus-legacy-bloat.md) | 01,03–21, 21-01..21-04 untuk fitur terkait | Belum dijalankan |
 | 43 | [ ] | [23 — Seluruh halaman satu produk dan alur tanpa jalan buntu](tasks/23-konsistensi-semua-halaman.md) | 06–22 | Belum dijalankan |
