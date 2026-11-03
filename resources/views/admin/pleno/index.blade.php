@@ -29,10 +29,11 @@
                     <tbody class="divide-y divide-zinc-100">
                         @forelse ($schedules as $sched)
                             @php
-                                $totalPeserta = $sched->applications->count();
-                                $kCount = $sched->applications->filter(fn($a) => $a->ak02 && $a->ak02->rekomendasi_akhir === 'K')->count();
-                                $bkCount = $sched->applications->filter(fn($a) => $a->ak02 && $a->ak02->rekomendasi_akhir === 'BK')->count();
-                                $isPlenoDone = $sched->plenoMeeting && $sched->plenoMeeting->status === 'disahkan';
+                                $applications = $sched->assessments ?? $sched->applications ?? collect();
+                                $totalPeserta = $applications->count();
+                                $kCount = $applications->filter(fn($a) => in_array($a->final_result, ['KOMPETEN', 'K'], true) || ($a->ak02 && in_array($a->ak02->rekomendasi_akhir, ['KOMPETEN', 'K'], true)))->count();
+                                $bkCount = $applications->filter(fn($a) => in_array($a->final_result, ['BELUM_KOMPETEN', 'BK'], true) || ($a->ak02 && in_array($a->ak02->rekomendasi_akhir, ['BELUM_KOMPETEN', 'BK'], true)))->count();
+                                $isPlenoDone = $sched->plenoMeeting && in_array(strtolower($sched->plenoMeeting->status), ['disahkan', 'completed'], true);
                             @endphp
                             <tr class="hover:bg-zinc-50/50 transition">
                                 <td class="px-6 py-4">

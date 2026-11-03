@@ -98,8 +98,8 @@ class AssessmentNextAction
                         : 'Hasil asesmen Anda telah direkomendasikan KOMPETEN oleh asesor dan menunggu penetapan sidang pleno sertifikat BNSP.')
                     : 'Anda belum mencapai standar kompetensi pada seluruh unit skema ini. Anda dapat mengajukan banding asesmen bila terdapat ketidaksesuaian.',
                 'action_label' => ($isKompeten && $hasCertificate) ? 'Unduh Sertifikat BNSP' : 'Lihat Rekap Hasil Asesmen',
-                'action_url' => ($isKompeten && $hasCertificate && \Route::has('documents.sertifikat'))
-                    ? route('documents.sertifikat', $assessment->id)
+                'action_url' => ($isKompeten && $hasCertificate && \Route::has('asesi.certificates.index'))
+                    ? route('asesi.certificates.index')
                     : route('asesi.assessment.ruang-uji', $assessment->id),
                 'is_blocked' => false,
                 'blocker_reason' => null,
@@ -224,7 +224,7 @@ class AssessmentNextAction
                 'title' => 'Verifikasi Permohonan & Asesmen Mandiri',
                 'description' => 'Asesi telah mengirimkan berkas APL-01 dan APL-02. Periksa bukti persyaratan dan berikan rekomendasi.',
                 'action_label' => 'Review Permohonan APL',
-                'action_url' => \Route::has('asesor.apl.show') ? route('asesor.apl.show', $assessment->id) : route('asesor.jadwal.index'),
+                'action_url' => \Route::has('asesor.apl.review') ? route('asesor.apl.review', $assessment->id) : route('asesor.jadwal.index'),
                 'is_blocked' => false,
                 'blocker_reason' => null,
                 'secondary_label' => null,

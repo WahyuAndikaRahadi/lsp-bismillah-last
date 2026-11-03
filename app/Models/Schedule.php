@@ -130,6 +130,11 @@ class Schedule extends Model
         return $this->hasMany(Assessment::class);
     }
 
+    public function applications(): HasMany
+    {
+        return $this->assessments();
+    }
+
     public function plenoMeeting(): HasOne
     {
         return $this->hasOne(PlenoMeeting::class, 'schedule_id');

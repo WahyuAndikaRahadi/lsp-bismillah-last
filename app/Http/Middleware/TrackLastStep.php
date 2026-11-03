@@ -16,25 +16,7 @@ class TrackLastStep
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $assessment = $request->route('assessment');
-
-        if (is_numeric($assessment) || is_string($assessment)) {
-            $assessment = Assessment::find($assessment);
-        }
-
-        if ($assessment instanceof Assessment) {
-            $routeName = $request->route()?->getName();
-
-            if ($routeName) {
-                $segments = explode('.', $routeName);
-                $step = end($segments);
-
-                if ($step) {
-                    $assessment->update(['last_active_step' => $step]);
-                }
-            }
-        }
-
+        // Pure and non-mutating on GET requests per core certification guidelines
         return $next($request);
     }
 }

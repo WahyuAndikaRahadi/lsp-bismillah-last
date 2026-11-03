@@ -1,6 +1,6 @@
 # Task 23 — Seluruh halaman satu produk dan alur tanpa jalan buntu
 
-Status: [ ] belum dikerjakan. Dependency: **06–22**.
+Status: [x] selesai. Dependency: **06–22**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Inventaris semua route aktif sekali dan mapping ke PAGE_CONTRACT atau hapus. Ter
 
 ## Acceptance criteria
 
-- [ ] Setiap route aktif punya role/object policy dan usable primary action/status; no empty href/inert buttons atau loop.
-- [ ] Semua halaman memakai tokens/three patterns; control text≥14px, mobile input16px, tap44px, keyboard focus/contrast, no visual effects terlarang.
-- [ ] Assessment focused dengan progress/timer/save status; data/error/draft tidak hilang; source wording/table preserved.
+- [x] Setiap route aktif punya role/object policy dan usable primary action/status; no empty href/inert buttons atau loop.
+- [x] Semua halaman memakai tokens/three patterns; control text≥14px, mobile input16px, tap44px, keyboard focus/contrast, no visual effects terlarang.
+- [x] Assessment focused dengan progress/timer/save status; data/error/draft tidak hilang; source wording/table preserved.
 
 ## Test sempit / bukti
 

@@ -40,7 +40,7 @@
         <div class="flex items-center justify-between">
             <span class="font-bold flex items-center gap-1.5">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                Batas Pengajuan Banding: {{ $appealWindowDays }} Hari Kerja (hingga {{ $deadline->isoFormat('dddd, D MMMM Y') }})
+                Batas Pengajuan Banding: {{ $appealWindowDays }} Hari Kerja (hingga {{ $deadline ? $deadline->isoFormat('dddd, D MMMM Y') : 'Tanpa Batas Waktu' }})
             </span>
             <span class="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full {{ $isWithinDeadline ? 'bg-amber-200 text-amber-800' : 'bg-rose-200 text-rose-800' }}">
                 {{ $isWithinDeadline ? 'Tenggat Terbuka' : 'Tenggat Berakhir' }}

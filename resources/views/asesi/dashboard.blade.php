@@ -218,7 +218,7 @@
                                 <h3 class="text-base font-bold text-slate-900 leading-snug">
                                     {{ $sch->name ?? $sch->scheme->name }}
                                 </h3>
-                                <div class="flex items-center text-xs text-slate-500 space-x-4 flex-wrap gap-y-1 mt-1">
+                                <div class="flex items-center text-xs text-slate-500 gap-x-4 flex-wrap gap-y-1 mt-1">
                                     <span>TUK: <strong class="text-slate-700">{{ $sch->tuk_name }}</strong></span>
                                     <span>&bull;</span>
                                     <span>Tanggal: <strong class="text-slate-700">{{ \Carbon\Carbon::parse($sch->date)->isoFormat('D MMMM Y') }}</strong> ({{ substr($sch->start_time, 0, 5) }} - {{ substr($sch->end_time, 0, 5) }} WIB)</span>
@@ -238,7 +238,7 @@
                         </div>
 
                         {{-- Modular MUK Architecture Cards (Hanya Menampilkan Modul yang Aktif / Terbuka) --}}
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-{{ $hasFinalDecision ? '4' : ($aplApproved ? '3' : '1') }} gap-3">
+                        <div @class(['grid grid-cols-1 sm:grid-cols-2 gap-3', 'lg:grid-cols-4' => $hasFinalDecision, 'lg:grid-cols-3' => (!$hasFinalDecision && $aplApproved), 'lg:grid-cols-1' => (!$hasFinalDecision && !$aplApproved)])>
                             {{-- Modul 1: FR.APL.01 & FR.APL.02 --}}
                             <div class="border rounded-lg p-3.5 flex flex-col justify-between bg-slate-50/50 {{ $aplApproved ? 'border-emerald-200' : 'border-slate-200' }}">
                                 <div>
