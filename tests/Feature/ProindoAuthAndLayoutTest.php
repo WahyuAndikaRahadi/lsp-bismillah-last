@@ -10,10 +10,10 @@ class ProindoAuthAndLayoutTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_root_url_redirects_guest_to_login(): void
+    public function test_root_url_renders_public_home_for_guest(): void
     {
         $response = $this->get('/');
-        $response->assertRedirect(route('login'));
+        $response->assertOk();
     }
 
     public function test_root_url_redirects_authenticated_admin_to_admin_dashboard(): void

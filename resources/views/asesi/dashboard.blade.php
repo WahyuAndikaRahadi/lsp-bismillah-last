@@ -327,8 +327,8 @@
                                     </div>
                                     <div class="mt-3 pt-2 border-t border-slate-200/60 flex items-center space-x-1.5">
                                         @if($isKompeten && $item->no_sertifikat)
-                                            <a href="{{ route('documents.sertifikat', $item->id) }}" class="flex-1 text-center text-xs font-bold px-2 py-1.5 rounded bg-emerald-600 hover:bg-emerald-700 text-white transition">
-                                                Unduh Sertifikat
+                                            <a href="{{ route('asesi.certificates.index') }}" class="flex-1 text-center text-xs font-bold px-2 py-1.5 rounded bg-emerald-600 hover:bg-emerald-700 text-white transition">
+                                                Lihat Sertifikat
                                             </a>
                                         @else
                                             <a href="{{ route('asesi.assessment.ruang-uji', $item->id) }}" class="flex-1 text-center text-xs font-bold px-2 py-1.5 rounded bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 transition">

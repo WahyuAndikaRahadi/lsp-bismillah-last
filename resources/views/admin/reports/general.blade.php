@@ -6,9 +6,11 @@
                 <h1 class="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">Laporan Umum Sertifikasi</h1>
                 <p class="text-xs text-zinc-500 mt-1">Rekapitulasi total asesi terdaftar, lulus kompeten, dan performa skema sertifikasi.</p>
             </div>
+            @if(Route::has('admin.exports.bnsp.index'))
             <a href="{{ route('admin.exports.bnsp.index') }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 transition">
                 Ekspor Sisfo BNSP
             </a>
+            @endif
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">

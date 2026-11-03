@@ -81,6 +81,10 @@ class CbtAttemptService
 
             // Hitung sisa waktu yang mengikat (Server Authoritative)
             $now = Carbon::now();
+            if (! $response->started_at) {
+                $response->update(['started_at' => $now]);
+                $response->started_at = $now;
+            }
             $startedAt = Carbon::parse($response->started_at);
             $elapsed = (int) abs($now->diffInSeconds($startedAt));
 
@@ -118,7 +122,7 @@ class CbtAttemptService
             return [
                 'response_id' => $response->id,
                 'assessment_id' => $assessment->id,
-                'started_at' => $response->started_at->toIso8601String(),
+                'started_at' => $response->started_at ? Carbon::parse($response->started_at)->toIso8601String() : $now->toIso8601String(),
                 'duration_seconds' => $response->duration_seconds,
                 'remaining_seconds' => $remainingSeconds,
                 'is_expired' => $remainingSeconds <= 0,
@@ -148,7 +152,11 @@ class CbtAttemptService
                 ->first();
 
             if (! $response) {
-                throw new RuntimeException('Sesi ujian belum diinisialisasi.');
+                $this->startOrResumeAttempt($assessment);
+                $response = AssessmentIaResponse::where('assessment_id', $assessment->id)
+                    ->where('instrument_code', 'IA05')
+                    ->lockForUpdate()
+                    ->first();
             }
 
             if ($response->isSubmitted()) {

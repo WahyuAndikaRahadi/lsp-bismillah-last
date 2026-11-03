@@ -8,7 +8,6 @@ use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
 use App\Models\Event;
 use App\Models\Standard;
-use App\Models\SystemMessage;
 use App\Models\Tuk;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -168,19 +167,10 @@ class AsesorCompletePortalTest extends TestCase
         ]);
     }
 
-    public function test_asesor_can_view_notifications_inbox(): void
+    public function test_asesor_messages_route_is_retired(): void
     {
-        SystemMessage::create([
-            'direction' => 'outgoing',
-            'channel' => 'sms',
-            'recipient_or_sender' => $this->asesorProfile->phone,
-            'body' => 'Yth. Asesor Abu, Anda ditugaskan pada jadwal SCH-TKJ-2026',
-            'status' => 'terkirim',
-        ]);
-
-        $response = $this->actingAs($this->asesorUser)->get(route('asesor.messages.index'));
-        $response->assertOk();
-        $response->assertSee('SCH-TKJ-2026');
+        $response = $this->actingAs($this->asesorUser)->get('/asesor/messages');
+        $response->assertNotFound();
     }
 
     public function test_asesor_can_view_and_update_profile(): void

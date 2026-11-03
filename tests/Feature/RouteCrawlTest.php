@@ -22,13 +22,9 @@ class RouteCrawlTest extends TestCase
     use RefreshDatabase;
 
     private User $admin;
-
     private User $asesor;
-
     private User $asesi;
-
     private AssessmentSchedule $schedule;
-
     private AssessmentApplication $application;
 
     protected function setUp(): void
@@ -141,16 +137,9 @@ class RouteCrawlTest extends TestCase
             route('admin.reports.tuk-performance'),
             route('admin.reports.certificates'),
             route('admin.appeals.index'),
-            route('admin.quality.documents.index'),
-            route('admin.quality.audits.index'),
-            route('admin.finance.pricing'),
-            route('admin.finance.bank-accounts.index'),
-            route('admin.finance.transactions.index'),
-            route('admin.finance.income-statement'),
-            route('admin.finance.balance-sheet'),
-            route('admin.letters.index'),
-            route('admin.messages.inbox'),
-            route('admin.messages.sent'),
+            route('admin.impartiality.index'),
+            route('admin.surveillance.index'),
+            route('admin.recertification.index'),
             route('admin.schemes.index'),
             route('admin.standards.index'),
             route('admin.tuks.index'),
@@ -159,7 +148,7 @@ class RouteCrawlTest extends TestCase
             route('admin.schedules.index'),
             route('admin.verifications.index'),
             route('admin.pleno.index'),
-            route('admin.exports.bnsp.index'),
+            route('admin.jadwal.index'),
         ];
 
         foreach ($routes as $url) {
@@ -178,9 +167,9 @@ class RouteCrawlTest extends TestCase
             route('asesor.tuks.index'),
             route('asesor.instruments.index'),
             route('asesor.mkva.index'),
-            route('asesor.messages.index'),
             route('asesor.profile.show'),
             route('asesor.apl02.index'),
+            route('asesor.impartiality.commitment'),
         ];
 
         foreach ($routes as $url) {
@@ -197,6 +186,8 @@ class RouteCrawlTest extends TestCase
             route('asesi.applications.index'),
             route('asesi.applications.create'),
             route('asesi.applications.show', $this->application),
+            route('asesi.certificates.index'),
+            route('asesi.surveillance.index'),
         ];
 
         foreach ($routes as $url) {
@@ -212,9 +203,6 @@ class RouteCrawlTest extends TestCase
             route('home'),
             route('login'),
             route('register'),
-            route('pengaduan.create'),
-            route('pengaduan.tracking'),
-            route('surveillance.create'),
         ];
 
         foreach ($routes as $url) {
@@ -223,19 +211,23 @@ class RouteCrawlTest extends TestCase
         }
     }
 
-    public function test_document_routes_without_sql_errors(): void
+    public function test_retired_routes_are_unavailable(): void
     {
-        $this->withoutExceptionHandling();
-        $routes = [
-            route('documents.fr-apl-01', $this->application),
-            route('documents.sertifikat', $this->application),
-            route('documents.berita-acara-asesmen', $this->schedule),
-            route('documents.daftar-hadir-asesmen', $this->schedule),
+        $retiredPaths = [
+            '/pengaduan/create',
+            '/pengaduan/tracking',
+            '/surveillance',
+            '/admin/quality',
+            '/admin/finance',
+            '/admin/letters',
+            '/admin/messages',
+            '/sertifikat/1',
+            '/admin/exports/bnsp',
         ];
 
-        foreach ($routes as $url) {
-            $response = $this->actingAs($this->admin)->get($url);
-            $this->assertLessThan(400, $response->getStatusCode(), "Failed accessing document route: {$url}");
+        foreach ($retiredPaths as $path) {
+            $response = $this->actingAs($this->admin)->get($path);
+            $this->assertEquals(404, $response->status(), "Path {$path} should return 404");
         }
     }
 }

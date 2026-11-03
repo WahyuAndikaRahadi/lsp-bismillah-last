@@ -112,9 +112,19 @@ class Assessment extends Model
         return $this->belongsTo(User::class, 'asesi_id');
     }
 
+    public function user(): BelongsTo
+    {
+        return $this->asesi();
+    }
+
     public function assessor(): BelongsTo
     {
         return $this->belongsTo(User::class, 'assessor_id');
+    }
+
+    public function asesor(): BelongsTo
+    {
+        return $this->assessor();
     }
 
     public function admin(): BelongsTo

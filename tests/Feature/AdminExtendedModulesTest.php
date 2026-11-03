@@ -3,12 +3,6 @@
 namespace Tests\Feature;
 
 use App\Enums\UserRole;
-use App\Models\AuditInternal;
-use App\Models\BankAccount;
-use App\Models\FinancialAccount;
-use App\Models\Letter;
-use App\Models\MutuDocument;
-use App\Models\SystemMessage;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -34,7 +28,7 @@ class AdminExtendedModulesTest extends TestCase
     {
         $response = $this->actingAs($this->adminUser)->get(route('admin.appeals.index'));
         $response->assertOk();
-        $response->assertSee('Layanan Banding Asesmen');
+        $response->assertSee('Banding Asesmen');
     }
 
     public function test_admin_can_access_reports_and_submodules(): void
@@ -47,84 +41,24 @@ class AdminExtendedModulesTest extends TestCase
         $this->actingAs($this->adminUser)->get(route('admin.reports.certificates'))->assertOk();
     }
 
-    public function test_admin_can_manage_quality_documents_and_audits(): void
+    public function test_retired_quality_documents_and_audits_are_unavailable(): void
     {
-        MutuDocument::create([
-            'document_code' => 'PM-LSP-01',
-            'title' => 'Panduan Mutu LSP Berdasarkan BNSP 201',
-            'category' => 'panduan_mutu',
-            'version' => '1.0',
-            'effective_date' => now()->toDateString(),
-            'status' => 'aktif',
-        ]);
-
-        $docResponse = $this->actingAs($this->adminUser)->get(route('admin.quality.documents.index'));
-        $docResponse->assertOk();
-        $docResponse->assertSee('PM-LSP-01');
-
-        AuditInternal::create([
-            'audit_code' => 'AUD-2026-001',
-            'audit_date' => now()->toDateString(),
-            'auditor_name' => 'Dr. Bambang Sutrisno',
-            'scope' => 'Klausul 4 s/d 10 Pedoman BNSP 201',
-            'status' => 'selesai',
-        ]);
-
-        $auditResponse = $this->actingAs($this->adminUser)->get(route('admin.quality.audits.index'));
-        $auditResponse->assertOk();
-        $auditResponse->assertSee('AUD-2026-001');
+        $this->actingAs($this->adminUser)->get('/admin/quality')->assertNotFound();
+        $this->actingAs($this->adminUser)->get('/admin/quality/documents')->assertNotFound();
+        $this->actingAs($this->adminUser)->get('/admin/quality/audits')->assertNotFound();
     }
 
-    public function test_admin_can_manage_finance_and_bank_accounts(): void
+    public function test_retired_finance_and_bank_accounts_are_unavailable(): void
     {
-        BankAccount::create([
-            'bank_name' => 'Bank Mandiri',
-            'account_number' => '137001928374',
-            'account_holder' => 'LSP Sertifikasi Profesi',
-            'is_active' => true,
-        ]);
-
-        $bankResponse = $this->actingAs($this->adminUser)->get(route('admin.finance.bank-accounts.index'));
-        $bankResponse->assertOk();
-        $bankResponse->assertSee('137001928374');
-
-        FinancialAccount::create([
-            'account_code' => '1-1100',
-            'account_name' => 'Kas Operasional LSP',
-            'account_type' => 'aktiva',
-        ]);
-
-        $this->actingAs($this->adminUser)->get(route('admin.finance.transactions.index'))->assertOk();
-        $this->actingAs($this->adminUser)->get(route('admin.finance.balance-sheet'))->assertOk();
-        $this->actingAs($this->adminUser)->get(route('admin.finance.income-statement'))->assertOk();
+        $this->actingAs($this->adminUser)->get('/admin/finance')->assertNotFound();
+        $this->actingAs($this->adminUser)->get('/admin/finance/transactions')->assertNotFound();
+        $this->actingAs($this->adminUser)->get('/admin/finance/bank-accounts')->assertNotFound();
     }
 
-    public function test_admin_can_manage_letters_and_sent_messages(): void
+    public function test_retired_letters_and_messages_are_unavailable(): void
     {
-        Letter::create([
-            'reference_number' => '045/ST-LSP/X/2026',
-            'category' => 'surat_tugas',
-            'subject' => 'Surat Tugas Asesor Uji TKJ',
-            'recipient' => 'Abu, S.T.',
-            'letter_date' => now()->toDateString(),
-            'status' => 'terbit',
-        ]);
-
-        $letterResponse = $this->actingAs($this->adminUser)->get(route('admin.letters.index'));
-        $letterResponse->assertOk();
-        $letterResponse->assertSee('045/ST-LSP/X/2026');
-
-        SystemMessage::create([
-            'direction' => 'outgoing',
-            'channel' => 'sms',
-            'recipient_or_sender' => '081234567890',
-            'body' => 'Kode OTP login Asesor LSP: 998877',
-            'status' => 'terkirim',
-        ]);
-
-        $msgResponse = $this->actingAs($this->adminUser)->get(route('admin.messages.sent'));
-        $msgResponse->assertOk();
-        $msgResponse->assertSee('998877');
+        $this->actingAs($this->adminUser)->get('/admin/letters')->assertNotFound();
+        $this->actingAs($this->adminUser)->get('/admin/messages')->assertNotFound();
     }
 
     public function test_admin_can_access_asesi_submodules(): void

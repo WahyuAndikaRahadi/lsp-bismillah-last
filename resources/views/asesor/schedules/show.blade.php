@@ -10,9 +10,11 @@
                 <a href="{{ route('asesor.ak05.report', $schedule) }}" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 transition">
                     Laporan Asesor (FR-AK-05)
                 </a>
+                @if(Route::has('documents.berita-acara-asesmen'))
                 <a href="{{ route('documents.berita-acara-asesmen', $schedule) }}" target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 transition">
                     Cetak Berita Acara
                 </a>
+                @endif
             </div>
         </div>
 

@@ -7,12 +7,24 @@ use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
 use App\Models\LspProfile;
 use App\Models\Tuk;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class PublicController extends Controller
 {
-    public function index(): View
+    public function index(): View|RedirectResponse
     {
+        if (auth()->check()) {
+            $user = auth()->user();
+            if ($user->isAdmin()) {
+                return redirect()->route('admin.dashboard');
+            } elseif ($user->isAsesor()) {
+                return redirect()->route('asesor.schedules.index');
+            } elseif ($user->isAsesi()) {
+                return redirect()->route('asesi.dashboard');
+            }
+        }
+
         $lspProfile = LspProfile::current();
 
         // Skema sertifikasi resmi aktif

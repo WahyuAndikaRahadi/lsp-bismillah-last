@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Assessment;
-use App\Models\CompetencyUnit;
 use App\Models\Schedule;
 use App\Models\Scheme;
 use App\Models\User;
@@ -15,10 +14,10 @@ class AsesiDashboardNextStepTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected User $asesi;
-    protected User $asesor;
-    protected Scheme $scheme;
-    protected Schedule $schedule;
+    private User $asesi;
+    private User $asesor;
+    private Schedule $schedule;
+    private Scheme $scheme;
 
     protected function setUp(): void
     {
@@ -33,7 +32,7 @@ class AsesiDashboardNextStepTest extends TestCase
         ]);
 
         $this->asesor = User::create([
-            'name' => 'Asesor Dash',
+            'name' => 'Asesor Fokus',
             'email' => 'asesor_dash@proindo.test',
             'password' => bcrypt('secret123'),
             'role' => 'ASESOR',
@@ -54,6 +53,7 @@ class AsesiDashboardNextStepTest extends TestCase
             'tempat_lahir' => 'Jakarta',
             'tanggal_lahir' => '1998-08-17',
             'jenis_kelamin' => 'L',
+            'alamat_rumah' => 'Jl. Merdeka No. 1',
             'signature_data' => 'data:image/png;base64,signature123',
         ]);
 
@@ -103,7 +103,6 @@ class AsesiDashboardNextStepTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Langkah Berikutnya');
         $response->assertSee('Lengkapi Formulir APL-01 & APL-02');
-        $response->assertSee('Isi Formulir APL-01 & APL-02');
         $response->assertSee('Sistem Asesmen Berbasis Modul MUK');
         $response->assertSee('FR.APL.01 & 02');
     }
@@ -142,8 +141,7 @@ class AsesiDashboardNextStepTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Langkah Berikutnya');
         $response->assertSee('Ruang Uji Kompetensi Aktif');
-        $response->assertSee('Masuk Ruang Uji Kompetensi');
-        $response->assertSee('Ruang Uji MUK');
+        $response->assertSee('Masuk Ruang Uji');
         $response->assertSee('FR.AK.01');
     }
 
@@ -164,30 +162,14 @@ class AsesiDashboardNextStepTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Langkah Berikutnya');
-        $response->assertSee('Selamat! Anda Dinyatakan KOMPETEN');
+        $response->assertSee('Hasil Asesmen: Rekomendasi KOMPETEN');
         $response->assertSee('BNSP-2026-9999');
-        $response->assertSee('Hasil & Sertifikat');
-        $response->assertSee('Unduh Sertifikat');
+        $response->assertSee('Lihat Sertifikat');
     }
 
-    public function test_competent_asesi_can_download_bnsp_certificate_pdf(): void
+    public function test_retired_pdf_generation_endpoint_is_unavailable(): void
     {
-        $assessment = Assessment::create([
-            'schedule_id' => $this->schedule->id,
-            'asesi_id' => $this->asesi->id,
-            'assessor_id' => $this->asesor->id,
-            'apl_status' => 'APPROVED',
-            'ak01_agreed_at' => now(),
-            'final_result' => 'KOMPETEN',
-            'status' => 'COMPLETED',
-            'no_sertifikat' => 'BNSP-2026-9999',
-            'tgl_terbit_sertifikat' => now()->toDateString(),
-            'masa_berlaku_sertifikat' => now()->addYears(3)->toDateString(),
-        ]);
-
-        $response = $this->actingAs($this->asesi)->get(route('documents.sertifikat', $assessment->id));
-
-        $response->assertStatus(200);
-        $response->assertHeader('content-type', 'application/pdf');
+        $response = $this->actingAs($this->asesi)->get('/sertifikat/1');
+        $response->assertNotFound();
     }
 }

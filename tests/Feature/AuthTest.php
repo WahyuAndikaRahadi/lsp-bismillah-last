@@ -15,7 +15,7 @@ class AuthTest extends TestCase
     public function test_public_home_page_loads_successfully(): void
     {
         $response = $this->get('/');
-        $response->assertRedirect('/login');
+        $response->assertOk();
     }
 
     public function test_login_screen_can_be_rendered(): void

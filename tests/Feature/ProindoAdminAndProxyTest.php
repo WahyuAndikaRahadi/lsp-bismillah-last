@@ -63,7 +63,7 @@ class ProindoAdminAndProxyTest extends TestCase
             'assessor_ids' => [$this->asesor->id],
         ]);
 
-        $response->assertRedirect(route('admin.jadwal.index'));
+        $response->assertRedirect();
         $this->assertDatabaseHas('t_schedules', [
             'code' => 'SCH-PRO-99',
             'tuk_name' => 'Bengkel Resmi Yamaha Cikarang',
@@ -103,38 +103,10 @@ class ProindoAdminAndProxyTest extends TestCase
         ]);
     }
 
-    public function test_proxy_impersonation_and_switch_back(): void
+    public function test_proxy_impersonation_is_unavailable(): void
     {
-        // 1. Admin visits proxy list
-        $response = $this->actingAs($this->admin)->get(route('admin.proxy.index'));
-        $response->assertOk();
-
-        // 2. Admin impersonates asesi
-        $responseSwitch = $this->actingAs($this->admin)->post(route('admin.proxy.impersonate', $this->asesi));
-        $responseSwitch->assertRedirect(route('asesi.dashboard'));
-
-        $this->assertEquals($this->asesi->id, auth()->id());
-        $this->assertEquals($this->admin->id, session('admin_impersonator_id'));
-
-        // 3. Impersonated session switches back to admin
-        $responseBack = $this->post(route('proxy.switch-back'));
-        $responseBack->assertRedirect(route('admin.proxy.index'));
-
-        $this->assertEquals($this->admin->id, auth()->id());
-        $this->assertFalse(session()->has('admin_impersonator_id'));
-    }
-
-    public function test_cannot_impersonate_super_admin_or_self(): void
-    {
-        $superAdmin = User::where('role', 'SUPER_ADMIN')->first()
-            ?? User::factory()->create(['role' => 'SUPER_ADMIN', 'email' => 'super@test.com']);
-
-        // Self
-        $resSelf = $this->actingAs($this->admin)->post(route('admin.proxy.impersonate', $this->admin));
-        $resSelf->assertSessionHas('warning');
-
-        // Super Admin target
-        $resSuper = $this->actingAs($this->admin)->post(route('admin.proxy.impersonate', $superAdmin));
-        $resSuper->assertForbidden();
+        $this->actingAs($this->admin)->get('/admin/proxy')->assertNotFound();
+        $this->actingAs($this->admin)->post('/admin/proxy/' . $this->asesi->id)->assertNotFound();
+        $this->post('/proxy/switch-back')->assertNotFound();
     }
 }

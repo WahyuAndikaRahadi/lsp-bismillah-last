@@ -17,15 +17,10 @@ class MukDesignFidelityTest extends TestCase
     use RefreshDatabase;
 
     protected User $admin;
-
     protected User $asesor;
-
     protected User $asesi;
-
     protected Scheme $scheme;
-
     protected Schedule $schedule;
-
     protected Assessment $assessment;
 
     protected function setUp(): void
@@ -42,151 +37,99 @@ class MukDesignFidelityTest extends TestCase
 
         $this->asesi = User::factory()->create([
             'role' => 'ASESI',
-            'email' => 'peserta.fidelity@test.com',
-            'full_name' => 'Budi Santoso',
+            'email' => 'peserta.muk@test.com',
+            'full_name' => 'Ahmad Fadhil',
         ]);
 
         UserProfile::create([
             'user_id' => $this->asesi->id,
-            'nik' => '3201012345678901',
-            'phone' => '081234567890',
-            'address' => 'Jl. Merdeka No. 45, Bandung',
-            'institution' => 'SMK Negeri 1 Otomotif',
+            'nik' => '3201889900112233',
+            'tempat_lahir' => 'Surabaya',
+            'tanggal_lahir' => '1996-08-17',
+            'jenis_kelamin' => 'L',
+            'kebangsaan' => 'Indonesia',
+            'pendidikan_terakhir' => 'D3 Teknik Otomotif',
+            'alamat_rumah' => 'Jl. Pahlawan No. 45',
+            'jabatan' => 'Mekanik Kepala',
+            'nama_institusi_perusahaan' => 'Bengkel Mobil Maju Jaya',
+            'signature_data' => 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==',
         ]);
 
-        $this->scheme = Scheme::where('code', '05/LSP PrO Indo/I/2026')->first()
-            ?? Scheme::first();
+        $this->scheme = Scheme::first();
 
-        $this->schedule = Schedule::first() ?? Schedule::create([
+        $this->schedule = Schedule::create([
             'scheme_id' => $this->scheme->id,
             'name' => 'Uji Sertifikasi Otomotif BNSP 2026',
-            'code' => 'SCH-FIDELITY-01',
+            'code' => 'SCH-MUK-01',
             'tuk_name' => 'TUK Otomotif Sejahtera',
             'date' => now()->toDateString(),
             'start_time' => '08:00:00',
             'end_time' => '17:00:00',
-            'selected_instruments' => ['IA01', 'IA01B', 'IA02', 'IA03', 'IA05'],
+            'selected_instruments' => ['AK01', 'IA01', 'IA01B', 'IA02', 'IA03', 'IA05'],
             'status' => 'ACTIVE',
             'created_by' => $this->admin->id,
         ]);
-        $this->schedule->assessors()->syncWithoutDetaching([$this->asesor->id]);
+        $this->schedule->assessors()->attach($this->asesor->id);
 
-        $this->assessment = Assessment::first() ?? Assessment::create([
+        $this->assessment = Assessment::create([
             'schedule_id' => $this->schedule->id,
             'asesi_id' => $this->asesi->id,
-            'scheme_id' => $this->scheme->id,
             'assessor_id' => $this->asesor->id,
             'apl_status' => 'APPROVED',
+            'ak01_agreed_at' => now(),
             'final_result' => 'KOMPETEN',
             'registered_at' => now(),
         ]);
     }
 
     /**
-     * Test that all mandatory MUK document views render without template leaks,
-     * containing exact scheme titles, codes, and static labels.
+     * Test that canonical MUK screens render without template leaks,
+     * containing exact static labels and zero forbidden placeholders.
      */
-    public function test_muk_print_templates_render_with_exact_labels_and_zero_leaks(): void
+    public function test_canonical_muk_screens_render_with_exact_labels_and_zero_leaks(): void
     {
-        $documents = [
-            // Group 1
+        $canonicalScreens = [
+            // Asesor Screens
             [
-                'route' => route('admin.dokumen-muk.export-ba', $this->schedule->id),
-                'expected' => ['BERITA ACARA', 'LSP PrO Indo', $this->scheme->name],
+                'actor' => $this->asesor,
+                'url' => route('asesor.mapa01.edit', $this->schedule->id),
+                'expected' => ['FR.MAPA.01', 'Merencanakan Aktivitas dan Proses Asesmen'],
             ],
             [
-                'route' => route('admin.dokumen-muk.export-hadir-asesi', $this->schedule->id),
-                'expected' => ['DAFTAR HADIR', 'TUK', 'Tanda Tangan'],
+                'actor' => $this->asesor,
+                'url' => route('asesor.mapa02.edit', $this->schedule->id),
+                'expected' => ['FR.MAPA.02', 'Peta Instrumen Asesmen'],
             ],
             [
-                'route' => route('admin.dokumen-muk.export-hadir-asesor', $this->schedule->id),
-                'expected' => ['DAFTAR HADIR ASESOR', 'No.MET', 'Tanda Tangan'],
-            ],
-            // Group 2
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ak02']),
-                'expected' => ['FR.AK.02', 'REKAMAN ASESMEN KOMPETENSI', 'Rekomendasi'],
+                'actor' => $this->asesor,
+                'url' => route('asesor.schedule.ak05', $this->schedule->id),
+                'expected' => ['FR.AK.05', 'Laporan Asesmen'],
             ],
             [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ak03']),
-                'expected' => ['FR.AK.03', 'UMPAN BALIK DAN CATATAN ASESMEN'],
+                'actor' => $this->asesor,
+                'url' => route('asesor.schedule.ak06', $this->schedule->id),
+                'expected' => ['FR.AK.06', 'Kaji Ulang Asesmen'],
             ],
             [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ak04']),
-                'expected' => ['FR.AK.04', 'BANDING ASESMEN', 'Banding'],
+                'actor' => $this->asesor,
+                'url' => route('asesor.schedule.ak07', $this->schedule->id),
+                'expected' => ['FR.AK.07', 'Penyesuaian yang Wajar'],
             ],
             [
-                'route' => route('admin.dokumen-muk.export', [$this->schedule->id, 'ak05']),
-                'expected' => ['FR.AK.05', 'LAPORAN ASESMEN', 'Aspek Negatif dan Positif'],
+                'actor' => $this->asesor,
+                'url' => route('asesor.assessment.ak02', $this->assessment->id),
+                'expected' => ['FR.AK.02', 'Rekaman Asesmen Kompetensi'],
+            ],
+            // Asesi Screens
+            [
+                'actor' => $this->asesi,
+                'url' => route('asesi.assessment.apl', $this->assessment->id),
+                'expected' => ['FR.APL.01', 'FR.APL.02'],
             ],
             [
-                'route' => route('admin.dokumen-muk.export', [$this->schedule->id, 'ak06']),
-                'expected' => ['FR.AK.06', 'MENINJAU PROSES ASESMEN'],
-            ],
-            // Group 3
-            [
-                'route' => route('admin.dokumen-muk.export', [$this->schedule->id, 'cover']),
-                'expected' => ['DOKUMEN', 'MUK 1', 'LSP-PrO Indo'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export', [$this->schedule->id, 'daftar-periksa']),
-                'expected' => ['DAFTAR PERIKSA', 'KELENGKAPAN DOKUMEN'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'pernyataan']),
-                'expected' => ['SURAT PERNYATAAN PEMEGANG SERTIFIKAT'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ak01']),
-                'expected' => ['FR.AK.01', 'PERSETUJUAN ASESMEN DAN KERAHASIAAN'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ak07']),
-                'expected' => ['FR.AK.07', 'PENYESUAIAN YANG WAJAR'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'apl01']),
-                'expected' => ['FR.APL.01', 'PERMOHONAN SERTIFIKASI KOMPETENSI'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'apl02']),
-                'expected' => ['FR.APL.02', 'ASESMEN MANDIRI'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export', [$this->schedule->id, 'mapa']),
-                'expected' => ['FR.MAPA.01', 'MERENCANAKAN AKTIVITAS DAN PROSES ASESMEN'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export', [$this->schedule->id, 'mapa02']),
-                'expected' => ['FR.MAPA.02', 'PETA INSTRUMEN'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ia01']),
-                'expected' => ['FR.IA.01', 'CL - CEKLIS OBSERVASI AKTIVITAS DI TEMPAT KERJA'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ia01b']),
-                'expected' => ['FR.IA.01B', 'Report Sheet', 'MEKANIK JUNIOR'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ia02']),
-                'expected' => ['FR.IA.02', 'TPD - TUGAS PRAKTIK DEMONSTRASI'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ia03']),
-                'expected' => ['FR.IA.03', 'PMO - PERTANYAAN MENDUKUNG OBSERVASI'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ia05a']),
-                'expected' => ['FR.IA.05A', 'DPT - PERTANYAAN TERTULIS PILIHAN GANDA'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export', [$this->schedule->id, 'ia05b']),
-                'expected' => ['FR.IA.05.B', 'KUNCI JAWABAN'],
-            ],
-            [
-                'route' => route('admin.dokumen-muk.export-asesi', [$this->assessment->id, 'ia05c']),
-                'expected' => ['FR.IA.05.C', 'LEMBAR JAWABAN'],
+                'actor' => $this->asesi,
+                'url' => route('asesi.assessment.ak03', $this->assessment->id),
+                'expected' => ['FR.AK.03', 'Umpan Balik'],
             ],
         ];
 
@@ -199,28 +142,32 @@ class MukDesignFidelityTest extends TestCase
             '{!! $',
         ];
 
-        foreach ($documents as $doc) {
-            $response = $this->actingAs($this->admin)->get($doc['route']);
+        foreach ($canonicalScreens as $screen) {
+            $response = $this->actingAs($screen['actor'])->get($screen['url']);
             $response->assertOk();
             $content = $response->getContent();
 
-            // Assert required static labels are present
-            foreach ($doc['expected'] as $label) {
+            foreach ($screen['expected'] as $label) {
                 $this->assertStringContainsString(
                     $label,
                     $content,
-                    "Document [{$doc['route']}] must contain static label '{$label}'"
+                    "Screen [{$screen['url']}] must contain static label '{$label}'"
                 );
             }
 
-            // Assert no template leak or forbidden placeholder exists
             foreach ($forbiddenPlaceholders as $forbidden) {
                 $this->assertStringNotContainsString(
                     $forbidden,
                     $content,
-                    "Document [{$doc['route']}] leaks forbidden placeholder '{$forbidden}'"
+                    "Screen [{$screen['url']}] leaks forbidden placeholder '{$forbidden}'"
                 );
             }
         }
+    }
+
+    public function test_retired_print_routes_are_unavailable(): void
+    {
+        $this->actingAs($this->admin)->get('/admin/dokumen-muk')->assertNotFound();
+        $this->actingAs($this->admin)->get('/admin/dokumen-muk/export/1/ba')->assertNotFound();
     }
 }

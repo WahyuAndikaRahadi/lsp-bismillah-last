@@ -73,7 +73,7 @@ class AkWorkflowService
                     ],
                     [
                         'methods_json' => $methods,
-                        'is_competent' => $existingItem?->is_competent ?? null,
+                        'is_competent' => $existingItem ? (bool) $existingItem->is_competent : false,
                     ]
                 );
             }

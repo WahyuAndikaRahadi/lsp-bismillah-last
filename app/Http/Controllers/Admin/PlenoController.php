@@ -69,6 +69,14 @@ class PlenoController extends Controller
      */
     public function store(Request $request, Schedule $schedule): RedirectResponse
     {
+        if (! $request->has('decisions') && $request->has('kelulusan')) {
+            $decisions = [];
+            foreach ($request->input('kelulusan', []) as $appId => $status) {
+                $decisions[$appId] = ['decision' => $status];
+            }
+            $request->merge(['decisions' => $decisions]);
+        }
+
         $validated = $request->validate([
             'nomor_ba_pleno' => ['required', 'string', 'max:100'],
             'tanggal_pleno' => ['required', 'date'],
@@ -113,7 +121,7 @@ class PlenoController extends Controller
                     continue;
                 }
 
-                $this->decisionService->recordDecision(
+                $decision = $this->decisionService->recordDecision(
                     assessment: $assessment,
                     decision: $item['decision'],
                     actor: $actor,
@@ -123,12 +131,30 @@ class PlenoController extends Controller
                     validationNotes: 'Diverifikasi dalam Rapat Pleno Komite Teknis',
                     plenoMeetingId: $pleno->id
                 );
+
+                if (class_exists(\App\Models\AssessmentApplication::class)) {
+                    if ($legacyApp = \App\Models\AssessmentApplication::find($assessmentId)) {
+                        $isK = in_array(strtoupper($item['decision']), ['KOMPETEN', 'K'], true);
+                        $legacyApp->update([
+                            'status_kelulusan' => $isK ? 'kompeten' : 'belum_kompeten',
+                            'no_sertifikat' => $isK ? ($legacyApp->no_sertifikat ?? ('BNSP-SKM-TI-001-' . date('Y') . '-' . str_pad($legacyApp->id, 4, '0', STR_PAD_LEFT))) : null,
+                            'tgl_terbit_sertifikat' => $isK ? now() : null,
+                            'masa_berlaku_sertifikat' => $isK ? now()->addYears(3) : null,
+                        ]);
+                    }
+                }
             }
 
             // 3. Update status jadwal ke FINISHED bila semua selesai
             $schedule->update([
                 'status' => 'FINISHED',
             ]);
+
+            if (class_exists(\App\Models\AssessmentSchedule::class)) {
+                if ($legacySchedule = \App\Models\AssessmentSchedule::find($schedule->id)) {
+                    $legacySchedule->update(['status' => \App\Enums\ScheduleStatus::Selesai]);
+                }
+            }
 
             DB::commit();
 

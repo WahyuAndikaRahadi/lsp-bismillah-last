@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Assessment;
 use App\Models\AssessmentAk07Item;
+use App\Models\AssessmentIaResponse;
 use App\Models\Schedule;
 use App\Models\Scheme;
 use App\Models\User;
@@ -112,7 +113,19 @@ class ProindoAsesorWorkflowTest extends TestCase
     {
         $this->assessment->update(['apl_status' => 'APPROVED']);
 
-        $response = $this->actingAs($this->asesor)->post(route('asesor.schedule.ak07.store', $this->schedule));
+        $response = $this->actingAs($this->asesor)->post(route('asesor.schedule.ak07.store', $this->schedule), [
+            'assessment_id' => $this->assessment->id,
+            'timing' => 'saat_pra_asesmen',
+            'items' => [
+                [
+                    'category_number' => 1,
+                    'title' => 'Standar',
+                    'decision' => 'tidak',
+                ],
+            ],
+            'agreement_status' => 'ya',
+            'agreed_benchmark' => 'Standar',
+        ]);
 
         $response->assertRedirect(route('asesor.schedule.ak01', $this->schedule));
         $this->assertDatabaseHas('t_assessment_ak07_items', [
@@ -148,10 +161,31 @@ class ProindoAsesorWorkflowTest extends TestCase
             'assessment_id' => $this->assessment->id,
         ]);
 
+        AssessmentIaResponse::create([
+            'assessment_id' => $this->assessment->id,
+            'instrument_code' => 'IA01',
+            'started_at' => now(),
+            'duration_seconds' => 3600,
+            'time_remaining_seconds' => 0,
+            'attempt_version' => 1,
+            'data_json' => ['observations' => []],
+            'is_expired' => false,
+            'submitted_at' => now(),
+        ]);
+
+        $unitsPayload = [];
+        foreach ($this->scheme->competencyUnits as $unit) {
+            $unitsPayload[$unit->id] = [
+                'is_competent' => 1,
+                'observasi_demonstrasi' => 1,
+            ];
+        }
+
         $responseUpdate = $this->actingAs($this->asesor)->post(route('asesor.assessment.ak02.update', $this->assessment), [
             'final_result' => 'KOMPETEN',
             'final_notes' => 'Seluruh unit kompeten.',
             'follow_up_action' => 'Diusulkan sertifikat BNSP.',
+            'units' => $unitsPayload,
         ]);
 
         $responseUpdate->assertRedirect(route('asesor.jadwal.asesi', $this->schedule));

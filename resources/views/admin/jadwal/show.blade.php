@@ -13,11 +13,13 @@
                 <span>{{ \Carbon\Carbon::parse($jadwal->date)->isoFormat('D MMMM Y') }}</span>
             </div>
         </div>
+        @if(Route::has('admin.dokumen-muk.index'))
         <div class="flex items-center space-x-2">
             <a href="{{ route('admin.dokumen-muk.index') }}" class="px-3.5 py-2 text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-xs transition">
                 Pusat Dokumen MUK &rarr;
             </a>
         </div>
+        @endif
     </div>
 
     {{-- Review Asesi Table --}}

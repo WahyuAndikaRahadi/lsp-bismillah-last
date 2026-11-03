@@ -10,7 +10,6 @@ use App\Models\AsesorProfile;
 use App\Models\AssessmentApplication;
 use App\Models\AssessmentSchedule;
 use App\Models\CertificationScheme;
-use App\Models\Complaint;
 use App\Models\Event;
 use App\Models\SurveillanceRecord;
 use App\Models\Tuk;
@@ -120,13 +119,10 @@ class BnspExportAndSurveillanceTest extends TestCase
         ]);
     }
 
-    public function test_admin_can_view_bnsp_export_interface_and_preview(): void
+    public function test_admin_bnsp_export_interface_is_unavailable(): void
     {
-        $response = $this->actingAs($this->admin)->get(route('admin.exports.bnsp.index'));
-        $response->assertStatus(200);
-        $response->assertSee('Ekspor Data Format Sisfo BNSP');
-        $response->assertSee('3271012345670001');
-        $response->assertSee('Pemrograman Web Madya');
+        $response = $this->actingAs($this->admin)->get('/admin/exports/bnsp');
+        $response->assertNotFound();
     }
 
     public function test_bnsp_export_service_generates_exact_16_columns(): void
@@ -155,128 +151,22 @@ class BnspExportAndSurveillanceTest extends TestCase
         $this->assertEquals(now()->format('Y-m-d'), $row['TANGGAL_ASESMEN']);
     }
 
-    public function test_admin_can_download_bnsp_spreadsheet_xls(): void
+    public function test_retired_bnsp_export_routes_are_unavailable(): void
     {
-        $response = $this->actingAs($this->admin)->get(route('admin.exports.bnsp.download'));
-        $response->assertStatus(200);
-        $response->assertHeader('content-type', 'application/vnd.ms-excel');
-
-        // Test download per schedule
-        $scheduleResponse = $this->actingAs($this->admin)->get(route('admin.exports.bnsp.schedule', $this->schedule));
-        $scheduleResponse->assertStatus(200);
-        $scheduleResponse->assertHeader('content-type', 'application/vnd.ms-excel');
+        $this->actingAs($this->admin)->get('/admin/exports/bnsp')->assertNotFound();
+        $this->actingAs($this->admin)->get('/admin/exports/bnsp/download')->assertNotFound();
     }
 
-    public function test_public_can_submit_complaint_and_receive_ticket(): void
+    public function test_retired_complaint_routes_are_unavailable(): void
     {
-        $res = $this->get(route('pengaduan.create'));
-        $res->assertStatus(200);
-        $res->assertSee('Layanan Pengaduan');
-
-        $postData = [
-            'nama_pelapor' => 'Ahmad Fauzi',
-            'telepon' => '081298765432',
-            'email' => 'fauzi@example.com',
-            'jenis_responden' => 'Asesi',
-            'judul' => 'Kendala Server Uji TUK Lab',
-            'isi_aduan' => 'Koneksi jaringan sempat terputus selama 15 menit saat simulasi.',
-        ];
-
-        $postRes = $this->post(route('pengaduan.store'), $postData);
-        $postRes->assertRedirect(route('pengaduan.create'));
-        $postRes->assertSessionHas('ticket_success');
-
-        $this->assertDatabaseHas('complaints', [
-            'nama_pelapor' => 'Ahmad Fauzi',
-            'status' => 'diproses',
-        ]);
-
-        $complaint = Complaint::where('nama_pelapor', 'Ahmad Fauzi')->first();
-        $this->assertStringStartsWith('TKT-', $complaint->ticket_number);
-
-        // Tracking page
-        $trackRes = $this->get(route('pengaduan.tracking', ['ticket' => $complaint->ticket_number]));
-        $trackRes->assertStatus(200);
-        $trackRes->assertSee($complaint->ticket_number);
-        $trackRes->assertSee('Kendala Server Uji TUK Lab');
+        $this->get('/pengaduan/create')->assertNotFound();
+        $this->get('/pengaduan/tracking')->assertNotFound();
+        $this->actingAs($this->admin)->get('/admin/complaints')->assertNotFound();
     }
 
-    public function test_admin_can_manage_and_resolve_complaint(): void
+    public function test_retired_unauthenticated_public_surveillance_is_unavailable(): void
     {
-        $complaint = Complaint::create([
-            'ticket_number' => 'TKT-20261031-099',
-            'nama_pelapor' => 'Siti Rahma',
-            'telepon' => '081122334455',
-            'jenis_responden' => 'Umum',
-            'judul' => 'Pertanyaan Jadwal Pelatihan',
-            'isi_aduan' => 'Kapan skema multimedia dibuka kembali?',
-            'status' => 'diproses',
-        ]);
-
-        $res = $this->actingAs($this->admin)->get(route('admin.complaints.index'));
-        $res->assertStatus(200);
-        $res->assertSee($complaint->ticket_number);
-
-        // Admin updates status to selesai with tindak lanjut note
-        $updateRes = $this->actingAs($this->admin)->patch(
-            route('admin.complaints.update-status', $complaint),
-            [
-                'status' => 'selesai',
-                'tindak_lanjut' => 'Jadwal sertifikasi multimedia akan dibuka pada kuartal pertama tahun depan. Informasi telah disampaikan via WhatsApp.',
-            ]
-        );
-
-        $updateRes->assertRedirect(route('admin.complaints.show', $complaint));
-
-        $complaint->refresh();
-        $this->assertEquals('selesai', $complaint->status);
-        $this->assertNotNull($complaint->tgl_tindak_lanjut);
-        $this->assertEquals($this->admin->id, $complaint->petugas_id);
-    }
-
-    public function test_public_can_submit_surveillance_and_admin_verifies(): void
-    {
-        $res = $this->get(route('surveillance.create'));
-        $res->assertStatus(200);
-        $res->assertSee('Layanan Surveilans Pemegang Sertifikat');
-
-        $postData = [
-            'nama_lengkap' => 'Budi Santoso',
-            'nik' => '3271012345670001',
-            'email' => 'budi@example.com',
-            'telepon' => '081234567890',
-            'no_sertifikat' => 'BNSP-SKM-TI-001-2026-0001',
-            'tempat_kerja' => 'PT Solusi Teknologi',
-            'jabatan' => 'Senior Backend Developer',
-            'proyek_saat_ini' => 'Pengembangan Sistem ERP Nasional',
-            'kesesuaian_skk' => 'Y',
-            'keterangan' => 'Kompetensi aktif diterapkan.',
-        ];
-
-        $postRes = $this->post(route('surveillance.store'), $postData);
-        $postRes->assertRedirect(route('surveillance.create'));
-        $postRes->assertSessionHas('success');
-
-        $this->assertDatabaseHas('surveillance_records', [
-            'nik' => '3271012345670001',
-            'no_sertifikat' => 'BNSP-SKM-TI-001-2026-0001',
-            'status' => 'menunggu_verifikasi',
-        ]);
-
-        $record = SurveillanceRecord::where('no_sertifikat', 'BNSP-SKM-TI-001-2026-0001')->first();
-
-        // Admin verifies surveillance
-        $verifyRes = $this->actingAs($this->admin)->patch(
-            route('admin.surveillance.verify', $record),
-            [
-                'status' => 'terverifikasi',
-            ]
-        );
-
-        $verifyRes->assertRedirect();
-        $record->refresh();
-        $this->assertEquals('terverifikasi', $record->status);
-        $this->assertEquals($this->admin->id, $record->verified_by);
-        $this->assertNotNull($record->tgl_verifikasi);
+        $this->get('/surveillance')->assertNotFound();
+        $this->get('/surveillance/create')->assertNotFound();
     }
 }

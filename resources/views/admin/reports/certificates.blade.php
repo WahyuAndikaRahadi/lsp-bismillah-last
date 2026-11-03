@@ -6,9 +6,11 @@
                 <h1 class="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">Daftar Pemegang Sertifikat BNSP</h1>
                 <p class="text-xs text-zinc-500 mt-1">Daftar asesi yang telah dinyatakan kompeten dan diterbitkan sertifikat kompetensi resmi BNSP.</p>
             </div>
+            @if(Route::has('admin.exports.bnsp.index'))
             <a href="{{ route('admin.exports.bnsp.index') }}" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-lsp-navy text-white hover:bg-zinc-800 transition">
                 Ekspor Sisfo BNSP
             </a>
+            @endif
         </div>
 
         <div class="bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-sm">
@@ -47,9 +49,11 @@
                                     {{ $cert->masa_berlaku_sertifikat?->translatedFormat('d M Y') ?? '3 Tahun' }}
                                 </td>
                                 <td class="p-3.5 text-right">
-                                    <a href="{{ route('documents.sertifikat', $cert) }}" target="_blank" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 transition">
-                                        Cetak PDF
+                                    @if(Route::has('admin.certificates.download'))
+                                    <a href="{{ route('admin.certificates.download', $cert->id) }}" target="_blank" class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-lsp-navy text-white hover:bg-zinc-800 transition">
+                                        Unduh
                                     </a>
+                                    @endif
                                 </td>
                             </tr>
                         @empty

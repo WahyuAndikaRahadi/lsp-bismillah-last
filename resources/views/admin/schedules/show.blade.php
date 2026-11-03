@@ -21,6 +21,7 @@
             </div>
 
             <div class="flex flex-wrap items-center gap-2">
+                @if(Route::has('documents.berita-acara-asesmen'))
                 <a
                     href="{{ route('documents.berita-acara-asesmen', $schedule) }}"
                     target="_blank"
@@ -28,6 +29,8 @@
                 >
                     Cetak BA Uji
                 </a>
+                @endif
+                @if(Route::has('documents.daftar-hadir-asesmen'))
                 <a
                     href="{{ route('documents.daftar-hadir-asesmen', $schedule) }}"
                     target="_blank"
@@ -35,6 +38,7 @@
                 >
                     Cetak Presensi
                 </a>
+                @endif
                 <a
                     href="{{ route('admin.pleno.show', $schedule) }}"
                     class="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl shadow-xs transition"
@@ -270,9 +274,11 @@
                                     <span>No. MET: <span class="font-mono">{{ $sa->asesor->asesorProfile?->no_met ?? '-' }}</span></span>
                                     <span>&bull;</span>
                                     <span>Surat Tugas: <span class="font-mono text-zinc-700">{{ $sa->no_surat_tugas }}</span></span>
+                                    @if(Route::has('documents.surat-tugas'))
                                     <a href="{{ route('documents.surat-tugas', [$schedule, $sa]) }}" target="_blank" class="text-blue-600 hover:underline font-semibold ml-1">
                                         [Cetak PDF]
                                     </a>
+                                    @endif
                                 </div>
                             </div>
                             <form action="{{ route('admin.schedules.asesors.remove', [$schedule, $sa]) }}" method="POST" onsubmit="return confirm('Hapus penugasan asesor ini?');">

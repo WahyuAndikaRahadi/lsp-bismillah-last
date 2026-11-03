@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Assessment;
+use App\Models\AssessmentIaResponse;
 use App\Models\CompetencyUnit;
 use App\Models\Schedule;
 use App\Models\Scheme;
@@ -164,10 +165,22 @@ class AsesorUnifiedWorkspaceTest extends TestCase
     {
         $unit = $this->scheme->competencyUnits->first();
 
-        // Must be approved first
+        // Must be approved first and have observation record
         $this->assessment->update([
             'apl_status' => 'APPROVED',
             'status' => 'IN_PROGRESS',
+        ]);
+
+        AssessmentIaResponse::create([
+            'assessment_id' => $this->assessment->id,
+            'instrument_code' => 'IA01',
+            'started_at' => now(),
+            'duration_seconds' => 3600,
+            'time_remaining_seconds' => 0,
+            'attempt_version' => 1,
+            'data_json' => ['observations' => []],
+            'is_expired' => false,
+            'submitted_at' => now(),
         ]);
 
         $response = $this->actingAs($this->asesor)->post(route('asesor.assessment.ak02.update', $this->assessment->id), [

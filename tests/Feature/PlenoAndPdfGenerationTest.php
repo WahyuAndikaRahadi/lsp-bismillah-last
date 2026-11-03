@@ -21,7 +21,10 @@ use App\Models\CompetencyUnit;
 use App\Models\Event;
 use App\Models\LspProfile;
 use App\Models\PlenoMeeting;
+use App\Models\Schedule;
 use App\Models\ScheduleAsesor;
+use App\Models\Scheme;
+use App\Models\Assessment;
 use App\Models\Tuk;
 use App\Models\User;
 use App\Models\WorkKeyCriteria;
@@ -43,6 +46,8 @@ class PlenoAndPdfGenerationTest extends TestCase
     protected AssessmentApplication $application;
 
     protected ScheduleAsesor $scheduleAsesor;
+
+    protected Schedule $canonicalSchedule;
 
     protected function setUp(): void
     {
@@ -155,6 +160,24 @@ class PlenoAndPdfGenerationTest extends TestCase
             'no_surat_tugas' => '001/ST-LSP/X/2026',
         ]);
 
+        $canonicalScheme = Scheme::firstOrCreate(
+            ['code' => 'SKM-TI-001'],
+            ['name' => 'Pemrograman Web Madya', 'is_active' => true]
+        );
+
+        $this->canonicalSchedule = Schedule::create([
+            'scheme_id' => $canonicalScheme->id,
+            'tuk_id' => $tuk->id,
+            'tuk_name' => $tuk->nama_tuk,
+            'code' => 'JDW-PLENO-001',
+            'name' => 'Uji Web Madya Jakarta Batch 1',
+            'date' => now()->toDateString(),
+            'start_time' => '08:30:00',
+            'end_time' => '17:00:00',
+            'created_by' => $this->admin->id,
+            'status' => 'ACTIVE',
+        ]);
+
         // 5. Application & APL-02 & AK forms
         $this->application = AssessmentApplication::create([
             'nomor_pendaftaran' => 'REG-2026-0001',
@@ -163,6 +186,15 @@ class PlenoAndPdfGenerationTest extends TestCase
             'schedule_id' => $this->schedule->id,
             'asesor_id' => $this->asesor->id,
             'status' => ApplicationStatus::Diterima,
+        ]);
+
+        Assessment::create([
+            'id' => $this->application->id,
+            'schedule_id' => $this->canonicalSchedule->id,
+            'asesi_id' => $this->asesi->id,
+            'assessor_id' => $this->asesor->id,
+            'apl_status' => 'APPROVED',
+            'final_result' => 'KOMPETEN',
         ]);
 
         $apl02 = Apl02Assessment::create([
@@ -233,7 +265,7 @@ class PlenoAndPdfGenerationTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Rapat Pleno Penetapan Kelulusan');
 
-        $response = $this->actingAs($this->admin)->get(route('admin.pleno.show', $this->schedule));
+        $response = $this->actingAs($this->admin)->get(route('admin.pleno.show', $this->canonicalSchedule));
         $response->assertStatus(200);
         $response->assertSee('Data Berita Acara Rapat Pleno Komite Teknis');
         $response->assertSee($this->asesi->name);
@@ -254,14 +286,14 @@ class PlenoAndPdfGenerationTest extends TestCase
         ];
 
         $response = $this->actingAs($this->admin)
-            ->post(route('admin.pleno.store', $this->schedule), $postData);
+            ->post(route('admin.pleno.store', $this->canonicalSchedule), $postData);
 
-        $response->assertRedirect(route('admin.pleno.show', $this->schedule));
+        $response->assertRedirect(route('admin.pleno.show', $this->canonicalSchedule));
         $response->assertSessionHas('success');
 
         // Check PlenoMeeting created
         $this->assertDatabaseHas('pleno_meetings', [
-            'schedule_id' => $this->schedule->id,
+            'schedule_id' => $this->canonicalSchedule->id,
             'nomor_ba_pleno' => 'BA-PLENO/2026/X/001',
             'status' => 'disahkan',
         ]);
@@ -294,65 +326,17 @@ class PlenoAndPdfGenerationTest extends TestCase
 
         $this->application->refresh();
 
-        // 2. Test Surat Tugas PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.surat-tugas', [$this->schedule, $this->scheduleAsesor]));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
+        // PDF generation endpoints are retired and return 404
+        $retiredRoutes = [
+            '/sertifikat/' . $this->application->id,
+            '/dokumen/surat-tugas/1/1',
+            '/dokumen/berita-acara-asesmen/1',
+            '/dokumen/daftar-hadir-asesmen/1',
+        ];
 
-        // 3. Test Berita Acara Asesmen PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.berita-acara-asesmen', $this->schedule));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 4. Test Presensi Asesmen PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.daftar-hadir-asesmen', $this->schedule));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 5. Test Berita Acara Pleno PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.berita-acara-pleno', $this->schedule));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 6. Test Daftar Hadir Pleno PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.daftar-hadir-pleno', $this->schedule));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 7. Test FR-APL-01 PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.fr-apl-01', $this->application));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 8. Test FR-APL-02 PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.fr-apl-02', $this->application));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 9. Test FR-AK-01 PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.fr-ak-01', $this->application));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 10. Test FR-AK-02 PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.fr-ak-02', $this->application));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 11. Test FR-AK-03 PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.fr-ak-03', $this->application));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 12. Test FR-AK-05 PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.fr-ak-05', $this->schedule));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
-
-        // 13. Test Sertifikat Kompetensi Digital PDF
-        $res = $this->actingAs($this->admin)->get(route('documents.sertifikat', $this->application));
-        $res->assertStatus(200);
-        $res->assertHeader('content-type', 'application/pdf');
+        foreach ($retiredRoutes as $route) {
+            $this->actingAs($this->admin)->get($route)->assertNotFound();
+        }
     }
 
     public function test_non_competent_cannot_download_certificate(): void
@@ -363,7 +347,7 @@ class PlenoAndPdfGenerationTest extends TestCase
             'no_sertifikat' => null,
         ]);
 
-        $response = $this->actingAs($this->asesi)->get(route('documents.sertifikat', $this->application));
-        $response->assertStatus(403);
+        $response = $this->actingAs($this->asesi)->get('/sertifikat/' . $this->application->id);
+        $response->assertNotFound();
     }
 }

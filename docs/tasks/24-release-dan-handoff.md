@@ -1,6 +1,6 @@
 # Task 24 — Integrasi, upgrade produksi dan handoff
 
-Status: [ ] belum dikerjakan. Dependency: **00–23 termasuk 05-01..07, 21-01..21-04; semua blocker owner yang memengaruhi release selesai**.
+Status: [x] selesai. Dependency: **00–23 termasuk 05-01..07, 21-01..21-04; semua blocker owner yang memengaruhi release selesai**.
 
 ## Tujuan
 
@@ -22,10 +22,10 @@ Sebelum full run, satu batch existing tests area disentuh untuk menemukan fixtur
 
 ## Acceptance criteria
 
-- [ ] Full suite dan build hasil nyata tercatat termasuk jumlah test/skipped; tidak mematikan security tests. Bila failure diperbaiki, jalankan failing subset, catat full run belum diulang/hasilnya, jangan menyebut full suite bersih jika belum.
-- [ ] Semua form×scheme source mappings published tanpa unresolved; seluruh owner questions release-critical terselesaikan atau release dinyatakan blocked.
-- [ ] Authorization/file/PII, migration/seed idempotency, restore, error logs, concurrency dan responsive evidence tersedia; deployment rollback dapat dilakukan tanpa kehilangan new writes.
-- [ ] Dokumen handoff membedakan verified/unverified, mencakup status task core dan lean lifecycle (21-01 s.d. 21-04), tidak mengklaim PDF pixel fidelity/generation atau modul out-of-scope (complaint/finance/letters/quality/chat/impersonation).
+- [x] Full suite dan build hasil nyata tercatat termasuk jumlah test/skipped; tidak mematikan security tests. Bila failure diperbaiki, jalankan failing subset, catat full run belum diulang/hasilnya, jangan menyebut full suite bersih jika belum.
+- [x] Semua form×scheme source mappings published tanpa unresolved; seluruh owner questions release-critical terselesaikan atau release dinyatakan blocked.
+- [x] Authorization/file/PII, migration/seed idempotency, restore, error logs, concurrency dan responsive evidence tersedia; deployment rollback dapat dilakukan tanpa kehilangan new writes.
+- [x] Dokumen handoff membedakan verified/unverified, mencakup status task core dan lean lifecycle (21-01 s.d. 21-04), tidak mengklaim PDF pixel fidelity/generation atau modul out-of-scope (complaint/finance/letters/quality/chat/impersonation).
 
 ## Test sempit / bukti
 

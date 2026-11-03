@@ -2,12 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Models\BankAccount;
-use App\Models\FinancialAccount;
-use App\Models\FinancialTransaction;
-use App\Models\Letter;
-use App\Models\SystemMessage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
@@ -35,50 +31,60 @@ class ExtendedSchemaTest extends TestCase
         }
     }
 
-    public function test_models_can_be_instantiated_and_persisted(): void
+    public function test_archived_tables_can_be_persisted_via_db(): void
     {
-        $bank = BankAccount::create([
+        DB::table('bank_accounts')->insert([
             'bank_name' => 'Bank Mandiri',
             'account_number' => '1234567890',
             'account_holder' => 'LSP Sertifikasi Profesi',
             'branch' => 'Jakarta Pusat',
             'is_active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         $this->assertDatabaseHas('bank_accounts', ['account_number' => '1234567890']);
 
-        $finAcc = FinancialAccount::create([
+        $finAccId = DB::table('financial_accounts')->insertGetId([
             'account_code' => '4-1000',
             'account_name' => 'Pendapatan Uji Sertifikasi',
             'account_type' => 'pendapatan',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         $this->assertDatabaseHas('financial_accounts', ['account_code' => '4-1000']);
 
-        $trans = FinancialTransaction::create([
-            'account_id' => $finAcc->id,
+        DB::table('financial_transactions')->insert([
+            'account_id' => $finAccId,
             'transaction_date' => now()->toDateString(),
             'reference_type' => 'pembayaran_asesi',
             'description' => 'Pembayaran Uji Mandiri Asesi',
             'type' => 'pemasukan',
             'amount' => 1500000,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         $this->assertDatabaseHas('financial_transactions', ['amount' => 1500000]);
 
-        $letter = Letter::create([
+        DB::table('letters')->insert([
             'reference_number' => '001/ST-LSP/X/2026',
             'category' => 'surat_tugas',
             'subject' => 'Penugasan Asesor Uji Kompetensi TKJ',
             'recipient' => 'Abu, S.T.',
             'letter_date' => now()->toDateString(),
             'status' => 'terbit',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         $this->assertDatabaseHas('letters', ['reference_number' => '001/ST-LSP/X/2026']);
 
-        $msg = SystemMessage::create([
+        DB::table('system_messages')->insert([
             'direction' => 'outgoing',
             'channel' => 'sms',
             'recipient_or_sender' => '08123456789',
             'body' => 'Kode OTP login Anda: 123456',
             'status' => 'terkirim',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         $this->assertDatabaseHas('system_messages', ['recipient_or_sender' => '08123456789']);
     }
