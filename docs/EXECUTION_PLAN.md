@@ -24,7 +24,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 6 | [x] | [05 — Versioned reference dan bootstrap aman](tasks/05-reference-bootstrap.md) | 02,03,04 | 244f0e9; php artisan test --compact tests/Feature/CoreReferenceImportTest.php; exit 0; 7 tests passed, 31 assertions; no deviations |
 | 7 | [x] | [05-01 — Referensi S1: Engine Junior Technician](tasks/05-01-skema-1.md) | 02,05 | a6c2e06; php artisan test --compact tests/Feature/Scheme1ReferenceCoverageTest.php; exit 0; 3 tests passed, 95 assertions; no deviations |
 | 8 | [x] | [05-02 — Referensi S2: Maintenance Gasoline Engine Injection](tasks/05-02-skema-2.md) | 02,05 | 0a06af5; php artisan test --compact tests/Feature/Scheme2ReferenceCoverageTest.php; exit 0; 3 tests passed, 65 assertions; no deviations |
-| 9 | [ ] | [05-03 — Referensi S3: Periodical Maintenance Electrified Vehicles](tasks/05-03-skema-3.md) | 02,05 | Belum dijalankan |
+| 9 | [x] | [05-03 — Referensi S3: Periodical Maintenance Electrified Vehicles](tasks/05-03-skema-3.md) | 02,05 | 9d1c06b; php artisan test --compact tests/Feature/Scheme3ReferenceCoverageTest.php; exit 0; 3 tests passed, 65 assertions; no deviations |
 | 10 | [ ] | [05-04 — Referensi S4: Memperbaiki Panel Bodi Kendaraan](tasks/05-04-skema-4.md) | 02,05 | Belum dijalankan |
 | 11 | [ ] | [05-05 — Referensi S5: Mekanik Junior](tasks/05-05-skema-5.md) | 02,05 | Belum dijalankan |
 | 12 | [ ] | [05-06 — Referensi S6: Servis Sepeda Motor Listrik](tasks/05-06-skema-6.md) | 02,05 | Belum dijalankan |

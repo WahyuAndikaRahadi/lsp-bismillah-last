@@ -7,6 +7,8 @@
     "muk_code": "03/LSP PrO Indo/I/2026",
     "description": "Skema Sertifikasi Periodical Maintenance Electrified Vehicles - LSP Praktisi Otomotif Indonesia",
     "passing_grade_theory": 75,
+    "status": "needs-review",
+    "review_status": "needs-review",
     "is_active": true
   },
   "units": [
