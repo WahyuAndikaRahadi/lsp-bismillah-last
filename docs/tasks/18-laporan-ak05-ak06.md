@@ -1,6 +1,6 @@
 # Task 18 — AK-05/06 per asesor dan revision
 
-Status: [ ] belum dikerjakan. Dependency: **16,17**.
+Status: [x] selesai. Dependency: **16,17**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ AK05 roster assigned participants dari finalized AK02, K/BK dan unit BK, positiv
 
 ## Acceptance criteria
 
-- [ ] Dua asesor satu jadwal tidak saling menimpa report; roster/result tepat assigned scope.
-- [ ] AK06 semua row/dimension terisi real finding/evidence atau N/A beralasan bila diizinkan original; no default puas/valid.
-- [ ] Submit for review memblokir missing findings dan mencatat author/reviewer nyata.
+- [x] Dua asesor satu jadwal tidak saling menimpa report; roster/result tepat assigned scope.
+- [x] AK06 semua row/dimension terisi real finding/evidence atau N/A beralasan bila diizinkan original; no default puas/valid.
+- [x] Submit for review memblokir missing findings dan mencatat author/reviewer nyata.
 
 ## Test sempit / bukti
 

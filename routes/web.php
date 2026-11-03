@@ -314,6 +314,10 @@ Route::middleware('auth')->group(function () {
         })->name('ak05.store');
         Route::get('/schedule/{schedule}/reports', [FinalizationController::class, 'showReports'])->name('schedule.reports');
         Route::post('/schedule/{schedule}/reports', [FinalizationController::class, 'submitReports'])->name('schedule.reports.submit');
+        Route::get('/schedule/{schedule}/ak05', [\App\Http\Controllers\Asesor\AssessmentReportController::class, 'showAk05'])->name('schedule.ak05');
+        Route::post('/schedule/{schedule}/ak05', [\App\Http\Controllers\Asesor\AssessmentReportController::class, 'storeAk05'])->name('schedule.ak05.store');
+        Route::get('/schedule/{schedule}/ak06', [\App\Http\Controllers\Asesor\AssessmentReportController::class, 'showAk06'])->name('schedule.ak06');
+        Route::post('/schedule/{schedule}/ak06', [\App\Http\Controllers\Asesor\AssessmentReportController::class, 'storeAk06'])->name('schedule.ak06.store');
         Route::get('/schedules/{schedule}/ak-05', [AssessmentExecutionController::class, 'showAk05']);
         Route::post('/schedules/{schedule}/ak-05', [AssessmentExecutionController::class, 'storeAk05']);
 
