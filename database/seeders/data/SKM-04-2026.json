@@ -7,6 +7,8 @@
     "muk_code": "04/LSP PrO Indo/I/2026",
     "description": "Skema Sertifikasi Memperbaiki Panel Bodi Kendaraan - LSP Praktisi Otomotif Indonesia",
     "passing_grade_theory": 75.0,
+    "status": "needs-review",
+    "review_status": "needs-review",
     "is_active": true
   },
   "units": [

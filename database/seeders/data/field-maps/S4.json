@@ -1,0 +1,40 @@
+{
+  "scheme_code": "SKM-04-2026",
+  "scheme_name": "Memperbaiki Panel Bodi Kendaraan",
+  "scheme_type": "KLASTER",
+  "status": "needs-review",
+  "source_directory": "04. MUK KLASTER MEMPERBAIKI PANEL BODI KENDARAAN",
+  "counts": {
+    "units": 10,
+    "elements": 20,
+    "kuks": 75,
+    "questions": 30,
+    "options": 119,
+    "pmo": 10,
+    "tpd": 3,
+    "report_sheet_cells": 9
+  },
+  "forms": {
+    "FR.APL.01": { "status": "available", "source": "FR.APL.01.pdf" },
+    "FR.APL.02": { "status": "available", "source": "FR.APL.02.pdf" },
+    "FR.MAPA.01": { "status": "available", "source": "FR.MAPA.01.pdf" },
+    "FR.MAPA.02": { "status": "available", "source": "FR.MAPA.02.pdf" },
+    "FR.IA.01": { "status": "available", "source": "FR.IA.01.pdf", "cells_count": 9 },
+    "FR.IA.02": { "status": "available", "source": "FR.IA.02.pdf", "scenario_count": 3 },
+    "FR.IA.03": { "status": "available", "source": "FR.IA.03.pdf", "questions_count": 10 },
+    "FR.IA.05": { "status": "available", "source": "FR.IA.05.pdf", "questions_count": 30, "options_count": 119 },
+    "FR.AK.01": { "status": "available", "source": "FR.AK.01.pdf" },
+    "FR.AK.02": { "status": "available", "source": "FR.AK.02.pdf" },
+    "FR.AK.03": { "status": "available", "source": "FR.AK.03.pdf" },
+    "FR.AK.05": { "status": "available", "source": "FR.AK.05.pdf" },
+    "FR.AK.06": { "status": "available", "source": "FR.AK.06.pdf" },
+    "FR.IA.04.A": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" },
+    "FR.IA.04.B": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" },
+    "FR.IA.06": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" },
+    "FR.IA.07": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" },
+    "FR.IA.08": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" },
+    "FR.IA.09": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" },
+    "FR.IA.10": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" },
+    "FR.IA.11": { "status": "blocked", "reason": "Dokumen sumber asli tidak ditemukan di repositori (Q2)" }
+  }
+}
