@@ -232,6 +232,54 @@ class RuangUjiController extends Controller
         return back()->with('success', 'Foto bukti lembar kerja fisik berhasil diunggah.');
     }
 
+    public function showInstrument(Assessment $assessment, string $code): View|RedirectResponse
+    {
+        abort_if($assessment->asesi_id !== auth()->id(), 403);
+        $codeUpper = strtoupper($code);
+        $response = AssessmentIaResponse::where('assessment_id', $assessment->id)
+            ->where('instrument_code', $codeUpper)
+            ->first();
+
+        return view('asesi.ruang-uji.instrument-show', [
+            'assessment' => $assessment,
+            'code' => $codeUpper,
+            'response' => $response,
+        ]);
+    }
+
+    public function submitInstrument(Assessment $assessment, string $code, \App\Http\Requests\ReportSheetRequest $request): RedirectResponse
+    {
+        abort_if($assessment->asesi_id !== auth()->id(), 403);
+        if ($assessment->schedule && $assessment->schedule->is_closed) {
+            return back()->with('error', 'Jadwal asesmen sudah resmi ditutup.');
+        }
+
+        $codeUpper = strtoupper($code);
+        $response = AssessmentIaResponse::firstOrNew([
+            'assessment_id' => $assessment->id,
+            'instrument_code' => $codeUpper,
+        ]);
+
+        $existingData = is_array($response->data_json)
+            ? $response->data_json
+            : (json_decode($response->data_json ?? '[]', true) ?: []);
+
+        $items = $request->input('items', []);
+        $mergedItems = $existingData['items'] ?? [];
+        foreach ($items as $idx => $item) {
+            $mergedItems[$idx]['measurement_value'] = $item['measurement_value'] ?? null;
+            $mergedItems[$idx]['unit'] = $item['unit'] ?? null;
+            $mergedItems[$idx]['condition'] = $item['condition'] ?? null;
+            $mergedItems[$idx]['notes'] = $item['notes'] ?? null;
+        }
+        $existingData['items'] = $mergedItems;
+        $response->data_json = $existingData;
+        $response->attempt_version = ($response->attempt_version ?? 0) + 1;
+        $response->save();
+
+        return back()->with('success', 'Data lembar kerja berhasil disimpan.');
+    }
+
     public function showAk03(Assessment $assessment): View|RedirectResponse
     {
         abort_if($assessment->asesi_id !== auth()->id(), 403);

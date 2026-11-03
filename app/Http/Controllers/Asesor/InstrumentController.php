@@ -335,16 +335,49 @@ class InstrumentController extends Controller
             'assessor_signature' => ['nullable', 'string', new ValidSignature],
         ]);
 
+        $existing = AssessmentIaResponse::where('assessment_id', $assessment->id)
+            ->where('instrument_code', $code)
+            ->first();
+
+        // Stale save protection (optimistic locking)
+        if ($request->filled('lock_version') && $existing) {
+            if ((int) $request->input('lock_version') !== (int) ($existing->attempt_version ?? 1)) {
+                abort(409, 'Konflik versi: dokumen telah diperbarui pada sesi lain. Muat ulang halaman.');
+            }
+        }
+
+        // Instrument specific validation gates
+        if ($code === 'IA01') {
+            $scheme = $assessment->schedule?->scheme ?? $assessment->scheme;
+            if ($scheme) {
+                $submittedKukIds = array_keys($request->input('kuks', []));
+                $validKukIds = \App\Models\Kuk::whereHas('unitElement.competencyUnit', function ($q) use ($scheme) {
+                    $q->where('scheme_id', $scheme->id);
+                })->pluck('id')->map(fn ($id) => (string) $id)->toArray();
+
+                foreach ($submittedKukIds as $kId) {
+                    if (! empty($validKukIds) && ! in_array((string) $kId, $validKukIds, true)) {
+                        return back()->withErrors(["kuks.{$kId}" => "KUK ID #{$kId} tidak dikenal. Foreign KUK ditolak."])->withInput();
+                    }
+                }
+            }
+        } elseif ($code === 'IA01B') {
+            $user = auth()->user();
+            if ($user && $user->id === $assessment->asesi_id && ! $user->isAdmin()) {
+                foreach ($request->input('items', []) as $idx => $item) {
+                    if (isset($item['result']) && trim((string) $item['result']) !== '') {
+                        return back()->withErrors(["items.{$idx}.result" => 'Kolom penilaian kesesuaian merupakan kewenangan asesor. Unauthorized role column ditolak.'])->withInput();
+                    }
+                }
+            }
+        }
+
         $data = $request->input('data') ?? [
             'kuks' => $request->input('kuks'),
             'tasks' => $request->input('tasks'),
             'questions' => $request->input('questions'),
             'items' => $request->input('items'),
         ];
-
-        $existing = AssessmentIaResponse::where('assessment_id', $assessment->id)
-            ->where('instrument_code', $code)
-            ->first();
 
         $existingData = is_array($existing?->data_json)
             ? $existing->data_json
@@ -381,7 +414,7 @@ class InstrumentController extends Controller
         }
 
         DB::transaction(function () use ($assessment, $code, $data, $request, $asesiSig, $asesiSignedAt) {
-            AssessmentIaResponse::updateOrCreate(
+            $resp = AssessmentIaResponse::updateOrCreate(
                 ['assessment_id' => $assessment->id, 'instrument_code' => $code],
                 [
                     'data_json' => $data,
@@ -391,6 +424,23 @@ class InstrumentController extends Controller
                     'asesi_signature' => $asesiSig,
                     'asesi_signed_at' => $asesiSignedAt,
                 ]
+            );
+
+            $resp->increment('attempt_version');
+
+            if ($assessment->schedule) {
+                app(\App\Services\AttendanceService::class)->recordAssessorActive(
+                    $assessment->schedule,
+                    auth()->user(),
+                    "instrument:save:{$code}"
+                );
+            }
+
+            \App\Models\AuditEvent::record(
+                action: 'instrument.saved',
+                subject: $assessment,
+                reason: "Penilaian instrumen {$code} disimpan oleh " . auth()->user()->name,
+                details: ['code' => $code, 'assessment_id' => $assessment->id]
             );
         });
 

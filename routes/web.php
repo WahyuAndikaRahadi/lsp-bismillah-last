@@ -370,6 +370,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/instrument/IA05', [RuangUjiController::class, 'ia05'])->name('instrument.ia05');
             Route::post('/instrument/IA05', [RuangUjiController::class, 'submitIa05'])->name('instrument.ia05.submit');
             Route::post('/ia05/save-draft', [RuangUjiController::class, 'saveIa05Draft'])->name('ia05.save-draft');
+            Route::get('/instrument/{code}', [RuangUjiController::class, 'showInstrument'])->name('instrument.show');
+            Route::post('/instrument/{code}', [RuangUjiController::class, 'submitInstrument'])->name('instrument.store');
 
             Route::post('/instrument/{code}/upload-evidence', [RuangUjiController::class, 'uploadEvidence'])->name('instrument.upload-evidence');
 

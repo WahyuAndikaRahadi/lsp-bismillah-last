@@ -1,6 +1,6 @@
 # Task 13 — IA-01 dan seluruh sel report sheet
 
-Status: [ ] belum dikerjakan. Dependency: **10,11,12; source report skema terkait diselesaikan Q2/Q3**.
+Status: [x] selesai. Dependency: **10,11,12; source report skema terkait diselesaikan Q2/Q3**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ IA01 group/unit/elemen/KUK/benchmark/catatan/rekomendasi/footer menurut source s
 
 ## Acceptance criteria
 
-- [ ] Semua cell registry source dapat disimpan dan dibaca, termasuk silinder/komponen berulang dan nilai+unit+kondisi terpisah.
-- [ ] KUK foreign/unknown, unauthorized role column dan value type invalid ditolak; 0 valid dibedakan kosong.
-- [ ] Unobserved tidak otomatis K/BK; rekomendasi hanya explicit setelah required evidence.
+- [x] Semua cell registry source dapat disimpan dan dibaca, termasuk silinder/komponen berulang dan nilai+unit+kondisi terpisah.
+- [x] KUK foreign/unknown, unauthorized role column dan value type invalid ditolak; 0 valid dibedakan kosong.
+- [x] Unobserved tidak otomatis K/BK; rekomendasi hanya explicit setelah required evidence.
 
 ## Test sempit / bukti
 
