@@ -67,7 +67,7 @@ class RuangUjiController extends Controller
             Log::info("Signature updated for assessment #{$assessment->id} by asesi #{$assessment->asesi_id}");
         }
 
-        DB::transaction(function () use ($assessment, $now, $signature) {
+        DB::transaction(function () use ($assessment, $now, $signature, $request) {
             $assessment->update([
                 'ak01_agreed_at' => $assessment->ak01_agreed_at ?? $now,
                 'esign_consent_at' => $assessment->esign_consent_at ?? $now,
@@ -75,10 +75,37 @@ class RuangUjiController extends Controller
                 'asesi_signed_at' => $assessment->asesi_signed_at ?? $now,
                 'last_active_step' => 'ruang-uji',
             ]);
+
+            // Record explicit consent
+            if ($assessment->schedule) {
+                app(\App\Services\ScheduleConsentService::class)->recordConsent(
+                    $assessment->schedule,
+                    auth()->user(),
+                    'ak01_agreement',
+                    "Persetujuan FR.AK.01 untuk Jadwal {$assessment->schedule->code}",
+                    $signature,
+                    $request
+                );
+            }
         });
 
         return redirect()->route('asesi.assessment.ruang-uji', $assessment)
             ->with('success', 'FR.AK01 berhasil disetujui dan ditandatangani.');
+    }
+
+    public function enterExam(Assessment $assessment, Request $request, \App\Services\AttendanceService $attendanceService): RedirectResponse
+    {
+        abort_if($assessment->asesi_id !== auth()->id(), 403);
+
+        try {
+            $attendanceService->recordAsesiEnterExam($assessment, $request);
+        } catch (\RuntimeException $e) {
+            return redirect()->route('asesi.assessment.ruang-uji', $assessment)
+                ->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('asesi.assessment.ruang-uji', $assessment)
+            ->with('success', 'Anda resmi hadir dan memasuki ruang uji asesmen.');
     }
 
     public function consentEsign(Assessment $assessment, Request $request): RedirectResponse

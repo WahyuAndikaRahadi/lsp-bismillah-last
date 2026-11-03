@@ -1,6 +1,6 @@
 # Task 11 — Consent jadwal, AK-01 dan attendance event
 
-Status: [ ] belum dikerjakan. Dependency: **07; integrasi AK01 final setelah 09–10 (consent join dapat dikerjakan lebih awal)**.
+Status: [x] selesai. Dependency: **07; integrasi AK01 final setelah 09–10 (consent join dapat dikerjakan lebih awal)**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Consent signature asesi saat join, asesor saat menerima penugasan; explicit unch
 
 ## Acceptance criteria
 
-- [ ] Approval APL tidak menciptakan consent; user lain tidak bisa grant; signature profile berubah tidak mengubah consent/document lama.
-- [ ] GET dua kali, timezone boundary, early/late entry, duplicate POST dan concurrent requests tidak menghasilkan kehadiran palsu/ganda.
-- [ ] Revocation/reversal auditable; existing finalized records mempertahankan provenance, bukan silent resign.
+- [x] Approval APL tidak menciptakan consent; user lain tidak bisa grant; signature profile berubah tidak mengubah consent/document lama.
+- [x] GET dua kali, timezone boundary, early/late entry, duplicate POST dan concurrent requests tidak menghasilkan kehadiran palsu/ganda.
+- [x] Revocation/reversal auditable; existing finalized records mempertahankan provenance, bukan silent resign.
 
 ## Test sempit / bukti
 

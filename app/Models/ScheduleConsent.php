@@ -13,15 +13,19 @@ class ScheduleConsent extends Model
         'schedule_id',
         'user_id',
         'purpose',
+        'scope_version',
         'text_hash',
         'signature_data',
         'ip_address',
         'user_agent',
         'granted_at',
         'revoked_at',
+        'revoked_by',
+        'revocation_reason',
     ];
 
     protected $casts = [
+        'scope_version' => 'integer',
         'granted_at' => 'datetime',
         'revoked_at' => 'datetime',
     ];
@@ -34,5 +38,15 @@ class ScheduleConsent extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function revoker(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'revoked_by');
+    }
+
+    public function isActive(): bool
+    {
+        return $this->granted_at !== null && $this->revoked_at === null;
     }
 }

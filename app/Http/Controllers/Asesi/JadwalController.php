@@ -137,6 +137,17 @@ class JadwalController extends Controller
                     'last_active_step' => 'apl',
                 ]);
 
+                // Record explicit join consent
+                $consentText = "Persetujuan dan komitmen integritas asesmen saat bergabung jadwal {$lockedSchedule->code}";
+                app(\App\Services\ScheduleConsentService::class)->recordConsent(
+                    $lockedSchedule,
+                    $user,
+                    'join',
+                    $consentText,
+                    $profile?->signature_data,
+                    request()
+                );
+
                 return ['assessment' => $newAssessment, 'created' => true];
             });
         } catch (\DomainException $e) {

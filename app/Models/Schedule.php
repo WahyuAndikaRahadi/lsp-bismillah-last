@@ -22,6 +22,8 @@ class Schedule extends Model
         'tuk_id',
         'tuk_name',
         'date',
+        'start_date',
+        'end_date',
         'start_time',
         'end_time',
         'duration_minutes',
@@ -47,6 +49,8 @@ class Schedule extends Model
     {
         return [
             'date' => 'date',
+            'start_date' => 'date',
+            'end_date' => 'date',
             'closed_at' => 'datetime',
             'assigned_at' => 'datetime',
             'capacity' => 'integer',

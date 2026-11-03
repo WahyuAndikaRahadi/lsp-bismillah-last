@@ -17,10 +17,16 @@ class AttendanceEvent extends Model
         'source_record',
         'occurred_at',
         'recorded_by',
+        'is_reversed',
+        'reversed_at',
+        'reversed_by',
+        'reversal_reason',
     ];
 
     protected $casts = [
         'occurred_at' => 'datetime',
+        'is_reversed' => 'boolean',
+        'reversed_at' => 'datetime',
     ];
 
     public function schedule(): BelongsTo
@@ -31,5 +37,20 @@ class AttendanceEvent extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function recorder(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'recorded_by');
+    }
+
+    public function reverser(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'reversed_by');
+    }
+
+    public function isValid(): bool
+    {
+        return ! $this->is_reversed;
     }
 }

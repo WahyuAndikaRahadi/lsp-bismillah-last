@@ -119,6 +119,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/assessment/{assessment}/review-registration', [JadwalController::class, 'reviewRegistration'])->name('assessment.review-registration');
         Route::post('/jadwal/{jadwal}/batch-review-registration', [JadwalController::class, 'batchReviewRegistration'])->name('jadwal.batch-review-registration');
         Route::post('/assessment/{assessment}/mark-absent', [JadwalController::class, 'markAbsent'])->name('assessment.mark-absent');
+        Route::post('/schedules/{schedule}/attendance/{event}/reverse', [\App\Http\Controllers\Admin\AttendanceController::class, 'reverse'])->name('schedules.attendance.reverse');
 
         // Dokumen MUK export & proxy disabled (out-of-scope / contained)
 
@@ -363,6 +364,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/consent-esign', [RuangUjiController::class, 'consentEsign'])->name('consent-esign');
 
             Route::get('/ruang-uji', [RuangUjiController::class, 'hub'])->name('ruang-uji');
+            Route::post('/enter-exam', [RuangUjiController::class, 'enterExam'])->name('enter-exam');
 
             // FR.IA Instruments
             Route::get('/instrument/IA05', [RuangUjiController::class, 'ia05'])->name('instrument.ia05');
