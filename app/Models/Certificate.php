@@ -51,4 +51,14 @@ class Certificate extends Model
     {
         return $this->hasMany(CertificateReceiptEvent::class, 'certificate_id');
     }
+
+    public function isAcknowledged(): bool
+    {
+        return $this->receiptEvents()->where('event_type', 'acknowledge')->exists();
+    }
+
+    public function acknowledgment(): ?CertificateReceiptEvent
+    {
+        return $this->receiptEvents()->where('event_type', 'acknowledge')->latest('occurred_at')->first();
+    }
 }

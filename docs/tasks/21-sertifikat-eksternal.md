@@ -1,6 +1,6 @@
 # Task 21 — Upload sertifikat dan FR10.2
 
-Status: [ ] belum dikerjakan. Dependency: **20,04,11**.
+Status: [x] selesai. Dependency: **20,04,11**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Upload admin hanya assessment dengan decision positive sah, metadata real certif
 
 ## Acceptance criteria
 
-- [ ] Asesi dengan dua skema melihat dua certificate benar; user lain/asesor tidak berhak download; duplicate number dan wrong assessment decision ditolak.
-- [ ] Upload tanpa decision, expired/superseded authorization, file missing/MIME spoof ditolak tanpa receipt palsu.
-- [ ] Atomic upload/replacement/retry, private hash/ref, download audit dan actual receipt; certificate validity tidak default fabricated.
+- [x] Asesi dengan dua skema melihat dua certificate benar; user lain/asesor tidak berhak download; duplicate number dan wrong assessment decision ditolak.
+- [x] Upload tanpa decision, expired/superseded authorization, file missing/MIME spoof ditolak tanpa receipt palsu.
+- [x] Atomic upload/replacement/retry, private hash/ref, download audit dan actual receipt; certificate validity tidak default fabricated.
 
 ## Test sempit / bukti
 

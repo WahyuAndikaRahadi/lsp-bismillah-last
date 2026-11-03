@@ -178,6 +178,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/pleno/{schedule}', [PlenoController::class, 'show'])->name('pleno.show');
         Route::post('/pleno/{schedule}', [PlenoController::class, 'store'])->name('pleno.store');
 
+        // Sertifikat Eksternal & FR-10.2 (Task 21)
+        Route::get('/certificates', [\App\Http\Controllers\Admin\CertificateController::class, 'index'])->name('certificates.index');
+        Route::get('/assessment/{assessment}/certificate/create', [\App\Http\Controllers\Admin\CertificateController::class, 'create'])->name('assessment.certificate.create');
+        Route::post('/assessment/{assessment}/certificate', [\App\Http\Controllers\Admin\CertificateController::class, 'store'])->name('assessment.certificate.store');
+        Route::get('/certificates/{certificate}/download', [\App\Http\Controllers\Admin\CertificateController::class, 'download'])->name('certificates.download');
+
         // BNSP exports, complaints, baseline surveillance & baseline appeals disabled
 
         // Laporan & Ekspor Lengkap Parity Demo
@@ -358,6 +364,12 @@ Route::middleware('auth')->group(function () {
         // Jadwal
         Route::get('/jadwal', [App\Http\Controllers\Asesi\JadwalController::class, 'index'])->name('jadwal.index');
         Route::post('/jadwal/join', [App\Http\Controllers\Asesi\JadwalController::class, 'join'])->middleware('throttle:10,1')->name('jadwal.join');
+
+        // Sertifikat Asesi & FR-10.2 (Task 21)
+        Route::get('/certificates', [\App\Http\Controllers\Asesi\CertificateController::class, 'index'])->name('certificates.index');
+        Route::get('/certificates/{certificate}', [\App\Http\Controllers\Asesi\CertificateController::class, 'show'])->name('certificates.show');
+        Route::get('/certificates/{certificate}/download', [\App\Http\Controllers\Asesi\CertificateController::class, 'download'])->name('certificates.download');
+        Route::post('/certificates/{certificate}/acknowledge', [\App\Http\Controllers\Asesi\CertificateController::class, 'acknowledge'])->name('certificates.acknowledge');
 
         // Asesmen & APL
         Route::get('/assessment/{assessment}/apl', [AplController::class, 'show'])->name('assessment.apl');

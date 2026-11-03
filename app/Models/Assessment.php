@@ -81,6 +81,27 @@ class Assessment extends Model
         return $this->belongsTo(Schedule::class);
     }
 
+    public function scheme(): \Illuminate\Database\Eloquent\Relations\HasOneThrough
+    {
+        return $this->hasOneThrough(
+            Scheme::class,
+            Schedule::class,
+            'id',
+            'id',
+            'schedule_id',
+            'scheme_id'
+        );
+    }
+
+    public function getSchemeAttribute(): ?Scheme
+    {
+        if ($this->relationLoaded('scheme') && $this->getRelation('scheme')) {
+            return $this->getRelation('scheme');
+        }
+
+        return $this->schedule?->scheme ?? $this->schemeVersion?->scheme;
+    }
+
     public function schemeVersion(): BelongsTo
     {
         return $this->belongsTo(SchemeVersion::class, 'scheme_version_id');
@@ -151,9 +172,19 @@ class Assessment extends Model
         return $this->hasMany(CertificationDecision::class, 'assessment_id');
     }
 
+    public function certificationDecisions(): HasMany
+    {
+        return $this->decisions();
+    }
+
     public function certificates(): HasMany
     {
         return $this->hasMany(Certificate::class, 'assessment_id');
+    }
+
+    public function activeCertificate(): ?Certificate
+    {
+        return $this->certificates()->where('status', 'ACTIVE')->latest('revision')->first();
     }
 
     public function priorCertificate(): BelongsTo
