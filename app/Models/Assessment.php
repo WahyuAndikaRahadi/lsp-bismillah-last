@@ -47,6 +47,9 @@ class Assessment extends Model
         'registered_at',
         'approved_at',
         'completed_at',
+        'prior_certificate_id',
+        'snapshot_profile',
+        'lock_version',
     ];
 
     protected function casts(): array
@@ -131,6 +134,21 @@ class Assessment extends Model
     public function iaResponses(): HasMany
     {
         return $this->hasMany(AssessmentIaResponse::class);
+    }
+
+    public function decisions(): HasMany
+    {
+        return $this->hasMany(CertificationDecision::class, 'assessment_id');
+    }
+
+    public function certificates(): HasMany
+    {
+        return $this->hasMany(Certificate::class, 'assessment_id');
+    }
+
+    public function priorCertificate(): BelongsTo
+    {
+        return $this->belongsTo(Certificate::class, 'prior_certificate_id');
     }
 
     public function adminReviewer(): BelongsTo

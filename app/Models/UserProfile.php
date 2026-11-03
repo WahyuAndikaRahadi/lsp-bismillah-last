@@ -29,6 +29,7 @@ class UserProfile extends Model
         'jabatan',
         'alamat_kantor',
         'signature_data',
+        'signature_version',
     ];
 
     protected function casts(): array

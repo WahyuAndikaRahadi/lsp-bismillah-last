@@ -1,6 +1,6 @@
 # Task 03 — Satu model core dan reconciliation tanpa collision
 
-Status: [ ] belum dikerjakan. Dependency: **01,02 (hanya schema common yang sumbernya tersedia)**.
+Status: [x] selesai. Dependency: **01,02 (hanya schema common yang sumbernya tersedia)**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Gunakan m_*/t_* canonical. Tambah SchemeVersion, typed records/JSON tervalidasi,
 
 ## Acceptance criteria
 
-- [ ] Fixture dua domain sama-sama id=1 menghasilkan objek berbeda dan mapping benar; tidak ada runtime fallback.
-- [ ] Dry-run tidak menulis domain; apply retry idempotent; konflik menghentikan batch terkait tanpa corrupt record lain.
-- [ ] Snapshots >64KB tersimpan utuh; unique/FK/index untuk relation/query utama; backup dan rollback rehearsal terdefinisi.
+- [x] Fixture dua domain sama-sama id=1 menghasilkan objek berbeda dan mapping benar; tidak ada runtime fallback.
+- [x] Dry-run tidak menulis domain; apply retry idempotent; konflik menghentikan batch terkait tanpa corrupt record lain.
+- [x] Snapshots >64KB tersimpan utuh; unique/FK/index untuk relation/query utama; backup dan rollback rehearsal terdefinisi.
 
 ## Test sempit / bukti
 
