@@ -56,6 +56,11 @@ trait AuthorizesAssessor
             if ($assessment->assessor_id && (int) $assessment->assessor_id !== (int) $user->id) {
                 abort(403, 'Asesi ini telah ditugaskan kepada asesor lain.');
             }
+
+            // SOP 01: Pemeriksaan benturan kepentingan (unresolved conflict)
+            if (\App\Models\ConflictDeclaration::hasUnresolvedConflict($user->id, $assessment)) {
+                abort(403, 'Anda memiliki benturan kepentingan yang belum diselesaikan terhadap asesi ini.');
+            }
         }
     }
 }

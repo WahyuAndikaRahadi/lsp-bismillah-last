@@ -189,6 +189,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/appeals/{appeal}', [\App\Http\Controllers\Admin\AppealController::class, 'show'])->name('appeals.show');
         Route::post('/appeals/{appeal}/investigate', [\App\Http\Controllers\Admin\AppealController::class, 'recordInvestigation'])->name('appeals.investigate');
 
+        // Ketidakberpihakan & Pergantian Asesor (SOP 01 / Task 21-02)
+        Route::get('/impartiality', [\App\Http\Controllers\Admin\ImpartialityController::class, 'index'])->name('impartiality.index');
+        Route::post('/assessments/{assessment}/replace-assessor', [\App\Http\Controllers\Admin\ImpartialityController::class, 'replaceAssessor'])->name('assessments.replace-assessor');
+
         // BNSP exports, complaints, baseline surveillance & baseline appeals disabled
 
         // Laporan & Ekspor Lengkap Parity Demo
@@ -225,6 +229,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/jadwal', [App\Http\Controllers\Asesor\JadwalController::class, 'index'])->name('jadwal.index');
         Route::get('/jadwal/{schedule}/asesi', [App\Http\Controllers\Asesor\JadwalController::class, 'asesiList'])->name('jadwal.asesi');
         Route::post('/jadwal/{schedule}/asesi/bulk-action', [App\Http\Controllers\Asesor\JadwalController::class, 'bulkAction'])->name('jadwal.asesi.bulk');
+
+        // Ketidakberpihakan & Deklarasi Benturan (SOP 01 / Task 21-02)
+        Route::get('/impartiality/commitment', [\App\Http\Controllers\Asesor\ImpartialityController::class, 'showCommitment'])->name('impartiality.commitment');
+        Route::post('/impartiality/commitment', [\App\Http\Controllers\Asesor\ImpartialityController::class, 'signCommitment'])->name('impartiality.commitment.sign');
+        Route::get('/schedule/{schedule}/conflict-declaration', [\App\Http\Controllers\Asesor\ImpartialityController::class, 'showConflictDeclaration'])->name('schedule.conflict-declaration');
+        Route::post('/schedule/{schedule}/conflict-declaration', [\App\Http\Controllers\Asesor\ImpartialityController::class, 'storeConflictDeclaration'])->name('schedule.conflict-declaration.store');
 
         // MAPA-01 Rencana Asesmen
         Route::get('/schedule/{schedule}/mapa-01', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'edit'])->name('mapa01.edit');

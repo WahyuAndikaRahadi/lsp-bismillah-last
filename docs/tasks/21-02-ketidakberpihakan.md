@@ -1,6 +1,6 @@
 # Task 21-02 — Ketidakberpihakan (SOP 01)
 
-Status: [ ] belum dikerjakan. Dependency: **04, 07**.
+Status: [x] selesai. Dependency: **04, 07**.
 
 ## Tujuan
 
@@ -22,10 +22,10 @@ Komitmen ketidakberpihakan lembaga (FR-SOP-01.1) dicatat oleh Direktur/manajemen
 
 ## Acceptance criteria
 
-- [ ] Komitmen ketidakberpihakan personil dan pakta integritas asesor tersimpan dari pengguna terautentikasi dengan hash tanda tangan dan timestamp nyata.
-- [ ] Asesor yang memiliki benturan kepentingan terbuka yang belum terselesaikan diblokir dari tindakan asesmen peserta bersangkutan.
-- [ ] Penggantian asesor (FR-SOP-01.7) tercatat sebagai rekaman pergantian resmi; penugasan pada asesmen diperbarui ke asesor pengganti tanpa memalsukan bukti lama.
-- [ ] Akses modifikasi deklarasi dan pergantian asesor dibatasi hanya untuk pihak yang berwenang (admin/manajer).
+- [x] Komitmen ketidakberpihakan personil dan pakta integritas asesor tersimpan dari pengguna terautentikasi dengan hash tanda tangan dan timestamp nyata.
+- [x] Asesor yang memiliki benturan kepentingan terbuka yang belum terselesaikan diblokir dari tindakan asesmen peserta bersangkutan.
+- [x] Penggantian asesor (FR-SOP-01.7) tercatat sebagai rekaman pergantian resmi; penugasan pada asesmen diperbarui ke asesor pengganti tanpa memalsukan bukti lama.
+- [x] Akses modifikasi deklarasi dan pergantian asesor dibatasi hanya untuk pihak yang berwenang (admin/manajer).
 
 ## Test sempit / bukti
 
