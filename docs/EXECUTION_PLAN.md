@@ -50,7 +50,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 32 | [x] | [16 — Rekomendasi asesor eksplisit dan finalisasi](tasks/16-ak02-finalisasi.md) | 12–15 untuk metode yang dipakai; 11 | d0021d2; php artisan test --compact tests/Feature/CoreRecommendationTest.php; exit 0; 7 tests passed, 31 assertions; no deviations |
 | 33 | [x] | [17 — AK-03 dan Pengajuan Banding AK-04 (intake)](tasks/17-feedback-ak04.md) | 16 | 8e3171c; php artisan test --compact tests/Feature/CoreFeedbackTest.php; exit 0; 6 tests passed, 33 assertions; no deviations |
 | 34 | [x] | [18 — AK-05/06 per asesor dan revision](tasks/18-laporan-ak05-ak06.md) | 16,17 | 3dcdd6b; php artisan test --compact tests/Feature/CoreAssessmentReportTest.php; exit 0; 6 tests passed, 25 assertions; no deviations |
-| 35 | [ ] | [19 — BA normal dan daftar hadir dari fakta](tasks/19-ba-daftar-hadir.md) | 11,18; Q1 sebelum label final BA | Belum dijalankan |
+| 35 | [x] | [19 — BA normal dan daftar hadir dari fakta](tasks/19-ba-daftar-hadir.md) | 11,18; Q1 sebelum label final BA | bf5f950; php artisan test --compact tests/Feature/CoreMinutesAttendanceTest.php; exit 0; 6 tests passed, 33 assertions; no deviations |
 | 36 | [ ] | [20 — Review independen dan keputusan SOP10](tasks/20-pleno-keputusan.md) | 19; Q4 penunjukan/authority resolved | Belum dijalankan |
 | 37 | [ ] | [21 — Upload sertifikat dan FR10.2](tasks/21-sertifikat-eksternal.md) | 20,04,11 | Belum dijalankan |
 | 38 | [ ] | [21-01 — Banding Asesmen (SOP 07)](tasks/21-01-banding.md) | 17,04,20 | Belum dijalankan |
