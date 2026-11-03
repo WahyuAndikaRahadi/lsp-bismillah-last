@@ -1,6 +1,6 @@
 # Task 06 — Shared design system dan halaman public/auth
 
-Status: [ ] belum dikerjakan. Dependency: **01,04 (boleh bersamaan dengan data referensi)**.
+Status: [x] selesai. Dependency: **01,04 (boleh bersamaan dengan data referensi)**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Terapkan PAGE_CONTRACT: navy/red jarang, CSS vars dari profile tervalidasi, font
 
 ## Acceptance criteria
 
-- [ ] Public/auth memakai tokens/components sama; logo/color invalid memakai safe fallback tanpa CSS injection.
-- [ ] Accessible label/error/focus, empty state jelas dan satu primary action; registration hanya asesi.
-- [ ] Tidak ada dependency font/CDN remote saat render; lisensi font disertakan. Browser lintas viewport sekali pada task23, bukan screenshot berulang.
+- [x] Public/auth memakai tokens/components sama; logo/color invalid memakai safe fallback tanpa CSS injection.
+- [x] Accessible label/error/focus, empty state jelas dan satu primary action; registration hanya asesi.
+- [x] Tidak ada dependency font/CDN remote saat render; lisensi font disertakan. Browser lintas viewport sekali pada task23, bukan screenshot berulang.
 
 ## Test sempit / bukti
 

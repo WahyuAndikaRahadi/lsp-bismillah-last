@@ -47,6 +47,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PdfDocumentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\SecureFileController;
 use App\Http\Controllers\SurveillanceController;
 use App\Models\Assessment;
@@ -61,21 +62,7 @@ use Illuminate\Support\Facades\Route;
 | Public Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', function () {
-    if (! auth()->check()) {
-        return redirect()->route('login');
-    }
-
-    $user = auth()->user();
-    if ($user->isAdmin() || $user->isRole('ADMIN_LSP') || $user->isRole('SUPER_ADMIN')) {
-        return redirect()->route('admin.dashboard');
-    }
-    if ($user->isAsesor() || $user->isRole('ASESOR')) {
-        return redirect()->route('asesor.dashboard');
-    }
-
-    return redirect()->route('asesi.dashboard');
-})->name('home');
+Route::get('/', [PublicController::class, 'index'])->name('home');
 
 // Public pengaduan & surveillance disabled (out-of-scope / contained)
 

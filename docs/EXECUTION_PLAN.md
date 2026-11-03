@@ -29,7 +29,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 11 | [x] | [05-05 — Referensi S5: Mekanik Junior](tasks/05-05-skema-5.md) | 02,05 | 60c79ae; php artisan test --compact tests/Feature/Scheme5ReferenceCoverageTest.php; exit 0; 3 tests passed, 110 assertions; no deviations |
 | 12 | [x] | [05-06 — Referensi S6: Servis Sepeda Motor Listrik](tasks/05-06-skema-6.md) | 02,05 | eed6c7a; php artisan test --compact tests/Feature/Scheme6ReferenceCoverageTest.php; exit 0; 3 tests passed, 75 assertions; no deviations |
 | 13 | [x] | [05-07 — Referensi S7: Servis Sepeda Motor Injeksi](tasks/05-07-skema-7.md) | 02,05 | a391a6a; php artisan test --compact tests/Feature/Scheme7ReferenceCoverageTest.php; exit 0; 3 tests passed, 100 assertions; no deviations |
-| 14 | [ ] | [06 — Shared design system dan halaman public/auth](tasks/06-design-foundation.md) | 01,04 (boleh bersamaan dengan data referensi) | Belum dijalankan |
+| 14 | [x] | [06 — Shared design system dan halaman public/auth](tasks/06-design-foundation.md) | 01,04 (boleh bersamaan dengan data referensi) | cc0b2be; php artisan test --compact tests/Feature/CorePublicAuthTest.php; exit 0; 5 tests passed, 24 assertions; no deviations |
 | 15 | [ ] | [07 — Profil reusable, jadwal dan penunjukan core](tasks/07-profil-jadwal-tuk.md) | 03,04,05,06; reference skema yang hendak dipublish selesai | Belum dijalankan |
 | 16 | [ ] | [09 — MAPA-01 lengkap dan plan revision](tasks/09-mapa01.md) | 07,02; reference skema terkait selesai | Belum dijalankan |
 | 17 | [ ] | [10 — MAPA-02 semua skema dan AK-07 nyata](tasks/10-mapa02-ak07.md) | 09; reference skema terkait selesai | Belum dijalankan |

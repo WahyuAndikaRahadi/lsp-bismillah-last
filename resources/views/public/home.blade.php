@@ -25,20 +25,20 @@
 
                 <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
                     <div class="p-4 bg-white rounded-xl border border-zinc-200/80 shadow-xs">
-                        <span class="text-xs text-zinc-500 block">Asesor Terlisensi</span>
-                        <span class="text-xl font-bold text-zinc-900 mt-1 block">{{ $asesorCount }}+ Asesor</span>
+                        <span class="text-xs text-zinc-500 block">Lembaga Penyelenggara</span>
+                        <span class="text-sm font-bold text-zinc-900 mt-1 block truncate">{{ $lspProfile->nama_lsp ?? 'LSP PRO INDO' }}</span>
                     </div>
                     <div class="p-4 bg-white rounded-xl border border-zinc-200/80 shadow-xs">
-                        <span class="text-xs text-zinc-500 block">Peserta Terdaftar</span>
-                        <span class="text-xl font-bold text-zinc-900 mt-1 block">{{ $asesiCount }}+ Asesi</span>
+                        <span class="text-xs text-zinc-500 block">No. Lisensi Resmi</span>
+                        <span class="text-sm font-bold text-zinc-900 mt-1 block truncate">{{ $lspProfile->no_lisensi_bnsp ?? 'BNSP-LSP-026-ID' }}</span>
                     </div>
                     <div class="p-4 bg-white rounded-xl border border-zinc-200/80 shadow-xs">
                         <span class="text-xs text-zinc-500 block">Akreditasi Mutu</span>
-                        <span class="text-xl font-bold text-zinc-900 mt-1 block">BNSP RI</span>
+                        <span class="text-sm font-bold text-zinc-900 mt-1 block">BNSP RI</span>
                     </div>
                     <div class="p-4 bg-white rounded-xl border border-zinc-200/80 shadow-xs">
-                        <span class="text-xs text-zinc-500 block">Standar Uji</span>
-                        <span class="text-xl font-bold text-zinc-900 mt-1 block">ISO 17024</span>
+                        <span class="text-xs text-zinc-500 block">Standar Kompetensi</span>
+                        <span class="text-sm font-bold text-zinc-900 mt-1 block">SKKNI Terverifikasi</span>
                     </div>
                 </div>
             </div>
@@ -187,47 +187,21 @@
         </div>
     </section>
 
-    <!-- Layanan Pengaduan & Surveilans Section -->
-    <section id="pengaduan" class="py-16 bg-zinc-50 border-b border-zinc-200/80">
+    <!-- Kontak & Layanan Sekretariat LSP -->
+    <section id="kontak" class="py-16 bg-zinc-50 border-b border-zinc-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card Pengaduan -->
-                <div class="p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 mb-3">
-                            Transparansi & Aduan Publik
-                        </span>
-                        <h3 class="text-xl font-bold text-zinc-900">Layanan Pengaduan & Aspirasi</h3>
-                        <p class="text-xs text-zinc-500 mt-2 leading-relaxed">
-                            Punya keluhan, laporan ketidaksesuaian prosedur asesmen, atau masukan perbaikan layanan? Sampaikan aduan resmi melalui sistem tiket terpadu kami.
-                        </p>
-                    </div>
-                    <div class="mt-6 flex flex-wrap items-center gap-3">
-                        <a href="{{ route('pengaduan.create') }}" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs shadow-xs transition">
-                            Buat Pengaduan Baru
-                        </a>
-                        <a href="{{ route('pengaduan.tracking') }}" class="px-4 py-2.5 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-semibold rounded-xl text-xs transition">
-                            Lacak Status Tiket &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card Surveilans -->
-                <div class="p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 mb-3">
-                            Pemeliharaan Lisensi BNSP
-                        </span>
-                        <h3 class="text-xl font-bold text-zinc-900">Surveilans Pemegang Sertifikat</h3>
-                        <p class="text-xs text-zinc-500 mt-2 leading-relaxed">
-                            Bagi alumni pemegang sertifikat kompetensi LSP yang masih berlaku, laporkan pemeliharaan kompetensi, tempat kerja terkini, dan proyek profesi secara berkala.
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <a href="{{ route('surveillance.create') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs shadow-xs transition inline-block">
-                            Isi Formulir Surveilans Berkala
-                        </a>
-                    </div>
+            <div class="p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm max-w-3xl mx-auto text-center">
+                <span class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 mb-3">
+                    Sekretariat Resmi LSP
+                </span>
+                <h3 class="text-xl font-bold text-zinc-900">{{ $lspProfile->nama_lsp ?? 'LSP PRO INDO' }}</h3>
+                <p class="text-xs text-zinc-600 mt-2 leading-relaxed">
+                    {{ $lspProfile->alamat ?? 'Cikarang, Bekasi, Jawa Barat' }}
+                </p>
+                <div class="mt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-500 font-medium">
+                    <span>Telepon: {{ $lspProfile->telepon ?? '021-8901234' }}</span>
+                    <span>Email: {{ $lspProfile->email ?? 'sekretariat@lspproindo.id' }}</span>
+                    <span>Lisensi: {{ $lspProfile->no_lisensi_bnsp ?? 'BNSP-LSP-026-ID' }}</span>
                 </div>
             </div>
         </div>

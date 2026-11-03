@@ -7,11 +7,7 @@
 
     <title>{{ $title ?? config('app.name', 'Sistem Sertifikasi LSP') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
-
-    <!-- Scripts & Styles via Vite -->
+    <!-- Local Self-Hosted Fonts & Scripts via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="h-full flex flex-col font-sans antialiased text-zinc-800 bg-zinc-50 selection:bg-blue-600 selection:text-white">
@@ -44,8 +40,8 @@
                 <!-- Auth Buttons -->
                 <div class="flex items-center gap-3">
                     @auth
-                        <a href="{{ route(auth()->user()->role->dashboardRoute()) }}" class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition shadow-sm">
-                            <span>Dashboard ({{ auth()->user()->role->label() }})</span>
+                        <a href="{{ route(auth()->user()->dashboardRoute()) }}" class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition shadow-sm">
+                            <span>Dashboard ({{ auth()->user()->role_label }})</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
