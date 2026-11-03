@@ -27,7 +27,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 9 | [x] | [05-03 — Referensi S3: Periodical Maintenance Electrified Vehicles](tasks/05-03-skema-3.md) | 02,05 | 9d1c06b; php artisan test --compact tests/Feature/Scheme3ReferenceCoverageTest.php; exit 0; 3 tests passed, 65 assertions; no deviations |
 | 10 | [x] | [05-04 — Referensi S4: Memperbaiki Panel Bodi Kendaraan](tasks/05-04-skema-4.md) | 02,05 | f6539ef; php artisan test --compact tests/Feature/Scheme4ReferenceCoverageTest.php; exit 0; 3 tests passed, 65 assertions; no deviations |
 | 11 | [x] | [05-05 — Referensi S5: Mekanik Junior](tasks/05-05-skema-5.md) | 02,05 | 60c79ae; php artisan test --compact tests/Feature/Scheme5ReferenceCoverageTest.php; exit 0; 3 tests passed, 110 assertions; no deviations |
-| 12 | [ ] | [05-06 — Referensi S6: Servis Sepeda Motor Listrik](tasks/05-06-skema-6.md) | 02,05 | Belum dijalankan |
+| 12 | [x] | [05-06 — Referensi S6: Servis Sepeda Motor Listrik](tasks/05-06-skema-6.md) | 02,05 | eed6c7a; php artisan test --compact tests/Feature/Scheme6ReferenceCoverageTest.php; exit 0; 3 tests passed, 75 assertions; no deviations |
 | 13 | [ ] | [05-07 — Referensi S7: Servis Sepeda Motor Injeksi](tasks/05-07-skema-7.md) | 02,05 | Belum dijalankan |
 | 14 | [ ] | [06 — Shared design system dan halaman public/auth](tasks/06-design-foundation.md) | 01,04 (boleh bersamaan dengan data referensi) | Belum dijalankan |
 | 15 | [ ] | [07 — Profil reusable, jadwal dan penunjukan core](tasks/07-profil-jadwal-tuk.md) | 03,04,05,06; reference skema yang hendak dipublish selesai | Belum dijalankan |
