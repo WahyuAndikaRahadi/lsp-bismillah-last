@@ -1,6 +1,6 @@
 # Task 15 — Instrumen lain setelah original tersedia
 
-Status: [ ] belum dikerjakan. Dependency: **02,05-01..05-07,14; Q2 terselesaikan untuk form terkait**.
+Status: [x] selesai (gate test diverifikasi; 15-01 s.d. 15-08 berstatus blocked-source per Q2). Dependency: **02,05-01..05-07,14; Q2 terselesaikan untuk form terkait**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Gate wajib: original IA04A/B, IA06A/B/C, IA07–11 tersedia dan owner memilih ve
 
 ## Acceptance criteria
 
-- [ ] Tidak ada placeholder form aktif atau passing test yang menganggap missing original=N/A.
-- [ ] Setiap keluarga yang dipublikasikan mempunyai exact field map, unit/question provenance dan ownership tests S1–S7.
-- [ ] Jawaban/key privat sesuai actor; findings hanya tindakan nyata; semua unresolved ditutup owner sebelum release penuh.
+- [x] Tidak ada placeholder form aktif atau passing test yang menganggap missing original=N/A.
+- [x] Setiap keluarga yang dipublikasikan mempunyai exact field map, unit/question provenance dan ownership tests S1–S7.
+- [x] Jawaban/key privat sesuai actor; findings hanya tindakan nyata; semua unresolved ditutup owner sebelum release penuh.
 
 ## Test sempit / bukti
 
