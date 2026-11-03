@@ -339,6 +339,7 @@ Route::middleware('auth')->group(function () {
     });
 
     // Secure Document & Evidence Access
+    Route::get('/secure-file/file/{file}', [SecureFileController::class, 'show'])->name('secure-file.show');
     Route::get('/secure-file/proof/{proof}', [SecureFileController::class, 'showProof'])->name('secure-file.proof');
     Route::get('/secure-file/evidence/{response}', [SecureFileController::class, 'showEvidence'])->name('secure-file.evidence');
 

@@ -1,6 +1,6 @@
 # Task 04 — Tiga role, policy objek, dan private file
 
-Status: [ ] belum dikerjakan. Dependency: **03**.
+Status: [x] selesai. Dependency: **03**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Normalisasi role dengan mapping eksplisit dari nilai legacy yang ditemukan; alia
 
 ## Acceptance criteria
 
-- [ ] Matriks tamu/admin/asesor assigned/asesor lain/asesi owner/asesi lain lulus untuk semua route file dan form.
-- [ ] Dua asesor satu jadwal tidak saling edit; revoked assignment/consent/file state dievaluasi ulang, signed URL bukan bypass.
-- [ ] Traversal, MIME spoof, oversize, duplicate upload, missing file dan unauthorized receipt tidak membocorkan path/PII; original answer keys tidak publik.
+- [x] Matriks tamu/admin/asesor assigned/asesor lain/asesi owner/asesi lain lulus untuk semua route file dan form.
+- [x] Dua asesor satu jadwal tidak saling edit; revoked assignment/consent/file state dievaluasi ulang, signed URL bukan bypass.
+- [x] Traversal, MIME spoof, oversize, duplicate upload, missing file dan unauthorized receipt tidak membocorkan path/PII; original answer keys tidak publik.
 
 ## Test sempit / bukti
 

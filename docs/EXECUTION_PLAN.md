@@ -20,7 +20,7 @@ Rencana ini menggantikan roadmap implementasi lama. Penulis hanya mengembalikan 
 | 2 | [x] | [01 — Tutup endpoint berisiko dan modul di luar scope](tasks/01-containment.md) | 00 | d571d00; php artisan test --compact tests/Feature/CoreContainmentTest.php; exit 0; 3 tests passed, 38 assertions; no deviations |
 | 3 | [x] | [02 — Tetapkan registry formulir bersama dan konflik sumber](tasks/02-registry-original.md) | 00 | 490c293; php artisan test --compact tests/Unit/FormRegistryTest.php; exit 0; 7 tests passed, 415 assertions; no deviations |
 | 4 | [x] | [03 — Satu model core dan reconciliation tanpa collision](tasks/03-model-dan-rekonsiliasi.md) | 01,02 (hanya schema common yang sumbernya tersedia) | 3e993d8; php artisan test --compact tests/Feature/CoreReconciliationTest.php; exit 0; 5 tests passed, 26 assertions; no deviations |
-| 5 | [ ] | [04 — Tiga role, policy objek, dan private file](tasks/04-role-dan-private-file.md) | 03 | Belum dijalankan |
+| 5 | [x] | [04 — Tiga role, policy objek, dan private file](tasks/04-role-dan-private-file.md) | 03 | f712d24; php artisan test --compact tests/Feature/CoreAuthorizationTest.php tests/Feature/CorePrivateFileTest.php; exit 0; 13 tests passed, 45 assertions; no deviations |
 | 6 | [ ] | [05 — Versioned reference dan bootstrap aman](tasks/05-reference-bootstrap.md) | 02,03,04 | Belum dijalankan |
 | 7 | [ ] | [05-01 — Referensi S1: Engine Junior Technician](tasks/05-01-skema-1.md) | 02,05 | Belum dijalankan |
 | 8 | [ ] | [05-02 — Referensi S2: Maintenance Gasoline Engine Injection](tasks/05-02-skema-2.md) | 02,05 | Belum dijalankan |

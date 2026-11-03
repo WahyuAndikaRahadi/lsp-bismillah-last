@@ -21,6 +21,18 @@ class RoleMiddleware
             return redirect()->guest(route('login'));
         }
 
+        if (! $user->is_active || ! $user->isCanonicalRoleValid()) {
+            auth()->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            $errorMsg = ! $user->is_active
+                ? 'Akun Anda dinonaktifkan. Silakan hubungi Administrator LSP.'
+                : 'Role pengguna tidak dikenali atau memerlukan review administrator.';
+
+            return redirect()->route('login')->with('error', $errorMsg);
+        }
+
         $allowedRoles = [];
         foreach ($roles as $role) {
             foreach (explode(',', $role) as $r) {

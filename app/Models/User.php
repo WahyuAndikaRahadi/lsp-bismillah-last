@@ -102,20 +102,38 @@ class User extends Authenticatable
         return $this->hasMany(Assessment::class, 'assessor_id');
     }
 
+    public function canonicalRole(): ?UserRole
+    {
+        $roleStr = is_object($this->role) ? $this->role->value : (string) $this->role;
+
+        return match (strtolower(trim($roleStr))) {
+            'admin', 'admin_lsp', 'super_admin' => UserRole::Admin,
+            'asesor' => UserRole::Asesor,
+            'asesi' => UserRole::Asesi,
+            default => null,
+        };
+    }
+
+    public function isCanonicalRoleValid(): bool
+    {
+        return $this->canonicalRole() !== null;
+    }
+
     public function isRole(string $role): bool
     {
-        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
-        $map = [
-            'admin' => ['admin', 'ADMIN_LSP', 'SUPER_ADMIN'],
-            'asesor' => ['asesor', 'ASESOR'],
-            'asesi' => ['asesi', 'ASESI'],
-            'SUPER_ADMIN' => ['SUPER_ADMIN', 'admin'],
-            'ADMIN_LSP' => ['ADMIN_LSP', 'admin'],
-            'ASESOR' => ['ASESOR', 'asesor'],
-            'ASESI' => ['ASESI', 'asesi'],
-        ];
+        $canonical = $this->canonicalRole();
+        if (! $canonical) {
+            return false;
+        }
 
-        return in_array($currentRole, $map[$role] ?? [$role], true);
+        $target = match (strtolower(trim($role))) {
+            'admin', 'admin_lsp', 'super_admin' => UserRole::Admin,
+            'asesor' => UserRole::Asesor,
+            'asesi' => UserRole::Asesi,
+            default => null,
+        };
+
+        return $target !== null && $canonical === $target;
     }
 
     public function isProfileComplete(): bool
@@ -138,35 +156,27 @@ class User extends Authenticatable
 
     public function isAdmin(): bool
     {
-        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
-
-        return in_array($currentRole, ['admin', 'SUPER_ADMIN', 'ADMIN_LSP'], true);
+        return $this->canonicalRole() === UserRole::Admin;
     }
 
     public function dashboardRoute(): string
     {
-        if ($this->isAdmin() || $this->isRole('ADMIN_LSP') || $this->isRole('SUPER_ADMIN')) {
-            return 'admin.dashboard';
-        }
-        if ($this->isAsesor() || $this->isRole('ASESOR')) {
-            return 'asesor.dashboard';
-        }
-
-        return 'asesi.dashboard';
+        return match ($this->canonicalRole()) {
+            UserRole::Admin => 'admin.dashboard',
+            UserRole::Asesor => 'asesor.dashboard',
+            UserRole::Asesi => 'asesi.dashboard',
+            default => 'login',
+        };
     }
 
     public function isAsesor(): bool
     {
-        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
-
-        return in_array($currentRole, ['asesor', 'ASESOR'], true);
+        return $this->canonicalRole() === UserRole::Asesor;
     }
 
     public function isAsesi(): bool
     {
-        $currentRole = is_object($this->role) ? $this->role->value : (string) $this->role;
-
-        return in_array($currentRole, ['asesi', 'ASESI'], true);
+        return $this->canonicalRole() === UserRole::Asesi;
     }
 
     public function getRoleLabelAttribute(): string

@@ -22,12 +22,16 @@ class EnsureUserRole
             return redirect()->guest(route('login'));
         }
 
-        if (! $user->is_active) {
+        if (! $user->is_active || ! $user->isCanonicalRoleValid()) {
             auth()->logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();
 
-            return redirect()->route('login')->with('error', 'Akun Anda dinonaktifkan. Silakan hubungi Administrator LSP.');
+            $errorMsg = ! $user->is_active
+                ? 'Akun Anda dinonaktifkan. Silakan hubungi Administrator LSP.'
+                : 'Role pengguna tidak dikenali atau memerlukan review administrator.';
+
+            return redirect()->route('login')->with('error', $errorMsg);
         }
 
         $userRoleValue = $user->role instanceof UserRole ? $user->role->value : (string) $user->role;
