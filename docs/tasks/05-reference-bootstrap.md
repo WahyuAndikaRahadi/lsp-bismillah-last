@@ -1,6 +1,6 @@
 # Task 05 — Versioned reference dan bootstrap aman
 
-Status: [ ] belum dikerjakan. Dependency: **02,03,04**.
+Status: [x] selesai. Dependency: **02,03,04**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Implement import dry-run, validate, draft, approve/publish, retire immutable ver
 
 ## Acceptance criteria
 
-- [ ] Seed ulang tidak menggandakan/mengubah approved reference; perubahan source menghasilkan versi baru.
-- [ ] No demo passwords, no automatic approval, no fabricated LSP name/signatory/numbering; missing config menghalangi publish.
-- [ ] Import error menunjuk source/field; dry-run read-only; rollback version mempertahankan assessment snapshot.
+- [x] Seed ulang tidak menggandakan/mengubah approved reference; perubahan source menghasilkan versi baru.
+- [x] No demo passwords, no automatic approval, no fabricated LSP name/signatory/numbering; missing config menghalangi publish.
+- [x] Import error menunjuk source/field; dry-run read-only; rollback version mempertahankan assessment snapshot.
 
 ## Test sempit / bukti
 

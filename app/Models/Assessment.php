@@ -68,6 +68,7 @@ class Assessment extends Model
             'tgl_terbit_sertifikat' => 'date',
             'masa_berlaku_sertifikat' => 'date',
             'unlocked_instruments' => 'array',
+            'snapshot_profile' => 'array',
         ];
     }
 

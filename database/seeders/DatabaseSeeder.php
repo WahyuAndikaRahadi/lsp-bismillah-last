@@ -17,8 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Seed LSP Pro Indo Master Data (TUK, 24 Users & Profiles, 7 Schemes & MUKs)
+        // 1. Seed Official LSP Reference & Master Data
         $this->call([
+            LspReferenceSeeder::class,
             TukSeeder::class,
             UserSeeder::class,
             SchemeSeeder::class,
