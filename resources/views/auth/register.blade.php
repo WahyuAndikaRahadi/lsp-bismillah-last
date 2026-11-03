@@ -54,14 +54,37 @@
             <form method="POST" action="{{ route('register') }}" class="space-y-3.5">
                 @csrf
 
+                @if($errors->any())
+                    <div class="p-3.5 rounded-lg bg-rose-50 border border-rose-200 text-xs text-rose-800">
+                        <span class="font-bold block mb-1">Pendaftaran belum berhasil:</span>
+                        <ul class="list-disc list-inside space-y-0.5 text-[11px]">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <div>
-                    <label class="block text-xs font-semibold text-slate-800 mb-1" for="full_name">
+                    <label class="block text-xs font-semibold text-slate-800 mb-1" for="name">
                         Nama Lengkap Sesuai KTP <span class="text-lsp-red">*</span>
                     </label>
-                    <input id="full_name" type="text" name="full_name" value="{{ old('full_name') }}" required autofocus
-                        class="w-full px-3.5 py-2.5 bg-lsp-input-bg border border-slate-300 focus:border-lsp-navy text-sm sm:text-xs rounded-lg text-slate-900 focus:outline-none focus:ring-1 focus:ring-lsp-navy transition @error('full_name') border-lsp-red ring-1 ring-lsp-red @enderror"
+                    <input id="name" type="text" name="name" value="{{ old('name', old('full_name')) }}" required autofocus
+                        class="w-full px-3.5 py-2.5 bg-lsp-input-bg border border-slate-300 focus:border-lsp-navy text-sm sm:text-xs rounded-lg text-slate-900 focus:outline-none focus:ring-1 focus:ring-lsp-navy transition @error('name') border-lsp-red ring-1 ring-lsp-red @enderror"
                         placeholder="Contoh: Budi Santoso" />
-                    @error('full_name')
+                    @error('name')
+                        <p class="mt-1 text-[11px] text-lsp-red font-medium">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-800 mb-1" for="nik">
+                        Nomor Induk Kependudukan (NIK 16 Digit) <span class="text-lsp-red">*</span>
+                    </label>
+                    <input id="nik" type="text" name="nik" value="{{ old('nik') }}" required inputmode="numeric" maxlength="16"
+                        class="numeric-only w-full px-3.5 py-2.5 bg-lsp-input-bg border border-slate-300 focus:border-lsp-navy text-sm sm:text-xs rounded-lg text-slate-900 focus:outline-none focus:ring-1 focus:ring-lsp-navy transition font-mono @error('nik') border-lsp-red ring-1 ring-lsp-red @enderror"
+                        placeholder="Contoh: 3201012345670001" />
+                    @error('nik')
                         <p class="mt-1 text-[11px] text-lsp-red font-medium">{{ $message }}</p>
                     @enderror
                 </div>
@@ -80,11 +103,11 @@
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-800 mb-1" for="phone">
-                        Nomor Telepon / WhatsApp
+                        Nomor Telepon / WhatsApp <span class="text-lsp-red">*</span>
                     </label>
-                    <input id="phone" type="tel" name="phone" value="{{ old('phone') }}" inputmode="numeric" maxlength="15"
+                    <input id="phone" type="tel" name="phone" value="{{ old('phone') }}" required inputmode="numeric" maxlength="15"
                         class="numeric-only w-full px-3.5 py-2.5 bg-lsp-input-bg border border-slate-300 focus:border-lsp-navy text-sm sm:text-xs rounded-lg text-slate-900 focus:outline-none focus:ring-1 focus:ring-lsp-navy transition @error('phone') border-lsp-red ring-1 ring-lsp-red @enderror"
-                        placeholder="081234567890" />
+                        placeholder="Contoh: 081234567890" />
                     @error('phone')
                         <p class="mt-1 text-[11px] text-lsp-red font-medium">{{ $message }}</p>
                     @enderror
@@ -113,9 +136,22 @@
                     </div>
                 </div>
 
+                <div class="pt-1">
+                    <label class="flex items-start space-x-2.5 cursor-pointer">
+                        <input type="checkbox" name="terms" value="1" {{ old('terms') ? 'checked' : '' }} required
+                            class="mt-0.5 rounded border-slate-300 text-lsp-navy focus:ring-lsp-navy cursor-pointer">
+                        <span class="text-xs text-slate-600 leading-relaxed">
+                            Saya menyatakan bahwa data yang diisi adalah benar sesuai KTP dan menyetujui ketentuan pendaftaran asesmen LSP PrO Indo. <span class="text-lsp-red">*</span>
+                        </span>
+                    </label>
+                    @error('terms')
+                        <p class="mt-1 text-[11px] text-lsp-red font-medium">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <div class="pt-2">
                     <button type="submit"
-                        class="w-full py-2.5 px-4 bg-lsp-navy hover:bg-lsp-navy-dark text-white text-xs font-bold rounded-lg shadow-sm transition-colors duration-150">
+                        class="w-full py-2.5 px-4 bg-lsp-navy hover:bg-lsp-navy-dark text-white text-xs font-bold rounded-lg shadow-sm transition-colors duration-150 cursor-pointer">
                         Daftar Sebagai Peserta
                     </button>
                 </div>

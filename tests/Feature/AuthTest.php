@@ -53,6 +53,63 @@ class AuthTest extends TestCase
             'role' => 'asesi',
             'is_active' => true,
         ]);
+
+        $this->assertDatabaseHas('m_user_profiles', [
+            'nik' => '3201010101900001',
+        ]);
+    }
+
+    public function test_new_asesi_can_register_using_full_name_input(): void
+    {
+        $response = $this->post('/register', [
+            'full_name' => 'Siti Nurhaliza',
+            'email' => 'siti.nurhaliza@example.com',
+            'nik' => '3201010101900002',
+            'phone' => '081234567891',
+            'password' => 'secret123',
+            'password_confirmation' => 'secret123',
+            'terms' => '1',
+        ]);
+
+        $this->assertAuthenticated();
+        $response->assertRedirect(route('asesi.dashboard'));
+
+        $this->assertDatabaseHas('users', [
+            'email' => 'siti.nurhaliza@example.com',
+            'name' => 'Siti Nurhaliza',
+            'nik' => '3201010101900002',
+        ]);
+
+        $this->assertDatabaseHas('m_user_profiles', [
+            'nik' => '3201010101900002',
+        ]);
+    }
+
+    public function test_admin_can_create_new_user_via_admin_panel(): void
+    {
+        $admin = User::factory()->create([
+            'role' => UserRole::Admin,
+        ]);
+
+        $response = $this->actingAs($admin)->post('/admin/users', [
+            'full_name' => 'Asesi Baru Dari Admin',
+            'email' => 'asesi.admin@example.com',
+            'phone' => '081987654321',
+            'password' => 'pass12',
+            'role' => 'ASESI',
+            'status' => 'ACTIVE',
+        ]);
+
+        $response->assertRedirect(route('admin.users.index'));
+        $this->assertDatabaseHas('users', [
+            'email' => 'asesi.admin@example.com',
+            'name' => 'Asesi Baru Dari Admin',
+            'role' => 'ASESI',
+            'status' => 'ACTIVE',
+        ]);
+        $this->assertDatabaseHas('m_user_profiles', [
+            'user_id' => User::where('email', 'asesi.admin@example.com')->first()->id,
+        ]);
     }
 
     public function test_registration_fails_if_nik_is_not_16_digits(): void

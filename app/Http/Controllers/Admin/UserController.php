@@ -31,17 +31,23 @@ class UserController extends Controller
             'full_name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'phone' => ['nullable', 'string', 'max:20', 'regex:/^[0-9]+$/'],
-            'password' => ['required', 'string', Password::min(8)->letters()->numbers()],
+            'password' => ['required', 'string', 'min:6'],
             'role' => 'required|in:SUPER_ADMIN,ADMIN_LSP,ASESOR,ASESI',
             'status' => 'required|in:ACTIVE,INACTIVE,SUSPENDED',
             'assessor_registration_number' => 'nullable|string|max:50',
         ], [
             'phone.regex' => 'Nomor telepon/WhatsApp hanya boleh berupa angka.',
+            'password.min' => 'Password minimal 6 karakter.',
         ]);
 
+        $validated['name'] = $validated['full_name'];
         $validated['password'] = Hash::make($validated['password']);
 
-        User::create($validated);
+        $user = User::create($validated);
+
+        if (in_array(strtoupper($user->role), ['ASESI', 'asesi'], true)) {
+            \App\Models\UserProfile::firstOrCreate(['user_id' => $user->id]);
+        }
 
         return redirect()->route('admin.users.index')
             ->with('success', 'User berhasil dibuat.');
@@ -65,13 +71,16 @@ class UserController extends Controller
             'full_name' => 'required|string|max:255',
             'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
             'phone' => ['nullable', 'string', 'max:20', 'regex:/^[0-9]+$/'],
-            'password' => ['nullable', 'string', Password::min(8)->letters()->numbers()],
+            'password' => ['nullable', 'string', 'min:6'],
             'role' => 'required|in:SUPER_ADMIN,ADMIN_LSP,ASESOR,ASESI',
             'status' => 'required|in:ACTIVE,INACTIVE,SUSPENDED',
             'assessor_registration_number' => 'nullable|string|max:50',
         ], [
             'phone.regex' => 'Nomor telepon/WhatsApp hanya boleh berupa angka.',
+            'password.min' => 'Password minimal 6 karakter.',
         ]);
+
+        $validated['name'] = $validated['full_name'];
 
         if (empty($validated['password'])) {
             unset($validated['password']);
