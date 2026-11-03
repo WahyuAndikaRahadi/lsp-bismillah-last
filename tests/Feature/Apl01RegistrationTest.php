@@ -113,17 +113,17 @@ class Apl01RegistrationTest extends TestCase
         // 2. Regencies
         $res = $this->getJson(route('api.wilayah.regencies', ['province_id' => '31']));
         $res->assertOk()
-            ->assertJsonFragment(['id' => '3171', 'nama' => 'KOTA JAKARTA SELATAN']);
+            ->assertJsonFragment(['id' => '31.71', 'nama' => 'KOTA ADMINISTRASI JAKARTA PUSAT']);
 
-        // 3. Districts
-        $res = $this->getJson(route('api.wilayah.districts', ['regency_id' => '3171']));
+        // 3. Districts (support dotted or undotted)
+        $res = $this->getJson(route('api.wilayah.districts', ['regency_id' => '31.71']));
         $res->assertOk()
-            ->assertJsonFragment(['id' => '317101', 'nama' => 'TEBET']);
+            ->assertJsonFragment(['id' => '31.71.01', 'nama' => 'GAMBIR']);
 
-        // 4. Villages
-        $res = $this->getJson(route('api.wilayah.villages', ['district_id' => '317101']));
+        // 4. Villages (support dotted or undotted)
+        $res = $this->getJson(route('api.wilayah.villages', ['district_id' => '31.71.01']));
         $res->assertOk()
-            ->assertJsonFragment(['id' => '3171011001', 'nama' => 'TEBET TIMUR']);
+            ->assertJsonFragment(['id' => '31.71.01.1001', 'nama' => 'GAMBIR']);
     }
 
     public function test_asesi_can_access_application_create_page(): void

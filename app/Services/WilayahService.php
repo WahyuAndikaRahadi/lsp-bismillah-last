@@ -2,281 +2,400 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+
 class WilayahService
 {
     /**
-     * Daftar 38 Provinsi di Indonesia (Standar BPS / Kemendagri)
+     * URL API Statis Wilayah.id (Kepmendagri No 300.2.2-2138 Tahun 2025)
+     */
+    protected string $baseUrl = 'https://wilayah.id/api';
+
+    /**
+     * Daftar 38 Provinsi di Indonesia (Terintegrasi API Wilayah.id)
+     *
+     * @return array<int, array{id: string, code: string, nama: string, name: string}>
      */
     public function getProvinces(): array
     {
-        return [
-            ['id' => '11', 'nama' => 'ACEH'],
-            ['id' => '12', 'nama' => 'SUMATERA UTARA'],
-            ['id' => '13', 'nama' => 'SUMATERA BARAT'],
-            ['id' => '14', 'nama' => 'RIAU'],
-            ['id' => '15', 'nama' => 'JAMBI'],
-            ['id' => '16', 'nama' => 'SUMATERA SELATAN'],
-            ['id' => '17', 'nama' => 'BENGKULU'],
-            ['id' => '18', 'nama' => 'LAMPUNG'],
-            ['id' => '19', 'nama' => 'KEPULAUAN BANGKA BELITUNG'],
-            ['id' => '21', 'nama' => 'KEPULAUAN RIAU'],
-            ['id' => '31', 'nama' => 'DKI JAKARTA'],
-            ['id' => '32', 'nama' => 'JAWA BARAT'],
-            ['id' => '33', 'nama' => 'JAWA TENGAH'],
-            ['id' => '34', 'nama' => 'DI YOGYAKARTA'],
-            ['id' => '35', 'nama' => 'JAWA TIMUR'],
-            ['id' => '36', 'nama' => 'BANTEN'],
-            ['id' => '51', 'nama' => 'BALI'],
-            ['id' => '52', 'nama' => 'NUSA TENGGARA BARAT'],
-            ['id' => '53', 'nama' => 'NUSA TENGGARA TIMUR'],
-            ['id' => '61', 'nama' => 'KALIMANTAN BARAT'],
-            ['id' => '62', 'nama' => 'KALIMANTAN TENGAH'],
-            ['id' => '63', 'nama' => 'KALIMANTAN SELATAN'],
-            ['id' => '64', 'nama' => 'KALIMANTAN TIMUR'],
-            ['id' => '65', 'nama' => 'KALIMANTAN UTARA'],
-            ['id' => '71', 'nama' => 'SULAWESI UTARA'],
-            ['id' => '72', 'nama' => 'SULAWESI TENGAH'],
-            ['id' => '73', 'nama' => 'SULAWESI SELATAN'],
-            ['id' => '74', 'nama' => 'SULAWESI TENGGARA'],
-            ['id' => '75', 'nama' => 'GORONTALO'],
-            ['id' => '76', 'nama' => 'SULAWESI BARAT'],
-            ['id' => '81', 'nama' => 'MALUKU'],
-            ['id' => '82', 'nama' => 'MALUKU UTARA'],
-            ['id' => '91', 'nama' => 'PAPUA BARAT'],
-            ['id' => '92', 'nama' => 'PAPUA'],
-            ['id' => '93', 'nama' => 'PAPUA SELATAN'],
-            ['id' => '94', 'nama' => 'PAPUA TENGAH'],
-            ['id' => '95', 'nama' => 'PAPUA PEGUNUNGAN'],
-            ['id' => '96', 'nama' => 'PAPUA BARAT DAYA'],
-        ];
+        return Cache::remember('wilayah_provinces_v2', now()->addDays(30), function () {
+            try {
+                $response = Http::timeout(4)->get("{$this->baseUrl}/provinces.json");
+                if ($response->successful()) {
+                    $json = $response->json();
+                    if (! empty($json['data']) && is_array($json['data'])) {
+                        return array_map(function ($item) {
+                            $code = (string) $item['code'];
+                            $name = (string) $item['name'];
+
+                            return [
+                                'id' => $code,
+                                'code' => $code,
+                                'nama' => strtoupper($name),
+                                'name' => $name,
+                            ];
+                        }, $json['data']);
+                    }
+                }
+            } catch (\Throwable $e) {
+                Log::warning('WilayahService::getProvinces fallback: '.$e->getMessage());
+            }
+
+            return $this->fallbackProvinces();
+        });
     }
 
     /**
-     * Daftar Kabupaten / Kota berdasarkan Kode Provinsi
+     * Daftar Kabupaten / Kota berdasarkan Kode Provinsi (Terintegrasi API Wilayah.id)
+     *
+     * @return array<int, array{id: string, code: string, nama: string, name: string}>
      */
     public function getRegencies(string $provinsiId): array
     {
-        $all = [
-            '31' => [ // DKI Jakarta
-                ['id' => '3171', 'nama' => 'KOTA JAKARTA SELATAN'],
-                ['id' => '3172', 'nama' => 'KOTA JAKARTA TIMUR'],
-                ['id' => '3173', 'nama' => 'KOTA JAKARTA PUSAT'],
-                ['id' => '3174', 'nama' => 'KOTA JAKARTA BARAT'],
-                ['id' => '3175', 'nama' => 'KOTA JAKARTA UTARA'],
-                ['id' => '3101', 'nama' => 'KABUPATEN KEPULAUAN SERIBU'],
-            ],
-            '32' => [ // Jawa Barat
-                ['id' => '3273', 'nama' => 'KOTA BANDUNG'],
-                ['id' => '3275', 'nama' => 'KOTA BEKASI'],
-                ['id' => '3276', 'nama' => 'KOTA DEPOK'],
-                ['id' => '3271', 'nama' => 'KOTA BOGOR'],
-                ['id' => '3277', 'nama' => 'KOTA CIMAHI'],
-                ['id' => '3204', 'nama' => 'KABUPATEN BANDUNG'],
-                ['id' => '3217', 'nama' => 'KABUPATEN BANDUNG BARAT'],
-                ['id' => '3216', 'nama' => 'KABUPATEN BEKASI'],
-                ['id' => '3201', 'nama' => 'KABUPATEN BOGOR'],
-            ],
-            '33' => [ // Jawa Tengah
-                ['id' => '3374', 'nama' => 'KOTA SEMARANG'],
-                ['id' => '3372', 'nama' => 'KOTA SURAKARTA (SOLO)'],
-                ['id' => '3371', 'nama' => 'KOTA MAGELANG'],
-                ['id' => '3302', 'nama' => 'KABUPATEN BANYUMAS'],
-                ['id' => '3322', 'nama' => 'KABUPATEN SEMARANG'],
-                ['id' => '3310', 'nama' => 'KABUPATEN KLATEN'],
-            ],
-            '34' => [ // DI Yogyakarta
-                ['id' => '3471', 'nama' => 'KOTA YOGYAKARTA'],
-                ['id' => '3404', 'nama' => 'KABUPATEN SLEMAN'],
-                ['id' => '3402', 'nama' => 'KABUPATEN BANTUL'],
-                ['id' => '3401', 'nama' => 'KABUPATEN KULON PROGO'],
-                ['id' => '3403', 'nama' => 'KABUPATEN GUNUNGKIDUL'],
-            ],
-            '35' => [ // Jawa Timur
-                ['id' => '3578', 'nama' => 'KOTA SURABAYA'],
-                ['id' => '3573', 'nama' => 'KOTA MALANG'],
-                ['id' => '3515', 'nama' => 'KABUPATEN SIDOARJO'],
-                ['id' => '3525', 'nama' => 'KABUPATEN GRESIK'],
-                ['id' => '3507', 'nama' => 'KABUPATEN MALANG'],
-            ],
-            '36' => [ // Banten
-                ['id' => '3674', 'nama' => 'KOTA TANGERANG SELATAN'],
-                ['id' => '3671', 'nama' => 'KOTA TANGERANG'],
-                ['id' => '3673', 'nama' => 'KOTA SERANG'],
-                ['id' => '3672', 'nama' => 'KOTA CILEGON'],
-                ['id' => '3603', 'nama' => 'KABUPATEN TANGERANG'],
-                ['id' => '3604', 'nama' => 'KABUPATEN SERANG'],
-            ],
-            '51' => [ // Bali
-                ['id' => '5171', 'nama' => 'KOTA DENPASAR'],
-                ['id' => '5103', 'nama' => 'KABUPATEN BADUNG'],
-                ['id' => '5104', 'nama' => 'KABUPATEN GIANYAR'],
-                ['id' => '5102', 'nama' => 'KABUPATEN TABANAN'],
-                ['id' => '5108', 'nama' => 'KABUPATEN BULELENG'],
-            ],
-            '12' => [ // Sumatera Utara
-                ['id' => '1271', 'nama' => 'KOTA MEDAN'],
-                ['id' => '1272', 'nama' => 'KOTA PEMATANGSIANTAR'],
-                ['id' => '1275', 'nama' => 'KOTA BINJAI'],
-                ['id' => '1207', 'nama' => 'KABUPATEN DELI SERDANG'],
-            ],
-            '73' => [ // Sulawesi Selatan
-                ['id' => '7371', 'nama' => 'KOTA MAKASSAR'],
-                ['id' => '7372', 'nama' => 'KOTA PAREPARE'],
-                ['id' => '7306', 'nama' => 'KABUPATEN GOWA'],
-                ['id' => '7309', 'nama' => 'KABUPATEN MAROS'],
-            ],
-            '64' => [ // Kalimantan Timur
-                ['id' => '6471', 'nama' => 'KOTA BALIKPAPAN'],
-                ['id' => '6472', 'nama' => 'KOTA SAMARINDA'],
-                ['id' => '6402', 'nama' => 'KABUPATEN KUTAI KARTANEGARA'],
-            ],
-        ];
-
-        if (isset($all[$provinsiId])) {
-            return $all[$provinsiId];
+        $cleanProvId = trim($provinsiId);
+        if (empty($cleanProvId)) {
+            return [];
         }
 
-        // Fallback untuk provinsi lainnya
-        $province = collect($this->getProvinces())->firstWhere('id', $provinsiId);
-        $namaProv = $province ? $province['nama'] : 'PROVINSI '.$provinsiId;
+        return Cache::remember("wilayah_regencies_v2_{$cleanProvId}", now()->addDays(30), function () use ($cleanProvId) {
+            try {
+                $response = Http::timeout(4)->get("{$this->baseUrl}/regencies/{$cleanProvId}.json");
+                if ($response->successful()) {
+                    $json = $response->json();
+                    if (! empty($json['data']) && is_array($json['data'])) {
+                        return array_map(function ($item) {
+                            $code = (string) $item['code'];
+                            $name = (string) $item['name'];
 
-        return [
-            ['id' => $provinsiId.'71', 'nama' => 'KOTA UTAMA '.$namaProv],
-            ['id' => $provinsiId.'01', 'nama' => 'KABUPATEN WILAYAH '.$namaProv],
-        ];
+                            return [
+                                'id' => $code,
+                                'code' => $code,
+                                'nama' => strtoupper($name),
+                                'name' => $name,
+                            ];
+                        }, $json['data']);
+                    }
+                }
+            } catch (\Throwable $e) {
+                Log::warning("WilayahService::getRegencies fallback for {$cleanProvId}: ".$e->getMessage());
+            }
+
+            return $this->fallbackRegencies($cleanProvId);
+        });
     }
 
     /**
-     * Daftar Kecamatan berdasarkan Kode Kota/Kabupaten
+     * Daftar Kecamatan berdasarkan Kode Kota/Kabupaten (Terintegrasi API Wilayah.id)
+     *
+     * @return array<int, array{id: string, code: string, nama: string, name: string}>
      */
     public function getDistricts(string $regencyId): array
     {
-        $all = [
-            // Jakarta Selatan
-            '3171' => [
-                ['id' => '317101', 'nama' => 'TEBET'],
-                ['id' => '317102', 'nama' => 'SETIABUDI'],
-                ['id' => '317103', 'nama' => 'MAMPANG PRAPATAN'],
-                ['id' => '317104', 'nama' => 'PASAR MINGGU'],
-                ['id' => '317105', 'nama' => 'KEBAYORAN BARU'],
-                ['id' => '317106', 'nama' => 'KEBAYORAN LAMA'],
-                ['id' => '317107', 'nama' => 'CILANDAK'],
-                ['id' => '317108', 'nama' => 'JAGAKARSA'],
-                ['id' => '317109', 'nama' => 'PANCORAN'],
-                ['id' => '317110', 'nama' => 'PESANGGRAHAN'],
-            ],
-            // Jakarta Pusat
-            '3173' => [
-                ['id' => '317301', 'nama' => 'GAMBIR'],
-                ['id' => '317302', 'nama' => 'SAWAH BESAR'],
-                ['id' => '317303', 'nama' => 'KEMAYORAN'],
-                ['id' => '317304', 'nama' => 'SENEN'],
-                ['id' => '317305', 'nama' => 'CEMPAKA PUTIH'],
-                ['id' => '317306', 'nama' => 'MENTENG'],
-                ['id' => '317307', 'nama' => 'TANAH ABANG'],
-                ['id' => '317308', 'nama' => 'JOHAR BARU'],
-            ],
-            // Kota Bandung
-            '3273' => [
-                ['id' => '327301', 'nama' => 'COBLONG'],
-                ['id' => '327302', 'nama' => 'SUKAJADI'],
-                ['id' => '327303', 'nama' => 'CICENDO'],
-                ['id' => '327304', 'nama' => 'LENGKONG'],
-                ['id' => '327305', 'nama' => 'SUMUR BANDUNG'],
-                ['id' => '327306', 'nama' => 'BUAHBATU'],
-            ],
-            // Kota Surabaya
-            '3578' => [
-                ['id' => '357801', 'nama' => 'GUBENG'],
-                ['id' => '357802', 'nama' => 'TEGALSARI'],
-                ['id' => '357803', 'nama' => 'WONOKROMO'],
-                ['id' => '357804', 'nama' => 'RUNGKUT'],
-                ['id' => '357805', 'nama' => 'SUKOLILO'],
-            ],
-            // Kota Yogyakarta
-            '3471' => [
-                ['id' => '347101', 'nama' => 'DANUREJAN'],
-                ['id' => '347102', 'nama' => 'GEDONGTENGEN'],
-                ['id' => '347103', 'nama' => 'GONDOMANAN'],
-                ['id' => '347104', 'nama' => 'KOTAGEDE'],
-                ['id' => '347105', 'nama' => 'KRATON'],
-                ['id' => '347106', 'nama' => 'MANTRIJERON'],
-                ['id' => '347107', 'nama' => 'MERGANGSAN'],
-                ['id' => '347108', 'nama' => 'NGAMPILAN'],
-                ['id' => '347109', 'nama' => 'PAKUALAMAN'],
-                ['id' => '347110', 'nama' => 'TEGALREJO'],
-                ['id' => '347111', 'nama' => 'UMBULHARJO'],
-                ['id' => '347112', 'nama' => 'WIROBRAJAN'],
-            ],
-            // Sleman
-            '3404' => [
-                ['id' => '340401', 'nama' => 'DEPOK'],
-                ['id' => '340402', 'nama' => 'MLATI'],
-                ['id' => '340403', 'nama' => 'GAMPING'],
-                ['id' => '340404', 'nama' => 'NGAGLIK'],
-                ['id' => '340405', 'nama' => 'KALASAN'],
-            ],
-        ];
+        $cleanRegId = trim($regencyId);
+        if (empty($cleanRegId)) {
+            return [];
+        }
 
-        if (isset($all[$regencyId])) {
-            return $all[$regencyId];
+        // Format to dot notation expected by wilayah.id (e.g. 31.71 from 3171)
+        $formattedId = $cleanRegId;
+        if (strlen($cleanRegId) === 4 && ! str_contains($cleanRegId, '.')) {
+            $formattedId = substr($cleanRegId, 0, 2).'.'.substr($cleanRegId, 2);
+        }
+
+        return Cache::remember("wilayah_districts_v2_{$formattedId}", now()->addDays(30), function () use ($formattedId, $cleanRegId) {
+            try {
+                $response = Http::timeout(4)->get("{$this->baseUrl}/districts/{$formattedId}.json");
+                if ($response->successful()) {
+                    $json = $response->json();
+                    if (! empty($json['data']) && is_array($json['data'])) {
+                        return array_map(function ($item) {
+                            $code = (string) $item['code'];
+                            $name = (string) $item['name'];
+
+                            return [
+                                'id' => $code,
+                                'code' => $code,
+                                'nama' => strtoupper($name),
+                                'name' => $name,
+                            ];
+                        }, $json['data']);
+                    }
+                }
+            } catch (\Throwable $e) {
+                Log::warning("WilayahService::getDistricts fallback for {$formattedId}: ".$e->getMessage());
+            }
+
+            return $this->fallbackDistricts($cleanRegId);
+        });
+    }
+
+    /**
+     * Daftar Kelurahan/Desa berdasarkan Kode Kecamatan (Terintegrasi API Wilayah.id)
+     *
+     * @return array<int, array{id: string, code: string, nama: string, name: string}>
+     */
+    public function getVillages(string $districtId): array
+    {
+        $cleanDistId = trim($districtId);
+        if (empty($cleanDistId)) {
+            return [];
+        }
+
+        // Format to dot notation expected by wilayah.id (e.g. 31.71.01 from 317101)
+        $formattedId = $cleanDistId;
+        if (strlen($cleanDistId) === 6 && ! str_contains($cleanDistId, '.')) {
+            $formattedId = substr($cleanDistId, 0, 2).'.'.substr($cleanDistId, 2, 2).'.'.substr($cleanDistId, 4);
+        }
+
+        return Cache::remember("wilayah_villages_v2_{$formattedId}", now()->addDays(30), function () use ($formattedId, $cleanDistId) {
+            try {
+                $response = Http::timeout(4)->get("{$this->baseUrl}/villages/{$formattedId}.json");
+                if ($response->successful()) {
+                    $json = $response->json();
+                    if (! empty($json['data']) && is_array($json['data'])) {
+                        return array_map(function ($item) {
+                            $code = (string) $item['code'];
+                            $name = (string) $item['name'];
+
+                            return [
+                                'id' => $code,
+                                'code' => $code,
+                                'nama' => strtoupper($name),
+                                'name' => $name,
+                            ];
+                        }, $json['data']);
+                    }
+                }
+            } catch (\Throwable $e) {
+                Log::warning("WilayahService::getVillages fallback for {$formattedId}: ".$e->getMessage());
+            }
+
+            return $this->fallbackVillages($cleanDistId);
+        });
+    }
+
+    /**
+     * Mencari regency berdasarkan nama kota/kabupaten dan mengembalikan province code serta list regencies
+     */
+    public function findRegencyByName(string $cityName): ?array
+    {
+        $target = strtolower(trim($cityName));
+        if (empty($target)) {
+            return null;
+        }
+
+        $cleanTarget = preg_replace('/^(kabupaten|kota|kab\.?)\s+/i', '', $target);
+
+        // Cari di provinsi paling umum terlebih dahulu untuk responsivitas maksimal
+        $priorityProvinces = ['31', '32', '33', '35', '36', '34', '51', '12', '73', '64'];
+        $allProvinces = $this->getProvinces();
+        $otherProvinces = array_diff(array_column($allProvinces, 'code'), $priorityProvinces);
+        $searchOrder = array_merge($priorityProvinces, $otherProvinces);
+
+        foreach ($searchOrder as $provCode) {
+            $regencies = $this->getRegencies($provCode);
+            foreach ($regencies as $reg) {
+                $rName = strtolower($reg['name']);
+                $rClean = preg_replace('/^(kabupaten|kota|kab\.?)\s+/i', '', $rName);
+
+                if ($rName === $target || $rClean === $cleanTarget || str_contains($rName, $cleanTarget)) {
+                    return [
+                        'province_code' => $provCode,
+                        'matched_name' => $reg['name'],
+                        'regencies' => $regencies,
+                    ];
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Map semua provinsi dan regencies umum untuk backward compatibility /api/wilayah/all
+     */
+    public function getAllWilayahMap(): array
+    {
+        $provinces = $this->getProvinces();
+        $regenciesMap = [];
+
+        $preload = ['31', '32', '33', '34', '35', '36'];
+        foreach ($preload as $code) {
+            $regenciesMap[$code] = $this->getRegencies($code);
         }
 
         return [
-            ['id' => $regencyId.'01', 'nama' => 'KECAMATAN PUSAT'],
-            ['id' => $regencyId.'02', 'nama' => 'KECAMATAN UTARA'],
-            ['id' => $regencyId.'03', 'nama' => 'KECAMATAN SELATAN'],
-            ['id' => $regencyId.'04', 'nama' => 'KECAMATAN BARAT'],
-            ['id' => $regencyId.'05', 'nama' => 'KECAMATAN TIMUR'],
+            'provinces' => $provinces,
+            'regencies' => $regenciesMap,
         ];
     }
 
     /**
-     * Daftar Kelurahan berdasarkan Kode Kecamatan
+     * Fallback data provinsi jika koneksi API Wilayah.id tidak tersedia
      */
-    public function getVillages(string $districtId): array
+    protected function fallbackProvinces(): array
+    {
+        $raw = [
+            ['id' => '11', 'code' => '11', 'nama' => 'ACEH', 'name' => 'Aceh'],
+            ['id' => '12', 'code' => '12', 'nama' => 'SUMATERA UTARA', 'name' => 'Sumatera Utara'],
+            ['id' => '13', 'code' => '13', 'nama' => 'SUMATERA BARAT', 'name' => 'Sumatera Barat'],
+            ['id' => '14', 'code' => '14', 'nama' => 'RIAU', 'name' => 'Riau'],
+            ['id' => '15', 'code' => '15', 'nama' => 'JAMBI', 'name' => 'Jambi'],
+            ['id' => '16', 'code' => '16', 'nama' => 'SUMATERA SELATAN', 'name' => 'Sumatera Selatan'],
+            ['id' => '17', 'code' => '17', 'nama' => 'BENGKULU', 'name' => 'Bengkulu'],
+            ['id' => '18', 'code' => '18', 'nama' => 'LAMPUNG', 'name' => 'Lampung'],
+            ['id' => '19', 'code' => '19', 'nama' => 'KEPULAUAN BANGKA BELITUNG', 'name' => 'Kepulauan Bangka Belitung'],
+            ['id' => '21', 'code' => '21', 'nama' => 'KEPULAUAN RIAU', 'name' => 'Kepulauan Riau'],
+            ['id' => '31', 'code' => '31', 'nama' => 'DKI JAKARTA', 'name' => 'DKI Jakarta'],
+            ['id' => '32', 'code' => '32', 'nama' => 'JAWA BARAT', 'name' => 'Jawa Barat'],
+            ['id' => '33', 'code' => '33', 'nama' => 'JAWA TENGAH', 'name' => 'Jawa Tengah'],
+            ['id' => '34', 'code' => '34', 'nama' => 'DI YOGYAKARTA', 'name' => 'DI Yogyakarta'],
+            ['id' => '35', 'code' => '35', 'nama' => 'JAWA TIMUR', 'name' => 'Jawa Timur'],
+            ['id' => '36', 'code' => '36', 'nama' => 'BANTEN', 'name' => 'Banten'],
+            ['id' => '51', 'code' => '51', 'nama' => 'BALI', 'name' => 'Bali'],
+            ['id' => '52', 'code' => '52', 'nama' => 'NUSA TENGGARA BARAT', 'name' => 'Nusa Tenggara Barat'],
+            ['id' => '53', 'code' => '53', 'nama' => 'NUSA TENGGARA TIMUR', 'name' => 'Nusa Tenggara Timur'],
+            ['id' => '61', 'code' => '61', 'nama' => 'KALIMANTAN BARAT', 'name' => 'Kalimantan Barat'],
+            ['id' => '62', 'code' => '62', 'nama' => 'KALIMANTAN TENGAH', 'name' => 'Kalimantan Tengah'],
+            ['id' => '63', 'code' => '63', 'nama' => 'KALIMANTAN SELATAN', 'name' => 'Kalimantan Selatan'],
+            ['id' => '64', 'code' => '64', 'nama' => 'KALIMANTAN TIMUR', 'name' => 'Kalimantan Timur'],
+            ['id' => '65', 'code' => '65', 'nama' => 'KALIMANTAN UTARA', 'name' => 'Kalimantan Utara'],
+            ['id' => '71', 'code' => '71', 'nama' => 'SULAWESI UTARA', 'name' => 'Sulawesi Utara'],
+            ['id' => '72', 'code' => '72', 'nama' => 'SULAWESI TENGAH', 'name' => 'Sulawesi Tengah'],
+            ['id' => '73', 'code' => '73', 'nama' => 'SULAWESI SELATAN', 'name' => 'Sulawesi Selatan'],
+            ['id' => '74', 'code' => '74', 'nama' => 'SULAWESI TENGGARA', 'name' => 'Sulawesi Tenggara'],
+            ['id' => '75', 'code' => '75', 'nama' => 'GORONTALO', 'name' => 'Gorontalo'],
+            ['id' => '76', 'code' => '76', 'nama' => 'SULAWESI BARAT', 'name' => 'Sulawesi Barat'],
+            ['id' => '81', 'code' => '81', 'nama' => 'MALUKU', 'name' => 'Maluku'],
+            ['id' => '82', 'code' => '82', 'nama' => 'MALUKU UTARA', 'name' => 'Maluku Utara'],
+            ['id' => '91', 'code' => '91', 'nama' => 'PAPUA BARAT', 'name' => 'Papua Barat'],
+            ['id' => '92', 'code' => '92', 'nama' => 'PAPUA', 'name' => 'Papua'],
+            ['id' => '93', 'code' => '93', 'nama' => 'PAPUA SELATAN', 'name' => 'Papua Selatan'],
+            ['id' => '94', 'code' => '94', 'nama' => 'PAPUA TENGAH', 'name' => 'Papua Tengah'],
+            ['id' => '95', 'code' => '95', 'nama' => 'PAPUA PEGUNUNGAN', 'name' => 'Papua Pegunungan'],
+            ['id' => '96', 'code' => '96', 'nama' => 'PAPUA BARAT DAYA', 'name' => 'Papua Barat Daya'],
+        ];
+
+        return $raw;
+    }
+
+    /**
+     * Fallback data kabupaten/kota
+     */
+    protected function fallbackRegencies(string $provinsiId): array
     {
         $all = [
-            // Tebet (Jakarta Selatan)
-            '317101' => [
-                ['id' => '3171011001', 'nama' => 'TEBET TIMUR', 'kode_pos' => '12820'],
-                ['id' => '3171011002', 'nama' => 'TEBET BARAT', 'kode_pos' => '12810'],
-                ['id' => '3171011003', 'nama' => 'MENTENG DALAM', 'kode_pos' => '12870'],
-                ['id' => '3171011004', 'nama' => 'KEBON BARU', 'kode_pos' => '12830'],
-                ['id' => '3171011005', 'nama' => 'BUKIT DURI', 'kode_pos' => '12840'],
-                ['id' => '3171011006', 'nama' => 'MANGGARAI', 'kode_pos' => '12850'],
-                ['id' => '3171011007', 'nama' => 'MANGGARAI SELATAN', 'kode_pos' => '12860'],
+            '31' => [
+                ['id' => '31.71', 'code' => '31.71', 'nama' => 'KOTA ADMINISTRASI JAKARTA PUSAT', 'name' => 'Kota Administrasi Jakarta Pusat'],
+                ['id' => '31.72', 'code' => '31.72', 'nama' => 'KOTA ADMINISTRASI JAKARTA UTARA', 'name' => 'Kota Administrasi Jakarta Utara'],
+                ['id' => '31.73', 'code' => '31.73', 'nama' => 'KOTA ADMINISTRASI JAKARTA BARAT', 'name' => 'Kota Administrasi Jakarta Barat'],
+                ['id' => '31.74', 'code' => '31.74', 'nama' => 'KOTA ADMINISTRASI JAKARTA SELATAN', 'name' => 'Kota Administrasi Jakarta Selatan'],
+                ['id' => '31.75', 'code' => '31.75', 'nama' => 'KOTA ADMINISTRASI JAKARTA TIMUR', 'name' => 'Kota Administrasi Jakarta Timur'],
+                ['id' => '31.01', 'code' => '31.01', 'nama' => 'KABUPATEN ADMINISTRASI KEPULAUAN SERIBU', 'name' => 'Kabupaten Administrasi Kepulauan Seribu'],
             ],
-            // Depok (Sleman, DIY)
-            '340401' => [
-                ['id' => '3404012001', 'nama' => 'CATURTUNGGAL', 'kode_pos' => '55281'],
-                ['id' => '3404012002', 'nama' => 'MAGUWOHARJO', 'kode_pos' => '55282'],
-                ['id' => '3404012003', 'nama' => 'CONDONGCATUR', 'kode_pos' => '55283'],
+            '32' => [
+                ['id' => '32.01', 'code' => '32.01', 'nama' => 'KABUPATEN BOGOR', 'name' => 'Kabupaten Bogor'],
+                ['id' => '32.04', 'code' => '32.04', 'nama' => 'KABUPATEN BANDUNG', 'name' => 'Kabupaten Bandung'],
+                ['id' => '32.16', 'code' => '32.16', 'nama' => 'KABUPATEN BEKASI', 'name' => 'Kabupaten Bekasi'],
+                ['id' => '32.17', 'code' => '32.17', 'nama' => 'KABUPATEN BANDUNG BARAT', 'name' => 'Kabupaten Bandung Barat'],
+                ['id' => '32.71', 'code' => '32.71', 'nama' => 'KOTA BOGOR', 'name' => 'Kota Bogor'],
+                ['id' => '32.73', 'code' => '32.73', 'nama' => 'KOTA BANDUNG', 'name' => 'Kota Bandung'],
+                ['id' => '32.75', 'code' => '32.75', 'nama' => 'KOTA BEKASI', 'name' => 'Kota Bekasi'],
+                ['id' => '32.76', 'code' => '32.76', 'nama' => 'KOTA DEPOK', 'name' => 'Kota Depok'],
+                ['id' => '32.77', 'code' => '32.77', 'nama' => 'KOTA CIMAHI', 'name' => 'Kota Cimahi'],
             ],
-            // Coblong (Bandung)
-            '327301' => [
-                ['id' => '3273011001', 'nama' => 'DAGO', 'kode_pos' => '40135'],
-                ['id' => '3273011002', 'nama' => 'LEBAKGEDE', 'kode_pos' => '40132'],
-                ['id' => '3273011003', 'nama' => 'SEKELOA', 'kode_pos' => '40134'],
-                ['id' => '3273011004', 'nama' => 'SADANG SERANG', 'kode_pos' => '40133'],
+            '33' => [
+                ['id' => '33.74', 'code' => '33.74', 'nama' => 'KOTA SEMARANG', 'name' => 'Kota Semarang'],
+                ['id' => '33.72', 'code' => '33.72', 'nama' => 'KOTA SURAKARTA (SOLO)', 'name' => 'Kota Surakarta'],
+                ['id' => '33.71', 'code' => '33.71', 'nama' => 'KOTA MAGELANG', 'name' => 'Kota Magelang'],
+                ['id' => '33.02', 'code' => '33.02', 'nama' => 'KABUPATEN BANYUMAS', 'name' => 'Kabupaten Banyumas'],
+                ['id' => '33.22', 'code' => '33.22', 'nama' => 'KABUPATEN SEMARANG', 'name' => 'Kabupaten Semarang'],
+                ['id' => '33.10', 'code' => '33.10', 'nama' => 'KABUPATEN KLATEN', 'name' => 'Kabupaten Klaten'],
             ],
-            // Gubeng (Surabaya)
-            '357801' => [
-                ['id' => '3578011001', 'nama' => 'GUBENG', 'kode_pos' => '60281'],
-                ['id' => '3578011002', 'nama' => 'AIRLANGGA', 'kode_pos' => '60286'],
-                ['id' => '3578011003', 'nama' => 'BARATAJAYA', 'kode_pos' => '60284'],
-                ['id' => '3578011004', 'nama' => 'PUCANGCSEWU', 'kode_pos' => '60283'],
+            '34' => [
+                ['id' => '34.71', 'code' => '34.71', 'nama' => 'KOTA YOGYAKARTA', 'name' => 'Kota Yogyakarta'],
+                ['id' => '34.04', 'code' => '34.04', 'nama' => 'KABUPATEN SLEMAN', 'name' => 'Kabupaten Sleman'],
+                ['id' => '34.02', 'code' => '34.02', 'nama' => 'KABUPATEN BANTUL', 'name' => 'Kabupaten Bantul'],
+                ['id' => '34.01', 'code' => '34.01', 'nama' => 'KABUPATEN KULON PROGO', 'name' => 'Kabupaten Kulon Progo'],
+                ['id' => '34.03', 'code' => '34.03', 'nama' => 'KABUPATEN GUNUNGKIDUL', 'name' => 'Kabupaten Gunungkidul'],
+            ],
+            '35' => [
+                ['id' => '35.78', 'code' => '35.78', 'nama' => 'KOTA SURABAYA', 'name' => 'Kota Surabaya'],
+                ['id' => '35.73', 'code' => '35.73', 'nama' => 'KOTA MALANG', 'name' => 'Kota Malang'],
+                ['id' => '35.15', 'code' => '35.15', 'nama' => 'KABUPATEN SIDOARJO', 'name' => 'Kabupaten Sidoarjo'],
+                ['id' => '35.25', 'code' => '35.25', 'nama' => 'KABUPATEN GRESIK', 'name' => 'Kabupaten Gresik'],
+                ['id' => '35.07', 'code' => '35.07', 'nama' => 'KABUPATEN MALANG', 'name' => 'Kabupaten Malang'],
+            ],
+            '36' => [
+                ['id' => '36.74', 'code' => '36.74', 'nama' => 'KOTA TANGERANG SELATAN', 'name' => 'Kota Tangerang Selatan'],
+                ['id' => '36.71', 'code' => '36.71', 'nama' => 'KOTA TANGERANG', 'name' => 'Kota Tangerang'],
+                ['id' => '36.73', 'code' => '36.73', 'nama' => 'KOTA SERANG', 'name' => 'Kota Serang'],
+                ['id' => '36.72', 'code' => '36.72', 'nama' => 'KOTA CILEGON', 'name' => 'Kota Cilegon'],
+                ['id' => '36.03', 'code' => '36.03', 'nama' => 'KABUPATEN TANGERANG', 'name' => 'Kabupaten Tangerang'],
+                ['id' => '36.04', 'code' => '36.04', 'nama' => 'KABUPATEN SERANG', 'name' => 'Kabupaten Serang'],
             ],
         ];
 
-        if (isset($all[$districtId])) {
-            return $all[$districtId];
-        }
+        return $all[$provinsiId] ?? [
+            ['id' => $provinsiId.'.71', 'code' => $provinsiId.'.71', 'nama' => 'KOTA UTAMA', 'name' => 'Kota Utama'],
+            ['id' => $provinsiId.'.01', 'code' => $provinsiId.'.01', 'nama' => 'KABUPATEN WILAYAH', 'name' => 'Kabupaten Wilayah'],
+        ];
+    }
 
-        return [
-            ['id' => $districtId.'1001', 'nama' => 'KELURAHAN SATU', 'kode_pos' => '10001'],
-            ['id' => $districtId.'1002', 'nama' => 'KELURAHAN DUA', 'kode_pos' => '10002'],
-            ['id' => $districtId.'1003', 'nama' => 'KELURAHAN TIGA', 'kode_pos' => '10003'],
+    /**
+     * Fallback data kecamatan
+     */
+    protected function fallbackDistricts(string $regencyId): array
+    {
+        $regId = str_replace('.', '', $regencyId);
+        $all = [
+            '3171' => [
+                ['id' => '31.71.01', 'code' => '31.71.01', 'nama' => 'GAMBIR', 'name' => 'Gambir'],
+                ['id' => '31.71.02', 'code' => '31.71.02', 'nama' => 'SAWAH BESAR', 'name' => 'Sawah Besar'],
+                ['id' => '31.71.03', 'code' => '31.71.03', 'nama' => 'KEMAYORAN', 'name' => 'Kemayoran'],
+                ['id' => '31.71.04', 'code' => '31.71.04', 'nama' => 'SENEN', 'name' => 'Senen'],
+                ['id' => '31.71.05', 'code' => '31.71.05', 'nama' => 'CEMPAKA PUTIH', 'name' => 'Cempaka Putih'],
+                ['id' => '31.71.06', 'code' => '31.71.06', 'nama' => 'MENTENG', 'name' => 'Menteng'],
+                ['id' => '31.71.07', 'code' => '31.71.07', 'nama' => 'TANAH ABANG', 'name' => 'Tanah Abang'],
+                ['id' => '31.71.08', 'code' => '31.71.08', 'nama' => 'JOHAR BARU', 'name' => 'Johar Baru'],
+            ],
+            '3174' => [
+                ['id' => '31.74.06', 'code' => '31.74.06', 'nama' => 'CILANDAK', 'name' => 'Cilandak'],
+                ['id' => '31.74.09', 'code' => '31.74.09', 'nama' => 'JAGAKARSA', 'name' => 'Jagakarsa'],
+                ['id' => '31.74.01', 'code' => '31.74.01', 'nama' => 'TEBET', 'name' => 'Tebet'],
+                ['id' => '31.74.02', 'code' => '31.74.02', 'nama' => 'SETIABUDI', 'name' => 'Setiabudi'],
+            ],
+        ];
+
+        return $all[$regId] ?? [
+            ['id' => $regencyId.'.01', 'code' => $regencyId.'.01', 'nama' => 'KECAMATAN PUSAT', 'name' => 'Kecamatan Pusat'],
+            ['id' => $regencyId.'.02', 'code' => $regencyId.'.02', 'nama' => 'KECAMATAN UTARA', 'name' => 'Kecamatan Utara'],
+            ['id' => $regencyId.'.03', 'code' => $regencyId.'.03', 'nama' => 'KECAMATAN SELATAN', 'name' => 'Kecamatan Selatan'],
+        ];
+    }
+
+    /**
+     * Fallback data kelurahan
+     */
+    protected function fallbackVillages(string $districtId): array
+    {
+        $distId = str_replace('.', '', $districtId);
+        $all = [
+            '317101' => [
+                ['id' => '31.71.01.1001', 'code' => '31.71.01.1001', 'nama' => 'GAMBIR', 'name' => 'Gambir', 'kode_pos' => '10110'],
+                ['id' => '31.71.01.1002', 'code' => '31.71.01.1002', 'nama' => 'CIDENG', 'name' => 'Cideng', 'kode_pos' => '10150'],
+            ],
+            '317409' => [
+                ['id' => '31.74.09.1002', 'code' => '31.74.09.1002', 'nama' => 'SRENGSENG SAWAH', 'name' => 'Srengseng Sawah', 'kode_pos' => '12640'],
+                ['id' => '31.74.09.1005', 'code' => '31.74.09.1005', 'nama' => 'TANJUNG BARAT', 'name' => 'Tanjung Barat', 'kode_pos' => '12530'],
+            ],
+        ];
+
+        return $all[$distId] ?? [
+            ['id' => $districtId.'.1001', 'code' => $districtId.'.1001', 'nama' => 'KELURAHAN SATU', 'name' => 'Kelurahan Satu', 'kode_pos' => '10001'],
+            ['id' => $districtId.'.1002', 'code' => $districtId.'.1002', 'nama' => 'KELURAHAN DUA', 'name' => 'Kelurahan Dua', 'kode_pos' => '10002'],
         ];
     }
 }

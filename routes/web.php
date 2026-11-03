@@ -486,4 +486,6 @@ Route::prefix('api/wilayah')->name('api.wilayah.')->group(function () {
     Route::get('/regencies', [WilayahController::class, 'regencies'])->name('regencies');
     Route::get('/districts', [WilayahController::class, 'districts'])->name('districts');
     Route::get('/villages', [WilayahController::class, 'villages'])->name('villages');
+    Route::get('/find-regency', [WilayahController::class, 'findRegency'])->name('find-regency');
+    Route::get('/all', [WilayahController::class, 'all'])->name('all');
 });

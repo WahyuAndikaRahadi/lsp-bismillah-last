@@ -68,12 +68,13 @@
                     @error('jenis_kelamin') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
                 </div>
 
-                {{-- Tempat Lahir: Terintegrasi API Wilayah Indonesia (cahyadsn/wilayah Kepmendagri 2025) --}}
+                {{-- Tempat Lahir: Terintegrasi API Wilayah Indonesia (Wilayah.id Kepmendagri 2025) --}}
                 <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50/70 p-3.5 rounded-xl border border-slate-200" 
                      x-data="wilayahSelector('{{ addslashes(old('tempat_lahir', $p->tempat_lahir ?? '')) }}')">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                            Provinsi Tempat Lahir <span class="text-rose-500">*</span>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center justify-between">
+                            <span>Provinsi Tempat Lahir <span class="text-rose-500">*</span></span>
+                            <span x-show="loadingProvinces" class="text-[10px] text-brand-600 font-normal">Memuat provinsi...</span>
                         </label>
                         <select x-model="selectedProvince" 
                                 @change="onProvinceChange()" 
@@ -87,8 +88,9 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                            Kota / Kabupaten Tempat Lahir <span class="text-rose-500">*</span>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center justify-between">
+                            <span>Kota / Kabupaten Tempat Lahir <span class="text-rose-500">*</span></span>
+                            <span x-show="loadingRegencies" class="text-[10px] text-brand-600 font-normal">Memuat kab/kota...</span>
                         </label>
                         <select name="tempat_lahir" 
                                 x-model="selectedCity" 
@@ -104,7 +106,7 @@
                             </template>
                         </select>
                         @error('tempat_lahir') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
-                        <p class="text-[11px] text-slate-400 mt-1">Standar resmi Kepmendagri No. 300.2.2-2430 (cahyadsn/wilayah)</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Standar resmi Wilayah.id (Kepmendagri No. 300.2.2-2138)</p>
                     </div>
                 </div>
 
@@ -286,55 +288,71 @@
         return {
             provinces: [],
             regencies: [],
-            allRegenciesMap: {},
+            loadingProvinces: false,
+            loadingRegencies: false,
             selectedProvince: '',
             selectedCity: initialCity || '',
 
             async init() {
+                this.loadingProvinces = true;
                 try {
-                    const res = await fetch('/api/wilayah/all');
+                    const res = await fetch('/api/wilayah/provinces');
                     if (res.ok) {
                         const data = await res.json();
-                        this.provinces = data.provinces || [];
-                        this.allRegenciesMap = data.regencies || {};
-
-                        if (this.selectedCity) {
-                            const target = this.selectedCity.trim().toLowerCase();
-                            const cleanTarget = target.replace(/^(kabupaten|kota)\s+/i, '');
-
-                            for (const provCode in this.allRegenciesMap) {
-                                const list = this.allRegenciesMap[provCode];
-                                const match = list.find(r => {
-                                    const rName = r.name.toLowerCase();
-                                    const rClean = rName.replace(/^(kabupaten|kota)\s+/i, '');
-                                    return rName === target || rClean === cleanTarget;
-                                });
-
-                                if (match) {
-                                    this.selectedProvince = provCode;
-                                    this.regencies = list;
-                                    this.$nextTick(() => {
-                                        this.selectedCity = match.name;
-                                    });
-                                    break;
-                                }
-                            }
-                        }
+                        this.provinces = Array.isArray(data) ? data : (data.data || []);
                     }
                 } catch (e) {
-                    console.error('Gagal memuat API wilayah:', e);
+                    console.error('Gagal memuat API provinsi Wilayah.id:', e);
+                } finally {
+                    this.loadingProvinces = false;
+                }
+
+                if (this.selectedCity) {
+                    await this.findProvinceForCity(this.selectedCity);
                 }
             },
 
-            onProvinceChange() {
+            async onProvinceChange() {
                 if (!this.selectedProvince) {
                     this.regencies = [];
                     this.selectedCity = '';
                     return;
                 }
-                this.regencies = this.allRegenciesMap[this.selectedProvince] || [];
-                if (!this.regencies.some(r => r.name === this.selectedCity)) {
-                    this.selectedCity = '';
+                this.loadingRegencies = true;
+                try {
+                    const res = await fetch(`/api/wilayah/regencies?province_id=${this.selectedProvince}`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        this.regencies = Array.isArray(data) ? data : (data.data || []);
+                        if (!this.regencies.some(r => (r.name || r.nama) === this.selectedCity)) {
+                            this.selectedCity = '';
+                        }
+                    }
+                } catch (e) {
+                    console.error('Gagal memuat kab/kota Wilayah.id:', e);
+                } finally {
+                    this.loadingRegencies = false;
+                }
+            },
+
+            async findProvinceForCity(city) {
+                this.loadingRegencies = true;
+                try {
+                    const res = await fetch(`/api/wilayah/find-regency?name=${encodeURIComponent(city)}`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data && data.province_code) {
+                            this.selectedProvince = data.province_code;
+                            this.regencies = data.regencies || [];
+                            if (data.matched_name) {
+                                this.selectedCity = data.matched_name;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.log('Tidak dapat mencocokkan provinsi otomatis:', e);
+                } finally {
+                    this.loadingRegencies = false;
                 }
             }
         };

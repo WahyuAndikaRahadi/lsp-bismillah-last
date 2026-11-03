@@ -20,7 +20,7 @@ class WilayahController extends Controller
 
     public function regencies(Request $request): JsonResponse
     {
-        $provinceId = (string) $request->query('province_id', '');
+        $provinceId = (string) $request->query('province_id', $request->query('province_code', ''));
         if (! $provinceId) {
             return response()->json([]);
         }
@@ -30,7 +30,7 @@ class WilayahController extends Controller
 
     public function districts(Request $request): JsonResponse
     {
-        $regencyId = (string) $request->query('regency_id', '');
+        $regencyId = (string) $request->query('regency_id', $request->query('regency_code', ''));
         if (! $regencyId) {
             return response()->json([]);
         }
@@ -40,11 +40,26 @@ class WilayahController extends Controller
 
     public function villages(Request $request): JsonResponse
     {
-        $districtId = (string) $request->query('district_id', '');
+        $districtId = (string) $request->query('district_id', $request->query('district_code', ''));
         if (! $districtId) {
             return response()->json([]);
         }
 
         return response()->json($this->wilayahService->getVillages($districtId));
+    }
+
+    public function findRegency(Request $request): JsonResponse
+    {
+        $name = (string) $request->query('name', $request->query('city', ''));
+        if (! $name) {
+            return response()->json(null);
+        }
+
+        return response()->json($this->wilayahService->findRegencyByName($name));
+    }
+
+    public function all(): JsonResponse
+    {
+        return response()->json($this->wilayahService->getAllWilayahMap());
     }
 }
