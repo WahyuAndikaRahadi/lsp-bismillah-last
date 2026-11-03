@@ -52,6 +52,11 @@ class TukVerificationController extends Controller
 
         $validated = $request->validate([
             'tuk_id' => ['required', 'exists:tuks,id'],
+            'spt_number' => ['nullable', 'string', 'max:100'],
+            'assigner_name' => ['nullable', 'string', 'max:255'],
+            'assigner_position' => ['nullable', 'string', 'max:255'],
+            'verifier_name' => ['nullable', 'string', 'max:255'],
+            'verifier_position' => ['nullable', 'string', 'max:255'],
             'verification_date' => ['required', 'date'],
             'verification_type' => ['required', 'in:sewaktu,mandiri,tempat_kerja'],
             'recommendation' => ['required', 'in:layak,belum_layak'],
@@ -61,6 +66,11 @@ class TukVerificationController extends Controller
         TukVerification::create([
             'tuk_id' => $validated['tuk_id'],
             'asesor_id' => $asesor->id,
+            'spt_number' => $validated['spt_number'] ?? null,
+            'assigner_name' => $validated['assigner_name'] ?? 'Direktur LSP P3 PrO Indo',
+            'assigner_position' => $validated['assigner_position'] ?? 'Direktur Eksekutif',
+            'verifier_name' => $validated['verifier_name'] ?? $request->user()->full_name,
+            'verifier_position' => $validated['verifier_position'] ?? 'Asesor Verifikator TUK',
             'verification_date' => $validated['verification_date'],
             'verification_type' => $validated['verification_type'],
             'recommendation' => $validated['recommendation'],

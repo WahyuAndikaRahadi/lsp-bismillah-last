@@ -37,7 +37,13 @@ class JadwalController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'scheme_id' => 'required|exists:m_schemes,id',
+            'tuk_id' => 'nullable|exists:tuks,id',
             'tuk_name' => 'nullable|string|max:255',
+            'pic_name' => 'nullable|string|max:255',
+            'pic_position' => 'nullable|string|max:100',
+            'letter_number' => 'nullable|string|max:100',
+            'assigned_by' => 'nullable|string|max:255',
+            'capacity' => 'nullable|integer|min:1',
             'date' => 'required|date',
             'start_time' => 'nullable|string',
             'end_time' => 'nullable|string',
@@ -47,14 +53,23 @@ class JadwalController extends Controller
             'assessor_ids' => 'nullable|array',
             'assessors' => 'nullable|array',
             'code' => 'nullable|string|max:50',
+            'status' => 'nullable|string|in:DRAFT,ACTIVE,FINISHED',
         ]);
 
         $code = $request->input('code') ?: strtoupper(Str::random(8));
+        $targetStatus = $validated['status'] ?? 'ACTIVE';
 
         $schedule = Schedule::create([
             'name' => $validated['name'],
             'scheme_id' => $validated['scheme_id'],
+            'tuk_id' => $validated['tuk_id'] ?? null,
             'tuk_name' => $validated['tuk_name'] ?? null,
+            'pic_name' => $validated['pic_name'] ?? null,
+            'pic_position' => $validated['pic_position'] ?? null,
+            'letter_number' => $validated['letter_number'] ?? null,
+            'assigned_by' => $validated['assigned_by'] ?? null,
+            'assigned_at' => ! empty($validated['letter_number']) ? now() : null,
+            'capacity' => $validated['capacity'] ?? 20,
             'date' => $validated['date'],
             'start_time' => $validated['start_time'] ?? null,
             'end_time' => $validated['end_time'] ?? null,
@@ -62,13 +77,25 @@ class JadwalController extends Controller
             'selected_instruments' => ! empty($validated['selected_instruments']) ? $validated['selected_instruments'] : ['IA01', 'IA01B', 'IA02', 'IA03', 'IA05'],
             'notes' => $validated['notes'] ?? null,
             'code' => $code,
-            'status' => 'ACTIVE',
+            'status' => 'DRAFT', // initial
             'created_by' => auth()->id(),
         ]);
 
         $assessorList = $request->input('assessor_ids', $request->input('assessors', []));
         if (! empty($assessorList)) {
             $schedule->assessors()->sync($assessorList);
+        }
+
+        if ($targetStatus === 'ACTIVE') {
+            $validationService = app(\App\Services\ScheduleValidationService::class);
+            $blockers = $validationService->validateForPublishing($schedule);
+
+            if (empty($blockers)) {
+                $schedule->update(['status' => 'ACTIVE']);
+            } else {
+                return redirect()->route('admin.jadwal.show', $schedule->id)
+                    ->with('warning', 'Jadwal tersimpan sebagai DRAFT karena prasyarat publikasi belum terpenuhi: ' . implode(' ', $blockers));
+            }
         }
 
         return redirect()->route('admin.jadwal.index')
@@ -96,7 +123,13 @@ class JadwalController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'scheme_id' => 'required|exists:m_schemes,id',
+            'tuk_id' => 'nullable|exists:tuks,id',
             'tuk_name' => 'nullable|string|max:255',
+            'pic_name' => 'nullable|string|max:255',
+            'pic_position' => 'nullable|string|max:100',
+            'letter_number' => 'nullable|string|max:100',
+            'assigned_by' => 'nullable|string|max:255',
+            'capacity' => 'nullable|integer|min:1',
             'date' => 'required|date',
             'start_time' => 'nullable|string',
             'end_time' => 'nullable|string',
@@ -105,16 +138,34 @@ class JadwalController extends Controller
             'instruments' => 'nullable|array',
             'notes' => 'nullable|string',
             'assessor_ids' => 'nullable|array',
+            'status' => 'nullable|string|in:DRAFT,ACTIVE,FINISHED',
         ]);
 
         $instruments = $request->input('selected_instruments', $request->input('instruments', $jadwal->selected_instruments));
         $validated['selected_instruments'] = $instruments;
         unset($validated['instruments']);
 
+        $targetStatus = $validated['status'] ?? $jadwal->status;
+        unset($validated['status']);
+
         $jadwal->update($validated);
 
         if ($request->has('assessor_ids')) {
             $jadwal->assessors()->sync($request->input('assessor_ids', []));
+        }
+
+        if ($targetStatus === 'ACTIVE') {
+            $validationService = app(\App\Services\ScheduleValidationService::class);
+            $blockers = $validationService->validateForPublishing($jadwal->fresh());
+
+            if (empty($blockers)) {
+                $jadwal->update(['status' => 'ACTIVE']);
+            } else {
+                return redirect()->route('admin.jadwal.show', $jadwal->id)
+                    ->with('warning', 'Jadwal diperbarui namun tetap DRAFT karena: ' . implode(' ', $blockers));
+            }
+        } elseif ($targetStatus) {
+            $jadwal->update(['status' => $targetStatus]);
         }
 
         return redirect()->route('admin.jadwal.show', $jadwal->id)

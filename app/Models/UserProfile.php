@@ -14,6 +14,7 @@ class UserProfile extends Model
 
     protected $fillable = [
         'user_id',
+        'identity_type',
         'nik',
         'tempat_lahir',
         'tanggal_lahir',
@@ -23,6 +24,10 @@ class UserProfile extends Model
         'kode_pos',
         'no_telepon_rumah',
         'no_telepon_kantor',
+        'no_fax_kantor',
+        'email_kantor',
+        'kode_pos_kantor',
+        'status_pekerjaan',
         'pendidikan_terakhir',
         'nama_institusi_perusahaan',
         'nama_institusi',
@@ -36,6 +41,7 @@ class UserProfile extends Model
     {
         return [
             'tanggal_lahir' => 'date',
+            'signature_version' => 'integer',
         ];
     }
 

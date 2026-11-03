@@ -28,6 +28,44 @@ class Tuk extends Model
         ];
     }
 
+    protected static function booted(): void
+    {
+        static::saved(function ($tuk) {
+            if (\Illuminate\Support\Facades\Schema::hasTable('m_tuks')) {
+                \Illuminate\Support\Facades\DB::table('m_tuks')->updateOrInsert(
+                    ['id' => $tuk->id],
+                    [
+                        'name' => $tuk->nama_tuk ?? $tuk->name ?? ('TUK ' . $tuk->id),
+                        'address' => $tuk->alamat,
+                        'phone' => $tuk->telepon,
+                        'is_active' => $tuk->is_active ?? true,
+                        'updated_at' => now(),
+                        'created_at' => now(),
+                    ]
+                );
+            }
+        });
+
+        static::deleted(function ($tuk) {
+            if (\Illuminate\Support\Facades\Schema::hasTable('m_tuks')) {
+                \Illuminate\Support\Facades\DB::table('m_tuks')->where('id', $tuk->id)->delete();
+            }
+        });
+    }
+
+    public function verifications(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(TukVerification::class, 'tuk_id');
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->verifications()
+            ->where('recommendation', 'layak')
+            ->whereIn('status', ['diverifikasi', 'disetujui'])
+            ->exists();
+    }
+
     public function getNameAttribute(): string
     {
         return $this->nama_tuk ?? '';

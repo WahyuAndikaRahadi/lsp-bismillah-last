@@ -181,7 +181,7 @@ return new class extends Migration
                     $table->unsignedBigInteger('prior_certificate_id')->nullable()->after('assessor_id');
                 }
                 if (! Schema::hasColumn('t_assessments', 'snapshot_profile')) {
-                    $table->longText('snapshot_profile')->nullable()->after('assessor_notes');
+                    $table->longText('snapshot_profile')->nullable()->after('asesi_id');
                 }
                 if (! Schema::hasColumn('t_assessments', 'lock_version')) {
                     $table->integer('lock_version')->default(1)->after('status');

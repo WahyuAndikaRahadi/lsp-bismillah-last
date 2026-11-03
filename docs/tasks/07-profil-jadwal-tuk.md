@@ -1,6 +1,6 @@
 # Task 07 — Profil reusable, jadwal dan penunjukan core
 
-Status: [ ] belum dikerjakan. Dependency: **03,04,05,06; reference skema yang hendak dipublish selesai**.
+Status: [x] selesai. Dependency: **03,04,05,06; reference skema yang hendak dipublish selesai**.
 
 ## Tujuan
 
@@ -22,9 +22,9 @@ Biodata sesuai APL01: identity type/number, birth, sex,nationality, address/post
 
 ## Acceptance criteria
 
-- [ ] Satu asesi bisa dua jadwal/skema tanpa re-entry profile; edit profile tidak mengubah snapshot lama.
-- [ ] Unknown/unqualified/expired asesor, TUK unverified, reference draft menghalangi publish; kapasitas join concurrent aman.
-- [ ] Semua FR04.1/04.2 fields tercatat dengan actor berwenang; creator tidak otomatis koordinator/pimpinan.
+- [x] Satu asesi bisa dua jadwal/skema tanpa re-entry profile; edit profile tidak mengubah snapshot lama.
+- [x] Unknown/unqualified/expired asesor, TUK unverified, reference draft menghalangi publish; kapasitas join concurrent aman.
+- [x] Semua FR04.1/04.2 fields tercatat dengan actor berwenang; creator tidak otomatis koordinator/pimpinan.
 
 ## Test sempit / bukti
 

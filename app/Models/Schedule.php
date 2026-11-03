@@ -32,6 +32,11 @@ class Schedule extends Model
         'notes',
         'ak05_report',
         'ak06_review',
+        'capacity',
+        'scheme_version_id',
+        'letter_number',
+        'assigned_by',
+        'assigned_at',
         'is_closed',
         'closed_at',
         'status',
@@ -43,6 +48,8 @@ class Schedule extends Model
         return [
             'date' => 'date',
             'closed_at' => 'datetime',
+            'assigned_at' => 'datetime',
+            'capacity' => 'integer',
             'is_closed' => 'boolean',
             'ak05_report' => 'array',
             'ak06_review' => 'array',
@@ -82,6 +89,21 @@ class Schedule extends Model
     public function scheme(): BelongsTo
     {
         return $this->belongsTo(Scheme::class);
+    }
+
+    public function schemeVersion(): BelongsTo
+    {
+        return $this->belongsTo(SchemeVersion::class, 'scheme_version_id');
+    }
+
+    public function isFull(): bool
+    {
+        return $this->assessments()->count() >= ($this->capacity ?? 20);
+    }
+
+    public function remainingCapacity(): int
+    {
+        return max(0, ($this->capacity ?? 20) - $this->assessments()->count());
     }
 
     public function tuk(): BelongsTo

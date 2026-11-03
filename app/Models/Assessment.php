@@ -49,6 +49,7 @@ class Assessment extends Model
         'completed_at',
         'prior_certificate_id',
         'snapshot_profile',
+        'scheme_version_id',
         'lock_version',
     ];
 
@@ -75,6 +76,11 @@ class Assessment extends Model
     public function schedule(): BelongsTo
     {
         return $this->belongsTo(Schedule::class);
+    }
+
+    public function schemeVersion(): BelongsTo
+    {
+        return $this->belongsTo(SchemeVersion::class, 'scheme_version_id');
     }
 
     public function asesi(): BelongsTo
