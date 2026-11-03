@@ -256,7 +256,7 @@
                                 <span>Biodata & TTD Asesor</span>
                             </a>
 
-                        @elseif(auth()->user()->isAdmin() || in_array(auth()->user()->role, ['KOMITE_TEKNIS', 'TUK_ADMIN']))
+                        @elseif(auth()->user()->isAdmin())
                             <div class="px-3 pt-3 pb-1 text-[10px] font-extrabold text-lsp-muted uppercase tracking-wider">
                                 Manajemen Asesmen
                             </div>

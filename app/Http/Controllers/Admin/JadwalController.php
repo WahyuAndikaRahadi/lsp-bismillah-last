@@ -17,23 +17,9 @@ class JadwalController extends Controller
 {
     public function index(Request $request): View
     {
-        $user = $request->user();
-        $query = Schedule::with('scheme', 'assessors', 'creator')
-            ->latest('date');
-
-        if ($user && $user->role === 'TUK_ADMIN') {
-            $user->loadMissing('tuk');
-            $query->where(function ($q) use ($user) {
-                if ($user->tuk_id) {
-                    $q->where('tuk_id', $user->tuk_id);
-                }
-                if ($user->tuk?->name) {
-                    $q->orWhere('tuk_name', $user->tuk->name);
-                }
-            });
-        }
-
-        $schedules = $query->paginate(15);
+        $schedules = Schedule::with('scheme', 'assessors', 'creator')
+            ->latest('date')
+            ->paginate(15);
 
         return view('admin.jadwal.index', compact('schedules'));
     }
