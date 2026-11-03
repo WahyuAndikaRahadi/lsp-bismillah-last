@@ -50,6 +50,61 @@ class SchemeInstrumentService
     }
 
     /**
+     * Get units for a scheme from scheme reference JSON or DB.
+     */
+    public function getUnitsForScheme(Scheme $scheme): array
+    {
+        $data = $this->getSchemeData($scheme);
+        if (! empty($data['units'])) {
+            return $data['units'];
+        }
+
+        // Fallback: check CompetencyUnit or CertificationScheme
+        return \App\Models\CompetencyUnit::where('scheme_id', $scheme->id)
+            ->get()
+            ->map(fn ($u) => [
+                'code' => $u->code ?? $u->unit_code,
+                'title' => $u->title ?? $u->unit_name,
+            ])
+            ->toArray();
+    }
+
+    /**
+     * Get default MAPA-01 work groups for a scheme based on its specific units.
+     */
+    public function getMapa01Groups(Scheme $scheme): array
+    {
+        $units = $this->getUnitsForScheme($scheme);
+        if (empty($units)) {
+            return [];
+        }
+
+        $groupName = match ($scheme->code) {
+            'SKM-01-2026' => 'General Service & Engine',
+            'SKM-02-2026' => 'Gasoline Engine Injection',
+            'SKM-03-2026' => 'Periodical Maintenance EV',
+            'SKM-04-2026' => 'Perbaikan Panel Bodi',
+            'SKM-05-2026' => 'Mekanik Junior',
+            'SKM-06-2026' => 'Sepeda Motor Listrik',
+            'SKM-07-2026' => 'Sepeda Motor Injeksi',
+            default => 'Kelompok Inti ' . $scheme->name,
+        };
+
+        return [
+            [
+                'name' => $groupName,
+                'units' => array_map(fn ($u) => [
+                    'code' => $u['code'],
+                    'title' => $u['title'],
+                    'evidence_text' => 'Hasil observasi langsung dan tanya jawab tentang ' . $u['title'],
+                    'evidence_types' => ['L', 'T'],
+                    'methods' => ['CL', 'DPT'],
+                ], $units),
+            ],
+        ];
+    }
+
+    /**
      * Get FR.IA.02 (Tugas Praktik Demonstrasi - TPD) data for a scheme.
      */
     public function getTpdData(Scheme $scheme): array

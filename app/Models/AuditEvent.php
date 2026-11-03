@@ -25,4 +25,23 @@ class AuditEvent extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public static function record(
+        string $action,
+        ?Model $subject = null,
+        ?string $reason = null,
+        ?array $details = null,
+        ?int $userId = null
+    ): self {
+        return self::create([
+            'user_id' => $userId ?? auth()->id(),
+            'action' => $action,
+            'subject_type' => $subject ? get_class($subject) : null,
+            'subject_id' => $subject?->getKey(),
+            'after_payload' => $details ? json_encode($details) : null,
+            'reason' => $reason,
+            'request_id' => request()?->header('X-Request-ID') ?? (string) \Illuminate\Support\Str::uuid(),
+            'ip_address' => request()?->ip(),
+        ]);
+    }
 }

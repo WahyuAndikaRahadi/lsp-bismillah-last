@@ -211,6 +211,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/jadwal/{schedule}/asesi', [App\Http\Controllers\Asesor\JadwalController::class, 'asesiList'])->name('jadwal.asesi');
         Route::post('/jadwal/{schedule}/asesi/bulk-action', [App\Http\Controllers\Asesor\JadwalController::class, 'bulkAction'])->name('jadwal.asesi.bulk');
 
+        // MAPA-01 Rencana Asesmen
+        Route::get('/schedule/{schedule}/mapa-01', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'edit'])->name('mapa01.edit');
+        Route::post('/schedule/{schedule}/mapa-01', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'store'])->name('mapa01.store');
+        Route::match(['put', 'patch'], '/assessment-plans/{plan}', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'update'])->name('mapa01.update');
+        Route::post('/assessment-plans/{plan}/lock', [\App\Http\Controllers\Asesor\AssessmentPlanController::class, 'lock'])->name('mapa01.lock');
+
         // Workspace Terpadu Asesor (Single Unified Workspace per Asesi)
         Route::get('/assessment/{assessment}/workspace', [App\Http\Controllers\Asesor\WorkspaceController::class, 'show'])->name('assessment.workspace');
 
