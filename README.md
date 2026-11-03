@@ -1,124 +1,135 @@
 # LSP PrO Indo — Sistem Sertifikasi Kompetensi Profesi (Audit Ready BNSP)
 
-Aplikasi web terpadu Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia (**LSP PrO Indo**) berlisensi resmi **Badan Nasional Sertifikasi Profesi (BNSP)**. Sistem ini mendigitalisasi seluruh tahapan asesmen kompetensi teknisi otomotif dengan kepatuhan format 1:1 terhadap instrumen Materi Uji Kompetensi (MUK) resmi BNSP untuk keperluan audit kepatuhan.
+Aplikasi web terpadu Lembaga Sertifikasi Profesi Praktisi Otomotif Indonesia (**LSP PrO Indo**) berlisensi resmi **Badan Nasional Sertifikasi Profesi (BNSP)**. Sistem ini mendigitalisasi seluruh tahapan asesmen kompetensi teknisi otomotif dengan arsitektur ramping (*lean*), efisien di lapangan (TUK), serta kepatuhan format 1:1 terhadap instrumen Materi Uji Kompetensi (MUK) resmi BNSP.
 
 ---
 
 ## 1. Arsitektur Aktor (Tepat Tiga Aktor)
 
-Sistem beroperasi tepat dengan tiga aktor utama:
+Sistem beroperasi tepat dengan tiga aktor utama tanpa perantara:
 
 1. **`ADMIN_LSP` (Administrator LSP):**
-   - Mengelola master data: skema sertifikasi (7 skema otomotif), unit kompetensi, elemen, KUK, bank soal CBT, dan jadwal asesmen.
-   - Membuka jadwal dan memplot asesor yang bertugas.
-   - Melakukan pengesahan hasil kelulusan pada **Sidang Pleno** serta menerbitkan nomor sertifikat resmi BNSP.
-   - *Catatan:* Admin **TIDAK** ikut memeriksa atau memverifikasi berkas permohonan asesi. Proses verifikasi kelayakan permohonan sepenuhnya menjadi wewenang teknis Asesor.
+   - Mengelola master data: skema sertifikasi (7 skema otomotif), hierarki unit/elemen/KUK, bank soal CBT, dan pembukaan jadwal asesmen.
+   - Membuat jadwal murni administratif: memilih skema sertifikasi, nama/jenis TUK, tanggal & waktu pelaksanaan, serta menugaskan asesor. Admin **tidak dibebani pilihan instrumen teknis**.
+   - Mengesahkan yudisium kelulusan pada **Sidang Pleno** serta menerbitkan nomor blanko sertifikat resmi BNSP.
+   - *Catatan Mutlak:* Admin **TIDAK** ikut memeriksa atau memverifikasi berkas permohonan asesi.
 2. **`ASESOR` (Asesor Kompetensi):**
-   - Pemegang wewenang penuh dalam penilaian teknis.
-   - Memverifikasi berkas permohonan FR.APL.01 dan bukti asesmen mandiri FR.APL.02 (VATM).
-   - Menandatangani persetujuan asesmen dan komitmen kerahasiaan (FR.AK.01).
-   - Mengarahkan proses pengujian di Tempat Uji Kompetensi (TUK).
-   - Melakukan observasi unjuk kerja (FR.IA.01), verifikasi lembar kerja teknis (FR.IA.01B), penilaian demonstrasi (FR.IA.02), pertanyaan lisan (FR.IA.03), serta memantau ujian teori tertulis CBT (FR.IA.05).
-   - Mengisi penyesuaian yang wajar dan beralasan (FR.AK.07) jika terdapat kondisi khusus kandidat di TUK.
-   - Merekam hasil asesmen kompetensi (FR.AK.02), memberikan rekomendasi akhir (K / BK), serta menyusun laporan jadwal (FR.AK.05) dan kaji ulang asesmen (FR.AK.06).
+   - Pemegang wewenang teknis metodologi asesmen di lapangan.
+   - Memiliki fitur **Seleksi Massal (*Bulk Action* / "Pilih Banyak")**: dalam 1-klik dapat menyetujui APL, mengesahkan `FR.AK.01` dengan tanda tangan ganda, membuat draf `FR.AK.07` standar, dan membuka Ruang Uji serentak untuk puluhan asesi di TUK.
+   - Menyesuaikan instrumen uji `FR.IA` yang terbuka (*unlocked*) per kandidat (misal: CBT saja, praktik observasi saja, atau seluruh paket MUK).
+   - Mengarahkan proses pengujian di workshop TUK: observasi unjuk kerja (`FR.IA.01`), laporan pengukuran (`FR.IA.01B`), demonstrasi praktik (`FR.IA.02`), dan wawancara lisan PMO (`FR.IA.03`).
+   - Mengisi penyesuaian yang wajar (`FR.AK.07`) 100% mandiri bila terdapat kebutuhan khusus asesi di TUK.
+   - Merekam hasil asesmen kompetensi (`FR.AK.02`), menetapkan rekomendasi final (K / BK), serta menyusun laporan jadwal (`FR.AK.05`) dan kaji ulang asesmen (`FR.AK.06`).
 3. **`ASESI` (Peserta Uji Sertifikasi):**
-   - Mendaftar secara mandiri menggunakan **Kode Jadwal 4 Digit** dari TUK/penyelenggara.
-   - Melengkapi profil diri dan tanda tangan digital canvas.
-   - Mengisi formulir permohonan (FR.APL.01) dan asesmen mandiri (FR.APL.02) dengan memilih K/BK.
-   - Menyetujui FR.AK.01 dengan 1-klik menggunakan tanda tangan terdaftar.
-   - Mengikuti ujian teori CBT di web dan menyelesaikan instruksi praktik sesuai arahan langsung asesor di tempat uji.
-   - Memberikan umpan balik pelaksanaan asesmen (FR.AK.03) dan mengajukan banding (FR.AK.04) bila diperlukan.
+   - Mendaftar mandiri via **Kode Jadwal 4 Digit** dari TUK/penyelenggara.
+   - Melengkapi biodata diri dan membubuhkan tanda tangan digital canvas satu kali di profil akun.
+   - Mengisi formulir permohonan (`FR.APL.01`) dan asesmen mandiri (`FR.APL.02`).
+   - Begitu disetujui asesor, asesi **tidak perlu tanda tangan manual berulang** untuk `FR.AK.01` maupun `FR.AK.07` (tanda tangan profil otomatis tersemat sah).
+   - Langsung masuk Ruang Uji MUK yang terbuka (*clean progressive unlocking*): mengerjakan CBT (`FR.IA.05`) dan instruksi praktik sesuai arahan langsung asesor.
+   - Mengisi umpan balik pelaksanaan asesmen (`FR.AK.03`), mengajukan banding (`FR.AK.04`) bila diperlukan, serta mengunduh e-Sertifikat resmi BNSP.
 
-> **PENTING UNTUK AUDITOR & PENGEMBANG:**
+> **PENTING UNTUK AUDITOR & PENGEMBANG:**  
 > Role **Komite Teknis** dan **TUK** telah dihapus secara menyeluruh dari kode, routing, enum, middleware, dan seeder. TUK hanya hadir sebagai entitas data (nama TUK, jenis TUK: Sewaktu/Mandiri/Tempat Kerja, dan alamat).
 
 ---
 
-## 2. Paradigma Sistem: Sistem Per-Modul MUK (Modular MUK Architecture)
+## 2. Alur Sertifikasi Kompetensi Terpadu (Langkah 1 s/d 10)
 
-> ### ⚠️ PANDUAN WAJIB BAGI PENGEMBANG DAN AI AGENT LAINNYA
-> **JANGAN PERNAH** mengubah dasbor atau alur sistem ini menjadi wizard sekuensial linear kaku bertahap ala video-game (misal: "Tahap 1 dari 5", "Langkah Berikutnya" terkunci kaku).
+```mermaid
+flowchart TD
+    L1["1. Setup Master Skema & Bank Soal CBT (Admin LSP)"] --> L2["2. Pembukaan Jadwal & Penugasan Asesor (Admin LSP)"]
+    L2 --> L3["3. Pendaftaran Mandiri & Biodata Profil Asesi (Asesi)"]
+    L3 --> L4["4. Join Jadwal Kode 4-Digit & Isi FR.APL.01/02 (Asesi)"]
+    L4 --> L5["5. Verifikasi APL & Buka Ruang Uji Massal (Asesor)"]
+    L5 --> L6["6. Pengesahan Otomatis Persetujuan FR.AK.01 (Dual-Signature)"]
+    L6 --> L7["7. Pelaksanaan Uji di TUK (CBT, Praktik, Wawancara)"]
+    L7 --> L8["8. Rekaman Asesmen FR.AK.02 & Umpan Balik FR.AK.03"]
+    L8 --> L9["9. Laporan Asesmen FR.AK.05 & Tutup Jadwal FR.AK.06 (Asesor)"]
+    L9 --> L10["10. Sidang Pleno & Penerbitan Sertifikat BNSP (Admin LSP)"]
+```
+
+1. **Setup Master Skema & Soal (Admin):** Memastikan skema aktif, KUK SKKNI terpetakan, dan bank soal CBT siap.
+2. **Buka Jadwal (Admin):** Input murni administratif: Skema, Nama TUK, Tanggal & Jam, dan Asesor. Sistem menerbitkan kode jadwal 4-digit unik.
+3. **Biodata & TTD Profil (Asesi):** Asesi mendaftar dan membubuhkan tanda tangan digital sekali di profil akun.
+4. **Pendaftaran Jadwal & Isi APL (Asesi):** Asesi memasukkan kode jadwal, melengkapi bukti portofolio dasar pada FR.APL.01, dan menilai mandiri KUK pada FR.APL.02.
+5. **Verifikasi APL & Aksi Massal Asesor (Asesor):** Di menu jadwal asesi, asesor dapat memanfaatkan fitur **Pilih Semua / Seleksi Massal** untuk memvalidasi berkas dan membuka Ruang Uji banyak asesi sekaligus dalam 1-klik.
+6. **Pengesahan Otomatis FR.AK.01:** Dokumen persetujuan asesmen dan komitmen kerahasiaan otomatis sah dengan tanda tangan profil kedua pihak. Asesi tidak dibebani form tanda tangan manual tambahan.
+7. **Pelaksanaan Uji di TUK:** Asesi masuk ke Ruang Uji yang menampilkan hanya instrumen yang dibuka (*unlocked*): Ujian Teori CBT (`FR.IA.05`) dengan proteksi anti-hilang jawaban (*localStorage* + *auto-sync*), observasi praktik (`FR.IA.01`/`IA.01B`), demonstrasi (`FR.IA.02`), dan wawancara lisan (`FR.IA.03`).
+8. **Rekaman Rekomendasi (Asesor & Asesi):** Asesi mengisi umpan balik `FR.AK.03`. Asesor membuka Tab FR.AK.02 Workspace untuk menetapkan rekomendasi akhir (KOMPETEN / BELUM KOMPETEN).
+9. **Laporan & Tutup Jadwal (Asesor):** Asesor mengisi laporan pelaksanaan `FR.AK.05` dan kaji ulang `FR.AK.06`. Jadwal resmi ditutup (*locked*) demi integritas data audit.
+10. **Sidang Pleno & Penerbitan Sertifikat (Admin):** Admin LSP mengesahkan hasil pleno di sistem (`/admin/pleno`), menerbitkan Nomor Sertifikat BNSP resmi (berlaku 3 tahun), dan asesi dapat mengunduh e-Sertifikat berbingkai resmi BNSP.
+
+---
+
+## 3. Paradigma Sistem: Modular MUK & Progressive Unlocking
+
+> ### ⚠️ PANDUAN PENTING BAGI PENGEMBANG & AI AGENT LAINNYA
+> **DILARANG** mengembalikan visual usang yang memunculkan kartu abu-abu bertuliskan *"🔒 Terkunci"*, tombol mati yang membingungkan asesi, atau memaksakan linear wizard sekuensial bertahap kaku.
 >
-> **Rasional Ilmiah & Prosedural BNSP:**
-> 1. Di dunia nyata (di TUK), **pelaksanaan asesmen diarahkan secara langsung oleh Asesor**.
-> 2. Paket MUK bersifat fleksibel tergantung skema dan skenario uji yang ditentukan pada jadwal.
-> 3. Oleh karena itu, arsitektur sistem ini dibangun secara **PER-MODUL (Modular MUK Matrix)**. Setiap instrumen asesmen adalah komponen modular mandiri yang dapat aktif sesuai kebutuhan jadwal.
+> **Prinsip Arsitektur:**
+> 1. **Progressive Unlocking:** Hanya modul dan instrumen yang aktif / terbuka yang dirender ke layar asesi. Antarmuka tetap bersih, lega, dan bebas dari elemen dekoratif mati (*anti-slop*).
+> 2. **Wewenang Penentuan Instrumen:** Instrumen uji `FR.IA` ditentukan atas kesepakatan Asesor dan Asesi di `FR.AK.01`, bukan dipatok kaku oleh Admin saat membuat jadwal.
+> 3. **Efisiensi Maksimal di TUK:** Di tempat uji kompetensi, waktu sangat terbatas. Asesor memiliki kontrol seleksi massal (*bulk actions*) agar tidak perlu berpindah halaman 20–30 kali untuk tugas repetitif.
 
-### Modul-Modul MUK Saat Ini:
+### Matriks Formulir MUK:
 
-| Kode Modul | Nama Formulir BNSP | Aktor Pengisi | Keterangan & Karakteristik |
+| Kode Formulir | Nama Formulir BNSP | Pengisi | Peran & Karakteristik |
 | :--- | :--- | :--- | :--- |
-| **FR.APL.01** | Permohonan Sertifikasi Kompetensi | Asesi | Bagian 1 (Data Pribadi & Pekerjaan), Bagian 2 (Data Sertifikasi), Bagian 3 (Bukti Kelengkapan). |
-| **FR.APL.02** | Asesmen Mandiri | Asesi (isi) & Asesor (verifikasi) | Penilaian mandiri per KUK (K/BK) disertai bukti relevan dan verifikasi VATM asesor. |
-| **FR.AK.01** | Persetujuan Asesmen & Kerahasiaan | Asesi & Asesor | Surat perjanjian pelaksanaan uji. Asesi menandatangani dengan 1-klik; asesor membubuhkan tanda tangan pendamping. |
-| **FR.IA.01** | Ceklis Observasi Aktivitas di Tempat Kerja | Asesor | Ceklis observasi langsung KUK teknis saat asesi praktik di TUK. |
-| **FR.IA.01B** | Lembar Pemeriksaan Teknis (Report Sheet) | Asesor | Verifikasi lembar kerja pengukuran mekanis / elektrikal kendaraan. |
-| **FR.IA.02** | Tugas Praktik Demonstrasi (TPD) | Asesor | Penilaian skenario penugasan kerja nyata di workshop. |
-| **FR.IA.03** | Pertanyaan Mendukung Observasi (PMO) | Asesor | Konfirmasi pemahaman lisan (wawancara teknis) untuk memastikan aspek transfer skills. |
-| **FR.IA.05** | Pertanyaan Tertulis Pilihan Ganda (CBT) | Asesi | Ujian teori berbasis web. Auto-scoring, timer, dan penyimpanan draf instan (localStorage + debounced AJAX). |
-| **FR.AK.07** | Penyesuaian yang Wajar dan Beralasan | **Asesor (100%)** | Diisi **hanya oleh asesor** bila ada kondisi khusus kandidat (misal disabilitas, listrik TUK padam). **Asesi tidak pernah mengisi formulir ini.** |
-| **FR.AK.02** | Rekaman Asesmen Kompetensi | Asesor | Matriks resmi Unit vs Bukti Asesmen, penetapan rekomendasi final (K / BK), dan catatan tindak lanjut. |
-| **FR.AK.03** | Umpan Balik Asesmen | Asesi | Evaluasi 10 butir pertanyaan penyelenggaraan asesmen oleh asesi setelah penilaian selesai. |
-| **FR.AK.04** | Banding Asesmen | Asesi | Hak asesi mengajukan banding bila rekomendasi asesor dinilai tidak adil/objektif (hanya aktif jika BK). |
-| **FR.AK.05** | Laporan Asesmen | Asesor | Rekapitulasi peserta, distribusi hasil K/BK, dan penutupan jadwal asesmen. |
-| **FR.AK.06** | Kaji Ulang Asesmen | Asesor | Tinjauan kepatuhan prosedur dan dimensi kompetensi pasca asesmen. |
-| **PLENO** | Sidang Pleno & Sertifikat BNSP | Admin LSP | Pengesahan yudisium hasil akhir dan penerbitan nomor blanko sertifikat BNSP. |
+| **FR.APL.01** | Permohonan Sertifikasi Kompetensi | Asesi | Biodata diri, unit skema, dan upload dokumen persyaratan dasar (KTP, Ijazah, Foto). |
+| **FR.APL.02** | Asesmen Mandiri K/BK | Asesi | Penilaian mandiri per KUK dengan tombol cepat *"Pilih Semua K"*. |
+| **FR.AK.01** | Persetujuan Asesmen & Kerahasiaan | Sistem / Asesor | Perjanjian pelaksanaan asesmen. TTD tersemat otomatis dari profil kedua pihak saat APL disetujui. |
+| **FR.IA.05** | Pertanyaan Tertulis CBT | Asesi | Ujian teori daring. Auto-grading, timer, dan penyimpanan draf instan (*dual-persistence*). |
+| **FR.IA.01** | Ceklis Observasi Praktik | Asesor | Penilaian unjuk kerja demonstrasi praktik di workshop bengkel TUK. |
+| **FR.IA.01B** | Lembar Laporan Pemeriksaan Teknis | Asesor | Penilaian lembar pengukuran teknis mekanikal / elektrikal kendaraan. |
+| **FR.IA.02** | Tugas Praktik Demonstrasi (TPD) | Asesor | Evaluasi penyelesaian skenario tugas kerja bengkel. |
+| **FR.IA.03** | Pertanyaan Mendukung Observasi (PMO) | Asesor | Pertanyaan lisan untuk konfirmasi K3 dan pemahaman dasar teori. |
+| **FR.AK.07** | Penyesuaian Wajar dan Beralasan | **Asesor (100%)** | Diisi **hanya oleh asesor** bila ada kondisi darurat/kebutuhan khusus. Asesi tidak pernah mengisi form ini. |
+| **FR.AK.02** | Rekaman Asesmen Kompetensi | Asesor | Matriks Unit vs Bukti, tombol cepat *"Semua K"*, rekomendasi akhir K/BK, dan tindak lanjut. |
+| **FR.AK.03** | Umpan Balik Asesmen | Asesi | Evaluasi 10 butir mutu penyelenggaraan asesmen oleh asesi setelah selesai diuji. |
+| **FR.AK.04** | Banding Asesmen | Asesi | Formulir pengajuan peninjauan ulang keputusan asesor (hanya aktif bila hasil Belum Kompeten). |
+| **FR.AK.05** | Laporan Asesmen | Asesor | Distribusi hasil uji dan evaluasi fasilitas TUK untuk penutupan jadwal. |
+| **FR.AK.06** | Meninjau Proses Asesmen | Asesor | Evaluasi 4 prinsip asesmen (Valid, Reliabel, Fleksibel, Adil). |
+| **PLENO** | Berita Acara Pleno & Sertifikat | Admin LSP | Pengesahan yudisium kelulusan resmi dan penerbitan sertifikat kompetensi BNSP. |
 
 ---
 
-## 3. Cara Menambah Modul Asesmen Baru (Panduan Pengembangan Masa Depan)
+## 4. Cara Menambah Modul Asesmen Baru (Panduan Masa Depan)
 
-Bila di masa depan LSP PrO Indo memerlukan modul asesmen tambahan—seperti **CRP** (Ceklis Verifikasi Portofolio), **CVP** (Ceklis Verifikasi Pihak Ketiga), atau **FR.IA.06** (Pertanyaan Esai Terstruktur)—ikuti konvensi modular berikut:
+Bila di masa depan LSP PrO Indo mengaktifkan modul MUK baru—seperti **CRP** (Ceklis Verifikasi Portofolio), **CVP** (Ceklis Verifikasi Pihak Ketiga), atau **FR.IA.06** (Pertanyaan Esai Terstruktur)—ikuti konvensi modular berikut:
 
-1. **Daftarkan Kode Modul Baru:**
-   - Tambahkan kode (misal `CRP`, `CVP`, `IA06`) ke dalam array `selected_instruments` pada konfigurasi jadwal (`Schedule::$selected_instruments`).
-2. **Buat View Format MUK BNSP:**
-   - Ikuti tata letak dokumen master di `docs/reference/all-document-lsp-ProIndo/`.
-   - Gunakan format kop resmi LSP PrO Indo, kotak metadata (Skema, TUK, Asesor, Asesi), dan tabel bergaris formal BNSP (`border border-slate-900`).
-   - Hindari animasi dekoratif, gradien warna berlebihan, atau gaya visual kasual.
-3. **Integrasikan ke Workspace Terpadu Asesor:**
-   - Buka [`resources/views/asesor/workspace/show.blade.php`](resources/views/asesor/workspace/show.blade.php).
-   - Tambahkan tab modul baru pada navigasi tab workspace.
-4. **Hubungkan Penyimpanan Data:**
-   - Gunakan tabel `t_assessment_ia_responses` (dengan kolom `instrument_code` yang sesuai) atau buat relasi terdedikasi bila memiliki struktur field khusus.
-5. **Verifikasi Otomatis:**
-   - Buat feature test di `tests/Feature/` untuk memverifikasi hak akses asesor/asesi dan persistensi datanya.
-
----
-
-## 4. Standar UI/UX (Anti-Slop & Professional Dignity)
-
-- **Identitas Visual:**
-  - Navy Institusional: `#1E2B6E` (`bg-lsp-navy`)
-  - Red LSP Accent: `#CE181E` (`bg-lsp-red`)
-  - Border & Garis: Slate netral (`border-slate-200`, `border-slate-300`, atau `border-slate-900` untuk tabel MUK).
-- **Tipografi:** Plus Jakarta Sans & Inter untuk keterbacaan tinggi di komputer umum TUK maupun perangkat genggam.
-- **Formulir Asesmen:**
-  - Menyerupai kertas fisik MUK resmi BNSP: kop surat lengkap dengan logo lisensi BNSP, kode dokumen ISO/MUK di pojok kanan atas, serta kolom tanda tangan digital dua kolom (Asesi & Asesor).
-- **Aksi Tegas:** Satu tombol aksi utama per layar. Tidak ada tombol membingungkan atau aksi tidak relevan yang membuat asesi tersesat.
+1. **Daftarkan Kode Modul:**
+   Tambahkan kode (misal `CRP`, `CVP`, `IA06`) pada helper model `Assessment::getUnlockedInstruments()`.
+2. **Tambahkan Tab di Workspace Asesor:**
+   Buka [`resources/views/asesor/workspace/show.blade.php`](resources/views/asesor/workspace/show.blade.php) dan daftarkan tab pengujian baru.
+3. **Format View MUK Sesuai Standar BNSP:**
+   Gunakan kop resmi lembaga, tabel metadata, dan garis border tegas formal (`border border-slate-900`) tanpa animasi kasual.
+4. **Hubungkan Respon:**
+   Gunakan relasi `t_assessment_ia_responses` dengan `instrument_code` terkait.
+5. **Verifikasi Test:**
+   Jalankan `php artisan test` untuk memastikan semua pengujian tetap lolos.
 
 ---
 
 ## 5. Menjalankan Aplikasi & Pengujian
 
 ### Prasyarat:
-- PHP 8.2 atau PHP 8.3
+- PHP 8.2 atau 8.3
 - Composer 2+
 - Node.js 18+ & npm
-- SQLite atau MySQL/MariaDB
+- SQLite / MySQL
 
 ### Instalasi & Setup Lokal:
 ```bash
-# Clone repository
+# Clone repositori
 git clone <repo-url>
 cd rea-application-lsp
 
-# Install dependencies PHP & JS
+# Install dependency
 composer install
 npm install
 npm run build
 
-# Setup environment & database
+# Setup database & seeder
 cp .env.example .env
 php artisan key:generate
 php artisan migrate:fresh --seed
@@ -131,20 +142,22 @@ php artisan migrate:fresh --seed
 | **Asesor** | `asesor1@proindo.id` | `password` |
 | **Asesi** | `asesi1@proindo.id` | `password` |
 
-### Menjalankan Test Otomatis:
+### Menjalankan Pengujian Otomatis (Full Suite):
 ```bash
-# Jalankan seluruh rangkaian test
+# Menjalankan seluruh 140 feature & unit test
 php artisan test
 
-# Jalankan test khusus paritas MUK & Dasbor
-php artisan test tests/Feature/AsesiDashboardNextStepTest.php
-php artisan test tests/Feature/AsesiAplFormParityTest.php
-php artisan test tests/Feature/CbtAnswerPersistenceTest.php
+# Menjalankan test aksi massal & sistem unlock
+php artisan test tests/Feature/AsesorBulkActionAndUnlockedInstrumentsTest.php
+
+# Menjalankan test audit redirect & bebas loop
+php artisan test tests/Feature/RedirectAuditAndLoopEliminationTest.php
 ```
 
 ---
 
-## 6. Dokumentasi Pendukung
-- `docs/DECISIONS.md`: Log keputusan arsitektur dan pilihan teknis.
-- `docs/OPEN_ISSUES.md`: Daftar isu terbuka atau limitasi yang teridentifikasi secara jujur.
-- `docs/reference/all-document-lsp-ProIndo/`: Berkas PDF MUK master resmi BNSP untuk 7 skema teknisi otomotif.
+## 6. Arsip Dokumen Acuan
+- `docs/ALUR_SERTIFIKASI.md`: Rincian mendalam alur kronologis 1 s/d 10 untuk operasional dan audit.
+- `docs/DECISIONS.md`: Log keputusan arsitektur resmi (Keputusan 1 s/d 9).
+- `docs/OPEN_ISSUES.md`: Catatan transparansi teknis dan rekomendasi lanjutan.
+- `docs/reference/all-document-lsp-ProIndo/`: Dokumen PDF master resmi MUK 7 skema otomotif.

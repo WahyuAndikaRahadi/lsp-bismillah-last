@@ -58,8 +58,8 @@ flowchart TD
 - **Instrumen BNSP:** Surat Tugas Asesor & Surat Pemberitahuan Jadwal Asesmen.
 - **Aksi Sistem:**
   1. Admin membuka menu Jadwal Asesmen (`/admin/jadwal`) dan menekan **+ Tambah Jadwal Baru**.
-  2. Memilih Skema Uji, mengisi Nama TUK dan jenis TUK (Sewaktu / Mandiri / Tempat Kerja), menentukan tanggal & jam pelaksanaan, dan memilih modul instrumen uji aktif (`IA01`, `IA01B`, `IA02`, `IA03`, `IA05`).
-  3. Menugaskan Asesor Kompetensi yang memiliki Nomor Registrasi MET aktif.
+  2. Mengisi data murni administratif: Memilih Skema Sertifikasi, mengisi Nama TUK dan jenis TUK (Sewaktu / Mandiri / Tempat Kerja), menentukan tanggal & jam pelaksanaan, dan menugaskan Asesor Kompetensi yang berlisensi aktif.
+  3. Admin **tidak dibebani pilihan instrumen teknis**; penentuan instrumen uji diserahkan ke ranah kesepakatan Asesor & Asesi di FR.AK.01.
   4. Sistem otomatis menggenerasi **Kode Jadwal 4 Digit** (misal: `7A3K`).
 - **Bukti Audit:** Record `t_schedules` berstatus `ACTIVE`, relasi penugasan asesor tersimpan pada `t_schedule_assessors`.
 
@@ -90,34 +90,45 @@ flowchart TD
 
 ---
 
-### Langkah 5: Verifikasi Berkas & Asesmen Mandiri VATM di Workspace Terpadu
+### Langkah 5: Verifikasi Berkas & Seleksi Massal Asesor (Bulk Action)
 - **Aktor:** Asesor Kompetensi
 - **Instrumen BNSP:** Lembar Verifikasi Kelayakan Permohonan & Asesmen Mandiri VATM.
 - **Aksi Sistem:**
-  1. Asesor membuka daftar peserta jadwal (`/asesor/jadwal/{id}/asesi`) dan menekan tombol **Workspace Asesi &rarr;** pada kandidat terkait.
-  2. Pada **Tab 1 (Review FR.APL)**, asesor meninjau data pribadi, berkas bukti unggahan melalui modal preview dokumen, dan memeriksa penilaian mandiri KUK.
-  3. Asesor menentukan keputusan verifikasi 1-klik:
-     - **Setujui Permohonan:** Jika berkas memenuhi prinsip Valid, Asli, Terkini, dan Memadai (VATM). Status APL menjadi `APPROVED`. Sistem otomatis menyiapkan draf FR.AK.01 dan formulir penyesuaian wajar standar.
-     - **Minta Revisi Berkas:** Bila dokumen buram/kurang, asesor mengisi catatan revisi. Asesi menerima notifikasi catatan dan dapat memperbaikinya langsung dari dasbor.
+  1. Asesor membuka daftar peserta jadwal (`/asesor/jadwal/{id}/asesi`).
+  2. **Opsi Cepat di TUK (Seleksi Massal / "Pilih Banyak"):** Asesor dapat mencentang asesi (*Pilih Semua* atau asesi tertentu), lalu menekan tombol **"✓ Setujui APL & Buka Ruang Uji Massal"**. Dalam 1-klik, seluruh berkas asesi disahkan, tanda tangan profil disematkan pada FR.AK.01, FR.AK.07 standar digenerate, dan Ruang Uji langsung dibuka serentak.
+  3. **Opsi Per-Kandidat (Workspace Terpadu):** Asesor juga dapat membuka workspace asesi perorangan untuk meninjau detail bukti portofolio dasar, catatan KUK, atau meminta revisi berkas jika dokumen buram.
+  4. **Atur Instrumen Uji (Unlock Modul):** Asesor dapat menyesuaikan instrumen MUK aktif per-kandidat (misal: CBT saja, praktik observasi saja, atau seluruh instrumen standar).
 - **Bukti Audit:** Kolom `apl_status = 'APPROVED'`, `approved_at = timestamp`, dan `assessor_id` tercatat sah.
 
 ---
 
-### Langkah 6: Kesepakatan & Tanda Tangan Persetujuan Asesmen FR.AK.01
-- **Aktor:** Asesi & Asesor
+### Langkah 6: Pengesahan Otomatis Persetujuan Asesmen FR.AK.01
+- **Aktor:** Sistem Asesmen, Asesor & Asesi
 - **Instrumen BNSP:** `FR.AK.01`: Formulir Persetujuan Asesmen dan Kerahasiaan.
 - **Aksi Sistem:**
-  1. **Asesi:** Di dasbor asesi, kartu Modul FR.AK.01 aktif. Asesi membuka formulir, membaca klausul kesepakatan asesmen dan komitmen kerahasiaan materi uji, lalu memberikan persetujuan 1-klik menggunakan tanda tangan profil yang sudah terdaftar.
-  2. **Asesor:** Pada Tab 2 Workspace Asesor, asesor memverifikasi status persetujuan asesi, kemudian menekan tombol *"Tandatangani FR.AK.01"* untuk membubuhkan tanda tangan digital pendamping.
-- **Bukti Audit:** Kolom `ak01_agreed_at`, `asesi_signature`, dan `assessor_signature` terisi lengkap (*dual-signature*).
+  1. **Pengesahan Otomatis:** Saat APL disetujui asesor, sistem otomatis menyematkan tanda tangan profil asesi dan tanda tangan profil asesor pada dokumen FR.AK.01 (*dual-signature*).
+  2. **Asesi Tanpa Beban Form Tambahan:** Asesi **tidak perlu tanda tangan manual ulang** atau melewati form penghambat. Lembar kesepakatan FR.AK.01 tetap dapat dilihat/diunduh asesi sewaktu-waktu di dasbor.
+  3. **Penyesuaian Wajar (FR.AK.07):** Dibuatkan draf standar secara otomatis. Jika ada kondisi darurat/kebutuhan khusus di TUK, asesor dapat mengubahnya 100% mandiri tanpa melibatkan asesi.
+- **Bukti Audit:** Kolom `ak01_agreed_at`, `asesi_signature`, dan `assessor_signature` terisi lengkap dan sah.
 
 ---
 
-### Langkah 7: Pelaksanaan Uji Kompetensi Multimetode di TUK
+### Langkah 7: Pelaksanaan Uji Kompetensi Multimetode di TUK (Progressive Unlocking)
 - **Aktor:** Asesi & Asesor (Diarahkan langsung oleh Asesor di tempat uji)
 - **Instrumen BNSP:** Paket MUK Aktif (`FR.IA.05`, `FR.IA.01`, `FR.IA.01B`, `FR.IA.02`, `FR.IA.03`, `FR.AK.07`).
+- **Prinsip Tampilan Asesi:** *Progressive Unlocking* — Ruang Uji asesi hanya menampilkan modul/instrumen yang dibuka untuk asesi tersebut. Tidak ada kartu abu-abu bertuliskan "🔒 Terkunci" atau elemen mati yang membingungkan.
 - **Aksi Sistem:**
   - **7A. Ujian Teori Tertulis CBT (`FR.IA.05`) [Asesi]:**
+    Asesi membuka Ruang Uji dan mengerjakan soal pilihan ganda di komputer/tablet TUK. Sistem menerapkan proteksi ganda: penyimpanan jawaban instan di `localStorage` per klik dan sinkronisasi otomatis (*debounced draft sync*) ke server. Jawaban aman dari risiko refresh halaman atau jaringan terputus. Nilai terhitung otomatis (*auto-grading*) saat ujian diserahkan.
+  - **7B. Ceklis Observasi Praktik (`FR.IA.01` & `FR.IA.01B`) [Asesor]:**
+    Asesor mengamati demonstrasi unjuk kerja asesi di workshop TUK, menandai pencapaian KUK (K/BK), dan mencatat verifikasi lembar pengukuran teknis (*Report Sheet*).
+  - **7C. Tugas Praktik Demonstrasi (`FR.IA.02`) [Asesor]:**
+    Asesor mengevaluasi penyelesaian penugasan praktik sesuai standar operasional bengkel.
+  - **7D. Wawancara / Pertanyaan Lisan PMO (`FR.IA.03`) [Asesor]:**
+    Asesor mengonfirmasi pemahaman teori dan dasar keselamatan kerja melalui pertanyaan lisan terstruktur.
+  - **7E. Penyesuaian yang Wajar dan Beralasan (`FR.AK.07`) [Asesor 100%]:**
+    Formulir ini diisi *eksklusif oleh Asesor* bila ada kandidat berkebutuhan khusus atau kondisi darurat TUK (misal: listrik padam sehingga waktu ditambah). Asesi **tidak pernah** diminta mengisi form ini.
+- **Bukti Audit:** Jawaban CBT tersimpan di `t_assessment_ia_responses` (kode `IA05`), hasil observasi praktik dan lembar penilaian tercatat di sistem.
     Asesi membuka Ruang Uji dan mengerjakan soal pilihan ganda di komputer/tablet TUK. Sistem menerapkan proteksi ganda: penyimpanan jawaban instan di `localStorage` per klik dan sinkronisasi otomatis (*debounced draft sync*) ke server. Jawaban aman dari risiko refresh halaman atau jaringan terputus. Nilai terhitung otomatis (*auto-grading*) saat ujian diserahkan.
   - **7B. Ceklis Observasi Praktik (`FR.IA.01` & `FR.IA.01B`) [Asesor]:**
     Asesor mengamati demonstrasi unjuk kerja asesi di workshop TUK, menandai pencapaian KUK (K/BK), dan mencatat verifikasi lembar pengukuran teknis (*Report Sheet*).
